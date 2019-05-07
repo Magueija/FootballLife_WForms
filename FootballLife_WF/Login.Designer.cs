@@ -36,9 +36,11 @@
             this.btn_Entrar = new System.Windows.Forms.Button();
             this.lbl_EsqueceuPassword = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.img_BackArrow = new System.Windows.Forms.PictureBox();
             this.img_Logo = new System.Windows.Forms.PictureBox();
             this.img_Fundo = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.img_BackArrow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Fundo)).BeginInit();
             this.SuspendLayout();
@@ -122,6 +124,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.img_BackArrow);
             this.panel1.Controls.Add(this.lbl_EsqueceuPassword);
             this.panel1.Controls.Add(this.btn_Entrar);
             this.panel1.Controls.Add(this.lbl_LoginError);
@@ -135,6 +138,20 @@
             this.panel1.Size = new System.Drawing.Size(370, 496);
             this.panel1.TabIndex = 1;
             // 
+            // img_BackArrow
+            // 
+            this.img_BackArrow.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.img_BackArrow.Image = global::FootballLife_WF.Properties.Resources.BackArrow_Login_Normal;
+            this.img_BackArrow.Location = new System.Drawing.Point(4, 4);
+            this.img_BackArrow.Name = "img_BackArrow";
+            this.img_BackArrow.Size = new System.Drawing.Size(31, 31);
+            this.img_BackArrow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.img_BackArrow.TabIndex = 8;
+            this.img_BackArrow.TabStop = false;
+            this.img_BackArrow.Click += new System.EventHandler(this.Img_BackArrow_Click);
+            this.img_BackArrow.MouseLeave += new System.EventHandler(this.Img_BackArrow_MouseLeave);
+            this.img_BackArrow.MouseHover += new System.EventHandler(this.Img_BackArrow_MouseHover);
+            // 
             // img_Logo
             // 
             this.img_Logo.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -145,6 +162,7 @@
             this.img_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.img_Logo.TabIndex = 0;
             this.img_Logo.TabStop = false;
+            this.img_Logo.Click += new System.EventHandler(this.Img_Logo_Click);
             // 
             // img_Fundo
             // 
@@ -172,6 +190,7 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.img_BackArrow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Logo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Fundo)).EndInit();
             this.ResumeLayout(false);
@@ -190,6 +209,7 @@
         private System.Windows.Forms.Button btn_Entrar;
         private System.Windows.Forms.Label lbl_EsqueceuPassword;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox img_BackArrow;
     }
 }
 

@@ -58,6 +58,12 @@
     <Compile Include="PaginaInicial.Designer.cs">
       <DependentUpon>PaginaInicial.cs</DependentUpon>
     </Compile>
+    <Compile Include="PaginaInicial_Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaginaInicial_Admin.Designer.cs">
+      <DependentUpon>PaginaInicial_Admin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Login.resx">
@@ -65,6 +71,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PaginaInicial.resx">
       <DependentUpon>PaginaInicial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaginaInicial_Admin.resx">
+      <DependentUpon>PaginaInicial_Admin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -109,6 +118,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Medalha.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BackArrow_Login_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BackArrow_Login_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MenuWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fundo 5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TerminarSessao.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Adicionar_Criar%28white%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
