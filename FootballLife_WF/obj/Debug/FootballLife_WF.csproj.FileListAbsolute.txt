@@ -10,3 +10,15 @@ C:\Users\PSI17F20\Documents\GitHub\Projeto_WindowsForms\FootballLife_WF\obj\Debu
 C:\Users\PSI17F20\Documents\GitHub\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.pdb
 C:\Users\PSI17F20\Documents\GitHub\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.PaginaInicial.resources
 C:\Users\PSI17F20\Documents\GitHub\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.PaginaInicial_Admin.resources
+C:\Users\Tomás\Documents\Projeto_WindowsForms\FootballLife_WF\bin\Debug\FootballLife_WF.exe.config
+C:\Users\Tomás\Documents\Projeto_WindowsForms\FootballLife_WF\bin\Debug\FootballLife_WF.exe
+C:\Users\Tomás\Documents\Projeto_WindowsForms\FootballLife_WF\bin\Debug\FootballLife_WF.pdb
+C:\Users\Tomás\Documents\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.csprojAssemblyReference.cache
+C:\Users\Tomás\Documents\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.Login.resources
+C:\Users\Tomás\Documents\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.PaginaInicial.resources
+C:\Users\Tomás\Documents\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.PaginaInicial_Admin.resources
+C:\Users\Tomás\Documents\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.Properties.Resources.resources
+C:\Users\Tomás\Documents\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.csproj.GenerateResource.cache
+C:\Users\Tomás\Documents\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.csproj.CoreCompileInputs.cache
+C:\Users\Tomás\Documents\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.exe
+C:\Users\Tomás\Documents\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.pdb
