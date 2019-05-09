@@ -22,3 +22,6 @@ C:\Users\Tomás\Documents\Projeto_WindowsForms\FootballLife_WF\obj\Debug\Footbal
 C:\Users\Tomás\Documents\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.csproj.CoreCompileInputs.cache
 C:\Users\Tomás\Documents\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.exe
 C:\Users\Tomás\Documents\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.pdb
+C:\Users\PSI17F20\Documents\GitHub\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.PaginaInicial_Treinador.resources
+C:\Users\PSI17F20\Documents\GitHub\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.PaginaInicial_Atleta.resources
+C:\Users\PSI17F20\Documents\GitHub\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.PaginaInicial_Socio.resources

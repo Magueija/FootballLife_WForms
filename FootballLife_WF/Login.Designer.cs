@@ -35,11 +35,11 @@
             this.lbl_LoginError = new System.Windows.Forms.Label();
             this.btn_Entrar = new System.Windows.Forms.Button();
             this.lbl_EsqueceuPassword = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.Panel_Login = new System.Windows.Forms.Panel();
             this.img_BackArrow = new System.Windows.Forms.PictureBox();
             this.img_Logo = new System.Windows.Forms.PictureBox();
             this.img_Fundo = new System.Windows.Forms.PictureBox();
-            this.panel1.SuspendLayout();
+            this.Panel_Login.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_BackArrow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Fundo)).BeginInit();
@@ -120,31 +120,34 @@
             this.lbl_EsqueceuPassword.TabIndex = 7;
             this.lbl_EsqueceuPassword.Text = "Esqueceu a sua password?";
             // 
-            // panel1
+            // Panel_Login
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.img_BackArrow);
-            this.panel1.Controls.Add(this.lbl_EsqueceuPassword);
-            this.panel1.Controls.Add(this.btn_Entrar);
-            this.panel1.Controls.Add(this.lbl_LoginError);
-            this.panel1.Controls.Add(this.tb_Password);
-            this.panel1.Controls.Add(this.lbl_Password);
-            this.panel1.Controls.Add(this.tb_Utilizador);
-            this.panel1.Controls.Add(this.lbl_Utilizador);
-            this.panel1.Controls.Add(this.img_Logo);
-            this.panel1.Location = new System.Drawing.Point(493, 116);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(370, 496);
-            this.panel1.TabIndex = 1;
+            this.Panel_Login.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Panel_Login.BackColor = System.Drawing.Color.White;
+            this.Panel_Login.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Panel_Login.Controls.Add(this.img_BackArrow);
+            this.Panel_Login.Controls.Add(this.lbl_EsqueceuPassword);
+            this.Panel_Login.Controls.Add(this.btn_Entrar);
+            this.Panel_Login.Controls.Add(this.lbl_LoginError);
+            this.Panel_Login.Controls.Add(this.tb_Password);
+            this.Panel_Login.Controls.Add(this.lbl_Password);
+            this.Panel_Login.Controls.Add(this.tb_Utilizador);
+            this.Panel_Login.Controls.Add(this.lbl_Utilizador);
+            this.Panel_Login.Controls.Add(this.img_Logo);
+            this.Panel_Login.Location = new System.Drawing.Point(496, 116);
+            this.Panel_Login.Name = "Panel_Login";
+            this.Panel_Login.Size = new System.Drawing.Size(370, 496);
+            this.Panel_Login.TabIndex = 1;
             // 
             // img_BackArrow
             // 
             this.img_BackArrow.Cursor = System.Windows.Forms.Cursors.Hand;
             this.img_BackArrow.Image = global::FootballLife_WF.Properties.Resources.BackArrow_Login_Normal;
             this.img_BackArrow.Location = new System.Drawing.Point(4, 4);
+            this.img_BackArrow.MaximumSize = new System.Drawing.Size(30, 30);
+            this.img_BackArrow.MinimumSize = new System.Drawing.Size(30, 30);
             this.img_BackArrow.Name = "img_BackArrow";
-            this.img_BackArrow.Size = new System.Drawing.Size(31, 31);
+            this.img_BackArrow.Size = new System.Drawing.Size(30, 30);
             this.img_BackArrow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.img_BackArrow.TabIndex = 8;
             this.img_BackArrow.TabStop = false;
@@ -157,6 +160,8 @@
             this.img_Logo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.img_Logo.Image = global::FootballLife_WF.Properties.Resources.Logo_Clube;
             this.img_Logo.Location = new System.Drawing.Point(108, 75);
+            this.img_Logo.MaximumSize = new System.Drawing.Size(160, 140);
+            this.img_Logo.MinimumSize = new System.Drawing.Size(160, 140);
             this.img_Logo.Name = "img_Logo";
             this.img_Logo.Size = new System.Drawing.Size(160, 140);
             this.img_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -181,15 +186,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1370, 749);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.Panel_Login);
             this.Controls.Add(this.img_Fundo);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(900, 600);
             this.Name = "Login";
             this.Text = "FOOTBALL LIFE";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.Panel_Login.ResumeLayout(false);
+            this.Panel_Login.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_BackArrow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Logo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Fundo)).EndInit();
@@ -208,7 +212,7 @@
         private System.Windows.Forms.Label lbl_LoginError;
         private System.Windows.Forms.Button btn_Entrar;
         private System.Windows.Forms.Label lbl_EsqueceuPassword;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel Panel_Login;
         private System.Windows.Forms.PictureBox img_BackArrow;
     }
 }

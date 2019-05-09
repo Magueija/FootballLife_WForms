@@ -58,6 +58,24 @@
     <Compile Include="PaginaInicial.Designer.cs">
       <DependentUpon>PaginaInicial.cs</DependentUpon>
     </Compile>
+    <Compile Include="PaginaInicial_Socio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaginaInicial_Socio.Designer.cs">
+      <DependentUpon>PaginaInicial_Socio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaginaInicial_Treinador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaginaInicial_Treinador.Designer.cs">
+      <DependentUpon>PaginaInicial_Treinador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaginaInicial_Atleta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaginaInicial_Atleta.Designer.cs">
+      <DependentUpon>PaginaInicial_Atleta.cs</DependentUpon>
+    </Compile>
     <Compile Include="PaginaInicial_Admin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +89,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PaginaInicial.resx">
       <DependentUpon>PaginaInicial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaginaInicial_Socio.resx">
+      <DependentUpon>PaginaInicial_Socio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaginaInicial_Treinador.resx">
+      <DependentUpon>PaginaInicial_Treinador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaginaInicial_Atleta.resx">
+      <DependentUpon>PaginaInicial_Atleta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PaginaInicial_Admin.resx">
       <DependentUpon>PaginaInicial_Admin.cs</DependentUpon>
@@ -139,6 +166,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Adicionar_Criar%28white%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LogOut.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
