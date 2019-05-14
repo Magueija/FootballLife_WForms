@@ -47,11 +47,26 @@
             this.img_LogOut = new System.Windows.Forms.PictureBox();
             this.btn_LogOut = new System.Windows.Forms.Button();
             this.btn_TopMenu = new System.Windows.Forms.Button();
+            this.lbl_Titulo = new System.Windows.Forms.Label();
+            this.panel_Pesquisa = new System.Windows.Forms.Panel();
+            this.chb_Petizes = new System.Windows.Forms.CheckBox();
+            this.chb_Traquinas = new System.Windows.Forms.CheckBox();
+            this.chb_Benjamins = new System.Windows.Forms.CheckBox();
+            this.chb_Infantis = new System.Windows.Forms.CheckBox();
+            this.chb_Iniciados = new System.Windows.Forms.CheckBox();
+            this.chb_Juvenis = new System.Windows.Forms.CheckBox();
+            this.chb_Juniores = new System.Windows.Forms.CheckBox();
+            this.chb_Seniores = new System.Windows.Forms.CheckBox();
+            this.chb_Todos = new System.Windows.Forms.CheckBox();
+            this.lbl_Pesquisar = new System.Windows.Forms.Label();
+            this.img_Linha = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.img_Menu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Logo)).BeginInit();
             this.panel_Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_NovaDiscussao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_LogOut)).BeginInit();
+            this.panel_Pesquisa.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.img_Linha)).BeginInit();
             this.SuspendLayout();
             // 
             // img_Menu
@@ -61,11 +76,11 @@
             this.img_Menu.BackColor = System.Drawing.Color.Transparent;
             this.img_Menu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.img_Menu.Image = global::FootballLife_WF.Properties.Resources.MenuWhite;
-            this.img_Menu.Location = new System.Drawing.Point(12, 12);
-            this.img_Menu.MaximumSize = new System.Drawing.Size(44, 40);
-            this.img_Menu.MinimumSize = new System.Drawing.Size(44, 40);
+            this.img_Menu.Location = new System.Drawing.Point(12, 16);
+            this.img_Menu.MaximumSize = new System.Drawing.Size(32, 32);
+            this.img_Menu.MinimumSize = new System.Drawing.Size(32, 32);
             this.img_Menu.Name = "img_Menu";
-            this.img_Menu.Size = new System.Drawing.Size(44, 40);
+            this.img_Menu.Size = new System.Drawing.Size(32, 32);
             this.img_Menu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.img_Menu.TabIndex = 2;
             this.img_Menu.TabStop = false;
@@ -357,15 +372,201 @@
             this.btn_TopMenu.TabIndex = 0;
             this.btn_TopMenu.UseVisualStyleBackColor = false;
             // 
+            // lbl_Titulo
+            // 
+            this.lbl_Titulo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lbl_Titulo.AutoSize = true;
+            this.lbl_Titulo.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_Titulo.Font = new System.Drawing.Font("Bauhaus 93", 65.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Titulo.ForeColor = System.Drawing.Color.White;
+            this.lbl_Titulo.Location = new System.Drawing.Point(536, 92);
+            this.lbl_Titulo.Name = "lbl_Titulo";
+            this.lbl_Titulo.Size = new System.Drawing.Size(253, 98);
+            this.lbl_Titulo.TabIndex = 14;
+            this.lbl_Titulo.Text = "Jogos";
+            // 
+            // panel_Pesquisa
+            // 
+            this.panel_Pesquisa.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel_Pesquisa.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel_Pesquisa.Controls.Add(this.chb_Petizes);
+            this.panel_Pesquisa.Controls.Add(this.chb_Traquinas);
+            this.panel_Pesquisa.Controls.Add(this.chb_Benjamins);
+            this.panel_Pesquisa.Controls.Add(this.chb_Infantis);
+            this.panel_Pesquisa.Controls.Add(this.chb_Iniciados);
+            this.panel_Pesquisa.Controls.Add(this.chb_Juvenis);
+            this.panel_Pesquisa.Controls.Add(this.chb_Juniores);
+            this.panel_Pesquisa.Controls.Add(this.chb_Seniores);
+            this.panel_Pesquisa.Controls.Add(this.chb_Todos);
+            this.panel_Pesquisa.Controls.Add(this.lbl_Pesquisar);
+            this.panel_Pesquisa.Location = new System.Drawing.Point(315, 222);
+            this.panel_Pesquisa.Name = "panel_Pesquisa";
+            this.panel_Pesquisa.Size = new System.Drawing.Size(698, 78);
+            this.panel_Pesquisa.TabIndex = 17;
+            // 
+            // chb_Petizes
+            // 
+            this.chb_Petizes.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.chb_Petizes.BackColor = System.Drawing.Color.Transparent;
+            this.chb_Petizes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.chb_Petizes.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chb_Petizes.Location = new System.Drawing.Point(588, 41);
+            this.chb_Petizes.Name = "chb_Petizes";
+            this.chb_Petizes.Size = new System.Drawing.Size(88, 20);
+            this.chb_Petizes.TabIndex = 24;
+            this.chb_Petizes.Text = "Petizes";
+            this.chb_Petizes.UseVisualStyleBackColor = false;
+            this.chb_Petizes.Click += new System.EventHandler(this.Chb_Click);
+            // 
+            // chb_Traquinas
+            // 
+            this.chb_Traquinas.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.chb_Traquinas.BackColor = System.Drawing.Color.Transparent;
+            this.chb_Traquinas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.chb_Traquinas.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chb_Traquinas.Location = new System.Drawing.Point(588, 15);
+            this.chb_Traquinas.Name = "chb_Traquinas";
+            this.chb_Traquinas.Size = new System.Drawing.Size(88, 20);
+            this.chb_Traquinas.TabIndex = 23;
+            this.chb_Traquinas.Text = "Traquinas";
+            this.chb_Traquinas.UseVisualStyleBackColor = false;
+            this.chb_Traquinas.Click += new System.EventHandler(this.Chb_Click);
+            // 
+            // chb_Benjamins
+            // 
+            this.chb_Benjamins.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.chb_Benjamins.BackColor = System.Drawing.Color.Transparent;
+            this.chb_Benjamins.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.chb_Benjamins.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chb_Benjamins.Location = new System.Drawing.Point(479, 41);
+            this.chb_Benjamins.Name = "chb_Benjamins";
+            this.chb_Benjamins.Size = new System.Drawing.Size(88, 20);
+            this.chb_Benjamins.TabIndex = 22;
+            this.chb_Benjamins.Text = "Benjamins";
+            this.chb_Benjamins.UseVisualStyleBackColor = false;
+            this.chb_Benjamins.Click += new System.EventHandler(this.Chb_Click);
+            // 
+            // chb_Infantis
+            // 
+            this.chb_Infantis.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.chb_Infantis.BackColor = System.Drawing.Color.Transparent;
+            this.chb_Infantis.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.chb_Infantis.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chb_Infantis.Location = new System.Drawing.Point(479, 15);
+            this.chb_Infantis.Name = "chb_Infantis";
+            this.chb_Infantis.Size = new System.Drawing.Size(88, 20);
+            this.chb_Infantis.TabIndex = 21;
+            this.chb_Infantis.Text = "Infantis";
+            this.chb_Infantis.UseVisualStyleBackColor = false;
+            this.chb_Infantis.Click += new System.EventHandler(this.Chb_Click);
+            // 
+            // chb_Iniciados
+            // 
+            this.chb_Iniciados.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.chb_Iniciados.BackColor = System.Drawing.Color.Transparent;
+            this.chb_Iniciados.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.chb_Iniciados.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chb_Iniciados.Location = new System.Drawing.Point(370, 41);
+            this.chb_Iniciados.Name = "chb_Iniciados";
+            this.chb_Iniciados.Size = new System.Drawing.Size(88, 20);
+            this.chb_Iniciados.TabIndex = 20;
+            this.chb_Iniciados.Text = "Iniciados";
+            this.chb_Iniciados.UseVisualStyleBackColor = false;
+            this.chb_Iniciados.Click += new System.EventHandler(this.Chb_Click);
+            // 
+            // chb_Juvenis
+            // 
+            this.chb_Juvenis.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.chb_Juvenis.BackColor = System.Drawing.Color.Transparent;
+            this.chb_Juvenis.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.chb_Juvenis.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chb_Juvenis.Location = new System.Drawing.Point(370, 15);
+            this.chb_Juvenis.Name = "chb_Juvenis";
+            this.chb_Juvenis.Size = new System.Drawing.Size(88, 20);
+            this.chb_Juvenis.TabIndex = 19;
+            this.chb_Juvenis.Text = "Juvenis";
+            this.chb_Juvenis.UseVisualStyleBackColor = false;
+            this.chb_Juvenis.Click += new System.EventHandler(this.Chb_Click);
+            // 
+            // chb_Juniores
+            // 
+            this.chb_Juniores.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.chb_Juniores.BackColor = System.Drawing.Color.Transparent;
+            this.chb_Juniores.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.chb_Juniores.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chb_Juniores.Location = new System.Drawing.Point(262, 41);
+            this.chb_Juniores.Name = "chb_Juniores";
+            this.chb_Juniores.Size = new System.Drawing.Size(88, 20);
+            this.chb_Juniores.TabIndex = 18;
+            this.chb_Juniores.Text = "Juniores";
+            this.chb_Juniores.UseVisualStyleBackColor = false;
+            this.chb_Juniores.Click += new System.EventHandler(this.Chb_Click);
+            // 
+            // chb_Seniores
+            // 
+            this.chb_Seniores.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.chb_Seniores.BackColor = System.Drawing.Color.Transparent;
+            this.chb_Seniores.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.chb_Seniores.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chb_Seniores.Location = new System.Drawing.Point(262, 15);
+            this.chb_Seniores.Name = "chb_Seniores";
+            this.chb_Seniores.Size = new System.Drawing.Size(88, 20);
+            this.chb_Seniores.TabIndex = 17;
+            this.chb_Seniores.Tag = "";
+            this.chb_Seniores.Text = "Séniores";
+            this.chb_Seniores.UseVisualStyleBackColor = false;
+            this.chb_Seniores.Click += new System.EventHandler(this.Chb_Click);
+            // 
+            // chb_Todos
+            // 
+            this.chb_Todos.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.chb_Todos.BackColor = System.Drawing.Color.Transparent;
+            this.chb_Todos.Checked = true;
+            this.chb_Todos.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chb_Todos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.chb_Todos.Font = new System.Drawing.Font("Comic Sans MS", 9.75F);
+            this.chb_Todos.Location = new System.Drawing.Point(170, 15);
+            this.chb_Todos.Name = "chb_Todos";
+            this.chb_Todos.Size = new System.Drawing.Size(86, 20);
+            this.chb_Todos.TabIndex = 16;
+            this.chb_Todos.Text = "Todos";
+            this.chb_Todos.UseVisualStyleBackColor = false;
+            this.chb_Todos.Click += new System.EventHandler(this.Chb_Todos_Click);
+            // 
+            // lbl_Pesquisar
+            // 
+            this.lbl_Pesquisar.AutoSize = true;
+            this.lbl_Pesquisar.Font = new System.Drawing.Font("Berlin Sans FB Demi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Pesquisar.Location = new System.Drawing.Point(35, 15);
+            this.lbl_Pesquisar.Name = "lbl_Pesquisar";
+            this.lbl_Pesquisar.Size = new System.Drawing.Size(109, 18);
+            this.lbl_Pesquisar.TabIndex = 15;
+            this.lbl_Pesquisar.Text = "Pesquisar Por:";
+            // 
+            // img_Linha
+            // 
+            this.img_Linha.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.img_Linha.BackColor = System.Drawing.Color.Transparent;
+            this.img_Linha.Image = global::FootballLife_WF.Properties.Resources.Linha_Separadora;
+            this.img_Linha.Location = new System.Drawing.Point(223, 306);
+            this.img_Linha.Name = "img_Linha";
+            this.img_Linha.Size = new System.Drawing.Size(892, 53);
+            this.img_Linha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.img_Linha.TabIndex = 25;
+            this.img_Linha.TabStop = false;
+            // 
             // PaginaInicial_Atleta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = global::FootballLife_WF.Properties.Resources.Fundo_5;
+            this.BackgroundImage = global::FootballLife_WF.Properties.Resources.Fundo_1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.Controls.Add(this.img_Linha);
+            this.Controls.Add(this.panel_Pesquisa);
+            this.Controls.Add(this.lbl_Titulo);
             this.Controls.Add(this.img_Logo);
             this.Controls.Add(this.img_Menu);
             this.Controls.Add(this.panel_Menu);
@@ -381,7 +582,11 @@
             this.panel_Menu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_NovaDiscussao)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_LogOut)).EndInit();
+            this.panel_Pesquisa.ResumeLayout(false);
+            this.panel_Pesquisa.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.img_Linha)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -405,5 +610,18 @@
         private System.Windows.Forms.Button btn_Convocatoria;
         private System.Windows.Forms.Button btn_Chat;
         private System.Windows.Forms.Button btn_LogOut;
+        private System.Windows.Forms.Label lbl_Titulo;
+        private System.Windows.Forms.Panel panel_Pesquisa;
+        private System.Windows.Forms.CheckBox chb_Petizes;
+        private System.Windows.Forms.CheckBox chb_Traquinas;
+        private System.Windows.Forms.CheckBox chb_Benjamins;
+        private System.Windows.Forms.CheckBox chb_Infantis;
+        private System.Windows.Forms.CheckBox chb_Iniciados;
+        private System.Windows.Forms.CheckBox chb_Juvenis;
+        private System.Windows.Forms.CheckBox chb_Juniores;
+        private System.Windows.Forms.CheckBox chb_Seniores;
+        private System.Windows.Forms.CheckBox chb_Todos;
+        private System.Windows.Forms.Label lbl_Pesquisar;
+        private System.Windows.Forms.PictureBox img_Linha;
     }
 }

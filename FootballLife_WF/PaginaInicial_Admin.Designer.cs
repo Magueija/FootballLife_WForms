@@ -37,6 +37,8 @@
             this.btn_Estadio = new System.Windows.Forms.Button();
             this.btn_Titulos = new System.Windows.Forms.Button();
             this.panel_Menu = new System.Windows.Forms.Panel();
+            this.btn_Utilizadores = new System.Windows.Forms.Button();
+            this.btn_Clube = new System.Windows.Forms.Button();
             this.lbl_Sessao = new System.Windows.Forms.Label();
             this.lbl_Terminar = new System.Windows.Forms.Label();
             this.img_LogOut = new System.Windows.Forms.PictureBox();
@@ -45,8 +47,6 @@
             this.img_NovaDiscussao = new System.Windows.Forms.PictureBox();
             this.lbl_Novadiscussao = new System.Windows.Forms.Label();
             this.btn_NovaDiscussao = new System.Windows.Forms.Button();
-            this.btn_Utilizadores = new System.Windows.Forms.Button();
-            this.btn_Clube = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.img_Menu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Logo)).BeginInit();
             this.panel_Menu.SuspendLayout();
@@ -61,11 +61,11 @@
             this.img_Menu.BackColor = System.Drawing.Color.Transparent;
             this.img_Menu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.img_Menu.Image = global::FootballLife_WF.Properties.Resources.MenuWhite;
-            this.img_Menu.Location = new System.Drawing.Point(12, 12);
-            this.img_Menu.MaximumSize = new System.Drawing.Size(44, 40);
-            this.img_Menu.MinimumSize = new System.Drawing.Size(44, 40);
+            this.img_Menu.Location = new System.Drawing.Point(12, 16);
+            this.img_Menu.MaximumSize = new System.Drawing.Size(32, 32);
+            this.img_Menu.MinimumSize = new System.Drawing.Size(32, 32);
             this.img_Menu.Name = "img_Menu";
-            this.img_Menu.Size = new System.Drawing.Size(44, 40);
+            this.img_Menu.Size = new System.Drawing.Size(32, 32);
             this.img_Menu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.img_Menu.TabIndex = 2;
             this.img_Menu.TabStop = false;
@@ -204,6 +204,38 @@
             this.panel_Menu.TabIndex = 12;
             this.panel_Menu.Visible = false;
             // 
+            // btn_Utilizadores
+            // 
+            this.btn_Utilizadores.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Utilizadores.BackColor = System.Drawing.Color.Black;
+            this.btn_Utilizadores.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Utilizadores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Utilizadores.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Utilizadores.ForeColor = System.Drawing.Color.White;
+            this.btn_Utilizadores.Location = new System.Drawing.Point(12, 285);
+            this.btn_Utilizadores.Name = "btn_Utilizadores";
+            this.btn_Utilizadores.Size = new System.Drawing.Size(130, 31);
+            this.btn_Utilizadores.TabIndex = 17;
+            this.btn_Utilizadores.Text = "UTILIZADORES";
+            this.btn_Utilizadores.UseVisualStyleBackColor = false;
+            // 
+            // btn_Clube
+            // 
+            this.btn_Clube.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Clube.BackColor = System.Drawing.Color.Black;
+            this.btn_Clube.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Clube.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Clube.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Clube.ForeColor = System.Drawing.Color.White;
+            this.btn_Clube.Location = new System.Drawing.Point(12, 248);
+            this.btn_Clube.Name = "btn_Clube";
+            this.btn_Clube.Size = new System.Drawing.Size(130, 31);
+            this.btn_Clube.TabIndex = 16;
+            this.btn_Clube.Text = "CLIBE";
+            this.btn_Clube.UseVisualStyleBackColor = false;
+            // 
             // lbl_Sessao
             // 
             this.lbl_Sessao.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -322,45 +354,13 @@
             this.btn_NovaDiscussao.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_NovaDiscussao.UseVisualStyleBackColor = false;
             // 
-            // btn_Utilizadores
-            // 
-            this.btn_Utilizadores.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Utilizadores.BackColor = System.Drawing.Color.Black;
-            this.btn_Utilizadores.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Utilizadores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Utilizadores.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Utilizadores.ForeColor = System.Drawing.Color.White;
-            this.btn_Utilizadores.Location = new System.Drawing.Point(12, 285);
-            this.btn_Utilizadores.Name = "btn_Utilizadores";
-            this.btn_Utilizadores.Size = new System.Drawing.Size(130, 31);
-            this.btn_Utilizadores.TabIndex = 17;
-            this.btn_Utilizadores.Text = "UTILIZADORES";
-            this.btn_Utilizadores.UseVisualStyleBackColor = false;
-            // 
-            // btn_Clube
-            // 
-            this.btn_Clube.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Clube.BackColor = System.Drawing.Color.Black;
-            this.btn_Clube.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Clube.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Clube.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Clube.ForeColor = System.Drawing.Color.White;
-            this.btn_Clube.Location = new System.Drawing.Point(12, 248);
-            this.btn_Clube.Name = "btn_Clube";
-            this.btn_Clube.Size = new System.Drawing.Size(130, 31);
-            this.btn_Clube.TabIndex = 16;
-            this.btn_Clube.Text = "CLIBE";
-            this.btn_Clube.UseVisualStyleBackColor = false;
-            // 
             // PaginaInicial_Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = global::FootballLife_WF.Properties.Resources.Fundo_5;
+            this.BackgroundImage = global::FootballLife_WF.Properties.Resources.Fundo_1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.img_NovaDiscussao);

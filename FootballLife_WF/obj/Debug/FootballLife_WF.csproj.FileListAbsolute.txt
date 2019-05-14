@@ -25,3 +25,7 @@ C:\Users\Tomás\Documents\Projeto_WindowsForms\FootballLife_WF\obj\Debug\Footbal
 C:\Users\PSI17F20\Documents\GitHub\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.PaginaInicial_Treinador.resources
 C:\Users\PSI17F20\Documents\GitHub\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.PaginaInicial_Atleta.resources
 C:\Users\PSI17F20\Documents\GitHub\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.PaginaInicial_Socio.resources
+C:\Users\PSI17F20\Documents\GitHub\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.Jogos.resources
+C:\Users\PSI17F20\Documents\GitHub\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.Equipas.resources
+C:\Users\PSI17F20\Documents\GitHub\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.Estadio.resources
+C:\Users\PSI17F20\Documents\GitHub\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.AdicionarUtilizador.resources
