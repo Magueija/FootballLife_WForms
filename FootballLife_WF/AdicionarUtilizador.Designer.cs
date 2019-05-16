@@ -43,8 +43,8 @@
             this.tb_Email = new System.Windows.Forms.TextBox();
             this.tb_Telemovel = new System.Windows.Forms.TextBox();
             this.tb_Residencia = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.lbl_Escalao = new System.Windows.Forms.Label();
+            this.lbl_EscalaoATreinar = new System.Windows.Forms.Label();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
@@ -64,6 +64,7 @@
             // lbl_Funcao
             // 
             this.lbl_Funcao.AutoSize = true;
+            this.lbl_Funcao.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Funcao.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold);
             this.lbl_Funcao.Location = new System.Drawing.Point(30, 82);
             this.lbl_Funcao.Name = "lbl_Funcao";
@@ -87,6 +88,7 @@
             this.cb_Funcao.Name = "cb_Funcao";
             this.cb_Funcao.Size = new System.Drawing.Size(185, 24);
             this.cb_Funcao.TabIndex = 1;
+            this.cb_Funcao.SelectedIndexChanged += new System.EventHandler(this.Cb_Funcao_SelectedIndexChanged);
             // 
             // lbl_Titulo
             // 
@@ -101,6 +103,7 @@
             // lbl_Nome
             // 
             this.lbl_Nome.AutoSize = true;
+            this.lbl_Nome.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Nome.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold);
             this.lbl_Nome.Location = new System.Drawing.Point(34, 149);
             this.lbl_Nome.Name = "lbl_Nome";
@@ -111,6 +114,7 @@
             // lbl_Email
             // 
             this.lbl_Email.AutoSize = true;
+            this.lbl_Email.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Email.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold);
             this.lbl_Email.Location = new System.Drawing.Point(35, 180);
             this.lbl_Email.Name = "lbl_Email";
@@ -121,6 +125,7 @@
             // lbl_Telemovel
             // 
             this.lbl_Telemovel.AutoSize = true;
+            this.lbl_Telemovel.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Telemovel.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold);
             this.lbl_Telemovel.Location = new System.Drawing.Point(23, 208);
             this.lbl_Telemovel.Name = "lbl_Telemovel";
@@ -131,6 +136,7 @@
             // lbl_Residencia
             // 
             this.lbl_Residencia.AutoSize = true;
+            this.lbl_Residencia.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Residencia.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold);
             this.lbl_Residencia.Location = new System.Drawing.Point(22, 236);
             this.lbl_Residencia.Name = "lbl_Residencia";
@@ -141,6 +147,7 @@
             // lbl_Utilizador
             // 
             this.lbl_Utilizador.AutoSize = true;
+            this.lbl_Utilizador.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Utilizador.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold);
             this.lbl_Utilizador.Location = new System.Drawing.Point(23, 403);
             this.lbl_Utilizador.Name = "lbl_Utilizador";
@@ -151,6 +158,7 @@
             // lbl_Password
             // 
             this.lbl_Password.AutoSize = true;
+            this.lbl_Password.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Password.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold);
             this.lbl_Password.Location = new System.Drawing.Point(24, 435);
             this.lbl_Password.Name = "lbl_Password";
@@ -161,6 +169,7 @@
             // lbl_Confirmar
             // 
             this.lbl_Confirmar.AutoSize = true;
+            this.lbl_Confirmar.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Confirmar.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold);
             this.lbl_Confirmar.Location = new System.Drawing.Point(22, 458);
             this.lbl_Confirmar.Name = "lbl_Confirmar";
@@ -171,6 +180,7 @@
             // lbl_ConfPassword
             // 
             this.lbl_ConfPassword.AutoSize = true;
+            this.lbl_ConfPassword.BackColor = System.Drawing.Color.Transparent;
             this.lbl_ConfPassword.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold);
             this.lbl_ConfPassword.Location = new System.Drawing.Point(24, 471);
             this.lbl_ConfPassword.Name = "lbl_ConfPassword";
@@ -210,26 +220,26 @@
             this.tb_Residencia.Size = new System.Drawing.Size(302, 22);
             this.tb_Residencia.TabIndex = 14;
             // 
-            // label11
+            // lbl_Escalao
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label11.Location = new System.Drawing.Point(1, 12);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(53, 16);
-            this.label11.TabIndex = 15;
-            this.label11.Text = "Escalão:";
+            this.lbl_Escalao.AutoSize = true;
+            this.lbl_Escalao.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lbl_Escalao.Location = new System.Drawing.Point(3, 12);
+            this.lbl_Escalao.Name = "lbl_Escalao";
+            this.lbl_Escalao.Size = new System.Drawing.Size(53, 16);
+            this.lbl_Escalao.TabIndex = 15;
+            this.lbl_Escalao.Text = "Escalão:";
             // 
-            // label12
+            // lbl_EscalaoATreinar
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label12.Location = new System.Drawing.Point(1, 12);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(109, 16);
-            this.label12.TabIndex = 16;
-            this.label12.Text = "Escalão a Treinar:";
-            this.label12.Visible = false;
+            this.lbl_EscalaoATreinar.AutoSize = true;
+            this.lbl_EscalaoATreinar.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lbl_EscalaoATreinar.Location = new System.Drawing.Point(3, 12);
+            this.lbl_EscalaoATreinar.Name = "lbl_EscalaoATreinar";
+            this.lbl_EscalaoATreinar.Size = new System.Drawing.Size(109, 16);
+            this.lbl_EscalaoATreinar.TabIndex = 16;
+            this.lbl_EscalaoATreinar.Text = "Escalão a Treinar:";
+            this.lbl_EscalaoATreinar.Visible = false;
             // 
             // radioButton1
             // 
@@ -371,8 +381,8 @@
             // panel_Escalao
             // 
             this.panel_Escalao.Controls.Add(this.radioButton5);
-            this.panel_Escalao.Controls.Add(this.label12);
-            this.panel_Escalao.Controls.Add(this.label11);
+            this.panel_Escalao.Controls.Add(this.lbl_EscalaoATreinar);
+            this.panel_Escalao.Controls.Add(this.lbl_Escalao);
             this.panel_Escalao.Controls.Add(this.radioButton1);
             this.panel_Escalao.Controls.Add(this.radioButton2);
             this.panel_Escalao.Controls.Add(this.radioButton8);
@@ -441,8 +451,8 @@
         private System.Windows.Forms.TextBox tb_Email;
         private System.Windows.Forms.TextBox tb_Telemovel;
         private System.Windows.Forms.TextBox tb_Residencia;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lbl_Escalao;
+        private System.Windows.Forms.Label lbl_EscalaoATreinar;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton3;

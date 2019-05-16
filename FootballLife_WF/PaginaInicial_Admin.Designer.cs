@@ -37,16 +37,18 @@
             this.btn_Estadio = new System.Windows.Forms.Button();
             this.btn_Titulos = new System.Windows.Forms.Button();
             this.panel_Menu = new System.Windows.Forms.Panel();
-            this.btn_Utilizadores = new System.Windows.Forms.Button();
-            this.btn_Clube = new System.Windows.Forms.Button();
+            this.btn_Inventario = new System.Windows.Forms.Button();
+            this.btn_Financiamento = new System.Windows.Forms.Button();
             this.lbl_Sessao = new System.Windows.Forms.Label();
             this.lbl_Terminar = new System.Windows.Forms.Label();
             this.img_LogOut = new System.Windows.Forms.PictureBox();
-            this.btn_LogOut = new System.Windows.Forms.Button();
             this.btn_TopMenu = new System.Windows.Forms.Button();
             this.img_NovaDiscussao = new System.Windows.Forms.PictureBox();
             this.lbl_Novadiscussao = new System.Windows.Forms.Label();
             this.btn_NovaDiscussao = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btn_LogOut = new System.Windows.Forms.Button();
+            this.lbl_Titulo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.img_Menu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Logo)).BeginInit();
             this.panel_Menu.SuspendLayout();
@@ -187,8 +189,9 @@
             this.panel_Menu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel_Menu.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel_Menu.Controls.Add(this.btn_Utilizadores);
-            this.panel_Menu.Controls.Add(this.btn_Clube);
+            this.panel_Menu.Controls.Add(this.button1);
+            this.panel_Menu.Controls.Add(this.btn_Inventario);
+            this.panel_Menu.Controls.Add(this.btn_Financiamento);
             this.panel_Menu.Controls.Add(this.btn_Home);
             this.panel_Menu.Controls.Add(this.btn_Jogos);
             this.panel_Menu.Controls.Add(this.btn_Equipas);
@@ -204,37 +207,37 @@
             this.panel_Menu.TabIndex = 12;
             this.panel_Menu.Visible = false;
             // 
-            // btn_Utilizadores
+            // btn_Inventario
             // 
-            this.btn_Utilizadores.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.btn_Inventario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Utilizadores.BackColor = System.Drawing.Color.Black;
-            this.btn_Utilizadores.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Utilizadores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Utilizadores.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Utilizadores.ForeColor = System.Drawing.Color.White;
-            this.btn_Utilizadores.Location = new System.Drawing.Point(12, 285);
-            this.btn_Utilizadores.Name = "btn_Utilizadores";
-            this.btn_Utilizadores.Size = new System.Drawing.Size(130, 31);
-            this.btn_Utilizadores.TabIndex = 17;
-            this.btn_Utilizadores.Text = "UTILIZADORES";
-            this.btn_Utilizadores.UseVisualStyleBackColor = false;
+            this.btn_Inventario.BackColor = System.Drawing.Color.Black;
+            this.btn_Inventario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Inventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Inventario.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Inventario.ForeColor = System.Drawing.Color.White;
+            this.btn_Inventario.Location = new System.Drawing.Point(12, 285);
+            this.btn_Inventario.Name = "btn_Inventario";
+            this.btn_Inventario.Size = new System.Drawing.Size(130, 31);
+            this.btn_Inventario.TabIndex = 17;
+            this.btn_Inventario.Text = "INVENTÁRIO";
+            this.btn_Inventario.UseVisualStyleBackColor = false;
             // 
-            // btn_Clube
+            // btn_Financiamento
             // 
-            this.btn_Clube.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.btn_Financiamento.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Clube.BackColor = System.Drawing.Color.Black;
-            this.btn_Clube.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Clube.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Clube.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Clube.ForeColor = System.Drawing.Color.White;
-            this.btn_Clube.Location = new System.Drawing.Point(12, 248);
-            this.btn_Clube.Name = "btn_Clube";
-            this.btn_Clube.Size = new System.Drawing.Size(130, 31);
-            this.btn_Clube.TabIndex = 16;
-            this.btn_Clube.Text = "CLIBE";
-            this.btn_Clube.UseVisualStyleBackColor = false;
+            this.btn_Financiamento.BackColor = System.Drawing.Color.Black;
+            this.btn_Financiamento.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Financiamento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Financiamento.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Financiamento.ForeColor = System.Drawing.Color.White;
+            this.btn_Financiamento.Location = new System.Drawing.Point(12, 248);
+            this.btn_Financiamento.Name = "btn_Financiamento";
+            this.btn_Financiamento.Size = new System.Drawing.Size(130, 31);
+            this.btn_Financiamento.TabIndex = 16;
+            this.btn_Financiamento.Text = "FINANCIAMENTO";
+            this.btn_Financiamento.UseVisualStyleBackColor = false;
             // 
             // lbl_Sessao
             // 
@@ -278,22 +281,6 @@
             this.img_LogOut.TabIndex = 0;
             this.img_LogOut.TabStop = false;
             // 
-            // btn_LogOut
-            // 
-            this.btn_LogOut.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_LogOut.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_LogOut.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_LogOut.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_LogOut.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_LogOut.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_LogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_LogOut.Location = new System.Drawing.Point(12, 607);
-            this.btn_LogOut.Name = "btn_LogOut";
-            this.btn_LogOut.Size = new System.Drawing.Size(130, 65);
-            this.btn_LogOut.TabIndex = 13;
-            this.btn_LogOut.UseVisualStyleBackColor = false;
-            // 
             // btn_TopMenu
             // 
             this.btn_TopMenu.BackColor = System.Drawing.Color.Transparent;
@@ -321,6 +308,8 @@
             this.img_NovaDiscussao.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.img_NovaDiscussao.TabIndex = 19;
             this.img_NovaDiscussao.TabStop = false;
+            this.img_NovaDiscussao.MouseLeave += new System.EventHandler(this.Img_NovaDiscussao_MouseLeave);
+            this.img_NovaDiscussao.MouseHover += new System.EventHandler(this.Img_NovaDiscussao_MouseHover);
             // 
             // lbl_Novadiscussao
             // 
@@ -335,6 +324,8 @@
             this.lbl_Novadiscussao.Size = new System.Drawing.Size(104, 18);
             this.lbl_Novadiscussao.TabIndex = 18;
             this.lbl_Novadiscussao.Text = "Nova Discussão";
+            this.lbl_Novadiscussao.MouseLeave += new System.EventHandler(this.Lbl_Novadiscussao_MouseLeave);
+            this.lbl_Novadiscussao.MouseHover += new System.EventHandler(this.Lbl_Novadiscussao_MouseHover);
             // 
             // btn_NovaDiscussao
             // 
@@ -353,6 +344,53 @@
             this.btn_NovaDiscussao.TabIndex = 17;
             this.btn_NovaDiscussao.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_NovaDiscussao.UseVisualStyleBackColor = false;
+            this.btn_NovaDiscussao.MouseLeave += new System.EventHandler(this.Btn_NovaDiscussao_MouseLeave);
+            this.btn_NovaDiscussao.MouseHover += new System.EventHandler(this.Btn_NovaDiscussao_MouseHover);
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.Color.Black;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(12, 322);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(130, 31);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "UTILIZADORES";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // btn_LogOut
+            // 
+            this.btn_LogOut.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_LogOut.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_LogOut.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_LogOut.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_LogOut.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_LogOut.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_LogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_LogOut.Location = new System.Drawing.Point(10, 606);
+            this.btn_LogOut.Name = "btn_LogOut";
+            this.btn_LogOut.Size = new System.Drawing.Size(130, 65);
+            this.btn_LogOut.TabIndex = 19;
+            this.btn_LogOut.UseVisualStyleBackColor = false;
+            // 
+            // lbl_Titulo
+            // 
+            this.lbl_Titulo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lbl_Titulo.AutoSize = true;
+            this.lbl_Titulo.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_Titulo.Font = new System.Drawing.Font("Bauhaus 93", 65.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Titulo.ForeColor = System.Drawing.Color.White;
+            this.lbl_Titulo.Location = new System.Drawing.Point(475, 97);
+            this.lbl_Titulo.Name = "lbl_Titulo";
+            this.lbl_Titulo.Size = new System.Drawing.Size(462, 98);
+            this.lbl_Titulo.TabIndex = 20;
+            this.lbl_Titulo.Text = "Discussões";
             // 
             // PaginaInicial_Admin
             // 
@@ -363,6 +401,7 @@
             this.BackgroundImage = global::FootballLife_WF.Properties.Resources.Fundo_1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.Controls.Add(this.lbl_Titulo);
             this.Controls.Add(this.img_NovaDiscussao);
             this.Controls.Add(this.lbl_Novadiscussao);
             this.Controls.Add(this.btn_NovaDiscussao);
@@ -399,12 +438,14 @@
         private System.Windows.Forms.Label lbl_Sessao;
         private System.Windows.Forms.PictureBox img_LogOut;
         private System.Windows.Forms.Label lbl_Terminar;
-        private System.Windows.Forms.Button btn_LogOut;
         private System.Windows.Forms.Button btn_TopMenu;
         private System.Windows.Forms.PictureBox img_NovaDiscussao;
         private System.Windows.Forms.Label lbl_Novadiscussao;
         private System.Windows.Forms.Button btn_NovaDiscussao;
-        private System.Windows.Forms.Button btn_Utilizadores;
-        private System.Windows.Forms.Button btn_Clube;
+        private System.Windows.Forms.Button btn_Inventario;
+        private System.Windows.Forms.Button btn_Financiamento;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_LogOut;
+        private System.Windows.Forms.Label lbl_Titulo;
     }
 }

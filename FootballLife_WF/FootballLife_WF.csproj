@@ -70,6 +70,18 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="NovaDiscussão.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NovaDiscussão.Designer.cs">
+      <DependentUpon>NovaDiscussão.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Financiamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Financiamento.Designer.cs">
+      <DependentUpon>Financiamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="PaginaInicial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +131,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NovaDiscussão.resx">
+      <DependentUpon>NovaDiscussão.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financiamento.resx">
+      <DependentUpon>Financiamento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PaginaInicial.resx">
       <DependentUpon>PaginaInicial.cs</DependentUpon>

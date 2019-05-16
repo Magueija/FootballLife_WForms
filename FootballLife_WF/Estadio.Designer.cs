@@ -95,7 +95,7 @@
             this.img_Logo.BackColor = System.Drawing.Color.Transparent;
             this.img_Logo.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.img_Logo.Image = global::FootballLife_WF.Properties.Resources.Logo_Clube;
-            this.img_Logo.Location = new System.Drawing.Point(1276, 12);
+            this.img_Logo.Location = new System.Drawing.Point(1262, 12);
             this.img_Logo.MaximumSize = new System.Drawing.Size(44, 40);
             this.img_Logo.MinimumSize = new System.Drawing.Size(44, 40);
             this.img_Logo.Name = "img_Logo";
@@ -212,7 +212,7 @@
             this.panel_Menu.Controls.Add(this.btn_Titulos);
             this.panel_Menu.Location = new System.Drawing.Point(0, 65);
             this.panel_Menu.Name = "panel_Menu";
-            this.panel_Menu.Size = new System.Drawing.Size(160, 888);
+            this.panel_Menu.Size = new System.Drawing.Size(160, 1058);
             this.panel_Menu.TabIndex = 12;
             this.panel_Menu.Visible = false;
             // 
@@ -251,7 +251,7 @@
             this.lbl_Titulo.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Titulo.Font = new System.Drawing.Font("Bauhaus 93", 65.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Titulo.ForeColor = System.Drawing.Color.White;
-            this.lbl_Titulo.Location = new System.Drawing.Point(497, 92);
+            this.lbl_Titulo.Location = new System.Drawing.Point(520, 89);
             this.lbl_Titulo.Name = "lbl_Titulo";
             this.lbl_Titulo.Size = new System.Drawing.Size(327, 98);
             this.lbl_Titulo.TabIndex = 14;
@@ -301,7 +301,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(-4, 222);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1363, 127);
+            this.panel1.Size = new System.Drawing.Size(1335, 127);
             this.panel1.TabIndex = 19;
             // 
             // pictureBox1
