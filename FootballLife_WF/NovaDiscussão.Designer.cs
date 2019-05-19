@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NovaDiscussão));
             this.lbl_Titulo = new System.Windows.Forms.Label();
-            this.tb_Email = new System.Windows.Forms.TextBox();
+            this.tb_Mensagem = new System.Windows.Forms.TextBox();
             this.tb_Nome = new System.Windows.Forms.TextBox();
             this.lbl_Email = new System.Windows.Forms.Label();
             this.lbl_Nome = new System.Windows.Forms.Label();
-            this.btn_Entrar = new System.Windows.Forms.Button();
+            this.btn_Gravar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_Titulo
@@ -46,15 +47,15 @@
             this.lbl_Titulo.TabIndex = 3;
             this.lbl_Titulo.Text = "Nova Discussão";
             // 
-            // tb_Email
+            // tb_Mensagem
             // 
-            this.tb_Email.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.tb_Email.Location = new System.Drawing.Point(50, 167);
-            this.tb_Email.Multiline = true;
-            this.tb_Email.Name = "tb_Email";
-            this.tb_Email.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tb_Email.Size = new System.Drawing.Size(463, 138);
-            this.tb_Email.TabIndex = 16;
+            this.tb_Mensagem.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.tb_Mensagem.Location = new System.Drawing.Point(50, 167);
+            this.tb_Mensagem.Multiline = true;
+            this.tb_Mensagem.Name = "tb_Mensagem";
+            this.tb_Mensagem.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tb_Mensagem.Size = new System.Drawing.Size(463, 138);
+            this.tb_Mensagem.TabIndex = 16;
             // 
             // tb_Nome
             // 
@@ -84,20 +85,21 @@
             this.lbl_Nome.TabIndex = 13;
             this.lbl_Nome.Text = "Nome Discussão:";
             // 
-            // btn_Entrar
+            // btn_Gravar
             // 
-            this.btn_Entrar.BackColor = System.Drawing.Color.White;
-            this.btn_Entrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Entrar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.btn_Entrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Entrar.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Entrar.ForeColor = System.Drawing.Color.Black;
-            this.btn_Entrar.Location = new System.Drawing.Point(456, 362);
-            this.btn_Entrar.Name = "btn_Entrar";
-            this.btn_Entrar.Size = new System.Drawing.Size(92, 34);
-            this.btn_Entrar.TabIndex = 29;
-            this.btn_Entrar.Text = "Gravar";
-            this.btn_Entrar.UseVisualStyleBackColor = false;
+            this.btn_Gravar.BackColor = System.Drawing.Color.White;
+            this.btn_Gravar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Gravar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btn_Gravar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Gravar.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Gravar.ForeColor = System.Drawing.Color.Black;
+            this.btn_Gravar.Location = new System.Drawing.Point(456, 362);
+            this.btn_Gravar.Name = "btn_Gravar";
+            this.btn_Gravar.Size = new System.Drawing.Size(92, 34);
+            this.btn_Gravar.TabIndex = 29;
+            this.btn_Gravar.Text = "Gravar";
+            this.btn_Gravar.UseVisualStyleBackColor = false;
+            this.btn_Gravar.Click += new System.EventHandler(this.Btn_Gravar_Click);
             // 
             // NovaDiscussão
             // 
@@ -105,18 +107,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(560, 408);
-            this.Controls.Add(this.btn_Entrar);
-            this.Controls.Add(this.tb_Email);
+            this.Controls.Add(this.btn_Gravar);
+            this.Controls.Add(this.tb_Mensagem);
             this.Controls.Add(this.tb_Nome);
             this.Controls.Add(this.lbl_Email);
             this.Controls.Add(this.lbl_Nome);
             this.Controls.Add(this.lbl_Titulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "NovaDiscussão";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nova Discussão";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NovaDiscussão_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -125,10 +129,10 @@
         #endregion
 
         private System.Windows.Forms.Label lbl_Titulo;
-        private System.Windows.Forms.TextBox tb_Email;
+        private System.Windows.Forms.TextBox tb_Mensagem;
         private System.Windows.Forms.TextBox tb_Nome;
         private System.Windows.Forms.Label lbl_Email;
         private System.Windows.Forms.Label lbl_Nome;
-        private System.Windows.Forms.Button btn_Entrar;
+        private System.Windows.Forms.Button btn_Gravar;
     }
 }

@@ -124,9 +124,6 @@
   <data name="Adicionar_Criar(white)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Adicionar_Criar(white)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BackArrow_Login" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BackArrow_Login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="LogOut" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LogOut.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -148,6 +145,9 @@
   <data name="Adicionar_Criar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Adicionar_Criar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Linha_Separadora" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Linha_Separadora.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Estadio" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Estadio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -163,16 +163,13 @@
   <data name="Logo Clube" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Logo Clube.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Fundo 5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fundo 5.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Menu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Menu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Estadio1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Estadio1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Linha_Separadora" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Linha_Separadora.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="LogoAdmin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LogoAdmin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

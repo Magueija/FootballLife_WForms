@@ -93,16 +93,6 @@ namespace FootballLife_WF.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap BackArrow_Login {
-            get {
-                object obj = ResourceManager.GetObject("BackArrow_Login", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap BackArrow_Login_Hover {
             get {
                 object obj = ResourceManager.GetObject("BackArrow_Login_Hover", resourceCulture);
@@ -163,16 +153,6 @@ namespace FootballLife_WF.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Fundo_5 {
-            get {
-                object obj = ResourceManager.GetObject("Fundo 5", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Jogos {
             get {
                 object obj = ResourceManager.GetObject("Jogos", resourceCulture);
@@ -196,6 +176,16 @@ namespace FootballLife_WF.Properties {
         internal static System.Drawing.Bitmap Logo_Clube {
             get {
                 object obj = ResourceManager.GetObject("Logo Clube", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LogoAdmin {
+            get {
+                object obj = ResourceManager.GetObject("LogoAdmin", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -33,9 +33,31 @@ namespace FootballLife_WF
             }
         }
 
+
         //==============================================================================================
+        private void Btn_Home_Click(object sender, EventArgs e)
+        {
+            PaginaInicial PgInicio = new PaginaInicial();
+            this.Hide();
+            PgInicio.ShowDialog();
+            this.Dispose();
+        }
 
+        private void Btn_Jogos_Click(object sender, EventArgs e)
+        {
+            Jogos Jogo = new Jogos();
+            this.Hide();
+            Jogo.ShowDialog();
+            this.Dispose();
+        }
 
+        private void Btn_Equipas_Click(object sender, EventArgs e)
+        {
+            Equipas Equipa = new Equipas();
+            this.Hide();
+            Equipa.ShowDialog();
+            this.Dispose();
+        }
 
         //==============================================================================================
 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.lbl_Utilizador = new System.Windows.Forms.Label();
             this.tb_Utilizador = new System.Windows.Forms.TextBox();
             this.lbl_Password = new System.Windows.Forms.Label();
@@ -39,6 +40,7 @@
             this.img_BackArrow = new System.Windows.Forms.PictureBox();
             this.img_Logo = new System.Windows.Forms.PictureBox();
             this.img_Fundo = new System.Windows.Forms.PictureBox();
+            this.chb_Lembrar = new System.Windows.Forms.CheckBox();
             this.Panel_Login.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_BackArrow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Logo)).BeginInit();
@@ -62,6 +64,7 @@
             this.tb_Utilizador.Name = "tb_Utilizador";
             this.tb_Utilizador.Size = new System.Drawing.Size(199, 22);
             this.tb_Utilizador.TabIndex = 2;
+            this.tb_Utilizador.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_KeyDown);
             // 
             // lbl_Password
             // 
@@ -81,13 +84,14 @@
             this.tb_Password.PasswordChar = '*';
             this.tb_Password.Size = new System.Drawing.Size(199, 22);
             this.tb_Password.TabIndex = 4;
+            this.tb_Password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_KeyDown);
             // 
             // lbl_LoginError
             // 
             this.lbl_LoginError.AutoSize = true;
             this.lbl_LoginError.Font = new System.Drawing.Font("Berlin Sans FB", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_LoginError.ForeColor = System.Drawing.Color.Red;
-            this.lbl_LoginError.Location = new System.Drawing.Point(152, 349);
+            this.lbl_LoginError.Location = new System.Drawing.Point(152, 378);
             this.lbl_LoginError.Name = "lbl_LoginError";
             this.lbl_LoginError.Size = new System.Drawing.Size(175, 13);
             this.lbl_LoginError.TabIndex = 5;
@@ -108,6 +112,7 @@
             this.btn_Entrar.TabIndex = 6;
             this.btn_Entrar.Text = "Entrar";
             this.btn_Entrar.UseVisualStyleBackColor = false;
+            this.btn_Entrar.Click += new System.EventHandler(this.Btn_Entrar_Click);
             // 
             // lbl_EsqueceuPassword
             // 
@@ -125,6 +130,7 @@
             this.Panel_Login.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Panel_Login.BackColor = System.Drawing.Color.White;
             this.Panel_Login.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Panel_Login.Controls.Add(this.chb_Lembrar);
             this.Panel_Login.Controls.Add(this.img_BackArrow);
             this.Panel_Login.Controls.Add(this.lbl_EsqueceuPassword);
             this.Panel_Login.Controls.Add(this.btn_Entrar);
@@ -180,6 +186,19 @@
             this.img_Fundo.TabIndex = 0;
             this.img_Fundo.TabStop = false;
             // 
+            // chb_Lembrar
+            // 
+            this.chb_Lembrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.chb_Lembrar.AutoSize = true;
+            this.chb_Lembrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.chb_Lembrar.Font = new System.Drawing.Font("Berlin Sans FB", 9F);
+            this.chb_Lembrar.Location = new System.Drawing.Point(208, 349);
+            this.chb_Lembrar.Name = "chb_Lembrar";
+            this.chb_Lembrar.Size = new System.Drawing.Size(119, 17);
+            this.chb_Lembrar.TabIndex = 9;
+            this.chb_Lembrar.Text = "Guardar Password";
+            this.chb_Lembrar.UseVisualStyleBackColor = true;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -188,6 +207,7 @@
             this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.Panel_Login);
             this.Controls.Add(this.img_Fundo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(900, 600);
             this.Name = "Login";
             this.Text = "FOOTBALL LIFE";
@@ -214,6 +234,7 @@
         private System.Windows.Forms.Label lbl_EsqueceuPassword;
         private System.Windows.Forms.Panel Panel_Login;
         private System.Windows.Forms.PictureBox img_BackArrow;
+        private System.Windows.Forms.CheckBox chb_Lembrar;
     }
 }
 

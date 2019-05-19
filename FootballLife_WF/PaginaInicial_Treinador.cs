@@ -33,6 +33,14 @@ namespace FootballLife_WF
             }
         }
 
+        private void Btn_LogOut_Click(object sender, EventArgs e)
+        {
+            PaginaInicial PgInicio = new PaginaInicial();
+            this.Hide();
+            PgInicio.ShowDialog();
+            this.Dispose();
+        }
+
         //==============================================================================================
     }
 }

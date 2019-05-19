@@ -85,6 +85,30 @@ namespace FootballLife_WF
                 chb_Todos.Checked = false;
             }
         }
+
+        private void Btn_Home_Click(object sender, EventArgs e)
+        {
+            PaginaInicial PgInicio = new PaginaInicial();
+            this.Hide();
+            PgInicio.ShowDialog();
+            this.Dispose();
+        }
+
+        private void Btn_Equipas_Click(object sender, EventArgs e)
+        {
+            Equipas Equipa = new Equipas();
+            this.Hide();
+            Equipa.ShowDialog();
+            this.Dispose();
+        }
+
+        private void Btn_Estadio_Click(object sender, EventArgs e)
+        {
+            Estadio Estadio = new Estadio();
+            this.Hide();
+            Estadio.ShowDialog();
+            this.Dispose();
+        }
     }
 }
 

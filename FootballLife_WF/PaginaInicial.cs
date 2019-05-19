@@ -212,5 +212,29 @@ namespace FootballLife_WF
         {
             BtnLeave_Titulos();
         }
+
+        private void Btn_Jogos_Click(object sender, EventArgs e)
+        {
+            Jogos Jogo = new Jogos();
+            this.Hide();
+            Jogo.ShowDialog();
+            this.Dispose();
+        }
+
+        private void Btn_Equipas_Click(object sender, EventArgs e)
+        {
+            Equipas Equipa = new Equipas();
+            this.Hide();
+            Equipa.ShowDialog();
+            this.Dispose();
+        }
+
+        private void Btn_Estadio_Click(object sender, EventArgs e)
+        {
+            Estadio Estadio = new Estadio();
+            this.Hide();
+            Estadio.ShowDialog();
+            this.Dispose();
+        }
     }
 }

@@ -127,6 +127,7 @@
             this.btn_Home.TabIndex = 5;
             this.btn_Home.Text = "HOME";
             this.btn_Home.UseVisualStyleBackColor = false;
+            this.btn_Home.Click += new System.EventHandler(this.Btn_Home_Click);
             // 
             // btn_Jogos
             // 
@@ -143,6 +144,7 @@
             this.btn_Jogos.TabIndex = 6;
             this.btn_Jogos.Text = "JOGOS";
             this.btn_Jogos.UseVisualStyleBackColor = false;
+            this.btn_Jogos.Click += new System.EventHandler(this.Btn_Jogos_Click);
             // 
             // btn_Equipas
             // 
@@ -175,6 +177,7 @@
             this.btn_Estadio.TabIndex = 8;
             this.btn_Estadio.Text = "ESTÁDIO";
             this.btn_Estadio.UseVisualStyleBackColor = false;
+            this.btn_Estadio.Click += new System.EventHandler(this.Btn_Estadio_Click);
             // 
             // btn_Titulos
             // 
@@ -474,6 +477,7 @@
             this.Controls.Add(this.panel_Menu);
             this.Controls.Add(this.btn_Menu);
             this.Controls.Add(this.btn_TopMenu);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(900, 600);
             this.Name = "Equipas";
             this.Text = "FOOTBALL LIFE";

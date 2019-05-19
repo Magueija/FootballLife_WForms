@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdicionarUtilizador));
             this.lbl_Funcao = new System.Windows.Forms.Label();
             this.cb_Funcao = new System.Windows.Forms.ComboBox();
             this.lbl_Titulo = new System.Windows.Forms.Label();
@@ -422,6 +423,7 @@
             this.Controls.Add(this.cb_Funcao);
             this.Controls.Add(this.lbl_Funcao);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AdicionarUtilizador";

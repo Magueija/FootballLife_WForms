@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PaginaInicial_Treinador));
             this.img_Menu = new System.Windows.Forms.PictureBox();
             this.img_Logo = new System.Windows.Forms.PictureBox();
             this.btn_Menu = new System.Windows.Forms.Button();
@@ -95,9 +96,9 @@
             this.btn_Menu.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btn_Menu.FlatAppearance.BorderSize = 2;
             this.btn_Menu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Menu.Location = new System.Drawing.Point(0, 0);
+            this.btn_Menu.Location = new System.Drawing.Point(0, 65);
             this.btn_Menu.Name = "btn_Menu";
-            this.btn_Menu.Size = new System.Drawing.Size(160, 749);
+            this.btn_Menu.Size = new System.Drawing.Size(160, 684);
             this.btn_Menu.TabIndex = 4;
             this.btn_Menu.UseVisualStyleBackColor = false;
             this.btn_Menu.Visible = false;
@@ -299,6 +300,7 @@
             this.lbl_Sessao.Size = new System.Drawing.Size(44, 16);
             this.lbl_Sessao.TabIndex = 15;
             this.lbl_Sessao.Text = "Sessão";
+            this.lbl_Sessao.Click += new System.EventHandler(this.Btn_LogOut_Click);
             // 
             // lbl_Terminar
             // 
@@ -313,6 +315,7 @@
             this.lbl_Terminar.Size = new System.Drawing.Size(61, 16);
             this.lbl_Terminar.TabIndex = 14;
             this.lbl_Terminar.Text = "Terminar";
+            this.lbl_Terminar.Click += new System.EventHandler(this.Btn_LogOut_Click);
             // 
             // img_LogOut
             // 
@@ -327,6 +330,7 @@
             this.img_LogOut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.img_LogOut.TabIndex = 0;
             this.img_LogOut.TabStop = false;
+            this.img_LogOut.Click += new System.EventHandler(this.Btn_LogOut_Click);
             // 
             // btn_LogOut
             // 
@@ -343,10 +347,12 @@
             this.btn_LogOut.Size = new System.Drawing.Size(130, 65);
             this.btn_LogOut.TabIndex = 25;
             this.btn_LogOut.UseVisualStyleBackColor = false;
+            this.btn_LogOut.Click += new System.EventHandler(this.Btn_LogOut_Click);
             // 
             // btn_TopMenu
             // 
             this.btn_TopMenu.BackColor = System.Drawing.Color.Transparent;
+            this.btn_TopMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_TopMenu.Enabled = false;
             this.btn_TopMenu.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btn_TopMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -367,9 +373,10 @@
             this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.img_Menu);
             this.Controls.Add(this.img_Logo);
-            this.Controls.Add(this.btn_TopMenu);
             this.Controls.Add(this.panel_Menu);
             this.Controls.Add(this.btn_Menu);
+            this.Controls.Add(this.btn_TopMenu);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(900, 600);
             this.Name = "PaginaInicial_Treinador";
             this.Text = "FOOTBALL LIFE";

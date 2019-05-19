@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Jogos));
             this.img_Menu = new System.Windows.Forms.PictureBox();
             this.img_Logo = new System.Windows.Forms.PictureBox();
             this.btn_Menu = new System.Windows.Forms.Button();
@@ -121,6 +122,7 @@
             this.btn_Home.TabIndex = 5;
             this.btn_Home.Text = "HOME";
             this.btn_Home.UseVisualStyleBackColor = false;
+            this.btn_Home.Click += new System.EventHandler(this.Btn_Home_Click);
             // 
             // btn_Jogos
             // 
@@ -153,6 +155,7 @@
             this.btn_Equipas.TabIndex = 7;
             this.btn_Equipas.Text = "EQUIPAS";
             this.btn_Equipas.UseVisualStyleBackColor = false;
+            this.btn_Equipas.Click += new System.EventHandler(this.Btn_Equipas_Click);
             // 
             // btn_Estadio
             // 
@@ -169,6 +172,7 @@
             this.btn_Estadio.TabIndex = 8;
             this.btn_Estadio.Text = "ESTÁDIO";
             this.btn_Estadio.UseVisualStyleBackColor = false;
+            this.btn_Estadio.Click += new System.EventHandler(this.Btn_Estadio_Click);
             // 
             // btn_Titulos
             // 
@@ -415,6 +419,7 @@
             this.Controls.Add(this.panel_Menu);
             this.Controls.Add(this.btn_Menu);
             this.Controls.Add(this.btn_TopMenu);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(900, 600);
             this.Name = "Jogos";
             this.Text = "FOOTBALL LIFE";

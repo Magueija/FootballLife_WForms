@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PaginaInicial_Socio));
             this.img_Menu = new System.Windows.Forms.PictureBox();
             this.img_Logo = new System.Windows.Forms.PictureBox();
             this.btn_Menu = new System.Windows.Forms.Button();
@@ -278,6 +279,7 @@
             this.lbl_Sessao.Size = new System.Drawing.Size(44, 16);
             this.lbl_Sessao.TabIndex = 15;
             this.lbl_Sessao.Text = "Sessão";
+            this.lbl_Sessao.Click += new System.EventHandler(this.Btn_LogOut_Click);
             // 
             // lbl_Terminar
             // 
@@ -292,6 +294,7 @@
             this.lbl_Terminar.Size = new System.Drawing.Size(61, 16);
             this.lbl_Terminar.TabIndex = 14;
             this.lbl_Terminar.Text = "Terminar";
+            this.lbl_Terminar.Click += new System.EventHandler(this.Btn_LogOut_Click);
             // 
             // img_LogOut
             // 
@@ -306,6 +309,7 @@
             this.img_LogOut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.img_LogOut.TabIndex = 0;
             this.img_LogOut.TabStop = false;
+            this.img_LogOut.Click += new System.EventHandler(this.Btn_LogOut_Click);
             // 
             // btn_LogOut
             // 
@@ -322,6 +326,7 @@
             this.btn_LogOut.Size = new System.Drawing.Size(130, 65);
             this.btn_LogOut.TabIndex = 25;
             this.btn_LogOut.UseVisualStyleBackColor = false;
+            this.btn_LogOut.Click += new System.EventHandler(this.Btn_LogOut_Click);
             // 
             // btn_TopMenu
             // 
@@ -536,6 +541,7 @@
             this.Controls.Add(this.btn_Menu);
             this.Controls.Add(this.btn_TopMenu);
             this.Controls.Add(this.img_Linha);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(900, 600);
             this.Name = "PaginaInicial_Socio";
             this.Text = "FOOTBALL LIFE";

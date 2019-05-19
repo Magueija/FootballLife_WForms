@@ -31,3 +31,15 @@ C:\Users\PSI17F20\Documents\GitHub\Projeto_WindowsForms\FootballLife_WF\obj\Debu
 C:\Users\PSI17F20\Documents\GitHub\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.AdicionarUtilizador.resources
 C:\Users\PSI17F20\Documents\GitHub\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.NovaDiscussão.resources
 C:\Users\PSI17F20\Documents\GitHub\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.Financiamento.resources
+C:\Users\Tomás\Documents\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.AdicionarUtilizador.resources
+C:\Users\Tomás\Documents\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.Estadio.resources
+C:\Users\Tomás\Documents\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.Equipas.resources
+C:\Users\Tomás\Documents\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.NovaDiscussão.resources
+C:\Users\Tomás\Documents\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.Financiamento.resources
+C:\Users\Tomás\Documents\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.Jogos.resources
+C:\Users\Tomás\Documents\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.PaginaInicial_Socio.resources
+C:\Users\Tomás\Documents\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.PaginaInicial_Treinador.resources
+C:\Users\Tomás\Documents\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.PaginaInicial_Atleta.resources
+C:\Users\Tomás\Documents\Projeto_WindowsForms\FootballLife_WF\bin\Debug\EntityFramework.dll
+C:\Users\Tomás\Documents\Projeto_WindowsForms\FootballLife_WF\bin\Debug\EntityFramework.xml
+C:\Users\Tomás\Documents\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.csproj.CopyComplete
