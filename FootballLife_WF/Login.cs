@@ -205,5 +205,20 @@ namespace FootballLife_WF
             }
             con.Close();
         }
+
+        private void Lbl_EsqueceuPassword_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Se esqueceu-se da sua password, por favor contacte um dos administradores para alterar ou verificar a sua password. Obrigado!\nDeseja ver os contactos da Administração?","Esqueceu a sua password?",MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.Yes)
+            {
+                //Novo Form
+                this.Dispose();
+            }
+            else if (result == DialogResult.No)
+            {
+                Close();
+            }
+        }
     }
 }

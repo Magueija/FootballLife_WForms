@@ -37,10 +37,10 @@
             this.btn_Entrar = new System.Windows.Forms.Button();
             this.lbl_EsqueceuPassword = new System.Windows.Forms.Label();
             this.Panel_Login = new System.Windows.Forms.Panel();
+            this.chb_Lembrar = new System.Windows.Forms.CheckBox();
             this.img_BackArrow = new System.Windows.Forms.PictureBox();
             this.img_Logo = new System.Windows.Forms.PictureBox();
             this.img_Fundo = new System.Windows.Forms.PictureBox();
-            this.chb_Lembrar = new System.Windows.Forms.CheckBox();
             this.Panel_Login.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_BackArrow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Logo)).BeginInit();
@@ -124,6 +124,7 @@
             this.lbl_EsqueceuPassword.Size = new System.Drawing.Size(165, 17);
             this.lbl_EsqueceuPassword.TabIndex = 7;
             this.lbl_EsqueceuPassword.Text = "Esqueceu a sua password?";
+            this.lbl_EsqueceuPassword.Click += new System.EventHandler(this.Lbl_EsqueceuPassword_Click);
             // 
             // Panel_Login
             // 
@@ -144,6 +145,19 @@
             this.Panel_Login.Name = "Panel_Login";
             this.Panel_Login.Size = new System.Drawing.Size(370, 496);
             this.Panel_Login.TabIndex = 1;
+            // 
+            // chb_Lembrar
+            // 
+            this.chb_Lembrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.chb_Lembrar.AutoSize = true;
+            this.chb_Lembrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.chb_Lembrar.Font = new System.Drawing.Font("Berlin Sans FB", 9F);
+            this.chb_Lembrar.Location = new System.Drawing.Point(208, 349);
+            this.chb_Lembrar.Name = "chb_Lembrar";
+            this.chb_Lembrar.Size = new System.Drawing.Size(119, 17);
+            this.chb_Lembrar.TabIndex = 9;
+            this.chb_Lembrar.Text = "Guardar Password";
+            this.chb_Lembrar.UseVisualStyleBackColor = true;
             // 
             // img_BackArrow
             // 
@@ -185,19 +199,6 @@
             this.img_Fundo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.img_Fundo.TabIndex = 0;
             this.img_Fundo.TabStop = false;
-            // 
-            // chb_Lembrar
-            // 
-            this.chb_Lembrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.chb_Lembrar.AutoSize = true;
-            this.chb_Lembrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chb_Lembrar.Font = new System.Drawing.Font("Berlin Sans FB", 9F);
-            this.chb_Lembrar.Location = new System.Drawing.Point(208, 349);
-            this.chb_Lembrar.Name = "chb_Lembrar";
-            this.chb_Lembrar.Size = new System.Drawing.Size(119, 17);
-            this.chb_Lembrar.TabIndex = 9;
-            this.chb_Lembrar.Text = "Guardar Password";
-            this.chb_Lembrar.UseVisualStyleBackColor = true;
             // 
             // Login
             // 
