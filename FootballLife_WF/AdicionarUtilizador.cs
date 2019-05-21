@@ -36,5 +36,12 @@ namespace FootballLife_WF
                 lbl_Escalao.Visible = true;
             }
         }
+
+        private void Btn_Gravar_Click(object sender, EventArgs e)
+        {
+
+
+            this.Dispose();
+        }
     }
 }

@@ -11,17 +11,16 @@ using System.Data.SqlClient;
 
 namespace FootballLife_WF
 {
-    public partial class PaginaInicial_Admin : Form
+    public partial class Utilizadores_Admin : Form
     {
-        public PaginaInicial_Admin()
+        public Utilizadores_Admin()
         {
             InitializeComponent();
-            
         }
 
         private void PaginaInicial_Admin_Load(object sender, EventArgs e)
         {
-            Discussoes();
+            //();
         }
 
 //==============================================================================================
@@ -42,7 +41,7 @@ namespace FootballLife_WF
 
         private void NovaDiscussao_Hover()
         {
-            lbl_Novadiscussao.Font = new Font("Berlin Sans FB Demi", 10, FontStyle.Underline);
+            lbl_NovoUser.Font = new Font("Berlin Sans FB Demi", 10, FontStyle.Underline);
         }
 
         private void Lbl_Novadiscussao_MouseHover(object sender, EventArgs e)
@@ -64,7 +63,7 @@ namespace FootballLife_WF
 
         private void NovaDiscussao_Leave()
         {
-            lbl_Novadiscussao.Font = new Font("Berlin Sans FB Demi", 10, FontStyle.Regular);
+            lbl_NovoUser.Font = new Font("Berlin Sans FB Demi", 10, FontStyle.Regular);
         }
 
         private void Lbl_Novadiscussao_MouseLeave(object sender, EventArgs e)
@@ -82,7 +81,7 @@ namespace FootballLife_WF
 
         //==============================================================================================
         int i;
-        private void Discussoes()
+        private void Admins()
         {
             SqlConnection con = new SqlConnection(Properties.Settings.Default.Connection);
             con.Open();
@@ -95,21 +94,34 @@ namespace FootballLife_WF
             string Query = ("SELECT dbo.TblDiscussao.IDDiscussao, dbo.TblDiscussao.NomeDiscussao, dbo.TblDiscussao.Descricao, dbo.TblAdministrador.IDAdministrador, dbo.TblAdministrador.Nome FROM dbo.TblDiscussao INNER JOIN dbo.TblAdministrador ON dbo.TblDiscussao.FK_IDAdministrador = dbo.TblAdministrador.IDAdministrador ORDER BY dbo.TblDiscussao.IDDiscussao DESC");
             SqlCommand Command = new SqlCommand(Query, con);
             dr = Command.ExecuteReader();
-            while (dr.Read())
-            {
-                NomeDiscussao = dr["NomeDiscussao"].ToString();
-                Descricao = dr["Descricao"].ToString();
-                NomeAdmin = dr["Nome"].ToString();
-                
 
-                Panel panel = new Panel();
+            Panel panel = new Panel();
+            if (dr.Read())
+            {
                 panel.Width = 800;
                 panel.Height = 250;
                 panel.Anchor = AnchorStyles.Top;
                 panel.BorderStyle = BorderStyle.Fixed3D;
                 panel.BackColor = Color.White;
+                panel.AutoScroll = true;
                 panel.Visible = true;
-                flowpanel_Discussoes.Controls.Add(panel);
+                flowpanel_Utilizadores.Controls.Add(panel);
+            }
+
+            while (dr.Read())
+            {
+                NomeDiscussao = dr["NomeDiscussao"].ToString();
+                Descricao = dr["Descricao"].ToString();
+                NomeAdmin = dr["Nome"].ToString();
+
+                Button button = new Button();
+                button.Width = 100;
+                button.Height = 50;
+                button.Anchor = AnchorStyles.Top;
+                button.FlatStyle = FlatStyle.Flat;
+                button.FlatAppearance.BorderColor = Color.Black;
+                button.BackColor = Color.White;
+                button.Visible = true;
 
                 PictureBox Pb = new PictureBox();
                 Pb.Location = new Point (10, 10);
@@ -164,10 +176,10 @@ namespace FootballLife_WF
             this.Dispose();
         }
 
-        private void Btn_NovaDiscussao_Click(object sender, EventArgs e)
+        private void Btn_NovoUtilizador_Click(object sender, EventArgs e)
         {
-            NovaDiscussão PgInicio = new NovaDiscussão();
-            PgInicio.Show();
+            AdicionarUtilizador NewUser = new AdicionarUtilizador();
+            NewUser.Show();
         }
     }
 }

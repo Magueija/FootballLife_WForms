@@ -35,7 +35,7 @@
             this.lbl_Nome = new System.Windows.Forms.Label();
             this.lbl_Email = new System.Windows.Forms.Label();
             this.lbl_Telemovel = new System.Windows.Forms.Label();
-            this.lbl_Residencia = new System.Windows.Forms.Label();
+            this.lbl_Morada = new System.Windows.Forms.Label();
             this.lbl_Utilizador = new System.Windows.Forms.Label();
             this.lbl_Password = new System.Windows.Forms.Label();
             this.lbl_Confirmar = new System.Windows.Forms.Label();
@@ -57,8 +57,11 @@
             this.tb_Utilizador = new System.Windows.Forms.TextBox();
             this.tb_Password = new System.Windows.Forms.TextBox();
             this.tb_ConfPassword = new System.Windows.Forms.TextBox();
-            this.btn_Entrar = new System.Windows.Forms.Button();
+            this.btn_Gravar = new System.Windows.Forms.Button();
             this.panel_Escalao = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel_Escalao.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -134,23 +137,23 @@
             this.lbl_Telemovel.TabIndex = 5;
             this.lbl_Telemovel.Text = "Telemóvel:";
             // 
-            // lbl_Residencia
+            // lbl_Morada
             // 
-            this.lbl_Residencia.AutoSize = true;
-            this.lbl_Residencia.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_Residencia.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lbl_Residencia.Location = new System.Drawing.Point(22, 236);
-            this.lbl_Residencia.Name = "lbl_Residencia";
-            this.lbl_Residencia.Size = new System.Drawing.Size(71, 16);
-            this.lbl_Residencia.TabIndex = 6;
-            this.lbl_Residencia.Text = "Residência:";
+            this.lbl_Morada.AutoSize = true;
+            this.lbl_Morada.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_Morada.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lbl_Morada.Location = new System.Drawing.Point(29, 236);
+            this.lbl_Morada.Name = "lbl_Morada";
+            this.lbl_Morada.Size = new System.Drawing.Size(58, 16);
+            this.lbl_Morada.TabIndex = 6;
+            this.lbl_Morada.Text = "Morada:";
             // 
             // lbl_Utilizador
             // 
             this.lbl_Utilizador.AutoSize = true;
             this.lbl_Utilizador.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Utilizador.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lbl_Utilizador.Location = new System.Drawing.Point(23, 403);
+            this.lbl_Utilizador.Location = new System.Drawing.Point(23, 445);
             this.lbl_Utilizador.Name = "lbl_Utilizador";
             this.lbl_Utilizador.Size = new System.Drawing.Size(68, 16);
             this.lbl_Utilizador.TabIndex = 7;
@@ -161,7 +164,7 @@
             this.lbl_Password.AutoSize = true;
             this.lbl_Password.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Password.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lbl_Password.Location = new System.Drawing.Point(24, 435);
+            this.lbl_Password.Location = new System.Drawing.Point(24, 477);
             this.lbl_Password.Name = "lbl_Password";
             this.lbl_Password.Size = new System.Drawing.Size(64, 16);
             this.lbl_Password.TabIndex = 8;
@@ -172,7 +175,7 @@
             this.lbl_Confirmar.AutoSize = true;
             this.lbl_Confirmar.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Confirmar.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lbl_Confirmar.Location = new System.Drawing.Point(22, 458);
+            this.lbl_Confirmar.Location = new System.Drawing.Point(22, 500);
             this.lbl_Confirmar.Name = "lbl_Confirmar";
             this.lbl_Confirmar.Size = new System.Drawing.Size(67, 16);
             this.lbl_Confirmar.TabIndex = 9;
@@ -183,7 +186,7 @@
             this.lbl_ConfPassword.AutoSize = true;
             this.lbl_ConfPassword.BackColor = System.Drawing.Color.Transparent;
             this.lbl_ConfPassword.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lbl_ConfPassword.Location = new System.Drawing.Point(24, 471);
+            this.lbl_ConfPassword.Location = new System.Drawing.Point(24, 513);
             this.lbl_ConfPassword.Name = "lbl_ConfPassword";
             this.lbl_ConfPassword.Size = new System.Drawing.Size(64, 16);
             this.lbl_ConfPassword.TabIndex = 10;
@@ -341,7 +344,7 @@
             // tb_Utilizador
             // 
             this.tb_Utilizador.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.tb_Utilizador.Location = new System.Drawing.Point(99, 400);
+            this.tb_Utilizador.Location = new System.Drawing.Point(99, 442);
             this.tb_Utilizador.Name = "tb_Utilizador";
             this.tb_Utilizador.Size = new System.Drawing.Size(302, 22);
             this.tb_Utilizador.TabIndex = 25;
@@ -349,7 +352,7 @@
             // tb_Password
             // 
             this.tb_Password.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.tb_Password.Location = new System.Drawing.Point(99, 432);
+            this.tb_Password.Location = new System.Drawing.Point(99, 474);
             this.tb_Password.Name = "tb_Password";
             this.tb_Password.PasswordChar = '*';
             this.tb_Password.Size = new System.Drawing.Size(302, 22);
@@ -358,26 +361,27 @@
             // tb_ConfPassword
             // 
             this.tb_ConfPassword.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.tb_ConfPassword.Location = new System.Drawing.Point(100, 462);
+            this.tb_ConfPassword.Location = new System.Drawing.Point(100, 504);
             this.tb_ConfPassword.Name = "tb_ConfPassword";
             this.tb_ConfPassword.PasswordChar = '*';
             this.tb_ConfPassword.Size = new System.Drawing.Size(301, 22);
             this.tb_ConfPassword.TabIndex = 27;
             // 
-            // btn_Entrar
+            // btn_Gravar
             // 
-            this.btn_Entrar.BackColor = System.Drawing.Color.White;
-            this.btn_Entrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Entrar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.btn_Entrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Entrar.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Entrar.ForeColor = System.Drawing.Color.Black;
-            this.btn_Entrar.Location = new System.Drawing.Point(349, 520);
-            this.btn_Entrar.Name = "btn_Entrar";
-            this.btn_Entrar.Size = new System.Drawing.Size(92, 34);
-            this.btn_Entrar.TabIndex = 28;
-            this.btn_Entrar.Text = "Gravar";
-            this.btn_Entrar.UseVisualStyleBackColor = false;
+            this.btn_Gravar.BackColor = System.Drawing.Color.White;
+            this.btn_Gravar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Gravar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btn_Gravar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Gravar.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Gravar.ForeColor = System.Drawing.Color.Black;
+            this.btn_Gravar.Location = new System.Drawing.Point(349, 562);
+            this.btn_Gravar.Name = "btn_Gravar";
+            this.btn_Gravar.Size = new System.Drawing.Size(92, 34);
+            this.btn_Gravar.TabIndex = 28;
+            this.btn_Gravar.Text = "Gravar";
+            this.btn_Gravar.UseVisualStyleBackColor = false;
+            this.btn_Gravar.Click += new System.EventHandler(this.Btn_Gravar_Click);
             // 
             // panel_Escalao
             // 
@@ -391,19 +395,49 @@
             this.panel_Escalao.Controls.Add(this.radioButton7);
             this.panel_Escalao.Controls.Add(this.radioButton4);
             this.panel_Escalao.Controls.Add(this.radioButton6);
-            this.panel_Escalao.Location = new System.Drawing.Point(99, 274);
+            this.panel_Escalao.Location = new System.Drawing.Point(99, 316);
             this.panel_Escalao.Name = "panel_Escalao";
             this.panel_Escalao.Size = new System.Drawing.Size(302, 106);
             this.panel_Escalao.TabIndex = 29;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.textBox1.Location = new System.Drawing.Point(123, 261);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(88, 22);
+            this.textBox1.TabIndex = 31;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(22, 264);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(95, 16);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "Código-Postal: ";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.textBox2.Location = new System.Drawing.Point(217, 261);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(184, 22);
+            this.textBox2.TabIndex = 32;
             // 
             // AdicionarUtilizador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(453, 566);
+            this.ClientSize = new System.Drawing.Size(453, 606);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.panel_Escalao);
-            this.Controls.Add(this.btn_Entrar);
+            this.Controls.Add(this.btn_Gravar);
             this.Controls.Add(this.tb_ConfPassword);
             this.Controls.Add(this.tb_Password);
             this.Controls.Add(this.tb_Utilizador);
@@ -415,7 +449,7 @@
             this.Controls.Add(this.lbl_Confirmar);
             this.Controls.Add(this.lbl_Password);
             this.Controls.Add(this.lbl_Utilizador);
-            this.Controls.Add(this.lbl_Residencia);
+            this.Controls.Add(this.lbl_Morada);
             this.Controls.Add(this.lbl_Telemovel);
             this.Controls.Add(this.lbl_Email);
             this.Controls.Add(this.lbl_Nome);
@@ -444,7 +478,7 @@
         private System.Windows.Forms.Label lbl_Nome;
         private System.Windows.Forms.Label lbl_Email;
         private System.Windows.Forms.Label lbl_Telemovel;
-        private System.Windows.Forms.Label lbl_Residencia;
+        private System.Windows.Forms.Label lbl_Morada;
         private System.Windows.Forms.Label lbl_Utilizador;
         private System.Windows.Forms.Label lbl_Password;
         private System.Windows.Forms.Label lbl_Confirmar;
@@ -466,7 +500,10 @@
         private System.Windows.Forms.TextBox tb_Utilizador;
         private System.Windows.Forms.TextBox tb_Password;
         private System.Windows.Forms.TextBox tb_ConfPassword;
-        private System.Windows.Forms.Button btn_Entrar;
+        private System.Windows.Forms.Button btn_Gravar;
         private System.Windows.Forms.Panel panel_Escalao;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }

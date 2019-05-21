@@ -43,3 +43,6 @@ C:\Users\Tomás\Documents\Projeto_WindowsForms\FootballLife_WF\obj\Debug\Footbal
 C:\Users\Tomás\Documents\Projeto_WindowsForms\FootballLife_WF\bin\Debug\EntityFramework.dll
 C:\Users\Tomás\Documents\Projeto_WindowsForms\FootballLife_WF\bin\Debug\EntityFramework.xml
 C:\Users\Tomás\Documents\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.csproj.CopyComplete
+C:\Users\PSI17F20\Documents\GitHub\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.ContactosAdministracao.resources
+C:\Users\PSI17F20\Documents\GitHub\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.Utilizadores_Admin.resources
+C:\Users\PSI17F20\Documents\GitHub\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.VisualizarUtilizador.resources

@@ -46,9 +46,6 @@ namespace FootballLife_WF
 
         private void Img_BackArrow_Click(object sender, EventArgs e)
         {
-            PaginaInicial PagIn = new PaginaInicial();
-            this.Hide();
-            PagIn.ShowDialog();
             this.Dispose();
         }
 
@@ -64,6 +61,8 @@ namespace FootballLife_WF
                 LogIn();
             }
         }
+
+        public int IDLogIn { get; set; }
 
         private void LogIn()
         {
@@ -212,12 +211,8 @@ namespace FootballLife_WF
 
             if (result == DialogResult.Yes)
             {
-                //Novo Form
-                this.Dispose();
-            }
-            else if (result == DialogResult.No)
-            {
-                Close();
+                ContactosAdministracao Emails = new ContactosAdministracao();
+                Emails.Show();
             }
         }
     }
