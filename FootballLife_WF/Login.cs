@@ -36,12 +36,12 @@ namespace FootballLife_WF
 
         private void Img_BackArrow_MouseHover(object sender, EventArgs e)
         {
-            img_BackArrow.Image = Properties.Resources.BackArrow_Login_Hover;
+            img_BackArrow.Image = Properties.Resources.Back_Hover;
         }
 
         private void Img_BackArrow_MouseLeave(object sender, EventArgs e)
         {
-            img_BackArrow.Image = Properties.Resources.BackArrow_Login_Normal;
+            img_BackArrow.Image = Properties.Resources.Back_Normal;
         }
 
         private void Img_BackArrow_Click(object sender, EventArgs e)

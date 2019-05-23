@@ -63,6 +63,26 @@ namespace FootballLife_WF.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Add_Hover {
+            get {
+                object obj = ResourceManager.GetObject("Add_Hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Add_Normal {
+            get {
+                object obj = ResourceManager.GetObject("Add_Normal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Adicionar_Criar {
             get {
                 object obj = ResourceManager.GetObject("Adicionar_Criar", resourceCulture);
@@ -83,9 +103,19 @@ namespace FootballLife_WF.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Adicionar_Criar_white_1 {
+        internal static System.Drawing.Bitmap Back_Hover {
             get {
-                object obj = ResourceManager.GetObject("Adicionar_Criar(white)1", resourceCulture);
+                object obj = ResourceManager.GetObject("Back_Hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Back_Normal {
+            get {
+                object obj = ResourceManager.GetObject("Back_Normal", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

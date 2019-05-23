@@ -83,7 +83,7 @@
             this.lbl_LogIn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl_LogIn.Font = new System.Drawing.Font("Berlin Sans FB Demi", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_LogIn.ForeColor = System.Drawing.Color.White;
-            this.lbl_LogIn.Location = new System.Drawing.Point(1252, 22);
+            this.lbl_LogIn.Location = new System.Drawing.Point(1235, 22);
             this.lbl_LogIn.Name = "lbl_LogIn";
             this.lbl_LogIn.Size = new System.Drawing.Size(64, 23);
             this.lbl_LogIn.TabIndex = 1;
@@ -100,7 +100,7 @@
             this.panel_Jogos.Controls.Add(this.lbl_Jogos);
             this.panel_Jogos.Controls.Add(this.img_Jogos);
             this.panel_Jogos.Controls.Add(this.btn_Jogos);
-            this.panel_Jogos.Location = new System.Drawing.Point(262, 281);
+            this.panel_Jogos.Location = new System.Drawing.Point(253, 281);
             this.panel_Jogos.Name = "panel_Jogos";
             this.panel_Jogos.Size = new System.Drawing.Size(323, 193);
             this.panel_Jogos.TabIndex = 5;
@@ -170,7 +170,7 @@
             this.panel_Equipas.Controls.Add(this.lbl_Equipas);
             this.panel_Equipas.Controls.Add(this.img_Equipas);
             this.panel_Equipas.Controls.Add(this.btn_Equipas);
-            this.panel_Equipas.Location = new System.Drawing.Point(735, 281);
+            this.panel_Equipas.Location = new System.Drawing.Point(726, 281);
             this.panel_Equipas.Name = "panel_Equipas";
             this.panel_Equipas.Size = new System.Drawing.Size(323, 193);
             this.panel_Equipas.TabIndex = 6;
@@ -236,7 +236,7 @@
             this.panel_Titulos.Controls.Add(this.lbl_Titulos);
             this.panel_Titulos.Controls.Add(this.img_Titulos);
             this.panel_Titulos.Controls.Add(this.btn_Titulos);
-            this.panel_Titulos.Location = new System.Drawing.Point(735, 559);
+            this.panel_Titulos.Location = new System.Drawing.Point(726, 559);
             this.panel_Titulos.Name = "panel_Titulos";
             this.panel_Titulos.Size = new System.Drawing.Size(323, 193);
             this.panel_Titulos.TabIndex = 2;
@@ -299,7 +299,7 @@
             this.panel_Estadio.Controls.Add(this.lbl_Estadio);
             this.panel_Estadio.Controls.Add(this.img_Estadio);
             this.panel_Estadio.Controls.Add(this.btn_Estadio);
-            this.panel_Estadio.Location = new System.Drawing.Point(262, 559);
+            this.panel_Estadio.Location = new System.Drawing.Point(253, 559);
             this.panel_Estadio.Name = "panel_Estadio";
             this.panel_Estadio.Size = new System.Drawing.Size(323, 193);
             this.panel_Estadio.TabIndex = 7;
@@ -364,7 +364,7 @@
             this.lbl_Titulo.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Titulo.Font = new System.Drawing.Font("Bauhaus 93", 65.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Titulo.ForeColor = System.Drawing.Color.Firebrick;
-            this.lbl_Titulo.Location = new System.Drawing.Point(327, 87);
+            this.lbl_Titulo.Location = new System.Drawing.Point(318, 87);
             this.lbl_Titulo.Name = "lbl_Titulo";
             this.lbl_Titulo.Size = new System.Drawing.Size(694, 98);
             this.lbl_Titulo.TabIndex = 3;

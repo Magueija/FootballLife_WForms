@@ -162,7 +162,7 @@
             // img_BackArrow
             // 
             this.img_BackArrow.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.img_BackArrow.Image = global::FootballLife_WF.Properties.Resources.BackArrow_Login_Normal;
+            this.img_BackArrow.Image = global::FootballLife_WF.Properties.Resources.Back_Normal;
             this.img_BackArrow.Location = new System.Drawing.Point(4, 4);
             this.img_BackArrow.MaximumSize = new System.Drawing.Size(30, 30);
             this.img_BackArrow.MinimumSize = new System.Drawing.Size(30, 30);

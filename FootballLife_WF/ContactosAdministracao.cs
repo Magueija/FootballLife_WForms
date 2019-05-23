@@ -16,7 +16,7 @@ namespace FootballLife_WF
         public ContactosAdministracao()
         {
             InitializeComponent();
-            Emails();
+            //Emails();
             
         }
 

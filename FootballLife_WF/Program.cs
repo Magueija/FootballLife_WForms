@@ -16,7 +16,7 @@ namespace FootballLife_WF
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AdicionarUtilizador());
+            Application.Run(new Inventario());
         }
     }
 }

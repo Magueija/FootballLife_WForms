@@ -114,6 +114,12 @@
     <Compile Include="Jogos.Designer.cs">
       <DependentUpon>Jogos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Inventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario.Designer.cs">
+      <DependentUpon>Inventario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utilizadores_Admin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,6 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Jogos.resx">
       <DependentUpon>Jogos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario.resx">
+      <DependentUpon>Inventario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Utilizadores_Admin.resx">
       <DependentUpon>Utilizadores_Admin.cs</DependentUpon>
@@ -276,6 +285,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="FbLf_LOGO.ico" />
+    <None Include="Resources\Back_Hover.png" />
+    <None Include="Resources\Back_Normal.png" />
+    <None Include="Resources\Add_Normal.png" />
+    <None Include="Resources\Add_Hover.png" />
     <None Include="Resources\LogoTreinador.jpg" />
     <None Include="Resources\LogoSocio.png" />
     <None Include="Resources\LogoAtleta.jpg" />

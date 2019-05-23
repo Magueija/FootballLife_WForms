@@ -46,3 +46,5 @@ C:\Users\Tomás\Documents\Projeto_WindowsForms\FootballLife_WF\obj\Debug\Footbal
 C:\Users\PSI17F20\Documents\GitHub\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.ContactosAdministracao.resources
 C:\Users\PSI17F20\Documents\GitHub\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.Utilizadores_Admin.resources
 C:\Users\PSI17F20\Documents\GitHub\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.VisualizarUtilizador.resources
+C:\Users\PSI17F20\Documents\GitHub\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.EditarInventario.resources
+C:\Users\PSI17F20\Documents\GitHub\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.Inventario.resources
