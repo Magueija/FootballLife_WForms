@@ -81,78 +81,130 @@ namespace FootballLife_WF
         }
 
         //==============================================================================================
-        int i;
+        string[] IDDiscussao;
+        
+
         private void Discussoes()
         {
             SqlConnection con = new SqlConnection(Properties.Settings.Default.Connection);
             con.Open();
 
+            
             string NomeDiscussao = "";
             string Descricao = "";
             string NomeAdmin = "";
+            string IDAdmin = "";
 
-            SqlDataReader dr;
-            string Query = ("SELECT dbo.TblDiscussao.IDDiscussao, dbo.TblDiscussao.NomeDiscussao, dbo.TblDiscussao.Descricao, dbo.TblAdministrador.IDAdministrador, dbo.TblAdministrador.Nome FROM dbo.TblDiscussao INNER JOIN dbo.TblAdministrador ON dbo.TblDiscussao.FK_IDAdministrador = dbo.TblAdministrador.IDAdministrador ORDER BY dbo.TblDiscussao.IDDiscussao DESC");
-            SqlCommand Command = new SqlCommand(Query, con);
-            dr = Command.ExecuteReader();
-            while (dr.Read())
-            {
-                NomeDiscussao = dr["NomeDiscussao"].ToString();
-                Descricao = dr["Descricao"].ToString();
-                NomeAdmin = dr["Nome"].ToString();
-                
+            try{
+                SqlDataReader dr;
+                string Query = ("SELECT dbo.TblDiscussao.IDDiscussao, dbo.TblDiscussao.NomeDiscussao, dbo.TblDiscussao.Descricao, dbo.TblAdministrador.IDAdministrador, dbo.TblAdministrador.Nome FROM dbo.TblDiscussao INNER JOIN dbo.TblAdministrador ON dbo.TblDiscussao.FK_IDAdministrador = dbo.TblAdministrador.IDAdministrador WHERE dbo.TblDiscussao.Apagado = 0 ORDER BY dbo.TblDiscussao.IDDiscussao DESC");
+                SqlCommand Command = new SqlCommand(Query, con);
+                dr = Command.ExecuteReader();
+                while (dr.Read())
+                {
+                    int i = 0;
+                    //IDDiscussao[i] = dr["IDDiscussao"].ToString();
+                    
 
-                Panel panel = new Panel();
-                panel.Width = 800;
-                panel.Height = 250;
-                panel.Anchor = AnchorStyles.Top;
-                panel.BorderStyle = BorderStyle.Fixed3D;
-                panel.BackColor = Color.White;
-                panel.Visible = true;
-                flowpanel_Discussoes.Controls.Add(panel);
+                    NomeDiscussao = dr["NomeDiscussao"].ToString();
+                    Descricao = dr["Descricao"].ToString();
+                    NomeAdmin = dr["Nome"].ToString();
 
-                PictureBox Pb = new PictureBox();
-                Pb.Location = new Point (10, 10);
-                Pb.Width = 30;
-                Pb.Height = 30;
-                Pb.Anchor = AnchorStyles.Top | AnchorStyles.Left;
-                Pb.Image = FootballLife_WF.Properties.Resources.LogoAdmin;
-                Pb.SizeMode = PictureBoxSizeMode.Zoom;
-                Pb.Visible = true;
-                panel.Controls.Add(Pb);
+                    IDAdmin = dr["IDAdministrador"].ToString();
 
-                Label lblUser = new Label();
-                lblUser.Location = new Point(50, 18);
-                lblUser.Text = NomeAdmin;
-                lblUser.Font = new Font("Berlin Sans FB", 9, FontStyle.Regular); 
-                lblUser.Anchor = AnchorStyles.Top | AnchorStyles.Left;
-                lblUser.Visible = true;
-                panel.Controls.Add(lblUser);
+                    Panel panel = new Panel();
+                    panel.Width = 800;
+                    panel.Height = 250;
+                    panel.Anchor = AnchorStyles.Top;
+                    panel.BorderStyle = BorderStyle.Fixed3D;
+                    panel.BackColor = Color.White;
+                    panel.Visible = true;
+                    flowpanel_Discussoes.Controls.Add(panel);
 
-                Label lblTitulo = new Label();
-                lblTitulo.Location = new Point(15, 70);
-                lblTitulo.Width = 765;
-                lblTitulo.Text = NomeDiscussao;
-                lblTitulo.Font = new Font("Berlin Sans FB Demi", 13, FontStyle.Regular);
-                lblTitulo.Anchor = AnchorStyles.Top | AnchorStyles.Left;
-                lblTitulo.Visible = true;
-                panel.Controls.Add(lblTitulo);
+                    PictureBox Pb = new PictureBox();
+                    Pb.Location = new Point(10, 10);
+                    Pb.Width = 30;
+                    Pb.Height = 30;
+                    Pb.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                    Pb.Image = FootballLife_WF.Properties.Resources.LogoAdmin;
+                    Pb.SizeMode = PictureBoxSizeMode.Zoom;
+                    Pb.Visible = true;
+                    panel.Controls.Add(Pb);
 
-                TextBox Tb = new TextBox();
-                Tb.Location = new Point(17, 100);
-                Tb.Width = 763;
-                Tb.Height = 120;
-                Tb.Text = Descricao;
-                Tb.Multiline = true;
-                Tb.ReadOnly = true;
-                Tb.Enabled = false;
-                Tb.Font = new Font("Arial", 12, FontStyle.Regular);
-                Tb.Anchor = AnchorStyles.Top;
-                Tb.Visible = true;
-                panel.Controls.Add(Tb);
+                    Label lblUser = new Label();
+                    lblUser.Location = new Point(50, 18);
+                    lblUser.Text = NomeAdmin;
+                    lblUser.Font = new Font("Berlin Sans FB", 9, FontStyle.Regular);
+                    lblUser.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                    lblUser.Visible = true;
+                    panel.Controls.Add(lblUser);
+
+                    Label lblTitulo = new Label();
+                    lblTitulo.Location = new Point(15, 70);
+                    lblTitulo.Width = 765;
+                    lblTitulo.Text = NomeDiscussao;
+                    lblTitulo.Font = new Font("Berlin Sans FB Demi", 13, FontStyle.Regular);
+                    lblTitulo.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                    lblTitulo.Visible = true;
+                    panel.Controls.Add(lblTitulo);
+
+                    TextBox Tb = new TextBox();
+                    Tb.Location = new Point(17, 100);
+                    Tb.Width = 763;
+                    Tb.Height = 120;
+                    Tb.Text = Descricao;
+                    Tb.Multiline = true;
+                    Tb.ReadOnly = true;
+                    Tb.Enabled = false;
+                    Tb.Font = new Font("Arial", 12, FontStyle.Regular);
+                    Tb.Anchor = AnchorStyles.Top;
+                    Tb.Visible = true;
+                    panel.Controls.Add(Tb);
+
+                    if (Properties.Settings.Default.IDUser == IDAdmin)
+                    {
+                        PictureBox PbDelete = new PictureBox();
+                        PbDelete.Location = new Point(760, 10);
+                        PbDelete.Width = 15;
+                        PbDelete.Height = 20;
+                        PbDelete.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+                        PbDelete.Image = FootballLife_WF.Properties.Resources.Delete;
+                        PbDelete.SizeMode = PictureBoxSizeMode.Zoom;
+                        PbDelete.Cursor = Cursors.Hand;
+                        PbDelete.Visible = true;
+
+                        PbDelete.Click += Btn_Discussao_Click;
+                        panel.Controls.Add(PbDelete);
+                    }
+                    i++;
+                }
+                dr.Close();
             }
-            dr.Close();
-            
+            catch (Exception x)
+            {
+                MessageBox.Show(x.ToString());
+            }
+            con.Close();
+        }
+
+        private void Btn_Discussao_Click(object sender, EventArgs e)
+        {
+
+
+            SqlConnection con = new SqlConnection(Properties.Settings.Default.Connection);
+            con.Open();
+
+            try
+            {
+                string Query = ("UPDATE TblDiscussao SET Apagado = 1 WHERE IDDiscussao = ");
+                SqlCommand Command = new SqlCommand(Query, con);
+                Command.ExecuteNonQuery();
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.ToString());
+            }
+
             con.Close();
         }
 
@@ -168,6 +220,14 @@ namespace FootballLife_WF
         {
             NovaDiscussão PgInicio = new NovaDiscussão();
             PgInicio.Show();
+        }
+
+        private void Btn_Utilizadores_Click(object sender, EventArgs e)
+        {
+            Utilizadores_Admin Users = new Utilizadores_Admin();
+            this.Hide();
+            Users.ShowDialog();
+            this.Dispose();
         }
     }
 }

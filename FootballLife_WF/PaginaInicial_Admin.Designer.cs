@@ -377,6 +377,7 @@
             this.btn_Utilizadores.TabIndex = 18;
             this.btn_Utilizadores.Text = "UTILIZADORES";
             this.btn_Utilizadores.UseVisualStyleBackColor = false;
+            this.btn_Utilizadores.Click += new System.EventHandler(this.Btn_Utilizadores_Click);
             // 
             // panel_Menu
             // 

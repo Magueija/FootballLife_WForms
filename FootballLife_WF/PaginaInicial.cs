@@ -35,7 +35,7 @@ namespace FootballLife_WF
             Login Lg = new Login();
             this.Hide();
             Lg.ShowDialog();
-            this.Show();
+            this.Dispose();
         }
 
 //==============================================================================================

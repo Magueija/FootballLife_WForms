@@ -285,6 +285,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="FbLf_LOGO.ico" />
+    <None Include="Resources\Delete.png" />
     <None Include="Resources\Back_Hover.png" />
     <None Include="Resources\Back_Normal.png" />
     <None Include="Resources\Add_Normal.png" />
