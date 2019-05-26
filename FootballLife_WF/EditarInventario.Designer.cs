@@ -53,7 +53,7 @@
             this.flowpanel_material.Location = new System.Drawing.Point(21, 81);
             this.flowpanel_material.Name = "flowpanel_material";
             this.flowpanel_material.Padding = new System.Windows.Forms.Padding(20, 20, 0, 0);
-            this.flowpanel_material.Size = new System.Drawing.Size(699, 210);
+            this.flowpanel_material.Size = new System.Drawing.Size(699, 185);
             this.flowpanel_material.TabIndex = 4;
             // 
             // btn_Gravar
@@ -71,12 +71,13 @@
             this.btn_Gravar.TabIndex = 29;
             this.btn_Gravar.Text = "Gravar";
             this.btn_Gravar.UseVisualStyleBackColor = false;
+            this.btn_Gravar.Click += new System.EventHandler(this.Btn_Gravar_Click);
             // 
             // img_Add
             // 
             this.img_Add.Cursor = System.Windows.Forms.Cursors.Hand;
             this.img_Add.Image = global::FootballLife_WF.Properties.Resources.Add_Normal;
-            this.img_Add.Location = new System.Drawing.Point(653, 293);
+            this.img_Add.Location = new System.Drawing.Point(653, 270);
             this.img_Add.Name = "img_Add";
             this.img_Add.Size = new System.Drawing.Size(30, 30);
             this.img_Add.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

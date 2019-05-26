@@ -161,7 +161,7 @@ namespace FootballLife_WF
                     Tb.Visible = true;
                     panel.Controls.Add(Tb);
 
-                    if (Properties.Settings.Default.IDUser == IDAdmin)
+                    if (Properties.Settings.Default.IDUser == Convert.ToInt32(IDAdmin))
                     {
                         PictureBox PbDelete = new PictureBox();
                         PbDelete.Location = new Point(760, 10);
@@ -213,13 +213,12 @@ namespace FootballLife_WF
             PaginaInicial PgInicio = new PaginaInicial();
             this.Hide();
             PgInicio.ShowDialog();
-            this.Dispose();
         }
 
         private void Btn_NovaDiscussao_Click(object sender, EventArgs e)
         {
             NovaDiscussão PgInicio = new NovaDiscussão();
-            PgInicio.Show();
+            PgInicio.ShowDialog();
         }
 
         private void Btn_Utilizadores_Click(object sender, EventArgs e)
@@ -227,7 +226,46 @@ namespace FootballLife_WF
             Utilizadores_Admin Users = new Utilizadores_Admin();
             this.Hide();
             Users.ShowDialog();
-            this.Dispose();
+        }
+
+        private void Btn_Inventario_Click(object sender, EventArgs e)
+        {
+            Inventario Inv = new Inventario();
+            this.Hide();
+            Inv.ShowDialog();
+        }
+
+        private void Btn_Financiamento_Click(object sender, EventArgs e)
+        {
+            Financiamento financas = new Financiamento();
+            this.Hide();
+            financas.ShowDialog();
+        }
+
+        private void Btn_Jogos_Click(object sender, EventArgs e)
+        {
+            Jogos jgs = new Jogos();
+            this.Hide();
+            jgs.ShowDialog();
+        }
+
+        private void Btn_Equipas_Click(object sender, EventArgs e)
+        {
+            Equipas Equipas = new Equipas();
+            this.Hide();
+            Equipas.ShowDialog();
+        }
+
+        private void Btn_Estadio_Click(object sender, EventArgs e)
+        {
+            Estadio Estadio = new Estadio();
+            this.Hide();
+            Estadio.ShowDialog();
+        }
+
+        private void Btn_Titulos_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

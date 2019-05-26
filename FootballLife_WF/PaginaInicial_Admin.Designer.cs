@@ -50,14 +50,12 @@
             this.btn_Inventario = new System.Windows.Forms.Button();
             this.btn_Utilizadores = new System.Windows.Forms.Button();
             this.panel_Menu = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.img_Menu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_NovaDiscussao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_LogOut)).BeginInit();
             this.panel_Menu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -113,7 +111,7 @@
             this.img_NovaDiscussao.BackColor = System.Drawing.Color.Transparent;
             this.img_NovaDiscussao.Cursor = System.Windows.Forms.Cursors.Hand;
             this.img_NovaDiscussao.Image = global::FootballLife_WF.Properties.Resources.Adicionar_Criar_white_;
-            this.img_NovaDiscussao.Location = new System.Drawing.Point(1181, 33);
+            this.img_NovaDiscussao.Location = new System.Drawing.Point(1206, 33);
             this.img_NovaDiscussao.MaximumSize = new System.Drawing.Size(20, 20);
             this.img_NovaDiscussao.MinimumSize = new System.Drawing.Size(20, 20);
             this.img_NovaDiscussao.Name = "img_NovaDiscussao";
@@ -133,7 +131,7 @@
             this.lbl_Novadiscussao.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl_Novadiscussao.Font = new System.Drawing.Font("Berlin Sans FB Demi", 10F, System.Drawing.FontStyle.Bold);
             this.lbl_Novadiscussao.ForeColor = System.Drawing.Color.White;
-            this.lbl_Novadiscussao.Location = new System.Drawing.Point(1207, 33);
+            this.lbl_Novadiscussao.Location = new System.Drawing.Point(1232, 33);
             this.lbl_Novadiscussao.Name = "lbl_Novadiscussao";
             this.lbl_Novadiscussao.Size = new System.Drawing.Size(104, 18);
             this.lbl_Novadiscussao.TabIndex = 18;
@@ -153,7 +151,7 @@
             this.btn_NovaDiscussao.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn_NovaDiscussao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_NovaDiscussao.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_NovaDiscussao.Location = new System.Drawing.Point(1169, 24);
+            this.btn_NovaDiscussao.Location = new System.Drawing.Point(1194, 24);
             this.btn_NovaDiscussao.Name = "btn_NovaDiscussao";
             this.btn_NovaDiscussao.Size = new System.Drawing.Size(149, 37);
             this.btn_NovaDiscussao.TabIndex = 17;
@@ -180,13 +178,17 @@
             // 
             this.flowpanel_Discussoes.AutoScroll = true;
             this.flowpanel_Discussoes.BackColor = System.Drawing.Color.Transparent;
+            this.flowpanel_Discussoes.BackgroundImage = global::FootballLife_WF.Properties.Resources.Fundo_1;
+            this.flowpanel_Discussoes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.flowpanel_Discussoes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowpanel_Discussoes.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowpanel_Discussoes.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.flowpanel_Discussoes.Location = new System.Drawing.Point(0, 215);
+            this.flowpanel_Discussoes.Location = new System.Drawing.Point(0, 0);
             this.flowpanel_Discussoes.Name = "flowpanel_Discussoes";
-            this.flowpanel_Discussoes.Size = new System.Drawing.Size(1370, 534);
+            this.flowpanel_Discussoes.Padding = new System.Windows.Forms.Padding(570, 300, 0, 0);
+            this.flowpanel_Discussoes.Size = new System.Drawing.Size(1370, 749);
             this.flowpanel_Discussoes.TabIndex = 22;
+            this.flowpanel_Discussoes.WrapContents = false;
             // 
             // btn_LogOut
             // 
@@ -265,6 +267,7 @@
             this.btn_Titulos.TabIndex = 9;
             this.btn_Titulos.Text = "TÍTULOS";
             this.btn_Titulos.UseVisualStyleBackColor = false;
+            this.btn_Titulos.Click += new System.EventHandler(this.Btn_Titulos_Click);
             // 
             // btn_Estadio
             // 
@@ -281,6 +284,7 @@
             this.btn_Estadio.TabIndex = 8;
             this.btn_Estadio.Text = "ESTÁDIO";
             this.btn_Estadio.UseVisualStyleBackColor = false;
+            this.btn_Estadio.Click += new System.EventHandler(this.Btn_Estadio_Click);
             // 
             // btn_Equipas
             // 
@@ -297,6 +301,7 @@
             this.btn_Equipas.TabIndex = 7;
             this.btn_Equipas.Text = "EQUIPAS";
             this.btn_Equipas.UseVisualStyleBackColor = false;
+            this.btn_Equipas.Click += new System.EventHandler(this.Btn_Equipas_Click);
             // 
             // btn_Jogos
             // 
@@ -313,6 +318,7 @@
             this.btn_Jogos.TabIndex = 6;
             this.btn_Jogos.Text = "JOGOS";
             this.btn_Jogos.UseVisualStyleBackColor = false;
+            this.btn_Jogos.Click += new System.EventHandler(this.Btn_Jogos_Click);
             // 
             // btn_Home
             // 
@@ -345,6 +351,7 @@
             this.btn_Financiamento.TabIndex = 16;
             this.btn_Financiamento.Text = "FINANCIAMENTO";
             this.btn_Financiamento.UseVisualStyleBackColor = false;
+            this.btn_Financiamento.Click += new System.EventHandler(this.Btn_Financiamento_Click);
             // 
             // btn_Inventario
             // 
@@ -361,6 +368,7 @@
             this.btn_Inventario.TabIndex = 17;
             this.btn_Inventario.Text = "INVENTÁRIO";
             this.btn_Inventario.UseVisualStyleBackColor = false;
+            this.btn_Inventario.Click += new System.EventHandler(this.Btn_Inventario_Click);
             // 
             // btn_Utilizadores
             // 
@@ -403,17 +411,6 @@
             this.panel_Menu.TabIndex = 12;
             this.panel_Menu.Visible = false;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::FootballLife_WF.Properties.Resources.Fundo_1;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1370, 749);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 24;
-            this.pictureBox1.TabStop = false;
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
@@ -438,10 +435,9 @@
             this.Controls.Add(this.img_Logo);
             this.Controls.Add(this.img_Menu);
             this.Controls.Add(this.panel_Menu);
-            this.Controls.Add(this.flowpanel_Discussoes);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_TopMenu);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.flowpanel_Discussoes);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.MinimumSize = new System.Drawing.Size(900, 500);
@@ -455,7 +451,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.img_LogOut)).EndInit();
             this.panel_Menu.ResumeLayout(false);
             this.panel_Menu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -484,7 +479,6 @@
         private System.Windows.Forms.Button btn_Inventario;
         private System.Windows.Forms.Button btn_Utilizadores;
         private System.Windows.Forms.Panel panel_Menu;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
     }
 }

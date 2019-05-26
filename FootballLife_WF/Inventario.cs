@@ -22,6 +22,13 @@ namespace FootballLife_WF
             InvClube();
 
             InvSeniores();
+            InvJuniores();
+            InvJuvenis();
+            InvIniciados();
+            InvInfantis();
+            InvBenjamins();
+            InvTraquinas();
+            InvPetizes();
         }
 
         private void InvClube()
@@ -32,43 +39,50 @@ namespace FootballLife_WF
             string NomeMaterial = "";
             string Quantidade = "";
 
-            SqlDataReader dr;
-            string Query = ("SELECT dbo.TblMaterial.Nome, dbo.TblMaterial.Quantidade FROM dbo.TblMaterial WHERE dbo.TblMaterial.FK_IDInventario = 1 ORDER BY dbo.TblMaterial.Nome");
-            SqlCommand Command = new SqlCommand(Query, con);
-            dr = Command.ExecuteReader();
-            while (dr.Read())
+            try
             {
-                NomeMaterial = dr["Nome"].ToString();
-                Quantidade = dr["Quantidade"].ToString();
+                SqlDataReader dr;
+                string Query = ("SELECT dbo.TblMaterial.Nome, dbo.TblMaterial.Quantidade FROM dbo.TblMaterial WHERE dbo.TblMaterial.FK_IDInventario = 1 ORDER BY dbo.TblMaterial.Nome");
+                SqlCommand Command = new SqlCommand(Query, con);
+                dr = Command.ExecuteReader();
+                while (dr.Read())
+                {
+                    NomeMaterial = dr["Nome"].ToString();
+                    Quantidade = dr["Quantidade"].ToString();
 
-                Panel panel = new Panel();
-                panel.Width = 310;
-                panel.Height = 30;
-                panel.Anchor = AnchorStyles.Top;
-                panel.BorderStyle = BorderStyle.FixedSingle;
-                panel.BackColor = Color.Transparent;
-                panel.Visible = true;
-                flowpanel_Clube.Controls.Add(panel);
+                    Panel panel = new Panel();
+                    panel.Width = 310;
+                    panel.Height = 30;
+                    panel.Anchor = AnchorStyles.Top;
+                    panel.BackColor = Color.Transparent;
+                    panel.Visible = true;
+                    flowpanel_Clube.Controls.Add(panel);
 
-                Label Nome = new Label();
-                Nome.Location = new Point(10, 5);
-                Nome.Text = NomeMaterial += ":";
-                Nome.Width = 210;
-                Nome.Font = new Font("Berlin Sans FB Demi", 11, FontStyle.Regular);
-                Nome.Anchor = AnchorStyles.Top | AnchorStyles.Left;
-                Nome.Visible = true;
-                panel.Controls.Add(Nome);
+                    Label Nome = new Label();
+                    Nome.Location = new Point(10, 5);
+                    Nome.Text = NomeMaterial += ":";
+                    Nome.Width = 210;
+                    Nome.Font = new Font("Berlin Sans FB Demi", 11, FontStyle.Regular);
+                    Nome.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                    Nome.Visible = true;
+                    panel.Controls.Add(Nome);
 
-                Label lblQuantidade = new Label();
-                lblQuantidade.Location = new Point(225, 5);
-                lblQuantidade.Text = Quantidade;
-                lblQuantidade.Width = 75;
-                lblQuantidade.RightToLeft = RightToLeft.Yes;
-                lblQuantidade.Font = new Font("Arial", 10, FontStyle.Regular);
-                lblQuantidade.Anchor = AnchorStyles.Top;
-                lblQuantidade.Visible = true;
-                panel.Controls.Add(lblQuantidade);
+                    Label lblQuantidade = new Label();
+                    lblQuantidade.Location = new Point(225, 5);
+                    lblQuantidade.Text = Quantidade;
+                    lblQuantidade.Width = 75;
+                    lblQuantidade.RightToLeft = RightToLeft.Yes;
+                    lblQuantidade.Font = new Font("Arial", 10, FontStyle.Regular);
+                    lblQuantidade.Anchor = AnchorStyles.Top;
+                    lblQuantidade.Visible = true;
+                    panel.Controls.Add(lblQuantidade);
+                }
             }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.ToString());
+            }
+            con.Close();
         }
 
 
@@ -80,42 +94,436 @@ namespace FootballLife_WF
             string NomeMaterial = "";
             string Quantidade = "";
 
-            SqlDataReader dr;
-            string Query = ("SELECT dbo.TblMaterial.Nome, dbo.TblMaterial.Quantidade FROM dbo.TblMaterial WHERE dbo.TblMaterial.FK_IDInventario = 2 ORDER BY dbo.TblMaterial.Nome");
-            SqlCommand Command = new SqlCommand(Query, con);
-            dr = Command.ExecuteReader();
-            while (dr.Read())
+            try
             {
-                NomeMaterial = dr["Nome"].ToString();
-                Quantidade = dr["Quantidade"].ToString();
+                SqlDataReader dr;
+                string Query = ("SELECT dbo.TblMaterial.Nome, dbo.TblMaterial.Quantidade FROM dbo.TblMaterial WHERE dbo.TblMaterial.FK_IDInventario = 2 ORDER BY dbo.TblMaterial.Nome");
+                SqlCommand Command = new SqlCommand(Query, con);
+                dr = Command.ExecuteReader();
+                while (dr.Read())
+                {
+                    NomeMaterial = dr["Nome"].ToString();
+                    Quantidade = dr["Quantidade"].ToString();
 
-                Panel panel = new Panel();
-                panel.Width = 300;
-                panel.Height = 30;
-                panel.Anchor = AnchorStyles.Top;
-                panel.BackColor = Color.Transparent;
-                panel.Visible = true;
-                flowpanel_seniores.Controls.Add(panel);
+                    Panel panel = new Panel();
+                    panel.Width = 285;
+                    panel.Height = 30;
+                    panel.Anchor = AnchorStyles.Top;
+                    panel.BackColor = Color.Transparent;
+                    panel.Visible = true;
+                    flowpanel_seniores.Controls.Add(panel);
 
-                Label Nome = new Label();
-                Nome.Location = new Point(10, 5);
-                Nome.Text = NomeMaterial += ":";
-                Nome.Width = 200;
-                Nome.Font = new Font("Berlin Sans FB Demi", 11, FontStyle.Regular);
-                Nome.Anchor = AnchorStyles.Top | AnchorStyles.Left;
-                Nome.Visible = true;
-                panel.Controls.Add(Nome);
+                    Label Nome = new Label();
+                    Nome.Location = new Point(5, 5);
+                    Nome.Text = NomeMaterial += ":";
+                    Nome.Width = 210;
+                    Nome.Font = new Font("Berlin Sans FB Demi", 11, FontStyle.Regular);
+                    Nome.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                    Nome.Visible = true;
+                    panel.Controls.Add(Nome);
 
-                Label lblQuantidade = new Label();
-                lblQuantidade.Location = new Point(215, 5);
-                lblQuantidade.Text = Quantidade;
-                lblQuantidade.Width = 75;
-                lblQuantidade.RightToLeft = RightToLeft.Yes;
-                lblQuantidade.Font = new Font("Arial", 10, FontStyle.Regular);
-                lblQuantidade.Anchor = AnchorStyles.Top;
-                lblQuantidade.Visible = true;
-                panel.Controls.Add(lblQuantidade);
+                    Label lblQuantidade = new Label();
+                    lblQuantidade.Location = new Point(220, 5);
+                    lblQuantidade.Text = Quantidade;
+                    lblQuantidade.Width = 60;
+                    lblQuantidade.RightToLeft = RightToLeft.Yes;
+                    lblQuantidade.Font = new Font("Arial", 10, FontStyle.Regular);
+                    lblQuantidade.Anchor = AnchorStyles.Top;
+                    lblQuantidade.Visible = true;
+                    panel.Controls.Add(lblQuantidade);
+                }
             }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.ToString());
+            }
+            con.Close();
+
+        }
+
+        private void InvJuniores()
+        {
+            SqlConnection con = new SqlConnection(Properties.Settings.Default.Connection);
+            con.Open();
+
+            string NomeMaterial = "";
+            string Quantidade = "";
+
+            try
+            {
+                SqlDataReader dr;
+                string Query = ("SELECT dbo.TblMaterial.Nome, dbo.TblMaterial.Quantidade FROM dbo.TblMaterial WHERE dbo.TblMaterial.FK_IDInventario = 3 ORDER BY dbo.TblMaterial.Nome");
+                SqlCommand Command = new SqlCommand(Query, con);
+                dr = Command.ExecuteReader();
+                while (dr.Read())
+                {
+                    NomeMaterial = dr["Nome"].ToString();
+                    Quantidade = dr["Quantidade"].ToString();
+
+                    Panel panel = new Panel();
+                    panel.Width = 285;
+                    panel.Height = 30;
+                    panel.Anchor = AnchorStyles.Top;
+                    panel.BackColor = Color.Transparent;
+                    panel.Visible = true;
+                    flowpanel_Juniores.Controls.Add(panel);
+
+                    Label Nome = new Label();
+                    Nome.Location = new Point(5, 5);
+                    Nome.Text = NomeMaterial += ":";
+                    Nome.Width = 210;
+                    Nome.Font = new Font("Berlin Sans FB Demi", 11, FontStyle.Regular);
+                    Nome.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                    Nome.Visible = true;
+                    panel.Controls.Add(Nome);
+
+                    Label lblQuantidade = new Label();
+                    lblQuantidade.Location = new Point(220, 5);
+                    lblQuantidade.Text = Quantidade;
+                    lblQuantidade.Width = 60;
+                    lblQuantidade.RightToLeft = RightToLeft.Yes;
+                    lblQuantidade.Font = new Font("Arial", 10, FontStyle.Regular);
+                    lblQuantidade.Anchor = AnchorStyles.Top;
+                    lblQuantidade.Visible = true;
+                    panel.Controls.Add(lblQuantidade);
+                }
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.ToString());
+            }
+            con.Close();
+
+        }
+
+        private void InvJuvenis()
+        {
+            SqlConnection con = new SqlConnection(Properties.Settings.Default.Connection);
+            con.Open();
+
+            string NomeMaterial = "";
+            string Quantidade = "";
+
+            try
+            {
+                SqlDataReader dr;
+                string Query = ("SELECT dbo.TblMaterial.Nome, dbo.TblMaterial.Quantidade FROM dbo.TblMaterial WHERE dbo.TblMaterial.FK_IDInventario = 4 ORDER BY dbo.TblMaterial.Nome");
+                SqlCommand Command = new SqlCommand(Query, con);
+                dr = Command.ExecuteReader();
+                while (dr.Read())
+                {
+                    NomeMaterial = dr["Nome"].ToString();
+                    Quantidade = dr["Quantidade"].ToString();
+
+                    Panel panel = new Panel();
+                    panel.Width = 285;
+                    panel.Height = 30;
+                    panel.Anchor = AnchorStyles.Top;
+                    panel.BackColor = Color.Transparent;
+                    panel.Visible = true;
+                    flowpanel_Juvenis.Controls.Add(panel);
+
+                    Label Nome = new Label();
+                    Nome.Location = new Point(5, 5);
+                    Nome.Text = NomeMaterial += ":";
+                    Nome.Width = 210;
+                    Nome.Font = new Font("Berlin Sans FB Demi", 11, FontStyle.Regular);
+                    Nome.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                    Nome.Visible = true;
+                    panel.Controls.Add(Nome);
+
+                    Label lblQuantidade = new Label();
+                    lblQuantidade.Location = new Point(220, 5);
+                    lblQuantidade.Text = Quantidade;
+                    lblQuantidade.Width = 60;
+                    lblQuantidade.RightToLeft = RightToLeft.Yes;
+                    lblQuantidade.Font = new Font("Arial", 10, FontStyle.Regular);
+                    lblQuantidade.Anchor = AnchorStyles.Top;
+                    lblQuantidade.Visible = true;
+                    panel.Controls.Add(lblQuantidade);
+                }
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.ToString());
+            }
+            con.Close();
+
+        }
+
+        private void InvIniciados()
+        {
+            SqlConnection con = new SqlConnection(Properties.Settings.Default.Connection);
+            con.Open();
+
+            string NomeMaterial = "";
+            string Quantidade = "";
+
+            try
+            {
+                SqlDataReader dr;
+                string Query = ("SELECT dbo.TblMaterial.Nome, dbo.TblMaterial.Quantidade FROM dbo.TblMaterial WHERE dbo.TblMaterial.FK_IDInventario = 5 ORDER BY dbo.TblMaterial.Nome");
+                SqlCommand Command = new SqlCommand(Query, con);
+                dr = Command.ExecuteReader();
+                while (dr.Read())
+                {
+                    NomeMaterial = dr["Nome"].ToString();
+                    Quantidade = dr["Quantidade"].ToString();
+
+                    Panel panel = new Panel();
+                    panel.Width = 285;
+                    panel.Height = 30;
+                    panel.Anchor = AnchorStyles.Top;
+                    panel.BackColor = Color.Transparent;
+                    panel.Visible = true;
+                    flowpanel_Iniciados.Controls.Add(panel);
+
+                    Label Nome = new Label();
+                    Nome.Location = new Point(5, 5);
+                    Nome.Text = NomeMaterial += ":";
+                    Nome.Width = 210;
+                    Nome.Font = new Font("Berlin Sans FB Demi", 11, FontStyle.Regular);
+                    Nome.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                    Nome.Visible = true;
+                    panel.Controls.Add(Nome);
+
+                    Label lblQuantidade = new Label();
+                    lblQuantidade.Location = new Point(220, 5);
+                    lblQuantidade.Text = Quantidade;
+                    lblQuantidade.Width = 60;
+                    lblQuantidade.RightToLeft = RightToLeft.Yes;
+                    lblQuantidade.Font = new Font("Arial", 10, FontStyle.Regular);
+                    lblQuantidade.Anchor = AnchorStyles.Top;
+                    lblQuantidade.Visible = true;
+                    panel.Controls.Add(lblQuantidade);
+                }
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.ToString());
+            }
+            con.Close();
+
+        }
+
+        private void InvInfantis()
+        {
+            SqlConnection con = new SqlConnection(Properties.Settings.Default.Connection);
+            con.Open();
+
+            string NomeMaterial = "";
+            string Quantidade = "";
+
+            try
+            {
+                SqlDataReader dr;
+                string Query = ("SELECT dbo.TblMaterial.Nome, dbo.TblMaterial.Quantidade FROM dbo.TblMaterial WHERE dbo.TblMaterial.FK_IDInventario = 6 ORDER BY dbo.TblMaterial.Nome");
+                SqlCommand Command = new SqlCommand(Query, con);
+                dr = Command.ExecuteReader();
+                while (dr.Read())
+                {
+                    NomeMaterial = dr["Nome"].ToString();
+                    Quantidade = dr["Quantidade"].ToString();
+
+                    Panel panel = new Panel();
+                    panel.Width = 285;
+                    panel.Height = 30;
+                    panel.Anchor = AnchorStyles.Top;
+                    panel.BackColor = Color.Transparent;
+                    panel.Visible = true;
+                    flowpanel_Infantis.Controls.Add(panel);
+
+                    Label Nome = new Label();
+                    Nome.Location = new Point(5, 5);
+                    Nome.Text = NomeMaterial += ":";
+                    Nome.Width = 210;
+                    Nome.Font = new Font("Berlin Sans FB Demi", 11, FontStyle.Regular);
+                    Nome.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                    Nome.Visible = true;
+                    panel.Controls.Add(Nome);
+
+                    Label lblQuantidade = new Label();
+                    lblQuantidade.Location = new Point(220, 5);
+                    lblQuantidade.Text = Quantidade;
+                    lblQuantidade.Width = 60;
+                    lblQuantidade.RightToLeft = RightToLeft.Yes;
+                    lblQuantidade.Font = new Font("Arial", 10, FontStyle.Regular);
+                    lblQuantidade.Anchor = AnchorStyles.Top;
+                    lblQuantidade.Visible = true;
+                    panel.Controls.Add(lblQuantidade);
+                }
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.ToString());
+            }
+            con.Close();
+
+        }
+
+        private void InvBenjamins()
+        {
+            SqlConnection con = new SqlConnection(Properties.Settings.Default.Connection);
+            con.Open();
+
+            string NomeMaterial = "";
+            string Quantidade = "";
+
+            try
+            {
+                SqlDataReader dr;
+                string Query = ("SELECT dbo.TblMaterial.Nome, dbo.TblMaterial.Quantidade FROM dbo.TblMaterial WHERE dbo.TblMaterial.FK_IDInventario = 7 ORDER BY dbo.TblMaterial.Nome");
+                SqlCommand Command = new SqlCommand(Query, con);
+                dr = Command.ExecuteReader();
+                while (dr.Read())
+                {
+                    NomeMaterial = dr["Nome"].ToString();
+                    Quantidade = dr["Quantidade"].ToString();
+
+                    Panel panel = new Panel();
+                    panel.Width = 285;
+                    panel.Height = 30;
+                    panel.Anchor = AnchorStyles.Top;
+                    panel.BackColor = Color.Transparent;
+                    panel.Visible = true;
+                    flowpanel_Benjamins.Controls.Add(panel);
+
+                    Label Nome = new Label();
+                    Nome.Location = new Point(5, 5);
+                    Nome.Text = NomeMaterial += ":";
+                    Nome.Width = 210;
+                    Nome.Font = new Font("Berlin Sans FB Demi", 11, FontStyle.Regular);
+                    Nome.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                    Nome.Visible = true;
+                    panel.Controls.Add(Nome);
+
+                    Label lblQuantidade = new Label();
+                    lblQuantidade.Location = new Point(220, 5);
+                    lblQuantidade.Text = Quantidade;
+                    lblQuantidade.Width = 60;
+                    lblQuantidade.RightToLeft = RightToLeft.Yes;
+                    lblQuantidade.Font = new Font("Arial", 10, FontStyle.Regular);
+                    lblQuantidade.Anchor = AnchorStyles.Top;
+                    lblQuantidade.Visible = true;
+                    panel.Controls.Add(lblQuantidade);
+                }
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.ToString());
+            }
+            con.Close();
+
+        }
+
+        private void InvTraquinas()
+        {
+            SqlConnection con = new SqlConnection(Properties.Settings.Default.Connection);
+            con.Open();
+
+            string NomeMaterial = "";
+            string Quantidade = "";
+
+            try
+            {
+                SqlDataReader dr;
+                string Query = ("SELECT dbo.TblMaterial.Nome, dbo.TblMaterial.Quantidade FROM dbo.TblMaterial WHERE dbo.TblMaterial.FK_IDInventario = 8 ORDER BY dbo.TblMaterial.Nome");
+                SqlCommand Command = new SqlCommand(Query, con);
+                dr = Command.ExecuteReader();
+                while (dr.Read())
+                {
+                    NomeMaterial = dr["Nome"].ToString();
+                    Quantidade = dr["Quantidade"].ToString();
+
+                    Panel panel = new Panel();
+                    panel.Width = 285;
+                    panel.Height = 30;
+                    panel.Anchor = AnchorStyles.Top;
+                    panel.BackColor = Color.Transparent;
+                    panel.Visible = true;
+                    flowpanel_Traquinas.Controls.Add(panel);
+
+                    Label Nome = new Label();
+                    Nome.Location = new Point(5, 5);
+                    Nome.Text = NomeMaterial += ":";
+                    Nome.Width = 210;
+                    Nome.Font = new Font("Berlin Sans FB Demi", 11, FontStyle.Regular);
+                    Nome.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                    Nome.Visible = true;
+                    panel.Controls.Add(Nome);
+
+                    Label lblQuantidade = new Label();
+                    lblQuantidade.Location = new Point(220, 5);
+                    lblQuantidade.Text = Quantidade;
+                    lblQuantidade.Width = 60;
+                    lblQuantidade.RightToLeft = RightToLeft.Yes;
+                    lblQuantidade.Font = new Font("Arial", 10, FontStyle.Regular);
+                    lblQuantidade.Anchor = AnchorStyles.Top;
+                    lblQuantidade.Visible = true;
+                    panel.Controls.Add(lblQuantidade);
+                }
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.ToString());
+            }
+            con.Close();
+
+        }
+
+        private void InvPetizes()
+        {
+            SqlConnection con = new SqlConnection(Properties.Settings.Default.Connection);
+            con.Open();
+
+            string NomeMaterial = "";
+            string Quantidade = "";
+
+            try
+            {
+                SqlDataReader dr;
+                string Query = ("SELECT dbo.TblMaterial.Nome, dbo.TblMaterial.Quantidade FROM dbo.TblMaterial WHERE dbo.TblMaterial.FK_IDInventario = 9 ORDER BY dbo.TblMaterial.Nome");
+                SqlCommand Command = new SqlCommand(Query, con);
+                dr = Command.ExecuteReader();
+                while (dr.Read())
+                {
+                    NomeMaterial = dr["Nome"].ToString();
+                    Quantidade = dr["Quantidade"].ToString();
+
+                    Panel panel = new Panel();
+                    panel.Width = 285;
+                    panel.Height = 30;
+                    panel.Anchor = AnchorStyles.Top;
+                    panel.BackColor = Color.Transparent;
+                    panel.Visible = true;
+                    flowpanel_Petizes.Controls.Add(panel);
+
+                    Label Nome = new Label();
+                    Nome.Location = new Point(5, 5);
+                    Nome.Text = NomeMaterial += ":";
+                    Nome.Width = 210;
+                    Nome.Font = new Font("Berlin Sans FB Demi", 11, FontStyle.Regular);
+                    Nome.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                    Nome.Visible = true;
+                    panel.Controls.Add(Nome);
+
+                    Label lblQuantidade = new Label();
+                    lblQuantidade.Location = new Point(220, 5);
+                    lblQuantidade.Text = Quantidade;
+                    lblQuantidade.Width = 60;
+                    lblQuantidade.RightToLeft = RightToLeft.Yes;
+                    lblQuantidade.Font = new Font("Arial", 10, FontStyle.Regular);
+                    lblQuantidade.Anchor = AnchorStyles.Top;
+                    lblQuantidade.Visible = true;
+                    panel.Controls.Add(lblQuantidade);
+                }
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.ToString());
+            }
+            con.Close();
+
         }
 
         //==============================================================================================
@@ -185,10 +593,63 @@ namespace FootballLife_WF
             this.Dispose();
         }
 
-        private void Btn_NovaDiscussao_Click(object sender, EventArgs e)
+        private void Btn_EditarInventario_Click(object sender, EventArgs e)
         {
             EditarInventario Editar = new EditarInventario();
             Editar.Show();
+        }
+
+        private void Btn_Home_Click(object sender, EventArgs e)
+        {
+            PaginaInicial_Admin PgAdmin = new PaginaInicial_Admin();
+            this.Hide();
+            PgAdmin.ShowDialog();
+            this.Dispose();
+        }
+
+        private void Btn_Jogos_Click(object sender, EventArgs e)
+        {
+            PaginaInicial_Admin PgAdmin = new PaginaInicial_Admin();
+            this.Hide();
+            PgAdmin.ShowDialog();
+            this.Dispose();
+        }
+
+        private void Btn_Equipas_Click(object sender, EventArgs e)
+        {
+            PaginaInicial_Admin PgAdmin = new PaginaInicial_Admin();
+            this.Hide();
+            PgAdmin.ShowDialog();
+            this.Dispose();
+        }
+
+        private void Btn_Estadio_Click(object sender, EventArgs e)
+        {
+            Estadio Estadio = new Estadio();
+            this.Hide();
+            Estadio.ShowDialog();
+            this.Dispose();
+        }
+
+        private void Btn_Titulos_Click(object sender, EventArgs e)
+        {
+             
+        }
+
+        private void Btn_Financiamento_Click(object sender, EventArgs e)
+        {
+            Financiamento Financas = new Financiamento();
+            this.Hide();
+            Financas.ShowDialog();
+            this.Dispose();
+        }
+
+        private void Btn_Utilizadores_Click(object sender, EventArgs e)
+        {
+            Utilizadores_Admin Users = new Utilizadores_Admin();
+            this.Hide();
+            Users.ShowDialog();
+            this.Dispose();
         }
     }
 }

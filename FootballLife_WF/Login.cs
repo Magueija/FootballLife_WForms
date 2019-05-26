@@ -155,43 +155,47 @@ namespace FootballLife_WF
 
                 if (tb_Utilizador.Text == userAdmin && tb_Password.Text == passAdmin)
                 {
+                    Properties.Settings.Default.IDUser = Convert.ToInt32(IDAdmin);
+                    Properties.Settings.Default.FuncaoUser = "Admin";
+                    Properties.Settings.Default.Save();
+
                     PaginaInicial_Admin PgAdmin = new PaginaInicial_Admin();
                     this.Hide();
                     PgAdmin.ShowDialog();
                     this.Dispose();
-
-                    Properties.Settings.Default.IDUser = IDAdmin;
-                    Properties.Settings.Default.Save();
                 }
                 else if (tb_Utilizador.Text == userTreinador && tb_Password.Text == passTreinador)
                 {
+                    Properties.Settings.Default.IDUser = Convert.ToInt32(IDTreinador);
+                    Properties.Settings.Default.FuncaoUser = "Treinador";
+                    Properties.Settings.Default.Save();
+
                     PaginaInicial_Treinador PgTrein = new PaginaInicial_Treinador();
                     this.Hide();
                     PgTrein.ShowDialog();
                     this.Dispose();
-
-                    Properties.Settings.Default.IDUser = IDTreinador;
-                    Properties.Settings.Default.Save();
                 }
                 else if (tb_Utilizador.Text == userAtleta && tb_Password.Text == passAtleta)
                 {
+                    Properties.Settings.Default.IDUser = Convert.ToInt32(IDAtleta);
+                    Properties.Settings.Default.FuncaoUser = "Atleta";
+                    Properties.Settings.Default.Save();
+
                     PaginaInicial_Atleta PgAtl = new PaginaInicial_Atleta();
                     this.Hide();
                     PgAtl.ShowDialog();
                     this.Dispose();
-
-                    Properties.Settings.Default.IDUser = IDAtleta;
-                    Properties.Settings.Default.Save();
                 }
                 else if (tb_Utilizador.Text == userSocio && tb_Password.Text == passSocio)
                 {
+                    Properties.Settings.Default.IDUser = Convert.ToInt32(IDSocio);
+                    Properties.Settings.Default.FuncaoUser = "Socio";
+                    Properties.Settings.Default.Save();
+
                     PaginaInicial_Socio PgSoc = new PaginaInicial_Socio();
                     this.Hide();
                     PgSoc.ShowDialog();
                     this.Dispose();
-
-                    Properties.Settings.Default.IDUser = IDSocio;
-                    Properties.Settings.Default.Save();
                 }
                 else
                 {

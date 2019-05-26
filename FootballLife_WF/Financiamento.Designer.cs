@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Financiamento));
             this.img_Fundo = new System.Windows.Forms.PictureBox();
             this.btn_TopMenu = new System.Windows.Forms.Button();
@@ -40,12 +41,12 @@
             this.btn_Home = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.lbl_Sessao = new System.Windows.Forms.Label();
             this.lbl_Terminar = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             this.img_LogOut = new System.Windows.Forms.PictureBox();
             this.btn_LogOut = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.img_Logo = new System.Windows.Forms.PictureBox();
             this.lbl_Titulo = new System.Windows.Forms.Label();
             this.lbl_Funcao = new System.Windows.Forms.Label();
@@ -56,16 +57,22 @@
             this.tb_Pesquisar = new System.Windows.Forms.TextBox();
             this.lbl_Pesquisar = new System.Windows.Forms.Label();
             this.img_Linha = new System.Windows.Forms.PictureBox();
-            this.panel_Lucros = new System.Windows.Forms.Panel();
-            this.img_NovaDiscussao = new System.Windows.Forms.PictureBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.lbl_Novadiscussao = new System.Windows.Forms.Label();
-            this.lbl_SemResultadosLucros = new System.Windows.Forms.Label();
-            this.btn_NovaDiscussao = new System.Windows.Forms.Button();
-            this.lbl_Lucros = new System.Windows.Forms.Label();
-            this.panel_Despesas = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lbl_Despesas = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lbl_SemResultados_Lucros = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.lbl_AddLucros = new System.Windows.Forms.Label();
+            this.btn_AddLucros = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.flowpanel_Lucros = new System.Windows.Forms.FlowLayoutPanel();
+            this.tblLucrosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lbl_SemResultados_Despesas = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lbl_AddDespesas = new System.Windows.Forms.Label();
+            this.btn_AddDespesas = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.flowpanel_Despesas = new System.Windows.Forms.FlowLayoutPanel();
+            this.tblDespesasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.img_Fundo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Menu)).BeginInit();
             this.panel_Menu.SuspendLayout();
@@ -73,10 +80,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.img_Logo)).BeginInit();
             this.panel_Pesquisa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_Linha)).BeginInit();
-            this.panel_Lucros.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.img_NovaDiscussao)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel_Despesas.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblLucrosBindingSource)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblDespesasBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // img_Fundo
@@ -147,12 +156,12 @@
             this.panel_Menu.Controls.Add(this.btn_Home);
             this.panel_Menu.Controls.Add(this.button1);
             this.panel_Menu.Controls.Add(this.button2);
-            this.panel_Menu.Controls.Add(this.button3);
-            this.panel_Menu.Controls.Add(this.button4);
             this.panel_Menu.Controls.Add(this.lbl_Sessao);
             this.panel_Menu.Controls.Add(this.lbl_Terminar);
+            this.panel_Menu.Controls.Add(this.button3);
             this.panel_Menu.Controls.Add(this.img_LogOut);
             this.panel_Menu.Controls.Add(this.btn_LogOut);
+            this.panel_Menu.Controls.Add(this.button4);
             this.panel_Menu.Location = new System.Drawing.Point(0, 65);
             this.panel_Menu.Name = "panel_Menu";
             this.panel_Menu.Size = new System.Drawing.Size(160, 684);
@@ -232,7 +241,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(12, 83);
+            this.button1.Location = new System.Drawing.Point(12, 86);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(130, 31);
             this.button1.TabIndex = 6;
@@ -248,44 +257,12 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(12, 120);
+            this.button2.Location = new System.Drawing.Point(12, 123);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(130, 31);
             this.button2.TabIndex = 7;
             this.button2.Text = "EQUIPAS";
             this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.BackColor = System.Drawing.Color.Black;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(12, 157);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(130, 31);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "ESTÁDIO";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.BackColor = System.Drawing.Color.Black;
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(12, 194);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(130, 31);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "TÍTULOS";
-            this.button4.UseVisualStyleBackColor = false;
             // 
             // lbl_Sessao
             // 
@@ -295,7 +272,7 @@
             this.lbl_Sessao.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Sessao.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl_Sessao.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Sessao.Location = new System.Drawing.Point(72, 639);
+            this.lbl_Sessao.Location = new System.Drawing.Point(73, 640);
             this.lbl_Sessao.Name = "lbl_Sessao";
             this.lbl_Sessao.Size = new System.Drawing.Size(44, 16);
             this.lbl_Sessao.TabIndex = 15;
@@ -309,11 +286,27 @@
             this.lbl_Terminar.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Terminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl_Terminar.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Terminar.Location = new System.Drawing.Point(72, 623);
+            this.lbl_Terminar.Location = new System.Drawing.Point(73, 624);
             this.lbl_Terminar.Name = "lbl_Terminar";
             this.lbl_Terminar.Size = new System.Drawing.Size(61, 16);
             this.lbl_Terminar.TabIndex = 14;
             this.lbl_Terminar.Text = "Terminar";
+            // 
+            // button3
+            // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.BackColor = System.Drawing.Color.Black;
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(12, 160);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(130, 31);
+            this.button3.TabIndex = 8;
+            this.button3.Text = "ESTÁDIO";
+            this.button3.UseVisualStyleBackColor = false;
             // 
             // img_LogOut
             // 
@@ -322,7 +315,7 @@
             this.img_LogOut.BackColor = System.Drawing.Color.Transparent;
             this.img_LogOut.Cursor = System.Windows.Forms.Cursors.Hand;
             this.img_LogOut.Image = global::FootballLife_WF.Properties.Resources.LogOut;
-            this.img_LogOut.Location = new System.Drawing.Point(22, 614);
+            this.img_LogOut.Location = new System.Drawing.Point(23, 615);
             this.img_LogOut.Name = "img_LogOut";
             this.img_LogOut.Size = new System.Drawing.Size(44, 49);
             this.img_LogOut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -339,11 +332,27 @@
             this.btn_LogOut.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
             this.btn_LogOut.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
             this.btn_LogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_LogOut.Location = new System.Drawing.Point(11, 606);
+            this.btn_LogOut.Location = new System.Drawing.Point(12, 607);
             this.btn_LogOut.Name = "btn_LogOut";
             this.btn_LogOut.Size = new System.Drawing.Size(130, 65);
             this.btn_LogOut.TabIndex = 20;
             this.btn_LogOut.UseVisualStyleBackColor = false;
+            // 
+            // button4
+            // 
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button4.BackColor = System.Drawing.Color.Black;
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Location = new System.Drawing.Point(12, 197);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(130, 31);
+            this.button4.TabIndex = 9;
+            this.button4.Text = "TÍTULOS";
+            this.button4.UseVisualStyleBackColor = false;
             // 
             // img_Logo
             // 
@@ -352,7 +361,7 @@
             this.img_Logo.BackColor = System.Drawing.Color.Transparent;
             this.img_Logo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.img_Logo.Image = global::FootballLife_WF.Properties.Resources.Logo_Clube;
-            this.img_Logo.Location = new System.Drawing.Point(1313, 13);
+            this.img_Logo.Location = new System.Drawing.Point(1314, 12);
             this.img_Logo.MaximumSize = new System.Drawing.Size(44, 40);
             this.img_Logo.MinimumSize = new System.Drawing.Size(44, 40);
             this.img_Logo.Name = "img_Logo";
@@ -368,7 +377,7 @@
             this.lbl_Titulo.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Titulo.Font = new System.Drawing.Font("Bauhaus 93", 65.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Titulo.ForeColor = System.Drawing.Color.White;
-            this.lbl_Titulo.Location = new System.Drawing.Point(287, 97);
+            this.lbl_Titulo.Location = new System.Drawing.Point(296, 97);
             this.lbl_Titulo.Name = "lbl_Titulo";
             this.lbl_Titulo.Size = new System.Drawing.Size(866, 98);
             this.lbl_Titulo.TabIndex = 19;
@@ -417,7 +426,7 @@
             this.panel_Pesquisa.Controls.Add(this.btn_Lupa);
             this.panel_Pesquisa.Controls.Add(this.tb_Pesquisar);
             this.panel_Pesquisa.Controls.Add(this.lbl_Pesquisar);
-            this.panel_Pesquisa.Location = new System.Drawing.Point(339, 222);
+            this.panel_Pesquisa.Location = new System.Drawing.Point(348, 222);
             this.panel_Pesquisa.Name = "panel_Pesquisa";
             this.panel_Pesquisa.Size = new System.Drawing.Size(681, 45);
             this.panel_Pesquisa.TabIndex = 23;
@@ -437,6 +446,7 @@
             this.btn_Lupa.Size = new System.Drawing.Size(19, 20);
             this.btn_Lupa.TabIndex = 27;
             this.btn_Lupa.UseVisualStyleBackColor = false;
+            this.btn_Lupa.Click += new System.EventHandler(this.Btn_Lupa_Click);
             // 
             // tb_Pesquisar
             // 
@@ -445,6 +455,8 @@
             this.tb_Pesquisar.Name = "tb_Pesquisar";
             this.tb_Pesquisar.Size = new System.Drawing.Size(525, 22);
             this.tb_Pesquisar.TabIndex = 26;
+            this.tb_Pesquisar.TextChanged += new System.EventHandler(this.Tb_Pesquisar_TextChanged);
+            this.tb_Pesquisar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_KeyDown);
             // 
             // lbl_Pesquisar
             // 
@@ -461,144 +473,234 @@
             this.img_Linha.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.img_Linha.BackColor = System.Drawing.Color.Transparent;
             this.img_Linha.Image = global::FootballLife_WF.Properties.Resources.Linha_Separadora;
-            this.img_Linha.Location = new System.Drawing.Point(232, 273);
+            this.img_Linha.Location = new System.Drawing.Point(241, 273);
             this.img_Linha.Name = "img_Linha";
             this.img_Linha.Size = new System.Drawing.Size(892, 53);
             this.img_Linha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.img_Linha.TabIndex = 28;
             this.img_Linha.TabStop = false;
             // 
-            // panel_Lucros
+            // panel1
             // 
-            this.panel_Lucros.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panel_Lucros.AutoScroll = true;
-            this.panel_Lucros.BackColor = System.Drawing.Color.White;
-            this.panel_Lucros.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel_Lucros.Controls.Add(this.img_NovaDiscussao);
-            this.panel_Lucros.Controls.Add(this.dataGridView1);
-            this.panel_Lucros.Controls.Add(this.lbl_Novadiscussao);
-            this.panel_Lucros.Controls.Add(this.lbl_SemResultadosLucros);
-            this.panel_Lucros.Controls.Add(this.btn_NovaDiscussao);
-            this.panel_Lucros.Controls.Add(this.lbl_Lucros);
-            this.panel_Lucros.Location = new System.Drawing.Point(260, 332);
-            this.panel_Lucros.Name = "panel_Lucros";
-            this.panel_Lucros.Size = new System.Drawing.Size(371, 405);
-            this.panel_Lucros.TabIndex = 29;
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel1.AutoScroll = true;
+            this.panel1.AutoSize = true;
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.lbl_SemResultados_Lucros);
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.lbl_AddLucros);
+            this.panel1.Controls.Add(this.btn_AddLucros);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.flowpanel_Lucros);
+            this.panel1.Location = new System.Drawing.Point(302, 332);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(380, 405);
+            this.panel1.TabIndex = 38;
             // 
-            // img_NovaDiscussao
+            // lbl_SemResultados_Lucros
             // 
-            this.img_NovaDiscussao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.img_NovaDiscussao.BackColor = System.Drawing.Color.Transparent;
-            this.img_NovaDiscussao.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.img_NovaDiscussao.Image = global::FootballLife_WF.Properties.Resources.Adicionar_Criar;
-            this.img_NovaDiscussao.Location = new System.Drawing.Point(283, 7);
-            this.img_NovaDiscussao.MaximumSize = new System.Drawing.Size(15, 15);
-            this.img_NovaDiscussao.MinimumSize = new System.Drawing.Size(15, 15);
-            this.img_NovaDiscussao.Name = "img_NovaDiscussao";
-            this.img_NovaDiscussao.Size = new System.Drawing.Size(15, 15);
-            this.img_NovaDiscussao.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.img_NovaDiscussao.TabIndex = 34;
-            this.img_NovaDiscussao.TabStop = false;
+            this.lbl_SemResultados_Lucros.AutoSize = true;
+            this.lbl_SemResultados_Lucros.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_SemResultados_Lucros.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lbl_SemResultados_Lucros.Location = new System.Drawing.Point(20, 78);
+            this.lbl_SemResultados_Lucros.Name = "lbl_SemResultados_Lucros";
+            this.lbl_SemResultados_Lucros.Size = new System.Drawing.Size(237, 15);
+            this.lbl_SemResultados_Lucros.TabIndex = 30;
+            this.lbl_SemResultados_Lucros.Text = "Sem resultados para os criterios da pesquisa!";
+            this.lbl_SemResultados_Lucros.Visible = false;
             // 
-            // dataGridView1
+            // pictureBox2
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(23, 104);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 30;
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Image = global::FootballLife_WF.Properties.Resources.Adicionar_Criar;
+            this.pictureBox2.Location = new System.Drawing.Point(287, 8);
+            this.pictureBox2.MaximumSize = new System.Drawing.Size(15, 15);
+            this.pictureBox2.MinimumSize = new System.Drawing.Size(15, 15);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(15, 15);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 37;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.Btn_AddLucros_Click);
+            this.pictureBox2.MouseLeave += new System.EventHandler(this.Btn_AddLucros_MouseLeave);
+            this.pictureBox2.MouseHover += new System.EventHandler(this.Btn_AddLucros_MouseHover);
             // 
-            // lbl_Novadiscussao
+            // lbl_AddLucros
             // 
-            this.lbl_Novadiscussao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_Novadiscussao.AutoSize = true;
-            this.lbl_Novadiscussao.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_Novadiscussao.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbl_Novadiscussao.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Novadiscussao.ForeColor = System.Drawing.Color.Black;
-            this.lbl_Novadiscussao.Location = new System.Drawing.Point(300, 8);
-            this.lbl_Novadiscussao.Name = "lbl_Novadiscussao";
-            this.lbl_Novadiscussao.Size = new System.Drawing.Size(59, 13);
-            this.lbl_Novadiscussao.TabIndex = 33;
-            this.lbl_Novadiscussao.Text = "Adicionar";
+            this.lbl_AddLucros.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_AddLucros.AutoSize = true;
+            this.lbl_AddLucros.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_AddLucros.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl_AddLucros.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_AddLucros.ForeColor = System.Drawing.Color.Black;
+            this.lbl_AddLucros.Location = new System.Drawing.Point(304, 7);
+            this.lbl_AddLucros.Name = "lbl_AddLucros";
+            this.lbl_AddLucros.Size = new System.Drawing.Size(63, 16);
+            this.lbl_AddLucros.TabIndex = 36;
+            this.lbl_AddLucros.Text = "Adicionar";
+            this.lbl_AddLucros.Click += new System.EventHandler(this.Btn_AddLucros_Click);
+            this.lbl_AddLucros.MouseLeave += new System.EventHandler(this.Btn_AddLucros_MouseLeave);
+            this.lbl_AddLucros.MouseHover += new System.EventHandler(this.Btn_AddLucros_MouseHover);
             // 
-            // lbl_SemResultadosLucros
+            // btn_AddLucros
             // 
-            this.lbl_SemResultadosLucros.AutoSize = true;
-            this.lbl_SemResultadosLucros.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_SemResultadosLucros.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lbl_SemResultadosLucros.Location = new System.Drawing.Point(20, 70);
-            this.lbl_SemResultadosLucros.Name = "lbl_SemResultadosLucros";
-            this.lbl_SemResultadosLucros.Size = new System.Drawing.Size(237, 15);
-            this.lbl_SemResultadosLucros.TabIndex = 29;
-            this.lbl_SemResultadosLucros.Text = "Sem resultados para os criterios da pesquisa!";
-            this.lbl_SemResultadosLucros.Visible = false;
+            this.btn_AddLucros.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_AddLucros.BackColor = System.Drawing.Color.Transparent;
+            this.btn_AddLucros.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_AddLucros.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btn_AddLucros.FlatAppearance.BorderSize = 0;
+            this.btn_AddLucros.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_AddLucros.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_AddLucros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_AddLucros.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_AddLucros.ForeColor = System.Drawing.Color.Black;
+            this.btn_AddLucros.Location = new System.Drawing.Point(278, 5);
+            this.btn_AddLucros.Name = "btn_AddLucros";
+            this.btn_AddLucros.Size = new System.Drawing.Size(89, 21);
+            this.btn_AddLucros.TabIndex = 35;
+            this.btn_AddLucros.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_AddLucros.UseVisualStyleBackColor = false;
+            this.btn_AddLucros.Click += new System.EventHandler(this.Btn_AddLucros_Click);
+            this.btn_AddLucros.MouseLeave += new System.EventHandler(this.Btn_AddLucros_MouseLeave);
+            this.btn_AddLucros.MouseHover += new System.EventHandler(this.Btn_AddLucros_MouseHover);
             // 
-            // btn_NovaDiscussao
+            // label5
             // 
-            this.btn_NovaDiscussao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_NovaDiscussao.BackColor = System.Drawing.Color.Transparent;
-            this.btn_NovaDiscussao.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_NovaDiscussao.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.btn_NovaDiscussao.FlatAppearance.BorderSize = 0;
-            this.btn_NovaDiscussao.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btn_NovaDiscussao.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btn_NovaDiscussao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_NovaDiscussao.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_NovaDiscussao.ForeColor = System.Drawing.Color.Black;
-            this.btn_NovaDiscussao.Location = new System.Drawing.Point(274, 4);
-            this.btn_NovaDiscussao.Name = "btn_NovaDiscussao";
-            this.btn_NovaDiscussao.Size = new System.Drawing.Size(89, 21);
-            this.btn_NovaDiscussao.TabIndex = 32;
-            this.btn_NovaDiscussao.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_NovaDiscussao.UseVisualStyleBackColor = false;
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.White;
+            this.label5.Font = new System.Drawing.Font("Berlin Sans FB Demi", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(161, 17);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(64, 23);
+            this.label5.TabIndex = 28;
+            this.label5.Text = "Lucros";
             // 
-            // lbl_Lucros
+            // flowpanel_Lucros
             // 
-            this.lbl_Lucros.AutoSize = true;
-            this.lbl_Lucros.Font = new System.Drawing.Font("Berlin Sans FB Demi", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Lucros.Location = new System.Drawing.Point(141, 17);
-            this.lbl_Lucros.Name = "lbl_Lucros";
-            this.lbl_Lucros.Size = new System.Drawing.Size(64, 23);
-            this.lbl_Lucros.TabIndex = 28;
-            this.lbl_Lucros.Text = "Lucros";
+            this.flowpanel_Lucros.AutoScroll = true;
+            this.flowpanel_Lucros.Location = new System.Drawing.Point(12, 70);
+            this.flowpanel_Lucros.Name = "flowpanel_Lucros";
+            this.flowpanel_Lucros.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.flowpanel_Lucros.Size = new System.Drawing.Size(358, 325);
+            this.flowpanel_Lucros.TabIndex = 38;
             // 
-            // panel_Despesas
+            // tblLucrosBindingSource
             // 
-            this.panel_Despesas.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panel_Despesas.AutoScroll = true;
-            this.panel_Despesas.AutoSize = true;
-            this.panel_Despesas.BackColor = System.Drawing.Color.White;
-            this.panel_Despesas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel_Despesas.Controls.Add(this.label1);
-            this.panel_Despesas.Controls.Add(this.lbl_Despesas);
-            this.panel_Despesas.Location = new System.Drawing.Point(732, 332);
-            this.panel_Despesas.Name = "panel_Despesas";
-            this.panel_Despesas.Size = new System.Drawing.Size(380, 405);
-            this.panel_Despesas.TabIndex = 31;
+            this.tblLucrosBindingSource.DataMember = "TblLucros";
             // 
-            // label1
+            // panel2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(20, 70);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(237, 15);
-            this.label1.TabIndex = 30;
-            this.label1.Text = "Sem resultados para os criterios da pesquisa!";
-            this.label1.Visible = false;
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel2.AutoScroll = true;
+            this.panel2.AutoSize = true;
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.lbl_SemResultados_Despesas);
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Controls.Add(this.lbl_AddDespesas);
+            this.panel2.Controls.Add(this.btn_AddDespesas);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.flowpanel_Despesas);
+            this.panel2.Location = new System.Drawing.Point(730, 332);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(380, 405);
+            this.panel2.TabIndex = 39;
             // 
-            // lbl_Despesas
+            // lbl_SemResultados_Despesas
             // 
-            this.lbl_Despesas.AutoSize = true;
-            this.lbl_Despesas.BackColor = System.Drawing.Color.White;
-            this.lbl_Despesas.Font = new System.Drawing.Font("Berlin Sans FB Demi", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Despesas.Location = new System.Drawing.Point(151, 17);
-            this.lbl_Despesas.Name = "lbl_Despesas";
-            this.lbl_Despesas.Size = new System.Drawing.Size(89, 23);
-            this.lbl_Despesas.TabIndex = 28;
-            this.lbl_Despesas.Text = "Despesas";
+            this.lbl_SemResultados_Despesas.AutoSize = true;
+            this.lbl_SemResultados_Despesas.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_SemResultados_Despesas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lbl_SemResultados_Despesas.Location = new System.Drawing.Point(17, 80);
+            this.lbl_SemResultados_Despesas.Name = "lbl_SemResultados_Despesas";
+            this.lbl_SemResultados_Despesas.Size = new System.Drawing.Size(237, 15);
+            this.lbl_SemResultados_Despesas.TabIndex = 30;
+            this.lbl_SemResultados_Despesas.Text = "Sem resultados para os criterios da pesquisa!";
+            this.lbl_SemResultados_Despesas.Visible = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::FootballLife_WF.Properties.Resources.Adicionar_Criar;
+            this.pictureBox1.Location = new System.Drawing.Point(288, 7);
+            this.pictureBox1.MaximumSize = new System.Drawing.Size(15, 15);
+            this.pictureBox1.MinimumSize = new System.Drawing.Size(15, 15);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(15, 15);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 37;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.Btn_AddDespesas_Click);
+            this.pictureBox1.MouseLeave += new System.EventHandler(this.Btn_AddDespesas_MouseLeave);
+            this.pictureBox1.MouseHover += new System.EventHandler(this.Btn_AddDespesas_MouseHover);
+            // 
+            // lbl_AddDespesas
+            // 
+            this.lbl_AddDespesas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_AddDespesas.AutoSize = true;
+            this.lbl_AddDespesas.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_AddDespesas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl_AddDespesas.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_AddDespesas.ForeColor = System.Drawing.Color.Black;
+            this.lbl_AddDespesas.Location = new System.Drawing.Point(305, 6);
+            this.lbl_AddDespesas.Name = "lbl_AddDespesas";
+            this.lbl_AddDespesas.Size = new System.Drawing.Size(63, 16);
+            this.lbl_AddDespesas.TabIndex = 36;
+            this.lbl_AddDespesas.Text = "Adicionar";
+            this.lbl_AddDespesas.Click += new System.EventHandler(this.Btn_AddDespesas_Click);
+            this.lbl_AddDespesas.MouseLeave += new System.EventHandler(this.Btn_AddDespesas_MouseLeave);
+            this.lbl_AddDespesas.MouseHover += new System.EventHandler(this.Btn_AddDespesas_MouseHover);
+            // 
+            // btn_AddDespesas
+            // 
+            this.btn_AddDespesas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_AddDespesas.BackColor = System.Drawing.Color.Transparent;
+            this.btn_AddDespesas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_AddDespesas.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btn_AddDespesas.FlatAppearance.BorderSize = 0;
+            this.btn_AddDespesas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_AddDespesas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_AddDespesas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_AddDespesas.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_AddDespesas.ForeColor = System.Drawing.Color.Black;
+            this.btn_AddDespesas.Location = new System.Drawing.Point(279, 4);
+            this.btn_AddDespesas.Name = "btn_AddDespesas";
+            this.btn_AddDespesas.Size = new System.Drawing.Size(89, 21);
+            this.btn_AddDespesas.TabIndex = 35;
+            this.btn_AddDespesas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_AddDespesas.UseVisualStyleBackColor = false;
+            this.btn_AddDespesas.Click += new System.EventHandler(this.Btn_AddDespesas_Click);
+            this.btn_AddDespesas.MouseLeave += new System.EventHandler(this.Btn_AddDespesas_MouseLeave);
+            this.btn_AddDespesas.MouseHover += new System.EventHandler(this.Btn_AddDespesas_MouseHover);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Font = new System.Drawing.Font("Berlin Sans FB Demi", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(152, 17);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(89, 23);
+            this.label2.TabIndex = 28;
+            this.label2.Text = "Despesas";
+            // 
+            // flowpanel_Despesas
+            // 
+            this.flowpanel_Despesas.AutoScroll = true;
+            this.flowpanel_Despesas.Location = new System.Drawing.Point(9, 73);
+            this.flowpanel_Despesas.Name = "flowpanel_Despesas";
+            this.flowpanel_Despesas.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.flowpanel_Despesas.Size = new System.Drawing.Size(358, 325);
+            this.flowpanel_Despesas.TabIndex = 39;
+            // 
+            // tblDespesasBindingSource
+            // 
+            this.tblDespesasBindingSource.DataMember = "TblDespesas";
             // 
             // Financiamento
             // 
@@ -608,8 +710,8 @@
             this.BackgroundImage = global::FootballLife_WF.Properties.Resources.Fundo_1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1370, 749);
-            this.Controls.Add(this.panel_Despesas);
-            this.Controls.Add(this.panel_Lucros);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.img_Linha);
             this.Controls.Add(this.panel_Pesquisa);
             this.Controls.Add(this.lbl_Titulo);
@@ -618,15 +720,16 @@
             this.Controls.Add(this.img_Menu);
             this.Controls.Add(this.btn_Menu);
             this.Controls.Add(this.btn_TopMenu);
-            this.Controls.Add(this.lbl_Funcao);
             this.Controls.Add(this.lbl_SaldoNegativo);
             this.Controls.Add(this.lbl_SaldoPositivo);
+            this.Controls.Add(this.lbl_Funcao);
             this.Controls.Add(this.img_Fundo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(900, 450);
             this.Name = "Financiamento";
             this.Text = "FOOTBALL LIFE";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Financiamento_Load);
             ((System.ComponentModel.ISupportInitialize)(this.img_Fundo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Menu)).EndInit();
             this.panel_Menu.ResumeLayout(false);
@@ -636,12 +739,14 @@
             this.panel_Pesquisa.ResumeLayout(false);
             this.panel_Pesquisa.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_Linha)).EndInit();
-            this.panel_Lucros.ResumeLayout(false);
-            this.panel_Lucros.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.img_NovaDiscussao)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel_Despesas.ResumeLayout(false);
-            this.panel_Despesas.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblLucrosBindingSource)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblDespesasBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -675,15 +780,21 @@
         private System.Windows.Forms.TextBox tb_Pesquisar;
         private System.Windows.Forms.Label lbl_Pesquisar;
         private System.Windows.Forms.PictureBox img_Linha;
-        private System.Windows.Forms.Panel panel_Lucros;
-        private System.Windows.Forms.Label lbl_SemResultadosLucros;
-        private System.Windows.Forms.Label lbl_Lucros;
-        private System.Windows.Forms.Panel panel_Despesas;
-        private System.Windows.Forms.Label lbl_Despesas;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.PictureBox img_NovaDiscussao;
-        private System.Windows.Forms.Label lbl_Novadiscussao;
-        private System.Windows.Forms.Button btn_NovaDiscussao;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label lbl_SemResultados_Lucros;
+        private System.Windows.Forms.Label lbl_AddLucros;
+        private System.Windows.Forms.Button btn_AddLucros;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.BindingSource tblLucrosBindingSource;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lbl_AddDespesas;
+        private System.Windows.Forms.Button btn_AddDespesas;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbl_SemResultados_Despesas;
+        private System.Windows.Forms.BindingSource tblDespesasBindingSource;
+        private System.Windows.Forms.FlowLayoutPanel flowpanel_Lucros;
+        private System.Windows.Forms.FlowLayoutPanel flowpanel_Despesas;
     }
 }

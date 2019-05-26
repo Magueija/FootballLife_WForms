@@ -20,7 +20,7 @@ namespace FootballLife_WF
 
         private void PaginaInicial_Admin_Load(object sender, EventArgs e)
         {
-            //();
+            
         }
 
 //==============================================================================================
@@ -80,7 +80,6 @@ namespace FootballLife_WF
         }
 
         //==============================================================================================
-        int i;
         private void Admins()
         {
             SqlConnection con = new SqlConnection(Properties.Settings.Default.Connection);
@@ -91,7 +90,7 @@ namespace FootballLife_WF
             string NomeAdmin = "";
 
             SqlDataReader dr;
-            string Query = ("SELECT dbo.TblDiscussao.IDDiscussao, dbo.TblDiscussao.NomeDiscussao, dbo.TblDiscussao.Descricao, dbo.TblAdministrador.IDAdministrador, dbo.TblAdministrador.Nome FROM dbo.TblDiscussao INNER JOIN dbo.TblAdministrador ON dbo.TblDiscussao.FK_IDAdministrador = dbo.TblAdministrador.IDAdministrador ORDER BY dbo.TblDiscussao.IDDiscussao DESC");
+            string Query = ("");
             SqlCommand Command = new SqlCommand(Query, con);
             dr = Command.ExecuteReader();
 
@@ -105,7 +104,7 @@ namespace FootballLife_WF
                 panel.BackColor = Color.White;
                 panel.AutoScroll = true;
                 panel.Visible = true;
-                flowpanel_Utilizadores.Controls.Add(panel);
+                flowpanel_Admins.Controls.Add(panel);
             }
 
             while (dr.Read())
