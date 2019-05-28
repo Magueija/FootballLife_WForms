@@ -104,9 +104,14 @@ namespace FootballLife_WF
 
                 SqlDataReader dr;
                 //Administrador
-                string QueryAdmin = ("SELECT IDAdministrador, Utilizador, Palavra_Chave FROM TblAdministrador");
+                string QueryAdmin = ("SELECT IDAdministrador, Utilizador, Palavra_Chave FROM TblAdministrador WHERE Apagado = 0 AND Utilizador = @Utilizador AND Palavra_Chave = @Palavra_Chave");
                 SqlCommand CommandAdmin = new SqlCommand(QueryAdmin, con);
+
+                CommandAdmin.Parameters.AddWithValue("@utilizador", tb_Utilizador.Text);
+                CommandAdmin.Parameters.AddWithValue("@Palavra_Chave", tb_Password.Text);
+
                 dr = CommandAdmin.ExecuteReader();
+
                 while (dr.Read())
                 {
                     IDAdmin = dr["IDAdministrador"].ToString();
@@ -116,8 +121,12 @@ namespace FootballLife_WF
                 dr.Close();
 
                 //Treinador
-                string QueryTreinador = ("SELECT IDTreinador, Utilizador, Palavra_Chave FROM TblTreinador");
+                string QueryTreinador = ("SELECT IDTreinador, Utilizador, Palavra_Chave FROM TblTreinador WHERE Apagado = 0 AND Utilizador = @Utilizador AND Palavra_Chave = @Palavra_Chave");
                 SqlCommand CommandTreinador = new SqlCommand(QueryTreinador, con);
+
+                CommandTreinador.Parameters.AddWithValue("@utilizador", tb_Utilizador.Text);
+                CommandTreinador.Parameters.AddWithValue("@Palavra_Chave", tb_Password.Text);
+
                 dr = CommandTreinador.ExecuteReader();
                 while (dr.Read())
                 {
@@ -128,8 +137,12 @@ namespace FootballLife_WF
                 dr.Close();
 
                 //Atleta
-                string QueryAtleta = ("SELECT IDAtleta, Utilizador, Palavra_Chave FROM TblAtleta");
+                string QueryAtleta = ("SELECT IDAtleta, Utilizador, Palavra_Chave FROM TblAtleta WHERE Apagado = 0 AND Utilizador = @Utilizador AND Palavra_Chave = @Palavra_Chave");
                 SqlCommand CommandAtleta = new SqlCommand(QueryAtleta, con);
+
+                CommandAtleta.Parameters.AddWithValue("@utilizador", tb_Utilizador.Text);
+                CommandAtleta.Parameters.AddWithValue("@Palavra_Chave", tb_Password.Text);
+
                 dr = CommandAtleta.ExecuteReader();
                 while (dr.Read())
                 {
@@ -140,8 +153,12 @@ namespace FootballLife_WF
                 dr.Close();
 
                 //Socio
-                string QuerySocio = ("SELECT IDSocio, Utilizador, Palavra_Chave FROM TblSocio");
+                string QuerySocio = ("SELECT IDSocio, Utilizador, Palavra_Chave FROM TblSocio WHERE Apagado = 0 AND Utilizador = @Utilizador AND Palavra_Chave = @Palavra_Chave");
                 SqlCommand CommandSocio = new SqlCommand(QuerySocio, con);
+
+                CommandSocio.Parameters.AddWithValue("@utilizador", tb_Utilizador.Text);
+                CommandSocio.Parameters.AddWithValue("@Palavra_Chave", tb_Password.Text);
+
                 dr = CommandSocio.ExecuteReader();
                 while (dr.Read())
                 {
@@ -153,7 +170,7 @@ namespace FootballLife_WF
 
 
 
-                if (tb_Utilizador.Text == userAdmin && tb_Password.Text == passAdmin)
+                if (IDAdmin != "")
                 {
                     Properties.Settings.Default.IDUser = Convert.ToInt32(IDAdmin);
                     Properties.Settings.Default.FuncaoUser = "Admin";
@@ -164,7 +181,7 @@ namespace FootballLife_WF
                     PgAdmin.ShowDialog();
                     this.Dispose();
                 }
-                else if (tb_Utilizador.Text == userTreinador && tb_Password.Text == passTreinador)
+                else if (IDTreinador != "")
                 {
                     Properties.Settings.Default.IDUser = Convert.ToInt32(IDTreinador);
                     Properties.Settings.Default.FuncaoUser = "Treinador";
@@ -175,7 +192,7 @@ namespace FootballLife_WF
                     PgTrein.ShowDialog();
                     this.Dispose();
                 }
-                else if (tb_Utilizador.Text == userAtleta && tb_Password.Text == passAtleta)
+                else if (IDAtleta != "")
                 {
                     Properties.Settings.Default.IDUser = Convert.ToInt32(IDAtleta);
                     Properties.Settings.Default.FuncaoUser = "Atleta";
@@ -186,7 +203,7 @@ namespace FootballLife_WF
                     PgAtl.ShowDialog();
                     this.Dispose();
                 }
-                else if (tb_Utilizador.Text == userSocio && tb_Password.Text == passSocio)
+                else if (IDSocio != "")
                 {
                     Properties.Settings.Default.IDUser = Convert.ToInt32(IDSocio);
                     Properties.Settings.Default.FuncaoUser = "Socio";

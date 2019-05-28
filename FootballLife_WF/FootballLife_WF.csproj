@@ -296,5 +296,8 @@
     <None Include="Resources\LogoAdmin1.png" />
     <None Include="Resources\LogoAdmin.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UserControls\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

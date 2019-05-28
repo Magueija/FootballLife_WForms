@@ -36,17 +36,19 @@ namespace FootballLife_WF
             SqlConnection con = new SqlConnection(Properties.Settings.Default.Connection);
             con.Open();
 
+            string IDMaterial = "";
             string NomeMaterial = "";
             string Quantidade = "";
 
             try
             {
                 SqlDataReader dr;
-                string Query = ("SELECT dbo.TblMaterial.Nome, dbo.TblMaterial.Quantidade FROM dbo.TblMaterial WHERE dbo.TblMaterial.FK_IDInventario = 1 ORDER BY dbo.TblMaterial.Nome");
+                string Query = ("SELECT dbo.TblMaterial.IDMaterial, dbo.TblMaterial.Nome, dbo.TblMaterial.Quantidade FROM dbo.TblMaterial WHERE dbo.TblMaterial.FK_IDInventario = 1 ORDER BY dbo.TblMaterial.Nome");
                 SqlCommand Command = new SqlCommand(Query, con);
                 dr = Command.ExecuteReader();
                 while (dr.Read())
                 {
+                    IDMaterial = dr["IDMaterial"].ToString();
                     NomeMaterial = dr["Nome"].ToString();
                     Quantidade = dr["Quantidade"].ToString();
 
@@ -56,6 +58,7 @@ namespace FootballLife_WF
                     panel.Anchor = AnchorStyles.Top;
                     panel.BackColor = Color.Transparent;
                     panel.Visible = true;
+                    panel.Tag = IDMaterial;
                     flowpanel_Clube.Controls.Add(panel);
 
                     Label Nome = new Label();

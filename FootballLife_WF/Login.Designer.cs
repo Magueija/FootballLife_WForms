@@ -34,13 +34,13 @@
             this.lbl_Password = new System.Windows.Forms.Label();
             this.tb_Password = new System.Windows.Forms.TextBox();
             this.lbl_LoginError = new System.Windows.Forms.Label();
-            this.btn_Entrar = new System.Windows.Forms.Button();
             this.lbl_EsqueceuPassword = new System.Windows.Forms.Label();
             this.Panel_Login = new System.Windows.Forms.Panel();
             this.chb_Lembrar = new System.Windows.Forms.CheckBox();
             this.img_BackArrow = new System.Windows.Forms.PictureBox();
             this.img_Logo = new System.Windows.Forms.PictureBox();
             this.img_Fundo = new System.Windows.Forms.PictureBox();
+            this.btn_Entrar = new System.Windows.Forms.Button();
             this.Panel_Login.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_BackArrow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Logo)).BeginInit();
@@ -64,6 +64,7 @@
             this.tb_Utilizador.Name = "tb_Utilizador";
             this.tb_Utilizador.Size = new System.Drawing.Size(199, 22);
             this.tb_Utilizador.TabIndex = 2;
+            this.tb_Utilizador.Tag = "";
             this.tb_Utilizador.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_KeyDown);
             // 
             // lbl_Password
@@ -81,9 +82,10 @@
             this.tb_Password.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_Password.Location = new System.Drawing.Point(128, 321);
             this.tb_Password.Name = "tb_Password";
-            this.tb_Password.PasswordChar = '*';
             this.tb_Password.Size = new System.Drawing.Size(199, 22);
             this.tb_Password.TabIndex = 4;
+            this.tb_Password.Tag = "";
+            this.tb_Password.UseSystemPasswordChar = true;
             this.tb_Password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_KeyDown);
             // 
             // lbl_LoginError
@@ -98,22 +100,6 @@
             this.lbl_LoginError.Text = "Utilizador ou Password incorretos!";
             this.lbl_LoginError.Visible = false;
             // 
-            // btn_Entrar
-            // 
-            this.btn_Entrar.BackColor = System.Drawing.Color.White;
-            this.btn_Entrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Entrar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.btn_Entrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Entrar.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Entrar.ForeColor = System.Drawing.Color.Black;
-            this.btn_Entrar.Location = new System.Drawing.Point(226, 424);
-            this.btn_Entrar.Name = "btn_Entrar";
-            this.btn_Entrar.Size = new System.Drawing.Size(101, 34);
-            this.btn_Entrar.TabIndex = 6;
-            this.btn_Entrar.Text = "Entrar";
-            this.btn_Entrar.UseVisualStyleBackColor = false;
-            this.btn_Entrar.Click += new System.EventHandler(this.Btn_Entrar_Click);
-            // 
             // lbl_EsqueceuPassword
             // 
             this.lbl_EsqueceuPassword.AutoSize = true;
@@ -123,6 +109,7 @@
             this.lbl_EsqueceuPassword.Name = "lbl_EsqueceuPassword";
             this.lbl_EsqueceuPassword.Size = new System.Drawing.Size(165, 17);
             this.lbl_EsqueceuPassword.TabIndex = 7;
+            this.lbl_EsqueceuPassword.Tag = "";
             this.lbl_EsqueceuPassword.Text = "Esqueceu a sua password?";
             this.lbl_EsqueceuPassword.Click += new System.EventHandler(this.Lbl_EsqueceuPassword_Click);
             // 
@@ -131,17 +118,17 @@
             this.Panel_Login.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Panel_Login.BackColor = System.Drawing.Color.White;
             this.Panel_Login.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Panel_Login.Controls.Add(this.btn_Entrar);
             this.Panel_Login.Controls.Add(this.chb_Lembrar);
             this.Panel_Login.Controls.Add(this.img_BackArrow);
             this.Panel_Login.Controls.Add(this.lbl_EsqueceuPassword);
-            this.Panel_Login.Controls.Add(this.btn_Entrar);
             this.Panel_Login.Controls.Add(this.lbl_LoginError);
             this.Panel_Login.Controls.Add(this.tb_Password);
             this.Panel_Login.Controls.Add(this.lbl_Password);
             this.Panel_Login.Controls.Add(this.tb_Utilizador);
             this.Panel_Login.Controls.Add(this.lbl_Utilizador);
             this.Panel_Login.Controls.Add(this.img_Logo);
-            this.Panel_Login.Location = new System.Drawing.Point(496, 116);
+            this.Panel_Login.Location = new System.Drawing.Point(493, 116);
             this.Panel_Login.Name = "Panel_Login";
             this.Panel_Login.Size = new System.Drawing.Size(370, 496);
             this.Panel_Login.TabIndex = 1;
@@ -156,6 +143,7 @@
             this.chb_Lembrar.Name = "chb_Lembrar";
             this.chb_Lembrar.Size = new System.Drawing.Size(119, 17);
             this.chb_Lembrar.TabIndex = 9;
+            this.chb_Lembrar.Tag = "";
             this.chb_Lembrar.Text = "Guardar Password";
             this.chb_Lembrar.UseVisualStyleBackColor = true;
             // 
@@ -195,17 +183,34 @@
             this.img_Fundo.Image = global::FootballLife_WF.Properties.Resources.Fundo_1;
             this.img_Fundo.Location = new System.Drawing.Point(0, 0);
             this.img_Fundo.Name = "img_Fundo";
-            this.img_Fundo.Size = new System.Drawing.Size(1370, 749);
+            this.img_Fundo.Size = new System.Drawing.Size(1364, 749);
             this.img_Fundo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.img_Fundo.TabIndex = 0;
             this.img_Fundo.TabStop = false;
+            // 
+            // btn_Entrar
+            // 
+            this.btn_Entrar.BackColor = System.Drawing.Color.White;
+            this.btn_Entrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Entrar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btn_Entrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Entrar.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Entrar.ForeColor = System.Drawing.Color.Black;
+            this.btn_Entrar.Location = new System.Drawing.Point(236, 424);
+            this.btn_Entrar.Name = "btn_Entrar";
+            this.btn_Entrar.Size = new System.Drawing.Size(101, 34);
+            this.btn_Entrar.TabIndex = 10;
+            this.btn_Entrar.Tag = "";
+            this.btn_Entrar.Text = "Entrar";
+            this.btn_Entrar.UseVisualStyleBackColor = false;
+            this.btn_Entrar.Click += new System.EventHandler(this.Btn_Entrar_Click);
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.ClientSize = new System.Drawing.Size(1364, 749);
             this.Controls.Add(this.Panel_Login);
             this.Controls.Add(this.img_Fundo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -231,11 +236,11 @@
         private System.Windows.Forms.Label lbl_Password;
         private System.Windows.Forms.TextBox tb_Password;
         private System.Windows.Forms.Label lbl_LoginError;
-        private System.Windows.Forms.Button btn_Entrar;
         private System.Windows.Forms.Label lbl_EsqueceuPassword;
         private System.Windows.Forms.Panel Panel_Login;
         private System.Windows.Forms.PictureBox img_BackArrow;
         private System.Windows.Forms.CheckBox chb_Lembrar;
+        private System.Windows.Forms.Button btn_Entrar;
     }
 }
 

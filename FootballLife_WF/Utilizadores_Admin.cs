@@ -20,6 +20,46 @@ namespace FootballLife_WF
 
         private void PaginaInicial_Admin_Load(object sender, EventArgs e)
         {
+            for(int i = 0; i < 5; i++)
+            {
+            Panel panel = new Panel();
+            panel.Width = 200;
+            panel.Height = 50;
+            panel.Anchor = AnchorStyles.Top;
+            panel.BorderStyle = BorderStyle.Fixed3D;
+            panel.BackColor = Color.White;
+            panel.Visible = true;
+            flowpanel_Admins.Controls.Add(panel);
+
+            PictureBox Pb = new PictureBox();
+            Pb.Location = new Point(10, 5);
+            Pb.Width = 35;
+            Pb.Height = 35;
+            Pb.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+            Pb.Image = FootballLife_WF.Properties.Resources.LogoAdmin;
+            Pb.SizeMode = PictureBoxSizeMode.Zoom;
+            Pb.Visible = true;
+            panel.Controls.Add(Pb);
+
+            PictureBox Pbdelete = new PictureBox();
+            Pbdelete.Location = new Point(175, 5);
+            Pbdelete.Width = 15;
+            Pbdelete.Height = 15;
+            Pbdelete.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+            Pbdelete.Image = FootballLife_WF.Properties.Resources.Delete;
+            Pbdelete.SizeMode = PictureBoxSizeMode.Zoom;
+            Pbdelete.Visible = true;
+            panel.Controls.Add(Pbdelete);
+
+            Label lblUser = new Label();
+            lblUser.Location = new Point(50, 15);
+            lblUser.Text = "Nome Admin";
+            lblUser.Font = new Font("Berlin Sans FB ", 9, FontStyle.Bold);
+            lblUser.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+            lblUser.Visible = true;
+            panel.Controls.Add(lblUser);
+
+            }
             
         }
 
@@ -105,13 +145,7 @@ namespace FootballLife_WF
                 panel.AutoScroll = true;
                 panel.Visible = true;
                 flowpanel_Admins.Controls.Add(panel);
-            }
 
-            while (dr.Read())
-            {
-                NomeDiscussao = dr["NomeDiscussao"].ToString();
-                Descricao = dr["Descricao"].ToString();
-                NomeAdmin = dr["Nome"].ToString();
 
                 Button button = new Button();
                 button.Width = 100;

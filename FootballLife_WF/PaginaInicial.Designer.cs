@@ -49,6 +49,7 @@
             this.btn_Estadio = new System.Windows.Forms.Button();
             this.lbl_Titulo = new System.Windows.Forms.Label();
             this.img_Fundo = new System.Windows.Forms.PictureBox();
+            this.btn_AddDespesas = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.panel_Jogos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_Jogos)).BeginInit();
@@ -83,7 +84,7 @@
             this.lbl_LogIn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl_LogIn.Font = new System.Drawing.Font("Berlin Sans FB Demi", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_LogIn.ForeColor = System.Drawing.Color.White;
-            this.lbl_LogIn.Location = new System.Drawing.Point(1277, 22);
+            this.lbl_LogIn.Location = new System.Drawing.Point(1271, 22);
             this.lbl_LogIn.Name = "lbl_LogIn";
             this.lbl_LogIn.Size = new System.Drawing.Size(64, 23);
             this.lbl_LogIn.TabIndex = 1;
@@ -100,7 +101,7 @@
             this.panel_Jogos.Controls.Add(this.lbl_Jogos);
             this.panel_Jogos.Controls.Add(this.img_Jogos);
             this.panel_Jogos.Controls.Add(this.btn_Jogos);
-            this.panel_Jogos.Location = new System.Drawing.Point(280, 247);
+            this.panel_Jogos.Location = new System.Drawing.Point(274, 214);
             this.panel_Jogos.Name = "panel_Jogos";
             this.panel_Jogos.Size = new System.Drawing.Size(323, 193);
             this.panel_Jogos.TabIndex = 5;
@@ -170,7 +171,7 @@
             this.panel_Equipas.Controls.Add(this.lbl_Equipas);
             this.panel_Equipas.Controls.Add(this.img_Equipas);
             this.panel_Equipas.Controls.Add(this.btn_Equipas);
-            this.panel_Equipas.Location = new System.Drawing.Point(753, 247);
+            this.panel_Equipas.Location = new System.Drawing.Point(747, 214);
             this.panel_Equipas.Name = "panel_Equipas";
             this.panel_Equipas.Size = new System.Drawing.Size(323, 193);
             this.panel_Equipas.TabIndex = 6;
@@ -236,7 +237,7 @@
             this.panel_Titulos.Controls.Add(this.lbl_Titulos);
             this.panel_Titulos.Controls.Add(this.img_Titulos);
             this.panel_Titulos.Controls.Add(this.btn_Titulos);
-            this.panel_Titulos.Location = new System.Drawing.Point(744, 525);
+            this.panel_Titulos.Location = new System.Drawing.Point(738, 492);
             this.panel_Titulos.Name = "panel_Titulos";
             this.panel_Titulos.Size = new System.Drawing.Size(323, 193);
             this.panel_Titulos.TabIndex = 2;
@@ -299,7 +300,7 @@
             this.panel_Estadio.Controls.Add(this.lbl_Estadio);
             this.panel_Estadio.Controls.Add(this.img_Estadio);
             this.panel_Estadio.Controls.Add(this.btn_Estadio);
-            this.panel_Estadio.Location = new System.Drawing.Point(280, 525);
+            this.panel_Estadio.Location = new System.Drawing.Point(274, 492);
             this.panel_Estadio.Name = "panel_Estadio";
             this.panel_Estadio.Size = new System.Drawing.Size(323, 193);
             this.panel_Estadio.TabIndex = 7;
@@ -364,7 +365,7 @@
             this.lbl_Titulo.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Titulo.Font = new System.Drawing.Font("Bauhaus 93", 65.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Titulo.ForeColor = System.Drawing.Color.Firebrick;
-            this.lbl_Titulo.Location = new System.Drawing.Point(345, 53);
+            this.lbl_Titulo.Location = new System.Drawing.Point(342, 53);
             this.lbl_Titulo.Name = "lbl_Titulo";
             this.lbl_Titulo.Size = new System.Drawing.Size(694, 98);
             this.lbl_Titulo.TabIndex = 3;
@@ -377,10 +378,32 @@
             this.img_Fundo.Image = global::FootballLife_WF.Properties.Resources.Fundo_1;
             this.img_Fundo.Location = new System.Drawing.Point(0, 0);
             this.img_Fundo.Name = "img_Fundo";
-            this.img_Fundo.Size = new System.Drawing.Size(1370, 749);
+            this.img_Fundo.Size = new System.Drawing.Size(1364, 749);
             this.img_Fundo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.img_Fundo.TabIndex = 1;
             this.img_Fundo.TabStop = false;
+            // 
+            // btn_AddDespesas
+            // 
+            this.btn_AddDespesas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_AddDespesas.BackColor = System.Drawing.Color.Transparent;
+            this.btn_AddDespesas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_AddDespesas.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btn_AddDespesas.FlatAppearance.BorderSize = 0;
+            this.btn_AddDespesas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_AddDespesas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_AddDespesas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_AddDespesas.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_AddDespesas.ForeColor = System.Drawing.Color.Black;
+            this.btn_AddDespesas.Location = new System.Drawing.Point(1254, 20);
+            this.btn_AddDespesas.Name = "btn_AddDespesas";
+            this.btn_AddDespesas.Size = new System.Drawing.Size(97, 31);
+            this.btn_AddDespesas.TabIndex = 36;
+            this.btn_AddDespesas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_AddDespesas.UseVisualStyleBackColor = false;
+            this.btn_AddDespesas.Click += new System.EventHandler(this.Lbl_LogIn_Click);
+            this.btn_AddDespesas.MouseLeave += new System.EventHandler(this.Lbl_LogIn_MouseLeave);
+            this.btn_AddDespesas.MouseHover += new System.EventHandler(this.Lbl_LogIn_MouseHover);
             // 
             // PaginaInicial
             // 
@@ -389,7 +412,7 @@
             this.AutoScroll = true;
             this.BackgroundImage = global::FootballLife_WF.Properties.Resources.Fundo_1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.ClientSize = new System.Drawing.Size(1364, 749);
             this.Controls.Add(this.panel_Titulos);
             this.Controls.Add(this.panel_Estadio);
             this.Controls.Add(this.lbl_Titulo);
@@ -397,6 +420,7 @@
             this.Controls.Add(this.panel_Equipas);
             this.Controls.Add(this.Logo);
             this.Controls.Add(this.panel_Jogos);
+            this.Controls.Add(this.btn_AddDespesas);
             this.Controls.Add(this.img_Fundo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(900, 450);
@@ -443,5 +467,6 @@
         private System.Windows.Forms.Button btn_Estadio;
         private System.Windows.Forms.Label lbl_Titulo;
         private System.Windows.Forms.PictureBox img_Fundo;
+        private System.Windows.Forms.Button btn_AddDespesas;
     }
 }

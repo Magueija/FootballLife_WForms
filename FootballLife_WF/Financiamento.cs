@@ -36,11 +36,46 @@ namespace FootballLife_WF
 
         private void Financiamento_Load(object sender, EventArgs e)
         {
+            Saldo();
             Lucros();
             Despesas();
         }
 
+        private void Saldo()
+        {
+            SqlConnection con = new SqlConnection(Properties.Settings.Default.Connection);
+            con.Open();
 
+            int Saldo = 0;
+
+            try
+            {
+                SqlDataReader dr;
+                string Query = ("SELECT IDClube, Saldo FROM dbo.TblClube WHERE(IDClube = 1)");
+                SqlCommand Command = new SqlCommand(Query, con);
+                dr = Command.ExecuteReader();
+                while (dr.Read())
+                {
+                    Saldo = Convert.ToInt32(dr["Saldo"]);
+                }
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.ToString());
+            }
+            con.Close();
+
+            if(Saldo > 0)
+            {
+                lbl_Saldo.ForeColor = Color.ForestGreen;
+            }
+            else
+            {
+                lbl_Saldo.ForeColor = Color.Firebrick;
+            }
+
+            lbl_Saldo.Text = Saldo.ToString() +" €";
+        }
 
         private void Lucros()
         {
@@ -67,6 +102,7 @@ namespace FootballLife_WF
                     panel.Anchor = AnchorStyles.Top;
                     panel.BackColor = Color.Transparent;
                     panel.Visible = true;
+                    panel.Name = "Panel";
                     flowpanel_Lucros.Controls.Add(panel);
 
                     Label Nome = new Label();
@@ -122,6 +158,7 @@ namespace FootballLife_WF
                     panel.Anchor = AnchorStyles.Top;
                     panel.BackColor = Color.Transparent;
                     panel.Visible = true;
+                    panel.Name = "Panel";
                     flowpanel_Despesas.Controls.Add(panel);
 
                     Label Nome = new Label();
@@ -154,6 +191,9 @@ namespace FootballLife_WF
 
         private void Btn_Lupa_Click(object sender, EventArgs e)
         {
+            flowpanel_Lucros.Controls.Clear();
+            flowpanel_Despesas.Controls.Clear();
+
             if (tb_Pesquisar.Text == "")
             {
                 Lucros();
@@ -170,6 +210,9 @@ namespace FootballLife_WF
         {
             if (e.KeyCode == Keys.Enter)
             {
+                flowpanel_Lucros.Controls.Clear();
+                flowpanel_Despesas.Controls.Clear();
+
                 if (tb_Pesquisar.Text == "")
                 {
                     Lucros();
@@ -334,6 +377,9 @@ namespace FootballLife_WF
         {
             if (tb_Pesquisar.Text == "")
             {
+                flowpanel_Lucros.Controls.Clear();
+                flowpanel_Despesas.Controls.Clear();
+
                 Lucros();
                 Despesas();
 
@@ -370,6 +416,11 @@ namespace FootballLife_WF
         private void Btn_AddDespesas_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Btn_DeletePesquisa_Click(object sender, EventArgs e)
+        {
+            tb_Pesquisar.Text = "";
         }
 
 

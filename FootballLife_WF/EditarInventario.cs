@@ -203,7 +203,7 @@ namespace FootballLife_WF
                         {
                             //string d =flowpanel_material.Controls[ctr].;
                             //string g =    flowpanel_material.Controls[ctr + 3].Text;
-                            QueryINSERT = "INSERT INTO dbo.TblMaterial (Nome, Quantidade, FK_IDInventario) VALUES (@IDMaterial, @NomeMaterial, @Quantidade, @FK_IDInventario)";
+                            QueryINSERT = "INSERT INTO dbo.TblMaterial (Nome, Quantidade, FK_IDInventario) VALUES (@NomeMaterial, @Quantidade, @FK_IDInventario)";
 
                             SqlCommand CommandINSERT = new SqlCommand(QueryINSERT, con);
                             CommandINSERT.Parameters.AddWithValue("@NomeMaterial", flowpanel_material.Controls[ctr + 1].Text);

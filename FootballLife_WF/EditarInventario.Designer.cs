@@ -50,6 +50,7 @@
             // 
             this.flowpanel_material.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.flowpanel_material.AutoScroll = true;
+            this.flowpanel_material.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowpanel_material.Location = new System.Drawing.Point(21, 81);
             this.flowpanel_material.Name = "flowpanel_material";
             this.flowpanel_material.Padding = new System.Windows.Forms.Padding(20, 20, 0, 0);

@@ -83,7 +83,7 @@
             this.img_Logo.BackColor = System.Drawing.Color.Transparent;
             this.img_Logo.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.img_Logo.Image = global::FootballLife_WF.Properties.Resources.Logo_Clube;
-            this.img_Logo.Location = new System.Drawing.Point(1314, 12);
+            this.img_Logo.Location = new System.Drawing.Point(1308, 12);
             this.img_Logo.MaximumSize = new System.Drawing.Size(44, 40);
             this.img_Logo.MinimumSize = new System.Drawing.Size(44, 40);
             this.img_Logo.Name = "img_Logo";
@@ -101,7 +101,7 @@
             this.btn_TopMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_TopMenu.Location = new System.Drawing.Point(0, 0);
             this.btn_TopMenu.Name = "btn_TopMenu";
-            this.btn_TopMenu.Size = new System.Drawing.Size(1370, 65);
+            this.btn_TopMenu.Size = new System.Drawing.Size(1364, 65);
             this.btn_TopMenu.TabIndex = 0;
             this.btn_TopMenu.UseVisualStyleBackColor = false;
             // 
@@ -111,7 +111,7 @@
             this.img_NovaDiscussao.BackColor = System.Drawing.Color.Transparent;
             this.img_NovaDiscussao.Cursor = System.Windows.Forms.Cursors.Hand;
             this.img_NovaDiscussao.Image = global::FootballLife_WF.Properties.Resources.Adicionar_Criar_white_;
-            this.img_NovaDiscussao.Location = new System.Drawing.Point(1206, 33);
+            this.img_NovaDiscussao.Location = new System.Drawing.Point(1200, 33);
             this.img_NovaDiscussao.MaximumSize = new System.Drawing.Size(20, 20);
             this.img_NovaDiscussao.MinimumSize = new System.Drawing.Size(20, 20);
             this.img_NovaDiscussao.Name = "img_NovaDiscussao";
@@ -131,7 +131,7 @@
             this.lbl_Novadiscussao.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl_Novadiscussao.Font = new System.Drawing.Font("Berlin Sans FB Demi", 10F, System.Drawing.FontStyle.Bold);
             this.lbl_Novadiscussao.ForeColor = System.Drawing.Color.White;
-            this.lbl_Novadiscussao.Location = new System.Drawing.Point(1232, 33);
+            this.lbl_Novadiscussao.Location = new System.Drawing.Point(1226, 33);
             this.lbl_Novadiscussao.Name = "lbl_Novadiscussao";
             this.lbl_Novadiscussao.Size = new System.Drawing.Size(104, 18);
             this.lbl_Novadiscussao.TabIndex = 18;
@@ -151,7 +151,7 @@
             this.btn_NovaDiscussao.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn_NovaDiscussao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_NovaDiscussao.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_NovaDiscussao.Location = new System.Drawing.Point(1194, 24);
+            this.btn_NovaDiscussao.Location = new System.Drawing.Point(1188, 24);
             this.btn_NovaDiscussao.Name = "btn_NovaDiscussao";
             this.btn_NovaDiscussao.Size = new System.Drawing.Size(149, 37);
             this.btn_NovaDiscussao.TabIndex = 17;
@@ -168,7 +168,7 @@
             this.lbl_Titulo.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Titulo.Font = new System.Drawing.Font("Bauhaus 93", 65.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Titulo.ForeColor = System.Drawing.Color.White;
-            this.lbl_Titulo.Location = new System.Drawing.Point(459, 23);
+            this.lbl_Titulo.Location = new System.Drawing.Point(456, 23);
             this.lbl_Titulo.Name = "lbl_Titulo";
             this.lbl_Titulo.Size = new System.Drawing.Size(462, 98);
             this.lbl_Titulo.TabIndex = 20;
@@ -178,15 +178,14 @@
             // 
             this.flowpanel_Discussoes.AutoScroll = true;
             this.flowpanel_Discussoes.BackColor = System.Drawing.Color.Transparent;
-            this.flowpanel_Discussoes.BackgroundImage = global::FootballLife_WF.Properties.Resources.Fundo_1;
             this.flowpanel_Discussoes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.flowpanel_Discussoes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowpanel_Discussoes.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowpanel_Discussoes.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.flowpanel_Discussoes.Location = new System.Drawing.Point(0, 0);
+            this.flowpanel_Discussoes.Location = new System.Drawing.Point(0, 215);
             this.flowpanel_Discussoes.Name = "flowpanel_Discussoes";
-            this.flowpanel_Discussoes.Padding = new System.Windows.Forms.Padding(570, 300, 0, 0);
-            this.flowpanel_Discussoes.Size = new System.Drawing.Size(1370, 749);
+            this.flowpanel_Discussoes.Padding = new System.Windows.Forms.Padding(0, 50, 0, 0);
+            this.flowpanel_Discussoes.Size = new System.Drawing.Size(1364, 534);
             this.flowpanel_Discussoes.TabIndex = 22;
             this.flowpanel_Discussoes.WrapContents = false;
             // 
@@ -202,7 +201,7 @@
             this.btn_LogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_LogOut.Location = new System.Drawing.Point(10, 607);
             this.btn_LogOut.Name = "btn_LogOut";
-            this.btn_LogOut.Size = new System.Drawing.Size(128, 65);
+            this.btn_LogOut.Size = new System.Drawing.Size(130, 65);
             this.btn_LogOut.TabIndex = 19;
             this.btn_LogOut.UseVisualStyleBackColor = false;
             this.btn_LogOut.Click += new System.EventHandler(this.Btn_LogOut_Click);
@@ -421,7 +420,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 65);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1370, 150);
+            this.panel1.Size = new System.Drawing.Size(1364, 150);
             this.panel1.TabIndex = 25;
             // 
             // PaginaInicial_Admin
@@ -431,13 +430,13 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::FootballLife_WF.Properties.Resources.Fundo_1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.ClientSize = new System.Drawing.Size(1364, 749);
+            this.Controls.Add(this.panel_Menu);
+            this.Controls.Add(this.flowpanel_Discussoes);
             this.Controls.Add(this.img_Logo);
             this.Controls.Add(this.img_Menu);
-            this.Controls.Add(this.panel_Menu);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_TopMenu);
-            this.Controls.Add(this.flowpanel_Discussoes);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.MinimumSize = new System.Drawing.Size(900, 500);

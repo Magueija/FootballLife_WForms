@@ -24,7 +24,7 @@ namespace FootballLife_WF
             Discussoes();
         }
 
-//==============================================================================================
+        //==============================================================================================
 
         private void Img_Menu_Click(object sender, EventArgs e)
         {
@@ -81,7 +81,6 @@ namespace FootballLife_WF
         }
 
         //==============================================================================================
-        string[] IDDiscussao;
         
 
         private void Discussoes()
@@ -90,6 +89,7 @@ namespace FootballLife_WF
             con.Open();
 
             
+            string IDDiscussao = "";
             string NomeDiscussao = "";
             string Descricao = "";
             string NomeAdmin = "";
@@ -102,10 +102,9 @@ namespace FootballLife_WF
                 dr = Command.ExecuteReader();
                 while (dr.Read())
                 {
-                    int i = 0;
-                    //IDDiscussao[i] = dr["IDDiscussao"].ToString();
                     
 
+                    IDDiscussao = dr["IDDiscussao"].ToString();
                     NomeDiscussao = dr["NomeDiscussao"].ToString();
                     Descricao = dr["Descricao"].ToString();
                     NomeAdmin = dr["Nome"].ToString();
@@ -119,6 +118,7 @@ namespace FootballLife_WF
                     panel.BorderStyle = BorderStyle.Fixed3D;
                     panel.BackColor = Color.White;
                     panel.Visible = true;
+                    panel.Name = "Panel" + IDDiscussao;
                     flowpanel_Discussoes.Controls.Add(panel);
 
                     PictureBox Pb = new PictureBox();
@@ -161,22 +161,26 @@ namespace FootballLife_WF
                     Tb.Visible = true;
                     panel.Controls.Add(Tb);
 
+
+                    PictureBox PbDelete = new PictureBox();
+                    PbDelete.Location = new Point(760, 10);
+                    PbDelete.Width = 15;
+                    PbDelete.Height = 20;
+                    PbDelete.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+                    PbDelete.Image = FootballLife_WF.Properties.Resources.Delete;
+                    PbDelete.SizeMode = PictureBoxSizeMode.Zoom;
+                    PbDelete.Cursor = Cursors.Hand;
+                    PbDelete.Visible = false;
+                    PbDelete.Tag = IDDiscussao;
+                    PbDelete.Name = "Btn_Discussao";
+
+                    PbDelete.Click += Btn_Discussao_Click;
+                    panel.Controls.Add(PbDelete);
+
                     if (Properties.Settings.Default.IDUser == Convert.ToInt32(IDAdmin))
                     {
-                        PictureBox PbDelete = new PictureBox();
-                        PbDelete.Location = new Point(760, 10);
-                        PbDelete.Width = 15;
-                        PbDelete.Height = 20;
-                        PbDelete.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-                        PbDelete.Image = FootballLife_WF.Properties.Resources.Delete;
-                        PbDelete.SizeMode = PictureBoxSizeMode.Zoom;
-                        PbDelete.Cursor = Cursors.Hand;
                         PbDelete.Visible = true;
-
-                        PbDelete.Click += Btn_Discussao_Click;
-                        panel.Controls.Add(PbDelete);
                     }
-                    i++;
                 }
                 dr.Close();
             }
@@ -189,23 +193,35 @@ namespace FootballLife_WF
 
         private void Btn_Discussao_Click(object sender, EventArgs e)
         {
-
-
             SqlConnection con = new SqlConnection(Properties.Settings.Default.Connection);
             con.Open();
 
+            string IDDiscussao = "";
+
             try
             {
-                string Query = ("UPDATE TblDiscussao SET Apagado = 1 WHERE IDDiscussao = ");
+                string Query = "UPDATE TblDiscussao SET Apagado = 1 WHERE IDDiscussao = @IDDiscussao";
+
+                PictureBox PbDELETE = (PictureBox) sender;
+                IDDiscussao = PbDELETE.Tag.ToString();
                 SqlCommand Command = new SqlCommand(Query, con);
+                Command.Parameters.AddWithValue("@IDDiscussao", IDDiscussao);
                 Command.ExecuteNonQuery();
+
             }
             catch (Exception x)
             {
                 MessageBox.Show(x.ToString());
             }
-
             con.Close();
+
+            foreach (Control c in flowpanel_Discussoes.Controls)
+            {
+                if (c.Name == "Panel" + IDDiscussao)
+                {
+                    flowpanel_Discussoes.Controls.Remove(c);
+                }
+            }
         }
 
         private void Btn_LogOut_Click(object sender, EventArgs e)
