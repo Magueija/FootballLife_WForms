@@ -193,33 +193,39 @@ namespace FootballLife_WF
 
         private void Btn_Discussao_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(Properties.Settings.Default.Connection);
-            con.Open();
 
-            string IDDiscussao = "";
+            DialogResult result = MessageBox.Show("Tem a certeza que pretente eliminar esta discussão?", "ATENÇÃO!", MessageBoxButtons.YesNo);
 
-            try
+            if (result == DialogResult.Yes)
             {
-                string Query = "UPDATE TblDiscussao SET Apagado = 1 WHERE IDDiscussao = @IDDiscussao";
+                SqlConnection con = new SqlConnection(Properties.Settings.Default.Connection);
+                con.Open();
 
-                PictureBox PbDELETE = (PictureBox) sender;
-                IDDiscussao = PbDELETE.Tag.ToString();
-                SqlCommand Command = new SqlCommand(Query, con);
-                Command.Parameters.AddWithValue("@IDDiscussao", IDDiscussao);
-                Command.ExecuteNonQuery();
+                string IDDiscussao = "";
 
-            }
-            catch (Exception x)
-            {
-                MessageBox.Show(x.ToString());
-            }
-            con.Close();
-
-            foreach (Control c in flowpanel_Discussoes.Controls)
-            {
-                if (c.Name == "Panel" + IDDiscussao)
+                try
                 {
-                    flowpanel_Discussoes.Controls.Remove(c);
+                    string Query = "UPDATE TblDiscussao SET Apagado = 1 WHERE IDDiscussao = @IDDiscussao";
+
+                    PictureBox PbDELETE = (PictureBox)sender;
+                    IDDiscussao = PbDELETE.Tag.ToString();
+                    SqlCommand Command = new SqlCommand(Query, con);
+                    Command.Parameters.AddWithValue("@IDDiscussao", IDDiscussao);
+                    Command.ExecuteNonQuery();
+
+                }
+                catch (Exception x)
+                {
+                    MessageBox.Show(x.ToString());
+                }
+                con.Close();
+
+                foreach (Control c in flowpanel_Discussoes.Controls)
+                {
+                    if (c.Name == "Panel" + IDDiscussao)
+                    {
+                        flowpanel_Discussoes.Controls.Remove(c);
+                    }
                 }
             }
         }

@@ -36,15 +36,18 @@
             this.lbl_LoginError = new System.Windows.Forms.Label();
             this.lbl_EsqueceuPassword = new System.Windows.Forms.Label();
             this.Panel_Login = new System.Windows.Forms.Panel();
+            this.btn_Entrar = new System.Windows.Forms.Button();
             this.chb_Lembrar = new System.Windows.Forms.CheckBox();
             this.img_BackArrow = new System.Windows.Forms.PictureBox();
             this.img_Logo = new System.Windows.Forms.PictureBox();
             this.img_Fundo = new System.Windows.Forms.PictureBox();
-            this.btn_Entrar = new System.Windows.Forms.Button();
+            this.lbl_Caps = new System.Windows.Forms.Label();
+            this.img_Caps = new System.Windows.Forms.PictureBox();
             this.Panel_Login.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_BackArrow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Fundo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img_Caps)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_Utilizador
@@ -93,7 +96,7 @@
             this.lbl_LoginError.AutoSize = true;
             this.lbl_LoginError.Font = new System.Drawing.Font("Berlin Sans FB", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_LoginError.ForeColor = System.Drawing.Color.Red;
-            this.lbl_LoginError.Location = new System.Drawing.Point(152, 378);
+            this.lbl_LoginError.Location = new System.Drawing.Point(152, 389);
             this.lbl_LoginError.Name = "lbl_LoginError";
             this.lbl_LoginError.Size = new System.Drawing.Size(175, 13);
             this.lbl_LoginError.TabIndex = 5;
@@ -118,6 +121,8 @@
             this.Panel_Login.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Panel_Login.BackColor = System.Drawing.Color.White;
             this.Panel_Login.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Panel_Login.Controls.Add(this.img_Caps);
+            this.Panel_Login.Controls.Add(this.lbl_Caps);
             this.Panel_Login.Controls.Add(this.btn_Entrar);
             this.Panel_Login.Controls.Add(this.chb_Lembrar);
             this.Panel_Login.Controls.Add(this.img_BackArrow);
@@ -133,13 +138,30 @@
             this.Panel_Login.Size = new System.Drawing.Size(370, 496);
             this.Panel_Login.TabIndex = 1;
             // 
+            // btn_Entrar
+            // 
+            this.btn_Entrar.BackColor = System.Drawing.Color.White;
+            this.btn_Entrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Entrar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btn_Entrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Entrar.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Entrar.ForeColor = System.Drawing.Color.Black;
+            this.btn_Entrar.Location = new System.Drawing.Point(236, 424);
+            this.btn_Entrar.Name = "btn_Entrar";
+            this.btn_Entrar.Size = new System.Drawing.Size(101, 34);
+            this.btn_Entrar.TabIndex = 10;
+            this.btn_Entrar.Tag = "";
+            this.btn_Entrar.Text = "Entrar";
+            this.btn_Entrar.UseVisualStyleBackColor = false;
+            this.btn_Entrar.Click += new System.EventHandler(this.Btn_Entrar_Click);
+            // 
             // chb_Lembrar
             // 
             this.chb_Lembrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chb_Lembrar.AutoSize = true;
             this.chb_Lembrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.chb_Lembrar.Font = new System.Drawing.Font("Berlin Sans FB", 9F);
-            this.chb_Lembrar.Location = new System.Drawing.Point(208, 349);
+            this.chb_Lembrar.Location = new System.Drawing.Point(208, 364);
             this.chb_Lembrar.Name = "chb_Lembrar";
             this.chb_Lembrar.Size = new System.Drawing.Size(119, 17);
             this.chb_Lembrar.TabIndex = 9;
@@ -188,22 +210,28 @@
             this.img_Fundo.TabIndex = 0;
             this.img_Fundo.TabStop = false;
             // 
-            // btn_Entrar
+            // lbl_Caps
             // 
-            this.btn_Entrar.BackColor = System.Drawing.Color.White;
-            this.btn_Entrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Entrar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.btn_Entrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Entrar.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Entrar.ForeColor = System.Drawing.Color.Black;
-            this.btn_Entrar.Location = new System.Drawing.Point(236, 424);
-            this.btn_Entrar.Name = "btn_Entrar";
-            this.btn_Entrar.Size = new System.Drawing.Size(101, 34);
-            this.btn_Entrar.TabIndex = 10;
-            this.btn_Entrar.Tag = "";
-            this.btn_Entrar.Text = "Entrar";
-            this.btn_Entrar.UseVisualStyleBackColor = false;
-            this.btn_Entrar.Click += new System.EventHandler(this.Btn_Entrar_Click);
+            this.lbl_Caps.AutoSize = true;
+            this.lbl_Caps.Font = new System.Drawing.Font("Berlin Sans FB", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Caps.ForeColor = System.Drawing.Color.Black;
+            this.lbl_Caps.Location = new System.Drawing.Point(228, 346);
+            this.lbl_Caps.Name = "lbl_Caps";
+            this.lbl_Caps.Size = new System.Drawing.Size(99, 13);
+            this.lbl_Caps.TabIndex = 11;
+            this.lbl_Caps.Text = "Caps Lock Ligado!";
+            this.lbl_Caps.Visible = false;
+            // 
+            // img_Caps
+            // 
+            this.img_Caps.Image = ((System.Drawing.Image)(resources.GetObject("img_Caps.Image")));
+            this.img_Caps.Location = new System.Drawing.Point(207, 346);
+            this.img_Caps.Name = "img_Caps";
+            this.img_Caps.Size = new System.Drawing.Size(15, 15);
+            this.img_Caps.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.img_Caps.TabIndex = 12;
+            this.img_Caps.TabStop = false;
+            this.img_Caps.Visible = false;
             // 
             // Login
             // 
@@ -223,6 +251,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.img_BackArrow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Logo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Fundo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img_Caps)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -241,6 +270,8 @@
         private System.Windows.Forms.PictureBox img_BackArrow;
         private System.Windows.Forms.CheckBox chb_Lembrar;
         private System.Windows.Forms.Button btn_Entrar;
+        private System.Windows.Forms.PictureBox img_Caps;
+        private System.Windows.Forms.Label lbl_Caps;
     }
 }
 

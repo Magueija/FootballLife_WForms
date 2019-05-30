@@ -24,6 +24,17 @@ namespace FootballLife_WF
                 tb_Password.Text = Properties.Settings.Default.password;
                 chb_Lembrar.Checked = true;
             }
+
+            if (Control.IsKeyLocked(Keys.CapsLock))
+            {
+                lbl_Caps.Visible = true;
+                img_Caps.Visible = true;
+            }
+            else
+            {
+                lbl_Caps.Visible = false;
+                img_Caps.Visible = false;
+            }
         }
 
         private void Img_Logo_Click(object sender, EventArgs e)
@@ -46,6 +57,9 @@ namespace FootballLife_WF
 
         private void Img_BackArrow_Click(object sender, EventArgs e)
         {
+            PaginaInicial PgInicial = new PaginaInicial();
+            this.Hide();
+            PgInicial.ShowDialog();
             this.Dispose();
         }
 
@@ -59,6 +73,17 @@ namespace FootballLife_WF
             if (e.KeyCode == Keys.Enter)
             {
                 LogIn();
+            }
+
+            if (Control.IsKeyLocked(Keys.CapsLock))
+            {
+                lbl_Caps.Visible = true;
+                img_Caps.Visible = true;
+            }
+            else
+            {
+                lbl_Caps.Visible = false;
+                img_Caps.Visible = false;
             }
         }
 
@@ -104,7 +129,7 @@ namespace FootballLife_WF
 
                 SqlDataReader dr;
                 //Administrador
-                string QueryAdmin = ("SELECT IDAdministrador, Utilizador, Palavra_Chave FROM TblAdministrador WHERE Apagado = 0 AND Utilizador = @Utilizador AND Palavra_Chave = @Palavra_Chave");
+                string QueryAdmin = ("SELECT IDAdministrador, Utilizador, Palavra_Chave FROM TblAdministrador WHERE Apagado = 0 AND Utilizador collate SQL_Latin1_General_CP1_CS_AS LIKE @Utilizador AND Palavra_Chave collate SQL_Latin1_General_CP1_CS_AS LIKE @Palavra_Chave");
                 SqlCommand CommandAdmin = new SqlCommand(QueryAdmin, con);
 
                 CommandAdmin.Parameters.AddWithValue("@utilizador", tb_Utilizador.Text);
@@ -121,7 +146,7 @@ namespace FootballLife_WF
                 dr.Close();
 
                 //Treinador
-                string QueryTreinador = ("SELECT IDTreinador, Utilizador, Palavra_Chave FROM TblTreinador WHERE Apagado = 0 AND Utilizador = @Utilizador AND Palavra_Chave = @Palavra_Chave");
+                string QueryTreinador = ("SELECT IDTreinador, Utilizador, Palavra_Chave FROM TblTreinador WHERE Apagado = 0 AND Utilizador collate SQL_Latin1_General_CP1_CS_AS LIKE @Utilizador AND Palavra_Chave collate SQL_Latin1_General_CP1_CS_AS LIKE @Palavra_Chave");
                 SqlCommand CommandTreinador = new SqlCommand(QueryTreinador, con);
 
                 CommandTreinador.Parameters.AddWithValue("@utilizador", tb_Utilizador.Text);
@@ -137,7 +162,7 @@ namespace FootballLife_WF
                 dr.Close();
 
                 //Atleta
-                string QueryAtleta = ("SELECT IDAtleta, Utilizador, Palavra_Chave FROM TblAtleta WHERE Apagado = 0 AND Utilizador = @Utilizador AND Palavra_Chave = @Palavra_Chave");
+                string QueryAtleta = ("SELECT IDAtleta, Utilizador, Palavra_Chave FROM TblAtleta WHERE Apagado = 0 AND Utilizador collate SQL_Latin1_General_CP1_CS_AS LIKE @Utilizador AND Palavra_Chave collate SQL_Latin1_General_CP1_CS_AS LIKE @Palavra_Chave");
                 SqlCommand CommandAtleta = new SqlCommand(QueryAtleta, con);
 
                 CommandAtleta.Parameters.AddWithValue("@utilizador", tb_Utilizador.Text);
@@ -153,7 +178,7 @@ namespace FootballLife_WF
                 dr.Close();
 
                 //Socio
-                string QuerySocio = ("SELECT IDSocio, Utilizador, Palavra_Chave FROM TblSocio WHERE Apagado = 0 AND Utilizador = @Utilizador AND Palavra_Chave = @Palavra_Chave");
+                string QuerySocio = ("SELECT IDSocio, Utilizador, Palavra_Chave FROM TblSocio WHERE Apagado = 0 AND Utilizador collate SQL_Latin1_General_CP1_CS_AS LIKE @Utilizador AND Palavra_Chave collate SQL_Latin1_General_CP1_CS_AS LIKE @Palavra_Chave");
                 SqlCommand CommandSocio = new SqlCommand(QuerySocio, con);
 
                 CommandSocio.Parameters.AddWithValue("@utilizador", tb_Utilizador.Text);
