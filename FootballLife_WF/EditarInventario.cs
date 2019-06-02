@@ -42,11 +42,7 @@ namespace FootballLife_WF
                     Query = "SELECT dbo.TblMaterial.IDMaterial, dbo.TblMaterial.Nome, dbo.TblMaterial.Quantidade, dbo.TblInventario.FK_IDEscalao FROM dbo.TblInventario INNER JOIN dbo.TblMaterial ON dbo.TblInventario.IDInventario = dbo.TblMaterial.FK_IDInventario WHERE(dbo.TblInventario.FK_IDEscalao IN "
                                  + "((SELECT dbo.TblEscalao.IDEscalao FROM dbo.TblEscalao INNER JOIN dbo.TblTreinador ON dbo.TblEscalao.IDEscalao = dbo.TblTreinador.FK_IDEscalao WHERE(dbo.TblTreinador.IDTreinador = " + Properties.Settings.Default.IDUser +"))))";
                 }
-                else if (Properties.Settings.Default.FuncaoUser == "Atleta")
-                {
-                    Query = "SELECT dbo.TblMaterial.IDMaterial, dbo.TblMaterial.Nome, dbo.TblMaterial.Quantidade, dbo.TblInventario.FK_IDEscalao FROM dbo.TblInventario INNER JOIN dbo.TblMaterial ON dbo.TblInventario.IDInventario = dbo.TblMaterial.FK_IDInventario WHERE(dbo.TblInventario.FK_IDEscalao IN "
-                                 + "((SELECT dbo.TblEscalao.IDEscalao FROM dbo.TblEscalao INNER JOIN dbo.TblAtleta ON dbo.TblEscalao.IDEscalao = dbo.TblAtleta.FK_IDEscalao WHERE(dbo.TblAtleta.IDAtleta = " + Properties.Settings.Default.IDUser + "))))";
-                }
+                
 
                 SqlCommand Command = new SqlCommand(Query, con);
                 dr = Command.ExecuteReader();

@@ -236,5 +236,12 @@ namespace FootballLife_WF
             Estadio.ShowDialog();
             this.Dispose();
         }
+
+        private void Btn_Titulos_Click(object sender, EventArgs e)
+        {
+            Historia historia = new Historia();
+            this.Hide();
+            historia.Show();
+        }
     }
 }

@@ -52,11 +52,16 @@
             this.chb_Todos = new System.Windows.Forms.CheckBox();
             this.lbl_Pesquisar = new System.Windows.Forms.Label();
             this.img_Linha = new System.Windows.Forms.PictureBox();
+            this.flowpanel_Jogos = new System.Windows.Forms.FlowLayoutPanel();
+            this.lbl_NovoResultado = new System.Windows.Forms.Label();
+            this.img_NovoResultado = new System.Windows.Forms.PictureBox();
+            this.btn_NovoResultado = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.img_Menu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Logo)).BeginInit();
             this.panel_Menu.SuspendLayout();
             this.panel_Pesquisa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_Linha)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img_NovoResultado)).BeginInit();
             this.SuspendLayout();
             // 
             // img_Menu
@@ -187,7 +192,7 @@
             this.btn_Titulos.Name = "btn_Titulos";
             this.btn_Titulos.Size = new System.Drawing.Size(130, 31);
             this.btn_Titulos.TabIndex = 9;
-            this.btn_Titulos.Text = "TÍTULOS";
+            this.btn_Titulos.Text = "HISTÓRIA";
             this.btn_Titulos.UseVisualStyleBackColor = false;
             // 
             // panel_Menu
@@ -246,7 +251,7 @@
             this.panel_Pesquisa.Controls.Add(this.chb_Seniores);
             this.panel_Pesquisa.Controls.Add(this.chb_Todos);
             this.panel_Pesquisa.Controls.Add(this.lbl_Pesquisar);
-            this.panel_Pesquisa.Location = new System.Drawing.Point(321, 222);
+            this.panel_Pesquisa.Location = new System.Drawing.Point(323, 222);
             this.panel_Pesquisa.Name = "panel_Pesquisa";
             this.panel_Pesquisa.Size = new System.Drawing.Size(698, 78);
             this.panel_Pesquisa.TabIndex = 17;
@@ -257,12 +262,13 @@
             this.chb_Petizes.BackColor = System.Drawing.Color.Transparent;
             this.chb_Petizes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chb_Petizes.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chb_Petizes.Location = new System.Drawing.Point(588, 41);
+            this.chb_Petizes.Location = new System.Drawing.Point(550, 40);
             this.chb_Petizes.Name = "chb_Petizes";
             this.chb_Petizes.Size = new System.Drawing.Size(88, 20);
             this.chb_Petizes.TabIndex = 24;
             this.chb_Petizes.Text = "Petizes";
             this.chb_Petizes.UseVisualStyleBackColor = false;
+            this.chb_Petizes.CheckedChanged += new System.EventHandler(this.Chb_CheckedChanged);
             this.chb_Petizes.Click += new System.EventHandler(this.Chb_Click);
             // 
             // chb_Traquinas
@@ -271,12 +277,13 @@
             this.chb_Traquinas.BackColor = System.Drawing.Color.Transparent;
             this.chb_Traquinas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chb_Traquinas.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chb_Traquinas.Location = new System.Drawing.Point(588, 15);
+            this.chb_Traquinas.Location = new System.Drawing.Point(456, 40);
             this.chb_Traquinas.Name = "chb_Traquinas";
             this.chb_Traquinas.Size = new System.Drawing.Size(88, 20);
             this.chb_Traquinas.TabIndex = 23;
             this.chb_Traquinas.Text = "Traquinas";
             this.chb_Traquinas.UseVisualStyleBackColor = false;
+            this.chb_Traquinas.CheckedChanged += new System.EventHandler(this.Chb_CheckedChanged);
             this.chb_Traquinas.Click += new System.EventHandler(this.Chb_Click);
             // 
             // chb_Benjamins
@@ -285,12 +292,13 @@
             this.chb_Benjamins.BackColor = System.Drawing.Color.Transparent;
             this.chb_Benjamins.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chb_Benjamins.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chb_Benjamins.Location = new System.Drawing.Point(479, 41);
+            this.chb_Benjamins.Location = new System.Drawing.Point(359, 40);
             this.chb_Benjamins.Name = "chb_Benjamins";
             this.chb_Benjamins.Size = new System.Drawing.Size(88, 20);
             this.chb_Benjamins.TabIndex = 22;
             this.chb_Benjamins.Text = "Benjamins";
             this.chb_Benjamins.UseVisualStyleBackColor = false;
+            this.chb_Benjamins.CheckedChanged += new System.EventHandler(this.Chb_CheckedChanged);
             this.chb_Benjamins.Click += new System.EventHandler(this.Chb_Click);
             // 
             // chb_Infantis
@@ -299,12 +307,13 @@
             this.chb_Infantis.BackColor = System.Drawing.Color.Transparent;
             this.chb_Infantis.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chb_Infantis.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chb_Infantis.Location = new System.Drawing.Point(479, 15);
+            this.chb_Infantis.Location = new System.Drawing.Point(262, 41);
             this.chb_Infantis.Name = "chb_Infantis";
             this.chb_Infantis.Size = new System.Drawing.Size(88, 20);
             this.chb_Infantis.TabIndex = 21;
             this.chb_Infantis.Text = "Infantis";
             this.chb_Infantis.UseVisualStyleBackColor = false;
+            this.chb_Infantis.CheckedChanged += new System.EventHandler(this.Chb_CheckedChanged);
             this.chb_Infantis.Click += new System.EventHandler(this.Chb_Click);
             // 
             // chb_Iniciados
@@ -313,12 +322,13 @@
             this.chb_Iniciados.BackColor = System.Drawing.Color.Transparent;
             this.chb_Iniciados.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chb_Iniciados.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chb_Iniciados.Location = new System.Drawing.Point(370, 41);
+            this.chb_Iniciados.Location = new System.Drawing.Point(550, 16);
             this.chb_Iniciados.Name = "chb_Iniciados";
             this.chb_Iniciados.Size = new System.Drawing.Size(88, 20);
             this.chb_Iniciados.TabIndex = 20;
             this.chb_Iniciados.Text = "Iniciados";
             this.chb_Iniciados.UseVisualStyleBackColor = false;
+            this.chb_Iniciados.CheckedChanged += new System.EventHandler(this.Chb_CheckedChanged);
             this.chb_Iniciados.Click += new System.EventHandler(this.Chb_Click);
             // 
             // chb_Juvenis
@@ -327,12 +337,13 @@
             this.chb_Juvenis.BackColor = System.Drawing.Color.Transparent;
             this.chb_Juvenis.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chb_Juvenis.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chb_Juvenis.Location = new System.Drawing.Point(370, 15);
+            this.chb_Juvenis.Location = new System.Drawing.Point(456, 16);
             this.chb_Juvenis.Name = "chb_Juvenis";
             this.chb_Juvenis.Size = new System.Drawing.Size(88, 20);
             this.chb_Juvenis.TabIndex = 19;
             this.chb_Juvenis.Text = "Juvenis";
             this.chb_Juvenis.UseVisualStyleBackColor = false;
+            this.chb_Juvenis.CheckedChanged += new System.EventHandler(this.Chb_CheckedChanged);
             this.chb_Juvenis.Click += new System.EventHandler(this.Chb_Click);
             // 
             // chb_Juniores
@@ -341,12 +352,13 @@
             this.chb_Juniores.BackColor = System.Drawing.Color.Transparent;
             this.chb_Juniores.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chb_Juniores.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chb_Juniores.Location = new System.Drawing.Point(262, 41);
+            this.chb_Juniores.Location = new System.Drawing.Point(359, 16);
             this.chb_Juniores.Name = "chb_Juniores";
             this.chb_Juniores.Size = new System.Drawing.Size(88, 20);
             this.chb_Juniores.TabIndex = 18;
             this.chb_Juniores.Text = "Juniores";
             this.chb_Juniores.UseVisualStyleBackColor = false;
+            this.chb_Juniores.CheckedChanged += new System.EventHandler(this.Chb_CheckedChanged);
             this.chb_Juniores.Click += new System.EventHandler(this.Chb_Click);
             // 
             // chb_Seniores
@@ -362,6 +374,7 @@
             this.chb_Seniores.Tag = "";
             this.chb_Seniores.Text = "Séniores";
             this.chb_Seniores.UseVisualStyleBackColor = false;
+            this.chb_Seniores.CheckedChanged += new System.EventHandler(this.Chb_CheckedChanged);
             this.chb_Seniores.Click += new System.EventHandler(this.Chb_Click);
             // 
             // chb_Todos
@@ -378,6 +391,7 @@
             this.chb_Todos.TabIndex = 16;
             this.chb_Todos.Text = "Todos";
             this.chb_Todos.UseVisualStyleBackColor = false;
+            this.chb_Todos.CheckedChanged += new System.EventHandler(this.Chb_CheckedChanged);
             this.chb_Todos.Click += new System.EventHandler(this.Chb_Todos_Click);
             // 
             // lbl_Pesquisar
@@ -395,12 +409,82 @@
             this.img_Linha.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.img_Linha.BackColor = System.Drawing.Color.Transparent;
             this.img_Linha.Image = global::FootballLife_WF.Properties.Resources.Linha_Separadora;
-            this.img_Linha.Location = new System.Drawing.Point(227, 306);
+            this.img_Linha.Location = new System.Drawing.Point(229, 306);
             this.img_Linha.Name = "img_Linha";
             this.img_Linha.Size = new System.Drawing.Size(892, 53);
             this.img_Linha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.img_Linha.TabIndex = 25;
             this.img_Linha.TabStop = false;
+            // 
+            // flowpanel_Jogos
+            // 
+            this.flowpanel_Jogos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.flowpanel_Jogos.AutoScroll = true;
+            this.flowpanel_Jogos.BackColor = System.Drawing.Color.Transparent;
+            this.flowpanel_Jogos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.flowpanel_Jogos.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowpanel_Jogos.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.flowpanel_Jogos.Location = new System.Drawing.Point(323, 365);
+            this.flowpanel_Jogos.Name = "flowpanel_Jogos";
+            this.flowpanel_Jogos.Size = new System.Drawing.Size(715, 290);
+            this.flowpanel_Jogos.TabIndex = 26;
+            this.flowpanel_Jogos.WrapContents = false;
+            // 
+            // lbl_NovoResultado
+            // 
+            this.lbl_NovoResultado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_NovoResultado.AutoSize = true;
+            this.lbl_NovoResultado.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_NovoResultado.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl_NovoResultado.Font = new System.Drawing.Font("Berlin Sans FB Demi", 10F, System.Drawing.FontStyle.Bold);
+            this.lbl_NovoResultado.ForeColor = System.Drawing.Color.White;
+            this.lbl_NovoResultado.Location = new System.Drawing.Point(1233, 92);
+            this.lbl_NovoResultado.Name = "lbl_NovoResultado";
+            this.lbl_NovoResultado.Size = new System.Drawing.Size(108, 18);
+            this.lbl_NovoResultado.TabIndex = 28;
+            this.lbl_NovoResultado.Text = "Novo Resultado";
+            this.lbl_NovoResultado.Click += new System.EventHandler(this.NovoResultado_Click);
+            this.lbl_NovoResultado.MouseLeave += new System.EventHandler(this.NovoResultado_MouseLeave);
+            this.lbl_NovoResultado.MouseHover += new System.EventHandler(this.NovoResultado_MouseHover);
+            // 
+            // img_NovoResultado
+            // 
+            this.img_NovoResultado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.img_NovoResultado.BackColor = System.Drawing.Color.Transparent;
+            this.img_NovoResultado.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.img_NovoResultado.Image = global::FootballLife_WF.Properties.Resources.Adicionar_Criar_white_;
+            this.img_NovoResultado.Location = new System.Drawing.Point(1207, 92);
+            this.img_NovoResultado.MaximumSize = new System.Drawing.Size(20, 20);
+            this.img_NovoResultado.MinimumSize = new System.Drawing.Size(20, 20);
+            this.img_NovoResultado.Name = "img_NovoResultado";
+            this.img_NovoResultado.Size = new System.Drawing.Size(20, 20);
+            this.img_NovoResultado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.img_NovoResultado.TabIndex = 29;
+            this.img_NovoResultado.TabStop = false;
+            this.img_NovoResultado.Click += new System.EventHandler(this.NovoResultado_Click);
+            this.img_NovoResultado.MouseLeave += new System.EventHandler(this.NovoResultado_MouseLeave);
+            this.img_NovoResultado.MouseHover += new System.EventHandler(this.NovoResultado_MouseHover);
+            // 
+            // btn_NovoResultado
+            // 
+            this.btn_NovoResultado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_NovoResultado.BackColor = System.Drawing.Color.Transparent;
+            this.btn_NovoResultado.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_NovoResultado.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btn_NovoResultado.FlatAppearance.BorderSize = 0;
+            this.btn_NovoResultado.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_NovoResultado.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_NovoResultado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_NovoResultado.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_NovoResultado.Location = new System.Drawing.Point(1195, 83);
+            this.btn_NovoResultado.Name = "btn_NovoResultado";
+            this.btn_NovoResultado.Size = new System.Drawing.Size(157, 37);
+            this.btn_NovoResultado.TabIndex = 27;
+            this.btn_NovoResultado.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_NovoResultado.UseVisualStyleBackColor = false;
+            this.btn_NovoResultado.Click += new System.EventHandler(this.NovoResultado_Click);
+            this.btn_NovoResultado.MouseLeave += new System.EventHandler(this.NovoResultado_MouseLeave);
+            this.btn_NovoResultado.MouseHover += new System.EventHandler(this.NovoResultado_MouseHover);
             // 
             // Jogos
             // 
@@ -411,6 +495,10 @@
             this.BackgroundImage = global::FootballLife_WF.Properties.Resources.Fundo_1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.Controls.Add(this.lbl_NovoResultado);
+            this.Controls.Add(this.img_NovoResultado);
+            this.Controls.Add(this.btn_NovoResultado);
+            this.Controls.Add(this.flowpanel_Jogos);
             this.Controls.Add(this.img_Linha);
             this.Controls.Add(this.panel_Pesquisa);
             this.Controls.Add(this.lbl_Titulo);
@@ -424,12 +512,14 @@
             this.Name = "Jogos";
             this.Text = "FOOTBALL LIFE";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Jogos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.img_Menu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Logo)).EndInit();
             this.panel_Menu.ResumeLayout(false);
             this.panel_Pesquisa.ResumeLayout(false);
             this.panel_Pesquisa.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_Linha)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img_NovoResultado)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -459,5 +549,9 @@
         private System.Windows.Forms.CheckBox chb_Todos;
         private System.Windows.Forms.Label lbl_Pesquisar;
         private System.Windows.Forms.PictureBox img_Linha;
+        private System.Windows.Forms.FlowLayoutPanel flowpanel_Jogos;
+        private System.Windows.Forms.Label lbl_NovoResultado;
+        private System.Windows.Forms.PictureBox img_NovoResultado;
+        private System.Windows.Forms.Button btn_NovoResultado;
     }
 }

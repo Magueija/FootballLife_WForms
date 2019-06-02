@@ -51,6 +51,7 @@
             this.lbl_Funcao = new System.Windows.Forms.Label();
             this.lbl_Saldo = new System.Windows.Forms.Label();
             this.panel_Pesquisa = new System.Windows.Forms.Panel();
+            this.btn_Lupa = new System.Windows.Forms.Button();
             this.btn_DeletePesquisa = new System.Windows.Forms.Button();
             this.tb_Pesquisar = new System.Windows.Forms.TextBox();
             this.lbl_Pesquisar = new System.Windows.Forms.Label();
@@ -59,17 +60,16 @@
             this.lbl_SemResultados_Lucros = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lbl_AddLucros = new System.Windows.Forms.Label();
-            this.btn_AddLucros = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.flowpanel_Lucros = new System.Windows.Forms.FlowLayoutPanel();
+            this.btn_AddLucros = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbl_SemResultados_Despesas = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbl_AddDespesas = new System.Windows.Forms.Label();
-            this.btn_AddDespesas = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.flowpanel_Despesas = new System.Windows.Forms.FlowLayoutPanel();
-            this.btn_Lupa = new System.Windows.Forms.Button();
+            this.btn_AddDespesas = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.img_Fundo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Menu)).BeginInit();
             this.panel_Menu.SuspendLayout();
@@ -415,6 +415,23 @@
             this.panel_Pesquisa.Size = new System.Drawing.Size(681, 45);
             this.panel_Pesquisa.TabIndex = 23;
             // 
+            // btn_Lupa
+            // 
+            this.btn_Lupa.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Lupa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Lupa.BackgroundImage")));
+            this.btn_Lupa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_Lupa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Lupa.FlatAppearance.BorderSize = 0;
+            this.btn_Lupa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_Lupa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_Lupa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Lupa.Location = new System.Drawing.Point(638, 13);
+            this.btn_Lupa.Name = "btn_Lupa";
+            this.btn_Lupa.Size = new System.Drawing.Size(17, 17);
+            this.btn_Lupa.TabIndex = 29;
+            this.btn_Lupa.UseVisualStyleBackColor = false;
+            this.btn_Lupa.Click += new System.EventHandler(this.Btn_Lupa_Click);
+            // 
             // btn_DeletePesquisa
             // 
             this.btn_DeletePesquisa.BackColor = System.Drawing.Color.Transparent;
@@ -529,6 +546,26 @@
             this.lbl_AddLucros.MouseLeave += new System.EventHandler(this.Btn_AddLucros_MouseLeave);
             this.lbl_AddLucros.MouseHover += new System.EventHandler(this.Btn_AddLucros_MouseHover);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.White;
+            this.label5.Font = new System.Drawing.Font("Berlin Sans FB Demi", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(161, 17);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(64, 23);
+            this.label5.TabIndex = 28;
+            this.label5.Text = "Lucros";
+            // 
+            // flowpanel_Lucros
+            // 
+            this.flowpanel_Lucros.AutoScroll = true;
+            this.flowpanel_Lucros.Location = new System.Drawing.Point(12, 70);
+            this.flowpanel_Lucros.Name = "flowpanel_Lucros";
+            this.flowpanel_Lucros.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.flowpanel_Lucros.Size = new System.Drawing.Size(358, 268);
+            this.flowpanel_Lucros.TabIndex = 38;
+            // 
             // btn_AddLucros
             // 
             this.btn_AddLucros.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -550,26 +587,6 @@
             this.btn_AddLucros.Click += new System.EventHandler(this.Btn_AddLucros_Click);
             this.btn_AddLucros.MouseLeave += new System.EventHandler(this.Btn_AddLucros_MouseLeave);
             this.btn_AddLucros.MouseHover += new System.EventHandler(this.Btn_AddLucros_MouseHover);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.White;
-            this.label5.Font = new System.Drawing.Font("Berlin Sans FB Demi", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(161, 17);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(64, 23);
-            this.label5.TabIndex = 28;
-            this.label5.Text = "Lucros";
-            // 
-            // flowpanel_Lucros
-            // 
-            this.flowpanel_Lucros.AutoScroll = true;
-            this.flowpanel_Lucros.Location = new System.Drawing.Point(12, 70);
-            this.flowpanel_Lucros.Name = "flowpanel_Lucros";
-            this.flowpanel_Lucros.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.flowpanel_Lucros.Size = new System.Drawing.Size(358, 268);
-            this.flowpanel_Lucros.TabIndex = 38;
             // 
             // panel2
             // 
@@ -636,6 +653,26 @@
             this.lbl_AddDespesas.MouseLeave += new System.EventHandler(this.Btn_AddDespesas_MouseLeave);
             this.lbl_AddDespesas.MouseHover += new System.EventHandler(this.Btn_AddDespesas_MouseHover);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Font = new System.Drawing.Font("Berlin Sans FB Demi", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(152, 17);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(89, 23);
+            this.label2.TabIndex = 28;
+            this.label2.Text = "Despesas";
+            // 
+            // flowpanel_Despesas
+            // 
+            this.flowpanel_Despesas.AutoScroll = true;
+            this.flowpanel_Despesas.Location = new System.Drawing.Point(9, 73);
+            this.flowpanel_Despesas.Name = "flowpanel_Despesas";
+            this.flowpanel_Despesas.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.flowpanel_Despesas.Size = new System.Drawing.Size(358, 265);
+            this.flowpanel_Despesas.TabIndex = 39;
+            // 
             // btn_AddDespesas
             // 
             this.btn_AddDespesas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -657,42 +694,6 @@
             this.btn_AddDespesas.Click += new System.EventHandler(this.Btn_AddDespesas_Click);
             this.btn_AddDespesas.MouseLeave += new System.EventHandler(this.Btn_AddDespesas_MouseLeave);
             this.btn_AddDespesas.MouseHover += new System.EventHandler(this.Btn_AddDespesas_MouseHover);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Font = new System.Drawing.Font("Berlin Sans FB Demi", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(152, 17);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 23);
-            this.label2.TabIndex = 28;
-            this.label2.Text = "Despesas";
-            // 
-            // flowpanel_Despesas
-            // 
-            this.flowpanel_Despesas.AutoScroll = true;
-            this.flowpanel_Despesas.Location = new System.Drawing.Point(9, 73);
-            this.flowpanel_Despesas.Name = "flowpanel_Despesas";
-            this.flowpanel_Despesas.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.flowpanel_Despesas.Size = new System.Drawing.Size(358, 265);
-            this.flowpanel_Despesas.TabIndex = 39;
-            // 
-            // btn_Lupa
-            // 
-            this.btn_Lupa.BackColor = System.Drawing.Color.Transparent;
-            this.btn_Lupa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Lupa.BackgroundImage")));
-            this.btn_Lupa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_Lupa.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Lupa.FlatAppearance.BorderSize = 0;
-            this.btn_Lupa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btn_Lupa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btn_Lupa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Lupa.Location = new System.Drawing.Point(638, 13);
-            this.btn_Lupa.Name = "btn_Lupa";
-            this.btn_Lupa.Size = new System.Drawing.Size(17, 17);
-            this.btn_Lupa.TabIndex = 29;
-            this.btn_Lupa.UseVisualStyleBackColor = false;
             // 
             // Financiamento
             // 

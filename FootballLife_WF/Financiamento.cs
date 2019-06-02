@@ -410,12 +410,14 @@ namespace FootballLife_WF
 
         private void Btn_AddLucros_Click(object sender, EventArgs e)
         {
-
+            Add_LucroDespesa AddLucro = new Add_LucroDespesa("Lucros");
+            AddLucro.Show();
         }
 
         private void Btn_AddDespesas_Click(object sender, EventArgs e)
         {
-
+            Add_LucroDespesa AddDespesas = new Add_LucroDespesa("Despesas");
+            AddDespesas.Show();
         }
 
         private void Btn_DeletePesquisa_Click(object sender, EventArgs e)

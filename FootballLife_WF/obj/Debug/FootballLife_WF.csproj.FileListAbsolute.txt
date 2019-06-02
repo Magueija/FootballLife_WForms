@@ -51,5 +51,16 @@ C:\Users\PSI17F20\Documents\GitHub\Projeto_WindowsForms\FootballLife_WF\obj\Debu
 C:\Users\Tomás\Documents\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.ContactosAdministracao.resources
 C:\Users\Tomás\Documents\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.EditarInventario.resources
 C:\Users\Tomás\Documents\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.Inventario.resources
-C:\Users\Tomás\Documents\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.Utilizadores_Admin.resources
 C:\Users\Tomás\Documents\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.VisualizarUtilizador.resources
+C:\Users\Tomás\Documents\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.EditarUtilizador.resources
+C:\Users\Tomás\Documents\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.Utilizadores.resources
+C:\Users\Tomás\Documents\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.Add_LucroDespesa.resources
+C:\Users\Tomás\Documents\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.Historia.resources
+C:\Users\Tomás\Documents\Projeto_WindowsForms\FootballLife_WF\obj\Debug\Interop.ShockwaveFlashObjects.dll
+C:\Users\Tomás\Documents\Projeto_WindowsForms\FootballLife_WF\obj\Debug\AxInterop.ShockwaveFlashObjects.dll
+C:\Users\Tomás\Documents\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.csproj.ResolveComReference.cache
+C:\Users\Tomás\Documents\Projeto_WindowsForms\FootballLife_WF\bin\Debug\Interop.ShockwaveFlashObjects.dll
+C:\Users\Tomás\Documents\Projeto_WindowsForms\FootballLife_WF\bin\Debug\AxInterop.ShockwaveFlashObjects.dll
+C:\Users\Tomás\Documents\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.Jogo.resources
+C:\Users\Tomás\Documents\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.VerJogo.resources
+C:\Users\Tomás\Documents\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.NovoResultado.resources

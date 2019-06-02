@@ -13,14 +13,58 @@ namespace FootballLife_WF
 {
     public partial class VisualizarUtilizador : Form
     {
-        public VisualizarUtilizador()
+        string Funcao = "";
+        string ID = "";
+
+        public VisualizarUtilizador(string IDUser, string FuncaoUser)
         {
+            Funcao = FuncaoUser;
+            ID = IDUser;
             InitializeComponent();
         }
 
         private void VisualizarUtilizador_Load(object sender, EventArgs e)
         {
+            if(Properties.Settings.Default.FuncaoUser == "Treinador")
+            {
+                if (Funcao == "Treinador")
+                {
+                    Treinador();
+                }
+                else if (Funcao == "Atleta")
+                {
+                    Escalao.Visible = false;
+                    lbl_Escalao.Visible = false;
 
+                    Atleta();
+                }
+            }
+            else if (Properties.Settings.Default.FuncaoUser == "Atleta")
+            {
+                if (Funcao == "Treinador")
+                {
+                    Treinador();
+                }
+                else if (Funcao == "Atleta")
+                {
+                    Escalao.Visible = false;
+                    lbl_Escalao.Visible = false;
+
+                    Atleta();
+                }
+            }
+            else if (Properties.Settings.Default.FuncaoUser == "Socio")
+            {
+                if (Funcao == "Admin")
+                {
+                    Telemovel.Visible = false;
+                    lbl_Telemovel.Visible = false;
+                    Escalao.Visible = false;
+                    lbl_Escalao.Visible = false;
+
+                    Admin();
+                }
+            }
         }
 
         private void Admin()
@@ -33,17 +77,12 @@ namespace FootballLife_WF
             string Nome = "";
             string Telemovel = "";
             string Email = "";
-            string Morada = "";
-            string CdPostal = "";
-
-            string Utilizador = "";
-            string Password = "";
 
             try
             {
 
                 SqlDataReader dr;
-                string QueryAdmin = ("SELECT Nome, Telemovel, Email, Modada, CodigoPostal, Utilizador, Palavra_Chave FROM TblAdministrador WHERE IDAdministrador =");
+                string QueryAdmin = ("SELECT Nome, Telemovel, Email, FROM TblAdministrador WHERE IDAdministrador = " + ID);
                 SqlCommand CommandAdmin = new SqlCommand(QueryAdmin, con);
                 dr = CommandAdmin.ExecuteReader();
                 while (dr.Read())
@@ -51,13 +90,15 @@ namespace FootballLife_WF
                     Nome = dr["Nome"].ToString();
                     Telemovel = dr["Telemovel"].ToString();
                     Email = dr["Email"].ToString();
-                    Morada = dr["Modada"].ToString();
-                    CdPostal = dr["CodigoPostal"].ToString();
-
-                    Utilizador = dr["Utilizador"].ToString();
-                    Password = dr["Palavra_Chave"].ToString();
                 }
                 dr.Close();
+
+
+                Lbl_Titulo.Text = Nome;
+
+                this.Nome.Text = Nome;
+                this.Telemovel.Text = Telemovel;
+                this.Email.Text = Email;
             }
             catch (Exception x)
             {
@@ -76,17 +117,12 @@ namespace FootballLife_WF
             string Nome = "";
             string Telemovel = "";
             string Email = "";
-            string Morada = "";
-            string CdPostal = "";
-
-            string Utilizador = "";
-            string Password = "";
 
             try
             {
 
                 SqlDataReader dr;
-                string QueryAdmin = ("SELECT Nome, Telemovel, Email, Modada, CodigoPostal, Utilizador, Palavra_Chave FROM TblTreinador WHERE IDTreinador =");
+                string QueryAdmin = ("SELECT Nome, Telemovel, Email, FROM TblTreinador WHERE IDTreinador = " + ID);
                 SqlCommand CommandAdmin = new SqlCommand(QueryAdmin, con);
                 dr = CommandAdmin.ExecuteReader();
                 while (dr.Read())
@@ -94,13 +130,15 @@ namespace FootballLife_WF
                     Nome = dr["Nome"].ToString();
                     Telemovel = dr["Telemovel"].ToString();
                     Email = dr["Email"].ToString();
-                    Morada = dr["Modada"].ToString();
-                    CdPostal = dr["CodigoPostal"].ToString();
-
-                    Utilizador = dr["Utilizador"].ToString();
-                    Password = dr["Palavra_Chave"].ToString();
                 }
                 dr.Close();
+
+
+                Lbl_Titulo.Text = Nome;
+
+                this.Nome.Text = Nome;
+                this.Telemovel.Text = Telemovel;
+                this.Email.Text = Email;
             }
             catch (Exception x)
             {
@@ -119,17 +157,12 @@ namespace FootballLife_WF
             string Nome = "";
             string Telemovel = "";
             string Email = "";
-            string Morada = "";
-            string CdPostal = "";
-
-            string Utilizador = "";
-            string Password = "";
 
             try
             {
 
                 SqlDataReader dr;
-                string QueryAdmin = ("SELECT Nome, Telemovel, Email, Modada, CodigoPostal, Utilizador, Palavra_Chave FROM TblAtleta WHERE IDAtleta =");
+                string QueryAdmin = ("SELECT Nome, Telemovel, Email, FROM TblAtleta WHERE IDAtleta = " + ID);
                 SqlCommand CommandAdmin = new SqlCommand(QueryAdmin, con);
                 dr = CommandAdmin.ExecuteReader();
                 while (dr.Read())
@@ -137,13 +170,15 @@ namespace FootballLife_WF
                     Nome = dr["Nome"].ToString();
                     Telemovel = dr["Telemovel"].ToString();
                     Email = dr["Email"].ToString();
-                    Morada = dr["Modada"].ToString();
-                    CdPostal = dr["CodigoPostal"].ToString();
-
-                    Utilizador = dr["Utilizador"].ToString();
-                    Password = dr["Palavra_Chave"].ToString();
                 }
                 dr.Close();
+
+
+                Lbl_Titulo.Text = Nome;
+
+                this.Nome.Text = Nome;
+                this.Telemovel.Text = Telemovel;
+                this.Email.Text = Email;
             }
             catch (Exception x)
             {
@@ -162,17 +197,12 @@ namespace FootballLife_WF
             string Nome = "";
             string Telemovel = "";
             string Email = "";
-            string Morada = "";
-            string CdPostal = "";
-
-            string Utilizador = "";
-            string Password = "";
 
             try
             {
 
                 SqlDataReader dr;
-                string QueryAdmin = ("SELECT Nome, Telemovel, Email, Modada, CodigoPostal, Utilizador, Palavra_Chave FROM TblSocio WHERE IDSocio =");
+                string QueryAdmin = ("SELECT Nome, Telemovel, Email, FROM TblSocio WHERE IDSocio = " + ID);
                 SqlCommand CommandAdmin = new SqlCommand(QueryAdmin, con);
                 dr = CommandAdmin.ExecuteReader();
                 while (dr.Read())
@@ -180,13 +210,15 @@ namespace FootballLife_WF
                     Nome = dr["Nome"].ToString();
                     Telemovel = dr["Telemovel"].ToString();
                     Email = dr["Email"].ToString();
-                    Morada = dr["Modada"].ToString();
-                    CdPostal = dr["CodigoPostal"].ToString();
-
-                    Utilizador = dr["Utilizador"].ToString();
-                    Password = dr["Palavra_Chave"].ToString();
                 }
                 dr.Close();
+
+
+                Lbl_Titulo.Text = Nome;
+
+                this.Nome.Text = Nome;
+                this.Telemovel.Text = Telemovel;
+                this.Email.Text = Email;
             }
             catch (Exception x)
             {

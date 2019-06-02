@@ -42,7 +42,7 @@ namespace FootballLife_WF
 
         private void NovaDiscussao_Hover()
         {
-            lbl_Novadiscussao.Font = new Font("Berlin Sans FB Demi", 10, FontStyle.Underline);
+            lbl_NovaDiscussao.Font = new Font("Berlin Sans FB Demi", 10, FontStyle.Underline);
         }
 
         private void Lbl_Novadiscussao_MouseHover(object sender, EventArgs e)
@@ -64,7 +64,7 @@ namespace FootballLife_WF
 
         private void NovaDiscussao_Leave()
         {
-            lbl_Novadiscussao.Font = new Font("Berlin Sans FB Demi", 10, FontStyle.Regular);
+            lbl_NovaDiscussao.Font = new Font("Berlin Sans FB Demi", 10, FontStyle.Regular);
         }
 
         private void Lbl_Novadiscussao_MouseLeave(object sender, EventArgs e)
@@ -245,7 +245,7 @@ namespace FootballLife_WF
 
         private void Btn_Utilizadores_Click(object sender, EventArgs e)
         {
-            Utilizadores_Admin Users = new Utilizadores_Admin();
+            Utilizadores Users = new Utilizadores();
             this.Hide();
             Users.ShowDialog();
         }

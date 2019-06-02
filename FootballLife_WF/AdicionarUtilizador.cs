@@ -23,7 +23,6 @@ namespace FootballLife_WF
             if((cb_Funcao.SelectedItem).ToString() == "Administrador" || (cb_Funcao.SelectedItem).ToString() == "Sócio")
             {
                 panel_Escalao.Visible = false;
-
             }
             else if ((cb_Funcao.SelectedItem).ToString() == "Treinador")
             {
@@ -217,7 +216,7 @@ namespace FootballLife_WF
                         con.Close();
                         this.Dispose();
                     }
-                    /*else if (cb_Funcao.SelectedItem == "Atleta")
+                    else if (cb_Funcao.SelectedItem == "Atleta")
                     {
                         string IDEscalao = "";
                         if (rb_Seniores.Checked == true)
@@ -297,7 +296,7 @@ namespace FootballLife_WF
                         }
                         con.Close();
                         this.Dispose();
-                    }*/
+                    }
                     else
                     {
                         MessageBox.Show("Necessário indicar a função do utilizador!", "ATENÇÃO!", MessageBoxButtons.OK);

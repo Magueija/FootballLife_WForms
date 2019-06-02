@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace FootballLife_WF
 {
@@ -15,6 +16,19 @@ namespace FootballLife_WF
         public Jogos()
         {
             InitializeComponent();
+
+            if(Properties.Settings.Default.FuncaoUser == "Treinador")
+            {
+                btn_NovoResultado.Visible = true;
+                lbl_NovoResultado.Visible = true;
+                img_NovoResultado.Visible = true;
+            }
+            else
+            {
+                btn_NovoResultado.Visible = false;
+                lbl_NovoResultado.Visible = false;
+                img_NovoResultado.Visible = false;
+            }
         }
 
 //==============================================================================================
@@ -31,6 +45,17 @@ namespace FootballLife_WF
                 panel_Menu.Visible = true;
                 btn_Menu.Visible = true;
             }
+        }
+
+//==============================================================================================
+
+        private void NovoResultado_MouseHover(object sender, EventArgs e)
+        {
+            lbl_NovoResultado.Font = new Font("Berlin Sans FB Demi", 10, FontStyle.Underline);
+        }
+        private void NovoResultado_MouseLeave(object sender, EventArgs e)
+        {
+            lbl_NovoResultado.Font = new Font("Berlin Sans FB Demi", 10, FontStyle.Regular);
         }
 
 //==============================================================================================
@@ -108,6 +133,163 @@ namespace FootballLife_WF
             this.Hide();
             Estadio.ShowDialog();
             this.Dispose();
+        }
+
+        private void Jogos_Load(object sender, EventArgs e)
+        {
+            JogoTodos();
+        }
+
+        private void Jogo(string IDEscalao)
+        {
+            SqlConnection con = new SqlConnection(Properties.Settings.Default.Connection);
+            con.Open();
+
+
+            string IDJogo = "";
+            string Escalao = "";
+            string Data = "";
+
+            string EquipaCasa = "";
+            string GolosCasa = "";
+
+            string EquipaFora = "";
+            string GolosFora = "";
+
+
+            try
+            {
+                SqlDataReader dr;
+                string Query = ("SELECT dbo.TblJogo.IDJogo, dbo.TblJogo.Data, dbo.TblJogo.EquipaCasa, dbo.TblJogo.EquipaFora, dbo.TblJogo.GolosCasa, dbo.TblEscalao.Escalao, dbo.TblJogo.GolosFora FROM dbo.TblJogo INNER JOIN dbo.TblEscalao ON dbo.TblJogo.FK_IDEscalao = dbo.TblEscalao.IDEscalao WHERE(dbo.TblJogo.Apagado = 0) AND dbo.TblJogo.FK_IDEscalao = " + IDEscalao + " ORDER BY dbo.TblJogo.Data DESC");
+                SqlCommand Command = new SqlCommand(Query, con);
+                dr = Command.ExecuteReader();
+                while (dr.Read())
+                {
+                    IDJogo = dr["IDJogo"].ToString();
+                    Escalao = dr["Escalao"].ToString();
+                    Data = dr["Data"].ToString();
+
+                    EquipaCasa = dr["EquipaCasa"].ToString();
+                    GolosCasa = dr["GolosCasa"].ToString();
+
+                    EquipaFora = dr["EquipaFora"].ToString();
+                    GolosFora = dr["GolosFora"].ToString();
+
+                    Jogo jogo = new Jogo(IDJogo, Escalao, Data, EquipaCasa, GolosCasa, EquipaFora, GolosFora);
+                    flowpanel_Jogos.Controls.Add(jogo);
+                }
+                dr.Close();
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.ToString());
+            }
+            con.Close();
+        }
+
+        private void JogoTodos()
+        {
+            SqlConnection con = new SqlConnection(Properties.Settings.Default.Connection);
+            con.Open();
+
+
+            string IDJogo = "";
+            string Escalao = "";
+            string Data = "";
+
+            string EquipaCasa = "";
+            string GolosCasa = "";
+
+            string EquipaFora = "";
+            string GolosFora = "";
+
+
+            try
+            {
+                SqlDataReader dr;
+                string Query = ("SELECT dbo.TblJogo.IDJogo, dbo.TblJogo.Data, dbo.TblJogo.EquipaCasa, dbo.TblJogo.EquipaFora, dbo.TblJogo.GolosCasa, dbo.TblEscalao.Escalao, dbo.TblJogo.GolosFora FROM dbo.TblJogo INNER JOIN dbo.TblEscalao ON dbo.TblJogo.FK_IDEscalao = dbo.TblEscalao.IDEscalao WHERE(dbo.TblJogo.Apagado = 0) ORDER BY dbo.TblJogo.Data DESC");
+                SqlCommand Command = new SqlCommand(Query, con);
+                dr = Command.ExecuteReader();
+                while (dr.Read())
+                {
+                    IDJogo = dr["IDJogo"].ToString();
+                    Escalao = dr["Escalao"].ToString();
+                    Data = dr["Data"].ToString();
+
+                    EquipaCasa = dr["EquipaCasa"].ToString();
+                    GolosCasa = dr["GolosCasa"].ToString();
+
+                    EquipaFora = dr["EquipaFora"].ToString();
+                    GolosFora = dr["GolosFora"].ToString();
+
+                    Jogo jogo = new Jogo(IDJogo, Escalao, Data, EquipaCasa, GolosCasa, EquipaFora, GolosFora);
+                    flowpanel_Jogos.Controls.Add(jogo);
+                }
+                dr.Close();
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.ToString());
+            }
+            con.Close();
+        }
+
+        private void Chb_CheckedChanged(object sender, EventArgs e)
+        {
+            flowpanel_Jogos.Controls.Clear();
+
+            if (chb_Todos.Checked == true)
+            {
+                JogoTodos();
+            }
+            else
+            {
+                if(chb_Seniores.Checked == true)
+                {
+                    Jogo("1");
+                }
+
+                if (chb_Juniores.Checked == true)
+                {
+                    Jogo("2");
+                }
+
+                if (chb_Juvenis.Checked == true)
+                {
+                    Jogo("3");
+                }
+
+                if (chb_Iniciados.Checked == true)
+                {
+                    Jogo("4");
+                }
+
+                if (chb_Infantis.Checked == true)
+                {
+                    Jogo("5");
+                }
+
+                if (chb_Benjamins.Checked == true)
+                {
+                    Jogo("6");
+                }
+
+                if (chb_Traquinas.Checked == true)
+                {
+                    Jogo("7");
+                }
+
+                if (chb_Petizes.Checked == true)
+                {
+                    Jogo("8");
+                }
+            }
+        }
+
+        private void NovoResultado_Click(object sender, EventArgs e)
+        {
+            NovoResultado jogo = new NovoResultado();
+            jogo.Show();
         }
     }
 }

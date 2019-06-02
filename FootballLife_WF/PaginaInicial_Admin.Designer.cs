@@ -33,10 +33,9 @@
             this.img_Logo = new System.Windows.Forms.PictureBox();
             this.btn_TopMenu = new System.Windows.Forms.Button();
             this.img_NovaDiscussao = new System.Windows.Forms.PictureBox();
-            this.lbl_Novadiscussao = new System.Windows.Forms.Label();
+            this.lbl_NovaDiscussao = new System.Windows.Forms.Label();
             this.btn_NovaDiscussao = new System.Windows.Forms.Button();
             this.lbl_Titulo = new System.Windows.Forms.Label();
-            this.flowpanel_Discussoes = new System.Windows.Forms.FlowLayoutPanel();
             this.btn_LogOut = new System.Windows.Forms.Button();
             this.img_LogOut = new System.Windows.Forms.PictureBox();
             this.lbl_Terminar = new System.Windows.Forms.Label();
@@ -51,6 +50,7 @@
             this.btn_Utilizadores = new System.Windows.Forms.Button();
             this.panel_Menu = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.flowpanel_Discussoes = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.img_Menu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_NovaDiscussao)).BeginInit();
@@ -119,26 +119,28 @@
             this.img_NovaDiscussao.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.img_NovaDiscussao.TabIndex = 19;
             this.img_NovaDiscussao.TabStop = false;
+            this.img_NovaDiscussao.Visible = false;
             this.img_NovaDiscussao.Click += new System.EventHandler(this.Btn_NovaDiscussao_Click);
             this.img_NovaDiscussao.MouseLeave += new System.EventHandler(this.Img_NovaDiscussao_MouseLeave);
             this.img_NovaDiscussao.MouseHover += new System.EventHandler(this.Img_NovaDiscussao_MouseHover);
             // 
-            // lbl_Novadiscussao
+            // lbl_NovaDiscussao
             // 
-            this.lbl_Novadiscussao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_Novadiscussao.AutoSize = true;
-            this.lbl_Novadiscussao.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_Novadiscussao.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbl_Novadiscussao.Font = new System.Drawing.Font("Berlin Sans FB Demi", 10F, System.Drawing.FontStyle.Bold);
-            this.lbl_Novadiscussao.ForeColor = System.Drawing.Color.White;
-            this.lbl_Novadiscussao.Location = new System.Drawing.Point(1226, 33);
-            this.lbl_Novadiscussao.Name = "lbl_Novadiscussao";
-            this.lbl_Novadiscussao.Size = new System.Drawing.Size(104, 18);
-            this.lbl_Novadiscussao.TabIndex = 18;
-            this.lbl_Novadiscussao.Text = "Nova Discussão";
-            this.lbl_Novadiscussao.Click += new System.EventHandler(this.Btn_NovaDiscussao_Click);
-            this.lbl_Novadiscussao.MouseLeave += new System.EventHandler(this.Lbl_Novadiscussao_MouseLeave);
-            this.lbl_Novadiscussao.MouseHover += new System.EventHandler(this.Lbl_Novadiscussao_MouseHover);
+            this.lbl_NovaDiscussao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_NovaDiscussao.AutoSize = true;
+            this.lbl_NovaDiscussao.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_NovaDiscussao.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl_NovaDiscussao.Font = new System.Drawing.Font("Berlin Sans FB Demi", 10F, System.Drawing.FontStyle.Bold);
+            this.lbl_NovaDiscussao.ForeColor = System.Drawing.Color.White;
+            this.lbl_NovaDiscussao.Location = new System.Drawing.Point(1226, 33);
+            this.lbl_NovaDiscussao.Name = "lbl_NovaDiscussao";
+            this.lbl_NovaDiscussao.Size = new System.Drawing.Size(104, 18);
+            this.lbl_NovaDiscussao.TabIndex = 18;
+            this.lbl_NovaDiscussao.Text = "Nova Discussão";
+            this.lbl_NovaDiscussao.Visible = false;
+            this.lbl_NovaDiscussao.Click += new System.EventHandler(this.Btn_NovaDiscussao_Click);
+            this.lbl_NovaDiscussao.MouseLeave += new System.EventHandler(this.Lbl_Novadiscussao_MouseLeave);
+            this.lbl_NovaDiscussao.MouseHover += new System.EventHandler(this.Lbl_Novadiscussao_MouseHover);
             // 
             // btn_NovaDiscussao
             // 
@@ -157,6 +159,7 @@
             this.btn_NovaDiscussao.TabIndex = 17;
             this.btn_NovaDiscussao.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_NovaDiscussao.UseVisualStyleBackColor = false;
+            this.btn_NovaDiscussao.Visible = false;
             this.btn_NovaDiscussao.Click += new System.EventHandler(this.Btn_NovaDiscussao_Click);
             this.btn_NovaDiscussao.MouseLeave += new System.EventHandler(this.Btn_NovaDiscussao_MouseLeave);
             this.btn_NovaDiscussao.MouseHover += new System.EventHandler(this.Btn_NovaDiscussao_MouseHover);
@@ -173,21 +176,6 @@
             this.lbl_Titulo.Size = new System.Drawing.Size(462, 98);
             this.lbl_Titulo.TabIndex = 20;
             this.lbl_Titulo.Text = "Discussões";
-            // 
-            // flowpanel_Discussoes
-            // 
-            this.flowpanel_Discussoes.AutoScroll = true;
-            this.flowpanel_Discussoes.BackColor = System.Drawing.Color.Transparent;
-            this.flowpanel_Discussoes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.flowpanel_Discussoes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowpanel_Discussoes.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowpanel_Discussoes.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.flowpanel_Discussoes.Location = new System.Drawing.Point(0, 215);
-            this.flowpanel_Discussoes.Name = "flowpanel_Discussoes";
-            this.flowpanel_Discussoes.Padding = new System.Windows.Forms.Padding(0, 50, 0, 0);
-            this.flowpanel_Discussoes.Size = new System.Drawing.Size(1364, 534);
-            this.flowpanel_Discussoes.TabIndex = 22;
-            this.flowpanel_Discussoes.WrapContents = false;
             // 
             // btn_LogOut
             // 
@@ -413,7 +401,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.lbl_Novadiscussao);
+            this.panel1.Controls.Add(this.lbl_NovaDiscussao);
             this.panel1.Controls.Add(this.lbl_Titulo);
             this.panel1.Controls.Add(this.img_NovaDiscussao);
             this.panel1.Controls.Add(this.btn_NovaDiscussao);
@@ -423,6 +411,20 @@
             this.panel1.Size = new System.Drawing.Size(1364, 150);
             this.panel1.TabIndex = 25;
             // 
+            // flowpanel_Discussoes
+            // 
+            this.flowpanel_Discussoes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.flowpanel_Discussoes.AutoScroll = true;
+            this.flowpanel_Discussoes.BackColor = System.Drawing.Color.Transparent;
+            this.flowpanel_Discussoes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.flowpanel_Discussoes.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowpanel_Discussoes.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.flowpanel_Discussoes.Location = new System.Drawing.Point(279, 241);
+            this.flowpanel_Discussoes.Name = "flowpanel_Discussoes";
+            this.flowpanel_Discussoes.Size = new System.Drawing.Size(825, 479);
+            this.flowpanel_Discussoes.TabIndex = 23;
+            this.flowpanel_Discussoes.WrapContents = false;
+            // 
             // PaginaInicial_Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -431,8 +433,8 @@
             this.BackgroundImage = global::FootballLife_WF.Properties.Resources.Fundo_1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1364, 749);
-            this.Controls.Add(this.panel_Menu);
             this.Controls.Add(this.flowpanel_Discussoes);
+            this.Controls.Add(this.panel_Menu);
             this.Controls.Add(this.img_Logo);
             this.Controls.Add(this.img_Menu);
             this.Controls.Add(this.panel1);
@@ -461,10 +463,9 @@
         private System.Windows.Forms.PictureBox img_Logo;
         private System.Windows.Forms.Button btn_TopMenu;
         private System.Windows.Forms.PictureBox img_NovaDiscussao;
-        private System.Windows.Forms.Label lbl_Novadiscussao;
+        private System.Windows.Forms.Label lbl_NovaDiscussao;
         private System.Windows.Forms.Button btn_NovaDiscussao;
         private System.Windows.Forms.Label lbl_Titulo;
-        private System.Windows.Forms.FlowLayoutPanel flowpanel_Discussoes;
         private System.Windows.Forms.Button btn_LogOut;
         private System.Windows.Forms.PictureBox img_LogOut;
         private System.Windows.Forms.Label lbl_Terminar;
@@ -479,5 +480,6 @@
         private System.Windows.Forms.Button btn_Utilizadores;
         private System.Windows.Forms.Panel panel_Menu;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.FlowLayoutPanel flowpanel_Discussoes;
     }
 }

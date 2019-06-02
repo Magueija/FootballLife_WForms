@@ -40,7 +40,7 @@
             this.img_Equipas = new System.Windows.Forms.PictureBox();
             this.btn_Equipas = new System.Windows.Forms.Button();
             this.panel_Titulos = new System.Windows.Forms.Panel();
-            this.lbl_Titulos = new System.Windows.Forms.Label();
+            this.lbl_Historia = new System.Windows.Forms.Label();
             this.img_Titulos = new System.Windows.Forms.PictureBox();
             this.btn_Titulos = new System.Windows.Forms.Button();
             this.panel_Estadio = new System.Windows.Forms.Panel();
@@ -234,7 +234,7 @@
             this.panel_Titulos.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel_Titulos.BackColor = System.Drawing.Color.White;
             this.panel_Titulos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel_Titulos.Controls.Add(this.lbl_Titulos);
+            this.panel_Titulos.Controls.Add(this.lbl_Historia);
             this.panel_Titulos.Controls.Add(this.img_Titulos);
             this.panel_Titulos.Controls.Add(this.btn_Titulos);
             this.panel_Titulos.Location = new System.Drawing.Point(738, 492);
@@ -242,32 +242,34 @@
             this.panel_Titulos.Size = new System.Drawing.Size(323, 193);
             this.panel_Titulos.TabIndex = 2;
             // 
-            // lbl_Titulos
+            // lbl_Historia
             // 
-            this.lbl_Titulos.AutoSize = true;
-            this.lbl_Titulos.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_Titulos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbl_Titulos.Font = new System.Drawing.Font("Berlin Sans FB Demi", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Titulos.ForeColor = System.Drawing.Color.Black;
-            this.lbl_Titulos.Location = new System.Drawing.Point(110, 134);
-            this.lbl_Titulos.Name = "lbl_Titulos";
-            this.lbl_Titulos.Size = new System.Drawing.Size(114, 31);
-            this.lbl_Titulos.TabIndex = 3;
-            this.lbl_Titulos.Text = "TÍTULOS";
-            this.lbl_Titulos.MouseLeave += new System.EventHandler(this.Lbl_Titulos_MouseLeave);
-            this.lbl_Titulos.MouseHover += new System.EventHandler(this.Lbl_Titulos_MouseHover);
+            this.lbl_Historia.AutoSize = true;
+            this.lbl_Historia.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_Historia.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl_Historia.Font = new System.Drawing.Font("Berlin Sans FB Demi", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Historia.ForeColor = System.Drawing.Color.Black;
+            this.lbl_Historia.Location = new System.Drawing.Point(103, 137);
+            this.lbl_Historia.Name = "lbl_Historia";
+            this.lbl_Historia.Size = new System.Drawing.Size(131, 31);
+            this.lbl_Historia.TabIndex = 3;
+            this.lbl_Historia.Text = "HISTÓRIA";
+            this.lbl_Historia.Click += new System.EventHandler(this.Btn_Titulos_Click);
+            this.lbl_Historia.MouseLeave += new System.EventHandler(this.Lbl_Titulos_MouseLeave);
+            this.lbl_Historia.MouseHover += new System.EventHandler(this.Lbl_Titulos_MouseHover);
             // 
             // img_Titulos
             // 
             this.img_Titulos.BackColor = System.Drawing.Color.Transparent;
             this.img_Titulos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.img_Titulos.Image = global::FootballLife_WF.Properties.Resources.Medalha;
+            this.img_Titulos.Image = ((System.Drawing.Image)(resources.GetObject("img_Titulos.Image")));
             this.img_Titulos.Location = new System.Drawing.Point(109, 21);
             this.img_Titulos.Name = "img_Titulos";
             this.img_Titulos.Size = new System.Drawing.Size(117, 93);
             this.img_Titulos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.img_Titulos.TabIndex = 0;
             this.img_Titulos.TabStop = false;
+            this.img_Titulos.Click += new System.EventHandler(this.Btn_Titulos_Click);
             this.img_Titulos.MouseLeave += new System.EventHandler(this.Img_Titulos_MouseLeave);
             this.img_Titulos.MouseHover += new System.EventHandler(this.Img_Titulos_MouseHover);
             // 
@@ -289,6 +291,7 @@
             this.btn_Titulos.TabIndex = 2;
             this.btn_Titulos.Tag = "1";
             this.btn_Titulos.UseVisualStyleBackColor = false;
+            this.btn_Titulos.Click += new System.EventHandler(this.Btn_Titulos_Click);
             this.btn_Titulos.MouseLeave += new System.EventHandler(this.Btn_Titulos_MouseLeave);
             this.btn_Titulos.MouseHover += new System.EventHandler(this.Btn_Titulos_MouseHover);
             // 
@@ -458,7 +461,7 @@
         private System.Windows.Forms.PictureBox img_Equipas;
         private System.Windows.Forms.Button btn_Equipas;
         private System.Windows.Forms.Panel panel_Titulos;
-        private System.Windows.Forms.Label lbl_Titulos;
+        private System.Windows.Forms.Label lbl_Historia;
         private System.Windows.Forms.PictureBox img_Titulos;
         private System.Windows.Forms.Button btn_Titulos;
         private System.Windows.Forms.Panel panel_Estadio;

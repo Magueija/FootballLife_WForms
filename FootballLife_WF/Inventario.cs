@@ -649,7 +649,7 @@ namespace FootballLife_WF
 
         private void Btn_Utilizadores_Click(object sender, EventArgs e)
         {
-            Utilizadores_Admin Users = new Utilizadores_Admin();
+            Utilizadores Users = new Utilizadores();
             this.Hide();
             Users.ShowDialog();
             this.Dispose();
