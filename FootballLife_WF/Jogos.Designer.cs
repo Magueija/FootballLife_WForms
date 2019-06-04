@@ -88,7 +88,7 @@
             this.img_Logo.BackColor = System.Drawing.Color.Transparent;
             this.img_Logo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.img_Logo.Image = global::FootballLife_WF.Properties.Resources.Logo_Clube;
-            this.img_Logo.Location = new System.Drawing.Point(1314, 12);
+            this.img_Logo.Location = new System.Drawing.Point(1308, 12);
             this.img_Logo.MaximumSize = new System.Drawing.Size(44, 40);
             this.img_Logo.MinimumSize = new System.Drawing.Size(44, 40);
             this.img_Logo.Name = "img_Logo";
@@ -220,7 +220,7 @@
             this.btn_TopMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_TopMenu.Location = new System.Drawing.Point(0, 0);
             this.btn_TopMenu.Name = "btn_TopMenu";
-            this.btn_TopMenu.Size = new System.Drawing.Size(1370, 65);
+            this.btn_TopMenu.Size = new System.Drawing.Size(1364, 65);
             this.btn_TopMenu.TabIndex = 0;
             this.btn_TopMenu.UseVisualStyleBackColor = false;
             // 
@@ -231,7 +231,7 @@
             this.lbl_Titulo.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Titulo.Font = new System.Drawing.Font("Bauhaus 93", 65.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Titulo.ForeColor = System.Drawing.Color.White;
-            this.lbl_Titulo.Location = new System.Drawing.Point(561, 92);
+            this.lbl_Titulo.Location = new System.Drawing.Point(558, 92);
             this.lbl_Titulo.Name = "lbl_Titulo";
             this.lbl_Titulo.Size = new System.Drawing.Size(253, 98);
             this.lbl_Titulo.TabIndex = 14;
@@ -251,7 +251,7 @@
             this.panel_Pesquisa.Controls.Add(this.chb_Seniores);
             this.panel_Pesquisa.Controls.Add(this.chb_Todos);
             this.panel_Pesquisa.Controls.Add(this.lbl_Pesquisar);
-            this.panel_Pesquisa.Location = new System.Drawing.Point(323, 222);
+            this.panel_Pesquisa.Location = new System.Drawing.Point(320, 222);
             this.panel_Pesquisa.Name = "panel_Pesquisa";
             this.panel_Pesquisa.Size = new System.Drawing.Size(698, 78);
             this.panel_Pesquisa.TabIndex = 17;
@@ -409,7 +409,7 @@
             this.img_Linha.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.img_Linha.BackColor = System.Drawing.Color.Transparent;
             this.img_Linha.Image = global::FootballLife_WF.Properties.Resources.Linha_Separadora;
-            this.img_Linha.Location = new System.Drawing.Point(229, 306);
+            this.img_Linha.Location = new System.Drawing.Point(226, 306);
             this.img_Linha.Name = "img_Linha";
             this.img_Linha.Size = new System.Drawing.Size(892, 53);
             this.img_Linha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -424,9 +424,9 @@
             this.flowpanel_Jogos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.flowpanel_Jogos.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowpanel_Jogos.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.flowpanel_Jogos.Location = new System.Drawing.Point(323, 365);
+            this.flowpanel_Jogos.Location = new System.Drawing.Point(320, 365);
             this.flowpanel_Jogos.Name = "flowpanel_Jogos";
-            this.flowpanel_Jogos.Size = new System.Drawing.Size(715, 290);
+            this.flowpanel_Jogos.Size = new System.Drawing.Size(715, 372);
             this.flowpanel_Jogos.TabIndex = 26;
             this.flowpanel_Jogos.WrapContents = false;
             // 
@@ -438,7 +438,7 @@
             this.lbl_NovoResultado.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl_NovoResultado.Font = new System.Drawing.Font("Berlin Sans FB Demi", 10F, System.Drawing.FontStyle.Bold);
             this.lbl_NovoResultado.ForeColor = System.Drawing.Color.White;
-            this.lbl_NovoResultado.Location = new System.Drawing.Point(1233, 92);
+            this.lbl_NovoResultado.Location = new System.Drawing.Point(1227, 92);
             this.lbl_NovoResultado.Name = "lbl_NovoResultado";
             this.lbl_NovoResultado.Size = new System.Drawing.Size(108, 18);
             this.lbl_NovoResultado.TabIndex = 28;
@@ -453,7 +453,7 @@
             this.img_NovoResultado.BackColor = System.Drawing.Color.Transparent;
             this.img_NovoResultado.Cursor = System.Windows.Forms.Cursors.Hand;
             this.img_NovoResultado.Image = global::FootballLife_WF.Properties.Resources.Adicionar_Criar_white_;
-            this.img_NovoResultado.Location = new System.Drawing.Point(1207, 92);
+            this.img_NovoResultado.Location = new System.Drawing.Point(1201, 92);
             this.img_NovoResultado.MaximumSize = new System.Drawing.Size(20, 20);
             this.img_NovoResultado.MinimumSize = new System.Drawing.Size(20, 20);
             this.img_NovoResultado.Name = "img_NovoResultado";
@@ -476,7 +476,7 @@
             this.btn_NovoResultado.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn_NovoResultado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_NovoResultado.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_NovoResultado.Location = new System.Drawing.Point(1195, 83);
+            this.btn_NovoResultado.Location = new System.Drawing.Point(1189, 83);
             this.btn_NovoResultado.Name = "btn_NovoResultado";
             this.btn_NovoResultado.Size = new System.Drawing.Size(157, 37);
             this.btn_NovoResultado.TabIndex = 27;
@@ -494,7 +494,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::FootballLife_WF.Properties.Resources.Fundo_1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.ClientSize = new System.Drawing.Size(1364, 749);
             this.Controls.Add(this.lbl_NovoResultado);
             this.Controls.Add(this.img_NovoResultado);
             this.Controls.Add(this.btn_NovoResultado);

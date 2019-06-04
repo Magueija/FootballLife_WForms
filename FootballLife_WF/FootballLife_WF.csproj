@@ -149,6 +149,12 @@
     <Compile Include="Inventario.Designer.cs">
       <DependentUpon>Inventario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Convocatoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Convocatoria.Designer.cs">
+      <DependentUpon>Convocatoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="PaginaInicial_Treinador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -243,6 +249,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Inventario.resx">
       <DependentUpon>Inventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Convocatoria.resx">
+      <DependentUpon>Convocatoria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PaginaInicial_Treinador.resx">
       <DependentUpon>PaginaInicial_Treinador.cs</DependentUpon>

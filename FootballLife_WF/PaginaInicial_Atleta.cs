@@ -119,11 +119,13 @@ namespace FootballLife_WF
             string EquipaFora = "";
             string GolosFora = "";
 
+            string patch = "";
+
 
             try
             {
                 SqlDataReader dr;
-                string Query = ("SELECT dbo.TblJogo.IDJogo, dbo.TblJogo.Data, dbo.TblJogo.EquipaCasa, dbo.TblJogo.EquipaFora, dbo.TblJogo.GolosCasa, dbo.TblEscalao.Escalao, dbo.TblJogo.GolosFora FROM dbo.TblJogo INNER JOIN dbo.TblEscalao ON dbo.TblJogo.FK_IDEscalao = dbo.TblEscalao.IDEscalao WHERE(dbo.TblJogo.Apagado = 0) AND dbo.TblJogo.FK_IDEscalao = " + IDEscalao + " ORDER BY dbo.TblJogo.Data DESC");
+                string Query = ("SELECT dbo.TblJogo.IDJogo, dbo.TblJogo.Data, dbo.TblJogo.EquipaCasa, dbo.TblJogo.EquipaFora, dbo.TblJogo.GolosCasa, dbo.TblEscalao.Escalao, dbo.TblJogo.GolosFora, dbo.TblJogo.Path_ImgAdversario FROM dbo.TblJogo INNER JOIN dbo.TblEscalao ON dbo.TblJogo.FK_IDEscalao = dbo.TblEscalao.IDEscalao WHERE(dbo.TblJogo.Apagado = 0) ORDER BY dbo.TblJogo.Data DESC");
                 SqlCommand Command = new SqlCommand(Query, con);
                 dr = Command.ExecuteReader();
                 while (dr.Read())
@@ -138,7 +140,9 @@ namespace FootballLife_WF
                     EquipaFora = dr["EquipaFora"].ToString();
                     GolosFora = dr["GolosFora"].ToString();
 
-                    Jogo jogo = new Jogo(IDJogo, Escalao, Data, EquipaCasa, GolosCasa, EquipaFora, GolosFora);
+                    patch = dr["Path_ImgAdversario"].ToString();
+
+                    Jogo jogo = new Jogo(IDJogo, Escalao, Data, EquipaCasa, GolosCasa, EquipaFora, GolosFora, patch);
                     flowpanel_Jogos.Controls.Add(jogo);
                 }
                 dr.Close();
@@ -166,11 +170,13 @@ namespace FootballLife_WF
             string EquipaFora = "";
             string GolosFora = "";
 
+            string patch = "";
+
 
             try
             {
                 SqlDataReader dr;
-                string Query = ("SELECT dbo.TblJogo.IDJogo, dbo.TblJogo.Data, dbo.TblJogo.EquipaCasa, dbo.TblJogo.EquipaFora, dbo.TblJogo.GolosCasa, dbo.TblEscalao.Escalao, dbo.TblJogo.GolosFora FROM dbo.TblJogo INNER JOIN dbo.TblEscalao ON dbo.TblJogo.FK_IDEscalao = dbo.TblEscalao.IDEscalao WHERE(dbo.TblJogo.Apagado = 0) ORDER BY dbo.TblJogo.Data DESC");
+                string Query = ("SELECT dbo.TblJogo.IDJogo, dbo.TblJogo.Data, dbo.TblJogo.EquipaCasa, dbo.TblJogo.EquipaFora, dbo.TblJogo.GolosCasa, dbo.TblEscalao.Escalao, dbo.TblJogo.GolosFora, dbo.TblJogo.Path_ImgAdversario FROM dbo.TblJogo INNER JOIN dbo.TblEscalao ON dbo.TblJogo.FK_IDEscalao = dbo.TblEscalao.IDEscalao WHERE(dbo.TblJogo.Apagado = 0) ORDER BY dbo.TblJogo.Data DESC");
                 SqlCommand Command = new SqlCommand(Query, con);
                 dr = Command.ExecuteReader();
                 while (dr.Read())
@@ -185,7 +191,9 @@ namespace FootballLife_WF
                     EquipaFora = dr["EquipaFora"].ToString();
                     GolosFora = dr["GolosFora"].ToString();
 
-                    Jogo jogo = new Jogo(IDJogo, Escalao, Data, EquipaCasa, GolosCasa, EquipaFora, GolosFora);
+                    patch = dr["Path_ImgAdversario"].ToString();
+
+                    Jogo jogo = new Jogo(IDJogo, Escalao, Data, EquipaCasa, GolosCasa, EquipaFora, GolosFora, patch);
                     flowpanel_Jogos.Controls.Add(jogo);
                 }
                 dr.Close();

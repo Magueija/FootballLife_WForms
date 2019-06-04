@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Jogo));
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbl_Data = new System.Windows.Forms.Label();
             this.btn_VerJogo = new System.Windows.Forms.Button();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.img_Fora = new System.Windows.Forms.PictureBox();
             this.lbl_FEquipa = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -40,15 +42,17 @@
             this.img_Casa = new System.Windows.Forms.PictureBox();
             this.lbl_Escalao = new System.Windows.Forms.Label();
             this.lbl_VitoriaDerrota = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Fora)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Casa)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.lbl_Data);
             this.panel1.Controls.Add(this.btn_VerJogo);
             this.panel1.Controls.Add(this.pictureBox3);
@@ -85,13 +89,23 @@
             this.btn_VerJogo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_VerJogo.Font = new System.Drawing.Font("Berlin Sans FB", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_VerJogo.ForeColor = System.Drawing.Color.Black;
-            this.btn_VerJogo.Location = new System.Drawing.Point(583, 143);
+            this.btn_VerJogo.Location = new System.Drawing.Point(564, 146);
             this.btn_VerJogo.Name = "btn_VerJogo";
             this.btn_VerJogo.Size = new System.Drawing.Size(95, 26);
             this.btn_VerJogo.TabIndex = 30;
             this.btn_VerJogo.Text = "Ver Jogo";
             this.btn_VerJogo.UseVisualStyleBackColor = false;
             this.btn_VerJogo.Click += new System.EventHandler(this.Btn_VerJogo_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::FootballLife_WF.Properties.Resources.Logo_Clube;
+            this.pictureBox3.Location = new System.Drawing.Point(645, 3);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 26;
+            this.pictureBox3.TabStop = false;
             // 
             // img_Fora
             // 
@@ -187,15 +201,16 @@
             this.lbl_VitoriaDerrota.TabIndex = 17;
             this.lbl_VitoriaDerrota.Text = "VITÓRIA";
             // 
-            // pictureBox3
+            // pictureBox1
             // 
-            this.pictureBox3.Image = global::FootballLife_WF.Properties.Resources.Logo_Clube;
-            this.pictureBox3.Location = new System.Drawing.Point(643, 5);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(35, 35);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 26;
-            this.pictureBox3.TabStop = false;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(663, 148);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(15, 20);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 32;
+            this.pictureBox1.TabStop = false;
             // 
             // Jogo
             // 
@@ -207,9 +222,10 @@
             this.Size = new System.Drawing.Size(688, 180);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Fora)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Casa)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -229,5 +245,6 @@
         private System.Windows.Forms.Button btn_VerJogo;
         private System.Windows.Forms.Label lbl_Data;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

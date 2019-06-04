@@ -8,13 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace FootballLife_WF
 {
     public partial class Jogo : UserControl
     {
         string ID = "";
-        public Jogo(string IDJogo, string Escalao, string Data, string EquipaCasa, string GolosCasa, string EquipaFora, string GolosFora)
+        public Jogo(string IDJogo, string Escalao, string Data, string EquipaCasa, string GolosCasa, string EquipaFora, string GolosFora, string Patch)
         {
             InitializeComponent();
 
@@ -52,14 +53,21 @@ namespace FootballLife_WF
 
             if (EquipaCasa == "Palmelense F.C.")
             {
+                Bitmap bmp = new Bitmap(Patch);
                 img_Casa.Image = Properties.Resources.Logo_Clube;
-                img_Fora.Image = Properties.Resources.LogoAtleta;
+                img_Fora.Image = bmp;
             }
             else if (EquipaFora == "Palmelense F.C.")
             {
-                img_Casa.Image = Properties.Resources.LogoAtleta;
+                Bitmap bmp = new Bitmap(Patch);
+                img_Casa.Image = bmp;
                 img_Fora.Image = Properties.Resources.Logo_Clube;
             }
+
+           //if (Properties.Settings.Default.IDUser == Convert.ToInt32(IDAdmin))
+            //{
+            //    PbDelete.Visible = true;
+           //}
         }
 
         private void Btn_VerJogo_Click(object sender, EventArgs e)

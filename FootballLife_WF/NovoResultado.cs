@@ -50,19 +50,61 @@ namespace FootballLife_WF
         {
             OpenFileDialog diretorio = new OpenFileDialog();
             FileDialog file = new OpenFileDialog();
+            diretorio.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png";
             diretorio.ShowDialog();
-            diretorio.Filter = "JPeg Image|*.jpg|PNG Image|*.png";
 
-            if (diretorio.FileName != null)
+            try
             {
-                LogoAdversario = diretorio.FileName;
-                Bitmap bmp = new Bitmap(diretorio.FileName);
-                img_LogoCasa.Image = bmp;
+                if (diretorio.FileName != null)
+                {
+                    LogoAdversario = diretorio.FileName;
+                    Bitmap bmp = new Bitmap(diretorio.FileName);
+                    img_LogoCasa.Image = bmp;
+                }
+                else
+                {
+                    MessageBox.Show("Por favor escolha o logo do adversário!", "ATENÇÃO!", MessageBoxButtons.OK);
+                }
             }
-            else
+            catch (Exception x)
             {
-                MessageBox.Show("Por favor escolha uma imagem PNG ou JPG!", "ATENÇÃO!", MessageBoxButtons.OK);
+                MessageBox.Show("Por favor escolha o logo do adversário!", "ATENÇÃO!", MessageBoxButtons.OK);
             }
+
+        }
+
+
+        private void Btn_UploadFora_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog diretorio = new OpenFileDialog();
+            FileDialog file = new OpenFileDialog();
+            diretorio.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png";
+            diretorio.ShowDialog();
+
+            try
+            {
+                if (diretorio.FileName != null)
+                {
+                    LogoAdversario = diretorio.FileName;
+
+                    if (Path.GetPathRoot(LogoAdversario) != @"\Projeto_WindowsForms\Imagens\")
+                    {
+                        System.IO.File.Copy(LogoAdversario, @"\Projeto_WindowsForms\Imagens\" + Path.GetFileName(LogoAdversario));
+                    }
+                    
+                    Bitmap bmp = new Bitmap(@"\Projeto_WindowsForms\Imagens\" + Path.GetFileName(LogoAdversario));
+                    img_LogoFora.Image = bmp;
+                }
+                else
+                {
+                    MessageBox.Show("Por favor escolha o logo do adversário!", "ATENÇÃO!", MessageBoxButtons.OK);
+                }
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show("Por favor escolha o logo do adversário!", "ATENÇÃO!", MessageBoxButtons.OK);
+            }
+
         }
 
 
@@ -74,7 +116,7 @@ namespace FootballLife_WF
             {
                 foreach (Control c in flowpanel_Golos.Controls[ctr].Controls)
                 {
-                    if(flowpanel_Golos.Controls[ctr].Text == "")
+                    if(c.Name == "tbMinutos" && c.Text == "")
                     {
                         gravar = false;
                     }
@@ -87,7 +129,7 @@ namespace FootballLife_WF
                 {
                     MessageBox.Show("Campos obrigatórios não preenchidos!", "ATENÇÃO!", MessageBoxButtons.OK);
                 }
-                else if (tb_EquipaCasa.Text == tb_EquipaFora.Text)
+                else if (tb_EquipaCasa.Text == tb_EquipaFora.Text && img_LogoCasa.Image == Properties.Resources.Logo_Clube && img_LogoFora.Image == Properties.Resources.Logo_Clube)
                 {
                     MessageBox.Show("Equipas iguais!", "ATENÇÃO!", MessageBoxButtons.OK);
                 }
@@ -137,27 +179,29 @@ namespace FootballLife_WF
                         {
                             string Nome = "";
                             string Minutos = "";
+
                             foreach (Control c in flowpanel_Golos.Controls[ctr].Controls)
                             {
-                                if (flowpanel_Golos.Controls[ctr].Name == "cbNome")
+                                if (c.Name == "cbNome")
                                 {
-                                    ComboBox cb = (ComboBox)flowpanel_Golos.Controls[ctr];
+                                    ComboBox cb = (ComboBox)c;
                                     Nome = cb.SelectedValue.ToString();
                                 }
 
-                                if (flowpanel_Golos.Controls[ctr].Name == "tbMinutos")
+                                if (c.Name == "tbMinutos")
                                 {
-                                    TextBox tb = (TextBox)flowpanel_Golos.Controls[ctr];
-                                    Nome = tb.Text;
+                                    TextBox tb = (TextBox)c;
+                                    Minutos = tb.Text;
                                 }
                             }
-                            string Querygolo = "INSERT INTO dbo.TblGolos (FK_IDAtleta, Minutos_Jogo, FK_IDJogo) VALUES (@IDAtleta, @Minutos_Jogo, @IDJogo)";
+
+                            string Querygolo = "INSERT INTO dbo.TblGolo (Minutos_Jogo, FK_IDAtleta, FK_IDJogo) VALUES (@Minutos_Jogo, @IDAtleta, @IDJogo)";
 
                             SqlCommand Commandgolo = new SqlCommand(Querygolo, con);
-                            Commandgolo.Parameters.AddWithValue("@IDAtleta", Nome);
                             Commandgolo.Parameters.AddWithValue("@Minutos_Jogo", Minutos);
+                            Commandgolo.Parameters.AddWithValue("@IDAtleta", Nome);
                             Commandgolo.Parameters.AddWithValue("@IDJogo", IDJogo);
-                            CommandINSERT.ExecuteNonQuery();
+                            Commandgolo.ExecuteNonQuery();
 
                         }
                     }
@@ -215,6 +259,7 @@ namespace FootballLife_WF
             cbNome.Anchor = AnchorStyles.Top;
             cbNome.DropDownStyle = ComboBoxStyle.DropDownList;
             cbNome.Visible = true;
+            cbNome.Name = "cbNome";
             panel.Controls.Add(cbNome);
 
             Label lblMinutos = new Label();
@@ -277,6 +322,8 @@ namespace FootballLife_WF
 
         private void Palmelense_TextChanged(object sender, EventArgs e)
         {
+            flowpanel_Golos.Controls.Clear();
+
             if (tb_EquipaCasa.Text == "Palmelense F.C." && tb_GolosCasa.Text != "")
             {
                 string Golos = tb_GolosCasa.Text;
@@ -299,6 +346,16 @@ namespace FootballLife_WF
             {
                 flowpanel_Golos.Controls.Clear();
             }
+        }
+
+        private void Tb_Data_Click(object sender, EventArgs e)
+        {
+            tb_Data.Text = "";
+        }
+
+        private void Tb_Hora_Click(object sender, EventArgs e)
+        {
+            tb_Hora.Text = "";
         }
     }
 }

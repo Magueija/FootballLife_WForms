@@ -36,11 +36,13 @@ namespace FootballLife_WF
             string EquipaFora = "";
             string GolosFora = "";
 
+            string patch = "";
+
 
             try
             {
                 SqlDataReader dr;
-                string Query = ("SELECT dbo.TblJogo.IDJogo, dbo.TblJogo.Data, dbo.TblJogo.Divisao, dbo.TblJogo.EquipaCasa, dbo.TblJogo.EquipaFora, dbo.TblJogo.GolosCasa, dbo.TblEscalao.Escalao, dbo.TblJogo.GolosFora FROM dbo.TblJogo INNER JOIN dbo.TblEscalao ON dbo.TblJogo.FK_IDEscalao = dbo.TblEscalao.IDEscalao WHERE dbo.TblJogo.IDJogo = " + IDJogo);
+                string Query = ("SELECT dbo.TblJogo.IDJogo, dbo.TblJogo.Data, dbo.TblJogo.Divisao, dbo.TblJogo.EquipaCasa, dbo.TblJogo.EquipaFora, dbo.TblJogo.GolosCasa, dbo.TblJogo.Path_ImgAdversario, dbo.TblEscalao.Escalao, dbo.TblJogo.GolosFora FROM dbo.TblJogo INNER JOIN dbo.TblEscalao ON dbo.TblJogo.FK_IDEscalao = dbo.TblEscalao.IDEscalao WHERE dbo.TblJogo.IDJogo = " + IDJogo);
                 SqlCommand Command = new SqlCommand(Query, con);
                 dr = Command.ExecuteReader();
                 while (dr.Read())
@@ -55,6 +57,8 @@ namespace FootballLife_WF
                     EquipaFora = dr["EquipaFora"].ToString();
                     GolosFora = dr["GolosFora"].ToString();
 
+                    patch = dr["Path_ImgAdversario"].ToString();
+
                     lbl_Titulo.Text = "Jogos dos " + Escalao;
                     lbl_Escalao.Text = Escalao;
                     lbl_Data.Text = Data;
@@ -68,18 +72,20 @@ namespace FootballLife_WF
 
                     if (EquipaCasa == "Palmelense F.C.")
                     {
+                        Bitmap bmp = new Bitmap(patch);
                         img_LogoCasa.Image = Properties.Resources.Logo_Clube;
-                        img_LogoFora.Image = Properties.Resources.LogoAtleta;
+                        img_LogoFora.Image = bmp;
                     }
                     else if (EquipaFora == "Palmelense F.C.")
                     {
-                        img_LogoCasa.Image = Properties.Resources.LogoAtleta;
+                        Bitmap bmp = new Bitmap(patch);
+                        img_LogoCasa.Image = bmp;
                         img_LogoFora.Image = Properties.Resources.Logo_Clube;
                     }
                 }
                 dr.Close();
 
-                int i = 0;
+                int i = 1;
 
                 SqlDataReader drgolos;
                 string Querygolos = ("SELECT dbo.TblGolo.Minutos_Jogo, dbo.TblAtleta.Nome FROM dbo.TblGolo INNER JOIN dbo.TblJogo ON dbo.TblGolo.FK_IDJogo = dbo.TblJogo.IDJogo" +

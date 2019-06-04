@@ -183,6 +183,8 @@
             this.tb_Data.Name = "tb_Data";
             this.tb_Data.Size = new System.Drawing.Size(131, 20);
             this.tb_Data.TabIndex = 61;
+            this.tb_Data.Text = "DD/MM/AAAA";
+            this.tb_Data.Click += new System.EventHandler(this.Tb_Data_Click);
             // 
             // tb_Divisao
             // 
@@ -241,6 +243,7 @@
             this.btn_UploadFora.TabIndex = 67;
             this.btn_UploadFora.Text = "Upload";
             this.btn_UploadFora.UseVisualStyleBackColor = false;
+            this.btn_UploadFora.Click += new System.EventHandler(this.Btn_UploadFora_Click);
             // 
             // btn_UploadCasa
             // 
@@ -376,6 +379,8 @@
             this.tb_Hora.Name = "tb_Hora";
             this.tb_Hora.Size = new System.Drawing.Size(85, 20);
             this.tb_Hora.TabIndex = 80;
+            this.tb_Hora.Text = "HH:MM";
+            this.tb_Hora.Click += new System.EventHandler(this.Tb_Hora_Click);
             // 
             // label16
             // 
