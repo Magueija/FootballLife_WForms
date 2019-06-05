@@ -344,7 +344,7 @@
             this.btn_Convocatoria.TabIndex = 16;
             this.btn_Convocatoria.Text = "CONVOCATÓRIA";
             this.btn_Convocatoria.UseVisualStyleBackColor = false;
-            this.btn_Convocatoria.Click += new System.EventHandler(this.Btn_Financiamento_Click);
+            this.btn_Convocatoria.Click += new System.EventHandler(this.Btn_Convocatoria_Click);
             // 
             // lbl_Titulo
             // 

@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Jogo));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pb_Delete = new System.Windows.Forms.PictureBox();
             this.lbl_Data = new System.Windows.Forms.Label();
             this.btn_VerJogo = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -42,17 +43,16 @@
             this.img_Casa = new System.Windows.Forms.PictureBox();
             this.lbl_Escalao = new System.Windows.Forms.Label();
             this.lbl_VitoriaDerrota = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_Delete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Fora)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Casa)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.pb_Delete);
             this.panel1.Controls.Add(this.lbl_Data);
             this.panel1.Controls.Add(this.btn_VerJogo);
             this.panel1.Controls.Add(this.pictureBox3);
@@ -69,6 +69,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(683, 175);
             this.panel1.TabIndex = 0;
+            // 
+            // pb_Delete
+            // 
+            this.pb_Delete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pb_Delete.Image = ((System.Drawing.Image)(resources.GetObject("pb_Delete.Image")));
+            this.pb_Delete.Location = new System.Drawing.Point(663, 148);
+            this.pb_Delete.Name = "pb_Delete";
+            this.pb_Delete.Size = new System.Drawing.Size(15, 20);
+            this.pb_Delete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pb_Delete.TabIndex = 32;
+            this.pb_Delete.TabStop = false;
+            this.pb_Delete.Visible = false;
             // 
             // lbl_Data
             // 
@@ -201,17 +213,6 @@
             this.lbl_VitoriaDerrota.TabIndex = 17;
             this.lbl_VitoriaDerrota.Text = "VITÓRIA";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(663, 148);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(15, 20);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 32;
-            this.pictureBox1.TabStop = false;
-            // 
             // Jogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -222,10 +223,10 @@
             this.Size = new System.Drawing.Size(688, 180);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_Delete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Fora)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Casa)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -245,6 +246,6 @@
         private System.Windows.Forms.Button btn_VerJogo;
         private System.Windows.Forms.Label lbl_Data;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pb_Delete;
     }
 }

@@ -113,6 +113,12 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="NovaConvocatoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NovaConvocatoria.Designer.cs">
+      <DependentUpon>NovaConvocatoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="NovaDiscussão.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -231,6 +237,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NovaConvocatoria.resx">
+      <DependentUpon>NovaConvocatoria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NovaDiscussão.resx">
       <DependentUpon>NovaDiscussão.cs</DependentUpon>
@@ -364,6 +373,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="FbLf_LOGO.ico" />
+    <None Include="Resources\suplente1.png" />
+    <None Include="Resources\NaoConvocado2.png" />
+    <None Include="Resources\NaoConvocado1.png" />
+    <None Include="Resources\Suplente_Red.png" />
+    <None Include="Resources\Titular.png" />
     <None Include="Resources\Delete.png" />
     <None Include="Resources\Back_Hover.png" />
     <None Include="Resources\Back_Normal.png" />

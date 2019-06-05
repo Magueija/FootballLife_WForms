@@ -108,6 +108,7 @@ namespace FootballLife_WF
 
             string IDJogo = "";
             string Escalao = "";
+            string idescalao = "";
             string Data = "";
 
             string EquipaCasa = "";
@@ -122,12 +123,13 @@ namespace FootballLife_WF
             try
             {
                 SqlDataReader dr;
-                string Query = ("SELECT dbo.TblJogo.IDJogo, dbo.TblJogo.Data, dbo.TblJogo.EquipaCasa, dbo.TblJogo.EquipaFora, dbo.TblJogo.GolosCasa, dbo.TblEscalao.Escalao, dbo.TblJogo.GolosFora, dbo.TblJogo.Path_ImgAdversario FROM dbo.TblJogo INNER JOIN dbo.TblEscalao ON dbo.TblJogo.FK_IDEscalao = dbo.TblEscalao.IDEscalao WHERE(dbo.TblJogo.Apagado = 0) ORDER BY dbo.TblJogo.Data DESC");
+                string Query = ("SELECT dbo.TblJogo.IDJogo, dbo.TblJogo.Data, dbo.TblJogo.EquipaCasa, dbo.TblJogo.EquipaFora, dbo.TblJogo.GolosCasa, dbo.TblEscalao.IDEscalao, dbo.TblEscalao.Escalao, dbo.TblJogo.GolosFora, dbo.TblJogo.Path_ImgAdversario FROM dbo.TblJogo INNER JOIN dbo.TblEscalao ON dbo.TblJogo.FK_IDEscalao = dbo.TblEscalao.IDEscalao WHERE (dbo.TblJogo.Apagado = 0) AND dbo.TblJogo.FK_IDEscalao = " + IDEscalao + " ORDER BY dbo.TblJogo.Data DESC");
                 SqlCommand Command = new SqlCommand(Query, con);
                 dr = Command.ExecuteReader();
                 while (dr.Read())
                 {
                     IDJogo = dr["IDJogo"].ToString();
+                    idescalao = dr["IDEscalao"].ToString();
                     Escalao = dr["Escalao"].ToString();
                     Data = dr["Data"].ToString();
 
@@ -139,7 +141,7 @@ namespace FootballLife_WF
 
                     patch = dr["Path_ImgAdversario"].ToString();
 
-                    Jogo jogo = new Jogo(IDJogo, Escalao, Data, EquipaCasa, GolosCasa, EquipaFora, GolosFora, patch);
+                    Jogo jogo = new Jogo(IDJogo, idescalao, Escalao, Data, EquipaCasa, GolosCasa, EquipaFora, GolosFora, patch);
                     flowpanel_Jogos.Controls.Add(jogo);
                 }
                 dr.Close();
@@ -159,6 +161,7 @@ namespace FootballLife_WF
 
             string IDJogo = "";
             string Escalao = "";
+            string idescalao = "";
             string Data = "";
 
             string EquipaCasa = "";
@@ -173,12 +176,13 @@ namespace FootballLife_WF
             try
             {
                 SqlDataReader dr;
-                string Query = ("SELECT dbo.TblJogo.IDJogo, dbo.TblJogo.Data, dbo.TblJogo.EquipaCasa, dbo.TblJogo.EquipaFora, dbo.TblJogo.GolosCasa, dbo.TblEscalao.Escalao, dbo.TblJogo.GolosFora, dbo.TblJogo.Path_ImgAdversario FROM dbo.TblJogo INNER JOIN dbo.TblEscalao ON dbo.TblJogo.FK_IDEscalao = dbo.TblEscalao.IDEscalao WHERE(dbo.TblJogo.Apagado = 0) ORDER BY dbo.TblJogo.Data DESC");
+                string Query = ("SELECT dbo.TblJogo.IDJogo, dbo.TblJogo.Data, dbo.TblJogo.EquipaCasa, dbo.TblJogo.EquipaFora, dbo.TblJogo.GolosCasa, dbo.TblEscalao.IDEscalao, dbo.TblEscalao.Escalao, dbo.TblJogo.GolosFora, dbo.TblJogo.Path_ImgAdversario FROM dbo.TblJogo INNER JOIN dbo.TblEscalao ON dbo.TblJogo.FK_IDEscalao = dbo.TblEscalao.IDEscalao WHERE(dbo.TblJogo.Apagado = 0) ORDER BY dbo.TblJogo.Data DESC");
                 SqlCommand Command = new SqlCommand(Query, con);
                 dr = Command.ExecuteReader();
                 while (dr.Read())
                 {
                     IDJogo = dr["IDJogo"].ToString();
+                    idescalao = dr["IDEscalao"].ToString();
                     Escalao = dr["Escalao"].ToString();
                     Data = dr["Data"].ToString();
 
@@ -190,7 +194,7 @@ namespace FootballLife_WF
 
                     patch = dr["Path_ImgAdversario"].ToString();
 
-                    Jogo jogo = new Jogo(IDJogo, Escalao, Data, EquipaCasa, GolosCasa, EquipaFora, GolosFora, patch);
+                    Jogo jogo = new Jogo(IDJogo, idescalao, Escalao, Data, EquipaCasa, GolosCasa, EquipaFora, GolosFora, patch);
                     flowpanel_Jogos.Controls.Add(jogo);
                 }
                 dr.Close();

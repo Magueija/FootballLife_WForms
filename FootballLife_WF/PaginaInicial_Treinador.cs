@@ -154,11 +154,11 @@ namespace FootballLife_WF
             Inv.ShowDialog();
         }
 
-        private void Btn_Financiamento_Click(object sender, EventArgs e)
+        private void Btn_Convocatoria_Click(object sender, EventArgs e)
         {
-            Financiamento financas = new Financiamento();
+            Convocatoria conv = new Convocatoria();
             this.Hide();
-            financas.ShowDialog();
+            conv.ShowDialog();
         }
 
         private void Btn_Jogos_Click(object sender, EventArgs e)

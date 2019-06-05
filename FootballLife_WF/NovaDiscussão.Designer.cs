@@ -159,7 +159,6 @@
             this.Name = "NovaDiscussão";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nova Discussão";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NovaDiscussão_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

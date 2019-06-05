@@ -14,12 +14,14 @@ namespace FootballLife_WF
 {
     public partial class Jogo : UserControl
     {
-        string ID = "";
-        public Jogo(string IDJogo, string Escalao, string Data, string EquipaCasa, string GolosCasa, string EquipaFora, string GolosFora, string Patch)
+        string IDJogo = "";
+        string IDEscalao = "";
+        public Jogo(string IDjogo, string IDescalao, string Escalao, string Data, string EquipaCasa, string GolosCasa, string EquipaFora, string GolosFora, string Patch)
         {
             InitializeComponent();
 
-            ID = IDJogo;
+            IDJogo = IDjogo;
+            IDEscalao = IDescalao;
 
             lbl_Escalao.Text = Escalao;
             lbl_Data.Text = Data.Replace("-", "/");
@@ -53,26 +55,58 @@ namespace FootballLife_WF
 
             if (EquipaCasa == "Palmelense F.C.")
             {
-                Bitmap bmp = new Bitmap(Patch);
+                //Bitmap bmp = new Bitmap(Patch);
                 img_Casa.Image = Properties.Resources.Logo_Clube;
-                img_Fora.Image = bmp;
+                //img_Fora.Image = bmp;
             }
             else if (EquipaFora == "Palmelense F.C.")
             {
-                Bitmap bmp = new Bitmap(Patch);
-                img_Casa.Image = bmp;
+                //Bitmap bmp = new Bitmap(Patch);
+                //img_Casa.Image = bmp;
                 img_Fora.Image = Properties.Resources.Logo_Clube;
             }
 
-           //if (Properties.Settings.Default.IDUser == Convert.ToInt32(IDAdmin))
-            //{
-            //    PbDelete.Visible = true;
-           //}
+            if (Properties.Settings.Default.FuncaoUser == "Treinador")
+            {
+                DeleteGame();
+            }
+        }
+
+        private void DeleteGame()
+        {
+            SqlConnection con = new SqlConnection(Properties.Settings.Default.Connection);
+            con.Open();
+
+
+            string IDTreinador = "";
+
+            try
+            {
+                SqlDataReader dr;
+                string Query = ("SELECT IDTreinador FROM dbo.TblTreinador WHERE Apagado = 0 AND FK_IDEscalao = " + IDEscalao);
+                SqlCommand Command = new SqlCommand(Query, con);
+                dr = Command.ExecuteReader();
+                while (dr.Read())
+                {
+                    IDTreinador = dr["IDTreinador"].ToString();
+
+                    if (Properties.Settings.Default.IDUser == Convert.ToInt32(IDTreinador))
+                    {
+                        pb_Delete.Visible = true;
+                    }
+                }
+                dr.Close();
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.ToString());
+            }
+            con.Close();
         }
 
         private void Btn_VerJogo_Click(object sender, EventArgs e)
         {
-            VerJogo verjg = new VerJogo(ID);
+            VerJogo verjg = new VerJogo(IDJogo);
             verjg.Show();
         }
     }

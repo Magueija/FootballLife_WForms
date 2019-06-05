@@ -115,10 +115,12 @@ namespace FootballLife_WF
             string IDTreinador = "";
             string userTreinador = "";
             string passTreinador = "";
+            string IDEscalaoTreinador = "";
 
             string IDAtleta = "";
             string userAtleta = "";
             string passAtleta = "";
+            string IDEscalaoAtleta = "";
 
             string IDSocio = "";
             string userSocio = "";
@@ -146,7 +148,7 @@ namespace FootballLife_WF
                 dr.Close();
 
                 //Treinador
-                string QueryTreinador = ("SELECT IDTreinador, Utilizador, Palavra_Chave FROM TblTreinador WHERE Apagado = 0 AND Utilizador collate SQL_Latin1_General_CP1_CS_AS LIKE @Utilizador AND Palavra_Chave collate SQL_Latin1_General_CP1_CS_AS LIKE @Palavra_Chave");
+                string QueryTreinador = ("SELECT IDTreinador, Utilizador, Palavra_Chave, FK_IDEscalao FROM TblTreinador WHERE Apagado = 0 AND Utilizador collate SQL_Latin1_General_CP1_CS_AS LIKE @Utilizador AND Palavra_Chave collate SQL_Latin1_General_CP1_CS_AS LIKE @Palavra_Chave");
                 SqlCommand CommandTreinador = new SqlCommand(QueryTreinador, con);
 
                 CommandTreinador.Parameters.AddWithValue("@utilizador", tb_Utilizador.Text);
@@ -158,11 +160,12 @@ namespace FootballLife_WF
                     IDTreinador = dr["IDTreinador"].ToString();
                     userTreinador = dr["Utilizador"].ToString();
                     passTreinador = dr["Palavra_Chave"].ToString();
+                    IDEscalaoTreinador = dr["FK_IDEscalao"].ToString();
                 }
                 dr.Close();
 
                 //Atleta
-                string QueryAtleta = ("SELECT IDAtleta, Utilizador, Palavra_Chave FROM TblAtleta WHERE Apagado = 0 AND Utilizador collate SQL_Latin1_General_CP1_CS_AS LIKE @Utilizador AND Palavra_Chave collate SQL_Latin1_General_CP1_CS_AS LIKE @Palavra_Chave");
+                string QueryAtleta = ("SELECT IDAtleta, Utilizador, Palavra_Chave, FK_IDEscalao FROM TblAtleta WHERE Apagado = 0 AND Utilizador collate SQL_Latin1_General_CP1_CS_AS LIKE @Utilizador AND Palavra_Chave collate SQL_Latin1_General_CP1_CS_AS LIKE @Palavra_Chave");
                 SqlCommand CommandAtleta = new SqlCommand(QueryAtleta, con);
 
                 CommandAtleta.Parameters.AddWithValue("@utilizador", tb_Utilizador.Text);
@@ -174,6 +177,7 @@ namespace FootballLife_WF
                     IDAtleta = dr["IDAtleta"].ToString();
                     userAtleta = dr["Utilizador"].ToString();
                     passAtleta = dr["Palavra_Chave"].ToString();
+                    IDEscalaoAtleta = dr["FK_IDEscalao"].ToString();
                 }
                 dr.Close();
 
@@ -199,6 +203,7 @@ namespace FootballLife_WF
                 {
                     Properties.Settings.Default.IDUser = Convert.ToInt32(IDAdmin);
                     Properties.Settings.Default.FuncaoUser = "Admin";
+                    Properties.Settings.Default.IDEscalao = "";
                     Properties.Settings.Default.Save();
 
                     PaginaInicial_Admin PgAdmin = new PaginaInicial_Admin();
@@ -210,6 +215,7 @@ namespace FootballLife_WF
                 {
                     Properties.Settings.Default.IDUser = Convert.ToInt32(IDTreinador);
                     Properties.Settings.Default.FuncaoUser = "Treinador";
+                    Properties.Settings.Default.IDEscalao = IDEscalaoTreinador;
                     Properties.Settings.Default.Save();
 
                     PaginaInicial_Treinador PgTrein = new PaginaInicial_Treinador();
@@ -221,6 +227,7 @@ namespace FootballLife_WF
                 {
                     Properties.Settings.Default.IDUser = Convert.ToInt32(IDAtleta);
                     Properties.Settings.Default.FuncaoUser = "Atleta";
+                    Properties.Settings.Default.IDEscalao = IDEscalaoAtleta;
                     Properties.Settings.Default.Save();
 
                     PaginaInicial_Atleta PgAtl = new PaginaInicial_Atleta();
@@ -232,6 +239,7 @@ namespace FootballLife_WF
                 {
                     Properties.Settings.Default.IDUser = Convert.ToInt32(IDSocio);
                     Properties.Settings.Default.FuncaoUser = "Socio";
+                    Properties.Settings.Default.IDEscalao = "";
                     Properties.Settings.Default.Save();
 
                     PaginaInicial_Socio PgSoc = new PaginaInicial_Socio();

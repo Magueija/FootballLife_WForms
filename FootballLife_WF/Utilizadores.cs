@@ -24,30 +24,81 @@ namespace FootballLife_WF
             Treinadores();
             Atletas();
             Socios();
+            CountUsers();
 
-            if(flowpanel_Admins.Controls.Count == 0)
+        }
+
+        private void CountUsers()
+        {
+            if (flowpanel_Admins.Controls.Count == 0)
             {
                 lbl_Admins.Visible = false;
                 linha_Admins.Visible = false;
                 flowpanel_Admins.Visible = false;
+            }
+            else if (flowpanel_Treinadores.Controls.Count == 0)
+            {
+                lbl_Treinadores.Visible = false;
+                linha_Treinadores.Visible = false;
+                flowpanel_Treinadores.Visible = false;
+            }
+            else if (flowpanel_Atletas.Controls.Count == 0)
+            {
+                lbl_Atletas.Visible = false;
+                linha_Atletas.Visible = false;
+                flowpanel_Atletas.Visible = false;
+            }
+            else if (flowpanel_Socios.Controls.Count == 0)
+            {
+                lbl_Socios.Visible = false;
+                linha_Socios.Visible = false;
+                flowpanel_Socios.Visible = false;
+            }
 
-                lbl_Treinadores.Location = new Point(129, 271);
-                linha_Treinadores.Location = new Point(132, 275);
-                flowpanel_Treinadores.Location = new Point(119, 313);
+            if (flowpanel_Admins.Visible == false)
+            {
+                lbl_espaco.Location = lbl_Socios.Location;
 
-                lbl_Atletas.Location = new Point(129, 485);
-                linha_Atletas.Location = new Point(132, 493);
-                flowpanel_Atletas.Location = new Point(119, 526);
+                lbl_Socios.Location = lbl_Atletas.Location;
+                linha_Socios.Location = linha_Atletas.Location;
+                flowpanel_Socios.Location = flowpanel_Atletas.Location;
 
-                lbl_Socios.Location = new Point(129, 702);
-                linha_Socios.Location = new Point(132, 711);
-                flowpanel_Socios.Location = new Point(119, 749);
+                lbl_Atletas.Location = lbl_Treinadores.Location;
+                linha_Atletas.Location = linha_Treinadores.Location;
+                flowpanel_Atletas.Location = flowpanel_Treinadores.Location;
 
-                lbl_espaco.Location = new Point(129, 921);
+                lbl_Treinadores.Location = lbl_Admins.Location;
+                linha_Treinadores.Location = linha_Admins.Location;
+                flowpanel_Treinadores.Location = flowpanel_Admins.Location;
+            }
+            else if (flowpanel_Treinadores.Visible == false)
+            {
+                lbl_espaco.Location = lbl_Socios.Location;
+
+                lbl_Socios.Location = lbl_Atletas.Location;
+                linha_Socios.Location = linha_Atletas.Location;
+                flowpanel_Socios.Location = flowpanel_Atletas.Location;
+
+                lbl_Atletas.Location = lbl_Treinadores.Location;
+                linha_Atletas.Location = linha_Treinadores.Location;
+                flowpanel_Atletas.Location = flowpanel_Treinadores.Location;
+
+            }
+            else if (flowpanel_Atletas.Visible == false)
+            {
+                lbl_espaco.Location = lbl_Socios.Location;
+
+                lbl_Socios.Location = lbl_Atletas.Location;
+                linha_Socios.Location = linha_Atletas.Location;
+                flowpanel_Socios.Location = flowpanel_Atletas.Location;
+            }
+            else if (flowpanel_Admins.Visible == false)
+            {
+                lbl_espaco.Location = lbl_Socios.Location;
             }
         }
 
-//==============================================================================================
+        //==============================================================================================
 
         private void Img_Menu_Click(object sender, EventArgs e)
         {
@@ -106,88 +157,97 @@ namespace FootballLife_WF
         //==============================================================================================
         private void Admins()
         {
+            flowpanel_Admins.Controls.Clear();
+
             SqlConnection con = new SqlConnection(Properties.Settings.Default.Connection);
             con.Open();
 
             string IDAdmin = "";
             string NomeAdmin = "";
 
-            SqlDataReader dr;
-            string Query = ("SELECT IDAdministrador, Nome FROM dbo.TblAdministrador WHERE(Apagado = 0) ORDER BY Nome");
-            SqlCommand Command = new SqlCommand(Query, con);
-            dr = Command.ExecuteReader();
-
-            while (dr.Read())
+            try
             {
-                IDAdmin = dr["IDAdministrador"].ToString();
-                NomeAdmin = dr["Nome"].ToString();
+                SqlDataReader dr;
+                string Query = ("SELECT IDAdministrador, Nome FROM dbo.TblAdministrador WHERE(Apagado = 0) ORDER BY Nome");
+                SqlCommand Command = new SqlCommand(Query, con);
+                dr = Command.ExecuteReader();
 
-                Panel panel = new Panel();
-                panel.Width = 230;
-                panel.Height = 50;
-                panel.Anchor = AnchorStyles.Top;
-                panel.BorderStyle = BorderStyle.Fixed3D;
-                panel.BackColor = Color.White;
-                panel.Visible = true;
-                panel.Name = "Panel" + IDAdmin;
-                panel.Margin = new Padding(20, 5, 0, 0);
-                flowpanel_Admins.Controls.Add(panel);
-
-                PictureBox Pb = new PictureBox();
-                Pb.Location = new Point(10, 5);
-                Pb.Width = 35;
-                Pb.Height = 35;
-                Pb.Anchor = AnchorStyles.Top | AnchorStyles.Left;
-                Pb.Image = FootballLife_WF.Properties.Resources.LogoAdmin;
-                Pb.SizeMode = PictureBoxSizeMode.Zoom;
-                Pb.Cursor = Cursors.Hand;
-                Pb.Visible = true;
-                Pb.Name = "Admin";
-                Pb.Tag = IDAdmin;
-                panel.Controls.Add(Pb);
-
-                PictureBox Pbdelete = new PictureBox();
-                Pbdelete.Location = new Point(205, 5);
-                Pbdelete.Width = 15;
-                Pbdelete.Height = 15;
-                Pbdelete.Anchor = AnchorStyles.Top | AnchorStyles.Left;
-                Pbdelete.Image = FootballLife_WF.Properties.Resources.Delete;
-                Pbdelete.SizeMode = PictureBoxSizeMode.Zoom;
-                Pbdelete.Cursor = Cursors.Hand;
-                Pbdelete.Tag = IDAdmin;
-                Pbdelete.Name = "Btn_Delete";
-                Pbdelete.Visible = true;
-                panel.Controls.Add(Pbdelete);
-
-                Label lblUser = new Label();
-                lblUser.Location = new Point(50, 15);
-                lblUser.Text = NomeAdmin;
-                lblUser.Font = new Font("Berlin Sans FB ", 9, FontStyle.Bold);
-                lblUser.Anchor = AnchorStyles.Top | AnchorStyles.Left;
-                lblUser.Visible = true;
-                lblUser.Width = 150;
-                lblUser.Cursor = Cursors.Hand;
-                lblUser.Name = "Admin";
-                lblUser.Tag = IDAdmin;
-                panel.Controls.Add(lblUser);
-
-
-                Pbdelete.Click += Btn_DeleteAdmin_Click;
-                Pb.Click += Btn_Pb_Click;
-                lblUser.Click += Btn_Lbl_Click;
-
-                if (Properties.Settings.Default.FuncaoUser == "Admin" && Properties.Settings.Default.IDUser == Convert.ToInt32(IDAdmin))
+                while (dr.Read())
                 {
-                    Pbdelete.Visible = false;
-                }
-                else
-                {
+                    IDAdmin = dr["IDAdministrador"].ToString();
+                    NomeAdmin = dr["Nome"].ToString();
+
+                    Panel panel = new Panel();
+                    panel.Width = 230;
+                    panel.Height = 50;
+                    panel.Anchor = AnchorStyles.Top;
+                    panel.BorderStyle = BorderStyle.Fixed3D;
+                    panel.BackColor = Color.White;
+                    panel.Visible = true;
+                    panel.Name = "Panel" + IDAdmin;
+                    panel.Margin = new Padding(20, 5, 0, 0);
+                    flowpanel_Admins.Controls.Add(panel);
+
+                    PictureBox Pb = new PictureBox();
+                    Pb.Location = new Point(10, 5);
+                    Pb.Width = 35;
+                    Pb.Height = 35;
+                    Pb.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                    Pb.Image = FootballLife_WF.Properties.Resources.LogoAdmin;
+                    Pb.SizeMode = PictureBoxSizeMode.Zoom;
+                    Pb.Cursor = Cursors.Hand;
+                    Pb.Visible = true;
+                    Pb.Name = "Admin";
+                    Pb.Tag = IDAdmin;
+                    panel.Controls.Add(Pb);
+
+                    PictureBox Pbdelete = new PictureBox();
+                    Pbdelete.Location = new Point(205, 5);
+                    Pbdelete.Width = 15;
+                    Pbdelete.Height = 15;
+                    Pbdelete.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                    Pbdelete.Image = FootballLife_WF.Properties.Resources.Delete;
+                    Pbdelete.SizeMode = PictureBoxSizeMode.Zoom;
+                    Pbdelete.Cursor = Cursors.Hand;
+                    Pbdelete.Tag = IDAdmin;
+                    Pbdelete.Name = "Btn_Delete";
                     Pbdelete.Visible = true;
+                    panel.Controls.Add(Pbdelete);
+
+                    Label lblUser = new Label();
+                    lblUser.Location = new Point(50, 15);
+                    lblUser.Text = NomeAdmin;
+                    lblUser.Font = new Font("Berlin Sans FB ", 9, FontStyle.Bold);
+                    lblUser.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                    lblUser.Visible = true;
+                    lblUser.Width = 150;
+                    lblUser.Cursor = Cursors.Hand;
+                    lblUser.Name = "Admin";
+                    lblUser.Tag = IDAdmin;
+                    panel.Controls.Add(lblUser);
+
+
+                    Pbdelete.Click += Btn_DeleteAdmin_Click;
+                    Pb.Click += Btn_Pb_Click;
+                    lblUser.Click += Btn_Lbl_Click;
+
+                    if (Properties.Settings.Default.FuncaoUser == "Admin" && Properties.Settings.Default.IDUser == Convert.ToInt32(IDAdmin))
+                    {
+                        Pbdelete.Visible = false;
+                    }
+                    else
+                    {
+                        Pbdelete.Visible = true;
+                    }
                 }
+                dr.Close();
             }
-            dr.Close();
-            
+            catch (Exception x)
+            {
+                MessageBox.Show(x.ToString());
+            }
             con.Close();
+            
         }
 
         private void Btn_DeleteAdmin_Click(object sender, EventArgs e)
@@ -235,6 +295,8 @@ namespace FootballLife_WF
         //======
         private void Treinadores()
         {
+            flowpanel_Treinadores.Controls.Clear();
+
             SqlConnection con = new SqlConnection(Properties.Settings.Default.Connection);
             con.Open();
 
@@ -353,6 +415,8 @@ namespace FootballLife_WF
 
         private void Atletas()
         {
+            flowpanel_Atletas.Controls.Clear();
+
             SqlConnection con = new SqlConnection(Properties.Settings.Default.Connection);
             con.Open();
 
@@ -470,6 +534,8 @@ namespace FootballLife_WF
 
         private void Socios()
         {
+            flowpanel_Socios.Controls.Clear();
+
             SqlConnection con = new SqlConnection(Properties.Settings.Default.Connection);
             con.Open();
 
@@ -621,7 +687,13 @@ namespace FootballLife_WF
         private void Btn_NovoUtilizador_Click(object sender, EventArgs e)
         {
             AdicionarUtilizador NewUser = new AdicionarUtilizador();
-            NewUser.Show();
+            NewUser.ShowDialog();
+
+            Admins();
+            Treinadores();
+            Atletas();
+            Socios();
+            CountUsers();
         }
     }
 }

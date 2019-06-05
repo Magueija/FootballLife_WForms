@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -125,7 +125,7 @@ namespace FootballLife_WF
 
             if (gravar == true)
             {
-                if (tb_Data.Text == "" || tb_Divisao.Text == "" || tb_EquipaCasa.Text == "" || tb_EquipaFora.Text == "" || tb_GolosCasa.Text == "" || tb_GolosFora.Text == "")
+                if (tb_Data.Text == "" || tb_Hora.Text == ""  || tb_Data.Text == "DD/MM/AAAA"  || tb_Hora.Text == "HH:MM"  || tb_Divisao.Text == "" || tb_EquipaCasa.Text == "" || tb_EquipaFora.Text == "" || tb_GolosCasa.Text == "" || tb_GolosFora.Text == "")
                 {
                     MessageBox.Show("Campos obrigatórios não preenchidos!", "ATENÇÃO!", MessageBoxButtons.OK);
                 }
@@ -300,7 +300,7 @@ namespace FootballLife_WF
             DataSet ds = new DataSet();
             int i = 0;
             string sql = null;
-            sql = "SELECT IDAtleta, Nome FROM dbo.TblAtleta WHERE FK_IDEscalao = " + IDEscalao;
+            sql = "SELECT IDAtleta, Nome FROM dbo.TblAtleta WHERE Apagado = 0 AND FK_IDEscalao = " + IDEscalao;
             try
             {
                 command = new SqlCommand(sql, con);

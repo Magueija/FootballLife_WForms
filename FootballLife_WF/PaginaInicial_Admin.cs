@@ -85,6 +85,8 @@ namespace FootballLife_WF
 
         private void Discussoes()
         {
+            flowpanel_Discussoes.Controls.Clear();
+
             SqlConnection con = new SqlConnection(Properties.Settings.Default.Connection);
             con.Open();
 
@@ -241,6 +243,8 @@ namespace FootballLife_WF
         {
             NovaDiscussão PgInicio = new NovaDiscussão();
             PgInicio.ShowDialog();
+
+            Discussoes();
         }
 
         private void Btn_Utilizadores_Click(object sender, EventArgs e)

@@ -41,19 +41,5 @@ namespace FootballLife_WF
 
             this.Dispose();
         }
-
-        private void NovaDiscussão_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            DialogResult result = MessageBox.Show("Tem a certeza que pretende sair?","AVISO!", MessageBoxButtons.YesNo);
-
-            if(result == DialogResult.Yes)
-            {
-                this.Dispose();
-            }
-            else if(result == DialogResult.No)
-            {
-                e.Cancel = true;
-            }
-        }
     }
 }

@@ -119,7 +119,6 @@
             this.img_NovaDiscussao.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.img_NovaDiscussao.TabIndex = 19;
             this.img_NovaDiscussao.TabStop = false;
-            this.img_NovaDiscussao.Visible = false;
             this.img_NovaDiscussao.Click += new System.EventHandler(this.Btn_NovaDiscussao_Click);
             this.img_NovaDiscussao.MouseLeave += new System.EventHandler(this.Img_NovaDiscussao_MouseLeave);
             this.img_NovaDiscussao.MouseHover += new System.EventHandler(this.Img_NovaDiscussao_MouseHover);
@@ -137,7 +136,6 @@
             this.lbl_NovaDiscussao.Size = new System.Drawing.Size(104, 18);
             this.lbl_NovaDiscussao.TabIndex = 18;
             this.lbl_NovaDiscussao.Text = "Nova Discussão";
-            this.lbl_NovaDiscussao.Visible = false;
             this.lbl_NovaDiscussao.Click += new System.EventHandler(this.Btn_NovaDiscussao_Click);
             this.lbl_NovaDiscussao.MouseLeave += new System.EventHandler(this.Lbl_Novadiscussao_MouseLeave);
             this.lbl_NovaDiscussao.MouseHover += new System.EventHandler(this.Lbl_Novadiscussao_MouseHover);
@@ -159,7 +157,6 @@
             this.btn_NovaDiscussao.TabIndex = 17;
             this.btn_NovaDiscussao.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_NovaDiscussao.UseVisualStyleBackColor = false;
-            this.btn_NovaDiscussao.Visible = false;
             this.btn_NovaDiscussao.Click += new System.EventHandler(this.Btn_NovaDiscussao_Click);
             this.btn_NovaDiscussao.MouseLeave += new System.EventHandler(this.Btn_NovaDiscussao_MouseLeave);
             this.btn_NovaDiscussao.MouseHover += new System.EventHandler(this.Btn_NovaDiscussao_MouseHover);
