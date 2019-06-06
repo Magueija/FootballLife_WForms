@@ -298,6 +298,7 @@ namespace FootballLife_WF
 
         private void Btn_Gravar_Click(object sender, EventArgs e)
         {
+
             if (tb_Data.Text == "" || tb_Hora.Text == "" || tb_Data.Text == "DD/MM/AAAA" || tb_Hora.Text == "HH:MM" || tb_Adversario.Text == "")
             {
                 MessageBox.Show("Campos obrigatórios não preenchidos!", "ATENÇÃO!", MessageBoxButtons.OK);
@@ -383,15 +384,13 @@ namespace FootballLife_WF
                     }
                     drConv.Close();
 
+                    string Nome = "";
                     for (int ctr = 0; ctr < flowpanel_Titulares.Controls.Count; ctr++)
                     {
-                        string Nome = "";
-
-                        foreach (Control c in flowpanel_Titulares.Controls[ctr].Controls)
-                        {
-                            ComboBox cb = (ComboBox)c;
-                            Nome = cb.SelectedValue.ToString();
-                        }
+                        
+                        Control c = flowpanel_Titulares.Controls[ctr];
+                        ComboBox cb = (ComboBox)c;
+                        Nome = cb.SelectedValue.ToString();
 
                         string Querygolo = "INSERT INTO dbo.TblTitular (FK_IDAtleta, FK_IDConvocatoria) VALUES (@IDAtleta, @IDConvocatoria)";
 
@@ -399,17 +398,14 @@ namespace FootballLife_WF
                         Commandgolo.Parameters.AddWithValue("@IDAtleta", Nome);
                         Commandgolo.Parameters.AddWithValue("@IDConvocatoria", IDConvocatoria);
                         Commandgolo.ExecuteNonQuery();
+                        
                     }
 
                     for (int ctr = 0; ctr < flowpanel_Suplentes.Controls.Count; ctr++)
                     {
-                        string Nome = "";
-
-                        foreach (Control c in flowpanel_Suplentes.Controls[ctr].Controls)
-                        {
-                            ComboBox cb = (ComboBox)c;
-                            Nome = cb.SelectedValue.ToString();
-                        }
+                        Control c = flowpanel_Suplentes.Controls[ctr];
+                        ComboBox cb = (ComboBox)c;
+                        Nome = cb.SelectedValue.ToString();
 
                         string Querygolo = "INSERT INTO dbo.TblSuplente (FK_IDAtleta, FK_IDConvocatoria) VALUES (@IDAtleta, @IDConvocatoria)";
 

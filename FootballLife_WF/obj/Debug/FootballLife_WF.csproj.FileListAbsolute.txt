@@ -77,3 +77,5 @@ C:\Users\PSI17F20\Documents\GitHub\Projeto_WindowsForms\FootballLife_WF\obj\Debu
 C:\Users\PSI17F20\Documents\GitHub\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.VerJogo.resources
 C:\Users\Tomás\Documents\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.Convocatoria.resources
 C:\Users\Tomás\Documents\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.NovaConvocatoria.resources
+C:\Users\PSI17F20\Documents\GitHub\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.NovaConvocatoria.resources
+C:\Users\PSI17F20\Documents\GitHub\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.Convocatoria.resources
