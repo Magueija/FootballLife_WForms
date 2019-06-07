@@ -32,16 +32,17 @@
             this.flowpanel_Emails = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbl_Contactos = new System.Windows.Forms.Label();
+            this.btn_Fechar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // flowpanel_Emails
             // 
-            this.flowpanel_Emails.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowpanel_Emails.AutoScroll = true;
             this.flowpanel_Emails.Location = new System.Drawing.Point(0, 66);
             this.flowpanel_Emails.Name = "flowpanel_Emails";
             this.flowpanel_Emails.Padding = new System.Windows.Forms.Padding(20, 20, 0, 0);
-            this.flowpanel_Emails.Size = new System.Drawing.Size(497, 364);
+            this.flowpanel_Emails.Size = new System.Drawing.Size(497, 312);
             this.flowpanel_Emails.TabIndex = 0;
             // 
             // panel1
@@ -63,12 +64,29 @@
             this.lbl_Contactos.TabIndex = 3;
             this.lbl_Contactos.Text = "Contactos";
             // 
+            // btn_Fechar
+            // 
+            this.btn_Fechar.BackColor = System.Drawing.Color.White;
+            this.btn_Fechar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Fechar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btn_Fechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Fechar.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Fechar.ForeColor = System.Drawing.Color.Black;
+            this.btn_Fechar.Location = new System.Drawing.Point(393, 390);
+            this.btn_Fechar.Name = "btn_Fechar";
+            this.btn_Fechar.Size = new System.Drawing.Size(92, 28);
+            this.btn_Fechar.TabIndex = 30;
+            this.btn_Fechar.Text = "Fechar";
+            this.btn_Fechar.UseVisualStyleBackColor = false;
+            this.btn_Fechar.Click += new System.EventHandler(this.Btn_Fechar_Click);
+            // 
             // ContactosAdministracao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(497, 430);
+            this.Controls.Add(this.btn_Fechar);
             this.Controls.Add(this.flowpanel_Emails);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -89,5 +107,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowpanel_Emails;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbl_Contactos;
+        private System.Windows.Forms.Button btn_Fechar;
     }
 }

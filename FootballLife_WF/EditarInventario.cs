@@ -16,8 +16,14 @@ namespace FootballLife_WF
         public EditarInventario()
         {
             InitializeComponent();
+        }
+
+
+        private void EditarInventario_Load(object sender, EventArgs e)
+        {
             AdicionarMaterial();
         }
+
 
         private void AdicionarMaterial()
         {
@@ -40,7 +46,7 @@ namespace FootballLife_WF
                 else if (Properties.Settings.Default.FuncaoUser == "Treinador")
                 {
                     Query = "SELECT dbo.TblMaterial.IDMaterial, dbo.TblMaterial.Nome, dbo.TblMaterial.Quantidade, dbo.TblInventario.FK_IDEscalao FROM dbo.TblInventario INNER JOIN dbo.TblMaterial ON dbo.TblInventario.IDInventario = dbo.TblMaterial.FK_IDInventario WHERE(dbo.TblInventario.FK_IDEscalao IN "
-                                 + "((SELECT dbo.TblEscalao.IDEscalao FROM dbo.TblEscalao INNER JOIN dbo.TblTreinador ON dbo.TblEscalao.IDEscalao = dbo.TblTreinador.FK_IDEscalao WHERE(dbo.TblTreinador.IDTreinador = " + Properties.Settings.Default.IDUser +"))))";
+                                 + "((SELECT dbo.TblEscalao.IDEscalao FROM dbo.TblEscalao INNER JOIN dbo.TblTreinador ON dbo.TblEscalao.IDEscalao = dbo.TblTreinador.FK_IDEscalao WHERE (dbo.TblEscalao.IDEscalao = " + Properties.Settings.Default.IDEscalao +"))))";
                 }
                 
 
@@ -72,6 +78,7 @@ namespace FootballLife_WF
                     tbNome.Location = new Point(155, 5);
                     tbNome.Width = 250;
                     tbNome.Text = NomeMaterial;
+                    tbNome.Name = "tb_Nome";
                     tbNome.Font = new Font("Arial", 10, FontStyle.Regular);
                     tbNome.Anchor = AnchorStyles.Top;
                     tbNome.Visible = true;
@@ -90,6 +97,7 @@ namespace FootballLife_WF
                     tbQuantidade.Location = new Point(540, 5);
                     tbQuantidade.Width = 100;
                     tbQuantidade.Text = Quantidade;
+                    tbQuantidade.Name = "tb_Quantidade";
                     tbQuantidade.Font = new Font("Arial", 10, FontStyle.Regular);
                     tbQuantidade.RightToLeft = RightToLeft.Yes;
                     tbQuantidade.Anchor = AnchorStyles.Top;
@@ -176,7 +184,10 @@ namespace FootballLife_WF
         {
             img_Add.Image = Properties.Resources.Add_Normal;
         }
-
+        private string[] IDMaterial { get; set; }
+        private string[] nome { get; set; }
+        private string[] quantidade { get; set; }
+        
         private void Btn_Gravar_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection(Properties.Settings.Default.Connection);
@@ -184,43 +195,173 @@ namespace FootballLife_WF
 
             string QueryDELETE = "";
             string QueryINSERT = "";
+            string QueryUPDATE = "";
 
             try
             {
                 if (Properties.Settings.Default.FuncaoUser == "Admin")
                 {
-                    //QueryDELETE = "DELETE FROM dbo.TblMaterial WHERE(dbo.TblMaterial.FK_IDInventario = 1)";
-                    //SqlCommand CommandDELETE= new SqlCommand(QueryDELETE, con);
-                    //CommandDELETE.ExecuteNonQuery();
+                    QueryDELETE = "DELETE FROM dbo.TblMaterial WHERE (dbo.TblMaterial.FK_IDInventario = 1)";
+                    SqlCommand CommandDELETE = new SqlCommand(QueryDELETE, con);
+                    CommandDELETE.ExecuteNonQuery();
+
 
                     for (int ctr = 0; ctr < flowpanel_material.Controls.Count; ctr++)
                     {
+                        string NomeMaterial = "";
+                        string QuantidadeMaterial = "";
+
+                        
+
+                        bool intsert = true;
+
                         foreach (Control c in flowpanel_material.Controls[ctr].Controls)
                         {
-                            //string d =flowpanel_material.Controls[ctr].;
-                            //string g =    flowpanel_material.Controls[ctr + 3].Text;
+                            if (c.Name == "tb_Nome" && c.Text != string.Empty)
+                            {
+                                TextBox tb = (TextBox)c;
+                                NomeMaterial = tb.Text;
+                            }
+                            else if (c.Name == "tb_Quantidade" && c.Text != string.Empty)
+                            {
+                                TextBox tb = (TextBox)c;
+                                QuantidadeMaterial = tb.Text;
+                            }
+                            else if (c.Name == "tb_Nome" && c.Text == string.Empty || c.Name == "tb_Quantidade" && c.Text == string.Empty)
+                            {
+                                intsert = false;
+                            }
+                        }
+                        
+                        /*int v = 0;
+                        SqlDataReader dr;
+                        string Query = "SELECT IDMaterial, Nome, Quantidade FROM TblMaterial WHERE Nome = '" + NomeMaterial + "' OR Quantidade = " + QuantidadeMaterial;
+
+                        SqlCommand Command = new SqlCommand(Query, con);
+                        dr = Command.ExecuteReader();
+                        while (dr.Read())
+                        {
+                            IDMaterial[v] = dr["IDMaterial"].ToString();
+                            nome[v] = dr["Nome"].ToString();
+                            quantidade[v] = dr["Quantidade"].ToString();
+                            v++;
+                        }
+                        dr.Close();
+
+                        for(int i = 0; i < v; i++)
+                        {
+                            if (NomeMaterial == nome[i] || QuantidadeMaterial == quantidade[i])
+                            {
+                                QueryUPDATE = "UPDATE dbo.TblMaterial SET Nome = @NomeMaterial, Quantidade =  @Quantidade WHERE FK_IDInventario = 1 AND IDMaterial = @IDMaterial";
+
+                                SqlCommand CommandUPDATE = new SqlCommand(QueryUPDATE, con);
+                                CommandUPDATE.Parameters.AddWithValue("@NomeMaterial", NomeMaterial);
+                                CommandUPDATE.Parameters.AddWithValue("@Quantidade", QuantidadeMaterial);
+                                CommandUPDATE.Parameters.AddWithValue("@IDMaterial", IDMaterial);
+                                CommandUPDATE.ExecuteNonQuery();
+                            }
+                        }*/
+
+
+                        if (intsert == true)
+                        {
                             QueryINSERT = "INSERT INTO dbo.TblMaterial (Nome, Quantidade, FK_IDInventario) VALUES (@NomeMaterial, @Quantidade, @FK_IDInventario)";
 
                             SqlCommand CommandINSERT = new SqlCommand(QueryINSERT, con);
-                            CommandINSERT.Parameters.AddWithValue("@NomeMaterial", flowpanel_material.Controls[ctr + 1].Text);
-                            CommandINSERT.Parameters.AddWithValue("@Quantidade", flowpanel_material.Controls[ctr + 3].Text);
+                            CommandINSERT.Parameters.AddWithValue("@NomeMaterial", NomeMaterial);
+                            CommandINSERT.Parameters.AddWithValue("@Quantidade", QuantidadeMaterial);
                             CommandINSERT.Parameters.AddWithValue("@FK_IDInventario", "1");
                             CommandINSERT.ExecuteNonQuery();
+                               
                         }
                     }
                 }
                 else if (Properties.Settings.Default.FuncaoUser == "Treinador")
                 {
-                   // Query = "SELECT dbo.TblMaterial.IDMaterial, dbo.TblMaterial.Nome, dbo.TblMaterial.Quantidade, dbo.TblInventario.FK_IDEscalao FROM dbo.TblInventario INNER JOIN dbo.TblMaterial ON dbo.TblInventario.IDInventario = dbo.TblMaterial.FK_IDInventario WHERE(dbo.TblInventario.FK_IDEscalao IN "
-                       //          + "((SELECT dbo.TblEscalao.IDEscalao FROM dbo.TblEscalao INNER JOIN dbo.TblTreinador ON dbo.TblEscalao.IDEscalao = dbo.TblTreinador.FK_IDEscalao WHERE(dbo.TblTreinador.IDTreinador = " + Properties.Settings.Default.IDUser + "))))";
+                    QueryDELETE = "DELETE FROM dbo.TblMaterial WHERE (dbo.TblMaterial.FK_IDInventario = 1)";
+                    SqlCommand CommandDELETE = new SqlCommand(QueryDELETE, con);
+                    CommandDELETE.ExecuteNonQuery();
+
+
+                    for (int ctr = 0; ctr < flowpanel_material.Controls.Count; ctr++)
+                    {
+                        string NomeMaterial = "";
+                        string QuantidadeMaterial = "";
+                        bool intsert = true;
+
+                        foreach (Control c in flowpanel_material.Controls[ctr].Controls)
+                        {
+                            if (c.Name == "tb_Nome" && c.Text != string.Empty)
+                            {
+                                TextBox tb = (TextBox)c;
+                                NomeMaterial = tb.Text;
+                            }
+                            else if (c.Name == "tb_Quantidade" && c.Text != string.Empty)
+                            {
+                                TextBox tb = (TextBox)c;
+                                QuantidadeMaterial = tb.Text;
+                            }
+                            else if (c.Name == "tb_Nome" && c.Text == string.Empty || c.Name == "tb_Quantidade" && c.Text == string.Empty)
+                            {
+                                intsert = false;
+                            }
+                        }
+
+                        if (intsert == true)
+                        {
+                            QueryINSERT = "INSERT INTO dbo.TblMaterial (Nome, Quantidade, FK_IDInventario) VALUES (@NomeMaterial, @Quantidade, @FK_IDInventario)";
+
+                            SqlCommand CommandINSERT = new SqlCommand(QueryINSERT, con);
+                            CommandINSERT.Parameters.AddWithValue("@NomeMaterial", NomeMaterial);
+                            CommandINSERT.Parameters.AddWithValue("@Quantidade", QuantidadeMaterial);
+                            CommandINSERT.Parameters.AddWithValue("@FK_IDInventario", "1");
+                            CommandINSERT.ExecuteNonQuery();
+                        }
+                    }
                 }
                 else if (Properties.Settings.Default.FuncaoUser == "Atleta")
                 {
-                    //Query = "SELECT dbo.TblMaterial.IDMaterial, dbo.TblMaterial.Nome, dbo.TblMaterial.Quantidade, dbo.TblInventario.FK_IDEscalao FROM dbo.TblInventario INNER JOIN dbo.TblMaterial ON dbo.TblInventario.IDInventario = dbo.TblMaterial.FK_IDInventario WHERE(dbo.TblInventario.FK_IDEscalao IN "
-                          //       + "((SELECT dbo.TblEscalao.IDEscalao FROM dbo.TblEscalao INNER JOIN dbo.TblAtleta ON dbo.TblEscalao.IDEscalao = dbo.TblAtleta.FK_IDEscalao WHERE(dbo.TblAtleta.IDAtleta = " + Properties.Settings.Default.IDUser + "))))";
-                }
-                
+                    QueryDELETE = "DELETE FROM dbo.TblMaterial WHERE (dbo.TblMaterial.FK_IDInventario = 1)";
+                    SqlCommand CommandDELETE = new SqlCommand(QueryDELETE, con);
+                    CommandDELETE.ExecuteNonQuery();
 
+
+                    for (int ctr = 0; ctr < flowpanel_material.Controls.Count; ctr++)
+                    {
+                        string NomeMaterial = "";
+                        string QuantidadeMaterial = "";
+                        bool intsert = true;
+
+                        foreach (Control c in flowpanel_material.Controls[ctr].Controls)
+                        {
+                            if (c.Name == "tb_Nome" && c.Text != string.Empty)
+                            {
+                                TextBox tb = (TextBox)c;
+                                NomeMaterial = tb.Text;
+                            }
+                            else if (c.Name == "tb_Quantidade" && c.Text != string.Empty)
+                            {
+                                TextBox tb = (TextBox)c;
+                                QuantidadeMaterial = tb.Text;
+                            }
+                            else if (c.Name == "tb_Nome" && c.Text == string.Empty || c.Name == "tb_Quantidade" && c.Text == string.Empty)
+                            {
+                                intsert = false;
+                            }
+                        }
+
+                        if (intsert == true)
+                        {
+                            QueryINSERT = "INSERT INTO dbo.TblMaterial (Nome, Quantidade, FK_IDInventario) VALUES (@NomeMaterial, @Quantidade, @FK_IDInventario)";
+
+                            SqlCommand CommandINSERT = new SqlCommand(QueryINSERT, con);
+                            CommandINSERT.Parameters.AddWithValue("@NomeMaterial", NomeMaterial);
+                            CommandINSERT.Parameters.AddWithValue("@Quantidade", QuantidadeMaterial);
+                            CommandINSERT.Parameters.AddWithValue("@FK_IDInventario", "1");
+                            CommandINSERT.ExecuteNonQuery();
+                        }
+                    }
+                }
             }
             catch (Exception x)
             {
@@ -230,5 +371,6 @@ namespace FootballLife_WF
 
             this.Dispose();
         }
+
     }
 }

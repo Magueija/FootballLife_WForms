@@ -493,9 +493,9 @@ namespace FootballLife_WF
                     PictureBox Pb = new PictureBox();
                     Pb.Location = new Point(10, 5);
                     Pb.Width = 30;
-                    Pb.Height = 40;
+                    Pb.Height = 35;
                     Pb.Anchor = AnchorStyles.Top | AnchorStyles.Left;
-                    Pb.Image = FootballLife_WF.Properties.Resources.suplente1;
+                    Pb.Image = FootballLife_WF.Properties.Resources._1Suplente;
                     Pb.SizeMode = PictureBoxSizeMode.Zoom;
                     Pb.Visible = true;
                     panel.Controls.Add(Pb);
@@ -555,9 +555,9 @@ namespace FootballLife_WF
                     flowpanel_NaoConv.Controls.Add(panel);
 
                     PictureBox Pb = new PictureBox();
-                    Pb.Location = new Point(10, 5);
-                    Pb.Width = 35;
-                    Pb.Height = 35;
+                    Pb.Location = new Point(10, 9);
+                    Pb.Width = 30;
+                    Pb.Height = 30;
                     Pb.Anchor = AnchorStyles.Top | AnchorStyles.Left;
                     Pb.Image = FootballLife_WF.Properties.Resources.NaoConvocado2;
                     Pb.SizeMode = PictureBoxSizeMode.Zoom;

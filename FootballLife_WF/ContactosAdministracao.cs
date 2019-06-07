@@ -16,7 +16,7 @@ namespace FootballLife_WF
         public ContactosAdministracao()
         {
             InitializeComponent();
-            //Emails();
+            Emails();
             
         }
 
@@ -27,47 +27,57 @@ namespace FootballLife_WF
 
             string NomeAdmin = "";
             string EmailAdmin = "";
-
-            SqlDataReader dr;
-            string Query = ("SELECT dbo.TblAdministrador.Nome, dbo.TblAdministrador.Email FROM dbo.TblAdministrador.Nome ORDER BY dbo.TblAdministrador.Nome");
-            SqlCommand Command = new SqlCommand(Query, con);
-            dr = Command.ExecuteReader();
-            while (dr.Read())
+            try
             {
-                NomeAdmin = dr["Nome"].ToString();
-                EmailAdmin = dr["Email"].ToString();
+                SqlDataReader dr;
+                string Query = ("SELECT IDAdministrador, Nome, Email FROM dbo.TblAdministrador");
+                SqlCommand Command = new SqlCommand(Query, con);
+                dr = Command.ExecuteReader();
+                while (dr.Read())
+                {
+                    NomeAdmin = dr["Nome"].ToString();
+                    EmailAdmin = dr["Email"].ToString();
 
-                Panel panel = new Panel();
-                panel.Width = 460;
-                panel.Height = 30;
-                panel.Anchor = AnchorStyles.Top;
-                panel.BorderStyle = BorderStyle.Fixed3D;
-                panel.BackColor = Color.Transparent;
-                panel.Visible = true;
-                flowpanel_Emails.Controls.Add(panel);
+                    Panel panel = new Panel();
+                    panel.Width = 460;
+                    panel.Height = 35;
+                    panel.Anchor = AnchorStyles.Top;
+                    //panel.BorderStyle = BorderStyle.FixedSingle;
+                    panel.BackColor = Color.Transparent;
+                    panel.Visible = true;
+                    flowpanel_Emails.Controls.Add(panel);
 
 
-                Label Nome = new Label();
-                Nome.Location = new Point(10, 5);
-                Nome.Text = NomeAdmin;
-                Nome.Width = 170;
-                Nome.Font = new Font("Berlin Sans FB Demi", 12, FontStyle.Regular);
-                Nome.Anchor = AnchorStyles.Top | AnchorStyles.Left;
-                Nome.Visible = true;
-                panel.Controls.Add(Nome);
+                    Label Nome = new Label();
+                    Nome.Location = new Point(10, 5);
+                    Nome.Text = NomeAdmin;
+                    Nome.Width = 170;
+                    Nome.Font = new Font("Berlin Sans FB Demi", 12, FontStyle.Regular);
+                    Nome.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                    Nome.Visible = true;
+                    panel.Controls.Add(Nome);
 
-                Label Email = new Label();
-                Email.Location = new Point(180, 5);
-                Email.Text = EmailAdmin;
-                Email.Width = 280;
-                Email.Font = new Font("Berlin Sans FB", 12, FontStyle.Regular);
-                Email.Anchor = AnchorStyles.Top | AnchorStyles.Left;
-                Email.Visible = true;
-                panel.Controls.Add(Email);
+                    Label Email = new Label();
+                    Email.Location = new Point(180, 5);
+                    Email.Text = EmailAdmin;
+                    Email.Width = 280;
+                    Email.Font = new Font("Berlin Sans FB", 12, FontStyle.Regular);
+                    Email.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                    Email.Visible = true;
+                    panel.Controls.Add(Email);
+                }
+                dr.Close();
             }
-            dr.Close();
-
+            catch (Exception x)
+            {
+                MessageBox.Show(x.ToString());
+            }
             con.Close();
+        }
+
+        private void Btn_Fechar_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

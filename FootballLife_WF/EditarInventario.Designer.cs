@@ -106,6 +106,7 @@
             this.Name = "EditarInventario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inventário";
+            this.Load += new System.EventHandler(this.EditarInventario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.img_Add)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

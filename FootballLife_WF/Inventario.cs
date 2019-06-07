@@ -16,9 +16,11 @@ namespace FootballLife_WF
         public Inventario()
         {
             InitializeComponent();
+        }
 
-            //=====================
 
+        private void Inventario_Load(object sender, EventArgs e)
+        {
             InvClube();
 
             InvSeniores();
@@ -33,6 +35,20 @@ namespace FootballLife_WF
 
         private void InvClube()
         {
+            if (flowpanel_Clube.Controls.Count > 0)
+            {
+                for (int i = (flowpanel_Clube.Controls.Count - 1); i >= 0; i--)
+                {
+                    Control c = flowpanel_Clube.Controls[i];
+
+                    if(c.Name != "btn_Clube")
+                    {
+                        c.Dispose();
+                    }
+                }
+                GC.Collect();
+            }
+
             SqlConnection con = new SqlConnection(Properties.Settings.Default.Connection);
             con.Open();
 
@@ -91,6 +107,8 @@ namespace FootballLife_WF
 
         private void InvSeniores()
         {
+            flowpanel_seniores.Controls.Clear();
+
             SqlConnection con = new SqlConnection(Properties.Settings.Default.Connection);
             con.Open();
 
@@ -146,6 +164,8 @@ namespace FootballLife_WF
 
         private void InvJuniores()
         {
+            flowpanel_Juniores.Controls.Clear();
+
             SqlConnection con = new SqlConnection(Properties.Settings.Default.Connection);
             con.Open();
 
@@ -201,6 +221,8 @@ namespace FootballLife_WF
 
         private void InvJuvenis()
         {
+            flowpanel_Juvenis.Controls.Clear();
+
             SqlConnection con = new SqlConnection(Properties.Settings.Default.Connection);
             con.Open();
 
@@ -256,6 +278,8 @@ namespace FootballLife_WF
 
         private void InvIniciados()
         {
+            flowpanel_Iniciados.Controls.Clear();
+
             SqlConnection con = new SqlConnection(Properties.Settings.Default.Connection);
             con.Open();
 
@@ -311,6 +335,8 @@ namespace FootballLife_WF
 
         private void InvInfantis()
         {
+            flowpanel_Infantis.Controls.Clear();
+
             SqlConnection con = new SqlConnection(Properties.Settings.Default.Connection);
             con.Open();
 
@@ -366,6 +392,8 @@ namespace FootballLife_WF
 
         private void InvBenjamins()
         {
+            flowpanel_Benjamins.Controls.Clear();
+
             SqlConnection con = new SqlConnection(Properties.Settings.Default.Connection);
             con.Open();
 
@@ -421,6 +449,8 @@ namespace FootballLife_WF
 
         private void InvTraquinas()
         {
+            flowpanel_Traquinas.Controls.Clear();
+
             SqlConnection con = new SqlConnection(Properties.Settings.Default.Connection);
             con.Open();
 
@@ -476,6 +506,8 @@ namespace FootballLife_WF
 
         private void InvPetizes()
         {
+            flowpanel_Petizes.Controls.Clear();
+
             SqlConnection con = new SqlConnection(Properties.Settings.Default.Connection);
             con.Open();
 
@@ -599,7 +631,18 @@ namespace FootballLife_WF
         private void Btn_EditarInventario_Click(object sender, EventArgs e)
         {
             EditarInventario Editar = new EditarInventario();
-            Editar.Show();
+            Editar.ShowDialog();
+
+            InvClube();
+
+            InvSeniores();
+            InvJuniores();
+            InvJuvenis();
+            InvIniciados();
+            InvInfantis();
+            InvBenjamins();
+            InvTraquinas();
+            InvPetizes();
         }
 
         private void Btn_Home_Click(object sender, EventArgs e)

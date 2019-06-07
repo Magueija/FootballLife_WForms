@@ -161,11 +161,23 @@
     <Compile Include="Convocatoria.Designer.cs">
       <DependentUpon>Convocatoria.cs</DependentUpon>
     </Compile>
+    <Compile Include="Cota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cota.Designer.cs">
+      <DependentUpon>Cota.cs</DependentUpon>
+    </Compile>
     <Compile Include="PaginaInicial_Treinador.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PaginaInicial_Treinador.Designer.cs">
       <DependentUpon>PaginaInicial_Treinador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Paypal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Paypal.Designer.cs">
+      <DependentUpon>Paypal.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilizadores.cs">
       <SubType>Form</SubType>
@@ -262,8 +274,14 @@
     <EmbeddedResource Include="Convocatoria.resx">
       <DependentUpon>Convocatoria.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Cota.resx">
+      <DependentUpon>Cota.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PaginaInicial_Treinador.resx">
       <DependentUpon>PaginaInicial_Treinador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Paypal.resx">
+      <DependentUpon>Paypal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Utilizadores.resx">
       <DependentUpon>Utilizadores.cs</DependentUpon>
@@ -373,6 +391,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="FbLf_LOGO.ico" />
+    <None Include="Resources\1Suplente.png" />
     <None Include="Resources\suplente1.png" />
     <None Include="Resources\NaoConvocado2.png" />
     <None Include="Resources\NaoConvocado1.png" />

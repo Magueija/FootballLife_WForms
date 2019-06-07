@@ -63,6 +63,16 @@ namespace FootballLife_WF.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1Suplente {
+            get {
+                object obj = ResourceManager.GetObject("1Suplente", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Add_Hover {
             get {
                 object obj = ResourceManager.GetObject("Add_Hover", resourceCulture);
@@ -303,16 +313,6 @@ namespace FootballLife_WF.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap NaoConvocado1 {
-            get {
-                object obj = ResourceManager.GetObject("NaoConvocado1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap NaoConvocado2 {
             get {
                 object obj = ResourceManager.GetObject("NaoConvocado2", resourceCulture);
@@ -323,39 +323,9 @@ namespace FootballLife_WF.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Suplente_Red {
-            get {
-                object obj = ResourceManager.GetObject("Suplente_Red", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap suplente1 {
-            get {
-                object obj = ResourceManager.GetObject("suplente1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap TerminarSessao {
             get {
                 object obj = ResourceManager.GetObject("TerminarSessao", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Titular {
-            get {
-                object obj = ResourceManager.GetObject("Titular", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
