@@ -43,6 +43,8 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -173,12 +175,6 @@
     <Compile Include="PaginaInicial_Treinador.Designer.cs">
       <DependentUpon>PaginaInicial_Treinador.cs</DependentUpon>
     </Compile>
-    <Compile Include="Paypal.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Paypal.Designer.cs">
-      <DependentUpon>Paypal.cs</DependentUpon>
-    </Compile>
     <Compile Include="Utilizadores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -279,9 +275,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PaginaInicial_Treinador.resx">
       <DependentUpon>PaginaInicial_Treinador.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Paypal.resx">
-      <DependentUpon>Paypal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Utilizadores.resx">
       <DependentUpon>Utilizadores.cs</DependentUpon>
@@ -429,6 +422,9 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

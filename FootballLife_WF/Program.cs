@@ -16,7 +16,7 @@ namespace FootballLife_WF
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Paypal());
+            Application.Run(new PaginaInicial());
         }
     }
 }

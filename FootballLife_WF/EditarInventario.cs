@@ -211,7 +211,7 @@ namespace FootballLife_WF
                         string NomeMaterial = "";
                         string QuantidadeMaterial = "";
 
-                        
+
 
                         bool intsert = true;
 
@@ -232,7 +232,7 @@ namespace FootballLife_WF
                                 intsert = false;
                             }
                         }
-                        
+
                         /*int v = 0;
                         SqlDataReader dr;
                         string Query = "SELECT IDMaterial, Nome, Quantidade FROM TblMaterial WHERE Nome = '" + NomeMaterial + "' OR Quantidade = " + QuantidadeMaterial;
@@ -272,13 +272,16 @@ namespace FootballLife_WF
                             CommandINSERT.Parameters.AddWithValue("@Quantidade", QuantidadeMaterial);
                             CommandINSERT.Parameters.AddWithValue("@FK_IDInventario", "1");
                             CommandINSERT.ExecuteNonQuery();
-                               
+
                         }
                     }
                 }
                 else if (Properties.Settings.Default.FuncaoUser == "Treinador")
                 {
-                    QueryDELETE = "DELETE FROM dbo.TblMaterial WHERE (dbo.TblMaterial.FK_IDInventario = 1)";
+                    string IDEscalao = Properties.Settings.Default.IDEscalao;
+                    int IDInventario = Convert.ToInt32(IDEscalao) + 1;
+
+                    QueryDELETE = "DELETE FROM dbo.TblMaterial WHERE (dbo.TblMaterial.FK_IDInventario = " + IDInventario + ")";
                     SqlCommand CommandDELETE = new SqlCommand(QueryDELETE, con);
                     CommandDELETE.ExecuteNonQuery();
 
@@ -287,6 +290,8 @@ namespace FootballLife_WF
                     {
                         string NomeMaterial = "";
                         string QuantidadeMaterial = "";
+
+
                         bool intsert = true;
 
                         foreach (Control c in flowpanel_material.Controls[ctr].Controls)
@@ -314,51 +319,9 @@ namespace FootballLife_WF
                             SqlCommand CommandINSERT = new SqlCommand(QueryINSERT, con);
                             CommandINSERT.Parameters.AddWithValue("@NomeMaterial", NomeMaterial);
                             CommandINSERT.Parameters.AddWithValue("@Quantidade", QuantidadeMaterial);
-                            CommandINSERT.Parameters.AddWithValue("@FK_IDInventario", "1");
+                            CommandINSERT.Parameters.AddWithValue("@FK_IDInventario", IDInventario);
                             CommandINSERT.ExecuteNonQuery();
-                        }
-                    }
-                }
-                else if (Properties.Settings.Default.FuncaoUser == "Atleta")
-                {
-                    QueryDELETE = "DELETE FROM dbo.TblMaterial WHERE (dbo.TblMaterial.FK_IDInventario = 1)";
-                    SqlCommand CommandDELETE = new SqlCommand(QueryDELETE, con);
-                    CommandDELETE.ExecuteNonQuery();
 
-
-                    for (int ctr = 0; ctr < flowpanel_material.Controls.Count; ctr++)
-                    {
-                        string NomeMaterial = "";
-                        string QuantidadeMaterial = "";
-                        bool intsert = true;
-
-                        foreach (Control c in flowpanel_material.Controls[ctr].Controls)
-                        {
-                            if (c.Name == "tb_Nome" && c.Text != string.Empty)
-                            {
-                                TextBox tb = (TextBox)c;
-                                NomeMaterial = tb.Text;
-                            }
-                            else if (c.Name == "tb_Quantidade" && c.Text != string.Empty)
-                            {
-                                TextBox tb = (TextBox)c;
-                                QuantidadeMaterial = tb.Text;
-                            }
-                            else if (c.Name == "tb_Nome" && c.Text == string.Empty || c.Name == "tb_Quantidade" && c.Text == string.Empty)
-                            {
-                                intsert = false;
-                            }
-                        }
-
-                        if (intsert == true)
-                        {
-                            QueryINSERT = "INSERT INTO dbo.TblMaterial (Nome, Quantidade, FK_IDInventario) VALUES (@NomeMaterial, @Quantidade, @FK_IDInventario)";
-
-                            SqlCommand CommandINSERT = new SqlCommand(QueryINSERT, con);
-                            CommandINSERT.Parameters.AddWithValue("@NomeMaterial", NomeMaterial);
-                            CommandINSERT.Parameters.AddWithValue("@Quantidade", QuantidadeMaterial);
-                            CommandINSERT.Parameters.AddWithValue("@FK_IDInventario", "1");
-                            CommandINSERT.ExecuteNonQuery();
                         }
                     }
                 }

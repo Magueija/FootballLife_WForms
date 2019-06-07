@@ -146,6 +146,15 @@ namespace FootballLife_WF
                         tb_UMontante.Text = "5";
                     }
 
+                    if (tb_UMontante.Text != "30" && cb_UFuncao.SelectedItem == "Atleta")
+                    {
+                        MessageBox.Show("Apenas insira a cota de um mês!", "ATENÇÃO!", MessageBoxButtons.OK);
+                    }
+                    else if (tb_UMontante.Text != "5" && cb_UFuncao.SelectedItem == "Sócio")
+                    {
+                        MessageBox.Show("Apenas insira a cota de um mês!", "ATENÇÃO!", MessageBoxButtons.OK);
+                    }
+
                     QueryLucro = "INSERT INTO dbo.TblLucros (Nome, Valor, Descricao, FK_IDClube) VALUES (@Nome, @Valor, @Descricao, @IDClube)";
 
                     SqlCommand CommandLucro = new SqlCommand(QueryLucro, con);

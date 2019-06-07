@@ -95,7 +95,7 @@
             // 
             // panel_Jogos
             // 
-            this.panel_Jogos.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel_Jogos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel_Jogos.BackColor = System.Drawing.Color.White;
             this.panel_Jogos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel_Jogos.Controls.Add(this.lbl_Jogos);
@@ -165,7 +165,7 @@
             // 
             // panel_Equipas
             // 
-            this.panel_Equipas.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel_Equipas.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel_Equipas.BackColor = System.Drawing.Color.White;
             this.panel_Equipas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel_Equipas.Controls.Add(this.lbl_Equipas);
@@ -231,7 +231,7 @@
             // 
             // panel_Titulos
             // 
-            this.panel_Titulos.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel_Titulos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel_Titulos.BackColor = System.Drawing.Color.White;
             this.panel_Titulos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel_Titulos.Controls.Add(this.lbl_Historia);
@@ -297,7 +297,7 @@
             // 
             // panel_Estadio
             // 
-            this.panel_Estadio.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel_Estadio.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel_Estadio.BackColor = System.Drawing.Color.White;
             this.panel_Estadio.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel_Estadio.Controls.Add(this.lbl_Estadio);
@@ -368,7 +368,7 @@
             this.lbl_Titulo.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Titulo.Font = new System.Drawing.Font("Bauhaus 93", 65.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Titulo.ForeColor = System.Drawing.Color.Firebrick;
-            this.lbl_Titulo.Location = new System.Drawing.Point(342, 53);
+            this.lbl_Titulo.Location = new System.Drawing.Point(337, 73);
             this.lbl_Titulo.Name = "lbl_Titulo";
             this.lbl_Titulo.Size = new System.Drawing.Size(694, 98);
             this.lbl_Titulo.TabIndex = 3;

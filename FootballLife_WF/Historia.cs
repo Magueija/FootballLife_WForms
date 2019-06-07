@@ -61,8 +61,7 @@ namespace FootballLife_WF
 
         private void Historia_Load(object sender, EventArgs e)
         {
-            webBrowser.Navigate($"https://www.youtube.com/embed/CnMAZRGG84c?version=3");
-            webBrowser.ScriptErrorsSuppressed = true;
+ 
         }
 
         //==============================================================================================
