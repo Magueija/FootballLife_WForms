@@ -56,7 +56,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lbl_Tatica = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.lbl_Admins = new System.Windows.Forms.Label();
+            this.lbl_Titulares = new System.Windows.Forms.Label();
             this.flowpanel_Titulares = new System.Windows.Forms.FlowLayoutPanel();
             this.linha_Admins = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -497,19 +497,19 @@
             this.label4.TabIndex = 30;
             this.label4.Text = "Tática:";
             // 
-            // lbl_Admins
+            // lbl_Titulares
             // 
-            this.lbl_Admins.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lbl_Admins.AutoSize = true;
-            this.lbl_Admins.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_Admins.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lbl_Admins.Font = new System.Drawing.Font("Berlin Sans FB Demi", 10F, System.Drawing.FontStyle.Bold);
-            this.lbl_Admins.ForeColor = System.Drawing.Color.White;
-            this.lbl_Admins.Location = new System.Drawing.Point(198, 358);
-            this.lbl_Admins.Name = "lbl_Admins";
-            this.lbl_Admins.Size = new System.Drawing.Size(60, 18);
-            this.lbl_Admins.TabIndex = 28;
-            this.lbl_Admins.Text = "Titulares";
+            this.lbl_Titulares.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lbl_Titulares.AutoSize = true;
+            this.lbl_Titulares.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_Titulares.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lbl_Titulares.Font = new System.Drawing.Font("Berlin Sans FB Demi", 10F, System.Drawing.FontStyle.Bold);
+            this.lbl_Titulares.ForeColor = System.Drawing.Color.White;
+            this.lbl_Titulares.Location = new System.Drawing.Point(198, 358);
+            this.lbl_Titulares.Name = "lbl_Titulares";
+            this.lbl_Titulares.Size = new System.Drawing.Size(60, 18);
+            this.lbl_Titulares.TabIndex = 28;
+            this.lbl_Titulares.Text = "Titulares";
             // 
             // flowpanel_Titulares
             // 
@@ -630,7 +630,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbl_Data);
             this.Controls.Add(this.lbl_Funcao);
-            this.Controls.Add(this.lbl_Admins);
+            this.Controls.Add(this.lbl_Titulares);
             this.Controls.Add(this.flowpanel_Titulares);
             this.Controls.Add(this.linha_Admins);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -684,7 +684,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lbl_Tatica;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label lbl_Admins;
+        private System.Windows.Forms.Label lbl_Titulares;
         private System.Windows.Forms.FlowLayoutPanel flowpanel_Titulares;
         private System.Windows.Forms.PictureBox linha_Admins;
         private System.Windows.Forms.Label label5;

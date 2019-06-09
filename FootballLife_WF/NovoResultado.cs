@@ -17,11 +17,11 @@ namespace FootballLife_WF
         string IDEscalao = "";
         public NovoResultado()
         {
-            Load();
             InitializeComponent();
+            LoadFrom();
         }
 
-        private void Load()
+        private void LoadFrom()
         {
             SqlConnection con = new SqlConnection(Properties.Settings.Default.Connection);
             con.Open();
@@ -298,7 +298,6 @@ namespace FootballLife_WF
             SqlCommand command;
             SqlDataAdapter adapter = new SqlDataAdapter();
             DataSet ds = new DataSet();
-            int i = 0;
             string sql = null;
             sql = "SELECT IDAtleta, Nome FROM dbo.TblAtleta WHERE Apagado = 0 AND FK_IDEscalao = " + IDEscalao;
             try

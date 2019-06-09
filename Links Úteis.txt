@@ -1,3 +1,5 @@
 https://www.dbschema.com/
 https://iconsflow.com/editor
 https://logomakr.com/
+
+https://stackoverflow.com/questions/34262407/make-txt-file-unreadable-uneditable/34268307

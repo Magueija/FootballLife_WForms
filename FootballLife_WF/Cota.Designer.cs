@@ -48,17 +48,18 @@
             this.btn_TopMenu = new System.Windows.Forms.Button();
             this.lbl_Titulo = new System.Windows.Forms.Label();
             this.panel_APagar = new System.Windows.Forms.Panel();
-            this.btn_Pagar = new System.Windows.Forms.Button();
-            this.panel_cartao = new System.Windows.Forms.Panel();
+            this.tb_NIF = new System.Windows.Forms.TextBox();
+            this.lbl_NIF = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.panel_Paypal = new System.Windows.Forms.Panel();
             this.tb_PPPass = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.tb_PPEmail = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
+            this.btn_Pagar = new System.Windows.Forms.Button();
+            this.panel_cartao = new System.Windows.Forms.Panel();
+            this.tb_data = new System.Windows.Forms.DateTimePicker();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.tb_ValAno = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.tb_ValMes = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.tb_NomeCartao = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -73,25 +74,22 @@
             this.lbl_CotaPagar = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.panel_Pago = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.rb_Sim = new System.Windows.Forms.RadioButton();
-            this.rb_Nao = new System.Windows.Forms.RadioButton();
+            this.panel_Pago = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.img_Menu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Logo)).BeginInit();
             this.panel_Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_LogOut)).BeginInit();
             this.panel_APagar.SuspendLayout();
-            this.panel_cartao.SuspendLayout();
             this.panel_Paypal.SuspendLayout();
+            this.panel_cartao.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_MasterCard)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Visa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_PayPal)).BeginInit();
-            this.panel_Pago.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel_Pago.SuspendLayout();
             this.SuspendLayout();
             // 
             // img_Menu
@@ -385,9 +383,9 @@
             // 
             this.panel_APagar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel_APagar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel_APagar.Controls.Add(this.rb_Nao);
-            this.panel_APagar.Controls.Add(this.rb_Sim);
-            this.panel_APagar.Controls.Add(this.label9);
+            this.panel_APagar.Controls.Add(this.tb_NIF);
+            this.panel_APagar.Controls.Add(this.lbl_NIF);
+            this.panel_APagar.Controls.Add(this.label10);
             this.panel_APagar.Controls.Add(this.panel_Paypal);
             this.panel_APagar.Controls.Add(this.btn_Pagar);
             this.panel_APagar.Controls.Add(this.panel_cartao);
@@ -399,43 +397,39 @@
             this.panel_APagar.Controls.Add(this.label1);
             this.panel_APagar.Location = new System.Drawing.Point(390, 254);
             this.panel_APagar.Name = "panel_APagar";
-            this.panel_APagar.Size = new System.Drawing.Size(544, 357);
+            this.panel_APagar.Size = new System.Drawing.Size(544, 386);
             this.panel_APagar.TabIndex = 16;
             // 
-            // btn_Pagar
+            // tb_NIF
             // 
-            this.btn_Pagar.BackColor = System.Drawing.Color.White;
-            this.btn_Pagar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Pagar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.btn_Pagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Pagar.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Pagar.ForeColor = System.Drawing.Color.Black;
-            this.btn_Pagar.Location = new System.Drawing.Point(328, 307);
-            this.btn_Pagar.Name = "btn_Pagar";
-            this.btn_Pagar.Size = new System.Drawing.Size(195, 34);
-            this.btn_Pagar.TabIndex = 30;
-            this.btn_Pagar.Text = "Confirmar e Pagar";
-            this.btn_Pagar.UseVisualStyleBackColor = false;
-            this.btn_Pagar.Click += new System.EventHandler(this.Btn_Pagar_Click);
+            this.tb_NIF.Location = new System.Drawing.Point(170, 285);
+            this.tb_NIF.Name = "tb_NIF";
+            this.tb_NIF.Size = new System.Drawing.Size(187, 20);
+            this.tb_NIF.TabIndex = 34;
+            this.tb_NIF.Visible = false;
             // 
-            // panel_cartao
+            // lbl_NIF
             // 
-            this.panel_cartao.Controls.Add(this.pictureBox4);
-            this.panel_cartao.Controls.Add(this.tb_ValAno);
-            this.panel_cartao.Controls.Add(this.label8);
-            this.panel_cartao.Controls.Add(this.tb_ValMes);
-            this.panel_cartao.Controls.Add(this.label7);
-            this.panel_cartao.Controls.Add(this.tb_NomeCartao);
-            this.panel_cartao.Controls.Add(this.label6);
-            this.panel_cartao.Controls.Add(this.tb_CVV);
-            this.panel_cartao.Controls.Add(this.label5);
-            this.panel_cartao.Controls.Add(this.tb_NumeroCartao);
-            this.panel_cartao.Controls.Add(this.label4);
-            this.panel_cartao.Location = new System.Drawing.Point(29, 153);
-            this.panel_cartao.Name = "panel_cartao";
-            this.panel_cartao.Size = new System.Drawing.Size(501, 137);
-            this.panel_cartao.TabIndex = 20;
-            this.panel_cartao.Visible = false;
+            this.lbl_NIF.AutoSize = true;
+            this.lbl_NIF.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_NIF.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lbl_NIF.Location = new System.Drawing.Point(132, 289);
+            this.lbl_NIF.Name = "lbl_NIF";
+            this.lbl_NIF.Size = new System.Drawing.Size(32, 16);
+            this.lbl_NIF.TabIndex = 33;
+            this.lbl_NIF.Text = "NIF:";
+            this.lbl_NIF.Visible = false;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Berlin Sans FB", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(26, 35);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(180, 13);
+            this.label10.TabIndex = 35;
+            this.label10.Text = "(apenas pode pagar um mês por vez)";
             // 
             // panel_Paypal
             // 
@@ -443,25 +437,26 @@
             this.panel_Paypal.Controls.Add(this.label11);
             this.panel_Paypal.Controls.Add(this.tb_PPEmail);
             this.panel_Paypal.Controls.Add(this.label13);
-            this.panel_Paypal.Location = new System.Drawing.Point(28, 153);
+            this.panel_Paypal.Location = new System.Drawing.Point(27, 153);
             this.panel_Paypal.Name = "panel_Paypal";
-            this.panel_Paypal.Size = new System.Drawing.Size(501, 137);
+            this.panel_Paypal.Size = new System.Drawing.Size(501, 129);
             this.panel_Paypal.TabIndex = 32;
             this.panel_Paypal.Visible = false;
             // 
             // tb_PPPass
             // 
-            this.tb_PPPass.Location = new System.Drawing.Point(156, 77);
+            this.tb_PPPass.Location = new System.Drawing.Point(143, 77);
             this.tb_PPPass.Name = "tb_PPPass";
             this.tb_PPPass.Size = new System.Drawing.Size(239, 20);
             this.tb_PPPass.TabIndex = 26;
+            this.tb_PPPass.UseSystemPasswordChar = true;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label11.Location = new System.Drawing.Point(79, 78);
+            this.label11.Location = new System.Drawing.Point(66, 78);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(64, 16);
             this.label11.TabIndex = 25;
@@ -469,7 +464,7 @@
             // 
             // tb_PPEmail
             // 
-            this.tb_PPEmail.Location = new System.Drawing.Point(156, 43);
+            this.tb_PPEmail.Location = new System.Drawing.Point(143, 43);
             this.tb_PPEmail.Name = "tb_PPEmail";
             this.tb_PPEmail.Size = new System.Drawing.Size(239, 20);
             this.tb_PPEmail.TabIndex = 22;
@@ -479,11 +474,51 @@
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label13.Location = new System.Drawing.Point(100, 44);
+            this.label13.Location = new System.Drawing.Point(87, 44);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(43, 16);
             this.label13.TabIndex = 21;
             this.label13.Text = "Email:";
+            // 
+            // btn_Pagar
+            // 
+            this.btn_Pagar.BackColor = System.Drawing.Color.White;
+            this.btn_Pagar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Pagar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btn_Pagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Pagar.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Pagar.ForeColor = System.Drawing.Color.Black;
+            this.btn_Pagar.Location = new System.Drawing.Point(335, 337);
+            this.btn_Pagar.Name = "btn_Pagar";
+            this.btn_Pagar.Size = new System.Drawing.Size(195, 34);
+            this.btn_Pagar.TabIndex = 30;
+            this.btn_Pagar.Text = "Confirmar e Pagar";
+            this.btn_Pagar.UseVisualStyleBackColor = false;
+            this.btn_Pagar.Click += new System.EventHandler(this.Btn_Pagar_Click);
+            // 
+            // panel_cartao
+            // 
+            this.panel_cartao.Controls.Add(this.tb_data);
+            this.panel_cartao.Controls.Add(this.pictureBox4);
+            this.panel_cartao.Controls.Add(this.label7);
+            this.panel_cartao.Controls.Add(this.tb_NomeCartao);
+            this.panel_cartao.Controls.Add(this.label6);
+            this.panel_cartao.Controls.Add(this.tb_CVV);
+            this.panel_cartao.Controls.Add(this.label5);
+            this.panel_cartao.Controls.Add(this.tb_NumeroCartao);
+            this.panel_cartao.Controls.Add(this.label4);
+            this.panel_cartao.Location = new System.Drawing.Point(29, 153);
+            this.panel_cartao.Name = "panel_cartao";
+            this.panel_cartao.Size = new System.Drawing.Size(501, 129);
+            this.panel_cartao.TabIndex = 20;
+            this.panel_cartao.Visible = false;
+            // 
+            // tb_data
+            // 
+            this.tb_data.Location = new System.Drawing.Point(142, 86);
+            this.tb_data.Name = "tb_data";
+            this.tb_data.Size = new System.Drawing.Size(187, 20);
+            this.tb_data.TabIndex = 32;
             // 
             // pictureBox4
             // 
@@ -495,35 +530,6 @@
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 31;
             this.pictureBox4.TabStop = false;
-            // 
-            // tb_ValAno
-            // 
-            this.tb_ValAno.Location = new System.Drawing.Point(211, 89);
-            this.tb_ValAno.Name = "tb_ValAno";
-            this.tb_ValAno.Size = new System.Drawing.Size(45, 20);
-            this.tb_ValAno.TabIndex = 31;
-            this.tb_ValAno.Text = "AA";
-            this.tb_ValAno.Click += new System.EventHandler(this.Tb_ValAno_Click);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label8.Location = new System.Drawing.Point(193, 90);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(12, 16);
-            this.label8.TabIndex = 30;
-            this.label8.Text = "/";
-            // 
-            // tb_ValMes
-            // 
-            this.tb_ValMes.Location = new System.Drawing.Point(142, 89);
-            this.tb_ValMes.Name = "tb_ValMes";
-            this.tb_ValMes.Size = new System.Drawing.Size(45, 20);
-            this.tb_ValMes.TabIndex = 28;
-            this.tb_ValMes.Text = "MM";
-            this.tb_ValMes.Click += new System.EventHandler(this.Tb_ValMes_Click);
             // 
             // label7
             // 
@@ -558,6 +564,7 @@
             // 
             this.tb_CVV.Location = new System.Drawing.Point(401, 17);
             this.tb_CVV.Name = "tb_CVV";
+            this.tb_CVV.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.tb_CVV.Size = new System.Drawing.Size(73, 20);
             this.tb_CVV.TabIndex = 24;
             // 
@@ -666,11 +673,32 @@
             this.label17.BackColor = System.Drawing.Color.Transparent;
             this.label17.Font = new System.Drawing.Font("Berlin Sans FB Demi", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.ForestGreen;
-            this.label17.Location = new System.Drawing.Point(24, 213);
+            this.label17.Location = new System.Drawing.Point(24, 223);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(140, 27);
             this.label17.TabIndex = 16;
             this.label17.Text = "PARABÉNS!";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Berlin Sans FB Demi", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(26, 251);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(425, 18);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "Já pagou a cota deste mês, não tem mais nada para pagar.";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(200, 71);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(141, 119);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
             // 
             // panel_Pago
             // 
@@ -679,64 +707,10 @@
             this.panel_Pago.Controls.Add(this.pictureBox1);
             this.panel_Pago.Controls.Add(this.label2);
             this.panel_Pago.Controls.Add(this.label17);
-            this.panel_Pago.Location = new System.Drawing.Point(940, 145);
+            this.panel_Pago.Location = new System.Drawing.Point(388, 254);
             this.panel_Pago.Name = "panel_Pago";
-            this.panel_Pago.Size = new System.Drawing.Size(544, 357);
+            this.panel_Pago.Size = new System.Drawing.Size(544, 386);
             this.panel_Pago.TabIndex = 33;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Berlin Sans FB Demi", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(26, 241);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(388, 18);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "Já pagou a cota deste mês, não tem nada para pagar.";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(200, 68);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(141, 119);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 18;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label9.Location = new System.Drawing.Point(25, 39);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(79, 16);
-            this.label9.TabIndex = 27;
-            this.label9.Text = "Pagar tudo?";
-            // 
-            // rb_Sim
-            // 
-            this.rb_Sim.AutoSize = true;
-            this.rb_Sim.Checked = true;
-            this.rb_Sim.Location = new System.Drawing.Point(111, 39);
-            this.rb_Sim.Name = "rb_Sim";
-            this.rb_Sim.Size = new System.Drawing.Size(42, 17);
-            this.rb_Sim.TabIndex = 33;
-            this.rb_Sim.TabStop = true;
-            this.rb_Sim.Text = "Sim";
-            this.rb_Sim.UseVisualStyleBackColor = true;
-            // 
-            // rb_Nao
-            // 
-            this.rb_Nao.AutoSize = true;
-            this.rb_Nao.Location = new System.Drawing.Point(159, 39);
-            this.rb_Nao.Name = "rb_Nao";
-            this.rb_Nao.Size = new System.Drawing.Size(45, 17);
-            this.rb_Nao.TabIndex = 34;
-            this.rb_Nao.Text = "Não";
-            this.rb_Nao.UseVisualStyleBackColor = true;
             // 
             // Cota
             // 
@@ -768,17 +742,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.img_LogOut)).EndInit();
             this.panel_APagar.ResumeLayout(false);
             this.panel_APagar.PerformLayout();
-            this.panel_cartao.ResumeLayout(false);
-            this.panel_cartao.PerformLayout();
             this.panel_Paypal.ResumeLayout(false);
             this.panel_Paypal.PerformLayout();
+            this.panel_cartao.ResumeLayout(false);
+            this.panel_cartao.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_MasterCard)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Visa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_PayPal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel_Pago.ResumeLayout(false);
             this.panel_Pago.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -820,20 +794,18 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btn_Pagar;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.TextBox tb_ValAno;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox tb_ValMes;
         private System.Windows.Forms.Panel panel_Paypal;
         private System.Windows.Forms.TextBox tb_PPPass;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox tb_PPEmail;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DateTimePicker tb_data;
+        private System.Windows.Forms.TextBox tb_NIF;
+        private System.Windows.Forms.Label lbl_NIF;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Panel panel_Pago;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.RadioButton rb_Nao;
-        private System.Windows.Forms.RadioButton rb_Sim;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel_Pago;
     }
 }

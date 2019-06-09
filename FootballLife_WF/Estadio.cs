@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace FootballLife_WF
 {
@@ -15,53 +16,50 @@ namespace FootballLife_WF
         public Estadio()
         {
             InitializeComponent();
+            
         }
 
-//==============================================================================================
+        //==============================================================================================
 
         private void Img_Menu_Click(object sender, EventArgs e)
         {
-            if(panel_Menu.Visible == true && btn_Menu.Visible == true)
+            if (panel_Menu.Visible == true)
             {
                 panel_Menu.Visible = false;
-                btn_Menu.Visible = false;
             }
             else
             {
                 panel_Menu.Visible = true;
-                btn_Menu.Visible = true;
             }
         }
 
-
-        //==============================================================================================
-        private void Btn_Home_Click(object sender, EventArgs e)
-        {
-            PaginaInicial PgInicio = new PaginaInicial();
-            this.Hide();
-            PgInicio.ShowDialog();
-            this.Dispose();
-        }
+//==============================================================================================
 
         private void Btn_Jogos_Click(object sender, EventArgs e)
         {
-            Jogos Jogo = new Jogos();
+            Jogos jgs = new Jogos();
             this.Hide();
-            Jogo.ShowDialog();
-            this.Dispose();
+            jgs.ShowDialog();
         }
 
         private void Btn_Equipas_Click(object sender, EventArgs e)
         {
-            Equipas Equipa = new Equipas();
+            Equipas Equipas = new Equipas();
             this.Hide();
-            Equipa.ShowDialog();
-            this.Dispose();
+            Equipas.ShowDialog();
         }
 
-        //==============================================================================================
+        private void Btn_Estadio_Click(object sender, EventArgs e)
+        {
+            Estadio Estadio = new Estadio();
+            this.Hide();
+            Estadio.ShowDialog();
+        }
 
+        private void Btn_Titulos_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }
 

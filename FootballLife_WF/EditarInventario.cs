@@ -195,7 +195,6 @@ namespace FootballLife_WF
 
             string QueryDELETE = "";
             string QueryINSERT = "";
-            string QueryUPDATE = "";
 
             try
             {

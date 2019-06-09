@@ -79,6 +79,8 @@ namespace FootballLife_WF
 
         private void Lucros()
         {
+            flowpanel_Lucros.Controls.Clear();
+
             SqlConnection con = new SqlConnection(Properties.Settings.Default.Connection);
             con.Open();
 
@@ -135,6 +137,8 @@ namespace FootballLife_WF
 
         private void Despesas()
         {
+            flowpanel_Despesas.Controls.Clear();
+
             SqlConnection con = new SqlConnection(Properties.Settings.Default.Connection);
             con.Open();
 
@@ -191,15 +195,7 @@ namespace FootballLife_WF
 
         private void Btn_Lupa_Click(object sender, EventArgs e)
         {
-            flowpanel_Lucros.Controls.Clear();
-            flowpanel_Despesas.Controls.Clear();
-
-            if (tb_Pesquisar.Text == "")
-            {
-                Lucros();
-                Despesas();
-            }
-            else
+            if (tb_Pesquisar.Text != "")
             {
                 PesquisaDespesas();
                 PesquisaLucros();
@@ -210,18 +206,7 @@ namespace FootballLife_WF
         {
             if (e.KeyCode == Keys.Enter)
             {
-                flowpanel_Lucros.Controls.Clear();
-                flowpanel_Despesas.Controls.Clear();
-
-                if (tb_Pesquisar.Text == "")
-                {
-                    Lucros();
-                    Despesas();
-
-                    lbl_SemResultados_Lucros.Visible = false;
-                    lbl_SemResultados_Despesas.Visible = false;
-                }
-                else
+                if (tb_Pesquisar.Text != "")
                 {
                     PesquisaDespesas();
                     PesquisaLucros();
@@ -373,21 +358,6 @@ namespace FootballLife_WF
             
         }
 
-        private void Tb_Pesquisar_TextChanged(object sender, EventArgs e)
-        {
-            if (tb_Pesquisar.Text == "")
-            {
-                flowpanel_Lucros.Controls.Clear();
-                flowpanel_Despesas.Controls.Clear();
-
-                Lucros();
-                Despesas();
-
-                lbl_SemResultados_Lucros.Visible = false;
-                lbl_SemResultados_Despesas.Visible = false;
-            }
-        }
-
         private void Btn_AddLucros_MouseHover(object sender, EventArgs e)
         {
             lbl_AddLucros.Font = new Font("Berlin Sans FB Demi", 10, FontStyle.Underline);
@@ -410,19 +380,33 @@ namespace FootballLife_WF
 
         private void Btn_AddLucros_Click(object sender, EventArgs e)
         {
-            Add_LucroDespesa AddLucro = new Add_LucroDespesa("Lucros");
-            AddLucro.Show();
+            Add_LucroDespesa AddLucro = new Add_LucroDespesa("Lucro");
+            AddLucro.ShowDialog();
+
+            Saldo();
+            Lucros();
+            Despesas();
         }
 
         private void Btn_AddDespesas_Click(object sender, EventArgs e)
         {
-            Add_LucroDespesa AddDespesas = new Add_LucroDespesa("Despesas");
-            AddDespesas.Show();
+            Add_LucroDespesa AddDespesas = new Add_LucroDespesa("Despesa");
+            AddDespesas.ShowDialog();
+
+            Saldo();
+            Lucros();
+            Despesas();
         }
 
         private void Btn_DeletePesquisa_Click(object sender, EventArgs e)
         {
             tb_Pesquisar.Text = "";
+
+            Lucros();
+            Despesas();
+
+            lbl_SemResultados_Lucros.Visible = false;
+            lbl_SemResultados_Despesas.Visible = false;
         }
 
 

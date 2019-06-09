@@ -18,5 +18,7 @@ namespace FootballLife_WF
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new PaginaInicial());
         }
+
+        //MessageBox.Show(x.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
     }
 }

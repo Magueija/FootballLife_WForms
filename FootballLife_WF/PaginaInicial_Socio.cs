@@ -257,6 +257,14 @@ namespace FootballLife_WF
                 }
             }
         }
+
+        private void Btn_CotaSocio_Click(object sender, EventArgs e)
+        {
+            Cota cota = new Cota();
+            this.Hide();
+            cota.ShowDialog();
+            this.Dispose();
+        }
     }
 }
 

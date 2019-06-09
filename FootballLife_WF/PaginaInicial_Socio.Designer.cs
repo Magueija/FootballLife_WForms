@@ -266,6 +266,7 @@
             this.btn_CotaSocio.TabIndex = 20;
             this.btn_CotaSocio.Text = "COTA DE SÓCIO";
             this.btn_CotaSocio.UseVisualStyleBackColor = false;
+            this.btn_CotaSocio.Click += new System.EventHandler(this.Btn_CotaSocio_Click);
             // 
             // lbl_Sessao
             // 

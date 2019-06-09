@@ -74,11 +74,23 @@
     <Compile Include="ContactosAdministracao.Designer.cs">
       <DependentUpon>ContactosAdministracao.cs</DependentUpon>
     </Compile>
+    <Compile Include="DeletedUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeletedUsers.Designer.cs">
+      <DependentUpon>DeletedUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditarInventario.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EditarInventario.Designer.cs">
       <DependentUpon>EditarInventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FaturaCota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FaturaCota.Designer.cs">
+      <DependentUpon>FaturaCota.cs</DependentUpon>
     </Compile>
     <Compile Include="Historia.cs">
       <SubType>Form</SubType>
@@ -86,22 +98,11 @@
     <Compile Include="Historia.Designer.cs">
       <DependentUpon>Historia.cs</DependentUpon>
     </Compile>
-    <Compile Include="Estadio.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Estadio.Designer.cs">
-      <DependentUpon>Estadio.cs</DependentUpon>
-    </Compile>
     <Compile Include="Equipas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Equipas.Designer.cs">
       <DependentUpon>Equipas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FootballLife_DBLucro.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>FootballLife_DBLucro.xsd</DependentUpon>
     </Compile>
     <Compile Include="Jogo.cs">
       <SubType>UserControl</SubType>
@@ -169,6 +170,12 @@
     <Compile Include="Cota.Designer.cs">
       <DependentUpon>Cota.cs</DependentUpon>
     </Compile>
+    <Compile Include="Estadio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estadio.Designer.cs">
+      <DependentUpon>Estadio.cs</DependentUpon>
+    </Compile>
     <Compile Include="PaginaInicial_Treinador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -228,14 +235,17 @@
     <EmbeddedResource Include="ContactosAdministracao.resx">
       <DependentUpon>ContactosAdministracao.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DeletedUsers.resx">
+      <DependentUpon>DeletedUsers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditarInventario.resx">
       <DependentUpon>EditarInventario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FaturaCota.resx">
+      <DependentUpon>FaturaCota.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Historia.resx">
       <DependentUpon>Historia.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Estadio.resx">
-      <DependentUpon>Estadio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Equipas.resx">
       <DependentUpon>Equipas.cs</DependentUpon>
@@ -273,6 +283,9 @@
     <EmbeddedResource Include="Cota.resx">
       <DependentUpon>Cota.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Estadio.resx">
+      <DependentUpon>Estadio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PaginaInicial_Treinador.resx">
       <DependentUpon>PaginaInicial_Treinador.cs</DependentUpon>
     </EmbeddedResource>
@@ -307,17 +320,6 @@
     <EmbeddedResource Include="VisualizarUtilizador.resx">
       <DependentUpon>VisualizarUtilizador.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="FootballLife_DBLucro.xsc">
-      <DependentUpon>FootballLife_DBLucro.xsd</DependentUpon>
-    </None>
-    <None Include="FootballLife_DBLucro.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>FootballLife_DBLucro.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="FootballLife_DBLucro.xss">
-      <DependentUpon>FootballLife_DBLucro.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

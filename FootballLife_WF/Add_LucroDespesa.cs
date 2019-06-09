@@ -13,7 +13,7 @@ namespace FootballLife_WF
 {
     public partial class Add_LucroDespesa : Form
     {
-        string LucroDespesa;
+        string LucroDespesa = "";
 
         public Add_LucroDespesa(string Nome)
         {
@@ -21,7 +21,7 @@ namespace FootballLife_WF
             this.Text = "Adicionar " + Nome;
             lbl_Titulo.Text = "Adicionar " + Nome;
             LucroDespesa = Nome;
-            if(Nome == "Despesas")
+            if(Nome == "Despesa")
             {
                 rb_Utilizadores.Visible = false;
                 rb_Outros.Visible = false;
@@ -33,14 +33,46 @@ namespace FootballLife_WF
 
         private void Add_LucroDespesa_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'footballLife_DBLucro.TblMes' table. You can move, or remove it, as needed.
-            this.tblMesTableAdapter.Fill(this.footballLife_DBLucro.TblMes);
-            // TODO: This line of code loads data into the 'footballLife_DBLucro.TblSocio' table. You can move, or remove it, as needed.
-            this.tblSocioTableAdapter.Fill(this.footballLife_DBLucro.TblSocio);
-            // TODO: This line of code loads data into the 'footballLife_DBLucro.TblAtleta' table. You can move, or remove it, as needed.
-            this.tblAtletaTableAdapter.Fill(this.footballLife_DBLucro.TblAtleta);
-            // TODO: This line of code loads data into the 'footballLife_DBLucro.TblAtleta' table. You can move, or remove it, as needed.
-            this.tblAtletaTableAdapter.Fill(this.footballLife_DBLucro.TblAtleta);
+
+            SqlConnection con = new SqlConnection(Properties.Settings.Default.Connection);
+            con.Open();
+
+            try
+            {
+                //COMBOBOX SOCIOS
+                SqlCommand scSocio = new SqlCommand("SELECT DISTINCT dbo.TblSocio.IDSocio, dbo.TblSocio.Nome FROM dbo.TblSocio INNER JOIN dbo.TblCotaSocio ON dbo.TblSocio.IDSocio = dbo.TblCotaSocio.FK_IDSocio WHERE(dbo.TblSocio.Apagado = 0) AND(dbo.TblCotaSocio.Pago = 0)", con);
+                SqlDataReader drSocio;
+
+                drSocio = scSocio.ExecuteReader();
+                DataTable dtSocio = new DataTable();
+                dtSocio.Columns.Add("IDSocio", typeof(string));
+                dtSocio.Columns.Add("Nome", typeof(string));
+                dtSocio.Load(drSocio);
+
+                cb_UNomeSocio.ValueMember = "IDSocio";
+                cb_UNomeSocio.DisplayMember = "Nome";
+                cb_UNomeSocio.DataSource = dtSocio;
+
+
+                //COMBOBOX ATLETAS
+                SqlCommand scAtleta = new SqlCommand("SELECT DISTINCT dbo.TblAtleta.IDAtleta, dbo.TblAtleta.Nome FROM dbo.TblAtleta INNER JOIN dbo.TblCotaAtleta ON dbo.TblAtleta.IDAtleta = dbo.TblCotaAtleta.FK_IDAtleta WHERE(dbo.TblAtleta.Apagado = 0) AND(dbo.TblCotaAtleta.Pago = 0)", con);
+                SqlDataReader drAtleta;
+
+                drAtleta = scAtleta.ExecuteReader();
+                DataTable dtAtleta = new DataTable();
+                dtAtleta.Columns.Add("IDAtleta", typeof(string));
+                dtAtleta.Columns.Add("Nome", typeof(string));
+                dtAtleta.Load(drAtleta);
+
+                cb_UNomeAtleta.ValueMember = "IDAtleta";
+                cb_UNomeAtleta.DisplayMember = "Nome";
+                cb_UNomeAtleta.DataSource = dtAtleta;
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.ToString());
+            }
+            con.Close();
         }
 
         private void Rb_CheckedChanged(object sender, EventArgs e)
@@ -72,7 +104,7 @@ namespace FootballLife_WF
             {
                 try
                 {
-                    Query = "INSERT INTO dbo.Tbl" + LucroDespesa + " (Nome, Valor, Descricao, FK_IDClube) VALUES (@Nome, @Valor, @Descricao, @IDClube)";
+                    Query = "INSERT INTO dbo.Tbl" + LucroDespesa + "s (Nome, Valor, Descricao, FK_IDClube) VALUES (@Nome, @Valor, @Descricao, @IDClube)";
 
                     SqlCommand CommandINSERT = new SqlCommand(Query, con);
                     CommandINSERT.Parameters.AddWithValue("@Nome", tb_ONome.Text);
@@ -95,11 +127,11 @@ namespace FootballLife_WF
 
 
                     int novoSaldo = Convert.ToInt32(saldo);
-                    if (LucroDespesa == "Lucros")
+                    if (LucroDespesa == "Lucro")
                     {
                         novoSaldo = Convert.ToInt32(saldo) + Convert.ToInt32(tb_OMontante.Text);
                     }
-                    else if(LucroDespesa == "Despesas")
+                    else if(LucroDespesa == "Despesa")
                     {
                         novoSaldo = Convert.ToInt32(saldo) - Convert.ToInt32(tb_OMontante.Text);
                     }
@@ -129,7 +161,7 @@ namespace FootballLife_WF
 
             string IDLucro = "";
 
-            if(tb_UNome.Text == "" || cb_UFuncao.SelectedItem == "")
+            if(cb_UFuncao.SelectedItem == "")
             {
                 MessageBox.Show("Campos obrigatórios não preenchidos!", "ATENÇÃO!", MessageBoxButtons.OK);
             }
@@ -137,64 +169,154 @@ namespace FootballLife_WF
             {
                 try
                 {
-                    if(tb_UMontante.Text == "" && cb_UFuncao.SelectedItem == "Atleta")
-                    {
-                        tb_UMontante.Text = "30";
-                    }
-                    else if(tb_UMontante.Text == "" && cb_UFuncao.SelectedItem == "Sócio")
-                    {
-                        tb_UMontante.Text = "5";
-                    }
+                    string Nome = "";
+                    string Valor = "";
+                    string IDMes = "";
+                    string Mes = "";
 
-                    if (tb_UMontante.Text != "30" && cb_UFuncao.SelectedItem == "Atleta")
+                    if(cb_UFuncao.SelectedItem == "Atleta")
                     {
-                        MessageBox.Show("Apenas insira a cota de um mês!", "ATENÇÃO!", MessageBoxButtons.OK);
-                    }
-                    else if (tb_UMontante.Text != "5" && cb_UFuncao.SelectedItem == "Sócio")
-                    {
-                        MessageBox.Show("Apenas insira a cota de um mês!", "ATENÇÃO!", MessageBoxButtons.OK);
-                    }
-
-                    QueryLucro = "INSERT INTO dbo.TblLucros (Nome, Valor, Descricao, FK_IDClube) VALUES (@Nome, @Valor, @Descricao, @IDClube)";
-
-                    SqlCommand CommandLucro = new SqlCommand(QueryLucro, con);
-                    CommandLucro.Parameters.AddWithValue("@Nome", tb_UNome.Text);
-                    CommandLucro.Parameters.AddWithValue("@Valor", tb_UMontante.Text);
-                    CommandLucro.Parameters.AddWithValue("@Descricao", tb_UDescricao.Text);
-                    CommandLucro.Parameters.AddWithValue("@IDClube", "1");
-                    CommandLucro.ExecuteNonQuery();
-
-                    SqlDataReader dr;
-                    string Query = ("SELECT MAX(IDLucro) AS MaxLucro FROM dbo.TblLucros");
-                    SqlCommand Command = new SqlCommand(Query, con);
-                    dr = Command.ExecuteReader();
-                    while (dr.Read())
-                    {
-                        IDLucro = dr["MaxLucro"].ToString();
-                    }
-                    dr.Close();
+                        //SELECIONA O NOME DO ATLETA PARA INSERIR NA TABELA LUCROS
+                        SqlDataReader drAtleta;
+                        string QueryAtleta = ("SELECT Nome FROM dbo.TblAtleta WHERE IDAtleta = " + cb_UNomeAtleta.SelectedValue);
+                        SqlCommand CommandAtleta = new SqlCommand(QueryAtleta, con);
+                        drAtleta = CommandAtleta.ExecuteReader();
+                        while (drAtleta.Read())
+                        {
+                            Nome = drAtleta["Nome"].ToString();
+                        }
+                        drAtleta.Close();
 
 
-                    if (cb_UFuncao.SelectedItem == "Atleta")
-                    {
-                        QueryCota = "INSERT INTO dbo.TblCotaAtleta (Valor, FK_IDMes, FK_IDAtleta, FK_IDLucro) VALUES (@Valor, @IDMes, @IDAtleta, @IDLucro)";
+                        //SELECIONA O MES A PAGAR (O MAIS ANTIGO)
+                        SqlDataReader drMes;
+                        string QueryMes = ("SELECT dbo.TblMes.IDMes, dbo.TblMes.Mes FROM dbo.TblMes RIGHT OUTER JOIN dbo.TblCotaAtleta ON dbo.TblMes.IDMes = dbo.TblCotaAtleta.FK_IDMes WHERE " +
+                            "dbo.TblCotaAtleta.Pago = 0 AND dbo.TblCotaAtleta.FK_IDAtleta = " + cb_UNomeAtleta.SelectedValue);
+                        SqlCommand CommandMes = new SqlCommand(QueryMes, con);
+                        drMes = CommandMes.ExecuteReader();
+
+                        if (drMes.Read())
+                        {
+                            IDMes = drMes["IDMes"].ToString();
+                            Mes = drMes["Mes"].ToString();
+                        }
+
+                        drMes.Close();
+
+
+                        //SELECIONA O VALOR DA COTA DO ATLETA
+                        SqlDataReader drValor;
+                        string QueryValor = ("SELECT Valor FROM dbo.TblValorCota WHERE (IDValorCota = 1)");
+                        SqlCommand CommandValor = new SqlCommand(QueryValor, con);
+                        drValor = CommandValor.ExecuteReader();
+                        while (drValor.Read())
+                        {
+                            Valor = drValor["Valor"].ToString();
+                        }
+                        drValor.Close();
+
+
+                        QueryLucro = "INSERT INTO dbo.TblLucros (Nome, Valor, Descricao, FK_IDClube) VALUES (@Nome, @Valor, @Descricao, @IDClube)";
+
+                        SqlCommand CommandLucro = new SqlCommand(QueryLucro, con);
+                        CommandLucro.Parameters.AddWithValue("@Nome", Nome + " - " + Mes);
+                        CommandLucro.Parameters.AddWithValue("@Valor", Valor);
+                        CommandLucro.Parameters.AddWithValue("@Descricao", tb_UDescricao.Text);
+                        CommandLucro.Parameters.AddWithValue("@IDClube", "1");
+                        CommandLucro.ExecuteNonQuery();
+
+
+                        SqlDataReader dr;
+                        string Query = ("SELECT MAX(IDLucro) AS MaxLucro FROM dbo.TblLucros");
+                        SqlCommand Command = new SqlCommand(Query, con);
+                        dr = Command.ExecuteReader();
+                        while (dr.Read())
+                        {
+                            IDLucro = dr["MaxLucro"].ToString();
+                        }
+                        dr.Close();
+
+
+                        QueryCota = "UPDATE dbo.TblCotaAtleta SET Pago = 1, FK_IDValorCota = @IDValorCota, FK_IDLucro = @IDLucro WHERE FK_IDMes = @IDMes AND FK_IDAtleta = @IDAtleta";
 
                         SqlCommand CommandCota = new SqlCommand(QueryCota, con);
-                        CommandCota.Parameters.AddWithValue("@Valor", tb_UMontante.Text);
-                        CommandCota.Parameters.AddWithValue("@IDMes", cb_UMes.SelectedValue.ToString());
-                        CommandCota.Parameters.AddWithValue("@IDAtleta", cb_UNomeAtleta.SelectedValue.ToString());
+                        CommandCota.Parameters.AddWithValue("@IDValorCota", "1");
                         CommandCota.Parameters.AddWithValue("@IDLucro", IDLucro);
+                        CommandCota.Parameters.AddWithValue("@IDMes", IDMes);
+                        CommandCota.Parameters.AddWithValue("@IDAtleta", cb_UNomeAtleta.SelectedValue.ToString());
                         CommandCota.ExecuteNonQuery();
+                    
                     }
                     else if (cb_UFuncao.SelectedItem == "Sócio")
                     {
-                        QueryCota = "INSERT INTO dbo.TblCotaSocio (Valor, FK_IDMes, FK_IDSocio, FK_IDLucro) VALUES (@Valor, @IDMes, @IDSocio, @IDLucro)";
+                        //SELECIONA O NOME DO Socio PARA INSERIR NA TABELA LUCROS
+                        SqlDataReader drSocio;
+                        string QuerySocio = ("SELECT Nome FROM dbo.TblSocio WHERE IDSocio = " + Properties.Settings.Default.IDUser);
+                        SqlCommand CommandSocio = new SqlCommand(QuerySocio, con);
+                        drSocio = CommandSocio.ExecuteReader();
+                        while (drSocio.Read())
+                        {
+                            Nome = drSocio["Nome"].ToString();
+                        }
+                        drSocio.Close();
+
+
+                        //SELECIONA O MES A PAGAR (O MAIS ANTIGO)
+                        SqlDataReader drMes;
+                        string QueryMes = ("SELECT dbo.TblMes.IDMes, dbo.TblMes.Mes FROM dbo.TblMes RIGHT OUTER JOIN dbo.TblCotaSocio ON dbo.TblMes.IDMes = dbo.TblCotaSocio.FK_IDMes WHERE " +
+                            "dbo.TblCotaSocio.Pago = 0 AND dbo.TblCotaSocio.FK_IDSocio = " + Properties.Settings.Default.IDUser);
+                        SqlCommand CommandMes = new SqlCommand(QueryMes, con);
+                        drMes = CommandMes.ExecuteReader();
+
+                        if (drMes.Read())
+                        {
+                            IDMes = drMes["IDMes"].ToString();
+                            Mes = drMes["Mes"].ToString();
+                        }
+
+                        drMes.Close();
+
+
+                        //SELECIONA O VALOR DA COTA DO Socio
+                        SqlDataReader drValor;
+                        string QueryValor = ("SELECT Valor FROM dbo.TblValorCota WHERE(IDValorCota = 2)");
+                        SqlCommand CommandValor = new SqlCommand(QueryValor, con);
+                        drValor = CommandValor.ExecuteReader();
+                        while (drValor.Read())
+                        {
+                            Valor = drValor["Valor"].ToString();
+                        }
+                        drValor.Close();
+
+
+                        QueryLucro = "INSERT INTO dbo.TblLucros (Nome, Valor, Descricao, FK_IDClube) VALUES (@Nome, @Valor, @Descricao, @IDClube)";
+
+                        SqlCommand CommandLucro = new SqlCommand(QueryLucro, con);
+                        CommandLucro.Parameters.AddWithValue("@Nome", Nome + " - " + Mes);
+                        CommandLucro.Parameters.AddWithValue("@Valor", Valor);
+                        CommandLucro.Parameters.AddWithValue("@Descricao", tb_UDescricao.Text);
+                        CommandLucro.Parameters.AddWithValue("@IDClube", "1");
+                        CommandLucro.ExecuteNonQuery();
+
+
+                        SqlDataReader dr;
+                        string Query = ("SELECT MAX(IDLucro) AS MaxLucro FROM dbo.TblLucros");
+                        SqlCommand Command = new SqlCommand(Query, con);
+                        dr = Command.ExecuteReader();
+                        while (dr.Read())
+                        {
+                            IDLucro = dr["MaxLucro"].ToString();
+                        }
+                        dr.Close();
+
+
+                        QueryCota = "UPDATE dbo.TblCotaSocio SET Pago = 1, FK_IDValorCota = @IDValorCota, FK_IDLucro = @IDLucro WHERE FK_IDMes = @IDMes AND FK_IDSocio = @IDSocio";
 
                         SqlCommand CommandCota = new SqlCommand(QueryCota, con);
-                        CommandCota.Parameters.AddWithValue("@Valor", tb_UMontante.Text);
-                        CommandCota.Parameters.AddWithValue("@IDMes", cb_UMes.SelectedValue.ToString());
-                        CommandCota.Parameters.AddWithValue("@IDSocio", cb_UNomeSocio.SelectedValue.ToString());
+                        CommandCota.Parameters.AddWithValue("@IDValorCota", "2");
                         CommandCota.Parameters.AddWithValue("@IDLucro", IDLucro);
+                        CommandCota.Parameters.AddWithValue("@IDMes", IDMes);
+                        CommandCota.Parameters.AddWithValue("@IDSocio", cb_UNomeSocio.SelectedValue.ToString());
                         CommandCota.ExecuteNonQuery();
                     }
 
@@ -209,7 +331,7 @@ namespace FootballLife_WF
                     }
                     dr2.Close();
 
-                    int novoSaldo = Convert.ToInt32(saldo) + Convert.ToInt32(tb_UMontante.Text);
+                    int novoSaldo = Convert.ToInt32(saldo) + Convert.ToInt32(Valor);
 
                     string Querysaldo = "UPDATE TblClube SET Saldo = @NovoSaldo WHERE IDClube = 1";
                     SqlCommand Commandsaldo = new SqlCommand(Querysaldo, con);

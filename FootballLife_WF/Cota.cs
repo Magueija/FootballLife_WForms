@@ -20,11 +20,16 @@ namespace FootballLife_WF
 
         private void Cota_Load(object sender, EventArgs e)
         {
+            tb_data.MinDate = DateTime.Now;
             CotaAPagar();
         }
 
         private void CotaAPagar()
         {
+            tb_PPPass.Text = "";
+            tb_CVV.Text = "";
+
+
             SqlConnection con = new SqlConnection(Properties.Settings.Default.Connection);
             con.Open();
 
@@ -36,8 +41,8 @@ namespace FootballLife_WF
                 if (Properties.Settings.Default.FuncaoUser == "Atleta")
                 {
                     SqlDataReader dr;
-                    string Query = ("SELECT dbo.TblCotaAtleta.Valor FROM dbo.TblCotaAtleta INNER JOIN dbo.TblAtleta ON dbo.TblCotaAtleta.FK_IDAtleta = dbo.TblAtleta.IDAtleta INNER JOIN " +
-                        "dbo.TblMes ON dbo.TblCotaAtleta.FK_IDMes = dbo.TblMes.IDMes WHERE (dbo.TblCotaAtleta.Pago = 0) AND (dbo.TblAtleta.Apagado = 0) AND (dbo.TblAtleta.IDAtleta = " + Properties.Settings.Default.IDUser + ")");
+                    string Query = ("SELECT dbo.TblValorCota.Valor FROM dbo.TblCotaAtleta INNER JOIN dbo.TblValorCota ON dbo.TblCotaAtleta.FK_IDValorCota = dbo.TblValorCota.IDValorCota " +
+                        "WHERE dbo.TblCotaAtleta.Pago = 0 AND dbo.TblCotaAtleta.FK_IDAtleta = " + Properties.Settings.Default.IDUser);
                     SqlCommand Command = new SqlCommand(Query, con);
                     dr = Command.ExecuteReader();
                     while (dr.Read())
@@ -65,8 +70,8 @@ namespace FootballLife_WF
                 else if (Properties.Settings.Default.FuncaoUser == "Socio")
                 {
                     SqlDataReader dr;
-                    string Query = ("SELECT dbo.TblCotaSocio.Valor FROM dbo.TblMes INNER JOIN dbo.TblCotaSocio ON dbo.TblMes.IDMes = dbo.TblCotaSocio.FK_IDMes INNER JOIN dbo.TblSocio ON " +
-                        "dbo.TblCotaSocio.FK_IDSocio = dbo.TblSocio.IDSocio WHERE (dbo.TblCotaSocio.Pago = 0) AND (dbo.TblSocio.Apagado = 0) AND (dbo.TblSocio.IDSocio = " + Properties.Settings.Default.IDUser + ")");
+                    string Query = ("SELECT dbo.TblValorCota.Valor FROM dbo.TblCotaSocio INNER JOIN dbo.TblValorCota ON dbo.TblCotaSocio.FK_IDValorCota = dbo.TblValorCota.IDValorCota " +
+                        "WHERE dbo.TblCotaSocio.Pago = 0 AND dbo.TblCotaSocio.FK_IDSocio = " + Properties.Settings.Default.IDUser);
                     SqlCommand Command = new SqlCommand(Query, con);
                     dr = Command.ExecuteReader();
                     while (dr.Read())
@@ -126,22 +131,6 @@ namespace FootballLife_WF
             this.Dispose();
         }
 
-        private void Tb_ValMes_Click(object sender, EventArgs e)
-        {
-            if(tb_ValMes.Text == "MM")
-            {
-                tb_ValMes.Text = "";
-            }
-        }
-
-        private void Tb_ValAno_Click(object sender, EventArgs e)
-        {
-            if (tb_ValAno.Text == "AA")
-            {
-                tb_ValAno.Text = "";
-            }
-        }
-
         private void Img_PayPal_Click(object sender, EventArgs e)
         {
             img_Visa.Width = 50;
@@ -154,6 +143,9 @@ namespace FootballLife_WF
 
             panel_Paypal.Visible = true;
             panel_cartao.Visible = false;
+
+            lbl_NIF.Visible = true;
+            tb_NIF.Visible = true;
         }
        
 
@@ -169,6 +161,14 @@ namespace FootballLife_WF
 
             panel_cartao.Visible = true;
             panel_Paypal.Visible = false;
+
+            lbl_NIF.Visible = true;
+            tb_NIF.Visible = true;
+
+            tb_NumeroCartao.Text = "";
+            tb_CVV.Text = "";
+            tb_NomeCartao.Text = "";
+            tb_data.Text = DateTime.Now.ToString();
         }
 
         private void Img_MasterCard_Click(object sender, EventArgs e)
@@ -183,6 +183,14 @@ namespace FootballLife_WF
 
             panel_cartao.Visible = true;
             panel_Paypal.Visible = false;
+
+            lbl_NIF.Visible = true;
+            tb_NIF.Visible = true;
+
+            tb_NumeroCartao.Text = "";
+            tb_CVV.Text = "";
+            tb_NomeCartao.Text = "";
+            tb_data.Text = DateTime.Now.ToString();
         }
 
         private void Btn_Pagar_Click(object sender, EventArgs e)
@@ -193,11 +201,7 @@ namespace FootballLife_WF
             }
             else if (panel_cartao.Visible == true && tb_NumeroCartao.Text == string.Empty ||
                     panel_cartao.Visible == true && tb_CVV.Text == string.Empty ||
-                    panel_cartao.Visible == true && tb_NomeCartao.Text == string.Empty ||
-                    panel_cartao.Visible == true && tb_ValMes.Text == string.Empty ||
-                    panel_cartao.Visible == true && tb_ValMes.Text == "MM" ||
-                    panel_cartao.Visible == true && tb_ValAno.Text == string.Empty ||
-                    panel_cartao.Visible == true && tb_ValAno.Text == "AA")
+                    panel_cartao.Visible == true && tb_NomeCartao.Text == string.Empty)
                  {
                     MessageBox.Show("Campos não preenchidos!", "ATENÇÃO!", MessageBoxButtons.OK);
                  }
@@ -210,40 +214,222 @@ namespace FootballLife_WF
                 SqlConnection con = new SqlConnection(Properties.Settings.Default.Connection);
                 con.Open();
 
-                int Cota = 0;
-                string valor = "";
+                string SaldoClube = "";
+
+                string Nome = "";
+                string Valor = "";
+                string IDMes = "";
+                string Mes = "";
+                string MaxLucro = "";
+
 
                 try
                 {
-                    SqlDataReader dr;
-                    string Query = ("SELECT dbo.TblCotaAtleta.Valor FROM dbo.TblCotaAtleta INNER JOIN dbo.TblAtleta ON dbo.TblCotaAtleta.FK_IDAtleta = dbo.TblAtleta.IDAtleta INNER JOIN " +
-                        "dbo.TblMes ON dbo.TblCotaAtleta.FK_IDMes = dbo.TblMes.IDMes WHERE (dbo.TblCotaAtleta.Pago = 0) AND (dbo.TblAtleta.IDAtleta = " + Properties.Settings.Default.IDUser + ")");
-                    SqlCommand Command = new SqlCommand(Query, con);
-                    dr = Command.ExecuteReader();
-                    while (dr.Read())
+                    if (Properties.Settings.Default.FuncaoUser == "Atleta")
                     {
-                        valor = dr["Valor"].ToString();
+                        //SELECIONA O NOME DO ATLETA PARA INSERIR NA TABELA LUCROS
+                        SqlDataReader drAtleta;
+                        string QueryAtleta = ("SELECT Nome FROM dbo.TblAtleta WHERE IDAtleta = " + Properties.Settings.Default.IDUser);
+                        SqlCommand CommandAtleta = new SqlCommand(QueryAtleta, con);
+                        drAtleta = CommandAtleta.ExecuteReader();
+                        while (drAtleta.Read())
+                        {
+                            Nome = drAtleta["Nome"].ToString();
+                        }
+                        drAtleta.Close();
 
-                        Cota += Convert.ToInt32(valor);
+
+                        //SELECIONA O MES A PAGAR (O MAIS ANTIGO)
+                        SqlDataReader drMes;
+                        string QueryMes = ("SELECT dbo.TblMes.IDMes, dbo.TblMes.Mes FROM dbo.TblMes RIGHT OUTER JOIN dbo.TblCotaAtleta ON dbo.TblMes.IDMes = dbo.TblCotaAtleta.FK_IDMes WHERE " +
+                            "dbo.TblCotaAtleta.Pago = 0 AND dbo.TblCotaAtleta.FK_IDAtleta = " + Properties.Settings.Default.IDUser);
+                        SqlCommand CommandMes = new SqlCommand(QueryMes, con);
+                        drMes = CommandMes.ExecuteReader();
+
+                        if (drMes.Read())
+                        {
+                            IDMes = drMes["IDMes"].ToString();
+                            Mes = drMes["Mes"].ToString();
+                        }
+                       
+                        drMes.Close();
+
+
+                        //SELECIONA O VALOR DA COTA DO ATLETA
+                        SqlDataReader drValor;
+                        string QueryValor = ("SELECT Valor FROM dbo.TblValorCota WHERE(IDValorCota = 1)");
+                        SqlCommand CommandValor = new SqlCommand(QueryValor, con);
+                        drValor = CommandValor.ExecuteReader();
+                        while (drValor.Read())
+                        {
+                            Valor = drValor["Valor"].ToString();
+                        }
+                        drValor.Close();
+
+
+                        //INSERE UM LUCRO
+                        string QueryLucro = "INSERT INTO dbo.TblLucros (Nome, Valor, FK_IDClube) VALUES (@Nome, @Valor, @IDClub)";
+
+                        SqlCommand CommandLucro = new SqlCommand(QueryLucro, con);
+                        CommandLucro.Parameters.AddWithValue("@Nome", Nome + " - " + Mes);
+                        CommandLucro.Parameters.AddWithValue("@Valor", Valor);
+                        CommandLucro.Parameters.AddWithValue("@IDClub", "1");
+                        CommandLucro.ExecuteNonQuery();
+
+
+                        //SELECIONA O ULTIMO LUCRO CRIADO PARA INSERIR NA TABELA COTAATLETA
+                        SqlDataReader drMaxLucro;
+                        string QueryMaxLucro = ("SELECT MAX(IDLucro) AS MaxLucro FROM dbo.TblLucros");
+                        SqlCommand CommandMaxLucro = new SqlCommand(QueryMaxLucro, con);
+                        drMaxLucro = CommandMaxLucro.ExecuteReader();
+                        while (drMaxLucro.Read())
+                        {
+                            MaxLucro = drMaxLucro["MaxLucro"].ToString();
+                        }
+                        drMaxLucro.Close();
+
+
+                        //ATULIZA A COTA DO ATLETA PARA PAGA DO MES MAIS ANTIGO
+                        string QueryCotaAtleta = "UPDATE dbo.TblCotaAtleta SET Pago = @Pago, FK_IDLucro = @IDLucro WHERE FK_IDMes = @IDMes AND FK_IDAtleta = @IDAtleta";
+
+                        SqlCommand CommandCotaAtleta = new SqlCommand(QueryCotaAtleta, con);
+                        CommandCotaAtleta.Parameters.AddWithValue("@Pago", "1");
+                        CommandCotaAtleta.Parameters.AddWithValue("@IDAtleta", Properties.Settings.Default.IDUser);
+                        CommandCotaAtleta.Parameters.AddWithValue("@IDMes", IDMes);
+                        CommandCotaAtleta.Parameters.AddWithValue("@IDLucro", MaxLucro);
+                        CommandCotaAtleta.ExecuteNonQuery();
+
+
+                        
                     }
-                    dr.Close();
+                    else if (Properties.Settings.Default.FuncaoUser == "Socio")
+                    {
+                        //SELECIONA O NOME DO Socio PARA INSERIR NA TABELA LUCROS
+                        SqlDataReader drSocio;
+                        string QuerySocio = ("SELECT Nome FROM dbo.TblSocio WHERE IDSocio = " + Properties.Settings.Default.IDUser);
+                        SqlCommand CommandSocio = new SqlCommand(QuerySocio, con);
+                        drSocio = CommandSocio.ExecuteReader();
+                        while (drSocio.Read())
+                        {
+                            Nome = drSocio["Nome"].ToString();
+                        }
+                        drSocio.Close();
 
-                    lbl_CotaPagar.Text = Cota.ToString();
+
+                        //SELECIONA O MES A PAGAR (O MAIS ANTIGO)
+                        SqlDataReader drMes;
+                        string QueryMes = ("SELECT dbo.TblMes.IDMes, dbo.TblMes.Mes FROM dbo.TblMes RIGHT OUTER JOIN dbo.TblCotaSocio ON dbo.TblMes.IDMes = dbo.TblCotaSocio.FK_IDMes WHERE " +
+                            "dbo.TblCotaSocio.Pago = 0 AND dbo.TblCotaSocio.FK_IDSocio = " + Properties.Settings.Default.IDUser);
+                        SqlCommand CommandMes = new SqlCommand(QueryMes, con);
+                        drMes = CommandMes.ExecuteReader();
+
+                        if (drMes.Read())
+                        {
+                            IDMes = drMes["IDMes"].ToString();
+                            Mes = drMes["Mes"].ToString();
+                        }
+
+                        drMes.Close();
+
+
+                        //SELECIONA O VALOR DA COTA DO Socio
+                        SqlDataReader drValor;
+                        string QueryValor = ("SELECT Valor FROM dbo.TblValorCota WHERE(IDValorCota = 2)");
+                        SqlCommand CommandValor = new SqlCommand(QueryValor, con);
+                        drValor = CommandValor.ExecuteReader();
+                        while (drValor.Read())
+                        {
+                            Valor = drValor["Valor"].ToString();
+                        }
+                        drValor.Close();
+
+
+                        //INSERE UM LUCRO
+                        string QueryLucro = "INSERT INTO dbo.TblLucros (Nome, Valor, FK_IDClube) VALUES (@Nome, @Valor, @IDClub)";
+
+                        SqlCommand CommandLucro = new SqlCommand(QueryLucro, con);
+                        CommandLucro.Parameters.AddWithValue("@Nome", Nome + " - " + Mes);
+                        CommandLucro.Parameters.AddWithValue("@Valor", Valor);
+                        CommandLucro.Parameters.AddWithValue("@IDClub", "1");
+                        CommandLucro.ExecuteNonQuery();
+
+
+                        //SELECIONA O ULTIMO LUCRO CRIADO PARA INSERIR NA TABELA COTASocio
+                        SqlDataReader drMaxLucro;
+                        string QueryMaxLucro = ("SELECT MAX(IDLucro) AS MaxLucro FROM dbo.TblLucros");
+                        SqlCommand CommandMaxLucro = new SqlCommand(QueryMaxLucro, con);
+                        drMaxLucro = CommandMaxLucro.ExecuteReader();
+                        while (drMaxLucro.Read())
+                        {
+                            MaxLucro = drMaxLucro["MaxLucro"].ToString();
+                        }
+                        drMaxLucro.Close();
+
+
+                        //ATULIZA A COTA DO Socio PARA PAGA DO MES MAIS ANTIGO
+                        string QueryCotaSocio = "UPDATE dbo.TblCotaSocio SET Pago = @Pago, FK_IDLucro = @IDLucro WHERE FK_IDMes = @IDMes AND FK_IDSocio = @IDSocio";
+
+                        SqlCommand CommandCotaSocio = new SqlCommand(QueryCotaSocio, con);
+                        CommandCotaSocio.Parameters.AddWithValue("@Pago", "1");
+                        CommandCotaSocio.Parameters.AddWithValue("@IDSocio", Properties.Settings.Default.IDUser);
+                        CommandCotaSocio.Parameters.AddWithValue("@IDMes", IDMes);
+                        CommandCotaSocio.Parameters.AddWithValue("@IDLucro", MaxLucro);
+                        CommandCotaSocio.ExecuteNonQuery();
+
+                    }
+
+                    //SELECIONA O SALDO DO CLUBE PARA SOMAR COM A COTA DO Socio
+                    SqlDataReader drSaldoClube;
+                    string QuerySaldoClube = ("SELECT Saldo FROM dbo.TblClube WHERE (IDClube = 1)");
+                    SqlCommand CommandSaldoClube = new SqlCommand(QuerySaldoClube, con);
+                    drSaldoClube = CommandSaldoClube.ExecuteReader();
+                    while (drSaldoClube.Read())
+                    {
+                        SaldoClube = drSaldoClube["Saldo"].ToString();
+                    }
+                    drSaldoClube.Close();
+
+
+                    //ATUALIZA O NOVO SALDO
+                    double Novosaldo = Convert.ToDouble(SaldoClube) + Convert.ToDouble(Valor);
+                    string QueryNovoSaldo = "UPDATE dbo.TblClube SET Saldo = @NovoSaldo WHERE IDClube = 1";
+
+                    SqlCommand CommandNovoSaldo = new SqlCommand(QueryNovoSaldo, con);
+                    CommandNovoSaldo.Parameters.AddWithValue("@NovoSaldo", Math.Round(Novosaldo, 2));
+                    CommandNovoSaldo.ExecuteNonQuery();
+
+
+                    MessageBox.Show($"Cota do mês de {Mes} paga!", "Cota Paga", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 }
                 catch (Exception x)
                 {
-                    MessageBox.Show(x.ToString());
+                   MessageBox.Show(x.ToString());
                 }
                 con.Close();
+
+                if (panel_Paypal.Visible == true)
+                {
+                    FaturaCota Fatura = new FaturaCota((Nome + " - " + Mes), Valor, Mes, Nome, tb_NIF.Text, tb_PPEmail.Text, "", "PayPal");
+                    Fatura.Show();
+                }
+                else if (panel_cartao.Visible == true)
+                {
+                    if (img_Visa.BorderStyle == BorderStyle.FixedSingle)
+                    {
+                        FaturaCota Fatura = new FaturaCota((Nome + " - " + Mes), Valor, Mes, Nome, tb_NIF.Text, tb_NumeroCartao.Text, tb_NomeCartao.Text, "VISA");
+                        Fatura.Show();
+                    }
+                    else if (img_MasterCard.BorderStyle == BorderStyle.FixedSingle)
+                    {
+                        FaturaCota Fatura = new FaturaCota((Nome + " - " + Mes), Valor, Mes, Nome, tb_NIF.Text, tb_NumeroCartao.Text, tb_NomeCartao.Text, "MasterCard");
+                        Fatura.Show();
+                    }
+
+                }
+                CotaAPagar();
             }
         }
-
-
-
-
-        //==============================================================================================
-
-
     }
 }
 
