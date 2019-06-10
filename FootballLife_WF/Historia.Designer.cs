@@ -53,6 +53,9 @@
             this.btn_Home = new System.Windows.Forms.Button();
             this.img_NovaDiscussao = new System.Windows.Forms.PictureBox();
             this.panel_Menu = new System.Windows.Forms.Panel();
+            this.btn3 = new System.Windows.Forms.Button();
+            this.btn2 = new System.Windows.Forms.Button();
+            this.btn1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.img_Menu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Logo)).BeginInit();
             this.panel1.SuspendLayout();
@@ -305,6 +308,7 @@
             this.btn_Estadio.TabIndex = 8;
             this.btn_Estadio.Text = "ESTÁDIO";
             this.btn_Estadio.UseVisualStyleBackColor = false;
+            this.btn_Estadio.Click += new System.EventHandler(this.Btn_Estadio_Click);
             // 
             // btn_Equipas
             // 
@@ -377,8 +381,11 @@
             this.panel_Menu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel_Menu.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel_Menu.Controls.Add(this.btn3);
             this.panel_Menu.Controls.Add(this.img_NovaDiscussao);
+            this.panel_Menu.Controls.Add(this.btn2);
             this.panel_Menu.Controls.Add(this.btn_Home);
+            this.panel_Menu.Controls.Add(this.btn1);
             this.panel_Menu.Controls.Add(this.btn_Jogos);
             this.panel_Menu.Controls.Add(this.btn_Equipas);
             this.panel_Menu.Controls.Add(this.btn_Estadio);
@@ -388,6 +395,60 @@
             this.panel_Menu.Size = new System.Drawing.Size(160, 1312);
             this.panel_Menu.TabIndex = 12;
             this.panel_Menu.Visible = false;
+            // 
+            // btn3
+            // 
+            this.btn3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn3.BackColor = System.Drawing.Color.Black;
+            this.btn3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn3.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn3.ForeColor = System.Drawing.Color.White;
+            this.btn3.Location = new System.Drawing.Point(12, 327);
+            this.btn3.Name = "btn3";
+            this.btn3.Size = new System.Drawing.Size(130, 31);
+            this.btn3.TabIndex = 24;
+            this.btn3.Text = "UTILIZADORES";
+            this.btn3.UseVisualStyleBackColor = false;
+            this.btn3.Visible = false;
+            this.btn3.Click += new System.EventHandler(this.Btn3_Click);
+            // 
+            // btn2
+            // 
+            this.btn2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn2.BackColor = System.Drawing.Color.Black;
+            this.btn2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn2.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn2.ForeColor = System.Drawing.Color.White;
+            this.btn2.Location = new System.Drawing.Point(12, 290);
+            this.btn2.Name = "btn2";
+            this.btn2.Size = new System.Drawing.Size(130, 31);
+            this.btn2.TabIndex = 23;
+            this.btn2.Text = "INVENTÁRIO";
+            this.btn2.UseVisualStyleBackColor = false;
+            this.btn2.Visible = false;
+            this.btn2.Click += new System.EventHandler(this.Btn2_Click);
+            // 
+            // btn1
+            // 
+            this.btn1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn1.BackColor = System.Drawing.Color.Black;
+            this.btn1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn1.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn1.ForeColor = System.Drawing.Color.White;
+            this.btn1.Location = new System.Drawing.Point(12, 253);
+            this.btn1.Name = "btn1";
+            this.btn1.Size = new System.Drawing.Size(130, 31);
+            this.btn1.TabIndex = 22;
+            this.btn1.Text = "FINANCIAMENTO";
+            this.btn1.UseVisualStyleBackColor = false;
+            this.btn1.Visible = false;
+            this.btn1.Click += new System.EventHandler(this.Btn1_Click);
             // 
             // Historia
             // 
@@ -454,5 +515,8 @@
         private System.Windows.Forms.PictureBox img_NovaDiscussao;
         private System.Windows.Forms.Panel panel_Menu;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btn3;
+        private System.Windows.Forms.Button btn2;
+        private System.Windows.Forms.Button btn1;
     }
 }

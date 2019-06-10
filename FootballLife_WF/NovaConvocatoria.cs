@@ -344,14 +344,17 @@ namespace FootballLife_WF
                     }
                     drLastConv.Close();
 
-                    string QueryDeleteTitulates = "DELETE FROM TblTitular WHERE FK_IDConvocatoria = " + IDLastConv;
-                    SqlCommand CommandDeleteTitulates = new SqlCommand(QueryDeleteTitulates, con);
-                    CommandDeleteTitulates.ExecuteNonQuery();
+                    if (IDLastConv != "")
+                    {
+                        string QueryDeleteTitulates = "DELETE FROM TblTitular WHERE FK_IDConvocatoria = " + IDLastConv;
+                        SqlCommand CommandDeleteTitulates = new SqlCommand(QueryDeleteTitulates, con);
+                        CommandDeleteTitulates.ExecuteNonQuery();
 
 
-                    string QueryDeleteSuplentes = "DELETE FROM TblSuplente WHERE FK_IDConvocatoria = " + IDLastConv;
-                    SqlCommand CommandDeleteSuplentes = new SqlCommand(QueryDeleteSuplentes, con);
-                    CommandDeleteSuplentes.ExecuteNonQuery();
+                        string QueryDeleteSuplentes = "DELETE FROM TblSuplente WHERE FK_IDConvocatoria = " + IDLastConv;
+                        SqlCommand CommandDeleteSuplentes = new SqlCommand(QueryDeleteSuplentes, con);
+                        CommandDeleteSuplentes.ExecuteNonQuery();
+                    }
 
 
                     string QueryDeleteConv = "DELETE FROM TblConvocatoria WHERE FK_IDEscalao = " + Properties.Settings.Default.IDEscalao;

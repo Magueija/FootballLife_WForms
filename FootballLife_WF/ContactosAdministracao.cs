@@ -50,7 +50,7 @@ namespace FootballLife_WF
 
                     Label Nome = new Label();
                     Nome.Location = new Point(10, 5);
-                    Nome.Text = NomeAdmin;
+                    Nome.Text = NomeAdmin + ":";
                     Nome.Width = 170;
                     Nome.Font = new Font("Berlin Sans FB Demi", 12, FontStyle.Regular);
                     Nome.Anchor = AnchorStyles.Top | AnchorStyles.Left;

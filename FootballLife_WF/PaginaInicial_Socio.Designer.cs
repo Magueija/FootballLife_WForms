@@ -250,6 +250,7 @@
             this.btn_Contactos.TabIndex = 21;
             this.btn_Contactos.Text = "CONTACTOS";
             this.btn_Contactos.UseVisualStyleBackColor = false;
+            this.btn_Contactos.Click += new System.EventHandler(this.Btn_Contactos_Click);
             // 
             // btn_CotaSocio
             // 

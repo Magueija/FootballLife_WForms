@@ -57,18 +57,18 @@
             this.lbl_Pesquisar = new System.Windows.Forms.Label();
             this.img_Linha = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbl_SemResultados_Lucros = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lbl_AddLucros = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.flowpanel_Lucros = new System.Windows.Forms.FlowLayoutPanel();
-            this.lbl_SemResultados_Lucros = new System.Windows.Forms.Label();
             this.btn_AddLucros = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lbl_SemResultados_Despesas = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbl_AddDespesas = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.flowpanel_Despesas = new System.Windows.Forms.FlowLayoutPanel();
-            this.lbl_SemResultados_Despesas = new System.Windows.Forms.Label();
             this.btn_AddDespesas = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.img_Fundo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Menu)).BeginInit();
@@ -178,6 +178,8 @@
             this.button5.TabIndex = 19;
             this.button5.Text = "UTILIZADORES";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Visible = false;
+            this.button5.Click += new System.EventHandler(this.Button5_Click);
             // 
             // btn_Inventario
             // 
@@ -194,6 +196,8 @@
             this.btn_Inventario.TabIndex = 18;
             this.btn_Inventario.Text = "INVENTÁRIO";
             this.btn_Inventario.UseVisualStyleBackColor = false;
+            this.btn_Inventario.Visible = false;
+            this.btn_Inventario.Click += new System.EventHandler(this.Btn_Inventario_Click);
             // 
             // btn_Financiamento
             // 
@@ -210,6 +214,7 @@
             this.btn_Financiamento.TabIndex = 17;
             this.btn_Financiamento.Text = "FINANCIAMENTO";
             this.btn_Financiamento.UseVisualStyleBackColor = false;
+            this.btn_Financiamento.Visible = false;
             // 
             // btn_Home
             // 
@@ -226,6 +231,7 @@
             this.btn_Home.TabIndex = 5;
             this.btn_Home.Text = "HOME";
             this.btn_Home.UseVisualStyleBackColor = false;
+            this.btn_Home.Click += new System.EventHandler(this.Btn_Home_Click);
             // 
             // button1
             // 
@@ -242,6 +248,7 @@
             this.button1.TabIndex = 6;
             this.button1.Text = "JOGOS";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // button2
             // 
@@ -258,6 +265,7 @@
             this.button2.TabIndex = 7;
             this.button2.Text = "EQUIPAS";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // lbl_Sessao
             // 
@@ -302,6 +310,7 @@
             this.button3.TabIndex = 8;
             this.button3.Text = "ESTÁDIO";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
             // img_LogOut
             // 
@@ -346,8 +355,9 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(130, 31);
             this.button4.TabIndex = 9;
-            this.button4.Text = "TÍTULOS";
+            this.button4.Text = "HISTÓRIA";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.Button4_Click);
             // 
             // img_Logo
             // 
@@ -498,6 +508,18 @@
             this.panel1.Size = new System.Drawing.Size(400, 355);
             this.panel1.TabIndex = 38;
             // 
+            // lbl_SemResultados_Lucros
+            // 
+            this.lbl_SemResultados_Lucros.AutoSize = true;
+            this.lbl_SemResultados_Lucros.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_SemResultados_Lucros.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lbl_SemResultados_Lucros.Location = new System.Drawing.Point(16, 79);
+            this.lbl_SemResultados_Lucros.Name = "lbl_SemResultados_Lucros";
+            this.lbl_SemResultados_Lucros.Size = new System.Drawing.Size(237, 15);
+            this.lbl_SemResultados_Lucros.TabIndex = 30;
+            this.lbl_SemResultados_Lucros.Text = "Sem resultados para os criterios da pesquisa!";
+            this.lbl_SemResultados_Lucros.Visible = false;
+            // 
             // pictureBox2
             // 
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -553,18 +575,6 @@
             this.flowpanel_Lucros.Size = new System.Drawing.Size(380, 268);
             this.flowpanel_Lucros.TabIndex = 38;
             // 
-            // lbl_SemResultados_Lucros
-            // 
-            this.lbl_SemResultados_Lucros.AutoSize = true;
-            this.lbl_SemResultados_Lucros.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_SemResultados_Lucros.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lbl_SemResultados_Lucros.Location = new System.Drawing.Point(16, 79);
-            this.lbl_SemResultados_Lucros.Name = "lbl_SemResultados_Lucros";
-            this.lbl_SemResultados_Lucros.Size = new System.Drawing.Size(237, 15);
-            this.lbl_SemResultados_Lucros.TabIndex = 30;
-            this.lbl_SemResultados_Lucros.Text = "Sem resultados para os criterios da pesquisa!";
-            this.lbl_SemResultados_Lucros.Visible = false;
-            // 
             // btn_AddLucros
             // 
             this.btn_AddLucros.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -604,6 +614,18 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(400, 355);
             this.panel2.TabIndex = 39;
+            // 
+            // lbl_SemResultados_Despesas
+            // 
+            this.lbl_SemResultados_Despesas.AutoSize = true;
+            this.lbl_SemResultados_Despesas.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_SemResultados_Despesas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lbl_SemResultados_Despesas.Location = new System.Drawing.Point(19, 79);
+            this.lbl_SemResultados_Despesas.Name = "lbl_SemResultados_Despesas";
+            this.lbl_SemResultados_Despesas.Size = new System.Drawing.Size(237, 15);
+            this.lbl_SemResultados_Despesas.TabIndex = 30;
+            this.lbl_SemResultados_Despesas.Text = "Sem resultados para os criterios da pesquisa!";
+            this.lbl_SemResultados_Despesas.Visible = false;
             // 
             // pictureBox1
             // 
@@ -659,18 +681,6 @@
             this.flowpanel_Despesas.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.flowpanel_Despesas.Size = new System.Drawing.Size(379, 265);
             this.flowpanel_Despesas.TabIndex = 39;
-            // 
-            // lbl_SemResultados_Despesas
-            // 
-            this.lbl_SemResultados_Despesas.AutoSize = true;
-            this.lbl_SemResultados_Despesas.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_SemResultados_Despesas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lbl_SemResultados_Despesas.Location = new System.Drawing.Point(19, 79);
-            this.lbl_SemResultados_Despesas.Name = "lbl_SemResultados_Despesas";
-            this.lbl_SemResultados_Despesas.Size = new System.Drawing.Size(237, 15);
-            this.lbl_SemResultados_Despesas.TabIndex = 30;
-            this.lbl_SemResultados_Despesas.Text = "Sem resultados para os criterios da pesquisa!";
-            this.lbl_SemResultados_Despesas.Visible = false;
             // 
             // btn_AddDespesas
             // 

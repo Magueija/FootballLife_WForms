@@ -132,6 +132,7 @@ namespace FootballLife_WF
             PaginaInicial PgInicio = new PaginaInicial();
             this.Hide();
             PgInicio.ShowDialog();
+            this.Dispose();
         }
 
         private void Btn_NovaDiscussao_Click(object sender, EventArgs e)
@@ -145,6 +146,7 @@ namespace FootballLife_WF
             Utilizadores Users = new Utilizadores();
             this.Hide();
             Users.ShowDialog();
+            this.Dispose();
         }
 
         private void Btn_Inventario_Click(object sender, EventArgs e)
@@ -152,6 +154,7 @@ namespace FootballLife_WF
             Inventario Inv = new Inventario();
             this.Hide();
             Inv.ShowDialog();
+            this.Dispose();
         }
 
         private void Btn_Convocatoria_Click(object sender, EventArgs e)
@@ -159,6 +162,7 @@ namespace FootballLife_WF
             Convocatoria conv = new Convocatoria();
             this.Hide();
             conv.ShowDialog();
+            this.Dispose();
         }
 
         private void Btn_Jogos_Click(object sender, EventArgs e)
@@ -166,6 +170,7 @@ namespace FootballLife_WF
             Jogos jgs = new Jogos();
             this.Hide();
             jgs.ShowDialog();
+            this.Dispose();
         }
 
         private void Btn_Equipas_Click(object sender, EventArgs e)
@@ -173,6 +178,7 @@ namespace FootballLife_WF
             Equipas Equipas = new Equipas();
             this.Hide();
             Equipas.ShowDialog();
+            this.Dispose();
         }
 
         private void Btn_Estadio_Click(object sender, EventArgs e)
@@ -180,11 +186,15 @@ namespace FootballLife_WF
             Estadio Estadio = new Estadio();
             this.Hide();
             Estadio.ShowDialog();
+            this.Dispose();
         }
 
         private void Btn_Titulos_Click(object sender, EventArgs e)
         {
-
+            Historia Hist = new Historia();
+            this.Hide();
+            Hist.ShowDialog();
+            this.Dispose();
         }
     }
 }

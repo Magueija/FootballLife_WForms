@@ -16,7 +16,9 @@ namespace FootballLife_WF
     {
         string IDJogo = "";
         string IDEscalao = "";
-        public Jogo(string IDjogo, string IDescalao, string Escalao, string Data, string EquipaCasa, string GolosCasa, string EquipaFora, string GolosFora, string Patch)
+
+
+        public Jogo(string IDjogo, string IDescalao, string Escalao, string Data, string EquipaCasa, string GolosCasa, string EquipaFora, string GolosFora, string patch)
         {
             InitializeComponent();
 
@@ -31,6 +33,8 @@ namespace FootballLife_WF
 
             lbl_FEquipa.Text = EquipaFora;
             lbl_FGolos.Text = GolosFora;
+
+            
 
             if (EquipaCasa == "Palmelense F.C." && Convert.ToInt32(GolosCasa) > Convert.ToInt32(GolosFora))
             {
@@ -55,14 +59,14 @@ namespace FootballLife_WF
 
             if (EquipaCasa == "Palmelense F.C.")
             {
-                //Bitmap bmp = new Bitmap(Patch);
+                Bitmap bmp = new Bitmap(patch);
                 img_Casa.Image = Properties.Resources.Logo_Clube;
-                //img_Fora.Image = bmp;
+                img_Fora.Image = bmp;
             }
             else if (EquipaFora == "Palmelense F.C.")
             {
-                //Bitmap bmp = new Bitmap(Patch);
-                //img_Casa.Image = bmp;
+                Bitmap bmp = new Bitmap(patch);
+                img_Casa.Image = bmp;
                 img_Fora.Image = Properties.Resources.Logo_Clube;
             }
 

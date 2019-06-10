@@ -31,6 +31,27 @@ namespace FootballLife_WF
             InvBenjamins();
             InvTraquinas();
             InvPetizes();
+
+            if (Properties.Settings.Default.FuncaoUser == "Admin")
+            {
+                btn1.Visible = true;
+                btn2.Visible = true;
+                btn3.Visible = true;
+
+                btn1.Text = "FINANCIAMENTO";
+                btn2.Text = "INVENTÁRIO";
+                btn3.Text = "UTILIZADORES";
+            }
+            else if (Properties.Settings.Default.FuncaoUser == "Treinador")
+            {
+                btn1.Visible = true;
+                btn2.Visible = true;
+                btn3.Visible = true;
+
+                btn1.Text = "CONVOCATÓRIA";
+                btn2.Text = "INVENTÁRIO";
+                btn3.Text = "CONTACTOS";
+            }
         }
 
         private void InvClube()
@@ -647,25 +668,35 @@ namespace FootballLife_WF
 
         private void Btn_Home_Click(object sender, EventArgs e)
         {
-            PaginaInicial_Admin PgAdmin = new PaginaInicial_Admin();
-            this.Hide();
-            PgAdmin.ShowDialog();
-            this.Dispose();
+            if (Properties.Settings.Default.FuncaoUser == "Admin")
+            {
+                PaginaInicial_Admin PgInicio = new PaginaInicial_Admin();
+                this.Hide();
+                PgInicio.ShowDialog();
+                this.Dispose();
+            }
+            else if (Properties.Settings.Default.FuncaoUser == "Treinador")
+            {
+                PaginaInicial_Treinador PgInicio = new PaginaInicial_Treinador();
+                this.Hide();
+                PgInicio.ShowDialog();
+                this.Dispose();
+            }
         }
 
         private void Btn_Jogos_Click(object sender, EventArgs e)
         {
-            PaginaInicial_Admin PgAdmin = new PaginaInicial_Admin();
+            Jogos jgs = new Jogos();
             this.Hide();
-            PgAdmin.ShowDialog();
+            jgs.ShowDialog();
             this.Dispose();
         }
 
         private void Btn_Equipas_Click(object sender, EventArgs e)
         {
-            PaginaInicial_Admin PgAdmin = new PaginaInicial_Admin();
+            Equipas Equipas = new Equipas();
             this.Hide();
-            PgAdmin.ShowDialog();
+            Equipas.ShowDialog();
             this.Dispose();
         }
 
@@ -679,22 +710,35 @@ namespace FootballLife_WF
 
         private void Btn_Titulos_Click(object sender, EventArgs e)
         {
-             
+            Historia hist = new Historia();
+            this.Hide();
+            hist.ShowDialog();
+            this.Dispose();
         }
 
         private void Btn_Financiamento_Click(object sender, EventArgs e)
         {
-            Financiamento Financas = new Financiamento();
-            this.Hide();
-            Financas.ShowDialog();
-            this.Dispose();
+            if (Properties.Settings.Default.FuncaoUser == "Admin")
+            {
+                Financiamento fin = new Financiamento();
+                this.Hide();
+                fin.ShowDialog();
+                this.Dispose();
+            }
+            else if (Properties.Settings.Default.FuncaoUser == "Treinador")
+            {
+                Convocatoria conv = new Convocatoria();
+                this.Hide();
+                conv.ShowDialog();
+                this.Dispose();
+            }
         }
 
         private void Btn_Utilizadores_Click(object sender, EventArgs e)
         {
-            Utilizadores Users = new Utilizadores();
+            Utilizadores users = new Utilizadores();
             this.Hide();
-            Users.ShowDialog();
+            users.ShowDialog();
             this.Dispose();
         }
     }

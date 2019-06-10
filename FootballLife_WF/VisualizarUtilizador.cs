@@ -27,7 +27,14 @@ namespace FootballLife_WF
         {
             if(Properties.Settings.Default.FuncaoUser == "Treinador")
             {
-                if (Funcao == "Treinador")
+                if (Funcao == "Admin")
+                {
+                    Escalao.Visible = false;
+                    lbl_Escalao.Visible = false;
+
+                    Admin();
+                }
+                else if (Funcao == "Treinador")
                 {
                     Treinador();
                 }
@@ -82,7 +89,7 @@ namespace FootballLife_WF
             {
 
                 SqlDataReader dr;
-                string QueryAdmin = ("SELECT Nome, Telemovel, Email, FROM TblAdministrador WHERE IDAdministrador = " + ID);
+                string QueryAdmin = ("SELECT Nome, Telemovel, Email FROM TblAdministrador WHERE IDAdministrador = " + ID);
                 SqlCommand CommandAdmin = new SqlCommand(QueryAdmin, con);
                 dr = CommandAdmin.ExecuteReader();
                 while (dr.Read())
@@ -96,9 +103,13 @@ namespace FootballLife_WF
 
                 Lbl_Titulo.Text = Nome;
 
-                this.Nome.Text = Nome;
-                this.Telemovel.Text = Telemovel;
-                this.Email.Text = Email;
+                lbl_Nome.Text = Nome;
+                lbl_Email.Text = Email;
+
+                if (Telemovel != "0")
+                {
+                    lbl_Telemovel.Text = Telemovel;
+                }
             }
             catch (Exception x)
             {
@@ -117,12 +128,13 @@ namespace FootballLife_WF
             string Nome = "";
             string Telemovel = "";
             string Email = "";
+            string Escalao = "";
 
             try
             {
 
                 SqlDataReader dr;
-                string QueryAdmin = ("SELECT Nome, Telemovel, Email, FROM TblTreinador WHERE IDTreinador = " + ID);
+                string QueryAdmin = ("SELECT dbo.TblTreinador.Nome, dbo.TblTreinador.Telemovel, dbo.TblTreinador.Email, dbo.TblEscalao.Escalao FROM dbo.TblTreinador INNER JOIN dbo.TblEscalao ON dbo.TblTreinador.FK_IDEscalao = dbo.TblEscalao.IDEscalao WHERE dbo.TblTreinador.IDTreinador = " + ID);
                 SqlCommand CommandAdmin = new SqlCommand(QueryAdmin, con);
                 dr = CommandAdmin.ExecuteReader();
                 while (dr.Read())
@@ -130,15 +142,21 @@ namespace FootballLife_WF
                     Nome = dr["Nome"].ToString();
                     Telemovel = dr["Telemovel"].ToString();
                     Email = dr["Email"].ToString();
+                    Escalao = dr["Escalao"].ToString();
                 }
                 dr.Close();
 
 
                 Lbl_Titulo.Text = Nome;
 
-                this.Nome.Text = Nome;
-                this.Telemovel.Text = Telemovel;
-                this.Email.Text = Email;
+                lbl_Nome.Text = Nome;
+                lbl_Email.Text = Email;
+                lbl_Escalao.Text = Escalao;
+
+                if (Telemovel != "0")
+                {
+                    lbl_Telemovel.Text = Telemovel;
+                }
             }
             catch (Exception x)
             {
@@ -162,7 +180,7 @@ namespace FootballLife_WF
             {
 
                 SqlDataReader dr;
-                string QueryAdmin = ("SELECT Nome, Telemovel, Email, FROM TblAtleta WHERE IDAtleta = " + ID);
+                string QueryAdmin = ("SELECT Nome, Telemovel, Email FROM TblAtleta WHERE IDAtleta = " + ID);
                 SqlCommand CommandAdmin = new SqlCommand(QueryAdmin, con);
                 dr = CommandAdmin.ExecuteReader();
                 while (dr.Read())
@@ -176,9 +194,13 @@ namespace FootballLife_WF
 
                 Lbl_Titulo.Text = Nome;
 
-                this.Nome.Text = Nome;
-                this.Telemovel.Text = Telemovel;
-                this.Email.Text = Email;
+                lbl_Nome.Text = Nome;
+                lbl_Email.Text = Email;
+
+                if (Telemovel != "0")
+                {
+                    lbl_Telemovel.Text = Telemovel;
+                }
             }
             catch (Exception x)
             {
@@ -202,7 +224,7 @@ namespace FootballLife_WF
             {
 
                 SqlDataReader dr;
-                string QueryAdmin = ("SELECT Nome, Telemovel, Email, FROM TblSocio WHERE IDSocio = " + ID);
+                string QueryAdmin = ("SELECT Nome, Telemovel, Email FROM TblSocio WHERE IDSocio = " + ID);
                 SqlCommand CommandAdmin = new SqlCommand(QueryAdmin, con);
                 dr = CommandAdmin.ExecuteReader();
                 while (dr.Read())
@@ -216,9 +238,13 @@ namespace FootballLife_WF
 
                 Lbl_Titulo.Text = Nome;
 
-                this.Nome.Text = Nome;
-                this.Telemovel.Text = Telemovel;
-                this.Email.Text = Email;
+                lbl_Nome.Text = Nome;
+                lbl_Email.Text = Email;
+
+                if (Telemovel != "0")
+                {
+                    lbl_Telemovel.Text = Telemovel;
+                }
             }
             catch (Exception x)
             {
@@ -231,5 +257,6 @@ namespace FootballLife_WF
         {
             this.Dispose();
         }
+
     }
 }

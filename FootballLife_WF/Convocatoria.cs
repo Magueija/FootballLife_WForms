@@ -24,6 +24,19 @@ namespace FootballLife_WF
             Titulares();
             Suplentes();
             NaoConvocados();
+
+            if (Properties.Settings.Default.FuncaoUser == "Treinador")
+            {
+                btn_NovaConvocatoria.Visible = true;
+                img_NovaConvocatoria.Visible = true;
+                lbl_NovaConvocatoria.Visible = true;
+            }
+            else
+            {
+                btn_NovaConvocatoria.Visible = false;
+                img_NovaConvocatoria.Visible = false;
+                lbl_NovaConvocatoria.Visible = false;
+            }
         }
 
         string Tatica = "";
@@ -633,17 +646,22 @@ namespace FootballLife_WF
 
         private void Btn_Inventario_Click(object sender, EventArgs e)
         {
-            Inventario Inv = new Inventario();
-            this.Hide();
-            Inv.ShowDialog();
+            if (Properties.Settings.Default.FuncaoUser == "Admin" || Properties.Settings.Default.FuncaoUser == "Treinador")
+            {
+                Inventario inv = new Inventario();
+                this.Hide();
+                inv.ShowDialog();
+                this.Dispose();
+            }
+            else if (Properties.Settings.Default.FuncaoUser == "Atleta")
+            {
+                Cota ct = new Cota();
+                this.Hide();
+                ct.ShowDialog();
+                this.Dispose();
+            }
         }
 
-        private void Btn_Financiamento_Click(object sender, EventArgs e)
-        {
-            Financiamento financas = new Financiamento();
-            this.Hide();
-            financas.ShowDialog();
-        }
 
         private void Btn_Jogos_Click(object sender, EventArgs e)
         {
@@ -668,7 +686,10 @@ namespace FootballLife_WF
 
         private void Btn_Titulos_Click(object sender, EventArgs e)
         {
-
+            Historia Hist = new Historia();
+            this.Hide();
+            Hist.ShowDialog();
+            this.Dispose();
         }
 
         private void Btn_NovaConvocatoria_Click(object sender, EventArgs e)
@@ -680,6 +701,24 @@ namespace FootballLife_WF
             Titulares();
             Suplentes();
             NaoConvocados();
+        }
+
+        private void Btn_Home_Click(object sender, EventArgs e)
+        {
+            if (Properties.Settings.Default.FuncaoUser == "Treinador")
+            {
+                PaginaInicial_Treinador PgInicio = new PaginaInicial_Treinador();
+                this.Hide();
+                PgInicio.ShowDialog();
+                this.Dispose();
+            }
+            else if (Properties.Settings.Default.FuncaoUser == "Atleta")
+            {
+                PaginaInicial_Atleta PgInicio = new PaginaInicial_Atleta();
+                this.Hide();
+                PgInicio.ShowDialog();
+                this.Dispose();
+            }
         }
     }
 }

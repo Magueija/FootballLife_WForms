@@ -38,9 +38,9 @@
             this.btn_Estadio = new System.Windows.Forms.Button();
             this.btn_Titulos = new System.Windows.Forms.Button();
             this.panel_Menu = new System.Windows.Forms.Panel();
-            this.btn_Contactos = new System.Windows.Forms.Button();
-            this.btn_CotaAtleta = new System.Windows.Forms.Button();
-            this.btn_Convocatoria = new System.Windows.Forms.Button();
+            this.btn3 = new System.Windows.Forms.Button();
+            this.btn2 = new System.Windows.Forms.Button();
+            this.btn1 = new System.Windows.Forms.Button();
             this.lbl_Sessao = new System.Windows.Forms.Label();
             this.lbl_Terminar = new System.Windows.Forms.Label();
             this.img_LogOut = new System.Windows.Forms.PictureBox();
@@ -155,6 +155,7 @@
             this.btn_Home.TabIndex = 5;
             this.btn_Home.Text = "HOME";
             this.btn_Home.UseVisualStyleBackColor = false;
+            this.btn_Home.Click += new System.EventHandler(this.Btn_Home_Click);
             // 
             // btn_Jogos
             // 
@@ -171,6 +172,7 @@
             this.btn_Jogos.TabIndex = 6;
             this.btn_Jogos.Text = "JOGOS";
             this.btn_Jogos.UseVisualStyleBackColor = false;
+            this.btn_Jogos.Click += new System.EventHandler(this.Btn_Jogos_Click);
             // 
             // btn_Equipas
             // 
@@ -187,6 +189,7 @@
             this.btn_Equipas.TabIndex = 7;
             this.btn_Equipas.Text = "EQUIPAS";
             this.btn_Equipas.UseVisualStyleBackColor = false;
+            this.btn_Equipas.Click += new System.EventHandler(this.Btn_Equipas_Click);
             // 
             // btn_Estadio
             // 
@@ -203,6 +206,7 @@
             this.btn_Estadio.TabIndex = 8;
             this.btn_Estadio.Text = "ESTÁDIO";
             this.btn_Estadio.UseVisualStyleBackColor = false;
+            this.btn_Estadio.Click += new System.EventHandler(this.Btn_Estadio_Click);
             // 
             // btn_Titulos
             // 
@@ -217,19 +221,20 @@
             this.btn_Titulos.Name = "btn_Titulos";
             this.btn_Titulos.Size = new System.Drawing.Size(130, 31);
             this.btn_Titulos.TabIndex = 9;
-            this.btn_Titulos.Text = "TÍTULOS";
+            this.btn_Titulos.Text = "HISTÓRIA";
             this.btn_Titulos.UseVisualStyleBackColor = false;
+            this.btn_Titulos.Click += new System.EventHandler(this.Btn_Titulos_Click);
             // 
             // panel_Menu
             // 
             this.panel_Menu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel_Menu.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel_Menu.Controls.Add(this.btn_Contactos);
+            this.panel_Menu.Controls.Add(this.btn3);
             this.panel_Menu.Controls.Add(this.btn_Home);
-            this.panel_Menu.Controls.Add(this.btn_CotaAtleta);
+            this.panel_Menu.Controls.Add(this.btn2);
             this.panel_Menu.Controls.Add(this.btn_Jogos);
-            this.panel_Menu.Controls.Add(this.btn_Convocatoria);
+            this.panel_Menu.Controls.Add(this.btn1);
             this.panel_Menu.Controls.Add(this.btn_Equipas);
             this.panel_Menu.Controls.Add(this.btn_Estadio);
             this.panel_Menu.Controls.Add(this.btn_Titulos);
@@ -243,53 +248,59 @@
             this.panel_Menu.TabIndex = 12;
             this.panel_Menu.Visible = false;
             // 
-            // btn_Contactos
+            // btn3
             // 
-            this.btn_Contactos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.btn3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Contactos.BackColor = System.Drawing.Color.Black;
-            this.btn_Contactos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Contactos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Contactos.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Contactos.ForeColor = System.Drawing.Color.White;
-            this.btn_Contactos.Location = new System.Drawing.Point(12, 324);
-            this.btn_Contactos.Name = "btn_Contactos";
-            this.btn_Contactos.Size = new System.Drawing.Size(130, 31);
-            this.btn_Contactos.TabIndex = 23;
-            this.btn_Contactos.Text = "CONTACTOS";
-            this.btn_Contactos.UseVisualStyleBackColor = false;
+            this.btn3.BackColor = System.Drawing.Color.Black;
+            this.btn3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn3.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn3.ForeColor = System.Drawing.Color.White;
+            this.btn3.Location = new System.Drawing.Point(12, 324);
+            this.btn3.Name = "btn3";
+            this.btn3.Size = new System.Drawing.Size(130, 31);
+            this.btn3.TabIndex = 23;
+            this.btn3.Text = "CONTACTOS";
+            this.btn3.UseVisualStyleBackColor = false;
+            this.btn3.Visible = false;
+            this.btn3.Click += new System.EventHandler(this.Btn3_Click);
             // 
-            // btn_CotaAtleta
+            // btn2
             // 
-            this.btn_CotaAtleta.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.btn2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_CotaAtleta.BackColor = System.Drawing.Color.Black;
-            this.btn_CotaAtleta.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_CotaAtleta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_CotaAtleta.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_CotaAtleta.ForeColor = System.Drawing.Color.White;
-            this.btn_CotaAtleta.Location = new System.Drawing.Point(12, 287);
-            this.btn_CotaAtleta.Name = "btn_CotaAtleta";
-            this.btn_CotaAtleta.Size = new System.Drawing.Size(130, 31);
-            this.btn_CotaAtleta.TabIndex = 22;
-            this.btn_CotaAtleta.Text = "COTA DE ATLETA";
-            this.btn_CotaAtleta.UseVisualStyleBackColor = false;
+            this.btn2.BackColor = System.Drawing.Color.Black;
+            this.btn2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn2.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn2.ForeColor = System.Drawing.Color.White;
+            this.btn2.Location = new System.Drawing.Point(12, 287);
+            this.btn2.Name = "btn2";
+            this.btn2.Size = new System.Drawing.Size(130, 31);
+            this.btn2.TabIndex = 22;
+            this.btn2.Text = "COTA DE ATLETA";
+            this.btn2.UseVisualStyleBackColor = false;
+            this.btn2.Visible = false;
+            this.btn2.Click += new System.EventHandler(this.Btn2_Click);
             // 
-            // btn_Convocatoria
+            // btn1
             // 
-            this.btn_Convocatoria.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.btn1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Convocatoria.BackColor = System.Drawing.Color.Black;
-            this.btn_Convocatoria.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Convocatoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Convocatoria.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Convocatoria.ForeColor = System.Drawing.Color.White;
-            this.btn_Convocatoria.Location = new System.Drawing.Point(12, 250);
-            this.btn_Convocatoria.Name = "btn_Convocatoria";
-            this.btn_Convocatoria.Size = new System.Drawing.Size(130, 31);
-            this.btn_Convocatoria.TabIndex = 21;
-            this.btn_Convocatoria.Text = "CONVOCATÓRIA";
-            this.btn_Convocatoria.UseVisualStyleBackColor = false;
+            this.btn1.BackColor = System.Drawing.Color.Black;
+            this.btn1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn1.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn1.ForeColor = System.Drawing.Color.White;
+            this.btn1.Location = new System.Drawing.Point(12, 250);
+            this.btn1.Name = "btn1";
+            this.btn1.Size = new System.Drawing.Size(130, 31);
+            this.btn1.TabIndex = 21;
+            this.btn1.Text = "CONVOCATÓRIA";
+            this.btn1.UseVisualStyleBackColor = false;
+            this.btn1.Visible = false;
+            this.btn1.Click += new System.EventHandler(this.Btn1_Click);
             // 
             // lbl_Sessao
             // 
@@ -772,9 +783,9 @@
         private System.Windows.Forms.PictureBox img_LogOut;
         private System.Windows.Forms.Label lbl_Terminar;
         private System.Windows.Forms.Button btn_TopMenu;
-        private System.Windows.Forms.Button btn_Contactos;
-        private System.Windows.Forms.Button btn_CotaAtleta;
-        private System.Windows.Forms.Button btn_Convocatoria;
+        private System.Windows.Forms.Button btn3;
+        private System.Windows.Forms.Button btn2;
+        private System.Windows.Forms.Button btn1;
         private System.Windows.Forms.Button btn_LogOut;
         private System.Windows.Forms.Label lbl_Titulo;
         private System.Windows.Forms.Panel panel_APagar;

@@ -61,6 +61,8 @@
             this.label16 = new System.Windows.Forms.Label();
             this.img_LogoFora = new System.Windows.Forms.PictureBox();
             this.img_LogoCasa = new System.Windows.Forms.PictureBox();
+            this.txtpathCasa = new System.Windows.Forms.TextBox();
+            this.txtpathFora = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.img_LogoFora)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_LogoCasa)).BeginInit();
             this.SuspendLayout();
@@ -237,7 +239,7 @@
             this.btn_UploadFora.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_UploadFora.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_UploadFora.ForeColor = System.Drawing.Color.Black;
-            this.btn_UploadFora.Location = new System.Drawing.Point(453, 282);
+            this.btn_UploadFora.Location = new System.Drawing.Point(453, 300);
             this.btn_UploadFora.Name = "btn_UploadFora";
             this.btn_UploadFora.Size = new System.Drawing.Size(100, 25);
             this.btn_UploadFora.TabIndex = 67;
@@ -255,7 +257,7 @@
             this.btn_UploadCasa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_UploadCasa.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_UploadCasa.ForeColor = System.Drawing.Color.Black;
-            this.btn_UploadCasa.Location = new System.Drawing.Point(96, 282);
+            this.btn_UploadCasa.Location = new System.Drawing.Point(96, 300);
             this.btn_UploadCasa.Name = "btn_UploadCasa";
             this.btn_UploadCasa.Size = new System.Drawing.Size(100, 25);
             this.btn_UploadCasa.TabIndex = 68;
@@ -323,7 +325,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.Firebrick;
-            this.label12.Location = new System.Drawing.Point(196, 282);
+            this.label12.Location = new System.Drawing.Point(202, 300);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(12, 15);
             this.label12.TabIndex = 75;
@@ -413,12 +415,32 @@
             this.img_LogoCasa.TabIndex = 54;
             this.img_LogoCasa.TabStop = false;
             // 
+            // txtpathCasa
+            // 
+            this.txtpathCasa.Location = new System.Drawing.Point(96, 278);
+            this.txtpathCasa.Name = "txtpathCasa";
+            this.txtpathCasa.ReadOnly = true;
+            this.txtpathCasa.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtpathCasa.Size = new System.Drawing.Size(100, 20);
+            this.txtpathCasa.TabIndex = 82;
+            // 
+            // txtpathFora
+            // 
+            this.txtpathFora.Location = new System.Drawing.Point(453, 278);
+            this.txtpathFora.Name = "txtpathFora";
+            this.txtpathFora.ReadOnly = true;
+            this.txtpathFora.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtpathFora.Size = new System.Drawing.Size(100, 20);
+            this.txtpathFora.TabIndex = 83;
+            // 
             // NovoResultado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(728, 682);
+            this.Controls.Add(this.txtpathFora);
+            this.Controls.Add(this.txtpathCasa);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.tb_Hora);
             this.Controls.Add(this.label17);
@@ -499,5 +521,7 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox tb_Hora;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox txtpathCasa;
+        private System.Windows.Forms.TextBox txtpathFora;
     }
 }

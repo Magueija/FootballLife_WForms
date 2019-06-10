@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace FootballLife_WF
 {
@@ -28,6 +29,50 @@ namespace FootballLife_WF
                 btn_NovoResultado.Visible = false;
                 lbl_NovoResultado.Visible = false;
                 img_NovoResultado.Visible = false;
+            }
+        }
+
+        private void Jogos_Load(object sender, EventArgs e)
+        {
+            JogoTodos();
+
+            if (Properties.Settings.Default.FuncaoUser == "Admin")
+            {
+                btn1.Visible = true;
+                btn2.Visible = true;
+                btn3.Visible = true;
+
+                btn1.Text = "FINANCIAMENTO";
+                btn2.Text = "INVENTÁRIO";
+                btn3.Text = "UTILIZADORES";
+            }
+            else if (Properties.Settings.Default.FuncaoUser == "Treinador")
+            {
+                btn1.Visible = true;
+                btn2.Visible = true;
+                btn3.Visible = true;
+
+                btn1.Text = "CONVOCATÓRIA";
+                btn2.Text = "INVENTÁRIO";
+                btn3.Text = "CONTACTOS";
+            }
+            else if (Properties.Settings.Default.FuncaoUser == "Atleta")
+            {
+                btn1.Visible = true;
+                btn2.Visible = true;
+                btn3.Visible = true;
+
+                btn1.Text = "CONVOCATÓRIA";
+                btn2.Text = "COTA DE ATLETA";
+                btn3.Text = "CONTACTOS";
+            }
+            else if (Properties.Settings.Default.FuncaoUser == "Socio")
+            {
+                btn1.Visible = true;
+                btn2.Visible = true;
+
+                btn1.Text = "COTA DE SÓCIO";
+                btn2.Text = "CONTACTOS";
             }
         }
 
@@ -113,10 +158,42 @@ namespace FootballLife_WF
 
         private void Btn_Home_Click(object sender, EventArgs e)
         {
-            PaginaInicial PgInicio = new PaginaInicial();
-            this.Hide();
-            PgInicio.ShowDialog();
-            this.Dispose();
+            if (Properties.Settings.Default.FuncaoUser == "Admin")
+            {
+                PaginaInicial_Admin PgInicio = new PaginaInicial_Admin();
+                this.Hide();
+                PgInicio.ShowDialog();
+                this.Dispose();
+            }
+            else if (Properties.Settings.Default.FuncaoUser == "Treinador")
+            {
+                PaginaInicial_Treinador PgInicio = new PaginaInicial_Treinador();
+                this.Hide();
+                PgInicio.ShowDialog();
+                this.Dispose();
+            }
+            else if (Properties.Settings.Default.FuncaoUser == "Atleta")
+            {
+                PaginaInicial_Atleta PgInicio = new PaginaInicial_Atleta();
+                this.Hide();
+                PgInicio.ShowDialog();
+                this.Dispose();
+            }
+            else if (Properties.Settings.Default.FuncaoUser == "Socio")
+            {
+                PaginaInicial_Socio PgInicio = new PaginaInicial_Socio();
+                this.Hide();
+                PgInicio.ShowDialog();
+                this.Dispose();
+            }
+            else
+            {
+                PaginaInicial PgInicio = new PaginaInicial();
+                this.Hide();
+                PgInicio.ShowDialog();
+                this.Dispose();
+            }
+            
         }
 
         private void Btn_Equipas_Click(object sender, EventArgs e)
@@ -135,11 +212,9 @@ namespace FootballLife_WF
             this.Dispose();
         }
 
-        private void Jogos_Load(object sender, EventArgs e)
-        {
-            JogoTodos();
-        }
+        
 
+        string folderpath = @" \Projeto_WindowsForms\LogoEquipas\";
         private void Jogo(string IDEscalao)
         {
             flowpanel_Jogos.Controls.Clear();
@@ -183,7 +258,15 @@ namespace FootballLife_WF
 
                     patch = dr["Path_ImgAdversario"].ToString();
 
-                    Jogo jogo = new Jogo(IDJogo, idescalao, Escalao, Data, EquipaCasa, GolosCasa, EquipaFora, GolosFora, patch);
+                    if (!Directory.Exists(folderpath))
+                    {
+                        Directory.CreateDirectory(folderpath);
+                    }
+
+                    File.Copy(patch, Path.Combine(folderpath, Path.GetFileName(patch)), true);
+                    string Patch = Path.Combine(folderpath, Path.GetFileName(patch));
+
+                    Jogo jogo = new Jogo(IDJogo, idescalao, Escalao, Data, EquipaCasa, GolosCasa, EquipaFora, GolosFora, Patch);
                     flowpanel_Jogos.Controls.Add(jogo);
                 }
                 dr.Close();
@@ -197,6 +280,8 @@ namespace FootballLife_WF
 
         private void JogoTodos()
         {
+            flowpanel_Jogos.Controls.Clear();
+
             SqlConnection con = new SqlConnection(Properties.Settings.Default.Connection);
             con.Open();
 
@@ -303,9 +388,75 @@ namespace FootballLife_WF
         private void NovoResultado_Click(object sender, EventArgs e)
         {
             NovoResultado jogo = new NovoResultado();
-            jogo.Show();
+            jogo.ShowDialog();
 
             JogoTodos();
+        }
+
+        private void Btn_Titulos_Click(object sender, EventArgs e)
+        {
+            Historia Hist = new Historia();
+            this.Hide();
+            Hist.ShowDialog();
+            this.Dispose();
+        }
+
+        private void Btn1_Click(object sender, EventArgs e)
+        {
+            if (Properties.Settings.Default.FuncaoUser == "Admin")
+            {
+                Financiamento fin = new Financiamento();
+                this.Hide();
+                fin.ShowDialog();
+                this.Dispose();
+            }
+            else if (Properties.Settings.Default.FuncaoUser == "Treinador" || Properties.Settings.Default.FuncaoUser == "Atleta")
+            {
+                Convocatoria conv = new Convocatoria();
+                this.Hide();
+                conv.ShowDialog();
+                this.Dispose();
+            }
+            else if (Properties.Settings.Default.FuncaoUser == "Socio")
+            {
+                Cota cota = new Cota();
+                this.Hide();
+                cota.ShowDialog();
+                this.Dispose();
+            }
+        }
+
+        private void Btn2_Click(object sender, EventArgs e)
+        {
+            if (Properties.Settings.Default.FuncaoUser == "Admin" || Properties.Settings.Default.FuncaoUser == "Treinador")
+            {
+                Inventario inv = new Inventario();
+                this.Hide();
+                inv.ShowDialog();
+                this.Dispose();
+            }
+            else if (Properties.Settings.Default.FuncaoUser == "Atleta")
+            {
+                Cota ct = new Cota();
+                this.Hide();
+                ct.ShowDialog();
+                this.Dispose();
+            }
+            else if (Properties.Settings.Default.FuncaoUser == "Socio")
+            {
+                Utilizadores users = new Utilizadores();
+                this.Hide();
+                users.ShowDialog();
+                this.Dispose();
+            }
+        }
+
+        private void Btn3_Click(object sender, EventArgs e)
+        {
+            Utilizadores users = new Utilizadores();
+            this.Hide();
+            users.ShowDialog();
+            this.Dispose();
         }
     }
 }

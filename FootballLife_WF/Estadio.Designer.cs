@@ -38,6 +38,9 @@
             this.btn_Jogos = new System.Windows.Forms.Button();
             this.btn_Home = new System.Windows.Forms.Button();
             this.panel_Menu = new System.Windows.Forms.Panel();
+            this.btn3 = new System.Windows.Forms.Button();
+            this.btn2 = new System.Windows.Forms.Button();
+            this.btn1 = new System.Windows.Forms.Button();
             this.lbl_Titulo = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -106,7 +109,7 @@
             this.img_Logo.BackColor = System.Drawing.Color.Transparent;
             this.img_Logo.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.img_Logo.Image = global::FootballLife_WF.Properties.Resources.Logo_Clube;
-            this.img_Logo.Location = new System.Drawing.Point(1291, 12);
+            this.img_Logo.Location = new System.Drawing.Point(1294, 12);
             this.img_Logo.MaximumSize = new System.Drawing.Size(44, 40);
             this.img_Logo.MinimumSize = new System.Drawing.Size(44, 40);
             this.img_Logo.Name = "img_Logo";
@@ -141,7 +144,7 @@
             this.btn_Titulos.Name = "btn_Titulos";
             this.btn_Titulos.Size = new System.Drawing.Size(128, 31);
             this.btn_Titulos.TabIndex = 9;
-            this.btn_Titulos.Text = "TÍTULOS";
+            this.btn_Titulos.Text = "HISTÓRIA";
             this.btn_Titulos.UseVisualStyleBackColor = false;
             this.btn_Titulos.Click += new System.EventHandler(this.Btn_Titulos_Click);
             // 
@@ -160,7 +163,6 @@
             this.btn_Estadio.TabIndex = 8;
             this.btn_Estadio.Text = "ESTÁDIO";
             this.btn_Estadio.UseVisualStyleBackColor = false;
-            this.btn_Estadio.Click += new System.EventHandler(this.Btn_Estadio_Click);
             // 
             // btn_Equipas
             // 
@@ -211,6 +213,7 @@
             this.btn_Home.TabIndex = 5;
             this.btn_Home.Text = "HOME";
             this.btn_Home.UseVisualStyleBackColor = false;
+            this.btn_Home.Click += new System.EventHandler(this.Btn_Home_Click);
             // 
             // panel_Menu
             // 
@@ -218,16 +221,73 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel_Menu.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel_Menu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_Menu.Controls.Add(this.btn3);
             this.panel_Menu.Controls.Add(this.btn_Home);
+            this.panel_Menu.Controls.Add(this.btn2);
             this.panel_Menu.Controls.Add(this.btn_Jogos);
+            this.panel_Menu.Controls.Add(this.btn1);
             this.panel_Menu.Controls.Add(this.btn_Equipas);
             this.panel_Menu.Controls.Add(this.btn_Estadio);
             this.panel_Menu.Controls.Add(this.btn_Titulos);
             this.panel_Menu.Location = new System.Drawing.Point(0, 63);
             this.panel_Menu.Name = "panel_Menu";
-            this.panel_Menu.Size = new System.Drawing.Size(160, 1809);
+            this.panel_Menu.Size = new System.Drawing.Size(160, 3987);
             this.panel_Menu.TabIndex = 12;
             this.panel_Menu.Visible = false;
+            // 
+            // btn3
+            // 
+            this.btn3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn3.BackColor = System.Drawing.Color.Black;
+            this.btn3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn3.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn3.ForeColor = System.Drawing.Color.White;
+            this.btn3.Location = new System.Drawing.Point(12, 324);
+            this.btn3.Name = "btn3";
+            this.btn3.Size = new System.Drawing.Size(128, 31);
+            this.btn3.TabIndex = 48;
+            this.btn3.Text = "UTILIZADORES";
+            this.btn3.UseVisualStyleBackColor = false;
+            this.btn3.Visible = false;
+            this.btn3.Click += new System.EventHandler(this.Btn3_Click);
+            // 
+            // btn2
+            // 
+            this.btn2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn2.BackColor = System.Drawing.Color.Black;
+            this.btn2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn2.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn2.ForeColor = System.Drawing.Color.White;
+            this.btn2.Location = new System.Drawing.Point(12, 287);
+            this.btn2.Name = "btn2";
+            this.btn2.Size = new System.Drawing.Size(128, 31);
+            this.btn2.TabIndex = 47;
+            this.btn2.Text = "INVENTÁRIO";
+            this.btn2.UseVisualStyleBackColor = false;
+            this.btn2.Visible = false;
+            this.btn2.Click += new System.EventHandler(this.Btn2_Click);
+            // 
+            // btn1
+            // 
+            this.btn1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn1.BackColor = System.Drawing.Color.Black;
+            this.btn1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn1.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn1.ForeColor = System.Drawing.Color.White;
+            this.btn1.Location = new System.Drawing.Point(12, 250);
+            this.btn1.Name = "btn1";
+            this.btn1.Size = new System.Drawing.Size(128, 31);
+            this.btn1.TabIndex = 46;
+            this.btn1.Text = "FINANCIAMENTO";
+            this.btn1.UseVisualStyleBackColor = false;
+            this.btn1.Visible = false;
+            this.btn1.Click += new System.EventHandler(this.Btn1_Click);
             // 
             // lbl_Titulo
             // 
@@ -236,7 +296,7 @@
             this.lbl_Titulo.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Titulo.Font = new System.Drawing.Font("Bauhaus 93", 65.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Titulo.ForeColor = System.Drawing.Color.White;
-            this.lbl_Titulo.Location = new System.Drawing.Point(506, 109);
+            this.lbl_Titulo.Location = new System.Drawing.Point(461, 109);
             this.lbl_Titulo.Name = "lbl_Titulo";
             this.lbl_Titulo.Size = new System.Drawing.Size(327, 98);
             this.lbl_Titulo.TabIndex = 15;
@@ -261,7 +321,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Berlin Sans FB Demi", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(493, 24);
+            this.label1.Location = new System.Drawing.Point(501, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(332, 24);
             this.label1.TabIndex = 16;
@@ -273,7 +333,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(459, 85);
+            this.label3.Location = new System.Drawing.Point(467, 85);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(396, 18);
             this.label3.TabIndex = 18;
@@ -285,7 +345,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(350, 67);
+            this.label2.Location = new System.Drawing.Point(358, 67);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(619, 18);
             this.label2.TabIndex = 17;
@@ -297,7 +357,7 @@
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.pictureBox1);
-            this.panel3.Location = new System.Drawing.Point(39, 427);
+            this.panel3.Location = new System.Drawing.Point(51, 427);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(438, 302);
             this.panel3.TabIndex = 34;
@@ -318,7 +378,7 @@
             this.panel9.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel9.Controls.Add(this.pictureBox3);
-            this.panel9.Location = new System.Drawing.Point(476, 427);
+            this.panel9.Location = new System.Drawing.Point(488, 427);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(408, 237);
             this.panel9.TabIndex = 40;
@@ -339,7 +399,7 @@
             this.panel5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.pictureBox4);
-            this.panel5.Location = new System.Drawing.Point(879, 709);
+            this.panel5.Location = new System.Drawing.Point(891, 709);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(403, 195);
             this.panel5.TabIndex = 41;
@@ -360,7 +420,7 @@
             this.panel4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.pictureBox8);
-            this.panel4.Location = new System.Drawing.Point(476, 662);
+            this.panel4.Location = new System.Drawing.Point(488, 662);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(404, 181);
             this.panel4.TabIndex = 35;
@@ -381,7 +441,7 @@
             this.panel6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel6.Controls.Add(this.pictureBox6);
-            this.panel6.Location = new System.Drawing.Point(39, 728);
+            this.panel6.Location = new System.Drawing.Point(51, 728);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(438, 347);
             this.panel6.TabIndex = 42;
@@ -402,7 +462,7 @@
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Location = new System.Drawing.Point(476, 842);
+            this.panel2.Location = new System.Drawing.Point(488, 842);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(404, 233);
             this.panel2.TabIndex = 40;
@@ -423,7 +483,7 @@
             this.panel7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel7.Controls.Add(this.pictureBox7);
-            this.panel7.Location = new System.Drawing.Point(879, 903);
+            this.panel7.Location = new System.Drawing.Point(891, 903);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(403, 172);
             this.panel7.TabIndex = 43;
@@ -444,7 +504,7 @@
             this.panel8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel8.Controls.Add(this.pictureBox5);
-            this.panel8.Location = new System.Drawing.Point(879, 427);
+            this.panel8.Location = new System.Drawing.Point(891, 427);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(403, 283);
             this.panel8.TabIndex = 44;
@@ -499,6 +559,7 @@
             this.Name = "Estadio";
             this.Text = "FOOTBALL LIFE";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Estadio_Load);
             ((System.ComponentModel.ISupportInitialize)(this.img_Menu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Logo)).EndInit();
             this.panel_Menu.ResumeLayout(false);
@@ -557,5 +618,8 @@
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btn3;
+        private System.Windows.Forms.Button btn2;
+        private System.Windows.Forms.Button btn1;
     }
 }

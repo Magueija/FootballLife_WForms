@@ -38,7 +38,10 @@
             this.btn_Estadio = new System.Windows.Forms.Button();
             this.btn_Titulos = new System.Windows.Forms.Button();
             this.panel_Menu = new System.Windows.Forms.Panel();
+            this.btn3 = new System.Windows.Forms.Button();
             this.img_NovaDiscussao = new System.Windows.Forms.PictureBox();
+            this.btn2 = new System.Windows.Forms.Button();
+            this.btn1 = new System.Windows.Forms.Button();
             this.btn_TopMenu = new System.Windows.Forms.Button();
             this.lbl_Titulo = new System.Windows.Forms.Label();
             this.img_Linha = new System.Windows.Forms.PictureBox();
@@ -120,7 +123,7 @@
             this.img_Logo.BackColor = System.Drawing.Color.Transparent;
             this.img_Logo.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.img_Logo.Image = global::FootballLife_WF.Properties.Resources.Logo_Clube;
-            this.img_Logo.Location = new System.Drawing.Point(1314, 12);
+            this.img_Logo.Location = new System.Drawing.Point(1246, 12);
             this.img_Logo.MaximumSize = new System.Drawing.Size(44, 40);
             this.img_Logo.MinimumSize = new System.Drawing.Size(44, 40);
             this.img_Logo.Name = "img_Logo";
@@ -224,25 +227,47 @@
             this.btn_Titulos.Name = "btn_Titulos";
             this.btn_Titulos.Size = new System.Drawing.Size(130, 31);
             this.btn_Titulos.TabIndex = 9;
-            this.btn_Titulos.Text = "TÍTULOS";
+            this.btn_Titulos.Text = "HISTÓRIA";
             this.btn_Titulos.UseVisualStyleBackColor = false;
+            this.btn_Titulos.Click += new System.EventHandler(this.Btn_Titulos_Click);
             // 
             // panel_Menu
             // 
             this.panel_Menu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel_Menu.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel_Menu.Controls.Add(this.btn3);
             this.panel_Menu.Controls.Add(this.img_NovaDiscussao);
+            this.panel_Menu.Controls.Add(this.btn2);
             this.panel_Menu.Controls.Add(this.btn_Home);
+            this.panel_Menu.Controls.Add(this.btn1);
             this.panel_Menu.Controls.Add(this.btn_Jogos);
             this.panel_Menu.Controls.Add(this.btn_Equipas);
             this.panel_Menu.Controls.Add(this.btn_Estadio);
             this.panel_Menu.Controls.Add(this.btn_Titulos);
             this.panel_Menu.Location = new System.Drawing.Point(0, 65);
             this.panel_Menu.Name = "panel_Menu";
-            this.panel_Menu.Size = new System.Drawing.Size(160, 2079);
+            this.panel_Menu.Size = new System.Drawing.Size(160, 3939);
             this.panel_Menu.TabIndex = 12;
             this.panel_Menu.Visible = false;
+            // 
+            // btn3
+            // 
+            this.btn3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn3.BackColor = System.Drawing.Color.Black;
+            this.btn3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn3.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn3.ForeColor = System.Drawing.Color.White;
+            this.btn3.Location = new System.Drawing.Point(12, 327);
+            this.btn3.Name = "btn3";
+            this.btn3.Size = new System.Drawing.Size(130, 31);
+            this.btn3.TabIndex = 66;
+            this.btn3.Text = "UTILIZADORES";
+            this.btn3.UseVisualStyleBackColor = false;
+            this.btn3.Visible = false;
+            this.btn3.Click += new System.EventHandler(this.Btn3_Click);
             // 
             // img_NovaDiscussao
             // 
@@ -258,6 +283,42 @@
             this.img_NovaDiscussao.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.img_NovaDiscussao.TabIndex = 24;
             this.img_NovaDiscussao.TabStop = false;
+            // 
+            // btn2
+            // 
+            this.btn2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn2.BackColor = System.Drawing.Color.Black;
+            this.btn2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn2.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn2.ForeColor = System.Drawing.Color.White;
+            this.btn2.Location = new System.Drawing.Point(12, 290);
+            this.btn2.Name = "btn2";
+            this.btn2.Size = new System.Drawing.Size(130, 31);
+            this.btn2.TabIndex = 65;
+            this.btn2.Text = "INVENTÁRIO";
+            this.btn2.UseVisualStyleBackColor = false;
+            this.btn2.Visible = false;
+            this.btn2.Click += new System.EventHandler(this.Btn2_Click);
+            // 
+            // btn1
+            // 
+            this.btn1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn1.BackColor = System.Drawing.Color.Black;
+            this.btn1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn1.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn1.ForeColor = System.Drawing.Color.White;
+            this.btn1.Location = new System.Drawing.Point(12, 253);
+            this.btn1.Name = "btn1";
+            this.btn1.Size = new System.Drawing.Size(130, 31);
+            this.btn1.TabIndex = 64;
+            this.btn1.Text = "FINANCIAMENTO";
+            this.btn1.UseVisualStyleBackColor = false;
+            this.btn1.Visible = false;
+            this.btn1.Click += new System.EventHandler(this.Btn1_Click);
             // 
             // btn_TopMenu
             // 
@@ -279,7 +340,7 @@
             this.lbl_Titulo.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Titulo.Font = new System.Drawing.Font("Bauhaus 93", 65.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Titulo.ForeColor = System.Drawing.Color.White;
-            this.lbl_Titulo.Location = new System.Drawing.Point(495, 92);
+            this.lbl_Titulo.Location = new System.Drawing.Point(463, 92);
             this.lbl_Titulo.Name = "lbl_Titulo";
             this.lbl_Titulo.Size = new System.Drawing.Size(346, 98);
             this.lbl_Titulo.TabIndex = 14;
@@ -290,7 +351,7 @@
             this.img_Linha.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.img_Linha.BackColor = System.Drawing.Color.Transparent;
             this.img_Linha.Image = global::FootballLife_WF.Properties.Resources.Linha_Separadora;
-            this.img_Linha.Location = new System.Drawing.Point(13, 296);
+            this.img_Linha.Location = new System.Drawing.Point(-19, 296);
             this.img_Linha.Name = "img_Linha";
             this.img_Linha.Size = new System.Drawing.Size(1329, 53);
             this.img_Linha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -305,7 +366,7 @@
             this.lbl_Seniores.Cursor = System.Windows.Forms.Cursors.Default;
             this.lbl_Seniores.Font = new System.Drawing.Font("Berlin Sans FB Demi", 10F, System.Drawing.FontStyle.Bold);
             this.lbl_Seniores.ForeColor = System.Drawing.Color.White;
-            this.lbl_Seniores.Location = new System.Drawing.Point(26, 361);
+            this.lbl_Seniores.Location = new System.Drawing.Point(-6, 361);
             this.lbl_Seniores.Name = "lbl_Seniores";
             this.lbl_Seniores.Size = new System.Drawing.Size(58, 18);
             this.lbl_Seniores.TabIndex = 31;
@@ -317,7 +378,7 @@
             this.flowpanel_Seniores.AutoScroll = true;
             this.flowpanel_Seniores.BackColor = System.Drawing.Color.White;
             this.flowpanel_Seniores.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowpanel_Seniores.Location = new System.Drawing.Point(24, 399);
+            this.flowpanel_Seniores.Location = new System.Drawing.Point(-8, 399);
             this.flowpanel_Seniores.Name = "flowpanel_Seniores";
             this.flowpanel_Seniores.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.flowpanel_Seniores.Size = new System.Drawing.Size(296, 340);
@@ -328,7 +389,7 @@
             this.linha_Admins.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.linha_Admins.BackColor = System.Drawing.Color.Transparent;
             this.linha_Admins.Image = global::FootballLife_WF.Properties.Resources.Linha_Separadora;
-            this.linha_Admins.Location = new System.Drawing.Point(26, 372);
+            this.linha_Admins.Location = new System.Drawing.Point(-6, 372);
             this.linha_Admins.Name = "linha_Admins";
             this.linha_Admins.Size = new System.Drawing.Size(296, 21);
             this.linha_Admins.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -344,7 +405,7 @@
             this.panel_Pesquisa.Controls.Add(this.btn_DeletePesquisa);
             this.panel_Pesquisa.Controls.Add(this.tb_Pesquisar);
             this.panel_Pesquisa.Controls.Add(this.lbl_Pesquisar);
-            this.panel_Pesquisa.Location = new System.Drawing.Point(317, 245);
+            this.panel_Pesquisa.Location = new System.Drawing.Point(285, 245);
             this.panel_Pesquisa.Name = "panel_Pesquisa";
             this.panel_Pesquisa.Size = new System.Drawing.Size(681, 45);
             this.panel_Pesquisa.TabIndex = 34;
@@ -408,7 +469,7 @@
             this.flowpanel_Juniores.AutoScroll = true;
             this.flowpanel_Juniores.BackColor = System.Drawing.Color.White;
             this.flowpanel_Juniores.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowpanel_Juniores.Location = new System.Drawing.Point(357, 399);
+            this.flowpanel_Juniores.Location = new System.Drawing.Point(325, 399);
             this.flowpanel_Juniores.Name = "flowpanel_Juniores";
             this.flowpanel_Juniores.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.flowpanel_Juniores.Size = new System.Drawing.Size(296, 340);
@@ -422,7 +483,7 @@
             this.label1.Cursor = System.Windows.Forms.Cursors.Default;
             this.label1.Font = new System.Drawing.Font("Berlin Sans FB Demi", 10F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(357, 361);
+            this.label1.Location = new System.Drawing.Point(325, 361);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 18);
             this.label1.TabIndex = 35;
@@ -433,7 +494,7 @@
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::FootballLife_WF.Properties.Resources.Linha_Separadora;
-            this.pictureBox1.Location = new System.Drawing.Point(357, 372);
+            this.pictureBox1.Location = new System.Drawing.Point(325, 372);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(296, 21);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -446,7 +507,7 @@
             this.flowpanel_Juvenis.AutoScroll = true;
             this.flowpanel_Juvenis.BackColor = System.Drawing.Color.White;
             this.flowpanel_Juvenis.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowpanel_Juvenis.Location = new System.Drawing.Point(689, 399);
+            this.flowpanel_Juvenis.Location = new System.Drawing.Point(657, 399);
             this.flowpanel_Juvenis.Name = "flowpanel_Juvenis";
             this.flowpanel_Juvenis.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.flowpanel_Juvenis.Size = new System.Drawing.Size(296, 340);
@@ -460,7 +521,7 @@
             this.label2.Cursor = System.Windows.Forms.Cursors.Default;
             this.label2.Font = new System.Drawing.Font("Berlin Sans FB Demi", 10F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(691, 361);
+            this.label2.Location = new System.Drawing.Point(659, 361);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 18);
             this.label2.TabIndex = 38;
@@ -471,7 +532,7 @@
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = global::FootballLife_WF.Properties.Resources.Linha_Separadora;
-            this.pictureBox2.Location = new System.Drawing.Point(691, 372);
+            this.pictureBox2.Location = new System.Drawing.Point(659, 372);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(296, 21);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -493,7 +554,7 @@
             this.flowpanel_Infantis.AutoScroll = true;
             this.flowpanel_Infantis.BackColor = System.Drawing.Color.White;
             this.flowpanel_Infantis.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowpanel_Infantis.Location = new System.Drawing.Point(24, 830);
+            this.flowpanel_Infantis.Location = new System.Drawing.Point(-8, 830);
             this.flowpanel_Infantis.Name = "flowpanel_Infantis";
             this.flowpanel_Infantis.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.flowpanel_Infantis.Size = new System.Drawing.Size(296, 340);
@@ -507,7 +568,7 @@
             this.label4.Cursor = System.Windows.Forms.Cursors.Default;
             this.label4.Font = new System.Drawing.Font("Berlin Sans FB Demi", 10F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(26, 792);
+            this.label4.Location = new System.Drawing.Point(-6, 792);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 18);
             this.label4.TabIndex = 42;
@@ -518,7 +579,7 @@
             this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Image = global::FootballLife_WF.Properties.Resources.Linha_Separadora;
-            this.pictureBox3.Location = new System.Drawing.Point(26, 803);
+            this.pictureBox3.Location = new System.Drawing.Point(-6, 803);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(296, 21);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -531,7 +592,7 @@
             this.flowpanel_Iniciados.AutoScroll = true;
             this.flowpanel_Iniciados.BackColor = System.Drawing.Color.White;
             this.flowpanel_Iniciados.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowpanel_Iniciados.Location = new System.Drawing.Point(1017, 399);
+            this.flowpanel_Iniciados.Location = new System.Drawing.Point(985, 399);
             this.flowpanel_Iniciados.Name = "flowpanel_Iniciados";
             this.flowpanel_Iniciados.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.flowpanel_Iniciados.Size = new System.Drawing.Size(296, 340);
@@ -545,7 +606,7 @@
             this.label5.Cursor = System.Windows.Forms.Cursors.Default;
             this.label5.Font = new System.Drawing.Font("Berlin Sans FB Demi", 10F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(1019, 361);
+            this.label5.Location = new System.Drawing.Point(987, 361);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(60, 18);
             this.label5.TabIndex = 45;
@@ -556,7 +617,7 @@
             this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox4.Image = global::FootballLife_WF.Properties.Resources.Linha_Separadora;
-            this.pictureBox4.Location = new System.Drawing.Point(1019, 372);
+            this.pictureBox4.Location = new System.Drawing.Point(987, 372);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(296, 21);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -569,7 +630,7 @@
             this.flowpanel_Benjamins.AutoScroll = true;
             this.flowpanel_Benjamins.BackColor = System.Drawing.Color.White;
             this.flowpanel_Benjamins.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowpanel_Benjamins.Location = new System.Drawing.Point(355, 830);
+            this.flowpanel_Benjamins.Location = new System.Drawing.Point(323, 830);
             this.flowpanel_Benjamins.Name = "flowpanel_Benjamins";
             this.flowpanel_Benjamins.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.flowpanel_Benjamins.Size = new System.Drawing.Size(296, 340);
@@ -583,7 +644,7 @@
             this.label6.Cursor = System.Windows.Forms.Cursors.Default;
             this.label6.Font = new System.Drawing.Font("Berlin Sans FB Demi", 10F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(357, 792);
+            this.label6.Location = new System.Drawing.Point(325, 792);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(71, 18);
             this.label6.TabIndex = 48;
@@ -594,7 +655,7 @@
             this.pictureBox5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox5.Image = global::FootballLife_WF.Properties.Resources.Linha_Separadora;
-            this.pictureBox5.Location = new System.Drawing.Point(357, 803);
+            this.pictureBox5.Location = new System.Drawing.Point(325, 803);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(296, 21);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -607,7 +668,7 @@
             this.flowpanel_Traquinas.AutoScroll = true;
             this.flowpanel_Traquinas.BackColor = System.Drawing.Color.White;
             this.flowpanel_Traquinas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowpanel_Traquinas.Location = new System.Drawing.Point(687, 830);
+            this.flowpanel_Traquinas.Location = new System.Drawing.Point(655, 830);
             this.flowpanel_Traquinas.Name = "flowpanel_Traquinas";
             this.flowpanel_Traquinas.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.flowpanel_Traquinas.Size = new System.Drawing.Size(296, 340);
@@ -621,7 +682,7 @@
             this.label7.Cursor = System.Windows.Forms.Cursors.Default;
             this.label7.Font = new System.Drawing.Font("Berlin Sans FB Demi", 10F, System.Drawing.FontStyle.Bold);
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(689, 792);
+            this.label7.Location = new System.Drawing.Point(657, 792);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(68, 18);
             this.label7.TabIndex = 51;
@@ -632,7 +693,7 @@
             this.pictureBox6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox6.Image = global::FootballLife_WF.Properties.Resources.Linha_Separadora;
-            this.pictureBox6.Location = new System.Drawing.Point(689, 803);
+            this.pictureBox6.Location = new System.Drawing.Point(657, 803);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(296, 21);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -645,7 +706,7 @@
             this.flowpanel_Petizes.AutoScroll = true;
             this.flowpanel_Petizes.BackColor = System.Drawing.Color.White;
             this.flowpanel_Petizes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowpanel_Petizes.Location = new System.Drawing.Point(1015, 830);
+            this.flowpanel_Petizes.Location = new System.Drawing.Point(983, 830);
             this.flowpanel_Petizes.Name = "flowpanel_Petizes";
             this.flowpanel_Petizes.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.flowpanel_Petizes.Size = new System.Drawing.Size(296, 340);
@@ -659,7 +720,7 @@
             this.label8.Cursor = System.Windows.Forms.Cursors.Default;
             this.label8.Font = new System.Drawing.Font("Berlin Sans FB Demi", 10F, System.Drawing.FontStyle.Bold);
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(1017, 792);
+            this.label8.Location = new System.Drawing.Point(985, 792);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(52, 18);
             this.label8.TabIndex = 54;
@@ -670,7 +731,7 @@
             this.pictureBox7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox7.Image = global::FootballLife_WF.Properties.Resources.Linha_Separadora;
-            this.pictureBox7.Location = new System.Drawing.Point(1017, 803);
+            this.pictureBox7.Location = new System.Drawing.Point(985, 803);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(296, 21);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -683,7 +744,7 @@
             this.lbl2.AutoSize = true;
             this.lbl2.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lbl2.Location = new System.Drawing.Point(365, 411);
+            this.lbl2.Location = new System.Drawing.Point(333, 411);
             this.lbl2.Name = "lbl2";
             this.lbl2.Size = new System.Drawing.Size(237, 15);
             this.lbl2.TabIndex = 31;
@@ -696,7 +757,7 @@
             this.lbl3.AutoSize = true;
             this.lbl3.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lbl3.Location = new System.Drawing.Point(697, 411);
+            this.lbl3.Location = new System.Drawing.Point(665, 411);
             this.lbl3.Name = "lbl3";
             this.lbl3.Size = new System.Drawing.Size(237, 15);
             this.lbl3.TabIndex = 57;
@@ -709,7 +770,7 @@
             this.lbl1.AutoSize = true;
             this.lbl1.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lbl1.Location = new System.Drawing.Point(32, 411);
+            this.lbl1.Location = new System.Drawing.Point(0, 411);
             this.lbl1.Name = "lbl1";
             this.lbl1.Size = new System.Drawing.Size(237, 15);
             this.lbl1.TabIndex = 58;
@@ -722,7 +783,7 @@
             this.lbl4.AutoSize = true;
             this.lbl4.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lbl4.Location = new System.Drawing.Point(1026, 411);
+            this.lbl4.Location = new System.Drawing.Point(994, 411);
             this.lbl4.Name = "lbl4";
             this.lbl4.Size = new System.Drawing.Size(237, 15);
             this.lbl4.TabIndex = 59;
@@ -735,7 +796,7 @@
             this.lbl8.AutoSize = true;
             this.lbl8.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lbl8.Location = new System.Drawing.Point(1025, 846);
+            this.lbl8.Location = new System.Drawing.Point(993, 846);
             this.lbl8.Name = "lbl8";
             this.lbl8.Size = new System.Drawing.Size(237, 15);
             this.lbl8.TabIndex = 60;
@@ -748,7 +809,7 @@
             this.lbl7.AutoSize = true;
             this.lbl7.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lbl7.Location = new System.Drawing.Point(696, 846);
+            this.lbl7.Location = new System.Drawing.Point(664, 846);
             this.lbl7.Name = "lbl7";
             this.lbl7.Size = new System.Drawing.Size(237, 15);
             this.lbl7.TabIndex = 61;
@@ -761,7 +822,7 @@
             this.lbl6.AutoSize = true;
             this.lbl6.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lbl6.Location = new System.Drawing.Point(364, 846);
+            this.lbl6.Location = new System.Drawing.Point(332, 846);
             this.lbl6.Name = "lbl6";
             this.lbl6.Size = new System.Drawing.Size(237, 15);
             this.lbl6.TabIndex = 62;
@@ -774,7 +835,7 @@
             this.lbl5.AutoSize = true;
             this.lbl5.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lbl5.Location = new System.Drawing.Point(33, 846);
+            this.lbl5.Location = new System.Drawing.Point(1, 846);
             this.lbl5.Name = "lbl5";
             this.lbl5.Size = new System.Drawing.Size(237, 15);
             this.lbl5.TabIndex = 63;
@@ -909,5 +970,8 @@
         private System.Windows.Forms.Label lbl7;
         private System.Windows.Forms.Label lbl6;
         private System.Windows.Forms.Label lbl5;
+        private System.Windows.Forms.Button btn3;
+        private System.Windows.Forms.Button btn2;
+        private System.Windows.Forms.Button btn1;
     }
 }

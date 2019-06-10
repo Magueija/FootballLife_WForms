@@ -32,11 +32,11 @@
             this.lbl_Admins = new System.Windows.Forms.Label();
             this.flowpanel_Admins = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowpanel_Treinadores = new System.Windows.Forms.FlowLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowpanel_Atletas = new System.Windows.Forms.FlowLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowpanel_Socios = new System.Windows.Forms.FlowLayoutPanel();
             this.btn_Fechar = new System.Windows.Forms.Button();
             this.panel_Pesquisa = new System.Windows.Forms.Panel();
             this.btn_Lupa = new System.Windows.Forms.Button();
@@ -48,6 +48,10 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.lbl1 = new System.Windows.Forms.Label();
+            this.lbl2 = new System.Windows.Forms.Label();
+            this.lbl3 = new System.Windows.Forms.Label();
+            this.lbl4 = new System.Windows.Forms.Label();
             this.panel_Pesquisa.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,14 +90,14 @@
             this.label1.TabIndex = 31;
             this.label1.Text = "TREINADORES";
             // 
-            // flowLayoutPanel1
+            // flowpanel_Treinadores
             // 
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(340, 234);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(257, 219);
-            this.flowLayoutPanel1.TabIndex = 32;
+            this.flowpanel_Treinadores.AutoScroll = true;
+            this.flowpanel_Treinadores.BackColor = System.Drawing.Color.Transparent;
+            this.flowpanel_Treinadores.Location = new System.Drawing.Point(340, 234);
+            this.flowpanel_Treinadores.Name = "flowpanel_Treinadores";
+            this.flowpanel_Treinadores.Size = new System.Drawing.Size(257, 219);
+            this.flowpanel_Treinadores.TabIndex = 32;
             // 
             // label2
             // 
@@ -108,14 +112,14 @@
             this.label2.TabIndex = 33;
             this.label2.Text = "ATLETAS";
             // 
-            // flowLayoutPanel2
+            // flowpanel_Atletas
             // 
-            this.flowLayoutPanel2.AutoScroll = true;
-            this.flowLayoutPanel2.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(44, 547);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(257, 219);
-            this.flowLayoutPanel2.TabIndex = 34;
+            this.flowpanel_Atletas.AutoScroll = true;
+            this.flowpanel_Atletas.BackColor = System.Drawing.Color.Transparent;
+            this.flowpanel_Atletas.Location = new System.Drawing.Point(44, 547);
+            this.flowpanel_Atletas.Name = "flowpanel_Atletas";
+            this.flowpanel_Atletas.Size = new System.Drawing.Size(257, 219);
+            this.flowpanel_Atletas.TabIndex = 34;
             // 
             // label3
             // 
@@ -130,14 +134,14 @@
             this.label3.TabIndex = 35;
             this.label3.Text = "SÓCIOS";
             // 
-            // flowLayoutPanel3
+            // flowpanel_Socios
             // 
-            this.flowLayoutPanel3.AutoScroll = true;
-            this.flowLayoutPanel3.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(340, 547);
-            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(257, 219);
-            this.flowLayoutPanel3.TabIndex = 36;
+            this.flowpanel_Socios.AutoScroll = true;
+            this.flowpanel_Socios.BackColor = System.Drawing.Color.Transparent;
+            this.flowpanel_Socios.Location = new System.Drawing.Point(340, 547);
+            this.flowpanel_Socios.Name = "flowpanel_Socios";
+            this.flowpanel_Socios.Size = new System.Drawing.Size(257, 219);
+            this.flowpanel_Socios.TabIndex = 36;
             // 
             // btn_Fechar
             // 
@@ -153,12 +157,12 @@
             this.btn_Fechar.TabIndex = 37;
             this.btn_Fechar.Text = "Fechar";
             this.btn_Fechar.UseVisualStyleBackColor = false;
+            this.btn_Fechar.Click += new System.EventHandler(this.Btn_Fechar_Click);
             // 
             // panel_Pesquisa
             // 
             this.panel_Pesquisa.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panel_Pesquisa.BackColor = System.Drawing.Color.White;
-            this.panel_Pesquisa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_Pesquisa.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel_Pesquisa.Controls.Add(this.btn_Lupa);
             this.panel_Pesquisa.Controls.Add(this.btn_DeletePesquisa);
             this.panel_Pesquisa.Controls.Add(this.tb_Pesquisar);
@@ -170,7 +174,7 @@
             // 
             // btn_Lupa
             // 
-            this.btn_Lupa.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Lupa.BackColor = System.Drawing.Color.White;
             this.btn_Lupa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Lupa.BackgroundImage")));
             this.btn_Lupa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_Lupa.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -183,10 +187,11 @@
             this.btn_Lupa.Size = new System.Drawing.Size(17, 17);
             this.btn_Lupa.TabIndex = 29;
             this.btn_Lupa.UseVisualStyleBackColor = false;
+            this.btn_Lupa.Click += new System.EventHandler(this.Btn_Lupa_Click);
             // 
             // btn_DeletePesquisa
             // 
-            this.btn_DeletePesquisa.BackColor = System.Drawing.Color.Transparent;
+            this.btn_DeletePesquisa.BackColor = System.Drawing.Color.White;
             this.btn_DeletePesquisa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_DeletePesquisa.BackgroundImage")));
             this.btn_DeletePesquisa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_DeletePesquisa.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -199,6 +204,7 @@
             this.btn_DeletePesquisa.Size = new System.Drawing.Size(9, 9);
             this.btn_DeletePesquisa.TabIndex = 28;
             this.btn_DeletePesquisa.UseVisualStyleBackColor = false;
+            this.btn_DeletePesquisa.Click += new System.EventHandler(this.Btn_DeletePesquisa_Click);
             // 
             // tb_Pesquisar
             // 
@@ -207,6 +213,7 @@
             this.tb_Pesquisar.Name = "tb_Pesquisar";
             this.tb_Pesquisar.Size = new System.Drawing.Size(402, 22);
             this.tb_Pesquisar.TabIndex = 26;
+            this.tb_Pesquisar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_KeyDown);
             // 
             // lbl_Pesquisar
             // 
@@ -260,12 +267,64 @@
             this.panel4.Size = new System.Drawing.Size(257, 1);
             this.panel4.TabIndex = 41;
             // 
+            // lbl1
+            // 
+            this.lbl1.AutoSize = true;
+            this.lbl1.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lbl1.Location = new System.Drawing.Point(45, 245);
+            this.lbl1.Name = "lbl1";
+            this.lbl1.Size = new System.Drawing.Size(237, 15);
+            this.lbl1.TabIndex = 43;
+            this.lbl1.Text = "Sem resultados para os criterios da pesquisa!";
+            this.lbl1.Visible = false;
+            // 
+            // lbl2
+            // 
+            this.lbl2.AutoSize = true;
+            this.lbl2.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lbl2.Location = new System.Drawing.Point(342, 245);
+            this.lbl2.Name = "lbl2";
+            this.lbl2.Size = new System.Drawing.Size(237, 15);
+            this.lbl2.TabIndex = 44;
+            this.lbl2.Text = "Sem resultados para os criterios da pesquisa!";
+            this.lbl2.Visible = false;
+            // 
+            // lbl3
+            // 
+            this.lbl3.AutoSize = true;
+            this.lbl3.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lbl3.Location = new System.Drawing.Point(46, 562);
+            this.lbl3.Name = "lbl3";
+            this.lbl3.Size = new System.Drawing.Size(237, 15);
+            this.lbl3.TabIndex = 45;
+            this.lbl3.Text = "Sem resultados para os criterios da pesquisa!";
+            this.lbl3.Visible = false;
+            // 
+            // lbl4
+            // 
+            this.lbl4.AutoSize = true;
+            this.lbl4.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lbl4.Location = new System.Drawing.Point(342, 562);
+            this.lbl4.Name = "lbl4";
+            this.lbl4.Size = new System.Drawing.Size(237, 15);
+            this.lbl4.TabIndex = 46;
+            this.lbl4.Text = "Sem resultados para os criterios da pesquisa!";
+            this.lbl4.Visible = false;
+            // 
             // DeletedUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(643, 853);
+            this.Controls.Add(this.lbl4);
+            this.Controls.Add(this.lbl3);
+            this.Controls.Add(this.lbl2);
+            this.Controls.Add(this.lbl1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -274,11 +333,11 @@
             this.Controls.Add(this.panel_Pesquisa);
             this.Controls.Add(this.btn_Fechar);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.flowLayoutPanel3);
+            this.Controls.Add(this.flowpanel_Socios);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.flowLayoutPanel2);
+            this.Controls.Add(this.flowpanel_Atletas);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.flowpanel_Treinadores);
             this.Controls.Add(this.lbl_Admins);
             this.Controls.Add(this.flowpanel_Admins);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -288,6 +347,7 @@
             this.Name = "DeletedUsers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Utilizadores Apagados";
+            this.Load += new System.EventHandler(this.DeletedUsers_Load);
             this.panel_Pesquisa.ResumeLayout(false);
             this.panel_Pesquisa.PerformLayout();
             this.ResumeLayout(false);
@@ -300,11 +360,11 @@
         private System.Windows.Forms.Label lbl_Admins;
         private System.Windows.Forms.FlowLayoutPanel flowpanel_Admins;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flowpanel_Treinadores;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.FlowLayoutPanel flowpanel_Atletas;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
+        private System.Windows.Forms.FlowLayoutPanel flowpanel_Socios;
         private System.Windows.Forms.Button btn_Fechar;
         private System.Windows.Forms.Panel panel_Pesquisa;
         private System.Windows.Forms.Button btn_Lupa;
@@ -316,5 +376,9 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label lbl1;
+        private System.Windows.Forms.Label lbl2;
+        private System.Windows.Forms.Label lbl3;
+        private System.Windows.Forms.Label lbl4;
     }
 }

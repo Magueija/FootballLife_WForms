@@ -43,10 +43,10 @@
             this.btn_Jogos = new System.Windows.Forms.Button();
             this.btn_Home = new System.Windows.Forms.Button();
             this.panel_Menu = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.btn_Contactos = new System.Windows.Forms.Button();
             this.btn_Inventario = new System.Windows.Forms.Button();
             this.btn_Convocatoria = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.lbl_Titulo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.img_Menu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Logo)).BeginInit();
@@ -190,7 +190,7 @@
             this.btn_Titulos.Name = "btn_Titulos";
             this.btn_Titulos.Size = new System.Drawing.Size(128, 31);
             this.btn_Titulos.TabIndex = 9;
-            this.btn_Titulos.Text = "TÍTULOS";
+            this.btn_Titulos.Text = "HISTÓRIA";
             this.btn_Titulos.UseVisualStyleBackColor = false;
             this.btn_Titulos.Click += new System.EventHandler(this.Btn_Titulos_Click);
             // 
@@ -285,16 +285,6 @@
             this.panel_Menu.TabIndex = 12;
             this.panel_Menu.Visible = false;
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.lbl_Titulo);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 65);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1364, 150);
-            this.panel1.TabIndex = 25;
-            // 
             // btn_Contactos
             // 
             this.btn_Contactos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -345,6 +335,16 @@
             this.btn_Convocatoria.Text = "CONVOCATÓRIA";
             this.btn_Convocatoria.UseVisualStyleBackColor = false;
             this.btn_Convocatoria.Click += new System.EventHandler(this.Btn_Convocatoria_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.lbl_Titulo);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 65);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1364, 150);
+            this.panel1.TabIndex = 25;
             // 
             // lbl_Titulo
             // 

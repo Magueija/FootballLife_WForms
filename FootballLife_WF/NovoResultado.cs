@@ -45,36 +45,42 @@ namespace FootballLife_WF
             con.Close();
         }
 
-        string LogoAdversario;
+
+        string displayimg, filePath;
+        string folderpath = @" \Projeto_WindowsForms\LogoEquipas\";
+        OpenFileDialog open = new OpenFileDialog();
+
         private void Btn_UploadCasa_Click(object sender, EventArgs e)
         {
-            OpenFileDialog diretorio = new OpenFileDialog();
-            FileDialog file = new OpenFileDialog();
-            diretorio.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png";
-            diretorio.ShowDialog();
-
-            try
+            open.Filter = "Arquivos de imagem (* .jpg; * .jpeg; * .gif; * .bmp) | * .jpg; * .jpeg; * .gif; * .bmp | todos os arquivos | *. *";
+            if (open.ShowDialog() == DialogResult.OK)
             {
-                if (diretorio.FileName != null)
-                {
-                    LogoAdversario = diretorio.FileName;
-                    Bitmap bmp = new Bitmap(diretorio.FileName);
-                    img_LogoCasa.Image = bmp;
-                }
-                else
-                {
-                    MessageBox.Show("Por favor escolha o logo do adversário!", "ATENÇÃO!", MessageBoxButtons.OK);
-                }
+                // exibir imagem na caixa de imagem
+                displayimg = open.SafeFileName;
+                img_LogoCasa.Image = new Bitmap(open.FileName);
+                // caminho do arquivo de imagem
+                txtpathCasa.Text = open.FileName;
+                filePath = open.FileName;
             }
-            catch (Exception x)
-            {
-                MessageBox.Show("Por favor escolha o logo do adversário!", "ATENÇÃO!", MessageBoxButtons.OK);
-            }
+        }
 
+   
+        private void Btn_UploadFora_Click(object sender, EventArgs e)
+        {
+            open.Filter = "Arquivos de imagem (* .jpg; * .jpeg; * .gif; * .bmp) | * .jpg; * .jpeg; * .gif; * .bmp | todos os arquivos | *. *";
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                // exibir imagem na caixa de imagem
+                displayimg = open.SafeFileName;
+                img_LogoFora.Image = new Bitmap(open.FileName);
+                // caminho do arquivo de imagem
+                txtpathFora.Text = open.FileName;
+                filePath = open.FileName;
+            }
         }
 
 
-        private void Btn_UploadFora_Click(object sender, EventArgs e)
+        /*private void Btn_UploadFora_Click(object sender, EventArgs e)
         {
             OpenFileDialog diretorio = new OpenFileDialog();
             FileDialog file = new OpenFileDialog();
@@ -105,7 +111,7 @@ namespace FootballLife_WF
                 MessageBox.Show("Por favor escolha o logo do adversário!", "ATENÇÃO!", MessageBoxButtons.OK);
             }
 
-        }
+        }*/
 
 
         private void Btn_Gravar_Click(object sender, EventArgs e)
@@ -148,6 +154,11 @@ namespace FootballLife_WF
 
                     try
                     {
+                        if (!Directory.Exists(folderpath))
+                        {
+                            Directory.CreateDirectory(folderpath);
+                        }
+
                         string QueryInsert = "INSERT INTO dbo.TblJogo (Data, Divisao, EquipaCasa, EquipaFora, GolosCasa, GolosFora, Path_ImgAdversario, FK_IDEscalao) VALUES (@Data, @Divisao, @EquipaCasa, @EquipaFora, @GolosCasa, @GolosFora, @Path_ImgAdversario, @IDEscalao)";
 
                         SqlCommand CommandINSERT = new SqlCommand(QueryInsert, con);
@@ -157,11 +168,10 @@ namespace FootballLife_WF
                         CommandINSERT.Parameters.AddWithValue("@EquipaFora", tb_EquipaFora.Text);
                         CommandINSERT.Parameters.AddWithValue("@GolosCasa", tb_GolosCasa.Text);
                         CommandINSERT.Parameters.AddWithValue("@GolosFora", tb_GolosFora.Text);
-                        CommandINSERT.Parameters.AddWithValue("@Path_ImgAdversario", LogoAdversario);
+                        CommandINSERT.Parameters.AddWithValue("@Path_ImgAdversario", folderpath + Path.GetFileName(open.FileName));
+                        File.Copy(filePath, Path.Combine(folderpath, Path.GetFileName(filePath)), true);
                         CommandINSERT.Parameters.AddWithValue("@IDEscalao", IDEscalao);
                         CommandINSERT.ExecuteNonQuery();
-
-
 
                         string IDJogo = "";
                         SqlDataReader drJogo;

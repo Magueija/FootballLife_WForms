@@ -265,6 +265,13 @@ namespace FootballLife_WF
             cota.ShowDialog();
             this.Dispose();
         }
+
+        private void Btn_Contactos_Click(object sender, EventArgs e)
+        {
+            Utilizadores Users = new Utilizadores();
+            this.Hide();
+            Users.ShowDialog();
+        }
     }
 }
 

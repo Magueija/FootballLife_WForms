@@ -93,13 +93,19 @@ namespace FootballLife_WF
                 Lbl_Titulo.Text = Nome;
 
                 tb_Nome.Text = Nome;
-                tb_Telemovel.Text = Telemovel;
+                
                 tb_Email.Text = Email;
                 tb_Morada.Text = Morada;
                 tb_CodPostal.Text = CdPostal;
 
                 tb_Utilizador.Text = Utilizador;
                 tb_Password.Text = Password;
+
+                if(Telemovel != "0")
+                {
+                    tb_Telemovel.Text = Telemovel;
+                }
+                
             }
             catch (Exception x)
             {
@@ -184,13 +190,17 @@ namespace FootballLife_WF
                 Lbl_Titulo.Text = Nome;
 
                 tb_Nome.Text = Nome;
-                tb_Telemovel.Text = Telemovel;
                 tb_Email.Text = Email;
                 tb_Morada.Text = Morada;
                 tb_CodPostal.Text = CdPostal;
 
                 tb_Utilizador.Text = Utilizador;
                 tb_Password.Text = Password;
+
+                if (Telemovel != "0")
+                {
+                    tb_Telemovel.Text = Telemovel;
+                }
             }
             catch (Exception x)
             {
@@ -275,13 +285,17 @@ namespace FootballLife_WF
                 Lbl_Titulo.Text = Nome;
 
                 tb_Nome.Text = Nome;
-                tb_Telemovel.Text = Telemovel;
                 tb_Email.Text = Email;
                 tb_Morada.Text = Morada;
                 tb_CodPostal.Text = CdPostal;
 
                 tb_Utilizador.Text = Utilizador;
                 tb_Password.Text = Password;
+
+                if (Telemovel != "0")
+                {
+                    tb_Telemovel.Text = Telemovel;
+                }
             }
             catch (Exception x)
             {
@@ -330,13 +344,17 @@ namespace FootballLife_WF
                 Lbl_Titulo.Text = Nome;
 
                 tb_Nome.Text = Nome;
-                tb_Telemovel.Text = Telemovel;
                 tb_Email.Text = Email;
                 tb_Morada.Text = Morada;
                 tb_CodPostal.Text = CdPostal;
 
                 tb_Utilizador.Text = Utilizador;
                 tb_Password.Text = Password;
+
+                if (Telemovel != "0")
+                {
+                    tb_Telemovel.Text = Telemovel;
+                }
             }
             catch (Exception x)
             {
@@ -364,6 +382,11 @@ namespace FootballLife_WF
                 GravarSocio();
             }
 
+            this.Dispose();
+        }
+
+        private void Btn_Fechar_Click(object sender, EventArgs e)
+        {
             this.Dispose();
         }
 

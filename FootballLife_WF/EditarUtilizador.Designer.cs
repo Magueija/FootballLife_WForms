@@ -30,24 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditarUtilizador));
             this.panel_Utilizador = new System.Windows.Forms.Panel();
-            this.ckb_VerPass = new System.Windows.Forms.CheckBox();
-            this.tb_Password = new System.Windows.Forms.TextBox();
-            this.tb_Utilizador = new System.Windows.Forms.TextBox();
-            this.tb_CodPostal = new System.Windows.Forms.TextBox();
-            this.tb_Morada = new System.Windows.Forms.TextBox();
-            this.tb_Email = new System.Windows.Forms.TextBox();
-            this.tb_Telemovel = new System.Windows.Forms.TextBox();
-            this.tb_Nome = new System.Windows.Forms.TextBox();
-            this.btn_Gravar = new System.Windows.Forms.Button();
-            this.lbl_CodPostal = new System.Windows.Forms.Label();
-            this.lbl_Password = new System.Windows.Forms.Label();
-            this.lbl_Utilizador = new System.Windows.Forms.Label();
-            this.lbl_Morada = new System.Windows.Forms.Label();
-            this.lbl_Email = new System.Windows.Forms.Label();
-            this.lbl_Telemovel = new System.Windows.Forms.Label();
-            this.lbl_Nome = new System.Windows.Forms.Label();
-            this.Lbl_Titulo = new System.Windows.Forms.Label();
-            this.img_Logo = new System.Windows.Forms.PictureBox();
             this.panel_Escalao = new System.Windows.Forms.Panel();
             this.rb_Infantis = new System.Windows.Forms.RadioButton();
             this.lbl_EscalaoATreinar = new System.Windows.Forms.Label();
@@ -59,9 +41,28 @@
             this.rb_Iniciados = new System.Windows.Forms.RadioButton();
             this.rb_Benjamins = new System.Windows.Forms.RadioButton();
             this.rb_Traquinas = new System.Windows.Forms.RadioButton();
+            this.ckb_VerPass = new System.Windows.Forms.CheckBox();
+            this.tb_Password = new System.Windows.Forms.TextBox();
+            this.tb_Utilizador = new System.Windows.Forms.TextBox();
+            this.tb_CodPostal = new System.Windows.Forms.TextBox();
+            this.tb_Morada = new System.Windows.Forms.TextBox();
+            this.tb_Email = new System.Windows.Forms.TextBox();
+            this.tb_Telemovel = new System.Windows.Forms.TextBox();
+            this.tb_Nome = new System.Windows.Forms.TextBox();
+            this.btn_Fechar = new System.Windows.Forms.Button();
+            this.lbl_CodPostal = new System.Windows.Forms.Label();
+            this.lbl_Password = new System.Windows.Forms.Label();
+            this.lbl_Utilizador = new System.Windows.Forms.Label();
+            this.lbl_Morada = new System.Windows.Forms.Label();
+            this.lbl_Email = new System.Windows.Forms.Label();
+            this.lbl_Telemovel = new System.Windows.Forms.Label();
+            this.lbl_Nome = new System.Windows.Forms.Label();
+            this.Lbl_Titulo = new System.Windows.Forms.Label();
+            this.img_Logo = new System.Windows.Forms.PictureBox();
+            this.btn_Gravar = new System.Windows.Forms.Button();
             this.panel_Utilizador.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.img_Logo)).BeginInit();
             this.panel_Escalao.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.img_Logo)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_Utilizador
@@ -70,6 +71,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_Utilizador.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_Utilizador.Controls.Add(this.btn_Gravar);
             this.panel_Utilizador.Controls.Add(this.panel_Escalao);
             this.panel_Utilizador.Controls.Add(this.ckb_VerPass);
             this.panel_Utilizador.Controls.Add(this.tb_Password);
@@ -79,7 +81,7 @@
             this.panel_Utilizador.Controls.Add(this.tb_Email);
             this.panel_Utilizador.Controls.Add(this.tb_Telemovel);
             this.panel_Utilizador.Controls.Add(this.tb_Nome);
-            this.panel_Utilizador.Controls.Add(this.btn_Gravar);
+            this.panel_Utilizador.Controls.Add(this.btn_Fechar);
             this.panel_Utilizador.Controls.Add(this.lbl_CodPostal);
             this.panel_Utilizador.Controls.Add(this.lbl_Password);
             this.panel_Utilizador.Controls.Add(this.lbl_Utilizador);
@@ -93,172 +95,6 @@
             this.panel_Utilizador.Name = "panel_Utilizador";
             this.panel_Utilizador.Size = new System.Drawing.Size(498, 465);
             this.panel_Utilizador.TabIndex = 0;
-            // 
-            // ckb_VerPass
-            // 
-            this.ckb_VerPass.AutoSize = true;
-            this.ckb_VerPass.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckb_VerPass.Location = new System.Drawing.Point(338, 388);
-            this.ckb_VerPass.Name = "ckb_VerPass";
-            this.ckb_VerPass.Size = new System.Drawing.Size(96, 18);
-            this.ckb_VerPass.TabIndex = 34;
-            this.ckb_VerPass.Text = "Ver Password";
-            this.ckb_VerPass.UseVisualStyleBackColor = true;
-            this.ckb_VerPass.CheckedChanged += new System.EventHandler(this.Ckb_VerPass_CheckedChanged);
-            // 
-            // tb_Password
-            // 
-            this.tb_Password.Location = new System.Drawing.Point(103, 362);
-            this.tb_Password.Name = "tb_Password";
-            this.tb_Password.Size = new System.Drawing.Size(330, 20);
-            this.tb_Password.TabIndex = 21;
-            this.tb_Password.UseSystemPasswordChar = true;
-            // 
-            // tb_Utilizador
-            // 
-            this.tb_Utilizador.Location = new System.Drawing.Point(103, 336);
-            this.tb_Utilizador.Name = "tb_Utilizador";
-            this.tb_Utilizador.Size = new System.Drawing.Size(330, 20);
-            this.tb_Utilizador.TabIndex = 20;
-            // 
-            // tb_CodPostal
-            // 
-            this.tb_CodPostal.Location = new System.Drawing.Point(134, 185);
-            this.tb_CodPostal.Name = "tb_CodPostal";
-            this.tb_CodPostal.Size = new System.Drawing.Size(299, 20);
-            this.tb_CodPostal.TabIndex = 19;
-            // 
-            // tb_Morada
-            // 
-            this.tb_Morada.Location = new System.Drawing.Point(88, 162);
-            this.tb_Morada.Name = "tb_Morada";
-            this.tb_Morada.Size = new System.Drawing.Size(345, 20);
-            this.tb_Morada.TabIndex = 18;
-            // 
-            // tb_Email
-            // 
-            this.tb_Email.Location = new System.Drawing.Point(76, 137);
-            this.tb_Email.Name = "tb_Email";
-            this.tb_Email.Size = new System.Drawing.Size(357, 20);
-            this.tb_Email.TabIndex = 17;
-            // 
-            // tb_Telemovel
-            // 
-            this.tb_Telemovel.Location = new System.Drawing.Point(109, 111);
-            this.tb_Telemovel.Name = "tb_Telemovel";
-            this.tb_Telemovel.Size = new System.Drawing.Size(324, 20);
-            this.tb_Telemovel.TabIndex = 16;
-            // 
-            // tb_Nome
-            // 
-            this.tb_Nome.Location = new System.Drawing.Point(76, 84);
-            this.tb_Nome.Name = "tb_Nome";
-            this.tb_Nome.Size = new System.Drawing.Size(358, 20);
-            this.tb_Nome.TabIndex = 15;
-            // 
-            // btn_Gravar
-            // 
-            this.btn_Gravar.BackColor = System.Drawing.Color.White;
-            this.btn_Gravar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Gravar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.btn_Gravar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Gravar.Font = new System.Drawing.Font("Berlin Sans FB", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Gravar.ForeColor = System.Drawing.Color.Black;
-            this.btn_Gravar.Location = new System.Drawing.Point(396, 427);
-            this.btn_Gravar.Name = "btn_Gravar";
-            this.btn_Gravar.Size = new System.Drawing.Size(91, 27);
-            this.btn_Gravar.TabIndex = 7;
-            this.btn_Gravar.Text = "Gravar";
-            this.btn_Gravar.UseVisualStyleBackColor = false;
-            this.btn_Gravar.Click += new System.EventHandler(this.Btn_Gravar_Click);
-            // 
-            // lbl_CodPostal
-            // 
-            this.lbl_CodPostal.AutoSize = true;
-            this.lbl_CodPostal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_CodPostal.Location = new System.Drawing.Point(17, 189);
-            this.lbl_CodPostal.Name = "lbl_CodPostal";
-            this.lbl_CodPostal.Size = new System.Drawing.Size(111, 16);
-            this.lbl_CodPostal.TabIndex = 14;
-            this.lbl_CodPostal.Text = "Código-Postal:";
-            // 
-            // lbl_Password
-            // 
-            this.lbl_Password.AutoSize = true;
-            this.lbl_Password.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Password.Location = new System.Drawing.Point(17, 363);
-            this.lbl_Password.Name = "lbl_Password";
-            this.lbl_Password.Size = new System.Drawing.Size(80, 16);
-            this.lbl_Password.TabIndex = 12;
-            this.lbl_Password.Text = "Password:";
-            // 
-            // lbl_Utilizador
-            // 
-            this.lbl_Utilizador.AutoSize = true;
-            this.lbl_Utilizador.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Utilizador.Location = new System.Drawing.Point(17, 337);
-            this.lbl_Utilizador.Name = "lbl_Utilizador";
-            this.lbl_Utilizador.Size = new System.Drawing.Size(78, 16);
-            this.lbl_Utilizador.TabIndex = 10;
-            this.lbl_Utilizador.Text = "Utilizador:";
-            // 
-            // lbl_Morada
-            // 
-            this.lbl_Morada.AutoSize = true;
-            this.lbl_Morada.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Morada.Location = new System.Drawing.Point(17, 163);
-            this.lbl_Morada.Name = "lbl_Morada";
-            this.lbl_Morada.Size = new System.Drawing.Size(65, 16);
-            this.lbl_Morada.TabIndex = 8;
-            this.lbl_Morada.Text = "Morada:";
-            // 
-            // lbl_Email
-            // 
-            this.lbl_Email.AutoSize = true;
-            this.lbl_Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Email.Location = new System.Drawing.Point(17, 137);
-            this.lbl_Email.Name = "lbl_Email";
-            this.lbl_Email.Size = new System.Drawing.Size(51, 16);
-            this.lbl_Email.TabIndex = 6;
-            this.lbl_Email.Text = "Email:";
-            // 
-            // lbl_Telemovel
-            // 
-            this.lbl_Telemovel.AutoSize = true;
-            this.lbl_Telemovel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Telemovel.Location = new System.Drawing.Point(17, 111);
-            this.lbl_Telemovel.Name = "lbl_Telemovel";
-            this.lbl_Telemovel.Size = new System.Drawing.Size(86, 16);
-            this.lbl_Telemovel.TabIndex = 4;
-            this.lbl_Telemovel.Text = "Telemóvel:";
-            // 
-            // lbl_Nome
-            // 
-            this.lbl_Nome.AutoSize = true;
-            this.lbl_Nome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Nome.Location = new System.Drawing.Point(17, 85);
-            this.lbl_Nome.Name = "lbl_Nome";
-            this.lbl_Nome.Size = new System.Drawing.Size(53, 16);
-            this.lbl_Nome.TabIndex = 2;
-            this.lbl_Nome.Text = "Nome:";
-            // 
-            // Lbl_Titulo
-            // 
-            this.Lbl_Titulo.AutoSize = true;
-            this.Lbl_Titulo.Font = new System.Drawing.Font("Berlin Sans FB Demi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_Titulo.Location = new System.Drawing.Point(72, 30);
-            this.Lbl_Titulo.Name = "Lbl_Titulo";
-            this.Lbl_Titulo.Size = new System.Drawing.Size(0, 18);
-            this.Lbl_Titulo.TabIndex = 1;
-            // 
-            // img_Logo
-            // 
-            this.img_Logo.Location = new System.Drawing.Point(13, 13);
-            this.img_Logo.Name = "img_Logo";
-            this.img_Logo.Size = new System.Drawing.Size(50, 50);
-            this.img_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.img_Logo.TabIndex = 0;
-            this.img_Logo.TabStop = false;
             // 
             // panel_Escalao
             // 
@@ -399,6 +235,188 @@
             this.rb_Traquinas.Text = "Traquinas";
             this.rb_Traquinas.UseVisualStyleBackColor = true;
             // 
+            // ckb_VerPass
+            // 
+            this.ckb_VerPass.AutoSize = true;
+            this.ckb_VerPass.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckb_VerPass.Location = new System.Drawing.Point(338, 388);
+            this.ckb_VerPass.Name = "ckb_VerPass";
+            this.ckb_VerPass.Size = new System.Drawing.Size(96, 18);
+            this.ckb_VerPass.TabIndex = 34;
+            this.ckb_VerPass.Text = "Ver Password";
+            this.ckb_VerPass.UseVisualStyleBackColor = true;
+            this.ckb_VerPass.CheckedChanged += new System.EventHandler(this.Ckb_VerPass_CheckedChanged);
+            // 
+            // tb_Password
+            // 
+            this.tb_Password.Location = new System.Drawing.Point(103, 362);
+            this.tb_Password.Name = "tb_Password";
+            this.tb_Password.Size = new System.Drawing.Size(330, 20);
+            this.tb_Password.TabIndex = 21;
+            this.tb_Password.UseSystemPasswordChar = true;
+            // 
+            // tb_Utilizador
+            // 
+            this.tb_Utilizador.Location = new System.Drawing.Point(103, 336);
+            this.tb_Utilizador.Name = "tb_Utilizador";
+            this.tb_Utilizador.Size = new System.Drawing.Size(330, 20);
+            this.tb_Utilizador.TabIndex = 20;
+            // 
+            // tb_CodPostal
+            // 
+            this.tb_CodPostal.Location = new System.Drawing.Point(134, 185);
+            this.tb_CodPostal.Name = "tb_CodPostal";
+            this.tb_CodPostal.Size = new System.Drawing.Size(299, 20);
+            this.tb_CodPostal.TabIndex = 19;
+            // 
+            // tb_Morada
+            // 
+            this.tb_Morada.Location = new System.Drawing.Point(88, 162);
+            this.tb_Morada.Name = "tb_Morada";
+            this.tb_Morada.Size = new System.Drawing.Size(345, 20);
+            this.tb_Morada.TabIndex = 18;
+            // 
+            // tb_Email
+            // 
+            this.tb_Email.Location = new System.Drawing.Point(76, 137);
+            this.tb_Email.Name = "tb_Email";
+            this.tb_Email.Size = new System.Drawing.Size(357, 20);
+            this.tb_Email.TabIndex = 17;
+            // 
+            // tb_Telemovel
+            // 
+            this.tb_Telemovel.Location = new System.Drawing.Point(109, 111);
+            this.tb_Telemovel.Name = "tb_Telemovel";
+            this.tb_Telemovel.Size = new System.Drawing.Size(324, 20);
+            this.tb_Telemovel.TabIndex = 16;
+            // 
+            // tb_Nome
+            // 
+            this.tb_Nome.Location = new System.Drawing.Point(76, 84);
+            this.tb_Nome.Name = "tb_Nome";
+            this.tb_Nome.Size = new System.Drawing.Size(358, 20);
+            this.tb_Nome.TabIndex = 15;
+            // 
+            // btn_Fechar
+            // 
+            this.btn_Fechar.BackColor = System.Drawing.Color.White;
+            this.btn_Fechar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Fechar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btn_Fechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Fechar.Font = new System.Drawing.Font("Berlin Sans FB", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Fechar.ForeColor = System.Drawing.Color.Black;
+            this.btn_Fechar.Location = new System.Drawing.Point(396, 427);
+            this.btn_Fechar.Name = "btn_Fechar";
+            this.btn_Fechar.Size = new System.Drawing.Size(91, 27);
+            this.btn_Fechar.TabIndex = 7;
+            this.btn_Fechar.Text = "Fechar";
+            this.btn_Fechar.UseVisualStyleBackColor = false;
+            this.btn_Fechar.Click += new System.EventHandler(this.Btn_Fechar_Click);
+            // 
+            // lbl_CodPostal
+            // 
+            this.lbl_CodPostal.AutoSize = true;
+            this.lbl_CodPostal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_CodPostal.Location = new System.Drawing.Point(17, 189);
+            this.lbl_CodPostal.Name = "lbl_CodPostal";
+            this.lbl_CodPostal.Size = new System.Drawing.Size(111, 16);
+            this.lbl_CodPostal.TabIndex = 14;
+            this.lbl_CodPostal.Text = "Código-Postal:";
+            // 
+            // lbl_Password
+            // 
+            this.lbl_Password.AutoSize = true;
+            this.lbl_Password.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Password.Location = new System.Drawing.Point(17, 363);
+            this.lbl_Password.Name = "lbl_Password";
+            this.lbl_Password.Size = new System.Drawing.Size(80, 16);
+            this.lbl_Password.TabIndex = 12;
+            this.lbl_Password.Text = "Password:";
+            // 
+            // lbl_Utilizador
+            // 
+            this.lbl_Utilizador.AutoSize = true;
+            this.lbl_Utilizador.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Utilizador.Location = new System.Drawing.Point(17, 337);
+            this.lbl_Utilizador.Name = "lbl_Utilizador";
+            this.lbl_Utilizador.Size = new System.Drawing.Size(78, 16);
+            this.lbl_Utilizador.TabIndex = 10;
+            this.lbl_Utilizador.Text = "Utilizador:";
+            // 
+            // lbl_Morada
+            // 
+            this.lbl_Morada.AutoSize = true;
+            this.lbl_Morada.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Morada.Location = new System.Drawing.Point(17, 163);
+            this.lbl_Morada.Name = "lbl_Morada";
+            this.lbl_Morada.Size = new System.Drawing.Size(65, 16);
+            this.lbl_Morada.TabIndex = 8;
+            this.lbl_Morada.Text = "Morada:";
+            // 
+            // lbl_Email
+            // 
+            this.lbl_Email.AutoSize = true;
+            this.lbl_Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Email.Location = new System.Drawing.Point(17, 137);
+            this.lbl_Email.Name = "lbl_Email";
+            this.lbl_Email.Size = new System.Drawing.Size(51, 16);
+            this.lbl_Email.TabIndex = 6;
+            this.lbl_Email.Text = "Email:";
+            // 
+            // lbl_Telemovel
+            // 
+            this.lbl_Telemovel.AutoSize = true;
+            this.lbl_Telemovel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Telemovel.Location = new System.Drawing.Point(17, 111);
+            this.lbl_Telemovel.Name = "lbl_Telemovel";
+            this.lbl_Telemovel.Size = new System.Drawing.Size(86, 16);
+            this.lbl_Telemovel.TabIndex = 4;
+            this.lbl_Telemovel.Text = "Telemóvel:";
+            // 
+            // lbl_Nome
+            // 
+            this.lbl_Nome.AutoSize = true;
+            this.lbl_Nome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Nome.Location = new System.Drawing.Point(17, 85);
+            this.lbl_Nome.Name = "lbl_Nome";
+            this.lbl_Nome.Size = new System.Drawing.Size(53, 16);
+            this.lbl_Nome.TabIndex = 2;
+            this.lbl_Nome.Text = "Nome:";
+            // 
+            // Lbl_Titulo
+            // 
+            this.Lbl_Titulo.AutoSize = true;
+            this.Lbl_Titulo.Font = new System.Drawing.Font("Berlin Sans FB Demi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_Titulo.Location = new System.Drawing.Point(72, 30);
+            this.Lbl_Titulo.Name = "Lbl_Titulo";
+            this.Lbl_Titulo.Size = new System.Drawing.Size(0, 18);
+            this.Lbl_Titulo.TabIndex = 1;
+            // 
+            // img_Logo
+            // 
+            this.img_Logo.Location = new System.Drawing.Point(13, 13);
+            this.img_Logo.Name = "img_Logo";
+            this.img_Logo.Size = new System.Drawing.Size(50, 50);
+            this.img_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.img_Logo.TabIndex = 0;
+            this.img_Logo.TabStop = false;
+            // 
+            // btn_Gravar
+            // 
+            this.btn_Gravar.BackColor = System.Drawing.Color.White;
+            this.btn_Gravar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Gravar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btn_Gravar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Gravar.Font = new System.Drawing.Font("Berlin Sans FB", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Gravar.ForeColor = System.Drawing.Color.Black;
+            this.btn_Gravar.Location = new System.Drawing.Point(300, 427);
+            this.btn_Gravar.Name = "btn_Gravar";
+            this.btn_Gravar.Size = new System.Drawing.Size(91, 27);
+            this.btn_Gravar.TabIndex = 36;
+            this.btn_Gravar.Text = "Gravar";
+            this.btn_Gravar.UseVisualStyleBackColor = false;
+            this.btn_Gravar.Click += new System.EventHandler(this.Btn_Gravar_Click);
+            // 
             // EditarUtilizador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -418,9 +436,9 @@
             this.Load += new System.EventHandler(this.VisualizarUtilizador_Load);
             this.panel_Utilizador.ResumeLayout(false);
             this.panel_Utilizador.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.img_Logo)).EndInit();
             this.panel_Escalao.ResumeLayout(false);
             this.panel_Escalao.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.img_Logo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -437,7 +455,7 @@
         private System.Windows.Forms.Label lbl_Password;
         private System.Windows.Forms.Label lbl_Utilizador;
         private System.Windows.Forms.Label lbl_CodPostal;
-        private System.Windows.Forms.Button btn_Gravar;
+        private System.Windows.Forms.Button btn_Fechar;
         private System.Windows.Forms.TextBox tb_Password;
         private System.Windows.Forms.TextBox tb_Utilizador;
         private System.Windows.Forms.TextBox tb_CodPostal;
@@ -457,5 +475,6 @@
         private System.Windows.Forms.RadioButton rb_Iniciados;
         private System.Windows.Forms.RadioButton rb_Benjamins;
         private System.Windows.Forms.RadioButton rb_Traquinas;
+        private System.Windows.Forms.Button btn_Gravar;
     }
 }

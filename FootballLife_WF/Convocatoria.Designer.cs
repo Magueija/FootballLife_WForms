@@ -42,9 +42,9 @@
             this.btn_Jogos = new System.Windows.Forms.Button();
             this.btn_Home = new System.Windows.Forms.Button();
             this.panel_Menu = new System.Windows.Forms.Panel();
-            this.btn_Contactos = new System.Windows.Forms.Button();
-            this.btn_Inventario = new System.Windows.Forms.Button();
-            this.btn_Convocatoria = new System.Windows.Forms.Button();
+            this.btn3 = new System.Windows.Forms.Button();
+            this.btn2 = new System.Windows.Forms.Button();
+            this.btn1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbl_NovaConvocatoria = new System.Windows.Forms.Label();
             this.img_NovaConvocatoria = new System.Windows.Forms.PictureBox();
@@ -197,7 +197,7 @@
             this.btn_Titulos.Name = "btn_Titulos";
             this.btn_Titulos.Size = new System.Drawing.Size(128, 31);
             this.btn_Titulos.TabIndex = 9;
-            this.btn_Titulos.Text = "TÍTULOS";
+            this.btn_Titulos.Text = "HISTÓRIA";
             this.btn_Titulos.UseVisualStyleBackColor = false;
             this.btn_Titulos.Click += new System.EventHandler(this.Btn_Titulos_Click);
             // 
@@ -267,6 +267,7 @@
             this.btn_Home.TabIndex = 5;
             this.btn_Home.Text = " HOME";
             this.btn_Home.UseVisualStyleBackColor = false;
+            this.btn_Home.Click += new System.EventHandler(this.Btn_Home_Click);
             // 
             // panel_Menu
             // 
@@ -274,9 +275,9 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel_Menu.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel_Menu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel_Menu.Controls.Add(this.btn_Contactos);
-            this.panel_Menu.Controls.Add(this.btn_Inventario);
-            this.panel_Menu.Controls.Add(this.btn_Convocatoria);
+            this.panel_Menu.Controls.Add(this.btn3);
+            this.panel_Menu.Controls.Add(this.btn2);
+            this.panel_Menu.Controls.Add(this.btn1);
             this.panel_Menu.Controls.Add(this.btn_Home);
             this.panel_Menu.Controls.Add(this.btn_Jogos);
             this.panel_Menu.Controls.Add(this.btn_Equipas);
@@ -292,56 +293,58 @@
             this.panel_Menu.TabIndex = 12;
             this.panel_Menu.Visible = false;
             // 
-            // btn_Contactos
+            // btn3
             // 
-            this.btn_Contactos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.btn3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Contactos.BackColor = System.Drawing.Color.Black;
-            this.btn_Contactos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Contactos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Contactos.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Contactos.ForeColor = System.Drawing.Color.White;
-            this.btn_Contactos.Location = new System.Drawing.Point(12, 322);
-            this.btn_Contactos.Name = "btn_Contactos";
-            this.btn_Contactos.Size = new System.Drawing.Size(128, 31);
-            this.btn_Contactos.TabIndex = 18;
-            this.btn_Contactos.Text = "CONTACTOS";
-            this.btn_Contactos.UseVisualStyleBackColor = false;
-            this.btn_Contactos.Click += new System.EventHandler(this.Btn_Utilizadores_Click);
+            this.btn3.BackColor = System.Drawing.Color.Black;
+            this.btn3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn3.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn3.ForeColor = System.Drawing.Color.White;
+            this.btn3.Location = new System.Drawing.Point(12, 322);
+            this.btn3.Name = "btn3";
+            this.btn3.Size = new System.Drawing.Size(128, 31);
+            this.btn3.TabIndex = 18;
+            this.btn3.Text = "CONTACTOS";
+            this.btn3.UseVisualStyleBackColor = false;
+            this.btn3.Visible = false;
+            this.btn3.Click += new System.EventHandler(this.Btn_Utilizadores_Click);
             // 
-            // btn_Inventario
+            // btn2
             // 
-            this.btn_Inventario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.btn2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Inventario.BackColor = System.Drawing.Color.Black;
-            this.btn_Inventario.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Inventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Inventario.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Inventario.ForeColor = System.Drawing.Color.White;
-            this.btn_Inventario.Location = new System.Drawing.Point(12, 285);
-            this.btn_Inventario.Name = "btn_Inventario";
-            this.btn_Inventario.Size = new System.Drawing.Size(128, 31);
-            this.btn_Inventario.TabIndex = 17;
-            this.btn_Inventario.Text = "INVENTÁRIO";
-            this.btn_Inventario.UseVisualStyleBackColor = false;
-            this.btn_Inventario.Click += new System.EventHandler(this.Btn_Inventario_Click);
+            this.btn2.BackColor = System.Drawing.Color.Black;
+            this.btn2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn2.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn2.ForeColor = System.Drawing.Color.White;
+            this.btn2.Location = new System.Drawing.Point(12, 285);
+            this.btn2.Name = "btn2";
+            this.btn2.Size = new System.Drawing.Size(128, 31);
+            this.btn2.TabIndex = 17;
+            this.btn2.Text = "INVENTÁRIO";
+            this.btn2.UseVisualStyleBackColor = false;
+            this.btn2.Visible = false;
+            this.btn2.Click += new System.EventHandler(this.Btn_Inventario_Click);
             // 
-            // btn_Convocatoria
+            // btn1
             // 
-            this.btn_Convocatoria.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.btn1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Convocatoria.BackColor = System.Drawing.Color.Black;
-            this.btn_Convocatoria.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Convocatoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Convocatoria.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Convocatoria.ForeColor = System.Drawing.Color.White;
-            this.btn_Convocatoria.Location = new System.Drawing.Point(12, 248);
-            this.btn_Convocatoria.Name = "btn_Convocatoria";
-            this.btn_Convocatoria.Size = new System.Drawing.Size(128, 31);
-            this.btn_Convocatoria.TabIndex = 16;
-            this.btn_Convocatoria.Text = "CONVOCATÓRIA";
-            this.btn_Convocatoria.UseVisualStyleBackColor = false;
-            this.btn_Convocatoria.Click += new System.EventHandler(this.Btn_Financiamento_Click);
+            this.btn1.BackColor = System.Drawing.Color.Black;
+            this.btn1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn1.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn1.ForeColor = System.Drawing.Color.White;
+            this.btn1.Location = new System.Drawing.Point(12, 248);
+            this.btn1.Name = "btn1";
+            this.btn1.Size = new System.Drawing.Size(128, 31);
+            this.btn1.TabIndex = 16;
+            this.btn1.Text = "CONVOCATÓRIA";
+            this.btn1.UseVisualStyleBackColor = false;
+            this.btn1.Visible = false;
             // 
             // panel1
             // 
@@ -369,6 +372,7 @@
             this.lbl_NovaConvocatoria.Size = new System.Drawing.Size(130, 18);
             this.lbl_NovaConvocatoria.TabIndex = 31;
             this.lbl_NovaConvocatoria.Text = "Nova Convocatória";
+            this.lbl_NovaConvocatoria.Visible = false;
             this.lbl_NovaConvocatoria.Click += new System.EventHandler(this.Btn_NovaConvocatoria_Click);
             this.lbl_NovaConvocatoria.MouseLeave += new System.EventHandler(this.NovaConvocatoria_MouseLeave);
             this.lbl_NovaConvocatoria.MouseHover += new System.EventHandler(this.NovaConvocatoria_MouseHover);
@@ -387,6 +391,7 @@
             this.img_NovaConvocatoria.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.img_NovaConvocatoria.TabIndex = 32;
             this.img_NovaConvocatoria.TabStop = false;
+            this.img_NovaConvocatoria.Visible = false;
             this.img_NovaConvocatoria.Click += new System.EventHandler(this.Btn_NovaConvocatoria_Click);
             this.img_NovaConvocatoria.MouseLeave += new System.EventHandler(this.NovaConvocatoria_MouseLeave);
             this.img_NovaConvocatoria.MouseHover += new System.EventHandler(this.NovaConvocatoria_MouseHover);
@@ -421,6 +426,7 @@
             this.btn_NovaConvocatoria.TabIndex = 30;
             this.btn_NovaConvocatoria.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_NovaConvocatoria.UseVisualStyleBackColor = false;
+            this.btn_NovaConvocatoria.Visible = false;
             this.btn_NovaConvocatoria.Click += new System.EventHandler(this.Btn_NovaConvocatoria_Click);
             this.btn_NovaConvocatoria.MouseLeave += new System.EventHandler(this.NovaConvocatoria_MouseLeave);
             this.btn_NovaConvocatoria.MouseHover += new System.EventHandler(this.NovaConvocatoria_MouseHover);
@@ -671,9 +677,9 @@
         private System.Windows.Forms.Button btn_Home;
         private System.Windows.Forms.Panel panel_Menu;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btn_Contactos;
-        private System.Windows.Forms.Button btn_Inventario;
-        private System.Windows.Forms.Button btn_Convocatoria;
+        private System.Windows.Forms.Button btn3;
+        private System.Windows.Forms.Button btn2;
+        private System.Windows.Forms.Button btn1;
         private System.Windows.Forms.Label lbl_Titulo;
         private System.Windows.Forms.Label lbl_NovaConvocatoria;
         private System.Windows.Forms.PictureBox img_NovaConvocatoria;

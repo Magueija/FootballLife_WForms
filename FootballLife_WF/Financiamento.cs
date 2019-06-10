@@ -409,6 +409,62 @@ namespace FootballLife_WF
             lbl_SemResultados_Despesas.Visible = false;
         }
 
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            Jogos jgs = new Jogos();
+            this.Hide();
+            jgs.ShowDialog();
+            this.Dispose();
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            Equipas Equipas = new Equipas();
+            this.Hide();
+            Equipas.ShowDialog();
+            this.Dispose();
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            Estadio Estadio = new Estadio();
+            this.Hide();
+            Estadio.ShowDialog();
+            this.Dispose();
+        }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            Historia hist = new Historia();
+            this.Hide();
+            hist.ShowDialog();
+            this.Dispose();
+        }
+
+        private void Btn_Inventario_Click(object sender, EventArgs e)
+        {
+            Inventario Inv = new Inventario();
+            this.Hide();
+            Inv.ShowDialog();
+            this.Dispose();
+        }
+
+        private void Button5_Click(object sender, EventArgs e)
+        {
+            Utilizadores Users = new Utilizadores();
+            this.Hide();
+            Users.ShowDialog();
+            this.Dispose();
+        }
+
+        private void Btn_Home_Click(object sender, EventArgs e)
+        {
+            PaginaInicial_Admin pgAdmin = new PaginaInicial_Admin();
+            this.Hide();
+            pgAdmin.ShowDialog();
+            this.Dispose();
+        }
+
 
         //==============================================================================================
     }
