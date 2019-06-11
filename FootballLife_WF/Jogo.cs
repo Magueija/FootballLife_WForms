@@ -113,6 +113,27 @@ namespace FootballLife_WF
             VerJogo verjg = new VerJogo(IDJogo);
             verjg.Show();
         }
+
+        private void Pb_Delete_Click(object sender, EventArgs e)
+        {
+            SqlConnection con = new SqlConnection(Properties.Settings.Default.Connection);
+            con.Open();
+
+            try
+            {
+                string Query = ("UPDATE TblJogo SET Apagado = 1 WHERE IDJogo = @IDJogo");
+                SqlCommand Command = new SqlCommand(Query, con);
+                Command.Parameters.AddWithValue("@IDJogo", IDJogo);
+                Command.ExecuteNonQuery();
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.ToString());
+            }
+            con.Close();
+
+            this.Dispose();
+        }
     }
 }
 

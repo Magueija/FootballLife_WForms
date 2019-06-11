@@ -178,7 +178,6 @@
             this.button5.TabIndex = 19;
             this.button5.Text = "UTILIZADORES";
             this.button5.UseVisualStyleBackColor = false;
-            this.button5.Visible = false;
             this.button5.Click += new System.EventHandler(this.Button5_Click);
             // 
             // btn_Inventario
@@ -196,7 +195,6 @@
             this.btn_Inventario.TabIndex = 18;
             this.btn_Inventario.Text = "INVENTÁRIO";
             this.btn_Inventario.UseVisualStyleBackColor = false;
-            this.btn_Inventario.Visible = false;
             this.btn_Inventario.Click += new System.EventHandler(this.Btn_Inventario_Click);
             // 
             // btn_Financiamento
@@ -214,7 +212,6 @@
             this.btn_Financiamento.TabIndex = 17;
             this.btn_Financiamento.Text = "FINANCIAMENTO";
             this.btn_Financiamento.UseVisualStyleBackColor = false;
-            this.btn_Financiamento.Visible = false;
             // 
             // btn_Home
             // 

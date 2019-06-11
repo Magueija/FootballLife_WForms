@@ -81,6 +81,7 @@
             this.pb_Delete.TabIndex = 32;
             this.pb_Delete.TabStop = false;
             this.pb_Delete.Visible = false;
+            this.pb_Delete.Click += new System.EventHandler(this.Pb_Delete_Click);
             // 
             // lbl_Data
             // 

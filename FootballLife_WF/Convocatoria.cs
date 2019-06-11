@@ -27,15 +27,23 @@ namespace FootballLife_WF
 
             if (Properties.Settings.Default.FuncaoUser == "Treinador")
             {
-                btn_NovaConvocatoria.Visible = true;
-                img_NovaConvocatoria.Visible = true;
-                lbl_NovaConvocatoria.Visible = true;
+                btn1.Visible = true;
+                btn2.Visible = true;
+                btn3.Visible = true;
+
+                btn1.Text = "CONVOCATÓRIA";
+                btn2.Text = "INVENTÁRIO";
+                btn3.Text = "CONTACTOS";
             }
-            else
+            else if (Properties.Settings.Default.FuncaoUser == "Atleta")
             {
-                btn_NovaConvocatoria.Visible = false;
-                img_NovaConvocatoria.Visible = false;
-                lbl_NovaConvocatoria.Visible = false;
+                btn1.Visible = true;
+                btn2.Visible = true;
+                btn3.Visible = true;
+
+                btn1.Text = "CONVOCATÓRIA";
+                btn2.Text = "COTA DE ATLETA";
+                btn3.Text = "CONTACTOS";
             }
         }
 
@@ -719,6 +727,11 @@ namespace FootballLife_WF
                 PgInicio.ShowDialog();
                 this.Dispose();
             }
+        }
+
+        private void Btn1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

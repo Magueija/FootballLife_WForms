@@ -47,18 +47,17 @@ namespace FootballLife_WF
 
 
         string displayimg, filePath;
-        string folderpath = @" \Projeto_WindowsForms\LogoEquipas\";
+        string folderpath = @"..\Projeto_WindowsForms\LogoEquipas\";
         OpenFileDialog open = new OpenFileDialog();
 
         private void Btn_UploadCasa_Click(object sender, EventArgs e)
         {
-            open.Filter = "Arquivos de imagem (* .jpg; * .jpeg; * .gif; * .bmp) | * .jpg; * .jpeg; * .gif; * .bmp | todos os arquivos | *. *";
+            open.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png";
             if (open.ShowDialog() == DialogResult.OK)
             {
-                // exibir imagem na caixa de imagem
                 displayimg = open.SafeFileName;
                 img_LogoCasa.Image = new Bitmap(open.FileName);
-                // caminho do arquivo de imagem
+
                 txtpathCasa.Text = open.FileName;
                 filePath = open.FileName;
             }
@@ -67,13 +66,12 @@ namespace FootballLife_WF
    
         private void Btn_UploadFora_Click(object sender, EventArgs e)
         {
-            open.Filter = "Arquivos de imagem (* .jpg; * .jpeg; * .gif; * .bmp) | * .jpg; * .jpeg; * .gif; * .bmp | todos os arquivos | *. *";
+            open.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png";
             if (open.ShowDialog() == DialogResult.OK)
             {
-                // exibir imagem na caixa de imagem
                 displayimg = open.SafeFileName;
                 img_LogoFora.Image = new Bitmap(open.FileName);
-                // caminho do arquivo de imagem
+
                 txtpathFora.Text = open.FileName;
                 filePath = open.FileName;
             }
@@ -145,7 +143,7 @@ namespace FootballLife_WF
                 }
                 else if (img_LogoCasa.Image == Properties.Resources.Logo_Clube && tb_EquipaCasa.Text != "Palmelense F.C." || img_LogoFora.Image == Properties.Resources.Logo_Clube && tb_EquipaFora.Text != "Palmelense F.C.")
                 {
-                    MessageBox.Show("A Equipa 'Palmelense F.C.' não corresponde ao seu logo!", "ATENÇÃO!", MessageBoxButtons.OK);
+                    MessageBox.Show("A Equipa 'Palmelense F.C.' não corresponde ao logo por defeito!", "ATENÇÃO!", MessageBoxButtons.OK);
                 }
                 else
                 {
@@ -169,7 +167,12 @@ namespace FootballLife_WF
                         CommandINSERT.Parameters.AddWithValue("@GolosCasa", tb_GolosCasa.Text);
                         CommandINSERT.Parameters.AddWithValue("@GolosFora", tb_GolosFora.Text);
                         CommandINSERT.Parameters.AddWithValue("@Path_ImgAdversario", folderpath + Path.GetFileName(open.FileName));
-                        File.Copy(filePath, Path.Combine(folderpath, Path.GetFileName(filePath)), true);
+
+                        if (!File.Exists(folderpath + Path.GetFileName(open.FileName)))
+                        {
+                            File.Copy(filePath, Path.Combine(folderpath, Path.GetFileName(filePath)), true);
+                        }
+
                         CommandINSERT.Parameters.AddWithValue("@IDEscalao", IDEscalao);
                         CommandINSERT.ExecuteNonQuery();
 

@@ -116,7 +116,7 @@
             this.img_Logo.BackColor = System.Drawing.Color.Transparent;
             this.img_Logo.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.img_Logo.Image = global::FootballLife_WF.Properties.Resources.Logo_Clube;
-            this.img_Logo.Location = new System.Drawing.Point(1314, 12);
+            this.img_Logo.Location = new System.Drawing.Point(1308, 12);
             this.img_Logo.MaximumSize = new System.Drawing.Size(44, 40);
             this.img_Logo.MinimumSize = new System.Drawing.Size(44, 40);
             this.img_Logo.Name = "img_Logo";
@@ -373,7 +373,7 @@
             this.btn_TopMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_TopMenu.Location = new System.Drawing.Point(0, 0);
             this.btn_TopMenu.Name = "btn_TopMenu";
-            this.btn_TopMenu.Size = new System.Drawing.Size(1370, 65);
+            this.btn_TopMenu.Size = new System.Drawing.Size(1364, 65);
             this.btn_TopMenu.TabIndex = 0;
             this.btn_TopMenu.UseVisualStyleBackColor = false;
             // 
@@ -384,7 +384,7 @@
             this.lbl_Titulo.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Titulo.Font = new System.Drawing.Font("Bauhaus 93", 65.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Titulo.ForeColor = System.Drawing.Color.White;
-            this.lbl_Titulo.Location = new System.Drawing.Point(537, 108);
+            this.lbl_Titulo.Location = new System.Drawing.Point(534, 108);
             this.lbl_Titulo.Name = "lbl_Titulo";
             this.lbl_Titulo.Size = new System.Drawing.Size(240, 98);
             this.lbl_Titulo.TabIndex = 15;
@@ -406,7 +406,7 @@
             this.panel_APagar.Controls.Add(this.label3);
             this.panel_APagar.Controls.Add(this.lbl_CotaPagar);
             this.panel_APagar.Controls.Add(this.label1);
-            this.panel_APagar.Location = new System.Drawing.Point(390, 254);
+            this.panel_APagar.Location = new System.Drawing.Point(387, 254);
             this.panel_APagar.Name = "panel_APagar";
             this.panel_APagar.Size = new System.Drawing.Size(544, 386);
             this.panel_APagar.TabIndex = 16;
@@ -718,7 +718,7 @@
             this.panel_Pago.Controls.Add(this.pictureBox1);
             this.panel_Pago.Controls.Add(this.label2);
             this.panel_Pago.Controls.Add(this.label17);
-            this.panel_Pago.Location = new System.Drawing.Point(388, 254);
+            this.panel_Pago.Location = new System.Drawing.Point(385, 254);
             this.panel_Pago.Name = "panel_Pago";
             this.panel_Pago.Size = new System.Drawing.Size(544, 386);
             this.panel_Pago.TabIndex = 33;
@@ -731,7 +731,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::FootballLife_WF.Properties.Resources.Fundo_1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.ClientSize = new System.Drawing.Size(1364, 749);
             this.Controls.Add(this.panel_Pago);
             this.Controls.Add(this.panel_APagar);
             this.Controls.Add(this.lbl_Titulo);
