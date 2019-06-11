@@ -168,10 +168,13 @@ namespace FootballLife_WF
                         CommandINSERT.Parameters.AddWithValue("@GolosFora", tb_GolosFora.Text);
                         CommandINSERT.Parameters.AddWithValue("@Path_ImgAdversario", folderpath + Path.GetFileName(open.FileName));
 
-                        if (!File.Exists(folderpath + Path.GetFileName(open.FileName)))
+                        string fileName = Path.Combine(folderpath, Path.GetFileName(filePath));
+
+                        if (!File.Exists(fileName))
                         {
-                            File.Copy(filePath, Path.Combine(folderpath, Path.GetFileName(filePath)), true);
+                            File.Copy(filePath, fileName, true);
                         }
+
 
                         CommandINSERT.Parameters.AddWithValue("@IDEscalao", IDEscalao);
                         CommandINSERT.ExecuteNonQuery();

@@ -214,7 +214,6 @@ namespace FootballLife_WF
 
         
 
-        string folderpath = @"..\Projeto_WindowsForms\LogoEquipas\";
         private void Jogo(string IDEscalao)
         {
             flowpanel_Jogos.Controls.Clear();
@@ -258,14 +257,7 @@ namespace FootballLife_WF
 
                     patch = dr["Path_ImgAdversario"].ToString();
 
-                    if (!Directory.Exists(folderpath))
-                    {
-                        Directory.CreateDirectory(folderpath);
-                    }
-
-                    string Patch = Path.Combine(folderpath, Path.GetFileName(patch));
-
-                    Jogo jogo = new Jogo(IDJogo, idescalao, Escalao, Data, EquipaCasa, GolosCasa, EquipaFora, GolosFora, Patch);
+                    Jogo jogo = new Jogo(IDJogo, idescalao, Escalao, Data, EquipaCasa, GolosCasa, EquipaFora, GolosFora, patch);
                     flowpanel_Jogos.Controls.Add(jogo);
                 }
                 dr.Close();
