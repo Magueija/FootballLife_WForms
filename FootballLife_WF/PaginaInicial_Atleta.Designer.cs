@@ -60,12 +60,14 @@
             this.lbl_Pesquisar = new System.Windows.Forms.Label();
             this.img_Linha = new System.Windows.Forms.PictureBox();
             this.flowpanel_Jogos = new System.Windows.Forms.FlowLayoutPanel();
+            this.img_Fundo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.img_Menu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Logo)).BeginInit();
             this.panel_Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_LogOut)).BeginInit();
             this.panel_Pesquisa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_Linha)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img_Fundo)).BeginInit();
             this.SuspendLayout();
             // 
             // img_Menu
@@ -215,7 +217,7 @@
             this.panel_Menu.Controls.Add(this.btn_LogOut);
             this.panel_Menu.Location = new System.Drawing.Point(0, 65);
             this.panel_Menu.Name = "panel_Menu";
-            this.panel_Menu.Size = new System.Drawing.Size(160, 684);
+            this.panel_Menu.Size = new System.Drawing.Size(160, 687);
             this.panel_Menu.TabIndex = 12;
             this.panel_Menu.Visible = false;
             // 
@@ -278,7 +280,7 @@
             this.lbl_Sessao.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Sessao.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl_Sessao.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Sessao.Location = new System.Drawing.Point(72, 639);
+            this.lbl_Sessao.Location = new System.Drawing.Point(72, 642);
             this.lbl_Sessao.Name = "lbl_Sessao";
             this.lbl_Sessao.Size = new System.Drawing.Size(44, 16);
             this.lbl_Sessao.TabIndex = 15;
@@ -293,7 +295,7 @@
             this.lbl_Terminar.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Terminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl_Terminar.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Terminar.Location = new System.Drawing.Point(72, 623);
+            this.lbl_Terminar.Location = new System.Drawing.Point(72, 626);
             this.lbl_Terminar.Name = "lbl_Terminar";
             this.lbl_Terminar.Size = new System.Drawing.Size(61, 16);
             this.lbl_Terminar.TabIndex = 14;
@@ -307,7 +309,7 @@
             this.img_LogOut.BackColor = System.Drawing.Color.Transparent;
             this.img_LogOut.Cursor = System.Windows.Forms.Cursors.Hand;
             this.img_LogOut.Image = global::FootballLife_WF.Properties.Resources.LogOut;
-            this.img_LogOut.Location = new System.Drawing.Point(22, 614);
+            this.img_LogOut.Location = new System.Drawing.Point(22, 617);
             this.img_LogOut.Name = "img_LogOut";
             this.img_LogOut.Size = new System.Drawing.Size(44, 49);
             this.img_LogOut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -325,7 +327,7 @@
             this.btn_LogOut.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
             this.btn_LogOut.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
             this.btn_LogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_LogOut.Location = new System.Drawing.Point(12, 607);
+            this.btn_LogOut.Location = new System.Drawing.Point(12, 610);
             this.btn_LogOut.Name = "btn_LogOut";
             this.btn_LogOut.Size = new System.Drawing.Size(130, 65);
             this.btn_LogOut.TabIndex = 25;
@@ -533,6 +535,17 @@
             this.flowpanel_Jogos.TabIndex = 27;
             this.flowpanel_Jogos.WrapContents = false;
             // 
+            // img_Fundo
+            // 
+            this.img_Fundo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.img_Fundo.Image = global::FootballLife_WF.Properties.Resources.Fundo_1;
+            this.img_Fundo.Location = new System.Drawing.Point(0, 0);
+            this.img_Fundo.Name = "img_Fundo";
+            this.img_Fundo.Size = new System.Drawing.Size(1370, 749);
+            this.img_Fundo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.img_Fundo.TabIndex = 28;
+            this.img_Fundo.TabStop = false;
+            // 
             // PaginaInicial_Atleta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -551,6 +564,7 @@
             this.Controls.Add(this.panel_Menu);
             this.Controls.Add(this.btn_Menu);
             this.Controls.Add(this.btn_TopMenu);
+            this.Controls.Add(this.img_Fundo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(900, 600);
             this.Name = "PaginaInicial_Atleta";
@@ -565,6 +579,7 @@
             this.panel_Pesquisa.ResumeLayout(false);
             this.panel_Pesquisa.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_Linha)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img_Fundo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -602,5 +617,6 @@
         private System.Windows.Forms.Label lbl_Pesquisar;
         private System.Windows.Forms.PictureBox img_Linha;
         private System.Windows.Forms.FlowLayoutPanel flowpanel_Jogos;
+        private System.Windows.Forms.PictureBox img_Fundo;
     }
 }

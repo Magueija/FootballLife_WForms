@@ -15,6 +15,12 @@ namespace FootballLife_WF
     {
         public Convocatoria()
         {
+            this.SetStyle(
+                System.Windows.Forms.ControlStyles.UserPaint |
+                System.Windows.Forms.ControlStyles.AllPaintingInWmPaint |
+                System.Windows.Forms.ControlStyles.OptimizedDoubleBuffer,
+                true);
+
             InitializeComponent();
         }
 
@@ -25,8 +31,12 @@ namespace FootballLife_WF
             Suplentes();
             NaoConvocados();
 
-            if (Properties.Settings.Default.FuncaoUser == "Treinador")
+            if (Program.CurrentFuncaoUser == "Treinador")
             {
+                btn_NovaConvocatoria.Visible = true;
+                img_NovaConvocatoria.Visible = true;
+                lbl_NovaConvocatoria.Visible = true;
+
                 btn1.Visible = true;
                 btn2.Visible = true;
                 btn3.Visible = true;
@@ -35,7 +45,7 @@ namespace FootballLife_WF
                 btn2.Text = "INVENTÁRIO";
                 btn3.Text = "CONTACTOS";
             }
-            else if (Properties.Settings.Default.FuncaoUser == "Atleta")
+            else if (Program.CurrentFuncaoUser == "Atleta")
             {
                 btn1.Visible = true;
                 btn2.Visible = true;
@@ -60,7 +70,7 @@ namespace FootballLife_WF
             try
             {
                 SqlDataReader dr;
-                string Query = ("SELECT dbo.TblConvocatoria.IDConvocatoria, dbo.TblConvocatoria.DataJogo, dbo.TblConvocatoria.Adversario, dbo.TblTatica.Tatica FROM dbo.TblConvocatoria INNER JOIN dbo.TblTatica ON dbo.TblConvocatoria.FK_IDTatica = dbo.TblTatica.IDTatica WHERE dbo.TblConvocatoria.FK_IDEscalao = " + Properties.Settings.Default.IDEscalao);
+                string Query = ("SELECT dbo.TblConvocatoria.IDConvocatoria, dbo.TblConvocatoria.DataJogo, dbo.TblConvocatoria.Adversario, dbo.TblTatica.Tatica FROM dbo.TblConvocatoria INNER JOIN dbo.TblTatica ON dbo.TblConvocatoria.FK_IDTatica = dbo.TblTatica.IDTatica WHERE dbo.TblConvocatoria.FK_IDEscalao = " + Program.CurrentIDEscalao);
                 SqlCommand Command = new SqlCommand(Query, con);
                 dr = Command.ExecuteReader();
 
@@ -97,7 +107,7 @@ namespace FootballLife_WF
             {
                 SqlDataReader dr;
                 string Query = ("SELECT dbo.TblAtleta.IDAtleta, dbo.TblAtleta.Nome FROM dbo.TblTitular INNER JOIN dbo.TblAtleta ON dbo.TblTitular.FK_IDAtleta = dbo.TblAtleta.IDAtleta INNER JOIN " +
-                    "dbo.TblConvocatoria ON dbo.TblTitular.FK_IDConvocatoria = dbo.TblConvocatoria.IDConvocatoria WHERE dbo.TblConvocatoria.FK_IDEscalao = " + Properties.Settings.Default.IDEscalao);
+                    "dbo.TblConvocatoria ON dbo.TblTitular.FK_IDConvocatoria = dbo.TblConvocatoria.IDConvocatoria WHERE dbo.TblConvocatoria.FK_IDEscalao = " + Program.CurrentIDEscalao);
                 SqlCommand Command = new SqlCommand(Query, con);
                 dr = Command.ExecuteReader();
                 int i = 1;
@@ -116,7 +126,7 @@ namespace FootballLife_WF
                     panel.BackColor = Color.White;
                     panel.Visible = true;
                     panel.Name = i.ToString();
-                    panel.Margin = new Padding(10, 0, 0, 0);
+                    panel.Margin = new Padding(5, 5, 5, 5);
                     flowpanel_Titulares.Controls.Add(panel);
                    
                     Label posicao = new Label();
@@ -491,7 +501,7 @@ namespace FootballLife_WF
             {
                 SqlDataReader dr;
                 string Query = ("SELECT dbo.TblAtleta.IDAtleta, dbo.TblAtleta.Nome FROM dbo.TblSuplente INNER JOIN dbo.TblAtleta ON dbo.TblSuplente.FK_IDAtleta = dbo.TblAtleta.IDAtleta INNER JOIN " +
-                    "dbo.TblConvocatoria ON dbo.TblSuplente.FK_IDConvocatoria = dbo.TblConvocatoria.IDConvocatoria WHERE dbo.TblConvocatoria.FK_IDEscalao = " + Properties.Settings.Default.IDEscalao);
+                    "dbo.TblConvocatoria ON dbo.TblSuplente.FK_IDConvocatoria = dbo.TblConvocatoria.IDConvocatoria WHERE dbo.TblConvocatoria.FK_IDEscalao = " + Program.CurrentIDEscalao);
                 SqlCommand Command = new SqlCommand(Query, con);
                 dr = Command.ExecuteReader();
 
@@ -508,7 +518,7 @@ namespace FootballLife_WF
                     panel.BorderStyle = BorderStyle.Fixed3D;
                     panel.BackColor = Color.White;
                     panel.Visible = true;
-                    panel.Margin = new Padding(10, 0, 0, 0);
+                    panel.Margin = new Padding(5, 5, 5, 5);
                     flowpanel_Suplentes.Controls.Add(panel);
 
                     PictureBox Pb = new PictureBox();
@@ -555,7 +565,7 @@ namespace FootballLife_WF
             {
                 SqlDataReader dr;
                 string Query = ("SELECT dbo.TblAtleta.IDAtleta, dbo.TblAtleta.Nome FROM dbo.TblAtleta LEFT OUTER JOIN dbo.TblSuplente ON dbo.TblAtleta.IDAtleta = dbo.TblSuplente.FK_IDAtleta LEFT OUTER JOIN dbo.TblTitular" +
-                    " ON dbo.TblAtleta.IDAtleta = dbo.TblTitular.FK_IDAtleta WHERE(dbo.TblTitular.FK_IDAtleta IS NULL) AND(dbo.TblSuplente.FK_IDAtleta IS NULL) AND(dbo.TblAtleta.FK_IDEscalao = " + Properties.Settings.Default.IDEscalao + " )");
+                    " ON dbo.TblAtleta.IDAtleta = dbo.TblTitular.FK_IDAtleta WHERE(dbo.TblTitular.FK_IDAtleta IS NULL) AND(dbo.TblSuplente.FK_IDAtleta IS NULL) AND(dbo.TblAtleta.FK_IDEscalao = " + Program.CurrentIDEscalao + " )");
                 SqlCommand Command = new SqlCommand(Query, con);
                 dr = Command.ExecuteReader();
 
@@ -572,7 +582,7 @@ namespace FootballLife_WF
                     panel.BorderStyle = BorderStyle.Fixed3D;
                     panel.BackColor = Color.White;
                     panel.Visible = true;
-                    panel.Margin = new Padding(10, 0, 0, 0);
+                    panel.Margin = new Padding(5, 5, 5, 5);
                     flowpanel_NaoConv.Controls.Add(panel);
 
                     PictureBox Pb = new PictureBox();
@@ -634,6 +644,10 @@ namespace FootballLife_WF
 
         private void Btn_LogOut_Click(object sender, EventArgs e)
         {
+            Program.CurrentFuncaoUser = "";
+            Program.CurrentIDUser = 0;
+            Program.CurrentIDEscalao = 0;
+
             PaginaInicial PgInicio = new PaginaInicial();
             this.Hide();
             PgInicio.ShowDialog();
@@ -654,14 +668,14 @@ namespace FootballLife_WF
 
         private void Btn_Inventario_Click(object sender, EventArgs e)
         {
-            if (Properties.Settings.Default.FuncaoUser == "Admin" || Properties.Settings.Default.FuncaoUser == "Treinador")
+            if (Program.CurrentFuncaoUser == "Admin" || Program.CurrentFuncaoUser == "Treinador")
             {
                 Inventario inv = new Inventario();
                 this.Hide();
                 inv.ShowDialog();
                 this.Dispose();
             }
-            else if (Properties.Settings.Default.FuncaoUser == "Atleta")
+            else if (Program.CurrentFuncaoUser == "Atleta")
             {
                 Cota ct = new Cota();
                 this.Hide();
@@ -713,14 +727,14 @@ namespace FootballLife_WF
 
         private void Btn_Home_Click(object sender, EventArgs e)
         {
-            if (Properties.Settings.Default.FuncaoUser == "Treinador")
+            if (Program.CurrentFuncaoUser == "Treinador")
             {
                 PaginaInicial_Treinador PgInicio = new PaginaInicial_Treinador();
                 this.Hide();
                 PgInicio.ShowDialog();
                 this.Dispose();
             }
-            else if (Properties.Settings.Default.FuncaoUser == "Atleta")
+            else if (Program.CurrentFuncaoUser == "Atleta")
             {
                 PaginaInicial_Atleta PgInicio = new PaginaInicial_Atleta();
                 this.Hide();

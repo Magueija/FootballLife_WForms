@@ -28,7 +28,7 @@ namespace FootballLife_WF
             try
             {
                 SqlDataReader dr;
-                string QuerySelect = "SELECT dbo.TblEscalao.IDEscalao FROM dbo.TblEscalao INNER JOIN dbo.TblTreinador ON dbo.TblEscalao.IDEscalao = dbo.TblTreinador.FK_IDEscalao WHERE dbo.TblTreinador.IDTreinador = " + Properties.Settings.Default.IDUser;
+                string QuerySelect = "SELECT dbo.TblEscalao.IDEscalao FROM dbo.TblEscalao INNER JOIN dbo.TblTreinador ON dbo.TblEscalao.IDEscalao = dbo.TblTreinador.FK_IDEscalao WHERE dbo.TblTreinador.IDTreinador = " + Program.CurrentIDUser;
 
                 SqlCommand CommandEscalao = new SqlCommand(QuerySelect, con);
                 dr = CommandEscalao.ExecuteReader();

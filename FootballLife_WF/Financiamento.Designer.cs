@@ -159,7 +159,7 @@
             this.panel_Menu.Controls.Add(this.button4);
             this.panel_Menu.Location = new System.Drawing.Point(0, 65);
             this.panel_Menu.Name = "panel_Menu";
-            this.panel_Menu.Size = new System.Drawing.Size(160, 684);
+            this.panel_Menu.Size = new System.Drawing.Size(160, 687);
             this.panel_Menu.TabIndex = 13;
             this.panel_Menu.Visible = false;
             // 
@@ -272,11 +272,12 @@
             this.lbl_Sessao.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Sessao.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl_Sessao.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Sessao.Location = new System.Drawing.Point(73, 640);
+            this.lbl_Sessao.Location = new System.Drawing.Point(73, 643);
             this.lbl_Sessao.Name = "lbl_Sessao";
             this.lbl_Sessao.Size = new System.Drawing.Size(44, 16);
             this.lbl_Sessao.TabIndex = 15;
             this.lbl_Sessao.Text = "Sessão";
+            this.lbl_Sessao.Click += new System.EventHandler(this.Btn_LogOut_Click);
             // 
             // lbl_Terminar
             // 
@@ -286,11 +287,12 @@
             this.lbl_Terminar.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Terminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl_Terminar.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Terminar.Location = new System.Drawing.Point(73, 624);
+            this.lbl_Terminar.Location = new System.Drawing.Point(73, 627);
             this.lbl_Terminar.Name = "lbl_Terminar";
             this.lbl_Terminar.Size = new System.Drawing.Size(61, 16);
             this.lbl_Terminar.TabIndex = 14;
             this.lbl_Terminar.Text = "Terminar";
+            this.lbl_Terminar.Click += new System.EventHandler(this.Btn_LogOut_Click);
             // 
             // button3
             // 
@@ -316,12 +318,13 @@
             this.img_LogOut.BackColor = System.Drawing.Color.Transparent;
             this.img_LogOut.Cursor = System.Windows.Forms.Cursors.Hand;
             this.img_LogOut.Image = global::FootballLife_WF.Properties.Resources.LogOut;
-            this.img_LogOut.Location = new System.Drawing.Point(23, 615);
+            this.img_LogOut.Location = new System.Drawing.Point(23, 618);
             this.img_LogOut.Name = "img_LogOut";
             this.img_LogOut.Size = new System.Drawing.Size(44, 49);
             this.img_LogOut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.img_LogOut.TabIndex = 0;
             this.img_LogOut.TabStop = false;
+            this.img_LogOut.Click += new System.EventHandler(this.Btn_LogOut_Click);
             // 
             // btn_LogOut
             // 
@@ -333,11 +336,12 @@
             this.btn_LogOut.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
             this.btn_LogOut.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
             this.btn_LogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_LogOut.Location = new System.Drawing.Point(12, 607);
+            this.btn_LogOut.Location = new System.Drawing.Point(12, 610);
             this.btn_LogOut.Name = "btn_LogOut";
             this.btn_LogOut.Size = new System.Drawing.Size(130, 65);
             this.btn_LogOut.TabIndex = 20;
             this.btn_LogOut.UseVisualStyleBackColor = false;
+            this.btn_LogOut.Click += new System.EventHandler(this.Btn_LogOut_Click);
             // 
             // button4
             // 
@@ -371,6 +375,7 @@
             this.img_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.img_Logo.TabIndex = 18;
             this.img_Logo.TabStop = false;
+            this.img_Logo.Click += new System.EventHandler(this.Btn_Home_Click);
             // 
             // lbl_Titulo
             // 

@@ -15,6 +15,12 @@ namespace FootballLife_WF
     {
         public Financiamento()
         {
+            this.SetStyle(
+                System.Windows.Forms.ControlStyles.UserPaint |
+                System.Windows.Forms.ControlStyles.AllPaintingInWmPaint |
+                System.Windows.Forms.ControlStyles.OptimizedDoubleBuffer,
+                true);
+
             InitializeComponent();
         }
 
@@ -462,6 +468,18 @@ namespace FootballLife_WF
             PaginaInicial_Admin pgAdmin = new PaginaInicial_Admin();
             this.Hide();
             pgAdmin.ShowDialog();
+            this.Dispose();
+        }
+
+        private void Btn_LogOut_Click(object sender, EventArgs e)
+        {
+            Program.CurrentFuncaoUser = "";
+            Program.CurrentIDUser = 0;
+            Program.CurrentIDEscalao = 0;
+
+            PaginaInicial PgInicio = new PaginaInicial();
+            this.Hide();
+            PgInicio.ShowDialog();
             this.Dispose();
         }
 

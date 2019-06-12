@@ -41,8 +41,10 @@
             this.Escalao = new System.Windows.Forms.Label();
             this.lbl_Escalao = new System.Windows.Forms.Label();
             this.panel_Utilizador = new System.Windows.Forms.Panel();
+            this.img_Fundo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.img_Logo)).BeginInit();
             this.panel_Utilizador.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.img_Fundo)).BeginInit();
             this.SuspendLayout();
             // 
             // img_Logo
@@ -176,15 +178,26 @@
             this.panel_Utilizador.Size = new System.Drawing.Size(582, 257);
             this.panel_Utilizador.TabIndex = 0;
             // 
+            // img_Fundo
+            // 
+            this.img_Fundo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.img_Fundo.Image = ((System.Drawing.Image)(resources.GetObject("img_Fundo.Image")));
+            this.img_Fundo.Location = new System.Drawing.Point(0, 0);
+            this.img_Fundo.Name = "img_Fundo";
+            this.img_Fundo.Size = new System.Drawing.Size(645, 302);
+            this.img_Fundo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.img_Fundo.TabIndex = 1;
+            this.img_Fundo.TabStop = false;
+            // 
             // VisualizarUtilizador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(645, 302);
             this.Controls.Add(this.panel_Utilizador);
+            this.Controls.Add(this.img_Fundo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -196,6 +209,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.img_Logo)).EndInit();
             this.panel_Utilizador.ResumeLayout(false);
             this.panel_Utilizador.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.img_Fundo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -214,5 +228,6 @@
         private System.Windows.Forms.Label Escalao;
         private System.Windows.Forms.Label lbl_Escalao;
         private System.Windows.Forms.Panel panel_Utilizador;
+        private System.Windows.Forms.PictureBox img_Fundo;
     }
 }

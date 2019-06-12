@@ -38,9 +38,13 @@
             this.btn_Estadio = new System.Windows.Forms.Button();
             this.btn_Titulos = new System.Windows.Forms.Button();
             this.panel_Menu = new System.Windows.Forms.Panel();
+            this.lbl_Sessao = new System.Windows.Forms.Label();
             this.btn3 = new System.Windows.Forms.Button();
+            this.lbl_Terminar = new System.Windows.Forms.Label();
             this.btn2 = new System.Windows.Forms.Button();
+            this.img_LogOut = new System.Windows.Forms.PictureBox();
             this.btn1 = new System.Windows.Forms.Button();
+            this.btn_LogOut = new System.Windows.Forms.Button();
             this.btn_TopMenu = new System.Windows.Forms.Button();
             this.lbl_Titulo = new System.Windows.Forms.Label();
             this.panel_Pesquisa = new System.Windows.Forms.Panel();
@@ -59,12 +63,15 @@
             this.lbl_NovoResultado = new System.Windows.Forms.Label();
             this.img_NovoResultado = new System.Windows.Forms.PictureBox();
             this.btn_NovoResultado = new System.Windows.Forms.Button();
+            this.img_Fundo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.img_Menu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Logo)).BeginInit();
             this.panel_Menu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.img_LogOut)).BeginInit();
             this.panel_Pesquisa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_Linha)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_NovoResultado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img_Fundo)).BeginInit();
             this.SuspendLayout();
             // 
             // img_Menu
@@ -99,6 +106,7 @@
             this.img_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.img_Logo.TabIndex = 3;
             this.img_Logo.TabStop = false;
+            this.img_Logo.Click += new System.EventHandler(this.Btn_Home_Click);
             // 
             // btn_Menu
             // 
@@ -204,9 +212,13 @@
             this.panel_Menu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel_Menu.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel_Menu.Controls.Add(this.lbl_Sessao);
             this.panel_Menu.Controls.Add(this.btn3);
+            this.panel_Menu.Controls.Add(this.lbl_Terminar);
             this.panel_Menu.Controls.Add(this.btn2);
+            this.panel_Menu.Controls.Add(this.img_LogOut);
             this.panel_Menu.Controls.Add(this.btn1);
+            this.panel_Menu.Controls.Add(this.btn_LogOut);
             this.panel_Menu.Controls.Add(this.btn_Home);
             this.panel_Menu.Controls.Add(this.btn_Jogos);
             this.panel_Menu.Controls.Add(this.btn_Equipas);
@@ -214,9 +226,25 @@
             this.panel_Menu.Controls.Add(this.btn_Titulos);
             this.panel_Menu.Location = new System.Drawing.Point(0, 65);
             this.panel_Menu.Name = "panel_Menu";
-            this.panel_Menu.Size = new System.Drawing.Size(160, 684);
+            this.panel_Menu.Size = new System.Drawing.Size(160, 687);
             this.panel_Menu.TabIndex = 12;
             this.panel_Menu.Visible = false;
+            // 
+            // lbl_Sessao
+            // 
+            this.lbl_Sessao.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_Sessao.AutoSize = true;
+            this.lbl_Sessao.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_Sessao.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl_Sessao.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Sessao.Location = new System.Drawing.Point(74, 643);
+            this.lbl_Sessao.Name = "lbl_Sessao";
+            this.lbl_Sessao.Size = new System.Drawing.Size(44, 16);
+            this.lbl_Sessao.TabIndex = 32;
+            this.lbl_Sessao.Text = "Sessão";
+            this.lbl_Sessao.Visible = false;
+            this.lbl_Sessao.Click += new System.EventHandler(this.Btn_LogOut_Click);
             // 
             // btn3
             // 
@@ -236,6 +264,22 @@
             this.btn3.Visible = false;
             this.btn3.Click += new System.EventHandler(this.Btn3_Click);
             // 
+            // lbl_Terminar
+            // 
+            this.lbl_Terminar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_Terminar.AutoSize = true;
+            this.lbl_Terminar.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_Terminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl_Terminar.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Terminar.Location = new System.Drawing.Point(74, 627);
+            this.lbl_Terminar.Name = "lbl_Terminar";
+            this.lbl_Terminar.Size = new System.Drawing.Size(61, 16);
+            this.lbl_Terminar.TabIndex = 31;
+            this.lbl_Terminar.Text = "Terminar";
+            this.lbl_Terminar.Visible = false;
+            this.lbl_Terminar.Click += new System.EventHandler(this.Btn_LogOut_Click);
+            // 
             // btn2
             // 
             this.btn2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -254,6 +298,22 @@
             this.btn2.Visible = false;
             this.btn2.Click += new System.EventHandler(this.Btn2_Click);
             // 
+            // img_LogOut
+            // 
+            this.img_LogOut.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.img_LogOut.BackColor = System.Drawing.Color.Transparent;
+            this.img_LogOut.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.img_LogOut.Image = global::FootballLife_WF.Properties.Resources.LogOut;
+            this.img_LogOut.Location = new System.Drawing.Point(24, 618);
+            this.img_LogOut.Name = "img_LogOut";
+            this.img_LogOut.Size = new System.Drawing.Size(42, 49);
+            this.img_LogOut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.img_LogOut.TabIndex = 30;
+            this.img_LogOut.TabStop = false;
+            this.img_LogOut.Visible = false;
+            this.img_LogOut.Click += new System.EventHandler(this.Btn_LogOut_Click);
+            // 
             // btn1
             // 
             this.btn1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -271,6 +331,24 @@
             this.btn1.UseVisualStyleBackColor = false;
             this.btn1.Visible = false;
             this.btn1.Click += new System.EventHandler(this.Btn1_Click);
+            // 
+            // btn_LogOut
+            // 
+            this.btn_LogOut.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_LogOut.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_LogOut.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_LogOut.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_LogOut.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_LogOut.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_LogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_LogOut.Location = new System.Drawing.Point(12, 610);
+            this.btn_LogOut.Name = "btn_LogOut";
+            this.btn_LogOut.Size = new System.Drawing.Size(130, 65);
+            this.btn_LogOut.TabIndex = 33;
+            this.btn_LogOut.UseVisualStyleBackColor = false;
+            this.btn_LogOut.Visible = false;
+            this.btn_LogOut.Click += new System.EventHandler(this.Btn_LogOut_Click);
             // 
             // btn_TopMenu
             // 
@@ -547,6 +625,17 @@
             this.btn_NovoResultado.MouseLeave += new System.EventHandler(this.NovoResultado_MouseLeave);
             this.btn_NovoResultado.MouseHover += new System.EventHandler(this.NovoResultado_MouseHover);
             // 
+            // img_Fundo
+            // 
+            this.img_Fundo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.img_Fundo.Image = global::FootballLife_WF.Properties.Resources.Fundo_1;
+            this.img_Fundo.Location = new System.Drawing.Point(0, 0);
+            this.img_Fundo.Name = "img_Fundo";
+            this.img_Fundo.Size = new System.Drawing.Size(1364, 749);
+            this.img_Fundo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.img_Fundo.TabIndex = 30;
+            this.img_Fundo.TabStop = false;
+            // 
             // Jogos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -568,6 +657,7 @@
             this.Controls.Add(this.panel_Menu);
             this.Controls.Add(this.btn_Menu);
             this.Controls.Add(this.btn_TopMenu);
+            this.Controls.Add(this.img_Fundo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(900, 600);
             this.Name = "Jogos";
@@ -577,10 +667,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.img_Menu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Logo)).EndInit();
             this.panel_Menu.ResumeLayout(false);
+            this.panel_Menu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.img_LogOut)).EndInit();
             this.panel_Pesquisa.ResumeLayout(false);
             this.panel_Pesquisa.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_Linha)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_NovoResultado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img_Fundo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -617,5 +710,10 @@
         private System.Windows.Forms.Button btn3;
         private System.Windows.Forms.Button btn2;
         private System.Windows.Forms.Button btn1;
+        private System.Windows.Forms.Label lbl_Sessao;
+        private System.Windows.Forms.Label lbl_Terminar;
+        private System.Windows.Forms.PictureBox img_LogOut;
+        private System.Windows.Forms.Button btn_LogOut;
+        private System.Windows.Forms.PictureBox img_Fundo;
     }
 }

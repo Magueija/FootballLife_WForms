@@ -16,6 +16,12 @@ namespace FootballLife_WF
     {
         public Login()
         {
+            this.SetStyle(
+                System.Windows.Forms.ControlStyles.UserPaint |
+                System.Windows.Forms.ControlStyles.AllPaintingInWmPaint |
+                System.Windows.Forms.ControlStyles.OptimizedDoubleBuffer,
+                true);
+
             InitializeComponent();
 
             if (Properties.Settings.Default.username != string.Empty)
@@ -201,10 +207,9 @@ namespace FootballLife_WF
 
                 if (IDAdmin != "")
                 {
-                    Properties.Settings.Default.IDUser = Convert.ToInt32(IDAdmin);
-                    Properties.Settings.Default.FuncaoUser = "Admin";
-                    Properties.Settings.Default.IDEscalao = "";
-                    Properties.Settings.Default.Save();
+                    Program.CurrentFuncaoUser = "Admin";
+                    Program.CurrentIDUser = Convert.ToInt32(IDAdmin);
+                    Program.CurrentIDEscalao = 0;
 
                     PaginaInicial_Admin PgAdmin = new PaginaInicial_Admin();
                     this.Hide();
@@ -213,10 +218,9 @@ namespace FootballLife_WF
                 }
                 else if (IDTreinador != "")
                 {
-                    Properties.Settings.Default.IDUser = Convert.ToInt32(IDTreinador);
-                    Properties.Settings.Default.FuncaoUser = "Treinador";
-                    Properties.Settings.Default.IDEscalao = IDEscalaoTreinador;
-                    Properties.Settings.Default.Save();
+                    Program.CurrentFuncaoUser = "Treinador";
+                    Program.CurrentIDUser = Convert.ToInt32(IDTreinador);
+                    Program.CurrentIDEscalao = Convert.ToInt32(IDEscalaoTreinador);
 
                     PaginaInicial_Treinador PgTrein = new PaginaInicial_Treinador();
                     this.Hide();
@@ -225,10 +229,9 @@ namespace FootballLife_WF
                 }
                 else if (IDAtleta != "")
                 {
-                    Properties.Settings.Default.IDUser = Convert.ToInt32(IDAtleta);
-                    Properties.Settings.Default.FuncaoUser = "Atleta";
-                    Properties.Settings.Default.IDEscalao = IDEscalaoAtleta;
-                    Properties.Settings.Default.Save();
+                    Program.CurrentFuncaoUser = "Atleta";
+                    Program.CurrentIDUser = Convert.ToInt32(IDAtleta);
+                    Program.CurrentIDEscalao = Convert.ToInt32(IDEscalaoAtleta);
 
                     PaginaInicial_Atleta PgAtl = new PaginaInicial_Atleta();
                     this.Hide();
@@ -237,10 +240,9 @@ namespace FootballLife_WF
                 }
                 else if (IDSocio != "")
                 {
-                    Properties.Settings.Default.IDUser = Convert.ToInt32(IDSocio);
-                    Properties.Settings.Default.FuncaoUser = "Socio";
-                    Properties.Settings.Default.IDEscalao = "";
-                    Properties.Settings.Default.Save();
+                    Program.CurrentFuncaoUser = "Socio";
+                    Program.CurrentIDUser = Convert.ToInt32(IDSocio);
+                    Program.CurrentIDEscalao = 0;
 
                     PaginaInicial_Socio PgSoc = new PaginaInicial_Socio();
                     this.Hide();

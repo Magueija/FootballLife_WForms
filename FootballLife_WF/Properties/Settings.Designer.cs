@@ -12,7 +12,7 @@ namespace FootballLife_WF.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.1.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -26,8 +26,8 @@ namespace FootballLife_WF.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=FootballLife_DB;Persist Security Info=True;User ID=" +
-            "sa;Password=sa")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.1.70;Initial Catalog=FootballLife_DB;Persist Security Info=Tr" +
+            "ue;User ID=sa;Password=#tomas02")]
         public string Connection {
             get {
                 return ((string)(this["Connection"]));
@@ -55,42 +55,6 @@ namespace FootballLife_WF.Properties {
             }
             set {
                 this["password"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int IDUser {
-            get {
-                return ((int)(this["IDUser"]));
-            }
-            set {
-                this["IDUser"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string FuncaoUser {
-            get {
-                return ((string)(this["FuncaoUser"]));
-            }
-            set {
-                this["FuncaoUser"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string IDEscalao {
-            get {
-                return ((string)(this["IDEscalao"]));
-            }
-            set {
-                this["IDEscalao"] = value;
             }
         }
     }

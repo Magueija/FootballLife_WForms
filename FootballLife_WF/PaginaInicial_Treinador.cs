@@ -15,8 +15,13 @@ namespace FootballLife_WF
     {
         public PaginaInicial_Treinador()
         {
+            this.SetStyle(
+                System.Windows.Forms.ControlStyles.UserPaint |
+                System.Windows.Forms.ControlStyles.AllPaintingInWmPaint |
+                System.Windows.Forms.ControlStyles.OptimizedDoubleBuffer,
+                true);
+
             InitializeComponent();
-            
         }
 
         private void PaginaInicial_Admin_Load(object sender, EventArgs e)
@@ -129,6 +134,10 @@ namespace FootballLife_WF
 
         private void Btn_LogOut_Click(object sender, EventArgs e)
         {
+            Program.CurrentFuncaoUser = "";
+            Program.CurrentIDUser = 0;
+            Program.CurrentIDEscalao = 0;
+
             PaginaInicial PgInicio = new PaginaInicial();
             this.Hide();
             PgInicio.ShowDialog();

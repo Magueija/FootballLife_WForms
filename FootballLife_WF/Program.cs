@@ -8,6 +8,11 @@ namespace FootballLife_WF
 {
     static class Program
     {
+        public static string CurrentFuncaoUser { get; set; }
+        public static int CurrentIDUser { get; set; }
+        public static int CurrentIDEscalao { get; set; }
+
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -17,13 +22,11 @@ namespace FootballLife_WF
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Properties.Settings.Default.IDUser = 0;
-            Properties.Settings.Default.FuncaoUser = "";
-            Properties.Settings.Default.IDEscalao = "";
+            CurrentFuncaoUser = "";
+            CurrentIDUser = 0;
+            CurrentIDEscalao = 0;
 
             Application.Run(new PaginaInicial());
-
-            
         }
 
         //MessageBox.Show(x.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);

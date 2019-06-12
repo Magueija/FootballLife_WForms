@@ -84,7 +84,7 @@
             this.lbl_LogIn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl_LogIn.Font = new System.Drawing.Font("Berlin Sans FB Demi", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_LogIn.ForeColor = System.Drawing.Color.White;
-            this.lbl_LogIn.Location = new System.Drawing.Point(1271, 22);
+            this.lbl_LogIn.Location = new System.Drawing.Point(1250, 28);
             this.lbl_LogIn.Name = "lbl_LogIn";
             this.lbl_LogIn.Size = new System.Drawing.Size(64, 23);
             this.lbl_LogIn.TabIndex = 1;

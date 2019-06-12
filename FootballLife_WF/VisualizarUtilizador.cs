@@ -20,12 +20,20 @@ namespace FootballLife_WF
         {
             Funcao = FuncaoUser;
             ID = IDUser;
+
+
+            this.SetStyle(
+                System.Windows.Forms.ControlStyles.UserPaint |
+                System.Windows.Forms.ControlStyles.AllPaintingInWmPaint |
+                System.Windows.Forms.ControlStyles.OptimizedDoubleBuffer,
+                true);
+
             InitializeComponent();
         }
 
         private void VisualizarUtilizador_Load(object sender, EventArgs e)
         {
-            if(Properties.Settings.Default.FuncaoUser == "Treinador")
+            if(Program.CurrentFuncaoUser == "Treinador")
             {
                 if (Funcao == "Admin")
                 {
@@ -46,7 +54,7 @@ namespace FootballLife_WF
                     Atleta();
                 }
             }
-            else if (Properties.Settings.Default.FuncaoUser == "Atleta")
+            else if (Program.CurrentFuncaoUser == "Atleta")
             {
                 if (Funcao == "Treinador")
                 {
@@ -60,7 +68,7 @@ namespace FootballLife_WF
                     Atleta();
                 }
             }
-            else if (Properties.Settings.Default.FuncaoUser == "Socio")
+            else if (Program.CurrentFuncaoUser == "Socio")
             {
                 if (Funcao == "Admin")
                 {

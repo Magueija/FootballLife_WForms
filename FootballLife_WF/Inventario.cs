@@ -15,6 +15,12 @@ namespace FootballLife_WF
     {
         public Inventario()
         {
+            this.SetStyle(
+                System.Windows.Forms.ControlStyles.UserPaint |
+                System.Windows.Forms.ControlStyles.AllPaintingInWmPaint |
+                System.Windows.Forms.ControlStyles.OptimizedDoubleBuffer,
+                true);
+
             InitializeComponent();
         }
 
@@ -32,7 +38,7 @@ namespace FootballLife_WF
             InvTraquinas();
             InvPetizes();
 
-            if (Properties.Settings.Default.FuncaoUser == "Admin")
+            if (Program.CurrentFuncaoUser == "Admin")
             {
                 btn1.Visible = true;
                 btn2.Visible = true;
@@ -42,7 +48,7 @@ namespace FootballLife_WF
                 btn2.Text = "INVENTÁRIO";
                 btn3.Text = "UTILIZADORES";
             }
-            else if (Properties.Settings.Default.FuncaoUser == "Treinador")
+            else if (Program.CurrentFuncaoUser == "Treinador")
             {
                 btn1.Visible = true;
                 btn2.Visible = true;
@@ -643,6 +649,10 @@ namespace FootballLife_WF
 
         private void Btn_LogOut_Click(object sender, EventArgs e)
         {
+            Program.CurrentFuncaoUser = "";
+            Program.CurrentIDUser = 0;
+            Program.CurrentIDEscalao = 0;
+
             PaginaInicial PgInicio = new PaginaInicial();
             this.Hide();
             PgInicio.ShowDialog();
@@ -668,14 +678,14 @@ namespace FootballLife_WF
 
         private void Btn_Home_Click(object sender, EventArgs e)
         {
-            if (Properties.Settings.Default.FuncaoUser == "Admin")
+            if (Program.CurrentFuncaoUser == "Admin")
             {
                 PaginaInicial_Admin PgInicio = new PaginaInicial_Admin();
                 this.Hide();
                 PgInicio.ShowDialog();
                 this.Dispose();
             }
-            else if (Properties.Settings.Default.FuncaoUser == "Treinador")
+            else if (Program.CurrentFuncaoUser == "Treinador")
             {
                 PaginaInicial_Treinador PgInicio = new PaginaInicial_Treinador();
                 this.Hide();
@@ -718,14 +728,14 @@ namespace FootballLife_WF
 
         private void Btn_Financiamento_Click(object sender, EventArgs e)
         {
-            if (Properties.Settings.Default.FuncaoUser == "Admin")
+            if (Program.CurrentFuncaoUser == "Admin")
             {
                 Financiamento fin = new Financiamento();
                 this.Hide();
                 fin.ShowDialog();
                 this.Dispose();
             }
-            else if (Properties.Settings.Default.FuncaoUser == "Treinador")
+            else if (Program.CurrentFuncaoUser == "Treinador")
             {
                 Convocatoria conv = new Convocatoria();
                 this.Hide();

@@ -251,7 +251,7 @@ namespace FootballLife_WF
                     {
                         //SELECIONA O NOME DO Socio PARA INSERIR NA TABELA LUCROS
                         SqlDataReader drSocio;
-                        string QuerySocio = ("SELECT Nome FROM dbo.TblSocio WHERE IDSocio = " + Properties.Settings.Default.IDUser);
+                        string QuerySocio = ("SELECT Nome FROM dbo.TblSocio WHERE IDSocio = " + Program.CurrentIDUser);
                         SqlCommand CommandSocio = new SqlCommand(QuerySocio, con);
                         drSocio = CommandSocio.ExecuteReader();
                         while (drSocio.Read())
@@ -264,7 +264,7 @@ namespace FootballLife_WF
                         //SELECIONA O MES A PAGAR (O MAIS ANTIGO)
                         SqlDataReader drMes;
                         string QueryMes = ("SELECT dbo.TblMes.IDMes, dbo.TblMes.Mes FROM dbo.TblMes RIGHT OUTER JOIN dbo.TblCotaSocio ON dbo.TblMes.IDMes = dbo.TblCotaSocio.FK_IDMes WHERE " +
-                            "dbo.TblCotaSocio.Pago = 0 AND dbo.TblCotaSocio.FK_IDSocio = " + Properties.Settings.Default.IDUser);
+                            "dbo.TblCotaSocio.Pago = 0 AND dbo.TblCotaSocio.FK_IDSocio = " + Program.CurrentIDUser);
                         SqlCommand CommandMes = new SqlCommand(QueryMes, con);
                         drMes = CommandMes.ExecuteReader();
 

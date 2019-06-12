@@ -60,7 +60,7 @@ namespace FootballLife_WF
             SqlDataAdapter adapter = new SqlDataAdapter();
             DataSet ds = new DataSet();
             string sql = null;
-            sql = "SELECT IDAtleta, Nome FROM dbo.TblAtleta WHERE Apagado = 0 AND FK_IDEscalao = " + Properties.Settings.Default.IDEscalao;
+            sql = "SELECT IDAtleta, Nome FROM dbo.TblAtleta WHERE Apagado = 0 AND FK_IDEscalao = " + Program.CurrentIDEscalao;
             try
             {
                 SqlCommand command = new SqlCommand(sql, con);
@@ -97,7 +97,7 @@ namespace FootballLife_WF
             SqlDataAdapter adapter = new SqlDataAdapter();
             DataSet ds = new DataSet();
             string sql = null;
-            sql = "SELECT IDAtleta, Nome FROM dbo.TblAtleta WHERE Apagado = 0 AND FK_IDEscalao = " + Properties.Settings.Default.IDEscalao;
+            sql = "SELECT IDAtleta, Nome FROM dbo.TblAtleta WHERE Apagado = 0 AND FK_IDEscalao = " + Program.CurrentIDEscalao;
             try
             {
                 SqlCommand command = new SqlCommand(sql, con);
@@ -334,7 +334,7 @@ namespace FootballLife_WF
                 {
                     string IDLastConv = "";
                     SqlDataReader drLastConv;
-                    string QueryLastConv = "SELECT IDConvocatoria FROM dbo.TblConvocatoria WHERE FK_IDEscalao = " + Properties.Settings.Default.IDEscalao;
+                    string QueryLastConv = "SELECT IDConvocatoria FROM dbo.TblConvocatoria WHERE FK_IDEscalao = " + Program.CurrentIDEscalao;
 
                     SqlCommand CommandLastConv = new SqlCommand(QueryLastConv, con);
                     drLastConv = CommandLastConv.ExecuteReader();
@@ -357,7 +357,7 @@ namespace FootballLife_WF
                     }
 
 
-                    string QueryDeleteConv = "DELETE FROM TblConvocatoria WHERE FK_IDEscalao = " + Properties.Settings.Default.IDEscalao;
+                    string QueryDeleteConv = "DELETE FROM TblConvocatoria WHERE FK_IDEscalao = " + Program.CurrentIDEscalao;
                     SqlCommand CommandDeleteConv = new SqlCommand(QueryDeleteConv, con);
                     CommandDeleteConv.ExecuteNonQuery();
 
@@ -369,7 +369,7 @@ namespace FootballLife_WF
                     SqlCommand CommandINSERT = new SqlCommand(QueryInsert, con);
                     CommandINSERT.Parameters.AddWithValue("@DataJogo", tb_Data.Text + " " + tb_Hora.Text);
                     CommandINSERT.Parameters.AddWithValue("@Adversario", tb_Adversario.Text);
-                    CommandINSERT.Parameters.AddWithValue("@IDEscalao", Properties.Settings.Default.IDEscalao);
+                    CommandINSERT.Parameters.AddWithValue("@IDEscalao", Program.CurrentIDEscalao);
                     CommandINSERT.Parameters.AddWithValue("@IDTatica", IDTatica);
                     CommandINSERT.ExecuteNonQuery();
 

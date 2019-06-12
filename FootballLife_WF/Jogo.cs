@@ -70,7 +70,7 @@ namespace FootballLife_WF
                 img_Fora.Image = Properties.Resources.Logo_Clube;
             }
 
-            if (Properties.Settings.Default.FuncaoUser == "Treinador")
+            if (Program.CurrentFuncaoUser == "Treinador")
             {
                 DeleteGame();
             }
@@ -94,7 +94,7 @@ namespace FootballLife_WF
                 {
                     IDTreinador = dr["IDTreinador"].ToString();
 
-                    if (Properties.Settings.Default.IDUser == Convert.ToInt32(IDTreinador))
+                    if (Program.CurrentIDUser == Convert.ToInt32(IDTreinador))
                     {
                         pb_Delete.Visible = true;
                     }

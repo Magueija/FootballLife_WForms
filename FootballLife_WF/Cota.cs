@@ -15,6 +15,12 @@ namespace FootballLife_WF
     {
         public Cota()
         {
+            this.SetStyle(
+                System.Windows.Forms.ControlStyles.UserPaint |
+                System.Windows.Forms.ControlStyles.AllPaintingInWmPaint |
+                System.Windows.Forms.ControlStyles.OptimizedDoubleBuffer,
+                true);
+
             InitializeComponent();
         }
 
@@ -23,7 +29,7 @@ namespace FootballLife_WF
             tb_data.MinDate = DateTime.Now;
             CotaAPagar();
 
-            if (Properties.Settings.Default.FuncaoUser == "Atleta")
+            if (Program.CurrentFuncaoUser == "Atleta")
             {
                 btn1.Visible = true;
                 btn2.Visible = true;
@@ -33,7 +39,7 @@ namespace FootballLife_WF
                 btn2.Text = "COTA DE ATLETA";
                 btn3.Text = "CONTACTOS";
             }
-            else if (Properties.Settings.Default.FuncaoUser == "Socio")
+            else if (Program.CurrentFuncaoUser == "Socio")
             {
                 btn1.Visible = true;
                 btn2.Visible = true;
@@ -57,11 +63,11 @@ namespace FootballLife_WF
 
             try
             {
-                if (Properties.Settings.Default.FuncaoUser == "Atleta")
+                if (Program.CurrentFuncaoUser == "Atleta")
                 {
                     SqlDataReader dr;
                     string Query = ("SELECT dbo.TblValorCota.Valor FROM dbo.TblCotaAtleta INNER JOIN dbo.TblValorCota ON dbo.TblCotaAtleta.FK_IDValorCota = dbo.TblValorCota.IDValorCota " +
-                        "WHERE dbo.TblCotaAtleta.Pago = 0 AND dbo.TblCotaAtleta.FK_IDAtleta = " + Properties.Settings.Default.IDUser);
+                        "WHERE dbo.TblCotaAtleta.Pago = 0 AND dbo.TblCotaAtleta.FK_IDAtleta = " + Program.CurrentIDUser);
                     SqlCommand Command = new SqlCommand(Query, con);
                     dr = Command.ExecuteReader();
                     while (dr.Read())
@@ -86,11 +92,11 @@ namespace FootballLife_WF
                     }
                     dr.Close();
                 }
-                else if (Properties.Settings.Default.FuncaoUser == "Socio")
+                else if (Program.CurrentFuncaoUser == "Socio")
                 {
                     SqlDataReader dr;
                     string Query = ("SELECT dbo.TblValorCota.Valor FROM dbo.TblCotaSocio INNER JOIN dbo.TblValorCota ON dbo.TblCotaSocio.FK_IDValorCota = dbo.TblValorCota.IDValorCota " +
-                        "WHERE dbo.TblCotaSocio.Pago = 0 AND dbo.TblCotaSocio.FK_IDSocio = " + Properties.Settings.Default.IDUser);
+                        "WHERE dbo.TblCotaSocio.Pago = 0 AND dbo.TblCotaSocio.FK_IDSocio = " + Program.CurrentIDUser);
                     SqlCommand Command = new SqlCommand(Query, con);
                     dr = Command.ExecuteReader();
                     while (dr.Read())
@@ -144,6 +150,10 @@ namespace FootballLife_WF
     
         private void Btn_LogOut_Click(object sender, EventArgs e)
         {
+            Program.CurrentFuncaoUser = "";
+            Program.CurrentIDUser = 0;
+            Program.CurrentIDEscalao = 0;
+
             PaginaInicial PgInicio = new PaginaInicial();
             this.Hide();
             PgInicio.ShowDialog();
@@ -244,11 +254,11 @@ namespace FootballLife_WF
 
                 try
                 {
-                    if (Properties.Settings.Default.FuncaoUser == "Atleta")
+                    if (Program.CurrentFuncaoUser == "Atleta")
                     {
                         //SELECIONA O NOME DO ATLETA PARA INSERIR NA TABELA LUCROS
                         SqlDataReader drAtleta;
-                        string QueryAtleta = ("SELECT Nome FROM dbo.TblAtleta WHERE IDAtleta = " + Properties.Settings.Default.IDUser);
+                        string QueryAtleta = ("SELECT Nome FROM dbo.TblAtleta WHERE IDAtleta = " + Program.CurrentIDUser);
                         SqlCommand CommandAtleta = new SqlCommand(QueryAtleta, con);
                         drAtleta = CommandAtleta.ExecuteReader();
                         while (drAtleta.Read())
@@ -261,7 +271,7 @@ namespace FootballLife_WF
                         //SELECIONA O MES A PAGAR (O MAIS ANTIGO)
                         SqlDataReader drMes;
                         string QueryMes = ("SELECT dbo.TblMes.IDMes, dbo.TblMes.Mes FROM dbo.TblMes RIGHT OUTER JOIN dbo.TblCotaAtleta ON dbo.TblMes.IDMes = dbo.TblCotaAtleta.FK_IDMes WHERE " +
-                            "dbo.TblCotaAtleta.Pago = 0 AND dbo.TblCotaAtleta.FK_IDAtleta = " + Properties.Settings.Default.IDUser);
+                            "dbo.TblCotaAtleta.Pago = 0 AND dbo.TblCotaAtleta.FK_IDAtleta = " + Program.CurrentIDUser);
                         SqlCommand CommandMes = new SqlCommand(QueryMes, con);
                         drMes = CommandMes.ExecuteReader();
 
@@ -313,7 +323,7 @@ namespace FootballLife_WF
 
                         SqlCommand CommandCotaAtleta = new SqlCommand(QueryCotaAtleta, con);
                         CommandCotaAtleta.Parameters.AddWithValue("@Pago", "1");
-                        CommandCotaAtleta.Parameters.AddWithValue("@IDAtleta", Properties.Settings.Default.IDUser);
+                        CommandCotaAtleta.Parameters.AddWithValue("@IDAtleta", Program.CurrentIDUser);
                         CommandCotaAtleta.Parameters.AddWithValue("@IDMes", IDMes);
                         CommandCotaAtleta.Parameters.AddWithValue("@IDLucro", MaxLucro);
                         CommandCotaAtleta.ExecuteNonQuery();
@@ -321,11 +331,11 @@ namespace FootballLife_WF
 
                         
                     }
-                    else if (Properties.Settings.Default.FuncaoUser == "Socio")
+                    else if (Program.CurrentFuncaoUser == "Socio")
                     {
                         //SELECIONA O NOME DO Socio PARA INSERIR NA TABELA LUCROS
                         SqlDataReader drSocio;
-                        string QuerySocio = ("SELECT Nome FROM dbo.TblSocio WHERE IDSocio = " + Properties.Settings.Default.IDUser);
+                        string QuerySocio = ("SELECT Nome FROM dbo.TblSocio WHERE IDSocio = " + Program.CurrentIDUser);
                         SqlCommand CommandSocio = new SqlCommand(QuerySocio, con);
                         drSocio = CommandSocio.ExecuteReader();
                         while (drSocio.Read())
@@ -338,7 +348,7 @@ namespace FootballLife_WF
                         //SELECIONA O MES A PAGAR (O MAIS ANTIGO)
                         SqlDataReader drMes;
                         string QueryMes = ("SELECT dbo.TblMes.IDMes, dbo.TblMes.Mes FROM dbo.TblMes RIGHT OUTER JOIN dbo.TblCotaSocio ON dbo.TblMes.IDMes = dbo.TblCotaSocio.FK_IDMes WHERE " +
-                            "dbo.TblCotaSocio.Pago = 0 AND dbo.TblCotaSocio.FK_IDSocio = " + Properties.Settings.Default.IDUser);
+                            "dbo.TblCotaSocio.Pago = 0 AND dbo.TblCotaSocio.FK_IDSocio = " + Program.CurrentIDUser);
                         SqlCommand CommandMes = new SqlCommand(QueryMes, con);
                         drMes = CommandMes.ExecuteReader();
 
@@ -390,7 +400,7 @@ namespace FootballLife_WF
 
                         SqlCommand CommandCotaSocio = new SqlCommand(QueryCotaSocio, con);
                         CommandCotaSocio.Parameters.AddWithValue("@Pago", "1");
-                        CommandCotaSocio.Parameters.AddWithValue("@IDSocio", Properties.Settings.Default.IDUser);
+                        CommandCotaSocio.Parameters.AddWithValue("@IDSocio", Program.CurrentIDUser);
                         CommandCotaSocio.Parameters.AddWithValue("@IDMes", IDMes);
                         CommandCotaSocio.Parameters.AddWithValue("@IDLucro", MaxLucro);
                         CommandCotaSocio.ExecuteNonQuery();
@@ -452,14 +462,14 @@ namespace FootballLife_WF
 
         private void Btn_Home_Click(object sender, EventArgs e)
         {
-            if (Properties.Settings.Default.FuncaoUser == "Atleta")
+            if (Program.CurrentFuncaoUser == "Atleta")
             {
                 PaginaInicial_Atleta PgInicio = new PaginaInicial_Atleta();
                 this.Hide();
                 PgInicio.ShowDialog();
                 this.Dispose();
             }
-            else if (Properties.Settings.Default.FuncaoUser == "Socio")
+            else if (Program.CurrentFuncaoUser == "Socio")
             {
                 PaginaInicial_Socio PgInicio = new PaginaInicial_Socio();
                 this.Hide();
@@ -502,14 +512,14 @@ namespace FootballLife_WF
 
         private void Btn1_Click(object sender, EventArgs e)
         {
-            if (Properties.Settings.Default.FuncaoUser == "Atleta")
+            if (Program.CurrentFuncaoUser == "Atleta")
             {
                 Convocatoria conv = new Convocatoria();
                 this.Hide();
                 conv.ShowDialog();
                 this.Dispose();
             }
-            else if (Properties.Settings.Default.FuncaoUser == "Socio")
+            else if (Program.CurrentFuncaoUser == "Socio")
             {
                 Cota cota = new Cota();
                 this.Hide();
@@ -520,14 +530,14 @@ namespace FootballLife_WF
 
         private void Btn2_Click(object sender, EventArgs e)
         {
-            if (Properties.Settings.Default.FuncaoUser == "Atleta")
+            if (Program.CurrentFuncaoUser == "Atleta")
             {
                 Cota ct = new Cota();
                 this.Hide();
                 ct.ShowDialog();
                 this.Dispose();
             }
-            else if (Properties.Settings.Default.FuncaoUser == "Socio")
+            else if (Program.CurrentFuncaoUser == "Socio")
             {
                 Utilizadores users = new Utilizadores();
                 this.Hide();

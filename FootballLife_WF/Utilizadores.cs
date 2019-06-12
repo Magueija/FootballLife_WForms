@@ -9,6 +9,12 @@ namespace FootballLife_WF
     {
         public Utilizadores()
         {
+            this.SetStyle(
+                System.Windows.Forms.ControlStyles.UserPaint |
+                System.Windows.Forms.ControlStyles.AllPaintingInWmPaint |
+                System.Windows.Forms.ControlStyles.OptimizedDoubleBuffer,
+                true);
+
             InitializeComponent();
         }
 
@@ -17,7 +23,7 @@ namespace FootballLife_WF
             Visibilidade();
             CountUsers();
 
-            if (Properties.Settings.Default.FuncaoUser == "Admin")
+            if (Program.CurrentFuncaoUser == "Admin")
             {
                 btn1.Visible = true;
                 btn2.Visible = true;
@@ -27,7 +33,7 @@ namespace FootballLife_WF
                 btn2.Text = "INVENTÁRIO";
                 btn3.Text = "UTILIZADORES";
             }
-            else if (Properties.Settings.Default.FuncaoUser == "Treinador")
+            else if (Program.CurrentFuncaoUser == "Treinador")
             {
                 btn1.Visible = true;
                 btn2.Visible = true;
@@ -37,7 +43,7 @@ namespace FootballLife_WF
                 btn2.Text = "INVENTÁRIO";
                 btn3.Text = "CONTACTOS";
             }
-            else if (Properties.Settings.Default.FuncaoUser == "Atleta")
+            else if (Program.CurrentFuncaoUser == "Atleta")
             {
                 btn1.Visible = true;
                 btn2.Visible = true;
@@ -47,7 +53,7 @@ namespace FootballLife_WF
                 btn2.Text = "COTA DE ATLETA";
                 btn3.Text = "CONTACTOS";
             }
-            else if (Properties.Settings.Default.FuncaoUser == "Socio")
+            else if (Program.CurrentFuncaoUser == "Socio")
             {
                 btn1.Visible = true;
                 btn2.Visible = true;
@@ -59,7 +65,7 @@ namespace FootballLife_WF
 
         private void Visibilidade()
         {
-            if (Properties.Settings.Default.FuncaoUser != "Admin")
+            if (Program.CurrentFuncaoUser != "Admin")
             {
                 btn_NovoUser.Visible = false;
                 img_NovoUser.Visible = false;
@@ -85,7 +91,7 @@ namespace FootballLife_WF
                 Socios();
             }
 
-            if (Properties.Settings.Default.FuncaoUser == "Treinador")
+            if (Program.CurrentFuncaoUser == "Treinador")
             {
                 lbl_Socios.Visible = false;
                 linha_Socios.Visible = false;
@@ -95,7 +101,7 @@ namespace FootballLife_WF
                 Treinadores();
                 Atletas();
             }
-            else if (Properties.Settings.Default.FuncaoUser == "Atleta")
+            else if (Program.CurrentFuncaoUser == "Atleta")
             {
                 lbl_Admins.Visible = false;
                 linha_Admins.Visible = false;
@@ -108,7 +114,7 @@ namespace FootballLife_WF
                 Treinadores();
                 Atletas();
             }
-            else if (Properties.Settings.Default.FuncaoUser == "Socio")
+            else if (Program.CurrentFuncaoUser == "Socio")
             {
                 lbl_Treinadores.Visible = false;
                 linha_Treinadores.Visible = false;
@@ -312,7 +318,7 @@ namespace FootballLife_WF
                     panel.BackColor = Color.White;
                     panel.Visible = true;
                     panel.Name = "Panel" + IDAdmin;
-                    panel.Margin = new Padding(20, 5, 0, 0);
+                    panel.Margin = new Padding(5, 5, 5, 5);
                     flowpanel_Admins.Controls.Add(panel);
 
                     PictureBox Pb = new PictureBox();
@@ -358,7 +364,7 @@ namespace FootballLife_WF
                     Pb.Click += Btn_Pb_Click;
                     lblUser.Click += Btn_Lbl_Click;
 
-                    if (Properties.Settings.Default.FuncaoUser != "Admin"  || Properties.Settings.Default.FuncaoUser == "Admin" && Properties.Settings.Default.IDUser == Convert.ToInt32(IDAdmin))
+                    if (Program.CurrentFuncaoUser != "Admin"  || Program.CurrentFuncaoUser == "Admin" && Program.CurrentIDUser == Convert.ToInt32(IDAdmin))
                     {
                         Pbdelete.Visible = false;
                     }
@@ -437,9 +443,9 @@ namespace FootballLife_WF
             {
                 SqlDataReader dr;
 
-                if (Properties.Settings.Default.FuncaoUser == "Atleta")
+                if (Program.CurrentFuncaoUser == "Atleta")
                 {
-                    Query = ("SELECT IDTreinador, Nome FROM dbo.TblTreinador WHERE (Apagado = 0) AND FK_IDEscalao = " + Properties.Settings.Default.IDEscalao + " ORDER BY Nome");
+                    Query = ("SELECT IDTreinador, Nome FROM dbo.TblTreinador WHERE (Apagado = 0) AND FK_IDEscalao = " + Program.CurrentIDEscalao + " ORDER BY Nome");
                 }
                 else
                 {
@@ -462,7 +468,7 @@ namespace FootballLife_WF
                     panel.BackColor = Color.White;
                     panel.Visible = true;
                     panel.Name = "Panel" + IDTreinador;
-                    panel.Margin = new Padding(20, 5, 0, 0);
+                    panel.Margin = new Padding(5, 5, 5, 5);
                     flowpanel_Treinadores.Controls.Add(panel);
 
                     PictureBox Pb = new PictureBox();
@@ -509,7 +515,7 @@ namespace FootballLife_WF
                     lblUser.Click += Btn_Lbl_Click;
 
 
-                    if (Properties.Settings.Default.FuncaoUser != "Admin")
+                    if (Program.CurrentFuncaoUser != "Admin")
                     {
                         Pbdelete.Visible = false;
                     }
@@ -585,9 +591,9 @@ namespace FootballLife_WF
             {
                 SqlDataReader dr;
 
-                if (Properties.Settings.Default.FuncaoUser == "Atleta" || Properties.Settings.Default.FuncaoUser == "Treinador")
+                if (Program.CurrentFuncaoUser == "Atleta" || Program.CurrentFuncaoUser == "Treinador")
                 {
-                    Query = ("SELECT IDAtleta, Nome FROM dbo.TblAtleta WHERE(Apagado = 0) AND FK_IDEscalao = " + Properties.Settings.Default.IDEscalao + " ORDER BY Nome");
+                    Query = ("SELECT IDAtleta, Nome FROM dbo.TblAtleta WHERE(Apagado = 0) AND FK_IDEscalao = " + Program.CurrentIDEscalao + " ORDER BY Nome");
                 }
                 else
                 {
@@ -610,7 +616,7 @@ namespace FootballLife_WF
                     panel.BackColor = Color.White;
                     panel.Visible = true;
                     panel.Name = "Panel" + IDAtleta;
-                    panel.Margin = new Padding(20, 5, 0, 0);
+                    panel.Margin = new Padding(5, 5, 5, 5);
                     flowpanel_Atletas.Controls.Add(panel);
 
                     PictureBox Pb = new PictureBox();
@@ -656,7 +662,7 @@ namespace FootballLife_WF
                     Pb.Click += Btn_Pb_Click;
                     lblUser.Click += Btn_Lbl_Click;
 
-                    if (Properties.Settings.Default.FuncaoUser != "Admin")
+                    if (Program.CurrentFuncaoUser != "Admin")
                     {
                         Pbdelete.Visible = false;
                     }
@@ -746,7 +752,7 @@ namespace FootballLife_WF
                 panel.BackColor = Color.White;
                 panel.Visible = true;
                 panel.Name = "Panel" + IDSocio;
-                panel.Margin = new Padding(20, 5, 0, 0);
+                panel.Margin = new Padding(5, 5, 5, 5);
                 flowpanel_Socios.Controls.Add(panel);
 
                 PictureBox Pb = new PictureBox();
@@ -792,7 +798,7 @@ namespace FootballLife_WF
                 Pb.Click += Btn_Pb_Click;
                 lblUser.Click += Btn_Lbl_Click;
 
-                if (Properties.Settings.Default.FuncaoUser != "Admin")
+                if (Program.CurrentFuncaoUser != "Admin")
                 {
                     Pbdelete.Visible = false;
                 }
@@ -854,7 +860,7 @@ namespace FootballLife_WF
             string ID = Pb.Tag.ToString();
             string Funcao = Pb.Name.ToString();
 
-            if(Properties.Settings.Default.FuncaoUser == "Admin")
+            if(Program.CurrentFuncaoUser == "Admin")
             {
                 EditarUser(ID, Funcao);
             }
@@ -873,7 +879,7 @@ namespace FootballLife_WF
             string ID = Lbl.Tag.ToString();
             string Funcao = Lbl.Name.ToString();
 
-            if (Properties.Settings.Default.FuncaoUser == "Admin")
+            if (Program.CurrentFuncaoUser == "Admin")
             {
                 EditarUser(ID, Funcao);
             }
@@ -900,6 +906,10 @@ namespace FootballLife_WF
 
         private void Btn_LogOut_Click(object sender, EventArgs e)
         {
+            Program.CurrentFuncaoUser = "";
+            Program.CurrentIDUser = 0;
+            Program.CurrentIDEscalao = 0;
+
             PaginaInicial PgInicio = new PaginaInicial();
             this.Hide();
             PgInicio.ShowDialog();
@@ -932,28 +942,28 @@ namespace FootballLife_WF
 
         private void Btn_Home_Click(object sender, EventArgs e)
         {
-            if (Properties.Settings.Default.FuncaoUser == "Admin")
+            if (Program.CurrentFuncaoUser == "Admin")
             {
                 PaginaInicial_Admin PgInicio = new PaginaInicial_Admin();
                 this.Hide();
                 PgInicio.ShowDialog();
                 this.Dispose();
             }
-            else if (Properties.Settings.Default.FuncaoUser == "Treinador")
+            else if (Program.CurrentFuncaoUser == "Treinador")
             {
                 PaginaInicial_Treinador PgInicio = new PaginaInicial_Treinador();
                 this.Hide();
                 PgInicio.ShowDialog();
                 this.Dispose();
             }
-            else if (Properties.Settings.Default.FuncaoUser == "Atleta")
+            else if (Program.CurrentFuncaoUser == "Atleta")
             {
                 PaginaInicial_Atleta PgInicio = new PaginaInicial_Atleta();
                 this.Hide();
                 PgInicio.ShowDialog();
                 this.Dispose();
             }
-            else if (Properties.Settings.Default.FuncaoUser == "Socio")
+            else if (Program.CurrentFuncaoUser == "Socio")
             {
                 PaginaInicial_Socio PgInicio = new PaginaInicial_Socio();
                 this.Hide();
@@ -996,21 +1006,21 @@ namespace FootballLife_WF
 
         private void Btn1_Click(object sender, EventArgs e)
         {
-            if (Properties.Settings.Default.FuncaoUser == "Admin")
+            if (Program.CurrentFuncaoUser == "Admin")
             {
                 Financiamento fin = new Financiamento();
                 this.Hide();
                 fin.ShowDialog();
                 this.Dispose();
             }
-            else if (Properties.Settings.Default.FuncaoUser == "Treinador" || Properties.Settings.Default.FuncaoUser == "Atleta")
+            else if (Program.CurrentFuncaoUser == "Treinador" || Program.CurrentFuncaoUser == "Atleta")
             {
                 Convocatoria conv = new Convocatoria();
                 this.Hide();
                 conv.ShowDialog();
                 this.Dispose();
             }
-            else if (Properties.Settings.Default.FuncaoUser == "Socio")
+            else if (Program.CurrentFuncaoUser == "Socio")
             {
                 Cota cota = new Cota();
                 this.Hide();
@@ -1021,21 +1031,21 @@ namespace FootballLife_WF
 
         private void Btn2_Click(object sender, EventArgs e)
         {
-            if (Properties.Settings.Default.FuncaoUser == "Admin" || Properties.Settings.Default.FuncaoUser == "Treinador")
+            if (Program.CurrentFuncaoUser == "Admin" || Program.CurrentFuncaoUser == "Treinador")
             {
                 Inventario inv = new Inventario();
                 this.Hide();
                 inv.ShowDialog();
                 this.Dispose();
             }
-            else if (Properties.Settings.Default.FuncaoUser == "Atleta")
+            else if (Program.CurrentFuncaoUser == "Atleta")
             {
                 Cota ct = new Cota();
                 this.Hide();
                 ct.ShowDialog();
                 this.Dispose();
             }
-            else if (Properties.Settings.Default.FuncaoUser == "Socio")
+            else if (Program.CurrentFuncaoUser == "Socio")
             {
                 Utilizadores users = new Utilizadores();
                 this.Hide();

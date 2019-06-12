@@ -15,6 +15,12 @@ namespace FootballLife_WF
     {
         public Equipas()
         {
+            this.SetStyle(
+                System.Windows.Forms.ControlStyles.UserPaint |
+                System.Windows.Forms.ControlStyles.AllPaintingInWmPaint |
+                System.Windows.Forms.ControlStyles.OptimizedDoubleBuffer,
+                true);
+
             InitializeComponent();
         }
 
@@ -29,7 +35,7 @@ namespace FootballLife_WF
             Traquinas();
             Petizes();
 
-            if (Properties.Settings.Default.FuncaoUser == "Admin")
+            if (Program.CurrentFuncaoUser == "Admin")
             {
                 btn1.Visible = true;
                 btn2.Visible = true;
@@ -39,7 +45,7 @@ namespace FootballLife_WF
                 btn2.Text = "INVENTÁRIO";
                 btn3.Text = "UTILIZADORES";
             }
-            else if (Properties.Settings.Default.FuncaoUser == "Treinador")
+            else if (Program.CurrentFuncaoUser == "Treinador")
             {
                 btn1.Visible = true;
                 btn2.Visible = true;
@@ -49,7 +55,7 @@ namespace FootballLife_WF
                 btn2.Text = "INVENTÁRIO";
                 btn3.Text = "CONTACTOS";
             }
-            else if (Properties.Settings.Default.FuncaoUser == "Atleta")
+            else if (Program.CurrentFuncaoUser == "Atleta")
             {
                 btn1.Visible = true;
                 btn2.Visible = true;
@@ -59,13 +65,21 @@ namespace FootballLife_WF
                 btn2.Text = "COTA DE ATLETA";
                 btn3.Text = "CONTACTOS";
             }
-            else if (Properties.Settings.Default.FuncaoUser == "Socio")
+            else if (Program.CurrentFuncaoUser == "Socio")
             {
                 btn1.Visible = true;
                 btn2.Visible = true;
 
                 btn1.Text = "COTA DE SÓCIO";
                 btn2.Text = "CONTACTOS";
+            }
+
+            if (Program.CurrentFuncaoUser != "")
+            {
+                btn_LogOut.Visible = true;
+                img_LogOut.Visible = true;
+                lbl_Terminar.Visible = true;
+                lbl_Sessao.Visible = true;
             }
         }
 
@@ -977,28 +991,28 @@ namespace FootballLife_WF
 //==============================================================================================
         private void Btn_Home_Click(object sender, EventArgs e)
         {
-            if (Properties.Settings.Default.FuncaoUser == "Admin")
+            if (Program.CurrentFuncaoUser == "Admin")
             {
                 PaginaInicial_Admin PgInicio = new PaginaInicial_Admin();
                 this.Hide();
                 PgInicio.ShowDialog();
                 this.Dispose();
             }
-            else if (Properties.Settings.Default.FuncaoUser == "Treinador")
+            else if (Program.CurrentFuncaoUser == "Treinador")
             {
                 PaginaInicial_Treinador PgInicio = new PaginaInicial_Treinador();
                 this.Hide();
                 PgInicio.ShowDialog();
                 this.Dispose();
             }
-            else if (Properties.Settings.Default.FuncaoUser == "Atleta")
+            else if (Program.CurrentFuncaoUser == "Atleta")
             {
                 PaginaInicial_Atleta PgInicio = new PaginaInicial_Atleta();
                 this.Hide();
                 PgInicio.ShowDialog();
                 this.Dispose();
             }
-            else if (Properties.Settings.Default.FuncaoUser == "Socio")
+            else if (Program.CurrentFuncaoUser == "Socio")
             {
                 PaginaInicial_Socio PgInicio = new PaginaInicial_Socio();
                 this.Hide();
@@ -2051,21 +2065,21 @@ namespace FootballLife_WF
 
         private void Btn1_Click(object sender, EventArgs e)
         {
-            if (Properties.Settings.Default.FuncaoUser == "Admin")
+            if (Program.CurrentFuncaoUser == "Admin")
             {
                 Financiamento fin = new Financiamento();
                 this.Hide();
                 fin.ShowDialog();
                 this.Dispose();
             }
-            else if (Properties.Settings.Default.FuncaoUser == "Treinador" || Properties.Settings.Default.FuncaoUser == "Atleta")
+            else if (Program.CurrentFuncaoUser == "Treinador" || Program.CurrentFuncaoUser == "Atleta")
             {
                 Convocatoria conv = new Convocatoria();
                 this.Hide();
                 conv.ShowDialog();
                 this.Dispose();
             }
-            else if (Properties.Settings.Default.FuncaoUser == "Socio")
+            else if (Program.CurrentFuncaoUser == "Socio")
             {
                 Cota cota = new Cota();
                 this.Hide();
@@ -2076,21 +2090,21 @@ namespace FootballLife_WF
 
         private void Btn2_Click(object sender, EventArgs e)
         {
-            if (Properties.Settings.Default.FuncaoUser == "Admin" || Properties.Settings.Default.FuncaoUser == "Treinador")
+            if (Program.CurrentFuncaoUser == "Admin" || Program.CurrentFuncaoUser == "Treinador")
             {
                 Inventario inv = new Inventario();
                 this.Hide();
                 inv.ShowDialog();
                 this.Dispose();
             }
-            else if (Properties.Settings.Default.FuncaoUser == "Atleta")
+            else if (Program.CurrentFuncaoUser == "Atleta")
             {
                 Cota ct = new Cota();
                 this.Hide();
                 ct.ShowDialog();
                 this.Dispose();
             }
-            else if (Properties.Settings.Default.FuncaoUser == "Socio")
+            else if (Program.CurrentFuncaoUser == "Socio")
             {
                 Utilizadores users = new Utilizadores();
                 this.Hide();
@@ -2104,6 +2118,18 @@ namespace FootballLife_WF
             Utilizadores users = new Utilizadores();
             this.Hide();
             users.ShowDialog();
+            this.Dispose();
+        }
+
+        private void Btn_LogOut_Click(object sender, EventArgs e)
+        {
+            Program.CurrentFuncaoUser = "";
+            Program.CurrentIDUser = 0;
+            Program.CurrentIDEscalao = 0;
+
+            PaginaInicial PgInicio = new PaginaInicial();
+            this.Hide();
+            PgInicio.ShowDialog();
             this.Dispose();
         }
     }

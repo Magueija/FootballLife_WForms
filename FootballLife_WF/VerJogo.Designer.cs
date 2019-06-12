@@ -85,9 +85,9 @@
             this.lbl_Data.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Data.Location = new System.Drawing.Point(105, 98);
             this.lbl_Data.Name = "lbl_Data";
-            this.lbl_Data.Size = new System.Drawing.Size(33, 15);
+            this.lbl_Data.Size = new System.Drawing.Size(34, 15);
             this.lbl_Data.TabIndex = 31;
-            this.lbl_Data.Text = "ewfg";
+            this.lbl_Data.Text = "teste";
             // 
             // label1
             // 
@@ -117,9 +117,9 @@
             this.lbl_Escalao.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Escalao.Location = new System.Drawing.Point(309, 98);
             this.lbl_Escalao.Name = "lbl_Escalao";
-            this.lbl_Escalao.Size = new System.Drawing.Size(33, 15);
+            this.lbl_Escalao.Size = new System.Drawing.Size(34, 15);
             this.lbl_Escalao.TabIndex = 33;
-            this.lbl_Escalao.Text = "ewfg";
+            this.lbl_Escalao.Text = "teste";
             // 
             // label3
             // 
@@ -138,9 +138,9 @@
             this.lbl_EquipaCasa.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_EquipaCasa.Location = new System.Drawing.Point(144, 289);
             this.lbl_EquipaCasa.Name = "lbl_EquipaCasa";
-            this.lbl_EquipaCasa.Size = new System.Drawing.Size(33, 15);
+            this.lbl_EquipaCasa.Size = new System.Drawing.Size(34, 15);
             this.lbl_EquipaCasa.TabIndex = 35;
-            this.lbl_EquipaCasa.Text = "ewfg";
+            this.lbl_EquipaCasa.Text = "teste";
             // 
             // label5
             // 
@@ -159,9 +159,9 @@
             this.lbl_GolosCasa.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_GolosCasa.Location = new System.Drawing.Point(98, 310);
             this.lbl_GolosCasa.Name = "lbl_GolosCasa";
-            this.lbl_GolosCasa.Size = new System.Drawing.Size(33, 15);
+            this.lbl_GolosCasa.Size = new System.Drawing.Size(34, 15);
             this.lbl_GolosCasa.TabIndex = 37;
-            this.lbl_GolosCasa.Text = "ewfg";
+            this.lbl_GolosCasa.Text = "teste";
             // 
             // img_LogoCasa
             // 
@@ -198,9 +198,9 @@
             this.lbl_GolosFora.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_GolosFora.Location = new System.Drawing.Point(363, 310);
             this.lbl_GolosFora.Name = "lbl_GolosFora";
-            this.lbl_GolosFora.Size = new System.Drawing.Size(33, 15);
+            this.lbl_GolosFora.Size = new System.Drawing.Size(34, 15);
             this.lbl_GolosFora.TabIndex = 43;
-            this.lbl_GolosFora.Text = "ewfg";
+            this.lbl_GolosFora.Text = "teste";
             // 
             // label7
             // 
@@ -219,9 +219,9 @@
             this.lbl_EquipaFora.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_EquipaFora.Location = new System.Drawing.Point(408, 289);
             this.lbl_EquipaFora.Name = "lbl_EquipaFora";
-            this.lbl_EquipaFora.Size = new System.Drawing.Size(33, 15);
+            this.lbl_EquipaFora.Size = new System.Drawing.Size(34, 15);
             this.lbl_EquipaFora.TabIndex = 41;
-            this.lbl_EquipaFora.Text = "ewfg";
+            this.lbl_EquipaFora.Text = "teste";
             // 
             // label9
             // 
@@ -240,9 +240,9 @@
             this.lbl_Divisao.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Divisao.Location = new System.Drawing.Point(450, 98);
             this.lbl_Divisao.Name = "lbl_Divisao";
-            this.lbl_Divisao.Size = new System.Drawing.Size(33, 15);
+            this.lbl_Divisao.Size = new System.Drawing.Size(34, 15);
             this.lbl_Divisao.TabIndex = 45;
-            this.lbl_Divisao.Text = "ewfg";
+            this.lbl_Divisao.Text = "teste";
             // 
             // flowpanel_Golos
             // 

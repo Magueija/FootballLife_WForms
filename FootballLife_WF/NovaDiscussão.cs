@@ -30,7 +30,7 @@ namespace FootballLife_WF
                 com.CommandText = @"INSERT INTO TblDiscussao (NomeDiscussao, Descricao, FK_IDAdministrador) VALUES (@Nome, @Mensagem, @IDAdmin)";
                 com.Parameters.AddWithValue("@Nome", tb_Nome.Text);
                 com.Parameters.AddWithValue("@Mensagem", tb_Mensagem.Text);
-                com.Parameters.AddWithValue("@IDAdmin", Properties.Settings.Default.IDUser);
+                com.Parameters.AddWithValue("@IDAdmin", Program.CurrentIDUser);
                 com.ExecuteNonQuery();
             }
             catch (Exception x)

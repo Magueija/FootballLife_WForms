@@ -15,8 +15,23 @@ namespace FootballLife_WF
     {
         public PaginaInicial_Admin()
         {
+            this.SetStyle(
+                System.Windows.Forms.ControlStyles.UserPaint |
+                System.Windows.Forms.ControlStyles.AllPaintingInWmPaint |
+                System.Windows.Forms.ControlStyles.OptimizedDoubleBuffer,
+                true);
+
             InitializeComponent();
-            
+        }
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;  // Turn on WS_EX_COMPOSITED
+                return cp;
+            }
         }
 
         private void PaginaInicial_Admin_Load(object sender, EventArgs e)
@@ -116,6 +131,7 @@ namespace FootballLife_WF
                     Panel panel = new Panel();
                     panel.Width = 800;
                     panel.Height = 250;
+                    panel.Margin = new Padding(5, 5, 5, 10);
                     panel.Anchor = AnchorStyles.Top;
                     panel.BorderStyle = BorderStyle.Fixed3D;
                     panel.BackColor = Color.White;
@@ -179,7 +195,7 @@ namespace FootballLife_WF
                     PbDelete.Click += Btn_Discussao_Click;
                     panel.Controls.Add(PbDelete);
 
-                    if (Properties.Settings.Default.IDUser == Convert.ToInt32(IDAdmin))
+                    if (Program.CurrentIDUser == Convert.ToInt32(IDAdmin))
                     {
                         PbDelete.Visible = true;
                     }
@@ -234,6 +250,10 @@ namespace FootballLife_WF
 
         private void Btn_LogOut_Click(object sender, EventArgs e)
         {
+            Program.CurrentFuncaoUser = "";
+            Program.CurrentIDUser = 0;
+            Program.CurrentIDEscalao = 0;
+
             PaginaInicial PgInicio = new PaginaInicial();
             this.Hide();
             PgInicio.ShowDialog();

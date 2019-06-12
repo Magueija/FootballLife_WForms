@@ -38,15 +38,15 @@ namespace FootballLife_WF
 
             try
             {
-                if (Properties.Settings.Default.FuncaoUser == "Admin")
+                if (Program.CurrentFuncaoUser == "Admin")
                 {
                     Query = "SELECT dbo.TblMaterial.IDMaterial, dbo.TblMaterial.Nome, dbo.TblMaterial.Quantidade, dbo.TblInventario.FK_IDClube FROM dbo.TblInventario INNER JOIN "
                         + "dbo.TblMaterial ON dbo.TblInventario.IDInventario = dbo.TblMaterial.FK_IDInventario WHERE(dbo.TblInventario.FK_IDClube = 1) ORDER BY dbo.TblMaterial.Nome";
                 }
-                else if (Properties.Settings.Default.FuncaoUser == "Treinador")
+                else if (Program.CurrentFuncaoUser == "Treinador")
                 {
                     Query = "SELECT dbo.TblMaterial.IDMaterial, dbo.TblMaterial.Nome, dbo.TblMaterial.Quantidade, dbo.TblInventario.FK_IDEscalao FROM dbo.TblInventario INNER JOIN dbo.TblMaterial ON dbo.TblInventario.IDInventario = dbo.TblMaterial.FK_IDInventario WHERE(dbo.TblInventario.FK_IDEscalao IN "
-                                 + "((SELECT dbo.TblEscalao.IDEscalao FROM dbo.TblEscalao INNER JOIN dbo.TblTreinador ON dbo.TblEscalao.IDEscalao = dbo.TblTreinador.FK_IDEscalao WHERE (dbo.TblEscalao.IDEscalao = " + Properties.Settings.Default.IDEscalao +"))))";
+                                 + "((SELECT dbo.TblEscalao.IDEscalao FROM dbo.TblEscalao INNER JOIN dbo.TblTreinador ON dbo.TblEscalao.IDEscalao = dbo.TblTreinador.FK_IDEscalao WHERE (dbo.TblEscalao.IDEscalao = " + Program.CurrentIDEscalao +"))))";
                 }
                 
 
@@ -198,7 +198,7 @@ namespace FootballLife_WF
 
             try
             {
-                if (Properties.Settings.Default.FuncaoUser == "Admin")
+                if (Program.CurrentFuncaoUser == "Admin")
                 {
                     QueryDELETE = "DELETE FROM dbo.TblMaterial WHERE (dbo.TblMaterial.FK_IDInventario = 1)";
                     SqlCommand CommandDELETE = new SqlCommand(QueryDELETE, con);
@@ -275,10 +275,10 @@ namespace FootballLife_WF
                         }
                     }
                 }
-                else if (Properties.Settings.Default.FuncaoUser == "Treinador")
+                else if (Program.CurrentFuncaoUser == "Treinador")
                 {
-                    string IDEscalao = Properties.Settings.Default.IDEscalao;
-                    int IDInventario = Convert.ToInt32(IDEscalao) + 1;
+                    int IDEscalao = Program.CurrentIDEscalao;
+                    int IDInventario = IDEscalao + 1;
 
                     QueryDELETE = "DELETE FROM dbo.TblMaterial WHERE (dbo.TblMaterial.FK_IDInventario = " + IDInventario + ")";
                     SqlCommand CommandDELETE = new SqlCommand(QueryDELETE, con);

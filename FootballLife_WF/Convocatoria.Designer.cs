@@ -45,7 +45,6 @@
             this.btn3 = new System.Windows.Forms.Button();
             this.btn2 = new System.Windows.Forms.Button();
             this.btn1 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.lbl_NovaConvocatoria = new System.Windows.Forms.Label();
             this.img_NovaConvocatoria = new System.Windows.Forms.PictureBox();
             this.lbl_Titulo = new System.Windows.Forms.Label();
@@ -65,15 +64,16 @@
             this.label6 = new System.Windows.Forms.Label();
             this.flowpanel_NaoConv = new System.Windows.Forms.FlowLayoutPanel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.img_Menu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_LogOut)).BeginInit();
             this.panel_Menu.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_NovaConvocatoria)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.linha_Admins)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // img_Menu
@@ -98,7 +98,7 @@
             this.img_Logo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.img_Logo.BackColor = System.Drawing.Color.Transparent;
-            this.img_Logo.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.img_Logo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.img_Logo.Image = global::FootballLife_WF.Properties.Resources.Logo_Clube;
             this.img_Logo.Location = new System.Drawing.Point(1308, 12);
             this.img_Logo.MaximumSize = new System.Drawing.Size(44, 40);
@@ -108,6 +108,7 @@
             this.img_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.img_Logo.TabIndex = 3;
             this.img_Logo.TabStop = false;
+            this.img_Logo.Click += new System.EventHandler(this.Btn_Home_Click);
             // 
             // btn_TopMenu
             // 
@@ -347,19 +348,6 @@
             this.btn1.Visible = false;
             this.btn1.Click += new System.EventHandler(this.Btn1_Click);
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.lbl_NovaConvocatoria);
-            this.panel1.Controls.Add(this.img_NovaConvocatoria);
-            this.panel1.Controls.Add(this.lbl_Titulo);
-            this.panel1.Controls.Add(this.btn_NovaConvocatoria);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 65);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1364, 150);
-            this.panel1.TabIndex = 25;
-            // 
             // lbl_NovaConvocatoria
             // 
             this.lbl_NovaConvocatoria.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -368,7 +356,7 @@
             this.lbl_NovaConvocatoria.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl_NovaConvocatoria.Font = new System.Drawing.Font("Berlin Sans FB Demi", 10F, System.Drawing.FontStyle.Bold);
             this.lbl_NovaConvocatoria.ForeColor = System.Drawing.Color.White;
-            this.lbl_NovaConvocatoria.Location = new System.Drawing.Point(1213, 22);
+            this.lbl_NovaConvocatoria.Location = new System.Drawing.Point(1218, 90);
             this.lbl_NovaConvocatoria.Name = "lbl_NovaConvocatoria";
             this.lbl_NovaConvocatoria.Size = new System.Drawing.Size(130, 18);
             this.lbl_NovaConvocatoria.TabIndex = 31;
@@ -384,7 +372,7 @@
             this.img_NovaConvocatoria.BackColor = System.Drawing.Color.Transparent;
             this.img_NovaConvocatoria.Cursor = System.Windows.Forms.Cursors.Hand;
             this.img_NovaConvocatoria.Image = global::FootballLife_WF.Properties.Resources.Adicionar_Criar_white_;
-            this.img_NovaConvocatoria.Location = new System.Drawing.Point(1187, 22);
+            this.img_NovaConvocatoria.Location = new System.Drawing.Point(1192, 90);
             this.img_NovaConvocatoria.MaximumSize = new System.Drawing.Size(20, 20);
             this.img_NovaConvocatoria.MinimumSize = new System.Drawing.Size(20, 20);
             this.img_NovaConvocatoria.Name = "img_NovaConvocatoria";
@@ -404,7 +392,7 @@
             this.lbl_Titulo.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Titulo.Font = new System.Drawing.Font("Bauhaus 93", 65.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Titulo.ForeColor = System.Drawing.Color.White;
-            this.lbl_Titulo.Location = new System.Drawing.Point(414, 31);
+            this.lbl_Titulo.Location = new System.Drawing.Point(419, 99);
             this.lbl_Titulo.Name = "lbl_Titulo";
             this.lbl_Titulo.Size = new System.Drawing.Size(580, 98);
             this.lbl_Titulo.TabIndex = 20;
@@ -421,7 +409,7 @@
             this.btn_NovaConvocatoria.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn_NovaConvocatoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_NovaConvocatoria.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_NovaConvocatoria.Location = new System.Drawing.Point(1175, 13);
+            this.btn_NovaConvocatoria.Location = new System.Drawing.Point(1180, 81);
             this.btn_NovaConvocatoria.Name = "btn_NovaConvocatoria";
             this.btn_NovaConvocatoria.Size = new System.Drawing.Size(172, 37);
             this.btn_NovaConvocatoria.TabIndex = 30;
@@ -522,10 +510,10 @@
             // 
             this.flowpanel_Titulares.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.flowpanel_Titulares.AutoScroll = true;
-            this.flowpanel_Titulares.BackColor = System.Drawing.Color.Transparent;
-            this.flowpanel_Titulares.Location = new System.Drawing.Point(124, 390);
+            this.flowpanel_Titulares.BackColor = System.Drawing.Color.LightGray;
+            this.flowpanel_Titulares.Location = new System.Drawing.Point(133, 390);
             this.flowpanel_Titulares.Name = "flowpanel_Titulares";
-            this.flowpanel_Titulares.Size = new System.Drawing.Size(305, 332);
+            this.flowpanel_Titulares.Size = new System.Drawing.Size(280, 332);
             this.flowpanel_Titulares.TabIndex = 30;
             // 
             // linha_Admins
@@ -535,7 +523,7 @@
             this.linha_Admins.Image = global::FootballLife_WF.Properties.Resources.Linha_Separadora;
             this.linha_Admins.Location = new System.Drawing.Point(133, 369);
             this.linha_Admins.Name = "linha_Admins";
-            this.linha_Admins.Size = new System.Drawing.Size(296, 21);
+            this.linha_Admins.Size = new System.Drawing.Size(284, 21);
             this.linha_Admins.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.linha_Admins.TabIndex = 29;
             this.linha_Admins.TabStop = false;
@@ -558,10 +546,10 @@
             // 
             this.flowpanel_Suplentes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.flowpanel_Suplentes.AutoScroll = true;
-            this.flowpanel_Suplentes.BackColor = System.Drawing.Color.Transparent;
-            this.flowpanel_Suplentes.Location = new System.Drawing.Point(519, 390);
+            this.flowpanel_Suplentes.BackColor = System.Drawing.Color.LightGray;
+            this.flowpanel_Suplentes.Location = new System.Drawing.Point(527, 390);
             this.flowpanel_Suplentes.Name = "flowpanel_Suplentes";
-            this.flowpanel_Suplentes.Size = new System.Drawing.Size(304, 332);
+            this.flowpanel_Suplentes.Size = new System.Drawing.Size(280, 332);
             this.flowpanel_Suplentes.TabIndex = 34;
             // 
             // pictureBox1
@@ -571,7 +559,7 @@
             this.pictureBox1.Image = global::FootballLife_WF.Properties.Resources.Linha_Separadora;
             this.pictureBox1.Location = new System.Drawing.Point(527, 369);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(296, 21);
+            this.pictureBox1.Size = new System.Drawing.Size(284, 21);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 33;
             this.pictureBox1.TabStop = false;
@@ -594,10 +582,10 @@
             // 
             this.flowpanel_NaoConv.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.flowpanel_NaoConv.AutoScroll = true;
-            this.flowpanel_NaoConv.BackColor = System.Drawing.Color.Transparent;
-            this.flowpanel_NaoConv.Location = new System.Drawing.Point(900, 390);
+            this.flowpanel_NaoConv.BackColor = System.Drawing.Color.LightGray;
+            this.flowpanel_NaoConv.Location = new System.Drawing.Point(908, 390);
             this.flowpanel_NaoConv.Name = "flowpanel_NaoConv";
-            this.flowpanel_NaoConv.Size = new System.Drawing.Size(304, 332);
+            this.flowpanel_NaoConv.Size = new System.Drawing.Size(280, 332);
             this.flowpanel_NaoConv.TabIndex = 37;
             // 
             // pictureBox2
@@ -607,10 +595,21 @@
             this.pictureBox2.Image = global::FootballLife_WF.Properties.Resources.Linha_Separadora;
             this.pictureBox2.Location = new System.Drawing.Point(908, 369);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(296, 21);
+            this.pictureBox2.Size = new System.Drawing.Size(284, 21);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 36;
             this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox3.Image = global::FootballLife_WF.Properties.Resources.Fundo_1;
+            this.pictureBox3.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(1364, 749);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 38;
+            this.pictureBox3.TabStop = false;
             // 
             // Convocatoria
             // 
@@ -620,8 +619,12 @@
             this.BackgroundImage = global::FootballLife_WF.Properties.Resources.Fundo_1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1364, 749);
+            this.Controls.Add(this.lbl_NovaConvocatoria);
             this.Controls.Add(this.label6);
+            this.Controls.Add(this.img_NovaConvocatoria);
             this.Controls.Add(this.flowpanel_NaoConv);
+            this.Controls.Add(this.lbl_Titulo);
+            this.Controls.Add(this.btn_NovaConvocatoria);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.flowpanel_Suplentes);
@@ -629,7 +632,6 @@
             this.Controls.Add(this.panel_Menu);
             this.Controls.Add(this.img_Logo);
             this.Controls.Add(this.img_Menu);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_TopMenu);
             this.Controls.Add(this.lbl_Tatica);
             this.Controls.Add(this.label4);
@@ -640,6 +642,7 @@
             this.Controls.Add(this.lbl_Titulares);
             this.Controls.Add(this.flowpanel_Titulares);
             this.Controls.Add(this.linha_Admins);
+            this.Controls.Add(this.pictureBox3);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.MinimumSize = new System.Drawing.Size(900, 500);
@@ -652,12 +655,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.img_LogOut)).EndInit();
             this.panel_Menu.ResumeLayout(false);
             this.panel_Menu.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_NovaConvocatoria)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.linha_Admins)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -677,7 +679,6 @@
         private System.Windows.Forms.Button btn_Jogos;
         private System.Windows.Forms.Button btn_Home;
         private System.Windows.Forms.Panel panel_Menu;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btn3;
         private System.Windows.Forms.Button btn2;
         private System.Windows.Forms.Button btn1;
@@ -700,5 +701,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.FlowLayoutPanel flowpanel_NaoConv;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

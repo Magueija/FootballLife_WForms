@@ -32,7 +32,6 @@
             this.img_Menu = new System.Windows.Forms.PictureBox();
             this.img_Logo = new System.Windows.Forms.PictureBox();
             this.btn_TopMenu = new System.Windows.Forms.Button();
-            this.flowpanel_Discussoes = new System.Windows.Forms.FlowLayoutPanel();
             this.btn_LogOut = new System.Windows.Forms.Button();
             this.img_LogOut = new System.Windows.Forms.PictureBox();
             this.lbl_Terminar = new System.Windows.Forms.Label();
@@ -46,13 +45,14 @@
             this.btn_Contactos = new System.Windows.Forms.Button();
             this.btn_Inventario = new System.Windows.Forms.Button();
             this.btn_Convocatoria = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.lbl_Titulo = new System.Windows.Forms.Label();
+            this.flowpanel_Discussoes = new System.Windows.Forms.FlowLayoutPanel();
+            this.img_Fundo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.img_Menu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_LogOut)).BeginInit();
             this.panel_Menu.SuspendLayout();
-            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.img_Fundo)).BeginInit();
             this.SuspendLayout();
             // 
             // img_Menu
@@ -100,20 +100,6 @@
             this.btn_TopMenu.Size = new System.Drawing.Size(1364, 65);
             this.btn_TopMenu.TabIndex = 0;
             this.btn_TopMenu.UseVisualStyleBackColor = false;
-            // 
-            // flowpanel_Discussoes
-            // 
-            this.flowpanel_Discussoes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.flowpanel_Discussoes.AutoScroll = true;
-            this.flowpanel_Discussoes.BackColor = System.Drawing.Color.Transparent;
-            this.flowpanel_Discussoes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.flowpanel_Discussoes.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowpanel_Discussoes.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.flowpanel_Discussoes.Location = new System.Drawing.Point(268, 257);
-            this.flowpanel_Discussoes.Name = "flowpanel_Discussoes";
-            this.flowpanel_Discussoes.Size = new System.Drawing.Size(825, 479);
-            this.flowpanel_Discussoes.TabIndex = 22;
-            this.flowpanel_Discussoes.WrapContents = false;
             // 
             // btn_LogOut
             // 
@@ -336,16 +322,6 @@
             this.btn_Convocatoria.UseVisualStyleBackColor = false;
             this.btn_Convocatoria.Click += new System.EventHandler(this.Btn_Convocatoria_Click);
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.lbl_Titulo);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 65);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1364, 150);
-            this.panel1.TabIndex = 25;
-            // 
             // lbl_Titulo
             // 
             this.lbl_Titulo.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -353,11 +329,36 @@
             this.lbl_Titulo.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Titulo.Font = new System.Drawing.Font("Bauhaus 93", 65.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Titulo.ForeColor = System.Drawing.Color.White;
-            this.lbl_Titulo.Location = new System.Drawing.Point(456, 23);
+            this.lbl_Titulo.Location = new System.Drawing.Point(467, 97);
             this.lbl_Titulo.Name = "lbl_Titulo";
             this.lbl_Titulo.Size = new System.Drawing.Size(462, 98);
             this.lbl_Titulo.TabIndex = 20;
             this.lbl_Titulo.Text = "Discussões";
+            // 
+            // flowpanel_Discussoes
+            // 
+            this.flowpanel_Discussoes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.flowpanel_Discussoes.AutoScroll = true;
+            this.flowpanel_Discussoes.BackColor = System.Drawing.Color.LightGray;
+            this.flowpanel_Discussoes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.flowpanel_Discussoes.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowpanel_Discussoes.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.flowpanel_Discussoes.Location = new System.Drawing.Point(279, 272);
+            this.flowpanel_Discussoes.Name = "flowpanel_Discussoes";
+            this.flowpanel_Discussoes.Size = new System.Drawing.Size(830, 448);
+            this.flowpanel_Discussoes.TabIndex = 27;
+            this.flowpanel_Discussoes.WrapContents = false;
+            // 
+            // img_Fundo
+            // 
+            this.img_Fundo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.img_Fundo.Image = global::FootballLife_WF.Properties.Resources.Fundo_1;
+            this.img_Fundo.Location = new System.Drawing.Point(0, 0);
+            this.img_Fundo.Name = "img_Fundo";
+            this.img_Fundo.Size = new System.Drawing.Size(1364, 749);
+            this.img_Fundo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.img_Fundo.TabIndex = 26;
+            this.img_Fundo.TabStop = false;
             // 
             // PaginaInicial_Treinador
             // 
@@ -367,12 +368,13 @@
             this.BackgroundImage = global::FootballLife_WF.Properties.Resources.Fundo_1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1364, 749);
-            this.Controls.Add(this.panel_Menu);
+            this.Controls.Add(this.lbl_Titulo);
             this.Controls.Add(this.flowpanel_Discussoes);
+            this.Controls.Add(this.panel_Menu);
             this.Controls.Add(this.img_Logo);
             this.Controls.Add(this.img_Menu);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_TopMenu);
+            this.Controls.Add(this.img_Fundo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.MinimumSize = new System.Drawing.Size(900, 500);
@@ -385,9 +387,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.img_LogOut)).EndInit();
             this.panel_Menu.ResumeLayout(false);
             this.panel_Menu.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.img_Fundo)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -395,7 +397,6 @@
         private System.Windows.Forms.PictureBox img_Menu;
         private System.Windows.Forms.PictureBox img_Logo;
         private System.Windows.Forms.Button btn_TopMenu;
-        private System.Windows.Forms.FlowLayoutPanel flowpanel_Discussoes;
         private System.Windows.Forms.Button btn_LogOut;
         private System.Windows.Forms.PictureBox img_LogOut;
         private System.Windows.Forms.Label lbl_Terminar;
@@ -406,10 +407,11 @@
         private System.Windows.Forms.Button btn_Jogos;
         private System.Windows.Forms.Button btn_Home;
         private System.Windows.Forms.Panel panel_Menu;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btn_Contactos;
         private System.Windows.Forms.Button btn_Inventario;
         private System.Windows.Forms.Button btn_Convocatoria;
         private System.Windows.Forms.Label lbl_Titulo;
+        private System.Windows.Forms.FlowLayoutPanel flowpanel_Discussoes;
+        private System.Windows.Forms.PictureBox img_Fundo;
     }
 }
