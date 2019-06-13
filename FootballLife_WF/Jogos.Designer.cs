@@ -205,7 +205,7 @@
             this.btn_Titulos.TabIndex = 9;
             this.btn_Titulos.Text = "HISTÓRIA";
             this.btn_Titulos.UseVisualStyleBackColor = false;
-            this.btn_Titulos.Click += new System.EventHandler(this.Btn_Titulos_Click);
+            this.btn_Titulos.Click += new System.EventHandler(this.Btn_Historia_Click);
             // 
             // panel_Menu
             // 

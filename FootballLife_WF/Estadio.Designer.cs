@@ -243,7 +243,7 @@
             this.panel_Menu.Controls.Add(this.btn_Titulos);
             this.panel_Menu.Location = new System.Drawing.Point(0, 63);
             this.panel_Menu.Name = "panel_Menu";
-            this.panel_Menu.Size = new System.Drawing.Size(160, 2139);
+            this.panel_Menu.Size = new System.Drawing.Size(160, 2865);
             this.panel_Menu.TabIndex = 12;
             this.panel_Menu.Visible = false;
             // 
@@ -255,7 +255,7 @@
             this.lbl_Sessao.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Sessao.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl_Sessao.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Sessao.Location = new System.Drawing.Point(74, 2085);
+            this.lbl_Sessao.Location = new System.Drawing.Point(74, 2811);
             this.lbl_Sessao.Name = "lbl_Sessao";
             this.lbl_Sessao.Size = new System.Drawing.Size(44, 16);
             this.lbl_Sessao.TabIndex = 48;
@@ -289,7 +289,7 @@
             this.lbl_Terminar.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Terminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl_Terminar.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Terminar.Location = new System.Drawing.Point(74, 2069);
+            this.lbl_Terminar.Location = new System.Drawing.Point(74, 2795);
             this.lbl_Terminar.Name = "lbl_Terminar";
             this.lbl_Terminar.Size = new System.Drawing.Size(61, 16);
             this.lbl_Terminar.TabIndex = 47;
@@ -304,7 +304,7 @@
             this.img_LogOut.BackColor = System.Drawing.Color.Transparent;
             this.img_LogOut.Cursor = System.Windows.Forms.Cursors.Hand;
             this.img_LogOut.Image = global::FootballLife_WF.Properties.Resources.LogOut;
-            this.img_LogOut.Location = new System.Drawing.Point(24, 2060);
+            this.img_LogOut.Location = new System.Drawing.Point(24, 2786);
             this.img_LogOut.Name = "img_LogOut";
             this.img_LogOut.Size = new System.Drawing.Size(42, 49);
             this.img_LogOut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -341,7 +341,7 @@
             this.btn_LogOut.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
             this.btn_LogOut.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
             this.btn_LogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_LogOut.Location = new System.Drawing.Point(12, 2052);
+            this.btn_LogOut.Location = new System.Drawing.Point(12, 2778);
             this.btn_LogOut.Name = "btn_LogOut";
             this.btn_LogOut.Size = new System.Drawing.Size(130, 65);
             this.btn_LogOut.TabIndex = 49;
@@ -374,7 +374,7 @@
             this.lbl_Titulo.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Titulo.Font = new System.Drawing.Font("Bauhaus 93", 65.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Titulo.ForeColor = System.Drawing.Color.White;
-            this.lbl_Titulo.Location = new System.Drawing.Point(488, 117);
+            this.lbl_Titulo.Location = new System.Drawing.Point(508, 113);
             this.lbl_Titulo.Name = "lbl_Titulo";
             this.lbl_Titulo.Size = new System.Drawing.Size(327, 98);
             this.lbl_Titulo.TabIndex = 15;
@@ -390,7 +390,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(1, 258);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1345, 127);
+            this.panel1.Size = new System.Drawing.Size(1354, 127);
             this.panel1.TabIndex = 20;
             // 
             // label1
@@ -399,7 +399,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Berlin Sans FB Demi", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(490, 24);
+            this.label1.Location = new System.Drawing.Point(495, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(332, 24);
             this.label1.TabIndex = 16;
@@ -411,7 +411,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(456, 85);
+            this.label3.Location = new System.Drawing.Point(461, 85);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(396, 18);
             this.label3.TabIndex = 18;
@@ -423,7 +423,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(347, 67);
+            this.label2.Location = new System.Drawing.Point(352, 67);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(619, 18);
             this.label2.TabIndex = 17;
@@ -435,7 +435,7 @@
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.pictureBox1);
-            this.panel3.Location = new System.Drawing.Point(6, 427);
+            this.panel3.Location = new System.Drawing.Point(68, 427);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(438, 302);
             this.panel3.TabIndex = 34;
@@ -456,7 +456,7 @@
             this.panel9.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel9.Controls.Add(this.pictureBox3);
-            this.panel9.Location = new System.Drawing.Point(443, 427);
+            this.panel9.Location = new System.Drawing.Point(505, 427);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(408, 237);
             this.panel9.TabIndex = 40;
@@ -477,7 +477,7 @@
             this.panel5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.pictureBox4);
-            this.panel5.Location = new System.Drawing.Point(846, 709);
+            this.panel5.Location = new System.Drawing.Point(908, 709);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(403, 195);
             this.panel5.TabIndex = 41;
@@ -498,7 +498,7 @@
             this.panel4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.pictureBox8);
-            this.panel4.Location = new System.Drawing.Point(443, 662);
+            this.panel4.Location = new System.Drawing.Point(505, 662);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(404, 181);
             this.panel4.TabIndex = 35;
@@ -519,7 +519,7 @@
             this.panel6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel6.Controls.Add(this.pictureBox6);
-            this.panel6.Location = new System.Drawing.Point(6, 728);
+            this.panel6.Location = new System.Drawing.Point(68, 728);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(438, 347);
             this.panel6.TabIndex = 42;
@@ -540,7 +540,7 @@
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Location = new System.Drawing.Point(443, 842);
+            this.panel2.Location = new System.Drawing.Point(505, 842);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(404, 233);
             this.panel2.TabIndex = 40;
@@ -561,7 +561,7 @@
             this.panel7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel7.Controls.Add(this.pictureBox7);
-            this.panel7.Location = new System.Drawing.Point(846, 903);
+            this.panel7.Location = new System.Drawing.Point(908, 903);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(403, 172);
             this.panel7.TabIndex = 43;
@@ -582,7 +582,7 @@
             this.panel8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel8.Controls.Add(this.pictureBox5);
-            this.panel8.Location = new System.Drawing.Point(846, 427);
+            this.panel8.Location = new System.Drawing.Point(908, 427);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(403, 283);
             this.panel8.TabIndex = 44;

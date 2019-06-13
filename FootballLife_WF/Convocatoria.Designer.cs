@@ -346,7 +346,6 @@
             this.btn1.Text = "CONVOCATÓRIA";
             this.btn1.UseVisualStyleBackColor = false;
             this.btn1.Visible = false;
-            this.btn1.Click += new System.EventHandler(this.Btn1_Click);
             // 
             // lbl_NovaConvocatoria
             // 
@@ -510,7 +509,7 @@
             // 
             this.flowpanel_Titulares.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.flowpanel_Titulares.AutoScroll = true;
-            this.flowpanel_Titulares.BackColor = System.Drawing.Color.LightGray;
+            this.flowpanel_Titulares.BackColor = System.Drawing.Color.WhiteSmoke;
             this.flowpanel_Titulares.Location = new System.Drawing.Point(133, 390);
             this.flowpanel_Titulares.Name = "flowpanel_Titulares";
             this.flowpanel_Titulares.Size = new System.Drawing.Size(280, 332);
@@ -546,10 +545,10 @@
             // 
             this.flowpanel_Suplentes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.flowpanel_Suplentes.AutoScroll = true;
-            this.flowpanel_Suplentes.BackColor = System.Drawing.Color.LightGray;
+            this.flowpanel_Suplentes.BackColor = System.Drawing.Color.WhiteSmoke;
             this.flowpanel_Suplentes.Location = new System.Drawing.Point(527, 390);
             this.flowpanel_Suplentes.Name = "flowpanel_Suplentes";
-            this.flowpanel_Suplentes.Size = new System.Drawing.Size(280, 332);
+            this.flowpanel_Suplentes.Size = new System.Drawing.Size(280, 330);
             this.flowpanel_Suplentes.TabIndex = 34;
             // 
             // pictureBox1
@@ -582,7 +581,7 @@
             // 
             this.flowpanel_NaoConv.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.flowpanel_NaoConv.AutoScroll = true;
-            this.flowpanel_NaoConv.BackColor = System.Drawing.Color.LightGray;
+            this.flowpanel_NaoConv.BackColor = System.Drawing.Color.WhiteSmoke;
             this.flowpanel_NaoConv.Location = new System.Drawing.Point(908, 390);
             this.flowpanel_NaoConv.Name = "flowpanel_NaoConv";
             this.flowpanel_NaoConv.Size = new System.Drawing.Size(280, 332);

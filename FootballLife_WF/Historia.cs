@@ -23,6 +23,7 @@ namespace FootballLife_WF
             InitializeComponent();
         }
 
+        //Verifica se é o current User ou se é um adepto
         private void Historia_Load(object sender, EventArgs e)
         {
 
@@ -74,8 +75,11 @@ namespace FootballLife_WF
             }
         }
 
-//==============================================================================================
 
+        //==============================================================================================
+
+
+        //Side Menu
         private void Img_Menu_Click(object sender, EventArgs e)
         {
             if(panel_Menu.Visible == true && btn_Menu.Visible == true)
@@ -92,6 +96,9 @@ namespace FootballLife_WF
 
 
         //==============================================================================================
+
+
+        //Side Menu buttons click
         private void Btn_Home_Click(object sender, EventArgs e)
         {
             if (Program.CurrentFuncaoUser == "Admin")
@@ -155,6 +162,8 @@ namespace FootballLife_WF
             this.Dispose();
         }
 
+
+        //Side menu buttons click, se nao for adepto
         private void Btn1_Click(object sender, EventArgs e)
         {
             if (Program.CurrentFuncaoUser == "Admin")
@@ -213,6 +222,8 @@ namespace FootballLife_WF
             this.Dispose();
         }
 
+
+
         private void Btn_LogOut_Click(object sender, EventArgs e)
         {
             Program.CurrentFuncaoUser = "";
@@ -224,10 +235,6 @@ namespace FootballLife_WF
             PgInicio.ShowDialog();
             this.Dispose();
         }
-
-        //==============================================================================================
-
-
     }
 }
 

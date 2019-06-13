@@ -124,42 +124,16 @@ namespace FootballLife_WF
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.ToString());
+                MessageBox.Show(x.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             con.Close();
         }
 
+        
         //==============================================================================================
 
-        private void Img_Menu_Click(object sender, EventArgs e)
-        {
-            if(panel_Menu.Visible == true && btn_Menu.Visible == true)
-            {
-                panel_Menu.Visible = false;
-                btn_Menu.Visible = false;
-            }
-            else
-            {
-                panel_Menu.Visible = true;
-                btn_Menu.Visible = true;
-            }
-        }
 
-//==============================================================================================
-
-    
-        private void Btn_LogOut_Click(object sender, EventArgs e)
-        {
-            Program.CurrentFuncaoUser = "";
-            Program.CurrentIDUser = 0;
-            Program.CurrentIDEscalao = 0;
-
-            PaginaInicial PgInicio = new PaginaInicial();
-            this.Hide();
-            PgInicio.ShowDialog();
-            this.Dispose();
-        }
-
+        //Indica o metodo de pagamento e mostra as caixas de texto correspondentes
         private void Img_PayPal_Click(object sender, EventArgs e)
         {
             img_Visa.Width = 50;
@@ -222,28 +196,33 @@ namespace FootballLife_WF
             tb_data.Text = DateTime.Now.ToString();
         }
 
+
+        //==============================================================================================
+
+
+        //Gravar
         private void Btn_Pagar_Click(object sender, EventArgs e)
         {
             if (panel_Paypal.Visible == true && tb_PPEmail.Text == string.Empty || panel_Paypal.Visible == true && tb_PPPass.Text == string.Empty)
             {
-                MessageBox.Show("Campos não preenchidos!", "ATENÇÃO!", MessageBoxButtons.OK);
+                MessageBox.Show("Campos não preenchidos!", "ATENÇÃO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (panel_cartao.Visible == true && tb_NumeroCartao.Text == string.Empty ||
                     panel_cartao.Visible == true && tb_CVV.Text == string.Empty ||
                     panel_cartao.Visible == true && tb_NomeCartao.Text == string.Empty)
                  {
-                    MessageBox.Show("Campos não preenchidos!", "ATENÇÃO!", MessageBoxButtons.OK);
+                    MessageBox.Show("Campos não preenchidos!", "ATENÇÃO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                  }
             else if (panel_cartao.Visible == false && panel_Paypal.Visible == false)
             {
-                MessageBox.Show("Por favor insira um método de pagamento!", "ATENÇÃO!", MessageBoxButtons.OK);
+                MessageBox.Show("Por favor insira um método de pagamento!", "ATENÇÃO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
                 SqlConnection con = new SqlConnection(Properties.Settings.Default.Connection);
                 con.Open();
 
-                string SaldoClube = "";
+                double SaldoClube = 0;
 
                 string Nome = "";
                 string Valor = "";
@@ -414,13 +393,13 @@ namespace FootballLife_WF
                     drSaldoClube = CommandSaldoClube.ExecuteReader();
                     while (drSaldoClube.Read())
                     {
-                        SaldoClube = drSaldoClube["Saldo"].ToString();
+                        SaldoClube = Convert.ToDouble(drSaldoClube["Saldo"]);
                     }
                     drSaldoClube.Close();
 
 
                     //ATUALIZA O NOVO SALDO
-                    double Novosaldo = Convert.ToDouble(SaldoClube) + Convert.ToDouble(Valor);
+                    double Novosaldo = SaldoClube + Convert.ToDouble(Valor);
                     string QueryNovoSaldo = "UPDATE dbo.TblClube SET Saldo = @NovoSaldo WHERE IDClube = 1";
 
                     SqlCommand CommandNovoSaldo = new SqlCommand(QueryNovoSaldo, con);
@@ -433,7 +412,7 @@ namespace FootballLife_WF
                 }
                 catch (Exception x)
                 {
-                   MessageBox.Show(x.ToString());
+                    MessageBox.Show(x.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 con.Close();
 
@@ -460,6 +439,30 @@ namespace FootballLife_WF
             }
         }
 
+
+        //==============================================================================================
+
+
+        //Side Menu
+        private void Img_Menu_Click(object sender, EventArgs e)
+        {
+            if (panel_Menu.Visible == true && btn_Menu.Visible == true)
+            {
+                panel_Menu.Visible = false;
+                btn_Menu.Visible = false;
+            }
+            else
+            {
+                panel_Menu.Visible = true;
+                btn_Menu.Visible = true;
+            }
+        }
+
+
+        //===============================================================================
+
+
+        //Side Menu button click
         private void Btn_Home_Click(object sender, EventArgs e)
         {
             if (Program.CurrentFuncaoUser == "Atleta")
@@ -551,6 +554,19 @@ namespace FootballLife_WF
             Utilizadores users = new Utilizadores();
             this.Hide();
             users.ShowDialog();
+            this.Dispose();
+        }
+        
+        
+        private void Btn_LogOut_Click(object sender, EventArgs e)
+        {
+            Program.CurrentFuncaoUser = "";
+            Program.CurrentIDUser = 0;
+            Program.CurrentIDEscalao = 0;
+
+            PaginaInicial PgInicio = new PaginaInicial();
+            this.Hide();
+            PgInicio.ShowDialog();
             this.Dispose();
         }
     }

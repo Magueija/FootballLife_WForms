@@ -109,7 +109,7 @@ namespace FootballLife_WF
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.ToString());
+                MessageBox.Show(x.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             con.Close();
         }
@@ -204,7 +204,7 @@ namespace FootballLife_WF
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.ToString());
+                MessageBox.Show(x.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             con.Close();
         }
@@ -299,7 +299,7 @@ namespace FootballLife_WF
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.ToString());
+                MessageBox.Show(x.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             con.Close();
         }
@@ -358,11 +358,16 @@ namespace FootballLife_WF
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.ToString());
+                MessageBox.Show(x.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             con.Close();
         }
 
+
+        //================================================================================================
+
+
+        //Gravar
         private void Btn_Gravar_Click(object sender, EventArgs e)
         {
             if (Funcao == "Admin")
@@ -382,11 +387,6 @@ namespace FootballLife_WF
                 GravarSocio();
             }
 
-            this.Dispose();
-        }
-
-        private void Btn_Fechar_Click(object sender, EventArgs e)
-        {
             this.Dispose();
         }
 
@@ -412,7 +412,7 @@ namespace FootballLife_WF
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.ToString());
+                MessageBox.Show(x.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             con.Close();
         }
@@ -474,7 +474,7 @@ namespace FootballLife_WF
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.ToString());
+                MessageBox.Show(x.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             con.Close();
         }
@@ -536,7 +536,7 @@ namespace FootballLife_WF
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.ToString());
+                MessageBox.Show(x.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             con.Close();
         }
@@ -563,10 +563,14 @@ namespace FootballLife_WF
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.ToString());
+                MessageBox.Show(x.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             con.Close();
         }
+
+
+        //=========================================================================
+
 
         private void Ckb_VerPass_CheckedChanged(object sender, EventArgs e)
         {
@@ -579,5 +583,16 @@ namespace FootballLife_WF
                 tb_Password.UseSystemPasswordChar = true;
             }
         }
+
+
+        //=========================================================================
+
+
+        private void Btn_Fechar_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+
     }
 }

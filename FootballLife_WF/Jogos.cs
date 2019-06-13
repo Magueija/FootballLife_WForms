@@ -32,6 +32,7 @@ namespace FootballLife_WF
             }
         }
 
+        //Verifica se é o current User ou se é um adepto
         private void Jogos_Load(object sender, EventArgs e)
         {
             JogoTodos();
@@ -84,23 +85,9 @@ namespace FootballLife_WF
             }
         }
 
-//==============================================================================================
 
-        private void Img_Menu_Click(object sender, EventArgs e)
-        {
-            if(panel_Menu.Visible == true && btn_Menu.Visible == true)
-            {
-                panel_Menu.Visible = false;
-                btn_Menu.Visible = false;
-            }
-            else
-            {
-                panel_Menu.Visible = true;
-                btn_Menu.Visible = true;
-            }
-        }
+        //==============================================================================================
 
-//==============================================================================================
 
         private void NovoResultado_MouseHover(object sender, EventArgs e)
         {
@@ -111,7 +98,9 @@ namespace FootballLife_WF
             lbl_NovoResultado.Font = new Font("Berlin Sans FB Demi", 10, FontStyle.Regular);
         }
 
-//==============================================================================================
+        
+        //==============================================================================================
+
 
         private void Chb_Todos_Click(object sender, EventArgs e)
         {
@@ -164,63 +153,61 @@ namespace FootballLife_WF
             }
         }
 
-        private void Btn_Home_Click(object sender, EventArgs e)
+        private void Chb_CheckedChanged(object sender, EventArgs e)
         {
-            if (Program.CurrentFuncaoUser == "Admin")
+            flowpanel_Jogos.Controls.Clear();
+
+            if (chb_Todos.Checked == true)
             {
-                PaginaInicial_Admin PgInicio = new PaginaInicial_Admin();
-                this.Hide();
-                PgInicio.ShowDialog();
-                this.Dispose();
-            }
-            else if (Program.CurrentFuncaoUser == "Treinador")
-            {
-                PaginaInicial_Treinador PgInicio = new PaginaInicial_Treinador();
-                this.Hide();
-                PgInicio.ShowDialog();
-                this.Dispose();
-            }
-            else if (Program.CurrentFuncaoUser == "Atleta")
-            {
-                PaginaInicial_Atleta PgInicio = new PaginaInicial_Atleta();
-                this.Hide();
-                PgInicio.ShowDialog();
-                this.Dispose();
-            }
-            else if (Program.CurrentFuncaoUser == "Socio")
-            {
-                PaginaInicial_Socio PgInicio = new PaginaInicial_Socio();
-                this.Hide();
-                PgInicio.ShowDialog();
-                this.Dispose();
+                JogoTodos();
             }
             else
             {
-                PaginaInicial PgInicio = new PaginaInicial();
-                this.Hide();
-                PgInicio.ShowDialog();
-                this.Dispose();
+                if (chb_Seniores.Checked == true)
+                {
+                    Jogo("1");
+                }
+
+                if (chb_Juniores.Checked == true)
+                {
+                    Jogo("2");
+                }
+
+                if (chb_Juvenis.Checked == true)
+                {
+                    Jogo("3");
+                }
+
+                if (chb_Iniciados.Checked == true)
+                {
+                    Jogo("4");
+                }
+
+                if (chb_Infantis.Checked == true)
+                {
+                    Jogo("5");
+                }
+
+                if (chb_Benjamins.Checked == true)
+                {
+                    Jogo("6");
+                }
+
+                if (chb_Traquinas.Checked == true)
+                {
+                    Jogo("7");
+                }
+
+                if (chb_Petizes.Checked == true)
+                {
+                    Jogo("8");
+                }
             }
-            
         }
 
-        private void Btn_Equipas_Click(object sender, EventArgs e)
-        {
-            Equipas Equipa = new Equipas();
-            this.Hide();
-            Equipa.ShowDialog();
-            this.Dispose();
-        }
 
-        private void Btn_Estadio_Click(object sender, EventArgs e)
-        {
-            Estadio Estadio = new Estadio();
-            this.Hide();
-            Estadio.ShowDialog();
-            this.Dispose();
-        }
+        //==============================================================================================
 
-        
 
         private void Jogo(string IDEscalao)
         {
@@ -272,7 +259,7 @@ namespace FootballLife_WF
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.ToString());
+                MessageBox.Show(x.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             con.Close();
         }
@@ -327,62 +314,34 @@ namespace FootballLife_WF
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.ToString());
+                MessageBox.Show(x.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             con.Close();
         }
+       
 
-        private void Chb_CheckedChanged(object sender, EventArgs e)
+        //==============================================================================================
+
+
+        //Side Menu
+        private void Img_Menu_Click(object sender, EventArgs e)
         {
-            flowpanel_Jogos.Controls.Clear();
-
-            if (chb_Todos.Checked == true)
+            if (panel_Menu.Visible == true && btn_Menu.Visible == true)
             {
-                JogoTodos();
+                panel_Menu.Visible = false;
+                btn_Menu.Visible = false;
             }
             else
             {
-                if(chb_Seniores.Checked == true)
-                {
-                    Jogo("1");
-                }
-
-                if (chb_Juniores.Checked == true)
-                {
-                    Jogo("2");
-                }
-
-                if (chb_Juvenis.Checked == true)
-                {
-                    Jogo("3");
-                }
-
-                if (chb_Iniciados.Checked == true)
-                {
-                    Jogo("4");
-                }
-
-                if (chb_Infantis.Checked == true)
-                {
-                    Jogo("5");
-                }
-
-                if (chb_Benjamins.Checked == true)
-                {
-                    Jogo("6");
-                }
-
-                if (chb_Traquinas.Checked == true)
-                {
-                    Jogo("7");
-                }
-
-                if (chb_Petizes.Checked == true)
-                {
-                    Jogo("8");
-                }
+                panel_Menu.Visible = true;
+                btn_Menu.Visible = true;
             }
         }
+
+
+        //==============================================================================================
+
+
 
         private void NovoResultado_Click(object sender, EventArgs e)
         {
@@ -392,7 +351,65 @@ namespace FootballLife_WF
             JogoTodos();
         }
 
-        private void Btn_Titulos_Click(object sender, EventArgs e)
+
+        //Side Menu buttons click
+        private void Btn_Home_Click(object sender, EventArgs e)
+        {
+            if (Program.CurrentFuncaoUser == "Admin")
+            {
+                PaginaInicial_Admin PgInicio = new PaginaInicial_Admin();
+                this.Hide();
+                PgInicio.ShowDialog();
+                this.Dispose();
+            }
+            else if (Program.CurrentFuncaoUser == "Treinador")
+            {
+                PaginaInicial_Treinador PgInicio = new PaginaInicial_Treinador();
+                this.Hide();
+                PgInicio.ShowDialog();
+                this.Dispose();
+            }
+            else if (Program.CurrentFuncaoUser == "Atleta")
+            {
+                PaginaInicial_Atleta PgInicio = new PaginaInicial_Atleta();
+                this.Hide();
+                PgInicio.ShowDialog();
+                this.Dispose();
+            }
+            else if (Program.CurrentFuncaoUser == "Socio")
+            {
+                PaginaInicial_Socio PgInicio = new PaginaInicial_Socio();
+                this.Hide();
+                PgInicio.ShowDialog();
+                this.Dispose();
+            }
+            else
+            {
+                PaginaInicial PgInicio = new PaginaInicial();
+                this.Hide();
+                PgInicio.ShowDialog();
+                this.Dispose();
+            }
+
+        }
+
+        private void Btn_Equipas_Click(object sender, EventArgs e)
+        {
+            Equipas Equipa = new Equipas();
+            this.Hide();
+            Equipa.ShowDialog();
+            this.Dispose();
+        }
+
+        private void Btn_Estadio_Click(object sender, EventArgs e)
+        {
+            Estadio Estadio = new Estadio();
+            this.Hide();
+            Estadio.ShowDialog();
+            this.Dispose();
+        }
+
+        private void Btn_Historia_Click(object sender, EventArgs e)
         {
             Historia Hist = new Historia();
             this.Hide();
@@ -400,6 +417,7 @@ namespace FootballLife_WF
             this.Dispose();
         }
 
+        //Side menu buttons click, se nao for adepto
         private void Btn1_Click(object sender, EventArgs e)
         {
             if (Program.CurrentFuncaoUser == "Admin")
@@ -457,6 +475,7 @@ namespace FootballLife_WF
             users.ShowDialog();
             this.Dispose();
         }
+
 
         private void Btn_LogOut_Click(object sender, EventArgs e)
         {

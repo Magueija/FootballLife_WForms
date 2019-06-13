@@ -82,6 +82,11 @@ namespace FootballLife_WF
             }
         }
 
+
+        //==========================================================================================
+
+
+        //Adminitradores
         private void Admin()
         {
             img_Logo.Image = Properties.Resources.LogoAdmin;
@@ -95,7 +100,6 @@ namespace FootballLife_WF
 
             try
             {
-
                 SqlDataReader dr;
                 string QueryAdmin = ("SELECT Nome, Telemovel, Email FROM TblAdministrador WHERE IDAdministrador = " + ID);
                 SqlCommand CommandAdmin = new SqlCommand(QueryAdmin, con);
@@ -121,11 +125,12 @@ namespace FootballLife_WF
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.ToString());
+                MessageBox.Show(x.Message, "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             con.Close();
         }
 
+        //Treinadores
         private void Treinador()
         {
             img_Logo.Image = Properties.Resources.LogoTreinador;
@@ -168,11 +173,12 @@ namespace FootballLife_WF
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.ToString());
+                MessageBox.Show(x.Message, "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             con.Close();
         }
 
+        //Atletas
         private void Atleta()
         {
             img_Logo.Image = Properties.Resources.LogoAtleta;
@@ -212,11 +218,13 @@ namespace FootballLife_WF
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.ToString());
+                MessageBox.Show(x.Message, "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             con.Close();
         }
 
+        //Socios
+        /*
         private void Socio()
         {
             img_Logo.Image = Properties.Resources.LogoSocio;
@@ -256,11 +264,16 @@ namespace FootballLife_WF
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.ToString());
+                MessageBox.Show(x.Message, "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             con.Close();
-        }
+        }*/
 
+
+        //=================================================================
+
+
+        //Sai do form
         private void Btn_Fechar_Click(object sender, EventArgs e)
         {
             this.Dispose();

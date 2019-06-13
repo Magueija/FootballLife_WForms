@@ -49,7 +49,7 @@
             this.btn_Estadio = new System.Windows.Forms.Button();
             this.lbl_Titulo = new System.Windows.Forms.Label();
             this.img_Fundo = new System.Windows.Forms.PictureBox();
-            this.btn_AddDespesas = new System.Windows.Forms.Button();
+            this.btn_Entrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.panel_Jogos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_Jogos)).BeginInit();
@@ -254,7 +254,7 @@
             this.lbl_Historia.Size = new System.Drawing.Size(131, 31);
             this.lbl_Historia.TabIndex = 3;
             this.lbl_Historia.Text = "HISTÓRIA";
-            this.lbl_Historia.Click += new System.EventHandler(this.Btn_Titulos_Click);
+            this.lbl_Historia.Click += new System.EventHandler(this.Btn_Historia_Click);
             this.lbl_Historia.MouseLeave += new System.EventHandler(this.Lbl_Titulos_MouseLeave);
             this.lbl_Historia.MouseHover += new System.EventHandler(this.Lbl_Titulos_MouseHover);
             // 
@@ -269,7 +269,7 @@
             this.img_Titulos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.img_Titulos.TabIndex = 0;
             this.img_Titulos.TabStop = false;
-            this.img_Titulos.Click += new System.EventHandler(this.Btn_Titulos_Click);
+            this.img_Titulos.Click += new System.EventHandler(this.Btn_Historia_Click);
             this.img_Titulos.MouseLeave += new System.EventHandler(this.Img_Titulos_MouseLeave);
             this.img_Titulos.MouseHover += new System.EventHandler(this.Img_Titulos_MouseHover);
             // 
@@ -291,7 +291,7 @@
             this.btn_Titulos.TabIndex = 2;
             this.btn_Titulos.Tag = "1";
             this.btn_Titulos.UseVisualStyleBackColor = false;
-            this.btn_Titulos.Click += new System.EventHandler(this.Btn_Titulos_Click);
+            this.btn_Titulos.Click += new System.EventHandler(this.Btn_Historia_Click);
             this.btn_Titulos.MouseLeave += new System.EventHandler(this.Btn_Titulos_MouseLeave);
             this.btn_Titulos.MouseHover += new System.EventHandler(this.Btn_Titulos_MouseHover);
             // 
@@ -386,27 +386,27 @@
             this.img_Fundo.TabIndex = 1;
             this.img_Fundo.TabStop = false;
             // 
-            // btn_AddDespesas
+            // btn_Entrar
             // 
-            this.btn_AddDespesas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_AddDespesas.BackColor = System.Drawing.Color.Transparent;
-            this.btn_AddDespesas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_AddDespesas.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.btn_AddDespesas.FlatAppearance.BorderSize = 0;
-            this.btn_AddDespesas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btn_AddDespesas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btn_AddDespesas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_AddDespesas.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_AddDespesas.ForeColor = System.Drawing.Color.Black;
-            this.btn_AddDespesas.Location = new System.Drawing.Point(1254, 20);
-            this.btn_AddDespesas.Name = "btn_AddDespesas";
-            this.btn_AddDespesas.Size = new System.Drawing.Size(97, 31);
-            this.btn_AddDespesas.TabIndex = 36;
-            this.btn_AddDespesas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_AddDespesas.UseVisualStyleBackColor = false;
-            this.btn_AddDespesas.Click += new System.EventHandler(this.Lbl_LogIn_Click);
-            this.btn_AddDespesas.MouseLeave += new System.EventHandler(this.Lbl_LogIn_MouseLeave);
-            this.btn_AddDespesas.MouseHover += new System.EventHandler(this.Lbl_LogIn_MouseHover);
+            this.btn_Entrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Entrar.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Entrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Entrar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btn_Entrar.FlatAppearance.BorderSize = 0;
+            this.btn_Entrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_Entrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_Entrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Entrar.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Entrar.ForeColor = System.Drawing.Color.Black;
+            this.btn_Entrar.Location = new System.Drawing.Point(1233, 25);
+            this.btn_Entrar.Name = "btn_Entrar";
+            this.btn_Entrar.Size = new System.Drawing.Size(97, 31);
+            this.btn_Entrar.TabIndex = 36;
+            this.btn_Entrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Entrar.UseVisualStyleBackColor = false;
+            this.btn_Entrar.Click += new System.EventHandler(this.Lbl_LogIn_Click);
+            this.btn_Entrar.MouseLeave += new System.EventHandler(this.Lbl_LogIn_MouseLeave);
+            this.btn_Entrar.MouseHover += new System.EventHandler(this.Lbl_LogIn_MouseHover);
             // 
             // PaginaInicial
             // 
@@ -423,7 +423,7 @@
             this.Controls.Add(this.panel_Equipas);
             this.Controls.Add(this.Logo);
             this.Controls.Add(this.panel_Jogos);
-            this.Controls.Add(this.btn_AddDespesas);
+            this.Controls.Add(this.btn_Entrar);
             this.Controls.Add(this.img_Fundo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(900, 450);
@@ -470,6 +470,6 @@
         private System.Windows.Forms.Button btn_Estadio;
         private System.Windows.Forms.Label lbl_Titulo;
         private System.Windows.Forms.PictureBox img_Fundo;
-        private System.Windows.Forms.Button btn_AddDespesas;
+        private System.Windows.Forms.Button btn_Entrar;
     }
 }

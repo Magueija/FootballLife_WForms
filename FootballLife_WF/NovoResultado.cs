@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Data.SqlClient;
+using System.Media;
 
 namespace FootballLife_WF
 {
     public partial class NovoResultado : Form
     {
-        string IDEscalao = "";
         public NovoResultado()
         {
             InitializeComponent();
@@ -23,29 +23,14 @@ namespace FootballLife_WF
 
         private void LoadFrom()
         {
-            SqlConnection con = new SqlConnection(Properties.Settings.Default.Connection);
-            con.Open();
-            try
-            {
-                SqlDataReader dr;
-                string QuerySelect = "SELECT dbo.TblEscalao.IDEscalao FROM dbo.TblEscalao INNER JOIN dbo.TblTreinador ON dbo.TblEscalao.IDEscalao = dbo.TblTreinador.FK_IDEscalao WHERE dbo.TblTreinador.IDTreinador = " + Program.CurrentIDUser;
-
-                SqlCommand CommandEscalao = new SqlCommand(QuerySelect, con);
-                dr = CommandEscalao.ExecuteReader();
-                while (dr.Read())
-                {
-                    IDEscalao = dr["IDEscalao"].ToString();
-                }
-                dr.Close();
-            }
-            catch (Exception x)
-            {
-                MessageBox.Show(x.ToString());
-            }
-            con.Close();
+            dt_Data.MaxDate = DateTime.Now;
         }
 
 
+        //================================================================================================
+
+
+        //Upload Imagens
         string displayimg, filePath;
         string folderpath = @"..\Projeto_WindowsForms\LogoEquipas\";
         OpenFileDialog open = new OpenFileDialog();
@@ -112,130 +97,16 @@ namespace FootballLife_WF
         }*/
 
 
-        private void Btn_Gravar_Click(object sender, EventArgs e)
+        //================================================================================================
+
+
+        //Hora Click (tirar o "HH:MM")
+        private void Tb_Hora_Click(object sender, EventArgs e)
         {
-            bool gravar = true;
-
-            for (int ctr = 0; ctr < flowpanel_Golos.Controls.Count; ctr++)
-            {
-                foreach (Control c in flowpanel_Golos.Controls[ctr].Controls)
-                {
-                    if(c.Name == "tbMinutos" && c.Text == "")
-                    {
-                        gravar = false;
-                    }
-                }
-            }
-
-            if (gravar == true)
-            {
-                if (tb_Data.Text == "" || tb_Hora.Text == ""  || tb_Data.Text == "DD/MM/AAAA"  || tb_Hora.Text == "HH:MM"  || tb_Divisao.Text == "" || tb_EquipaCasa.Text == "" || tb_EquipaFora.Text == "" || tb_GolosCasa.Text == "" || tb_GolosFora.Text == "")
-                {
-                    MessageBox.Show("Campos obrigatórios não preenchidos!", "ATENÇÃO!", MessageBoxButtons.OK);
-                }
-                else if (tb_EquipaCasa.Text == tb_EquipaFora.Text && img_LogoCasa.Image == Properties.Resources.Logo_Clube && img_LogoFora.Image == Properties.Resources.Logo_Clube)
-                {
-                    MessageBox.Show("Equipas iguais!", "ATENÇÃO!", MessageBoxButtons.OK);
-                }
-                else if (img_LogoCasa.Image == Properties.Resources.Logo_Clube && img_LogoFora.Image == Properties.Resources.Logo_Clube)
-                {
-                    MessageBox.Show("Logos das equipas iguais!", "ATENÇÃO!", MessageBoxButtons.OK);
-                }
-                else if (img_LogoCasa.Image == Properties.Resources.Logo_Clube && tb_EquipaCasa.Text != "Palmelense F.C." || img_LogoFora.Image == Properties.Resources.Logo_Clube && tb_EquipaFora.Text != "Palmelense F.C.")
-                {
-                    MessageBox.Show("A Equipa 'Palmelense F.C.' não corresponde ao logo por defeito!", "ATENÇÃO!", MessageBoxButtons.OK);
-                }
-                else
-                {
-                    SqlConnection con = new SqlConnection(Properties.Settings.Default.Connection);
-                    con.Open();
-
-                    try
-                    {
-                        if (!Directory.Exists(folderpath))
-                        {
-                            Directory.CreateDirectory(folderpath);
-                        }
-
-                        string QueryInsert = "INSERT INTO dbo.TblJogo (Data, Divisao, EquipaCasa, EquipaFora, GolosCasa, GolosFora, Path_ImgAdversario, FK_IDEscalao) VALUES (@Data, @Divisao, @EquipaCasa, @EquipaFora, @GolosCasa, @GolosFora, @Path_ImgAdversario, @IDEscalao)";
-
-                        SqlCommand CommandINSERT = new SqlCommand(QueryInsert, con);
-                        CommandINSERT.Parameters.AddWithValue("@Data", tb_Data.Text + " " + tb_Hora.Text);
-                        CommandINSERT.Parameters.AddWithValue("@Divisao", tb_Divisao.Text);
-                        CommandINSERT.Parameters.AddWithValue("@EquipaCasa", tb_EquipaCasa.Text);
-                        CommandINSERT.Parameters.AddWithValue("@EquipaFora", tb_EquipaFora.Text);
-                        CommandINSERT.Parameters.AddWithValue("@GolosCasa", tb_GolosCasa.Text);
-                        CommandINSERT.Parameters.AddWithValue("@GolosFora", tb_GolosFora.Text);
-                        CommandINSERT.Parameters.AddWithValue("@Path_ImgAdversario", folderpath + Path.GetFileName(open.FileName));
-
-                        string fileName = Path.Combine(folderpath, Path.GetFileName(filePath));
-
-                        if (!File.Exists(fileName))
-                        {
-                            File.Copy(filePath, fileName, true);
-                        }
-
-
-                        CommandINSERT.Parameters.AddWithValue("@IDEscalao", IDEscalao);
-                        CommandINSERT.ExecuteNonQuery();
-
-                        string IDJogo = "";
-                        SqlDataReader drJogo;
-                        string QueryJogo = "SELECT MAX(IDJogo) AS MaxJogo FROM dbo.TblJogo";
-
-                        SqlCommand CommandJogo = new SqlCommand(QueryJogo, con);
-                        drJogo = CommandJogo.ExecuteReader();
-                        while (drJogo.Read())
-                        {
-                            IDJogo = drJogo["MaxJogo"].ToString();
-                        }
-                        drJogo.Close();
-
-                        for (int ctr = 0; ctr < flowpanel_Golos.Controls.Count; ctr++)
-                        {
-                            string Nome = "";
-                            string Minutos = "";
-
-                            foreach (Control c in flowpanel_Golos.Controls[ctr].Controls)
-                            {
-                                if (c.Name == "cbNome")
-                                {
-                                    ComboBox cb = (ComboBox)c;
-                                    Nome = cb.SelectedValue.ToString();
-                                }
-
-                                if (c.Name == "tbMinutos")
-                                {
-                                    TextBox tb = (TextBox)c;
-                                    Minutos = tb.Text;
-                                }
-                            }
-
-                            string Querygolo = "INSERT INTO dbo.TblGolo (Minutos_Jogo, FK_IDAtleta, FK_IDJogo) VALUES (@Minutos_Jogo, @IDAtleta, @IDJogo)";
-
-                            SqlCommand Commandgolo = new SqlCommand(Querygolo, con);
-                            Commandgolo.Parameters.AddWithValue("@Minutos_Jogo", Minutos);
-                            Commandgolo.Parameters.AddWithValue("@IDAtleta", Nome);
-                            Commandgolo.Parameters.AddWithValue("@IDJogo", IDJogo);
-                            Commandgolo.ExecuteNonQuery();
-
-                        }
-                    }
-                    catch (Exception x)
-                    {
-                        MessageBox.Show(x.ToString());
-                    }
-                    con.Close();
-                    this.Dispose();
-                }
-            }
-            else
-            {
-                MessageBox.Show("Campos obrigatórios não preenchidos!", "ATENÇÃO!", MessageBoxButtons.OK);
-            }
+            tb_Hora.Text = "";
         }
 
-        
+        //Adiciona golos ao flowlayoutpanel
         private void GolosPalmelense(int Golo)
         {
             Golo += 1;
@@ -307,7 +178,7 @@ namespace FootballLife_WF
             tbMinutos.Name = "tbMinutos";
             panel.Controls.Add(tbMinutos);
 
-            
+
 
             SqlConnection con = new SqlConnection(Properties.Settings.Default.Connection);
             con.Open();
@@ -315,7 +186,7 @@ namespace FootballLife_WF
             SqlDataAdapter adapter = new SqlDataAdapter();
             DataSet ds = new DataSet();
             string sql = null;
-            sql = "SELECT IDAtleta, Nome FROM dbo.TblAtleta WHERE Apagado = 0 AND FK_IDEscalao = " + IDEscalao;
+            sql = "SELECT IDAtleta, Nome FROM dbo.TblAtleta WHERE Apagado = 0 AND FK_IDEscalao = " + Program.CurrentIDEscalao;
             try
             {
                 command = new SqlCommand(sql, con);
@@ -323,18 +194,20 @@ namespace FootballLife_WF
                 adapter.Fill(ds);
                 adapter.Dispose();
                 command.Dispose();
-               
+
                 cbNome.DataSource = ds.Tables[0];
                 cbNome.ValueMember = "IDAtleta";
                 cbNome.DisplayMember = "Nome";
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.ToString());
+                MessageBox.Show(x.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             con.Close();
         }
 
+
+        //Adiciona o numero de golos no flowlayoutpanel consoante o numero de golos inserido na textbox do palmelense
         private void Palmelense_TextChanged(object sender, EventArgs e)
         {
             flowpanel_Golos.Controls.Clear();
@@ -363,14 +236,222 @@ namespace FootballLife_WF
             }
         }
 
-        private void Tb_Data_Click(object sender, EventArgs e)
+        private void Tb_GolosCasa_KeyDown(object sender, KeyEventArgs e)
         {
-            tb_Data.Text = "";
+            bool naoNumero = false;
+
+            // é um número do topo do teclado
+            if (e.KeyCode < Keys.D0 || e.KeyCode > Keys.D9)
+            {
+                // é um numero do teclado numerico
+                if (e.KeyCode < Keys.NumPad0 || e.KeyCode > Keys.NumPad9)
+                {
+                    // teclas autorizadas
+                    if (
+                        (e.KeyCode != Keys.Back) &&
+                        (e.KeyCode != Keys.Left) &&
+                        (e.KeyCode != Keys.Right) &&
+                        (e.KeyCode != Keys.Home) &&
+                        (e.KeyCode != Keys.End)
+                        )
+                    {
+                        naoNumero = true;
+                    }
+                }
+            }
+
+            if (Control.ModifierKeys != Keys.None)
+            {
+                naoNumero = true;
+            }
+
+            if (naoNumero)
+            {
+                e.SuppressKeyPress = true;
+
+                SystemSounds.Beep.Play();
+            }
         }
 
-        private void Tb_Hora_Click(object sender, EventArgs e)
+        private void Tb_Hora_KeyDown(object sender, KeyEventArgs e)
         {
-            tb_Hora.Text = "";
+            if ((e.KeyCode == Keys.OemPeriod) || (e.KeyCode == Keys.Decimal))
+            {
+                e.SuppressKeyPress = true;
+
+                int posicaoCursor = tb_Hora.SelectionStart;
+                tb_Hora.Text = tb_Hora.Text.Insert(posicaoCursor, ":");
+                tb_Hora.SelectionStart = posicaoCursor + 1;
+            }
+            else
+            {
+                bool naoNumero = false;
+
+                // é um número do topo do teclado
+                if (e.KeyCode < Keys.D0 || e.KeyCode > Keys.D9)
+                {
+                    // é um numero do teclado numerico
+                    if (e.KeyCode < Keys.NumPad0 || e.KeyCode > Keys.NumPad9)
+                    {
+                        // teclas autorizadas
+                        if (
+                            (e.KeyCode != Keys.Back) &&
+                            (e.KeyCode != Keys.Left) &&
+                            (e.KeyCode != Keys.Right) &&
+                            (e.KeyCode != Keys.Home) &&
+                            (e.KeyCode != Keys.End) &&
+                            (e.KeyCode != Keys.Shift) &&
+                            (e.KeyCode != Keys.OemPeriod)
+                           )
+                        {
+                            naoNumero = true;
+                        }
+                    }
+                }
+
+                if (Control.ModifierKeys != Keys.None)
+                {
+                    naoNumero = true;
+                }
+
+                if (naoNumero)
+                {
+                    e.SuppressKeyPress = true;
+
+                    SystemSounds.Beep.Play();
+                }
+            }
         }
+
+
+        //================================================================================================
+
+
+        //Gravar button click
+        private void Btn_Gravar_Click(object sender, EventArgs e)
+        {
+            bool gravar = true;
+
+            for (int ctr = 0; ctr < flowpanel_Golos.Controls.Count; ctr++)
+            {
+                foreach (Control c in flowpanel_Golos.Controls[ctr].Controls)
+                {
+                    if(c.Name == "tbMinutos" && c.Text == "")
+                    {
+                        gravar = false;
+                    }
+                }
+            }
+
+            if (gravar == true)
+            {
+                if (tb_Hora.Text == ""  || tb_Hora.Text == "HH:MM"  || tb_Divisao.Text == "" || tb_EquipaCasa.Text == "" || tb_EquipaFora.Text == "" || tb_GolosCasa.Text == "" || tb_GolosFora.Text == "")
+                {
+                    MessageBox.Show("Campos obrigatórios não preenchidos!", "ATENÇÃO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (tb_EquipaCasa.Text == tb_EquipaFora.Text && img_LogoCasa.Image == Properties.Resources.Logo_Clube && img_LogoFora.Image == Properties.Resources.Logo_Clube)
+                {
+                    MessageBox.Show("Equipas iguais!", "ATENÇÃO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (img_LogoCasa.Image == Properties.Resources.Logo_Clube && img_LogoFora.Image == Properties.Resources.Logo_Clube)
+                {
+                    MessageBox.Show("Logos das equipas iguais!", "ATENÇÃO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (img_LogoCasa.Image == Properties.Resources.Logo_Clube && tb_EquipaCasa.Text != "Palmelense F.C." || img_LogoFora.Image == Properties.Resources.Logo_Clube && tb_EquipaFora.Text != "Palmelense F.C.")
+                {
+                    MessageBox.Show("A Equipa 'Palmelense F.C.' não corresponde ao logo por defeito!\nTente reabrir o novo resultado.", "ATENÇÃO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    SqlConnection con = new SqlConnection(Properties.Settings.Default.Connection);
+                    con.Open();
+
+                    try
+                    {
+                        if (!Directory.Exists(folderpath))
+                        {
+                            Directory.CreateDirectory(folderpath);
+                        }
+
+                        string QueryInsert = "INSERT INTO dbo.TblJogo (Data, Divisao, EquipaCasa, EquipaFora, GolosCasa, GolosFora, Path_ImgAdversario, FK_IDEscalao) VALUES (@Data, @Divisao, @EquipaCasa, @EquipaFora, @GolosCasa, @GolosFora, @Path_ImgAdversario, @IDEscalao)";
+
+                        DateTime data = Convert.ToDateTime(dt_Data.Text + " " + tb_Hora.Text);
+
+                        SqlCommand CommandINSERT = new SqlCommand(QueryInsert, con);
+                        CommandINSERT.Parameters.AddWithValue("@Data", data);
+                        CommandINSERT.Parameters.AddWithValue("@Divisao", tb_Divisao.Text);
+                        CommandINSERT.Parameters.AddWithValue("@EquipaCasa", tb_EquipaCasa.Text);
+                        CommandINSERT.Parameters.AddWithValue("@EquipaFora", tb_EquipaFora.Text);
+                        CommandINSERT.Parameters.AddWithValue("@GolosCasa", tb_GolosCasa.Text);
+                        CommandINSERT.Parameters.AddWithValue("@GolosFora", tb_GolosFora.Text);
+                        CommandINSERT.Parameters.AddWithValue("@Path_ImgAdversario", folderpath + Path.GetFileName(open.FileName));
+
+                        string fileName = Path.Combine(folderpath, Path.GetFileName(filePath));
+
+                        if (!File.Exists(fileName))
+                        {
+                            File.Copy(filePath, fileName, true);
+                        }
+
+                        CommandINSERT.Parameters.AddWithValue("@IDEscalao", Program.CurrentIDEscalao);
+                        CommandINSERT.ExecuteNonQuery();
+
+                        string IDJogo = "";
+                        SqlDataReader drJogo;
+                        string QueryJogo = "SELECT MAX(IDJogo) AS MaxJogo FROM dbo.TblJogo WHERE Apagado = 0";
+
+                        SqlCommand CommandJogo = new SqlCommand(QueryJogo, con);
+                        drJogo = CommandJogo.ExecuteReader();
+                        while (drJogo.Read())
+                        {
+                            IDJogo = drJogo["MaxJogo"].ToString();
+                        }
+                        drJogo.Close();
+
+                        for (int ctr = 0; ctr < flowpanel_Golos.Controls.Count; ctr++)
+                        {
+                            string Nome = "";
+                            string Minutos = "";
+
+                            foreach (Control c in flowpanel_Golos.Controls[ctr].Controls)
+                            {
+                                if (c.Name == "cbNome")
+                                {
+                                    ComboBox cb = (ComboBox)c;
+                                    Nome = cb.SelectedValue.ToString();
+                                }
+
+                                if (c.Name == "tbMinutos")
+                                {
+                                    TextBox tb = (TextBox)c;
+                                    Minutos = tb.Text;
+                                }
+                            }
+
+                            string Querygolo = "INSERT INTO dbo.TblGolo (Minutos_Jogo, FK_IDAtleta, FK_IDJogo) VALUES (@Minutos_Jogo, @IDAtleta, @IDJogo)";
+
+                            SqlCommand Commandgolo = new SqlCommand(Querygolo, con);
+                            Commandgolo.Parameters.AddWithValue("@Minutos_Jogo", Minutos);
+                            Commandgolo.Parameters.AddWithValue("@IDAtleta", Nome);
+                            Commandgolo.Parameters.AddWithValue("@IDJogo", IDJogo);
+                            Commandgolo.ExecuteNonQuery();
+
+                        }
+                    }
+                    catch (Exception x)
+                    {
+                        MessageBox.Show(x.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    con.Close();
+                    this.Dispose();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Campos obrigatórios não preenchidos!", "ATENÇÃO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        
     }
 }

@@ -23,8 +23,11 @@ namespace FootballLife_WF
             InitializeComponent();
         }
 
+
         //==============================================================================================
 
+
+        //Login Button
         private void Lbl_LogIn_MouseHover(object sender, EventArgs e)
         {
             lbl_LogIn.Font = new Font("Berlin Sans FB Demi", 14, FontStyle.Underline);
@@ -43,7 +46,9 @@ namespace FootballLife_WF
             this.Dispose();
         }
 
-//==============================================================================================
+
+        //==============================================================================================
+
 
         private void BtnHover_Jogos()
         {
@@ -130,7 +135,7 @@ namespace FootballLife_WF
             BtnHover_Titulos();
         }
 
-//========================================
+        //========================================
 
         private void BtnLeave_Jogos()
         {
@@ -218,6 +223,10 @@ namespace FootballLife_WF
             BtnLeave_Titulos();
         }
 
+
+        //================================================================================
+
+        //Buttons Click
         private void Btn_Jogos_Click(object sender, EventArgs e)
         {
             Jogos Jogo = new Jogos();
@@ -242,11 +251,12 @@ namespace FootballLife_WF
             this.Dispose();
         }
 
-        private void Btn_Titulos_Click(object sender, EventArgs e)
+        private void Btn_Historia_Click(object sender, EventArgs e)
         {
             Historia historia = new Historia();
             this.Hide();
-            historia.Show();
+            historia.ShowDialog();
+            this.Dispose();
         }
     }
 }

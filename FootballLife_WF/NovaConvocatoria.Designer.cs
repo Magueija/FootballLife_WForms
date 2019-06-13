@@ -32,7 +32,6 @@
             this.lbl_Titulo = new System.Windows.Forms.Label();
             this.rb_451 = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
-            this.tb_Data = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tb_Adversario = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -67,6 +66,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.dt_Data = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // lbl_Titulo
@@ -99,21 +99,11 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(29, 115);
+            this.label2.Location = new System.Drawing.Point(24, 115);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(87, 16);
             this.label2.TabIndex = 22;
             this.label2.Text = "Data do Jogo:";
-            // 
-            // tb_Data
-            // 
-            this.tb_Data.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.tb_Data.Location = new System.Drawing.Point(122, 112);
-            this.tb_Data.Name = "tb_Data";
-            this.tb_Data.Size = new System.Drawing.Size(116, 22);
-            this.tb_Data.TabIndex = 21;
-            this.tb_Data.Text = "DD/MM/AAAA";
-            this.tb_Data.Click += new System.EventHandler(this.Tb_Data_Click);
             // 
             // label1
             // 
@@ -139,7 +129,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(291, 115);
+            this.label3.Location = new System.Drawing.Point(311, 112);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(87, 16);
             this.label3.TabIndex = 26;
@@ -148,12 +138,13 @@
             // tb_Hora
             // 
             this.tb_Hora.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.tb_Hora.Location = new System.Drawing.Point(389, 112);
+            this.tb_Hora.Location = new System.Drawing.Point(409, 109);
             this.tb_Hora.Name = "tb_Hora";
             this.tb_Hora.Size = new System.Drawing.Size(98, 22);
             this.tb_Hora.TabIndex = 25;
             this.tb_Hora.Text = "HH:MM";
             this.tb_Hora.Click += new System.EventHandler(this.Tb_Hora_Click);
+            this.tb_Hora.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Tb_Hora_KeyDown);
             // 
             // rb_433
             // 
@@ -412,7 +403,7 @@
             this.lbl_LoginError.AutoSize = true;
             this.lbl_LoginError.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_LoginError.ForeColor = System.Drawing.Color.Firebrick;
-            this.lbl_LoginError.Location = new System.Drawing.Point(359, 94);
+            this.lbl_LoginError.Location = new System.Drawing.Point(379, 91);
             this.lbl_LoginError.Name = "lbl_LoginError";
             this.lbl_LoginError.Size = new System.Drawing.Size(128, 15);
             this.lbl_LoginError.TabIndex = 68;
@@ -423,7 +414,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Firebrick;
-            this.label7.Location = new System.Drawing.Point(487, 113);
+            this.label7.Location = new System.Drawing.Point(507, 110);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(12, 15);
             this.label7.TabIndex = 69;
@@ -445,7 +436,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Firebrick;
-            this.label9.Location = new System.Drawing.Point(238, 113);
+            this.label9.Location = new System.Drawing.Point(279, 113);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(12, 15);
             this.label9.TabIndex = 71;
@@ -484,12 +475,20 @@
             this.label12.TabIndex = 74;
             this.label12.Text = "*";
             // 
+            // dt_Data
+            // 
+            this.dt_Data.Location = new System.Drawing.Point(118, 113);
+            this.dt_Data.Name = "dt_Data";
+            this.dt_Data.Size = new System.Drawing.Size(162, 20);
+            this.dt_Data.TabIndex = 75;
+            // 
             // NovaConvocatoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(542, 669);
+            this.Controls.Add(this.dt_Data);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -524,7 +523,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tb_Adversario);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.tb_Data);
             this.Controls.Add(this.rb_433);
             this.Controls.Add(this.rb_451);
             this.Controls.Add(this.lbl_Titulo);
@@ -546,7 +544,6 @@
         private System.Windows.Forms.Label lbl_Titulo;
         private System.Windows.Forms.RadioButton rb_451;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox tb_Data;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tb_Adversario;
         private System.Windows.Forms.Label label3;
@@ -581,5 +578,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.DateTimePicker dt_Data;
     }
 }

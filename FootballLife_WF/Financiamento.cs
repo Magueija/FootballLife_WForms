@@ -24,22 +24,6 @@ namespace FootballLife_WF
             InitializeComponent();
         }
 
-//==============================================================================================
-
-        private void Img_Menu_Click(object sender, EventArgs e)
-        {
-            if (panel_Menu.Visible == true && btn_Menu.Visible == true)
-            {
-                panel_Menu.Visible = false;
-                btn_Menu.Visible = false;
-            }
-            else
-            {
-                panel_Menu.Visible = true;
-                btn_Menu.Visible = true;
-            }
-        }
-
         private void Financiamento_Load(object sender, EventArgs e)
         {
             Saldo();
@@ -52,7 +36,7 @@ namespace FootballLife_WF
             SqlConnection con = new SqlConnection(Properties.Settings.Default.Connection);
             con.Open();
 
-            int Saldo = 0;
+            double Saldo = 0;
 
             try
             {
@@ -62,12 +46,12 @@ namespace FootballLife_WF
                 dr = Command.ExecuteReader();
                 while (dr.Read())
                 {
-                    Saldo = Convert.ToInt32(dr["Saldo"]);
+                    Saldo = Convert.ToDouble(dr["Saldo"]);
                 }
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.ToString());
+                MessageBox.Show(x.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             con.Close();
 
@@ -136,7 +120,7 @@ namespace FootballLife_WF
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.ToString());
+                MessageBox.Show(x.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             con.Close();
         }
@@ -194,32 +178,16 @@ namespace FootballLife_WF
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.ToString());
+                MessageBox.Show(x.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             con.Close();
         }
 
-        private void Btn_Lupa_Click(object sender, EventArgs e)
-        {
-            if (tb_Pesquisar.Text != "")
-            {
-                PesquisaDespesas();
-                PesquisaLucros();
-            }
-        }
 
-        private void tb_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                if (tb_Pesquisar.Text != "")
-                {
-                    PesquisaDespesas();
-                    PesquisaLucros();
-                }
-            }
-        }
+        //===============================================================================================
 
+
+        //Pesquisa
         private void PesquisaDespesas()
         {
             SqlConnection con = new SqlConnection(Properties.Settings.Default.Connection);
@@ -286,7 +254,7 @@ namespace FootballLife_WF
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.ToString());
+                MessageBox.Show(x.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
             
@@ -359,10 +327,47 @@ namespace FootballLife_WF
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.ToString());
+                MessageBox.Show(x.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
         }
+
+
+        private void Btn_Lupa_Click(object sender, EventArgs e)
+        {
+            if (tb_Pesquisar.Text != "")
+            {
+                PesquisaDespesas();
+                PesquisaLucros();
+            }
+        }
+
+        private void tb_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (tb_Pesquisar.Text != "")
+                {
+                    PesquisaDespesas();
+                    PesquisaLucros();
+                }
+            }
+        }
+
+        private void Btn_DeletePesquisa_Click(object sender, EventArgs e)
+        {
+            tb_Pesquisar.Text = "";
+
+            Lucros();
+            Despesas();
+
+            lbl_SemResultados_Lucros.Visible = false;
+            lbl_SemResultados_Despesas.Visible = false;
+        }
+
+
+        //=================================================================================================
+
 
         private void Btn_AddLucros_MouseHover(object sender, EventArgs e)
         {
@@ -384,6 +389,9 @@ namespace FootballLife_WF
             lbl_AddDespesas.Font = new Font("Berlin Sans FB Demi", 10, FontStyle.Regular);
         }
 
+
+
+        //Adicionar Lucro
         private void Btn_AddLucros_Click(object sender, EventArgs e)
         {
             Add_LucroDespesa AddLucro = new Add_LucroDespesa("Lucro");
@@ -394,6 +402,7 @@ namespace FootballLife_WF
             Despesas();
         }
 
+        //Adicionar Despesa
         private void Btn_AddDespesas_Click(object sender, EventArgs e)
         {
             Add_LucroDespesa AddDespesas = new Add_LucroDespesa("Despesa");
@@ -404,18 +413,39 @@ namespace FootballLife_WF
             Despesas();
         }
 
-        private void Btn_DeletePesquisa_Click(object sender, EventArgs e)
+
+        //=======================================================================================
+
+
+        //Side Menu
+        private void Img_Menu_Click(object sender, EventArgs e)
         {
-            tb_Pesquisar.Text = "";
-
-            Lucros();
-            Despesas();
-
-            lbl_SemResultados_Lucros.Visible = false;
-            lbl_SemResultados_Despesas.Visible = false;
+            if (panel_Menu.Visible == true && btn_Menu.Visible == true)
+            {
+                panel_Menu.Visible = false;
+                btn_Menu.Visible = false;
+            }
+            else
+            {
+                panel_Menu.Visible = true;
+                btn_Menu.Visible = true;
+            }
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+
+        //=========================================================================================
+
+
+        //Side Menu buttons click
+        private void Btn_Home_Click(object sender, EventArgs e)
+        {
+            PaginaInicial_Admin pgAdmin = new PaginaInicial_Admin();
+            this.Hide();
+            pgAdmin.ShowDialog();
+            this.Dispose();
+        }
+
+        private void Btn_Jogos_Click(object sender, EventArgs e)
         {
             Jogos jgs = new Jogos();
             this.Hide();
@@ -423,7 +453,7 @@ namespace FootballLife_WF
             this.Dispose();
         }
 
-        private void Button2_Click(object sender, EventArgs e)
+        private void Btn_Equipas_Click(object sender, EventArgs e)
         {
             Equipas Equipas = new Equipas();
             this.Hide();
@@ -431,7 +461,7 @@ namespace FootballLife_WF
             this.Dispose();
         }
 
-        private void Button3_Click(object sender, EventArgs e)
+        private void Btn_Estadio_Click(object sender, EventArgs e)
         {
             Estadio Estadio = new Estadio();
             this.Hide();
@@ -439,7 +469,7 @@ namespace FootballLife_WF
             this.Dispose();
         }
 
-        private void Button4_Click(object sender, EventArgs e)
+        private void Btn_Historia_Click(object sender, EventArgs e)
         {
             Historia hist = new Historia();
             this.Hide();
@@ -455,7 +485,7 @@ namespace FootballLife_WF
             this.Dispose();
         }
 
-        private void Button5_Click(object sender, EventArgs e)
+        private void Btn_Utilizadores_Click(object sender, EventArgs e)
         {
             Utilizadores Users = new Utilizadores();
             this.Hide();
@@ -463,13 +493,7 @@ namespace FootballLife_WF
             this.Dispose();
         }
 
-        private void Btn_Home_Click(object sender, EventArgs e)
-        {
-            PaginaInicial_Admin pgAdmin = new PaginaInicial_Admin();
-            this.Hide();
-            pgAdmin.ShowDialog();
-            this.Dispose();
-        }
+        
 
         private void Btn_LogOut_Click(object sender, EventArgs e)
         {
@@ -482,8 +506,5 @@ namespace FootballLife_WF
             PgInicio.ShowDialog();
             this.Dispose();
         }
-
-
-        //==============================================================================================
     }
 }

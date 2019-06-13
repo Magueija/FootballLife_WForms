@@ -17,11 +17,13 @@ namespace FootballLife_WF
         {
             InitializeComponent();
             Emails();
-            
         }
 
+        int i = 5;
         private void Emails()
         {
+            flowpanel_Emails.Controls.Clear();
+
             SqlConnection con = new SqlConnection(Properties.Settings.Default.Connection);
             con.Open();
 
@@ -30,7 +32,7 @@ namespace FootballLife_WF
             try
             {
                 SqlDataReader dr;
-                string Query = ("SELECT IDAdministrador, Nome, Email FROM dbo.TblAdministrador");
+                string Query = ("SELECT TOP (" + i + ") IDAdministrador, Nome, Email FROM dbo.TblAdministrador");
                 SqlCommand Command = new SqlCommand(Query, con);
                 dr = Command.ExecuteReader();
                 while (dr.Read())
@@ -39,10 +41,10 @@ namespace FootballLife_WF
                     EmailAdmin = dr["Email"].ToString();
 
                     Panel panel = new Panel();
+                    panel.Margin = new Padding(5, 5, 5, 5);
                     panel.Width = 460;
                     panel.Height = 35;
                     panel.Anchor = AnchorStyles.Top;
-                    //panel.BorderStyle = BorderStyle.FixedSingle;
                     panel.BackColor = Color.Transparent;
                     panel.Visible = true;
                     flowpanel_Emails.Controls.Add(panel);
@@ -51,14 +53,14 @@ namespace FootballLife_WF
                     Label Nome = new Label();
                     Nome.Location = new Point(10, 5);
                     Nome.Text = NomeAdmin + ":";
-                    Nome.Width = 170;
+                    Nome.Width = 200;
                     Nome.Font = new Font("Berlin Sans FB Demi", 12, FontStyle.Regular);
                     Nome.Anchor = AnchorStyles.Top | AnchorStyles.Left;
                     Nome.Visible = true;
                     panel.Controls.Add(Nome);
 
                     Label Email = new Label();
-                    Email.Location = new Point(180, 5);
+                    Email.Location = new Point(210, 5);
                     Email.Text = EmailAdmin;
                     Email.Width = 280;
                     Email.Font = new Font("Berlin Sans FB", 12, FontStyle.Regular);
@@ -67,10 +69,11 @@ namespace FootballLife_WF
                     panel.Controls.Add(Email);
                 }
                 dr.Close();
+                i += 5;
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.ToString());
+                MessageBox.Show(x.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             con.Close();
         }
@@ -78,6 +81,11 @@ namespace FootballLife_WF
         private void Btn_Fechar_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void AddMore5Contactos_Click(object sender, EventArgs e)
+        {
+            Emails();
         }
     }
 }

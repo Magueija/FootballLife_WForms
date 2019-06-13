@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Media;
 
 namespace FootballLife_WF
 {
@@ -18,29 +19,24 @@ namespace FootballLife_WF
             InitializeComponent();
         }
 
-        private void Tb_Data_Click(object sender, EventArgs e)
-        {
-            tb_Data.Text = "";
-        }
-
-        private void Tb_Hora_Click(object sender, EventArgs e)
-        {
-            tb_Hora.Text = "";
-        }
-
         private void NovaConvocatoria_Load(object sender, EventArgs e)
         {
+            dt_Data.MinDate = DateTime.Now;
+
+            //11 Titulares
             for (int i = 0; i < 11; i++)
             {
                 Titulares();
             }
 
+            //Normalmente 7 Suplentes
             for (int i = 0; i < 7; i++)
             {
                 Suplentes();
             }
 
         }
+        
 
         private void Titulares()
         {
@@ -75,7 +71,7 @@ namespace FootballLife_WF
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.ToString());
+                MessageBox.Show(x.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             con.Close();
         }
@@ -112,11 +108,22 @@ namespace FootballLife_WF
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.ToString());
+                MessageBox.Show(x.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             con.Close();
         }
 
+
+        //================================================================================================
+
+
+        //Ao clicar na textbox tira o "HH:MM"
+        private void Tb_Hora_Click(object sender, EventArgs e)
+        {
+            tb_Hora.Text = "";
+        }
+
+        //Muda as posicoes consoante a tatica 
         private void Rb_CheckedChanged(object sender, EventArgs e)
         {
             if (rb_451.Checked == true)
@@ -296,15 +303,21 @@ namespace FootballLife_WF
             }
         }
 
+
+        //==========================================================================================
+
+
+        //Gravar Button click
         private void Btn_Gravar_Click(object sender, EventArgs e)
         {
 
-            if (tb_Data.Text == "" || tb_Hora.Text == "" || tb_Data.Text == "DD/MM/AAAA" || tb_Hora.Text == "HH:MM" || tb_Adversario.Text == "")
+            if (tb_Hora.Text == "" || tb_Hora.Text == "HH:MM" || tb_Adversario.Text == "")
             {
-                MessageBox.Show("Campos obrigatórios não preenchidos!", "ATENÇÃO!", MessageBoxButtons.OK);
+                MessageBox.Show("Campos obrigatórios não preenchidos!", "ATENÇÃO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
+                //Indica o IDTatica consoante a tatica (atribuidad na base de dados)
                 string IDTatica = "";
                 if (rb_451.Checked == true)
                 {
@@ -361,13 +374,16 @@ namespace FootballLife_WF
                     SqlCommand CommandDeleteConv = new SqlCommand(QueryDeleteConv, con);
                     CommandDeleteConv.ExecuteNonQuery();
 
+
                     //==================================
 
 
                     string QueryInsert = "INSERT INTO dbo.TblConvocatoria (DataJogo, Adversario, FK_IDEscalao, FK_IDTatica) VALUES (@DataJogo, @Adversario, @IDEscalao, @IDTatica)";
 
+                    DateTime data = Convert.ToDateTime(dt_Data.Text + " " + tb_Hora.Text);
+
                     SqlCommand CommandINSERT = new SqlCommand(QueryInsert, con);
-                    CommandINSERT.Parameters.AddWithValue("@DataJogo", tb_Data.Text + " " + tb_Hora.Text);
+                    CommandINSERT.Parameters.AddWithValue("@DataJogo", data);
                     CommandINSERT.Parameters.AddWithValue("@Adversario", tb_Adversario.Text);
                     CommandINSERT.Parameters.AddWithValue("@IDEscalao", Program.CurrentIDEscalao);
                     CommandINSERT.Parameters.AddWithValue("@IDTatica", IDTatica);
@@ -420,10 +436,60 @@ namespace FootballLife_WF
                 }
                 catch (Exception x)
                 {
-                    MessageBox.Show(x.ToString());
+                    MessageBox.Show(x.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 con.Close();
                 this.Dispose();
+            }
+        }
+
+        private void Tb_Hora_KeyDown(object sender, KeyEventArgs e)
+        {
+            if ((e.KeyCode == Keys.OemPeriod) || (e.KeyCode == Keys.Decimal))
+            {
+                e.SuppressKeyPress = true;
+
+                int posicaoCursor = tb_Hora.SelectionStart;
+                tb_Hora.Text = tb_Hora.Text.Insert(posicaoCursor, ":");
+                tb_Hora.SelectionStart = posicaoCursor + 1;
+            }
+            else
+            {
+                bool naoNumero = false;
+
+                // é um número do topo do teclado
+                if (e.KeyCode < Keys.D0 || e.KeyCode > Keys.D9)
+                {
+                    // é um numero do teclado numerico
+                    if (e.KeyCode < Keys.NumPad0 || e.KeyCode > Keys.NumPad9)
+                    {
+                        // teclas autorizadas
+                        if (
+                            (e.KeyCode != Keys.Back) &&
+                            (e.KeyCode != Keys.Left) &&
+                            (e.KeyCode != Keys.Right) &&
+                            (e.KeyCode != Keys.Home) &&
+                            (e.KeyCode != Keys.End) &&
+                            (e.KeyCode != Keys.Shift) &&
+                            (e.KeyCode != Keys.OemPeriod)
+                           )
+                        {
+                            naoNumero = true;
+                        }
+                    }
+                }
+
+                if (Control.ModifierKeys != Keys.None)
+                {
+                    naoNumero = true;
+                }
+
+                if (naoNumero)
+                {
+                    e.SuppressKeyPress = true;
+
+                    SystemSounds.Beep.Play();
+                }
             }
         }
     }

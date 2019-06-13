@@ -36,7 +36,6 @@
             this.lbl_Novadiscussao = new System.Windows.Forms.Label();
             this.btn_NovaDiscussao = new System.Windows.Forms.Button();
             this.lbl_Titulo = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.flowpanel_Clube = new System.Windows.Forms.FlowLayoutPanel();
             this.btn_Clube = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -77,7 +76,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.img_Menu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_NovaDiscussao)).BeginInit();
-            this.panel1.SuspendLayout();
             this.flowpanel_Clube.SuspendLayout();
             this.panel_Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -109,7 +107,7 @@
             this.img_Logo.BackColor = System.Drawing.Color.Transparent;
             this.img_Logo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.img_Logo.Image = global::FootballLife_WF.Properties.Resources.Logo_Clube;
-            this.img_Logo.Location = new System.Drawing.Point(1274, 12);
+            this.img_Logo.Location = new System.Drawing.Point(1291, 12);
             this.img_Logo.MaximumSize = new System.Drawing.Size(44, 40);
             this.img_Logo.MinimumSize = new System.Drawing.Size(44, 40);
             this.img_Logo.Name = "img_Logo";
@@ -138,7 +136,7 @@
             this.img_NovaDiscussao.BackColor = System.Drawing.Color.Transparent;
             this.img_NovaDiscussao.Cursor = System.Windows.Forms.Cursors.Hand;
             this.img_NovaDiscussao.Image = global::FootballLife_WF.Properties.Resources.Adicionar_Criar_white_;
-            this.img_NovaDiscussao.Location = new System.Drawing.Point(1188, 23);
+            this.img_NovaDiscussao.Location = new System.Drawing.Point(1191, 88);
             this.img_NovaDiscussao.MaximumSize = new System.Drawing.Size(20, 20);
             this.img_NovaDiscussao.MinimumSize = new System.Drawing.Size(20, 20);
             this.img_NovaDiscussao.Name = "img_NovaDiscussao";
@@ -158,7 +156,7 @@
             this.lbl_Novadiscussao.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl_Novadiscussao.Font = new System.Drawing.Font("Berlin Sans FB Demi", 10F, System.Drawing.FontStyle.Bold);
             this.lbl_Novadiscussao.ForeColor = System.Drawing.Color.White;
-            this.lbl_Novadiscussao.Location = new System.Drawing.Point(1214, 23);
+            this.lbl_Novadiscussao.Location = new System.Drawing.Point(1217, 88);
             this.lbl_Novadiscussao.Name = "lbl_Novadiscussao";
             this.lbl_Novadiscussao.Size = new System.Drawing.Size(113, 18);
             this.lbl_Novadiscussao.TabIndex = 18;
@@ -178,7 +176,7 @@
             this.btn_NovaDiscussao.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn_NovaDiscussao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_NovaDiscussao.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_NovaDiscussao.Location = new System.Drawing.Point(1180, 14);
+            this.btn_NovaDiscussao.Location = new System.Drawing.Point(1183, 79);
             this.btn_NovaDiscussao.Name = "btn_NovaDiscussao";
             this.btn_NovaDiscussao.Size = new System.Drawing.Size(149, 37);
             this.btn_NovaDiscussao.TabIndex = 17;
@@ -195,24 +193,11 @@
             this.lbl_Titulo.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Titulo.Font = new System.Drawing.Font("Bauhaus 93", 65.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Titulo.ForeColor = System.Drawing.Color.White;
-            this.lbl_Titulo.Location = new System.Drawing.Point(447, 23);
+            this.lbl_Titulo.Location = new System.Drawing.Point(491, 88);
             this.lbl_Titulo.Name = "lbl_Titulo";
             this.lbl_Titulo.Size = new System.Drawing.Size(439, 98);
             this.lbl_Titulo.TabIndex = 20;
             this.lbl_Titulo.Text = "Inventário";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.lbl_Novadiscussao);
-            this.panel1.Controls.Add(this.lbl_Titulo);
-            this.panel1.Controls.Add(this.img_NovaDiscussao);
-            this.panel1.Controls.Add(this.btn_NovaDiscussao);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 65);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1347, 150);
-            this.panel1.TabIndex = 25;
             // 
             // flowpanel_Clube
             // 
@@ -222,7 +207,7 @@
             this.flowpanel_Clube.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flowpanel_Clube.Controls.Add(this.btn_Clube);
             this.flowpanel_Clube.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowpanel_Clube.Location = new System.Drawing.Point(-7, 243);
+            this.flowpanel_Clube.Location = new System.Drawing.Point(40, 243);
             this.flowpanel_Clube.Name = "flowpanel_Clube";
             this.flowpanel_Clube.Padding = new System.Windows.Forms.Padding(20, 10, 0, 0);
             this.flowpanel_Clube.Size = new System.Drawing.Size(1288, 140);
@@ -259,7 +244,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Location = new System.Drawing.Point(-7, 422);
+            this.button1.Location = new System.Drawing.Point(40, 422);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(310, 31);
             this.button1.TabIndex = 2;
@@ -273,7 +258,7 @@
             this.flowpanel_seniores.BackColor = System.Drawing.Color.WhiteSmoke;
             this.flowpanel_seniores.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flowpanel_seniores.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowpanel_seniores.Location = new System.Drawing.Point(-7, 459);
+            this.flowpanel_seniores.Location = new System.Drawing.Point(40, 459);
             this.flowpanel_seniores.Name = "flowpanel_seniores";
             this.flowpanel_seniores.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.flowpanel_seniores.Size = new System.Drawing.Size(310, 196);
@@ -287,7 +272,7 @@
             this.flowpanel_Juniores.BackColor = System.Drawing.Color.WhiteSmoke;
             this.flowpanel_Juniores.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flowpanel_Juniores.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowpanel_Juniores.Location = new System.Drawing.Point(319, 459);
+            this.flowpanel_Juniores.Location = new System.Drawing.Point(366, 459);
             this.flowpanel_Juniores.Name = "flowpanel_Juniores";
             this.flowpanel_Juniores.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.flowpanel_Juniores.Size = new System.Drawing.Size(310, 196);
@@ -306,7 +291,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button2.Location = new System.Drawing.Point(319, 422);
+            this.button2.Location = new System.Drawing.Point(366, 422);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(310, 31);
             this.button2.TabIndex = 3;
@@ -320,7 +305,7 @@
             this.flowpanel_Juvenis.BackColor = System.Drawing.Color.WhiteSmoke;
             this.flowpanel_Juvenis.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flowpanel_Juvenis.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowpanel_Juvenis.Location = new System.Drawing.Point(645, 459);
+            this.flowpanel_Juvenis.Location = new System.Drawing.Point(692, 459);
             this.flowpanel_Juvenis.Name = "flowpanel_Juvenis";
             this.flowpanel_Juvenis.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.flowpanel_Juvenis.Size = new System.Drawing.Size(310, 196);
@@ -339,7 +324,7 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button3.Location = new System.Drawing.Point(645, 422);
+            this.button3.Location = new System.Drawing.Point(692, 422);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(310, 31);
             this.button3.TabIndex = 4;
@@ -353,7 +338,7 @@
             this.flowpanel_Infantis.BackColor = System.Drawing.Color.WhiteSmoke;
             this.flowpanel_Infantis.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flowpanel_Infantis.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowpanel_Infantis.Location = new System.Drawing.Point(-7, 747);
+            this.flowpanel_Infantis.Location = new System.Drawing.Point(40, 747);
             this.flowpanel_Infantis.Name = "flowpanel_Infantis";
             this.flowpanel_Infantis.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.flowpanel_Infantis.Size = new System.Drawing.Size(310, 196);
@@ -372,7 +357,7 @@
             this.Iniciados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Iniciados.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Iniciados.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Iniciados.Location = new System.Drawing.Point(-7, 710);
+            this.Iniciados.Location = new System.Drawing.Point(40, 710);
             this.Iniciados.Name = "Iniciados";
             this.Iniciados.Size = new System.Drawing.Size(310, 31);
             this.Iniciados.TabIndex = 6;
@@ -386,7 +371,7 @@
             this.flowpanel_Benjamins.BackColor = System.Drawing.Color.WhiteSmoke;
             this.flowpanel_Benjamins.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flowpanel_Benjamins.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowpanel_Benjamins.Location = new System.Drawing.Point(319, 747);
+            this.flowpanel_Benjamins.Location = new System.Drawing.Point(366, 747);
             this.flowpanel_Benjamins.Name = "flowpanel_Benjamins";
             this.flowpanel_Benjamins.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.flowpanel_Benjamins.Size = new System.Drawing.Size(310, 196);
@@ -405,7 +390,7 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button5.Location = new System.Drawing.Point(319, 710);
+            this.button5.Location = new System.Drawing.Point(366, 710);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(310, 31);
             this.button5.TabIndex = 7;
@@ -419,7 +404,7 @@
             this.flowpanel_Traquinas.BackColor = System.Drawing.Color.WhiteSmoke;
             this.flowpanel_Traquinas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flowpanel_Traquinas.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowpanel_Traquinas.Location = new System.Drawing.Point(645, 747);
+            this.flowpanel_Traquinas.Location = new System.Drawing.Point(692, 747);
             this.flowpanel_Traquinas.Name = "flowpanel_Traquinas";
             this.flowpanel_Traquinas.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.flowpanel_Traquinas.Size = new System.Drawing.Size(310, 196);
@@ -438,7 +423,7 @@
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button6.Location = new System.Drawing.Point(645, 710);
+            this.button6.Location = new System.Drawing.Point(692, 710);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(310, 31);
             this.button6.TabIndex = 8;
@@ -461,7 +446,7 @@
             this.flowpanel_Petizes.BackColor = System.Drawing.Color.WhiteSmoke;
             this.flowpanel_Petizes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flowpanel_Petizes.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowpanel_Petizes.Location = new System.Drawing.Point(971, 747);
+            this.flowpanel_Petizes.Location = new System.Drawing.Point(1018, 747);
             this.flowpanel_Petizes.Name = "flowpanel_Petizes";
             this.flowpanel_Petizes.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.flowpanel_Petizes.Size = new System.Drawing.Size(310, 196);
@@ -480,7 +465,7 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button4.Location = new System.Drawing.Point(971, 710);
+            this.button4.Location = new System.Drawing.Point(1018, 710);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(310, 31);
             this.button4.TabIndex = 9;
@@ -494,7 +479,7 @@
             this.flowpanel_Iniciados.BackColor = System.Drawing.Color.WhiteSmoke;
             this.flowpanel_Iniciados.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flowpanel_Iniciados.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowpanel_Iniciados.Location = new System.Drawing.Point(971, 459);
+            this.flowpanel_Iniciados.Location = new System.Drawing.Point(1018, 459);
             this.flowpanel_Iniciados.Name = "flowpanel_Iniciados";
             this.flowpanel_Iniciados.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.flowpanel_Iniciados.Size = new System.Drawing.Size(310, 196);
@@ -513,7 +498,7 @@
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button7.Location = new System.Drawing.Point(971, 422);
+            this.button7.Location = new System.Drawing.Point(1018, 422);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(310, 31);
             this.button7.TabIndex = 5;
@@ -535,7 +520,7 @@
             this.btn_Titulos.TabIndex = 9;
             this.btn_Titulos.Text = "HISTÓRIA";
             this.btn_Titulos.UseVisualStyleBackColor = false;
-            this.btn_Titulos.Click += new System.EventHandler(this.Btn_Titulos_Click);
+            this.btn_Titulos.Click += new System.EventHandler(this.Btn_Historia_Click);
             // 
             // btn_Estadio
             // 
@@ -823,8 +808,12 @@
             this.BackgroundImage = global::FootballLife_WF.Properties.Resources.Fundo_1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1364, 749);
+            this.Controls.Add(this.lbl_Novadiscussao);
             this.Controls.Add(this.panel_Menu);
+            this.Controls.Add(this.lbl_Titulo);
+            this.Controls.Add(this.img_NovaDiscussao);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.btn_NovaDiscussao);
             this.Controls.Add(this.img_Logo);
             this.Controls.Add(this.img_Menu);
             this.Controls.Add(this.button7);
@@ -844,7 +833,6 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.flowpanel_Juniores);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_TopMenu);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -857,8 +845,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.img_Menu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Logo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_NovaDiscussao)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.flowpanel_Clube.ResumeLayout(false);
             this.panel_Menu.ResumeLayout(false);
             this.panel_Menu.PerformLayout();
@@ -878,7 +864,6 @@
         private System.Windows.Forms.Label lbl_Novadiscussao;
         private System.Windows.Forms.Button btn_NovaDiscussao;
         private System.Windows.Forms.Label lbl_Titulo;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.FlowLayoutPanel flowpanel_Clube;
         private System.Windows.Forms.Button btn_Clube;
         private System.Windows.Forms.Button button1;

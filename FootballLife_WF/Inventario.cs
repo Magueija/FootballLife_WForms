@@ -60,6 +60,7 @@ namespace FootballLife_WF
             }
         }
 
+
         private void InvClube()
         {
             if (flowpanel_Clube.Controls.Count > 0)
@@ -126,7 +127,7 @@ namespace FootballLife_WF
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.ToString());
+                MessageBox.Show(x.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             con.Close();
         }
@@ -183,7 +184,7 @@ namespace FootballLife_WF
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.ToString());
+                MessageBox.Show(x.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             con.Close();
 
@@ -240,7 +241,7 @@ namespace FootballLife_WF
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.ToString());
+                MessageBox.Show(x.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             con.Close();
 
@@ -297,7 +298,7 @@ namespace FootballLife_WF
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.ToString());
+                MessageBox.Show(x.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             con.Close();
 
@@ -354,7 +355,7 @@ namespace FootballLife_WF
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.ToString());
+                MessageBox.Show(x.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             con.Close();
 
@@ -411,7 +412,7 @@ namespace FootballLife_WF
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.ToString());
+                MessageBox.Show(x.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             con.Close();
 
@@ -468,7 +469,7 @@ namespace FootballLife_WF
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.ToString());
+                MessageBox.Show(x.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             con.Close();
 
@@ -525,7 +526,7 @@ namespace FootballLife_WF
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.ToString());
+                MessageBox.Show(x.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             con.Close();
 
@@ -582,27 +583,15 @@ namespace FootballLife_WF
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.ToString());
+                MessageBox.Show(x.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             con.Close();
 
         }
 
+        
         //==============================================================================================
 
-        private void Img_Menu_Click(object sender, EventArgs e)
-        {
-            if (panel_Menu.Visible == true)
-            {
-                panel_Menu.Visible = false;
-            }
-            else
-            {
-                panel_Menu.Visible = true;
-            }
-        }
-
-//==============================================================================================
 
         private void NovaDiscussao_Hover()
         {
@@ -644,20 +633,26 @@ namespace FootballLife_WF
             NovaDiscussao_Leave();
         }
 
+
         //==============================================================================================
-        
 
-        private void Btn_LogOut_Click(object sender, EventArgs e)
+
+        //Side Menu
+        private void Img_Menu_Click(object sender, EventArgs e)
         {
-            Program.CurrentFuncaoUser = "";
-            Program.CurrentIDUser = 0;
-            Program.CurrentIDEscalao = 0;
-
-            PaginaInicial PgInicio = new PaginaInicial();
-            this.Hide();
-            PgInicio.ShowDialog();
-            this.Dispose();
+            if (panel_Menu.Visible == true)
+            {
+                panel_Menu.Visible = false;
+            }
+            else
+            {
+                panel_Menu.Visible = true;
+            }
         }
+
+
+        //==============================================================================================
+
 
         private void Btn_EditarInventario_Click(object sender, EventArgs e)
         {
@@ -676,6 +671,8 @@ namespace FootballLife_WF
             InvPetizes();
         }
 
+
+        //Side Menu buttons click
         private void Btn_Home_Click(object sender, EventArgs e)
         {
             if (Program.CurrentFuncaoUser == "Admin")
@@ -718,7 +715,7 @@ namespace FootballLife_WF
             this.Dispose();
         }
 
-        private void Btn_Titulos_Click(object sender, EventArgs e)
+        private void Btn_Historia_Click(object sender, EventArgs e)
         {
             Historia hist = new Historia();
             this.Hide();
@@ -749,6 +746,19 @@ namespace FootballLife_WF
             Utilizadores users = new Utilizadores();
             this.Hide();
             users.ShowDialog();
+            this.Dispose();
+        }
+
+
+        private void Btn_LogOut_Click(object sender, EventArgs e)
+        {
+            Program.CurrentFuncaoUser = "";
+            Program.CurrentIDUser = 0;
+            Program.CurrentIDEscalao = 0;
+
+            PaginaInicial PgInicio = new PaginaInicial();
+            this.Hide();
+            PgInicio.ShowDialog();
             this.Dispose();
         }
     }

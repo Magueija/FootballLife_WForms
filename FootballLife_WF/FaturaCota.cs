@@ -91,6 +91,8 @@ namespace FootballLife_WF
         }
 
 
+        //============================================================================
+
         private void Btn_Guardar_Click(object sender, EventArgs e)
         {
             SaveFileDialog save = new SaveFileDialog();
@@ -149,12 +151,12 @@ namespace FootballLife_WF
 
                 writer.Dispose();
                 writer.Close();
+                this.Dispose();
             }
             else
             {
-                MessageBox.Show("Ficheiro NÂO guardado!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ficheiro NÃO guardado!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            this.Dispose();
         }
 
         private void Btn_Fechar_Click(object sender, EventArgs e)

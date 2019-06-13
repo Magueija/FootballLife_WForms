@@ -63,6 +63,7 @@ namespace FootballLife_WF
             }
         }
 
+        //Visibilidade dependendo da funcao do Current User
         private void Visibilidade()
         {
             if (Program.CurrentFuncaoUser != "Admin")
@@ -96,6 +97,7 @@ namespace FootballLife_WF
                 lbl_Socios.Visible = false;
                 linha_Socios.Visible = false;
                 flowpanel_Socios.Visible = false;
+                img4.Visible = false;
 
                 Admins();
                 Treinadores();
@@ -106,10 +108,12 @@ namespace FootballLife_WF
                 lbl_Admins.Visible = false;
                 linha_Admins.Visible = false;
                 flowpanel_Admins.Visible = false;
+                img1.Visible = false;
 
                 lbl_Socios.Visible = false;
                 linha_Socios.Visible = false;
                 flowpanel_Socios.Visible = false;
+                img4.Visible = false;
 
                 Treinadores();
                 Atletas();
@@ -119,19 +123,23 @@ namespace FootballLife_WF
                 lbl_Treinadores.Visible = false;
                 linha_Treinadores.Visible = false;
                 flowpanel_Treinadores.Visible = false;
+                img2.Visible = false;
 
                 lbl_Atletas.Visible = false;
                 linha_Atletas.Visible = false;
                 flowpanel_Atletas.Visible = false;
+                img3.Visible = false;
 
                 lbl_Socios.Visible = false;
                 linha_Socios.Visible = false;
                 flowpanel_Socios.Visible = false;
+                img4.Visible = false;
 
                 Admins();
             }
         }
 
+        //Se alguma funcao nao tiver nunhum utilizador, torna-se invisivel e as funcoes anteriores sobem de posicao no ecra  
         private void CountUsers()
         {
             if (flowpanel_Admins.Controls.Count == 0)
@@ -139,12 +147,14 @@ namespace FootballLife_WF
                 lbl_Admins.Visible = false;
                 linha_Admins.Visible = false;
                 flowpanel_Admins.Visible = false;
+                img1.Visible = false;
             }
             else
             {
                 lbl_Admins.Visible = true;
                 linha_Admins.Visible = true;
                 flowpanel_Admins.Visible = true;
+                img1.Visible = true;
             }
 
             if (flowpanel_Treinadores.Controls.Count == 0)
@@ -152,12 +162,14 @@ namespace FootballLife_WF
                 lbl_Treinadores.Visible = false;
                 linha_Treinadores.Visible = false;
                 flowpanel_Treinadores.Visible = false;
+                img2.Visible = false;
             }
             else
             {
                 lbl_Treinadores.Visible = true;
                 linha_Treinadores.Visible = true;
                 flowpanel_Treinadores.Visible = true;
+                img2.Visible = true;
             }
 
             if (flowpanel_Atletas.Controls.Count == 0)
@@ -165,12 +177,14 @@ namespace FootballLife_WF
                 lbl_Atletas.Visible = false;
                 linha_Atletas.Visible = false;
                 flowpanel_Atletas.Visible = false;
+                img3.Visible = false;
             }
             else
             {
                 lbl_Atletas.Visible = true;
                 linha_Atletas.Visible = true;
                 flowpanel_Atletas.Visible = true;
+                img3.Visible = true;
             }
 
             if (flowpanel_Socios.Controls.Count == 0)
@@ -178,12 +192,14 @@ namespace FootballLife_WF
                 lbl_Socios.Visible = false;
                 linha_Socios.Visible = false;
                 flowpanel_Socios.Visible = false;
+                img4.Visible = false;
             }
             else
             {
                 lbl_Socios.Visible = true;
                 linha_Socios.Visible = true;
                 flowpanel_Socios.Visible = true;
+                img4.Visible = true;
             }
 
             if (flowpanel_Admins.Visible == false)
@@ -193,14 +209,17 @@ namespace FootballLife_WF
                 lbl_Socios.Location = lbl_Atletas.Location;
                 linha_Socios.Location = linha_Atletas.Location;
                 flowpanel_Socios.Location = flowpanel_Atletas.Location;
+                img4.Location = img3.Location;
 
                 lbl_Atletas.Location = lbl_Treinadores.Location;
                 linha_Atletas.Location = linha_Treinadores.Location;
                 flowpanel_Atletas.Location = flowpanel_Treinadores.Location;
+                img3.Location = img2.Location;
 
                 lbl_Treinadores.Location = lbl_Admins.Location;
                 linha_Treinadores.Location = linha_Admins.Location;
                 flowpanel_Treinadores.Location = flowpanel_Admins.Location;
+                img2.Location = img1.Location;
             }
 
             if (flowpanel_Treinadores.Visible == false)
@@ -210,84 +229,37 @@ namespace FootballLife_WF
                 lbl_Socios.Location = lbl_Atletas.Location;
                 linha_Socios.Location = linha_Atletas.Location;
                 flowpanel_Socios.Location = flowpanel_Atletas.Location;
+                img4.Location = img3.Location;
 
                 lbl_Atletas.Location = lbl_Treinadores.Location;
                 linha_Atletas.Location = linha_Treinadores.Location;
                 flowpanel_Atletas.Location = flowpanel_Treinadores.Location;
+                img3.Location = img2.Location;
 
             }
-            else if (flowpanel_Atletas.Visible == false)
+
+            if (flowpanel_Atletas.Visible == false)
             {
                 lbl_espaco.Location = lbl_Socios.Location;
 
                 lbl_Socios.Location = lbl_Atletas.Location;
                 linha_Socios.Location = linha_Atletas.Location;
                 flowpanel_Socios.Location = flowpanel_Atletas.Location;
+                img4.Location = img3.Location;
             }
 
-            if (flowpanel_Admins.Visible == false)
+            if (flowpanel_Socios.Visible == false)
             {
                 lbl_espaco.Location = lbl_Socios.Location;
             }
         }
 
-        //==============================================================================================
-
-        private void Img_Menu_Click(object sender, EventArgs e)
-        {
-            if (panel_Menu.Visible == true)
-            {
-                panel_Menu.Visible = false;
-            }
-            else
-            {
-                panel_Menu.Visible = true;
-            }
-        }
-
-//==============================================================================================
-
-        private void NovaDiscussao_Hover()
-        {
-            lbl_NovoUser.Font = new Font("Berlin Sans FB Demi", 10, FontStyle.Underline);
-        }
-
-        private void Lbl_Novadiscussao_MouseHover(object sender, EventArgs e)
-        {
-            NovaDiscussao_Hover();
-        }
-
-        private void Img_NovaDiscussao_MouseHover(object sender, EventArgs e)
-        {
-            NovaDiscussao_Hover();
-        }
-
-        private void Btn_NovaDiscussao_MouseHover(object sender, EventArgs e)
-        {
-            NovaDiscussao_Hover();
-        }
-
-        //============
-
-        private void NovaDiscussao_Leave()
-        {
-            lbl_NovoUser.Font = new Font("Berlin Sans FB Demi", 10, FontStyle.Regular);
-        }
-
-        private void Lbl_Novadiscussao_MouseLeave(object sender, EventArgs e)
-        {
-            NovaDiscussao_Leave();
-        }
-        private void Img_NovaDiscussao_MouseLeave(object sender, EventArgs e)
-        {
-            NovaDiscussao_Leave();
-        }
-        private void Btn_NovaDiscussao_MouseLeave(object sender, EventArgs e)
-        {
-            NovaDiscussao_Leave();
-        }
 
         //==============================================================================================
+
+
+        int ADM = 8;
+        //Administradores
         private void Admins()
         {
             flowpanel_Admins.Controls.Clear();
@@ -301,7 +273,7 @@ namespace FootballLife_WF
             try
             {
                 SqlDataReader dr;
-                string Query = ("SELECT IDAdministrador, Nome FROM dbo.TblAdministrador WHERE(Apagado = 0) ORDER BY Nome");
+                string Query = ("SELECT TOP (" + ADM + ") IDAdministrador, Nome FROM dbo.TblAdministrador WHERE(Apagado = 0) ORDER BY Nome");
                 SqlCommand Command = new SqlCommand(Query, con);
                 dr = Command.ExecuteReader();
 
@@ -374,10 +346,11 @@ namespace FootballLife_WF
                     }
                 }
                 dr.Close();
+                ADM+=8;
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.ToString());
+                MessageBox.Show(x.Message, "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             con.Close();
             
@@ -386,7 +359,7 @@ namespace FootballLife_WF
         private void Btn_DeleteAdmin_Click(object sender, EventArgs e)
         {
 
-            DialogResult result = MessageBox.Show("Tem a certeza que pretente eliminar este utilizador?", "ATENÇÃO!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("Tem a certeza que pretente eliminar este utilizador?", "ATENÇÃO!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
             if (result == DialogResult.Yes)
             {
@@ -410,7 +383,7 @@ namespace FootballLife_WF
                 }
                 catch (Exception x)
                 {
-                    MessageBox.Show(x.ToString());
+                    MessageBox.Show(x.Message, "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 con.Close();
 
@@ -424,10 +397,8 @@ namespace FootballLife_WF
             }
         }
 
-
-
-
-        //======
+        int T = 8;
+        //Treinadores
         private void Treinadores()
         {
             flowpanel_Treinadores.Controls.Clear();
@@ -445,11 +416,11 @@ namespace FootballLife_WF
 
                 if (Program.CurrentFuncaoUser == "Atleta")
                 {
-                    Query = ("SELECT IDTreinador, Nome FROM dbo.TblTreinador WHERE (Apagado = 0) AND FK_IDEscalao = " + Program.CurrentIDEscalao + " ORDER BY Nome");
+                    Query = ("SELECT TOP (" + T + ") IDTreinador, Nome FROM dbo.TblTreinador WHERE (Apagado = 0) AND FK_IDEscalao = " + Program.CurrentIDEscalao + " ORDER BY Nome");
                 }
                 else
                 {
-                    Query = ("SELECT IDTreinador, Nome FROM dbo.TblTreinador WHERE(Apagado = 0) ORDER BY Nome");
+                    Query = ("SELECT TOP (" + T + ") IDTreinador, Nome FROM dbo.TblTreinador WHERE(Apagado = 0) ORDER BY Nome");
                 }
 
                 SqlCommand Command = new SqlCommand(Query, con);
@@ -525,10 +496,11 @@ namespace FootballLife_WF
                     }
                 }
                 dr.Close();
+                T+=8;
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.ToString());
+                MessageBox.Show(x.Message, "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             con.Close();
         }
@@ -536,7 +508,7 @@ namespace FootballLife_WF
         private void Btn_DeleteTreinador_Click(object sender, EventArgs e)
         {
 
-            DialogResult result = MessageBox.Show("Tem a certeza que pretente eliminar este utilizador?", "ATENÇÃO!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("Tem a certeza que pretente eliminar este utilizador?", "ATENÇÃO!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
             if (result == DialogResult.Yes)
             {
@@ -560,7 +532,7 @@ namespace FootballLife_WF
                 }
                 catch (Exception x)
                 {
-                    MessageBox.Show(x.ToString());
+                    MessageBox.Show(x.Message, "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 con.Close();
 
@@ -574,8 +546,8 @@ namespace FootballLife_WF
             }
         }
 
-        //===
-
+        int A = 8;
+        //Atletas
         private void Atletas()
         {
             flowpanel_Atletas.Controls.Clear();
@@ -593,11 +565,11 @@ namespace FootballLife_WF
 
                 if (Program.CurrentFuncaoUser == "Atleta" || Program.CurrentFuncaoUser == "Treinador")
                 {
-                    Query = ("SELECT IDAtleta, Nome FROM dbo.TblAtleta WHERE(Apagado = 0) AND FK_IDEscalao = " + Program.CurrentIDEscalao + " ORDER BY Nome");
+                    Query = ("SELECT TOP (" + A + ") IDAtleta, Nome FROM dbo.TblAtleta WHERE(Apagado = 0) AND FK_IDEscalao = " + Program.CurrentIDEscalao + " ORDER BY Nome");
                 }
                 else
                 {
-                    Query = ("SELECT IDAtleta, Nome FROM dbo.TblAtleta WHERE(Apagado = 0) ORDER BY Nome");
+                    Query = ("SELECT TOP (" + A + ") IDAtleta, Nome FROM dbo.TblAtleta WHERE(Apagado = 0) ORDER BY Nome");
                 }
 
                 SqlCommand Command = new SqlCommand(Query, con);
@@ -672,10 +644,11 @@ namespace FootballLife_WF
                     }
                 }
                 dr.Close();
+                A+=8;
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.ToString());
+                MessageBox.Show(x.Message, "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             con.Close();
@@ -684,7 +657,7 @@ namespace FootballLife_WF
         private void Btn_DeleteAtleta_Click(object sender, EventArgs e)
         {
 
-            DialogResult result = MessageBox.Show("Tem a certeza que pretente eliminar este utilizador?", "ATENÇÃO!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("Tem a certeza que pretente eliminar este utilizador?", "ATENÇÃO!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
             if (result == DialogResult.Yes)
             {
@@ -708,7 +681,7 @@ namespace FootballLife_WF
                 }
                 catch (Exception x)
                 {
-                    MessageBox.Show(x.ToString());
+                    MessageBox.Show(x.Message, "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 con.Close();
 
@@ -722,8 +695,8 @@ namespace FootballLife_WF
             }
         }
 
-        //===
-
+        int S = 8;
+        //Socios
         private void Socios()
         {
             flowpanel_Socios.Controls.Clear();
@@ -734,80 +707,88 @@ namespace FootballLife_WF
             string IDSocio = "";
             string NomeSocio = "";
 
-            SqlDataReader dr;
-            string Query = ("SELECT IDSocio, Nome FROM dbo.TblSocio WHERE(Apagado = 0) ORDER BY Nome");
-            SqlCommand Command = new SqlCommand(Query, con);
-            dr = Command.ExecuteReader();
-
-            while (dr.Read())
+            try
             {
-                IDSocio = dr["IDSocio"].ToString();
-                NomeSocio = dr["Nome"].ToString();
+                SqlDataReader dr;
+                string Query = ("SELECT TOP (" + S + ") IDSocio, Nome FROM dbo.TblSocio WHERE(Apagado = 0) ORDER BY Nome");
+                SqlCommand Command = new SqlCommand(Query, con);
+                dr = Command.ExecuteReader();
 
-                Panel panel = new Panel();
-                panel.Width = 230;
-                panel.Height = 50;
-                panel.Anchor = AnchorStyles.Top;
-                panel.BorderStyle = BorderStyle.Fixed3D;
-                panel.BackColor = Color.White;
-                panel.Visible = true;
-                panel.Name = "Panel" + IDSocio;
-                panel.Margin = new Padding(5, 5, 5, 5);
-                flowpanel_Socios.Controls.Add(panel);
-
-                PictureBox Pb = new PictureBox();
-                Pb.Location = new Point(10, 5);
-                Pb.Width = 35;
-                Pb.Height = 35;
-                Pb.Anchor = AnchorStyles.Top | AnchorStyles.Left;
-                Pb.Image = FootballLife_WF.Properties.Resources.LogoSocio;
-                Pb.SizeMode = PictureBoxSizeMode.Zoom;
-                Pb.Cursor = Cursors.Hand;
-                Pb.Visible = true;
-                Pb.Name = "Socio";
-                Pb.Tag = IDSocio;
-                panel.Controls.Add(Pb);
-
-                PictureBox Pbdelete = new PictureBox();
-                Pbdelete.Location = new Point(205, 5);
-                Pbdelete.Width = 15;
-                Pbdelete.Height = 15;
-                Pbdelete.Anchor = AnchorStyles.Top | AnchorStyles.Left;
-                Pbdelete.Image = FootballLife_WF.Properties.Resources.Delete;
-                Pbdelete.SizeMode = PictureBoxSizeMode.Zoom;
-                Pbdelete.Cursor = Cursors.Hand;
-                Pbdelete.Tag = IDSocio;
-                Pbdelete.Name = "Btn_Delete";
-                Pbdelete.Visible = true;
-                panel.Controls.Add(Pbdelete);
-
-                Label lblUser = new Label();
-                lblUser.Location = new Point(50, 15);
-                lblUser.Text = NomeSocio;
-                lblUser.Font = new Font("Berlin Sans FB ", 9, FontStyle.Bold);
-                lblUser.Anchor = AnchorStyles.Top | AnchorStyles.Left;
-                lblUser.Visible = true;
-                lblUser.Width = 150;
-                lblUser.Cursor = Cursors.Hand;
-                lblUser.Name = "Socio";
-                lblUser.Tag = IDSocio;
-                panel.Controls.Add(lblUser);
-
-
-                Pbdelete.Click += Btn_DeleteSocio_Click;
-                Pb.Click += Btn_Pb_Click;
-                lblUser.Click += Btn_Lbl_Click;
-
-                if (Program.CurrentFuncaoUser != "Admin")
+                while (dr.Read())
                 {
-                    Pbdelete.Visible = false;
-                }
-                else
-                {
+                    IDSocio = dr["IDSocio"].ToString();
+                    NomeSocio = dr["Nome"].ToString();
+
+                    Panel panel = new Panel();
+                    panel.Width = 230;
+                    panel.Height = 50;
+                    panel.Anchor = AnchorStyles.Top;
+                    panel.BorderStyle = BorderStyle.Fixed3D;
+                    panel.BackColor = Color.White;
+                    panel.Visible = true;
+                    panel.Name = "Panel" + IDSocio;
+                    panel.Margin = new Padding(5, 5, 5, 5);
+                    flowpanel_Socios.Controls.Add(panel);
+
+                    PictureBox Pb = new PictureBox();
+                    Pb.Location = new Point(10, 5);
+                    Pb.Width = 35;
+                    Pb.Height = 35;
+                    Pb.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                    Pb.Image = FootballLife_WF.Properties.Resources.LogoSocio;
+                    Pb.SizeMode = PictureBoxSizeMode.Zoom;
+                    Pb.Cursor = Cursors.Hand;
+                    Pb.Visible = true;
+                    Pb.Name = "Socio";
+                    Pb.Tag = IDSocio;
+                    panel.Controls.Add(Pb);
+
+                    PictureBox Pbdelete = new PictureBox();
+                    Pbdelete.Location = new Point(205, 5);
+                    Pbdelete.Width = 15;
+                    Pbdelete.Height = 15;
+                    Pbdelete.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                    Pbdelete.Image = FootballLife_WF.Properties.Resources.Delete;
+                    Pbdelete.SizeMode = PictureBoxSizeMode.Zoom;
+                    Pbdelete.Cursor = Cursors.Hand;
+                    Pbdelete.Tag = IDSocio;
+                    Pbdelete.Name = "Btn_Delete";
                     Pbdelete.Visible = true;
+                    panel.Controls.Add(Pbdelete);
+
+                    Label lblUser = new Label();
+                    lblUser.Location = new Point(50, 15);
+                    lblUser.Text = NomeSocio;
+                    lblUser.Font = new Font("Berlin Sans FB ", 9, FontStyle.Bold);
+                    lblUser.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                    lblUser.Visible = true;
+                    lblUser.Width = 150;
+                    lblUser.Cursor = Cursors.Hand;
+                    lblUser.Name = "Socio";
+                    lblUser.Tag = IDSocio;
+                    panel.Controls.Add(lblUser);
+
+
+                    Pbdelete.Click += Btn_DeleteSocio_Click;
+                    Pb.Click += Btn_Pb_Click;
+                    lblUser.Click += Btn_Lbl_Click;
+
+                    if (Program.CurrentFuncaoUser != "Admin")
+                    {
+                        Pbdelete.Visible = false;
+                    }
+                    else
+                    {
+                        Pbdelete.Visible = true;
+                    }
                 }
+                dr.Close();
+                S+=8;
             }
-            dr.Close();
+            catch (Exception x)
+            {
+                MessageBox.Show(x.Message, "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
             con.Close();
         }
@@ -815,7 +796,7 @@ namespace FootballLife_WF
         private void Btn_DeleteSocio_Click(object sender, EventArgs e)
         {
 
-            DialogResult result = MessageBox.Show("Tem a certeza que pretente eliminar este utilizador?", "ATENÇÃO!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("Tem a certeza que pretente eliminar este utilizador?", "ATENÇÃO!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
             if (result == DialogResult.Yes)
             {
@@ -839,7 +820,7 @@ namespace FootballLife_WF
                 }
                 catch (Exception x)
                 {
-                    MessageBox.Show(x.ToString());
+                    MessageBox.Show(x.Message, "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 con.Close();
 
@@ -853,7 +834,8 @@ namespace FootballLife_WF
             }
         }
 
-        //===========================================================================
+
+        //User Click
         private void Btn_Pb_Click(object sender, EventArgs e)
         {
             PictureBox Pb = (PictureBox)sender;
@@ -871,8 +853,6 @@ namespace FootballLife_WF
 
         }
 
-        
-
         private void Btn_Lbl_Click(object sender, EventArgs e)
         {
             Label Lbl = (Label)sender;
@@ -889,8 +869,7 @@ namespace FootballLife_WF
             }
         }
 
-        
-
+        //Open diffent forms
         private static void EditarUser(string ID, string Funcao)
         {
             EditarUtilizador verUser = new EditarUtilizador(ID, Funcao);
@@ -902,32 +881,9 @@ namespace FootballLife_WF
             VisualizarUtilizador verUser = new VisualizarUtilizador(ID, Funcao);
             verUser.Show();
         }
-        //===========================================================================
 
-        private void Btn_LogOut_Click(object sender, EventArgs e)
-        {
-            Program.CurrentFuncaoUser = "";
-            Program.CurrentIDUser = 0;
-            Program.CurrentIDEscalao = 0;
 
-            PaginaInicial PgInicio = new PaginaInicial();
-            this.Hide();
-            PgInicio.ShowDialog();
-            this.Dispose();
-        }
-
-        private void Btn_NovoUtilizador_Click(object sender, EventArgs e)
-        {
-            AdicionarUtilizador NewUser = new AdicionarUtilizador();
-            NewUser.ShowDialog();
-
-            Admins();
-            Treinadores();
-            Atletas();
-            Socios();
-            CountUsers();
-        }
-
+        //User Delete
         private void Btn_DeletedUsers_Click(object sender, EventArgs e)
         {
             DeletedUsers Apagados = new DeletedUsers();
@@ -940,6 +896,86 @@ namespace FootballLife_WF
             CountUsers();
         }
 
+
+        //New User
+        private void Btn_NovoUtilizador_Click(object sender, EventArgs e)
+        {
+            AdicionarUtilizador NewUser = new AdicionarUtilizador();
+            NewUser.ShowDialog();
+
+            Admins();
+            Treinadores();
+            Atletas();
+            Socios();
+            CountUsers();
+        }
+
+
+        //===========================================================================
+
+
+        private void NovaDiscussao_Hover()
+        {
+            lbl_NovoUser.Font = new Font("Berlin Sans FB Demi", 10, FontStyle.Underline);
+        }
+
+        private void Lbl_Novadiscussao_MouseHover(object sender, EventArgs e)
+        {
+            NovaDiscussao_Hover();
+        }
+
+        private void Img_NovaDiscussao_MouseHover(object sender, EventArgs e)
+        {
+            NovaDiscussao_Hover();
+        }
+
+        private void Btn_NovaDiscussao_MouseHover(object sender, EventArgs e)
+        {
+            NovaDiscussao_Hover();
+        }
+
+        //============
+
+        private void NovaDiscussao_Leave()
+        {
+            lbl_NovoUser.Font = new Font("Berlin Sans FB Demi", 10, FontStyle.Regular);
+        }
+
+        private void Lbl_Novadiscussao_MouseLeave(object sender, EventArgs e)
+        {
+            NovaDiscussao_Leave();
+        }
+        private void Img_NovaDiscussao_MouseLeave(object sender, EventArgs e)
+        {
+            NovaDiscussao_Leave();
+        }
+        private void Btn_NovaDiscussao_MouseLeave(object sender, EventArgs e)
+        {
+            NovaDiscussao_Leave();
+        }
+
+
+        //==============================================================================================
+        
+
+        //Side Menu
+        private void Img_Menu_Click(object sender, EventArgs e)
+        {
+            if (panel_Menu.Visible == true)
+            {
+                panel_Menu.Visible = false;
+            }
+            else
+            {
+                panel_Menu.Visible = true;
+            }
+        }
+
+
+        //==============================================================================================
+
+
+        //Side Menu Buttons Click
         private void Btn_Home_Click(object sender, EventArgs e)
         {
             if (Program.CurrentFuncaoUser == "Admin")
@@ -996,7 +1032,8 @@ namespace FootballLife_WF
             this.Dispose();
         }
 
-        private void Btn_Titulos_Click(object sender, EventArgs e)
+
+        private void Btn_Historia_Click(object sender, EventArgs e)
         {
             Historia Hist = new Historia();
             this.Hide();
@@ -1052,6 +1089,38 @@ namespace FootballLife_WF
                 users.ShowDialog();
                 this.Dispose();
             }
+        }
+
+        private void Btn_LogOut_Click(object sender, EventArgs e)
+        {
+            Program.CurrentFuncaoUser = "";
+            Program.CurrentIDUser = 0;
+            Program.CurrentIDEscalao = 0;
+
+            PaginaInicial PgInicio = new PaginaInicial();
+            this.Hide();
+            PgInicio.ShowDialog();
+            this.Dispose();
+        }
+
+        private void Img1_Click(object sender, EventArgs e)
+        {
+            Admins();
+        }
+
+        private void Img2_Click(object sender, EventArgs e)
+        {
+            Treinadores();
+        }
+
+        private void Img3_Click(object sender, EventArgs e)
+        {
+            Atletas();
+        }
+
+        private void Img4_Click(object sender, EventArgs e)
+        {
+            Socios();
         }
     }
 }

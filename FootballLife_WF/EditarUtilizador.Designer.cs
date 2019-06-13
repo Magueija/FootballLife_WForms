@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditarUtilizador));
             this.panel_Utilizador = new System.Windows.Forms.Panel();
+            this.btn_Gravar = new System.Windows.Forms.Button();
             this.panel_Escalao = new System.Windows.Forms.Panel();
             this.rb_Infantis = new System.Windows.Forms.RadioButton();
             this.lbl_EscalaoATreinar = new System.Windows.Forms.Label();
@@ -59,7 +60,6 @@
             this.lbl_Nome = new System.Windows.Forms.Label();
             this.Lbl_Titulo = new System.Windows.Forms.Label();
             this.img_Logo = new System.Windows.Forms.PictureBox();
-            this.btn_Gravar = new System.Windows.Forms.Button();
             this.panel_Utilizador.SuspendLayout();
             this.panel_Escalao.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_Logo)).BeginInit();
@@ -95,6 +95,22 @@
             this.panel_Utilizador.Name = "panel_Utilizador";
             this.panel_Utilizador.Size = new System.Drawing.Size(498, 465);
             this.panel_Utilizador.TabIndex = 0;
+            // 
+            // btn_Gravar
+            // 
+            this.btn_Gravar.BackColor = System.Drawing.Color.White;
+            this.btn_Gravar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Gravar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btn_Gravar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Gravar.Font = new System.Drawing.Font("Berlin Sans FB", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Gravar.ForeColor = System.Drawing.Color.Black;
+            this.btn_Gravar.Location = new System.Drawing.Point(300, 427);
+            this.btn_Gravar.Name = "btn_Gravar";
+            this.btn_Gravar.Size = new System.Drawing.Size(91, 27);
+            this.btn_Gravar.TabIndex = 36;
+            this.btn_Gravar.Text = "Gravar";
+            this.btn_Gravar.UseVisualStyleBackColor = false;
+            this.btn_Gravar.Click += new System.EventHandler(this.Btn_Gravar_Click);
             // 
             // panel_Escalao
             // 
@@ -400,22 +416,6 @@
             this.img_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.img_Logo.TabIndex = 0;
             this.img_Logo.TabStop = false;
-            // 
-            // btn_Gravar
-            // 
-            this.btn_Gravar.BackColor = System.Drawing.Color.White;
-            this.btn_Gravar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Gravar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.btn_Gravar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Gravar.Font = new System.Drawing.Font("Berlin Sans FB", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Gravar.ForeColor = System.Drawing.Color.Black;
-            this.btn_Gravar.Location = new System.Drawing.Point(300, 427);
-            this.btn_Gravar.Name = "btn_Gravar";
-            this.btn_Gravar.Size = new System.Drawing.Size(91, 27);
-            this.btn_Gravar.TabIndex = 36;
-            this.btn_Gravar.Text = "Gravar";
-            this.btn_Gravar.UseVisualStyleBackColor = false;
-            this.btn_Gravar.Click += new System.EventHandler(this.Btn_Gravar_Click);
             // 
             // EditarUtilizador
             // 

@@ -41,6 +41,7 @@ namespace FootballLife_WF
 
             try
             {
+                //Tabela Jogo
                 SqlDataReader dr;
                 string Query = ("SELECT dbo.TblJogo.IDJogo, dbo.TblJogo.Data, dbo.TblJogo.Divisao, dbo.TblJogo.EquipaCasa, dbo.TblJogo.EquipaFora, dbo.TblJogo.GolosCasa, dbo.TblJogo.Path_ImgAdversario, dbo.TblEscalao.Escalao, dbo.TblJogo.GolosFora FROM dbo.TblJogo INNER JOIN dbo.TblEscalao ON dbo.TblJogo.FK_IDEscalao = dbo.TblEscalao.IDEscalao WHERE dbo.TblJogo.IDJogo = " + IDJogo);
                 SqlCommand Command = new SqlCommand(Query, con);
@@ -87,6 +88,8 @@ namespace FootballLife_WF
 
                 int i = 1;
 
+
+                //Tabela Golos
                 SqlDataReader drgolos;
                 string Querygolos = ("SELECT dbo.TblGolo.Minutos_Jogo, dbo.TblAtleta.Nome FROM dbo.TblGolo INNER JOIN dbo.TblJogo ON dbo.TblGolo.FK_IDJogo = dbo.TblJogo.IDJogo" +
                     " INNER JOIN dbo.TblAtleta ON dbo.TblGolo.FK_IDAtleta = dbo.TblAtleta.IDAtleta WHERE dbo.TblJogo.IDJogo = " + IDJogo + " ORDER BY dbo.TblGolo.Minutos_Jogo");
@@ -149,7 +152,7 @@ namespace FootballLife_WF
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.ToString());
+                MessageBox.Show(x.Message, "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             con.Close();
 

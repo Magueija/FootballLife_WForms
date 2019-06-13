@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Media;
 
 namespace FootballLife_WF
 {
@@ -70,10 +71,14 @@ namespace FootballLife_WF
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.ToString());
+                MessageBox.Show(x.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             con.Close();
         }
+
+
+        //====================================================================
+
 
         private void Rb_CheckedChanged(object sender, EventArgs e)
         {
@@ -89,6 +94,26 @@ namespace FootballLife_WF
             }
         }
 
+
+        private void Cb_UFuncao_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cb_UFuncao.SelectedItem == "Atleta")
+            {
+                cb_UNomeAtleta.Visible = true;
+                cb_UNomeSocio.Visible = false;
+            }
+            else if (cb_UFuncao.SelectedItem == "Sócio")
+            {
+                cb_UNomeAtleta.Visible = false;
+                cb_UNomeSocio.Visible = true;
+            }
+        }
+
+
+        //=====================================================================
+
+
+        //Gravar
         private void Btn_GravarOutros_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection(Properties.Settings.Default.Connection);
@@ -98,52 +123,60 @@ namespace FootballLife_WF
 
             if (tb_ONome.Text == "" || tb_OMontante.Text == "")
             {
-                MessageBox.Show("Campos obrigatórios não preenchidos!", "ATENÇÃO!", MessageBoxButtons.OK);
+                MessageBox.Show("Campos obrigatórios não preenchidos!", "ATENÇÃO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
                 try
                 {
+                    double tb_txt;
+                    if (!double.TryParse(tb_OMontante.Text.ToString(), out tb_txt))
+                    {
+                        MessageBox.Show("Campos numéricos com valores inválidos!", "ATENÇÃO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
                     Query = "INSERT INTO dbo.Tbl" + LucroDespesa + "s (Nome, Valor, Descricao, FK_IDClube) VALUES (@Nome, @Valor, @Descricao, @IDClube)";
 
                     SqlCommand CommandINSERT = new SqlCommand(Query, con);
                     CommandINSERT.Parameters.AddWithValue("@Nome", tb_ONome.Text);
-                    CommandINSERT.Parameters.AddWithValue("@Valor", tb_OMontante.Text);
+                    CommandINSERT.Parameters.AddWithValue("@Valor", tb_txt);
                     CommandINSERT.Parameters.AddWithValue("@Descricao", tb_ODescricao.Text);
                     CommandINSERT.Parameters.AddWithValue("@IDClube", "1");
                     CommandINSERT.ExecuteNonQuery();
 
 
-                    string saldo = "";
+                    double saldo = 0;
                     SqlDataReader dr2;
                     string Query2 = ("SELECT Saldo FROM dbo.TblClube WHERE IDClube = 1");
                     SqlCommand Command2 = new SqlCommand(Query2, con);
                     dr2 = Command2.ExecuteReader();
                     while (dr2.Read())
                     {
-                        saldo = dr2["Saldo"].ToString();
+                        saldo = Convert.ToDouble(dr2["Saldo"]);
                     }
                     dr2.Close();
 
+                    
+                    double novoSaldo = saldo;
 
-                    int novoSaldo = Convert.ToInt32(saldo);
                     if (LucroDespesa == "Lucro")
                     {
-                        novoSaldo = Convert.ToInt32(saldo) + Convert.ToInt32(tb_OMontante.Text);
+                        novoSaldo = saldo + tb_txt;
                     }
                     else if(LucroDespesa == "Despesa")
                     {
-                        novoSaldo = Convert.ToInt32(saldo) - Convert.ToInt32(tb_OMontante.Text);
+                        novoSaldo = saldo - tb_txt;
                     }
 
                     string Querysaldo = "UPDATE TblClube SET Saldo = @NovoSaldo WHERE IDClube = 1";
                     SqlCommand Commandsaldo = new SqlCommand(Querysaldo, con);
-                    Commandsaldo.Parameters.AddWithValue("@NovoSaldo", novoSaldo);
+                    Commandsaldo.Parameters.AddWithValue("@NovoSaldo", Math.Round(novoSaldo, 2));
                     Commandsaldo.ExecuteNonQuery();
                 }
                 catch (Exception x)
                 {
-                    MessageBox.Show(x.ToString());
+                    MessageBox.Show(x.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 con.Close();
                 this.Dispose();
@@ -163,7 +196,7 @@ namespace FootballLife_WF
 
             if(cb_UFuncao.SelectedItem == "")
             {
-                MessageBox.Show("Campos obrigatórios não preenchidos!", "ATENÇÃO!", MessageBoxButtons.OK);
+                MessageBox.Show("Campos obrigatórios não preenchidos!", "ATENÇÃO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -320,44 +353,80 @@ namespace FootballLife_WF
                         CommandCota.ExecuteNonQuery();
                     }
 
-                    string saldo = "";
+                    double saldo = 0;
                     SqlDataReader dr2;
                     string Query2 = ("SELECT Saldo FROM dbo.TblClube WHERE IDClube = 1");
                     SqlCommand Command2 = new SqlCommand(Query2, con);
                     dr2 = Command2.ExecuteReader();
                     while (dr2.Read())
                     {
-                        saldo = dr2["Saldo"].ToString();
+                        saldo = Convert.ToDouble(dr2["Saldo"]);
                     }
                     dr2.Close();
 
-                    int novoSaldo = Convert.ToInt32(saldo) + Convert.ToInt32(Valor);
+                    double novoSaldo = saldo + Convert.ToDouble(Valor);
 
                     string Querysaldo = "UPDATE TblClube SET Saldo = @NovoSaldo WHERE IDClube = 1";
                     SqlCommand Commandsaldo = new SqlCommand(Querysaldo, con);
-                    Commandsaldo.Parameters.AddWithValue("@NovoSaldo", novoSaldo);
+                    Commandsaldo.Parameters.AddWithValue("@NovoSaldo", Math.Round(novoSaldo, 2));
                     Commandsaldo.ExecuteNonQuery();
                 }
                 catch (Exception x)
                 {
-                    MessageBox.Show(x.ToString());
+                    MessageBox.Show(x.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 con.Close();
                 this.Dispose();
             }
         }
 
-        private void Cb_UFuncao_SelectedIndexChanged(object sender, EventArgs e)
+        private void Tb_OMontante_KeyDown(object sender, KeyEventArgs e)
         {
-            if(cb_UFuncao.SelectedItem == "Atleta")
+            if ((e.KeyCode == Keys.OemPeriod) || (e.KeyCode == Keys.Decimal))
             {
-                cb_UNomeAtleta.Visible = true;
-                cb_UNomeSocio.Visible = false;
+                e.SuppressKeyPress = true;
+
+                int posicaoCursor = tb_OMontante.SelectionStart;
+                tb_OMontante.Text = tb_OMontante.Text.Insert(posicaoCursor, ",");
+                tb_OMontante.SelectionStart = posicaoCursor + 1;
             }
-            else if(cb_UFuncao.SelectedItem == "Sócio")
+            else
             {
-                cb_UNomeAtleta.Visible = false;
-                cb_UNomeSocio.Visible = true;
+                bool naoNumero = false;
+
+                // é um número do topo do teclado
+                if (e.KeyCode < Keys.D0 || e.KeyCode > Keys.D9)
+                {
+                    // é um numero do teclado numerico
+                    if (e.KeyCode < Keys.NumPad0 || e.KeyCode > Keys.NumPad9)
+                    {
+                        // teclas autorizadas
+                        if (
+                            (e.KeyCode != Keys.Back) &&
+                            (e.KeyCode != Keys.Left) &&
+                            (e.KeyCode != Keys.Right) &&
+                            (e.KeyCode != Keys.Home) &&
+                            (e.KeyCode != Keys.End) &&
+                            (e.KeyCode != Keys.OemPeriod) &&
+                            (e.KeyCode != Keys.Oemcomma)
+                           )
+                        {
+                            naoNumero = true;
+                        }
+                    }
+                }
+
+                if (Control.ModifierKeys != Keys.None)
+                {
+                    naoNumero = true;
+                }
+
+                if (naoNumero)
+                {
+                    e.SuppressKeyPress = true;
+
+                    SystemSounds.Beep.Play();
+                }
             }
         }
     }

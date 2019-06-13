@@ -88,7 +88,7 @@ namespace FootballLife_WF
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.ToString());
+                MessageBox.Show(x.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             con.Close();
         }
@@ -107,7 +107,7 @@ namespace FootballLife_WF
             {
                 SqlDataReader dr;
                 string Query = ("SELECT dbo.TblAtleta.IDAtleta, dbo.TblAtleta.Nome FROM dbo.TblTitular INNER JOIN dbo.TblAtleta ON dbo.TblTitular.FK_IDAtleta = dbo.TblAtleta.IDAtleta INNER JOIN " +
-                    "dbo.TblConvocatoria ON dbo.TblTitular.FK_IDConvocatoria = dbo.TblConvocatoria.IDConvocatoria WHERE dbo.TblConvocatoria.FK_IDEscalao = " + Program.CurrentIDEscalao);
+                    "dbo.TblConvocatoria ON dbo.TblTitular.FK_IDConvocatoria = dbo.TblConvocatoria.IDConvocatoria WHERE dbo.TblAtleta.Apagado = 0 AND dbo.TblConvocatoria.FK_IDEscalao = " + Program.CurrentIDEscalao);
                 SqlCommand Command = new SqlCommand(Query, con);
                 dr = Command.ExecuteReader();
                 int i = 1;
@@ -481,7 +481,7 @@ namespace FootballLife_WF
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.ToString());
+                MessageBox.Show(x.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             con.Close();
         }
@@ -501,7 +501,7 @@ namespace FootballLife_WF
             {
                 SqlDataReader dr;
                 string Query = ("SELECT dbo.TblAtleta.IDAtleta, dbo.TblAtleta.Nome FROM dbo.TblSuplente INNER JOIN dbo.TblAtleta ON dbo.TblSuplente.FK_IDAtleta = dbo.TblAtleta.IDAtleta INNER JOIN " +
-                    "dbo.TblConvocatoria ON dbo.TblSuplente.FK_IDConvocatoria = dbo.TblConvocatoria.IDConvocatoria WHERE dbo.TblConvocatoria.FK_IDEscalao = " + Program.CurrentIDEscalao);
+                    "dbo.TblConvocatoria ON dbo.TblSuplente.FK_IDConvocatoria = dbo.TblConvocatoria.IDConvocatoria WHERE dbo.TblAtleta.Apagado = 0 AND dbo.TblConvocatoria.FK_IDEscalao = " + Program.CurrentIDEscalao);
                 SqlCommand Command = new SqlCommand(Query, con);
                 dr = Command.ExecuteReader();
 
@@ -546,7 +546,7 @@ namespace FootballLife_WF
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.ToString());
+                MessageBox.Show(x.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             con.Close();
         }
@@ -565,7 +565,7 @@ namespace FootballLife_WF
             {
                 SqlDataReader dr;
                 string Query = ("SELECT dbo.TblAtleta.IDAtleta, dbo.TblAtleta.Nome FROM dbo.TblAtleta LEFT OUTER JOIN dbo.TblSuplente ON dbo.TblAtleta.IDAtleta = dbo.TblSuplente.FK_IDAtleta LEFT OUTER JOIN dbo.TblTitular" +
-                    " ON dbo.TblAtleta.IDAtleta = dbo.TblTitular.FK_IDAtleta WHERE(dbo.TblTitular.FK_IDAtleta IS NULL) AND(dbo.TblSuplente.FK_IDAtleta IS NULL) AND(dbo.TblAtleta.FK_IDEscalao = " + Program.CurrentIDEscalao + " )");
+                    " ON dbo.TblAtleta.IDAtleta = dbo.TblTitular.FK_IDAtleta WHERE(dbo.TblTitular.FK_IDAtleta IS NULL) AND(dbo.TblSuplente.FK_IDAtleta IS NULL) AND(dbo.TblAtleta.Apagado = 0) AND(dbo.TblAtleta.FK_IDEscalao = " + Program.CurrentIDEscalao + " )");
                 SqlCommand Command = new SqlCommand(Query, con);
                 dr = Command.ExecuteReader();
 
@@ -610,13 +610,29 @@ namespace FootballLife_WF
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.ToString());
+                MessageBox.Show(x.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             con.Close();
         }
 
+
         //==============================================================================================
 
+
+        private void NovaConvocatoria_MouseHover(object sender, EventArgs e)
+        {
+            lbl_NovaConvocatoria.Font = new Font("Berlin Sans FB Demi", 10, FontStyle.Underline);
+        }
+        private void NovaConvocatoria_MouseLeave(object sender, EventArgs e)
+        {
+            lbl_NovaConvocatoria.Font = new Font("Berlin Sans FB Demi", 10, FontStyle.Regular);
+        }
+
+
+        //==============================================================================================
+
+
+        //Side Menu
         private void Img_Menu_Click(object sender, EventArgs e)
         {
             if (panel_Menu.Visible == true)
@@ -629,61 +645,40 @@ namespace FootballLife_WF
             }
         }
 
-//==============================================================================================
 
-        private void NovaConvocatoria_MouseHover(object sender, EventArgs e)
+        //==============================================================================================
+
+
+        private void Btn_NovaConvocatoria_Click(object sender, EventArgs e)
         {
-            lbl_NovaConvocatoria.Font = new Font("Berlin Sans FB Demi", 10, FontStyle.Underline);
-        }
-        private void NovaConvocatoria_MouseLeave(object sender, EventArgs e)
-        {
-            lbl_NovaConvocatoria.Font = new Font("Berlin Sans FB Demi", 10, FontStyle.Regular);
-        }
+            NovaConvocatoria NvConv = new NovaConvocatoria();
+            NvConv.ShowDialog();
 
-//==============================================================================================
-
-        private void Btn_LogOut_Click(object sender, EventArgs e)
-        {
-            Program.CurrentFuncaoUser = "";
-            Program.CurrentIDUser = 0;
-            Program.CurrentIDEscalao = 0;
-
-            PaginaInicial PgInicio = new PaginaInicial();
-            this.Hide();
-            PgInicio.ShowDialog();
+            DadosConvocatoria();
+            Titulares();
+            Suplentes();
+            NaoConvocados();
         }
 
-        private void Btn_NovaDiscussao_Click(object sender, EventArgs e)
-        {
-            NovaDiscussão PgInicio = new NovaDiscussão();
-            PgInicio.ShowDialog();
-        }
 
-        private void Btn_Utilizadores_Click(object sender, EventArgs e)
+        //Side Menu buttons click
+        private void Btn_Home_Click(object sender, EventArgs e)
         {
-            Utilizadores Users = new Utilizadores();
-            this.Hide();
-            Users.ShowDialog();
-        }
-
-        private void Btn_Inventario_Click(object sender, EventArgs e)
-        {
-            if (Program.CurrentFuncaoUser == "Admin" || Program.CurrentFuncaoUser == "Treinador")
+            if (Program.CurrentFuncaoUser == "Treinador")
             {
-                Inventario inv = new Inventario();
+                PaginaInicial_Treinador PgInicio = new PaginaInicial_Treinador();
                 this.Hide();
-                inv.ShowDialog();
+                PgInicio.ShowDialog();
                 this.Dispose();
             }
             else if (Program.CurrentFuncaoUser == "Atleta")
             {
-                Cota ct = new Cota();
+                PaginaInicial_Atleta PgInicio = new PaginaInicial_Atleta();
                 this.Hide();
-                ct.ShowDialog();
+                PgInicio.ShowDialog();
                 this.Dispose();
             }
         }
-
 
         private void Btn_Jogos_Click(object sender, EventArgs e)
         {
@@ -714,39 +709,45 @@ namespace FootballLife_WF
             this.Dispose();
         }
 
-        private void Btn_NovaConvocatoria_Click(object sender, EventArgs e)
-        {
-            NovaConvocatoria NvConv = new NovaConvocatoria();
-            NvConv.ShowDialog();
 
-            DadosConvocatoria();
-            Titulares();
-            Suplentes();
-            NaoConvocados();
+        private void Btn_Utilizadores_Click(object sender, EventArgs e)
+        {
+            Utilizadores Users = new Utilizadores();
+            this.Hide();
+            Users.ShowDialog();
         }
 
-        private void Btn_Home_Click(object sender, EventArgs e)
+        private void Btn_Inventario_Click(object sender, EventArgs e)
         {
-            if (Program.CurrentFuncaoUser == "Treinador")
+            if (Program.CurrentFuncaoUser == "Admin" || Program.CurrentFuncaoUser == "Treinador")
             {
-                PaginaInicial_Treinador PgInicio = new PaginaInicial_Treinador();
+                Inventario inv = new Inventario();
                 this.Hide();
-                PgInicio.ShowDialog();
+                inv.ShowDialog();
                 this.Dispose();
             }
             else if (Program.CurrentFuncaoUser == "Atleta")
             {
-                PaginaInicial_Atleta PgInicio = new PaginaInicial_Atleta();
+                Cota ct = new Cota();
                 this.Hide();
-                PgInicio.ShowDialog();
+                ct.ShowDialog();
                 this.Dispose();
             }
         }
 
-        private void Btn1_Click(object sender, EventArgs e)
-        {
 
+
+        private void Btn_LogOut_Click(object sender, EventArgs e)
+        {
+            Program.CurrentFuncaoUser = "";
+            Program.CurrentIDUser = 0;
+            Program.CurrentIDEscalao = 0;
+
+            PaginaInicial PgInicio = new PaginaInicial();
+            this.Hide();
+            PgInicio.ShowDialog();
         }
+
     }
 }
 

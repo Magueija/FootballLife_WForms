@@ -26,6 +26,7 @@ namespace FootballLife_WF
             Socios();
         }
 
+
         private void Admins()
         {
             flowpanel_Admins.Controls.Clear();
@@ -328,6 +329,11 @@ namespace FootballLife_WF
             lblUser.Click += Btn_Lbl_Click;
         }
 
+
+        //==========================================================================================
+
+
+        //Pesquisa
         private void PesquisaAdmins()
         {
             flowpanel_Admins.Controls.Clear();
@@ -497,6 +503,53 @@ namespace FootballLife_WF
             con.Close();
         }
 
+
+
+        private void Btn_DeletePesquisa_Click(object sender, EventArgs e)
+        {
+            tb_Pesquisar.Text = "";
+
+            Admins();
+            Treinadores();
+            Atletas();
+            Socios();
+
+            lbl1.Visible = false;
+            lbl2.Visible = false;
+            lbl3.Visible = false;
+            lbl4.Visible = false;
+        }
+
+        private void Btn_Lupa_Click(object sender, EventArgs e)
+        {
+            if (tb_Pesquisar.Text != "")
+            {
+                PesquisaAdmins();
+                PesquisaTreinadores();
+                PesquisaAtletas();
+                PesquisaSocios();
+            }
+        }
+
+        private void tb_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (tb_Pesquisar.Text != "")
+                {
+                    PesquisaAdmins();
+                    PesquisaTreinadores();
+                    PesquisaAtletas();
+                    PesquisaSocios();
+                }
+            }
+        }
+
+
+        //======================================================================================
+
+
+        //Set User Apagado = 0
         private void Btn_Pb_Click(object sender, EventArgs e)
         {
             PictureBox Pb = (PictureBox)sender;
@@ -570,45 +623,8 @@ namespace FootballLife_WF
         }
 
 
-        private void Btn_DeletePesquisa_Click(object sender, EventArgs e)
-        {
-            tb_Pesquisar.Text = "";
+        //======================================================================================
 
-            Admins();
-            Treinadores();
-            Atletas();
-            Socios();
-
-            lbl1.Visible = false;
-            lbl2.Visible = false;
-            lbl3.Visible = false;
-            lbl4.Visible = false;
-        }
-
-        private void Btn_Lupa_Click(object sender, EventArgs e)
-        {
-            if (tb_Pesquisar.Text != "")
-            {
-                PesquisaAdmins();
-                PesquisaTreinadores();
-                PesquisaAtletas();
-                PesquisaSocios();
-            }
-        }
-
-        private void tb_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                if (tb_Pesquisar.Text != "")
-                {
-                    PesquisaAdmins();
-                    PesquisaTreinadores();
-                    PesquisaAtletas();
-                    PesquisaSocios();
-                }
-            }
-        }
 
         private void Btn_Fechar_Click(object sender, EventArgs e)
         {

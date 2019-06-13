@@ -18,6 +18,10 @@ namespace FootballLife_WF
             InitializeComponent();
         }
 
+
+        //======================
+
+
         private void Cb_Funcao_SelectedIndexChanged(object sender, EventArgs e)
         {
             if((cb_Funcao.SelectedItem).ToString() == "Administrador" || (cb_Funcao.SelectedItem).ToString() == "Sócio")
@@ -38,6 +42,29 @@ namespace FootballLife_WF
             }
         }
 
+
+        //======================
+
+
+        private void Ckb_VerPass_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckb_VerPass.Checked == true)
+            {
+                tb_Password.UseSystemPasswordChar = false;
+                tb_ConfPassword.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                tb_Password.UseSystemPasswordChar = true;
+                tb_ConfPassword.UseSystemPasswordChar = true;
+            }
+        }
+
+
+        //=======================================================================================
+
+
+        //Gravar
         private void Btn_Gravar_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection(Properties.Settings.Default.Connection);
@@ -122,14 +149,14 @@ namespace FootballLife_WF
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.ToString());
+                MessageBox.Show(x.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             if (tb_Password.Text == tb_ConfPassword.Text)
             {
                 if (userAdmin == tb_Utilizador.Text && passAdmin == tb_Password.Text || userTreinador == tb_Utilizador.Text && passTreinador == tb_Password.Text || userAtleta == tb_Utilizador.Text && passAtleta == tb_Password.Text || userSocio == tb_Utilizador.Text && passSocio == tb_Password.Text)
                 {
-                    MessageBox.Show("Utilizador e password já usados!", "ATENÇÃO!", MessageBoxButtons.OK);
+                    MessageBox.Show("Utilizador e password já usados!", "ATENÇÃO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
@@ -151,7 +178,7 @@ namespace FootballLife_WF
                         }
                         catch (Exception x)
                         {
-                            MessageBox.Show(x.ToString());
+                            MessageBox.Show(x.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                         con.Close();
                         this.Dispose();
@@ -211,7 +238,7 @@ namespace FootballLife_WF
                         }
                         catch (Exception x)
                         {
-                            MessageBox.Show(x.ToString());
+                            MessageBox.Show(x.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                         con.Close();
                         this.Dispose();
@@ -292,36 +319,22 @@ namespace FootballLife_WF
                         }
                         catch (Exception x)
                         {
-                            MessageBox.Show(x.ToString());
+                            MessageBox.Show(x.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                         con.Close();
                         this.Dispose();
                     }
                     else
                     {
-                        MessageBox.Show("Necessário indicar a função do utilizador!", "ATENÇÃO!", MessageBoxButtons.OK);
+                        MessageBox.Show("Necessário indicar a função do utilizador!", "ATENÇÃO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
             }
             else
             {
-                MessageBox.Show("As passwords não coincidem!", "ATENÇÃO!", MessageBoxButtons.OK);
+                MessageBox.Show("As passwords não coincidem!", "ATENÇÃO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
-        }
-
-        private void Ckb_VerPass_CheckedChanged(object sender, EventArgs e)
-        {
-            if(ckb_VerPass.Checked == true)
-            {
-                tb_Password.UseSystemPasswordChar = false;
-                tb_ConfPassword.UseSystemPasswordChar = false;
-            }
-            else
-            {
-                tb_Password.UseSystemPasswordChar = true;
-                tb_ConfPassword.UseSystemPasswordChar = true;
-            }
         }
     }
 }

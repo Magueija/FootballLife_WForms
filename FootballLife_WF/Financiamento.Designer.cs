@@ -178,7 +178,7 @@
             this.button5.TabIndex = 19;
             this.button5.Text = "UTILIZADORES";
             this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.Button5_Click);
+            this.button5.Click += new System.EventHandler(this.Btn_Utilizadores_Click);
             // 
             // btn_Inventario
             // 
@@ -245,7 +245,7 @@
             this.button1.TabIndex = 6;
             this.button1.Text = "JOGOS";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            this.button1.Click += new System.EventHandler(this.Btn_Jogos_Click);
             // 
             // button2
             // 
@@ -262,7 +262,7 @@
             this.button2.TabIndex = 7;
             this.button2.Text = "EQUIPAS";
             this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.Button2_Click);
+            this.button2.Click += new System.EventHandler(this.Btn_Equipas_Click);
             // 
             // lbl_Sessao
             // 
@@ -309,7 +309,7 @@
             this.button3.TabIndex = 8;
             this.button3.Text = "ESTÁDIO";
             this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.Button3_Click);
+            this.button3.Click += new System.EventHandler(this.Btn_Estadio_Click);
             // 
             // img_LogOut
             // 
@@ -358,7 +358,7 @@
             this.button4.TabIndex = 9;
             this.button4.Text = "HISTÓRIA";
             this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.Button4_Click);
+            this.button4.Click += new System.EventHandler(this.Btn_Historia_Click);
             // 
             // img_Logo
             // 

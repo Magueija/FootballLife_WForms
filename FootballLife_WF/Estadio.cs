@@ -24,6 +24,7 @@ namespace FootballLife_WF
             InitializeComponent();
         }
 
+        //Verifica se é o current User ou se é um adepto
         private void Estadio_Load(object sender, EventArgs e)
         {
             if (Program.CurrentFuncaoUser == "Admin")
@@ -74,8 +75,10 @@ namespace FootballLife_WF
             }
         }
 
+
         //==============================================================================================
 
+        //Side Menu
         private void Img_Menu_Click(object sender, EventArgs e)
         {
             if (panel_Menu.Visible == true)
@@ -88,8 +91,11 @@ namespace FootballLife_WF
             }
         }
 
-//==============================================================================================
 
+        //==============================================================================================
+        
+
+        //Side Menu buttons click
         private void Btn_Jogos_Click(object sender, EventArgs e)
         {
             Jogos jgs = new Jogos();
@@ -151,6 +157,8 @@ namespace FootballLife_WF
             }
         }
 
+
+        //Side menu buttons click, se nao for adepto
         private void Btn1_Click(object sender, EventArgs e)
         {
             if (Program.CurrentFuncaoUser == "Admin")
@@ -208,6 +216,7 @@ namespace FootballLife_WF
             users.ShowDialog();
             this.Dispose();
         }
+
 
         private void Btn_LogOut_Click(object sender, EventArgs e)
         {

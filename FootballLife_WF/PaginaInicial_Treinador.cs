@@ -29,24 +29,14 @@ namespace FootballLife_WF
             Discussoes();
         }
 
+
         //==============================================================================================
 
-        private void Img_Menu_Click(object sender, EventArgs e)
-        {
-            if (panel_Menu.Visible == true)
-            {
-                panel_Menu.Visible = false;
-            }
-            else
-            {
-                panel_Menu.Visible = true;
-            }
-        }
-
-//==============================================================================================
-
+        int i = 2;
         private void Discussoes()
         {
+            flowpanel_Discussoes.Controls.Clear();
+
             SqlConnection con = new SqlConnection(Properties.Settings.Default.Connection);
             con.Open();
 
@@ -59,13 +49,11 @@ namespace FootballLife_WF
 
             try{
                 SqlDataReader dr;
-                string Query = ("SELECT dbo.TblDiscussao.IDDiscussao, dbo.TblDiscussao.NomeDiscussao, dbo.TblDiscussao.Descricao, dbo.TblAdministrador.IDAdministrador, dbo.TblAdministrador.Nome FROM dbo.TblDiscussao INNER JOIN dbo.TblAdministrador ON dbo.TblDiscussao.FK_IDAdministrador = dbo.TblAdministrador.IDAdministrador WHERE dbo.TblDiscussao.Apagado = 0 ORDER BY dbo.TblDiscussao.IDDiscussao DESC");
+                string Query = ("SELECT TOP (" + i + ") dbo.TblDiscussao.IDDiscussao, dbo.TblDiscussao.NomeDiscussao, dbo.TblDiscussao.Descricao, dbo.TblAdministrador.IDAdministrador, dbo.TblAdministrador.Nome FROM dbo.TblDiscussao INNER JOIN dbo.TblAdministrador ON dbo.TblDiscussao.FK_IDAdministrador = dbo.TblAdministrador.IDAdministrador WHERE dbo.TblDiscussao.Apagado = 0 ORDER BY dbo.TblDiscussao.IDDiscussao DESC");
                 SqlCommand Command = new SqlCommand(Query, con);
                 dr = Command.ExecuteReader();
                 while (dr.Read())
                 {
-                    
-
                     IDDiscussao = dr["IDDiscussao"].ToString();
                     NomeDiscussao = dr["NomeDiscussao"].ToString();
                     Descricao = dr["Descricao"].ToString();
@@ -124,56 +112,38 @@ namespace FootballLife_WF
                     panel.Controls.Add(Tb);
                 }
                 dr.Close();
+
+                i+=2;
+
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.ToString());
+                MessageBox.Show(x.Message, "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             con.Close();
         }
+        
 
-        private void Btn_LogOut_Click(object sender, EventArgs e)
+        //==============================================================================================
+
+        //Side Menu
+        private void Img_Menu_Click(object sender, EventArgs e)
         {
-            Program.CurrentFuncaoUser = "";
-            Program.CurrentIDUser = 0;
-            Program.CurrentIDEscalao = 0;
-
-            PaginaInicial PgInicio = new PaginaInicial();
-            this.Hide();
-            PgInicio.ShowDialog();
-            this.Dispose();
+            if (panel_Menu.Visible == true)
+            {
+                panel_Menu.Visible = false;
+            }
+            else
+            {
+                panel_Menu.Visible = true;
+            }
         }
 
-        private void Btn_NovaDiscussao_Click(object sender, EventArgs e)
-        {
-            NovaDiscussão PgInicio = new NovaDiscussão();
-            PgInicio.ShowDialog();
-        }
 
-        private void Btn_Utilizadores_Click(object sender, EventArgs e)
-        {
-            Utilizadores Users = new Utilizadores();
-            this.Hide();
-            Users.ShowDialog();
-            this.Dispose();
-        }
+        //==============================================================================================
 
-        private void Btn_Inventario_Click(object sender, EventArgs e)
-        {
-            Inventario Inv = new Inventario();
-            this.Hide();
-            Inv.ShowDialog();
-            this.Dispose();
-        }
-
-        private void Btn_Convocatoria_Click(object sender, EventArgs e)
-        {
-            Convocatoria conv = new Convocatoria();
-            this.Hide();
-            conv.ShowDialog();
-            this.Dispose();
-        }
-
+        
+        //Side Menu Buttons Click
         private void Btn_Jogos_Click(object sender, EventArgs e)
         {
             Jogos jgs = new Jogos();
@@ -198,12 +168,54 @@ namespace FootballLife_WF
             this.Dispose();
         }
 
-        private void Btn_Titulos_Click(object sender, EventArgs e)
+        private void Btn_Historia_Click(object sender, EventArgs e)
         {
             Historia Hist = new Historia();
             this.Hide();
             Hist.ShowDialog();
             this.Dispose();
+        }
+
+        private void Btn_Convocatoria_Click(object sender, EventArgs e)
+        {
+            Convocatoria conv = new Convocatoria();
+            this.Hide();
+            conv.ShowDialog();
+            this.Dispose();
+        }
+
+        private void Btn_Inventario_Click(object sender, EventArgs e)
+        {
+            Inventario Inv = new Inventario();
+            this.Hide();
+            Inv.ShowDialog();
+            this.Dispose();
+        }
+
+        private void Btn_Utilizadores_Click(object sender, EventArgs e)
+        {
+            Utilizadores Users = new Utilizadores();
+            this.Hide();
+            Users.ShowDialog();
+            this.Dispose();
+        }
+
+
+        private void Btn_LogOut_Click(object sender, EventArgs e)
+        {
+            Program.CurrentFuncaoUser = "";
+            Program.CurrentIDUser = 0;
+            Program.CurrentIDEscalao = 0;
+
+            PaginaInicial PgInicio = new PaginaInicial();
+            this.Hide();
+            PgInicio.ShowDialog();
+            this.Dispose();
+        }
+
+        private void AddMore2Discussoes_Click(object sender, EventArgs e)
+        {
+            Discussoes();
         }
     }
 }

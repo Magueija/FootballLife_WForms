@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Add_LucroDespesa));
             this.lbl_Titulo = new System.Windows.Forms.Label();
             this.rb_Utilizadores = new System.Windows.Forms.RadioButton();
@@ -161,6 +160,7 @@
             this.tb_OMontante.Name = "tb_OMontante";
             this.tb_OMontante.Size = new System.Drawing.Size(100, 22);
             this.tb_OMontante.TabIndex = 30;
+            this.tb_OMontante.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Tb_OMontante_KeyDown);
             // 
             // tb_ODescricao
             // 

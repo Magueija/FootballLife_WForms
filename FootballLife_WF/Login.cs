@@ -43,58 +43,11 @@ namespace FootballLife_WF
             }
         }
 
-        private void Img_Logo_Click(object sender, EventArgs e)
-        {
-            PaginaInicial PagIn = new PaginaInicial();
-            this.Hide();
-            PagIn.ShowDialog();
-            this.Dispose();
-        }
 
-        private void Img_BackArrow_MouseHover(object sender, EventArgs e)
-        {
-            img_BackArrow.Image = Properties.Resources.Back_Hover;
-        }
+        //======================================================================================
 
-        private void Img_BackArrow_MouseLeave(object sender, EventArgs e)
-        {
-            img_BackArrow.Image = Properties.Resources.Back_Normal;
-        }
 
-        private void Img_BackArrow_Click(object sender, EventArgs e)
-        {
-            PaginaInicial PgInicial = new PaginaInicial();
-            this.Hide();
-            PgInicial.ShowDialog();
-            this.Dispose();
-        }
-
-        private void Btn_Entrar_Click(object sender, EventArgs e)
-        {
-            LogIn();
-        }
-
-        private void tb_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                LogIn();
-            }
-
-            if (Control.IsKeyLocked(Keys.CapsLock))
-            {
-                lbl_Caps.Visible = true;
-                img_Caps.Visible = true;
-            }
-            else
-            {
-                lbl_Caps.Visible = false;
-                img_Caps.Visible = false;
-            }
-        }
-
-        public int IDLogIn { get; set; }
-
+        //Verificacao Login
         private void LogIn()
         {
             if (chb_Lembrar.Checked)
@@ -256,20 +209,79 @@ namespace FootballLife_WF
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.ToString());
+                MessageBox.Show(x.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             con.Close();
         }
 
+
+        private void Btn_Entrar_Click(object sender, EventArgs e)
+        {
+            LogIn();
+        }
+
+        private void tb_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                LogIn();
+            }
+
+            if (Control.IsKeyLocked(Keys.CapsLock))
+            {
+                lbl_Caps.Visible = true;
+                img_Caps.Visible = true;
+            }
+            else
+            {
+                lbl_Caps.Visible = false;
+                img_Caps.Visible = false;
+            }
+        }
+
+
+        //Label "Esqueceu a sua password" click
         private void Lbl_EsqueceuPassword_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Se esqueceu-se da sua password, por favor contacte um dos administradores para alterar ou verificar a sua password. Obrigado!\nDeseja ver os contactos da Administração?","Esqueceu a sua password?",MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show("Se esqueceu-se da sua password, por favor contacte um dos administradores para alterar ou verificar a sua password. Obrigado!\nDeseja ver os contactos da Administração?","Esqueceu a sua password?",MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
             if (result == DialogResult.Yes)
             {
                 ContactosAdministracao Emails = new ContactosAdministracao();
                 Emails.Show();
             }
+        }
+
+
+        //============================================================================================
+
+
+        //Voltar a pagina inicialk
+        private void Img_Logo_Click(object sender, EventArgs e)
+        {
+            PaginaInicial PagIn = new PaginaInicial();
+            this.Hide();
+            PagIn.ShowDialog();
+            this.Dispose();
+        }
+
+        //Back Arrow
+        private void Img_BackArrow_MouseHover(object sender, EventArgs e)
+        {
+            img_BackArrow.Image = Properties.Resources.Back_Hover;
+        }
+
+        private void Img_BackArrow_MouseLeave(object sender, EventArgs e)
+        {
+            img_BackArrow.Image = Properties.Resources.Back_Normal;
+        }
+
+        private void Img_BackArrow_Click(object sender, EventArgs e)
+        {
+            PaginaInicial PgInicial = new PaginaInicial();
+            this.Hide();
+            PgInicial.ShowDialog();
+            this.Dispose();
         }
     }
 }

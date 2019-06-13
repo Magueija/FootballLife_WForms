@@ -18,6 +18,19 @@ namespace FootballLife_WF
             InitializeComponent();
         }
 
+        //=========
+
+        private void EditarInventario_MouseHover(object sender, EventArgs e)
+        {
+            img_Add.Image = Properties.Resources.Add_Hover;
+        }
+
+        private void EditarInventario_MouseLeave(object sender, EventArgs e)
+        {
+            img_Add.Image = Properties.Resources.Add_Normal;
+        }
+
+        //=========
 
         private void EditarInventario_Load(object sender, EventArgs e)
         {
@@ -117,11 +130,16 @@ namespace FootballLife_WF
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.ToString());
+                MessageBox.Show(x.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             con.Close();
         }
 
+
+        //=======================================================================================
+
+
+        //Imagem add click
         private void Img_Add_Click(object sender, EventArgs e)
         {
             NewColuns();
@@ -175,19 +193,11 @@ namespace FootballLife_WF
             panel.Controls.Add(tbQuantidade);
         }
 
-        private void EditarInventario_MouseHover(object sender, EventArgs e)
-        {
-            img_Add.Image = Properties.Resources.Add_Hover;
-        }
 
-        private void EditarInventario_MouseLeave(object sender, EventArgs e)
-        {
-            img_Add.Image = Properties.Resources.Add_Normal;
-        }
-        private string[] IDMaterial { get; set; }
-        private string[] nome { get; set; }
-        private string[] quantidade { get; set; }
-        
+        //================================================================================
+
+
+        //Gravar
         private void Btn_Gravar_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection(Properties.Settings.Default.Connection);
@@ -333,6 +343,5 @@ namespace FootballLife_WF
 
             this.Dispose();
         }
-
     }
 }

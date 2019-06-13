@@ -48,11 +48,13 @@
             this.lbl_Titulo = new System.Windows.Forms.Label();
             this.flowpanel_Discussoes = new System.Windows.Forms.FlowLayoutPanel();
             this.img_Fundo = new System.Windows.Forms.PictureBox();
+            this.img_NovaDiscussao = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.img_Menu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_LogOut)).BeginInit();
             this.panel_Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_Fundo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img_NovaDiscussao)).BeginInit();
             this.SuspendLayout();
             // 
             // img_Menu
@@ -178,7 +180,7 @@
             this.btn_Titulos.TabIndex = 9;
             this.btn_Titulos.Text = "HISTÓRIA";
             this.btn_Titulos.UseVisualStyleBackColor = false;
-            this.btn_Titulos.Click += new System.EventHandler(this.Btn_Titulos_Click);
+            this.btn_Titulos.Click += new System.EventHandler(this.Btn_Historia_Click);
             // 
             // btn_Estadio
             // 
@@ -329,7 +331,7 @@
             this.lbl_Titulo.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Titulo.Font = new System.Drawing.Font("Bauhaus 93", 65.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Titulo.ForeColor = System.Drawing.Color.White;
-            this.lbl_Titulo.Location = new System.Drawing.Point(467, 97);
+            this.lbl_Titulo.Location = new System.Drawing.Point(467, 80);
             this.lbl_Titulo.Name = "lbl_Titulo";
             this.lbl_Titulo.Size = new System.Drawing.Size(462, 98);
             this.lbl_Titulo.TabIndex = 20;
@@ -337,15 +339,15 @@
             // 
             // flowpanel_Discussoes
             // 
-            this.flowpanel_Discussoes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.flowpanel_Discussoes.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.flowpanel_Discussoes.AutoScroll = true;
             this.flowpanel_Discussoes.BackColor = System.Drawing.Color.LightGray;
             this.flowpanel_Discussoes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.flowpanel_Discussoes.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowpanel_Discussoes.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.flowpanel_Discussoes.Location = new System.Drawing.Point(279, 272);
+            this.flowpanel_Discussoes.Location = new System.Drawing.Point(289, 197);
             this.flowpanel_Discussoes.Name = "flowpanel_Discussoes";
-            this.flowpanel_Discussoes.Size = new System.Drawing.Size(830, 448);
+            this.flowpanel_Discussoes.Size = new System.Drawing.Size(830, 514);
             this.flowpanel_Discussoes.TabIndex = 27;
             this.flowpanel_Discussoes.WrapContents = false;
             // 
@@ -360,6 +362,22 @@
             this.img_Fundo.TabIndex = 26;
             this.img_Fundo.TabStop = false;
             // 
+            // img_NovaDiscussao
+            // 
+            this.img_NovaDiscussao.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.img_NovaDiscussao.BackColor = System.Drawing.Color.Transparent;
+            this.img_NovaDiscussao.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.img_NovaDiscussao.Image = global::FootballLife_WF.Properties.Resources.Adicionar_Criar_white_;
+            this.img_NovaDiscussao.Location = new System.Drawing.Point(289, 717);
+            this.img_NovaDiscussao.MaximumSize = new System.Drawing.Size(20, 20);
+            this.img_NovaDiscussao.MinimumSize = new System.Drawing.Size(20, 20);
+            this.img_NovaDiscussao.Name = "img_NovaDiscussao";
+            this.img_NovaDiscussao.Size = new System.Drawing.Size(20, 20);
+            this.img_NovaDiscussao.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.img_NovaDiscussao.TabIndex = 28;
+            this.img_NovaDiscussao.TabStop = false;
+            this.img_NovaDiscussao.Click += new System.EventHandler(this.AddMore2Discussoes_Click);
+            // 
             // PaginaInicial_Treinador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -368,6 +386,7 @@
             this.BackgroundImage = global::FootballLife_WF.Properties.Resources.Fundo_1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1364, 749);
+            this.Controls.Add(this.img_NovaDiscussao);
             this.Controls.Add(this.lbl_Titulo);
             this.Controls.Add(this.flowpanel_Discussoes);
             this.Controls.Add(this.panel_Menu);
@@ -388,6 +407,7 @@
             this.panel_Menu.ResumeLayout(false);
             this.panel_Menu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_Fundo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img_NovaDiscussao)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -413,5 +433,6 @@
         private System.Windows.Forms.Label lbl_Titulo;
         private System.Windows.Forms.FlowLayoutPanel flowpanel_Discussoes;
         private System.Windows.Forms.PictureBox img_Fundo;
+        private System.Windows.Forms.PictureBox img_NovaDiscussao;
     }
 }

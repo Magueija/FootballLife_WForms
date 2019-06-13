@@ -103,36 +103,44 @@ namespace FootballLife_WF
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.ToString());
+                MessageBox.Show(x.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             con.Close();
         }
-
-        private void Btn_VerJogo_Click(object sender, EventArgs e)
-        {
-            VerJogo verjg = new VerJogo(IDJogo);
-            verjg.Show();
-        }
+        
 
         private void Pb_Delete_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection(Properties.Settings.Default.Connection);
             con.Open();
 
-            try
-            {
-                string Query = ("UPDATE TblJogo SET Apagado = 1 WHERE IDJogo = @IDJogo");
-                SqlCommand Command = new SqlCommand(Query, con);
-                Command.Parameters.AddWithValue("@IDJogo", IDJogo);
-                Command.ExecuteNonQuery();
-            }
-            catch (Exception x)
-            {
-                MessageBox.Show(x.ToString());
-            }
-            con.Close();
+            DialogResult result = MessageBox.Show("Tem a certeza que pretente eliminar esta jogo / resultado?", "ATENÇÃO!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-            this.Dispose();
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    string Query = ("UPDATE TblJogo SET Apagado = 1 WHERE IDJogo = @IDJogo");
+                    SqlCommand Command = new SqlCommand(Query, con);
+                    Command.Parameters.AddWithValue("@IDJogo", IDJogo);
+                    Command.ExecuteNonQuery();
+
+                    MessageBox.Show($"Jogo Apagado!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception x)
+                {
+                    MessageBox.Show(x.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                con.Close();
+                this.Dispose();
+            }
+        }
+
+
+        private void Btn_VerJogo_Click(object sender, EventArgs e)
+        {
+            VerJogo verjg = new VerJogo(IDJogo);
+            verjg.Show();
         }
     }
 }
