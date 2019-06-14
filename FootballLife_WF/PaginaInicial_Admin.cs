@@ -106,7 +106,7 @@ namespace FootballLife_WF
                     Panel panel = new Panel();
                     panel.Width = 800;
                     panel.Height = 250;
-                    panel.Margin = new Padding(5, 5, 5, 10);
+                    panel.Margin = new Padding(5, 5, 5, 0);
                     panel.Anchor = AnchorStyles.Top;
                     panel.BorderStyle = BorderStyle.Fixed3D;
                     panel.BackColor = Color.White;
@@ -126,8 +126,9 @@ namespace FootballLife_WF
 
                     Label lblUser = new Label();
                     lblUser.Location = new Point(50, 18);
+                    lblUser.Width = 250;
                     lblUser.Text = NomeAdmin;
-                    lblUser.Font = new Font("Berlin Sans FB", 9, FontStyle.Regular);
+                    lblUser.Font = new Font("Berlin Sans FB", 10, FontStyle.Regular);
                     lblUser.Anchor = AnchorStyles.Top | AnchorStyles.Left;
                     lblUser.Visible = true;
                     panel.Controls.Add(lblUser);

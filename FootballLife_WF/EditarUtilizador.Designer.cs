@@ -265,52 +265,59 @@
             // 
             // tb_Password
             // 
-            this.tb_Password.Location = new System.Drawing.Point(103, 362);
+            this.tb_Password.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Password.Location = new System.Drawing.Point(103, 361);
             this.tb_Password.Name = "tb_Password";
-            this.tb_Password.Size = new System.Drawing.Size(330, 20);
+            this.tb_Password.Size = new System.Drawing.Size(330, 21);
             this.tb_Password.TabIndex = 21;
             this.tb_Password.UseSystemPasswordChar = true;
             // 
             // tb_Utilizador
             // 
-            this.tb_Utilizador.Location = new System.Drawing.Point(103, 336);
+            this.tb_Utilizador.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Utilizador.Location = new System.Drawing.Point(103, 335);
             this.tb_Utilizador.Name = "tb_Utilizador";
-            this.tb_Utilizador.Size = new System.Drawing.Size(330, 20);
+            this.tb_Utilizador.Size = new System.Drawing.Size(330, 21);
             this.tb_Utilizador.TabIndex = 20;
             // 
             // tb_CodPostal
             // 
-            this.tb_CodPostal.Location = new System.Drawing.Point(134, 185);
+            this.tb_CodPostal.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_CodPostal.Location = new System.Drawing.Point(134, 184);
             this.tb_CodPostal.Name = "tb_CodPostal";
-            this.tb_CodPostal.Size = new System.Drawing.Size(299, 20);
+            this.tb_CodPostal.Size = new System.Drawing.Size(299, 21);
             this.tb_CodPostal.TabIndex = 19;
             // 
             // tb_Morada
             // 
-            this.tb_Morada.Location = new System.Drawing.Point(88, 162);
+            this.tb_Morada.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Morada.Location = new System.Drawing.Point(88, 161);
             this.tb_Morada.Name = "tb_Morada";
-            this.tb_Morada.Size = new System.Drawing.Size(345, 20);
+            this.tb_Morada.Size = new System.Drawing.Size(345, 21);
             this.tb_Morada.TabIndex = 18;
             // 
             // tb_Email
             // 
-            this.tb_Email.Location = new System.Drawing.Point(76, 137);
+            this.tb_Email.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Email.Location = new System.Drawing.Point(76, 136);
             this.tb_Email.Name = "tb_Email";
-            this.tb_Email.Size = new System.Drawing.Size(357, 20);
+            this.tb_Email.Size = new System.Drawing.Size(357, 21);
             this.tb_Email.TabIndex = 17;
             // 
             // tb_Telemovel
             // 
-            this.tb_Telemovel.Location = new System.Drawing.Point(109, 111);
+            this.tb_Telemovel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Telemovel.Location = new System.Drawing.Point(109, 109);
             this.tb_Telemovel.Name = "tb_Telemovel";
-            this.tb_Telemovel.Size = new System.Drawing.Size(324, 20);
+            this.tb_Telemovel.Size = new System.Drawing.Size(324, 21);
             this.tb_Telemovel.TabIndex = 16;
             // 
             // tb_Nome
             // 
-            this.tb_Nome.Location = new System.Drawing.Point(76, 84);
+            this.tb_Nome.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Nome.Location = new System.Drawing.Point(76, 83);
             this.tb_Nome.Name = "tb_Nome";
-            this.tb_Nome.Size = new System.Drawing.Size(358, 20);
+            this.tb_Nome.Size = new System.Drawing.Size(358, 21);
             this.tb_Nome.TabIndex = 15;
             // 
             // btn_Fechar

@@ -80,6 +80,8 @@ namespace FootballLife_WF
 
         private void Chb_CheckedChanged(object sender, EventArgs e)
         {
+            flowpanel_Jogos.Controls.Clear();
+
             VerificacaoCheckBoxs();
         }
 
@@ -139,7 +141,6 @@ namespace FootballLife_WF
         int i = 2;
         private void Jogo(string IDEscalao)
         {
-            flowpanel_Jogos.Controls.Clear();
 
             SqlConnection con = new SqlConnection(Properties.Settings.Default.Connection);
             con.Open();
@@ -334,8 +335,9 @@ namespace FootballLife_WF
             this.Dispose();
         }
 
-        private void AddMore2Jogos(object sender, EventArgs e)
+        private void Img_AddMore2Jogos_Click(object sender, EventArgs e)
         {
+            flowpanel_Jogos.Controls.Clear();
             VerificacaoCheckBoxs();
         }
     }

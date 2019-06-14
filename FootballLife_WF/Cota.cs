@@ -249,12 +249,12 @@ namespace FootballLife_WF
 
                         //SELECIONA O MES A PAGAR (O MAIS ANTIGO)
                         SqlDataReader drMes;
-                        string QueryMes = ("SELECT dbo.TblMes.IDMes, dbo.TblMes.Mes FROM dbo.TblMes RIGHT OUTER JOIN dbo.TblCotaAtleta ON dbo.TblMes.IDMes = dbo.TblCotaAtleta.FK_IDMes WHERE " +
+                        string QueryMes = ("SELECT TOP(1) dbo.TblMes.IDMes, dbo.TblMes.Mes FROM dbo.TblMes RIGHT OUTER JOIN dbo.TblCotaAtleta ON dbo.TblMes.IDMes = dbo.TblCotaAtleta.FK_IDMes WHERE " +
                             "dbo.TblCotaAtleta.Pago = 0 AND dbo.TblCotaAtleta.FK_IDAtleta = " + Program.CurrentIDUser);
                         SqlCommand CommandMes = new SqlCommand(QueryMes, con);
                         drMes = CommandMes.ExecuteReader();
 
-                        if (drMes.Read())
+                        while (drMes.Read())
                         {
                             IDMes = drMes["IDMes"].ToString();
                             Mes = drMes["Mes"].ToString();
@@ -326,12 +326,12 @@ namespace FootballLife_WF
 
                         //SELECIONA O MES A PAGAR (O MAIS ANTIGO)
                         SqlDataReader drMes;
-                        string QueryMes = ("SELECT dbo.TblMes.IDMes, dbo.TblMes.Mes FROM dbo.TblMes RIGHT OUTER JOIN dbo.TblCotaSocio ON dbo.TblMes.IDMes = dbo.TblCotaSocio.FK_IDMes WHERE " +
+                        string QueryMes = ("SELECT TOP(1) dbo.TblMes.IDMes, dbo.TblMes.Mes FROM dbo.TblMes RIGHT OUTER JOIN dbo.TblCotaSocio ON dbo.TblMes.IDMes = dbo.TblCotaSocio.FK_IDMes WHERE " +
                             "dbo.TblCotaSocio.Pago = 0 AND dbo.TblCotaSocio.FK_IDSocio = " + Program.CurrentIDUser);
                         SqlCommand CommandMes = new SqlCommand(QueryMes, con);
                         drMes = CommandMes.ExecuteReader();
 
-                        if (drMes.Read())
+                        while (drMes.Read())
                         {
                             IDMes = drMes["IDMes"].ToString();
                             Mes = drMes["Mes"].ToString();

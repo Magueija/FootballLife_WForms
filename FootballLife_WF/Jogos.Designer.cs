@@ -59,11 +59,12 @@
             this.chb_Todos = new System.Windows.Forms.CheckBox();
             this.lbl_Pesquisar = new System.Windows.Forms.Label();
             this.img_Linha = new System.Windows.Forms.PictureBox();
-            this.flowpanel_Jogos = new System.Windows.Forms.FlowLayoutPanel();
             this.lbl_NovoResultado = new System.Windows.Forms.Label();
             this.img_NovoResultado = new System.Windows.Forms.PictureBox();
             this.btn_NovoResultado = new System.Windows.Forms.Button();
             this.img_Fundo = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.flowpanel_Jogos = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.img_Menu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Logo)).BeginInit();
             this.panel_Menu.SuspendLayout();
@@ -72,6 +73,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.img_Linha)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_NovoResultado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Fundo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // img_Menu
@@ -390,7 +392,7 @@
             this.panel_Pesquisa.Controls.Add(this.chb_Seniores);
             this.panel_Pesquisa.Controls.Add(this.chb_Todos);
             this.panel_Pesquisa.Controls.Add(this.lbl_Pesquisar);
-            this.panel_Pesquisa.Location = new System.Drawing.Point(320, 222);
+            this.panel_Pesquisa.Location = new System.Drawing.Point(323, 222);
             this.panel_Pesquisa.Name = "panel_Pesquisa";
             this.panel_Pesquisa.Size = new System.Drawing.Size(698, 78);
             this.panel_Pesquisa.TabIndex = 17;
@@ -548,26 +550,12 @@
             this.img_Linha.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.img_Linha.BackColor = System.Drawing.Color.Transparent;
             this.img_Linha.Image = global::FootballLife_WF.Properties.Resources.Linha_Separadora;
-            this.img_Linha.Location = new System.Drawing.Point(226, 306);
+            this.img_Linha.Location = new System.Drawing.Point(229, 303);
             this.img_Linha.Name = "img_Linha";
             this.img_Linha.Size = new System.Drawing.Size(892, 53);
             this.img_Linha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.img_Linha.TabIndex = 25;
             this.img_Linha.TabStop = false;
-            // 
-            // flowpanel_Jogos
-            // 
-            this.flowpanel_Jogos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.flowpanel_Jogos.AutoScroll = true;
-            this.flowpanel_Jogos.BackColor = System.Drawing.Color.Transparent;
-            this.flowpanel_Jogos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.flowpanel_Jogos.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowpanel_Jogos.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.flowpanel_Jogos.Location = new System.Drawing.Point(320, 365);
-            this.flowpanel_Jogos.Name = "flowpanel_Jogos";
-            this.flowpanel_Jogos.Size = new System.Drawing.Size(715, 372);
-            this.flowpanel_Jogos.TabIndex = 26;
-            this.flowpanel_Jogos.WrapContents = false;
             // 
             // lbl_NovoResultado
             // 
@@ -636,6 +624,36 @@
             this.img_Fundo.TabIndex = 30;
             this.img_Fundo.TabStop = false;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Image = global::FootballLife_WF.Properties.Resources.Adicionar_Criar_white_;
+            this.pictureBox2.Location = new System.Drawing.Point(323, 720);
+            this.pictureBox2.MaximumSize = new System.Drawing.Size(20, 20);
+            this.pictureBox2.MinimumSize = new System.Drawing.Size(20, 20);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 35;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.Img_AddMore2Jogos_Click);
+            // 
+            // flowpanel_Jogos
+            // 
+            this.flowpanel_Jogos.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.flowpanel_Jogos.AutoScroll = true;
+            this.flowpanel_Jogos.BackColor = System.Drawing.Color.Transparent;
+            this.flowpanel_Jogos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.flowpanel_Jogos.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowpanel_Jogos.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.flowpanel_Jogos.Location = new System.Drawing.Point(323, 339);
+            this.flowpanel_Jogos.Name = "flowpanel_Jogos";
+            this.flowpanel_Jogos.Size = new System.Drawing.Size(715, 375);
+            this.flowpanel_Jogos.TabIndex = 34;
+            this.flowpanel_Jogos.WrapContents = false;
+            // 
             // Jogos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -645,10 +663,11 @@
             this.BackgroundImage = global::FootballLife_WF.Properties.Resources.Fundo_1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1364, 749);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.flowpanel_Jogos);
             this.Controls.Add(this.lbl_NovoResultado);
             this.Controls.Add(this.img_NovoResultado);
             this.Controls.Add(this.btn_NovoResultado);
-            this.Controls.Add(this.flowpanel_Jogos);
             this.Controls.Add(this.img_Linha);
             this.Controls.Add(this.panel_Pesquisa);
             this.Controls.Add(this.lbl_Titulo);
@@ -674,6 +693,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.img_Linha)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_NovoResultado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Fundo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -703,7 +723,6 @@
         private System.Windows.Forms.CheckBox chb_Todos;
         private System.Windows.Forms.Label lbl_Pesquisar;
         private System.Windows.Forms.PictureBox img_Linha;
-        private System.Windows.Forms.FlowLayoutPanel flowpanel_Jogos;
         private System.Windows.Forms.Label lbl_NovoResultado;
         private System.Windows.Forms.PictureBox img_NovoResultado;
         private System.Windows.Forms.Button btn_NovoResultado;
@@ -715,5 +734,7 @@
         private System.Windows.Forms.PictureBox img_LogOut;
         private System.Windows.Forms.Button btn_LogOut;
         private System.Windows.Forms.PictureBox img_Fundo;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.FlowLayoutPanel flowpanel_Jogos;
     }
 }

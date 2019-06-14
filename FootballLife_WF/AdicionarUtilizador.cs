@@ -71,22 +71,18 @@ namespace FootballLife_WF
             con.Open();
 
             string userAdmin = "";
-            string passAdmin = "";
 
             string userTreinador = "";
-            string passTreinador = "";
 
             string userAtleta = "";
-            string passAtleta = "";
 
             string userSocio = "";
-            string passSocio = "";
 
             try
             {
                 SqlDataReader dr;
                 //Administrador
-                string QueryAdmin = ("SELECT  Utilizador, Palavra_Chave FROM TblAdministrador WHERE Utilizador LIKE @Utilizador AND Palavra_Chave LIKE @Palavra_Chave");
+                string QueryAdmin = ("SELECT  Utilizador FROM TblAdministrador WHERE Utilizador LIKE @Utilizador");
                 SqlCommand CommandAdmin = new SqlCommand(QueryAdmin, con);
 
                 CommandAdmin.Parameters.AddWithValue("@utilizador", tb_Utilizador.Text);
@@ -97,12 +93,11 @@ namespace FootballLife_WF
                 while (dr.Read())
                 {
                     userAdmin = dr["Utilizador"].ToString();
-                    passAdmin = dr["Palavra_Chave"].ToString();
                 }
                 dr.Close();
 
                 //Treinador
-                string QueryTreinador = ("SELECT  Utilizador, Palavra_Chave FROM TblTreinador WHERE Utilizador LIKE @Utilizador AND Palavra_Chave LIKE @Palavra_Chave");
+                string QueryTreinador = ("SELECT Utilizador FROM TblTreinador WHERE Utilizador LIKE @Utilizador");
                 SqlCommand CommandTreinador = new SqlCommand(QueryTreinador, con);
 
                 CommandTreinador.Parameters.AddWithValue("@utilizador", tb_Utilizador.Text);
@@ -112,12 +107,11 @@ namespace FootballLife_WF
                 while (dr.Read())
                 {
                     userTreinador = dr["Utilizador"].ToString();
-                    passTreinador = dr["Palavra_Chave"].ToString();
                 }
                 dr.Close();
 
                 //Atleta
-                string QueryAtleta = ("SELECT  Utilizador, Palavra_Chave FROM TblAtleta WHERE Utilizador LIKE @Utilizador AND Palavra_Chave LIKE @Palavra_Chave");
+                string QueryAtleta = ("SELECT  Utilizador FROM TblAtleta WHERE Utilizador LIKE @Utilizador");
                 SqlCommand CommandAtleta = new SqlCommand(QueryAtleta, con);
 
                 CommandAtleta.Parameters.AddWithValue("@utilizador", tb_Utilizador.Text);
@@ -127,12 +121,11 @@ namespace FootballLife_WF
                 while (dr.Read())
                 {
                     userAtleta = dr["Utilizador"].ToString();
-                    passAtleta = dr["Palavra_Chave"].ToString();
                 }
                 dr.Close();
 
                 //Socio
-                string QuerySocio = ("SELECT  Utilizador, Palavra_Chave FROM TblSocio WHERE Utilizador LIKE @Utilizador AND Palavra_Chave LIKE @Palavra_Chave");
+                string QuerySocio = ("SELECT  Utilizador FROM TblSocio WHERE Utilizador LIKE @Utilizador");
                 SqlCommand CommandSocio = new SqlCommand(QuerySocio, con);
 
                 CommandSocio.Parameters.AddWithValue("@utilizador", tb_Utilizador.Text);
@@ -142,7 +135,6 @@ namespace FootballLife_WF
                 while (dr.Read())
                 {
                     userSocio = dr["Utilizador"].ToString();
-                    passSocio = dr["Palavra_Chave"].ToString();
                 }
                 dr.Close();
 
@@ -152,11 +144,28 @@ namespace FootballLife_WF
                 MessageBox.Show(x.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            if (tb_Password.Text == tb_ConfPassword.Text)
+            if (cb_Funcao.SelectedItem != "Administrador" && cb_Funcao.SelectedItem != "Treinador" && cb_Funcao.SelectedItem != "Atleta" && cb_Funcao.SelectedItem != "Sócio")
             {
-                if (userAdmin == tb_Utilizador.Text && passAdmin == tb_Password.Text || userTreinador == tb_Utilizador.Text && passTreinador == tb_Password.Text || userAtleta == tb_Utilizador.Text && passAtleta == tb_Password.Text || userSocio == tb_Utilizador.Text && passSocio == tb_Password.Text)
+                MessageBox.Show("Função não atribuida!", "ATENÇÃO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (tb_Nome.Text == "" || tb_Email.Text == "" || tb_Utilizador.Text == "" || tb_Password.Text == "" || tb_ConfPassword.Text == "")
+            {
+                MessageBox.Show("Campos obrigatórios não preenchidos!", "ATENÇÃO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (tb_Password.Text != "" && tb_ConfPassword.Text != "" && tb_Password.Text == tb_ConfPassword.Text)
+            {
+                if (cb_Funcao.SelectedItem == "Treinador" || cb_Funcao.SelectedItem == "Atleta")
                 {
-                    MessageBox.Show("Utilizador e password já usados!", "ATENÇÃO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    if (rb_Seniores.Checked == false && rb_Juniores.Checked == false && rb_Juvenis.Checked == false && rb_Iniciados.Checked == false && rb_Infantis.Checked == false && rb_Benjamins.Checked == false && rb_Traquinas.Checked == false && rb_Petizes.Checked == false)
+                    {
+                        MessageBox.Show("Escalão não atribuido!", "ATENÇÃO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                }
+
+                if (userAdmin == tb_Utilizador.Text || userTreinador == tb_Utilizador.Text || userAtleta == tb_Utilizador.Text || userSocio == tb_Utilizador.Text)
+                {
+                    MessageBox.Show("Nome de Utilizador já usado!", "ATENÇÃO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {

@@ -157,6 +157,11 @@ namespace FootballLife_WF
         {
             flowpanel_Jogos.Controls.Clear();
 
+            VerificacaoCheckBoxs();
+        }
+
+        private void VerificacaoCheckBoxs()
+        {
             if (chb_Todos.Checked == true)
             {
                 JogoTodos();
@@ -209,10 +214,9 @@ namespace FootballLife_WF
         //==============================================================================================
 
 
+        int i = 2;
         private void Jogo(string IDEscalao)
         {
-            flowpanel_Jogos.Controls.Clear();
-
             SqlConnection con = new SqlConnection(Properties.Settings.Default.Connection);
             con.Open();
 
@@ -234,7 +238,7 @@ namespace FootballLife_WF
             try
             {
                 SqlDataReader dr;
-                string Query = ("SELECT dbo.TblJogo.IDJogo, dbo.TblJogo.Data, dbo.TblJogo.EquipaCasa, dbo.TblJogo.EquipaFora, dbo.TblJogo.GolosCasa, dbo.TblEscalao.IDEscalao, dbo.TblEscalao.Escalao, dbo.TblJogo.GolosFora, dbo.TblJogo.Path_ImgAdversario FROM dbo.TblJogo INNER JOIN dbo.TblEscalao ON dbo.TblJogo.FK_IDEscalao = dbo.TblEscalao.IDEscalao WHERE (dbo.TblJogo.Apagado = 0) AND dbo.TblJogo.FK_IDEscalao = " + IDEscalao + " ORDER BY dbo.TblJogo.Data DESC");
+                string Query = ("SELECT TOP(" + i + ") dbo.TblJogo.IDJogo, dbo.TblJogo.Data, dbo.TblJogo.EquipaCasa, dbo.TblJogo.EquipaFora, dbo.TblJogo.GolosCasa, dbo.TblEscalao.IDEscalao, dbo.TblEscalao.Escalao, dbo.TblJogo.GolosFora, dbo.TblJogo.Path_ImgAdversario FROM dbo.TblJogo INNER JOIN dbo.TblEscalao ON dbo.TblJogo.FK_IDEscalao = dbo.TblEscalao.IDEscalao WHERE (dbo.TblJogo.Apagado = 0) AND dbo.TblJogo.FK_IDEscalao = " + IDEscalao + " ORDER BY dbo.TblJogo.Data DESC");
                 SqlCommand Command = new SqlCommand(Query, con);
                 dr = Command.ExecuteReader();
                 while (dr.Read())
@@ -256,6 +260,7 @@ namespace FootballLife_WF
                     flowpanel_Jogos.Controls.Add(jogo);
                 }
                 dr.Close();
+                i+=2;
             }
             catch (Exception x)
             {
@@ -264,6 +269,7 @@ namespace FootballLife_WF
             con.Close();
         }
 
+        int j = 2;
         private void JogoTodos()
         {
             flowpanel_Jogos.Controls.Clear();
@@ -289,7 +295,7 @@ namespace FootballLife_WF
             try
             {
                 SqlDataReader dr;
-                string Query = ("SELECT dbo.TblJogo.IDJogo, dbo.TblJogo.Data, dbo.TblJogo.EquipaCasa, dbo.TblJogo.EquipaFora, dbo.TblJogo.GolosCasa, dbo.TblEscalao.IDEscalao, dbo.TblEscalao.Escalao, dbo.TblJogo.GolosFora, dbo.TblJogo.Path_ImgAdversario FROM dbo.TblJogo INNER JOIN dbo.TblEscalao ON dbo.TblJogo.FK_IDEscalao = dbo.TblEscalao.IDEscalao WHERE(dbo.TblJogo.Apagado = 0) ORDER BY dbo.TblJogo.Data DESC");
+                string Query = ("SELECT TOP(" + j + ") dbo.TblJogo.IDJogo, dbo.TblJogo.Data, dbo.TblJogo.EquipaCasa, dbo.TblJogo.EquipaFora, dbo.TblJogo.GolosCasa, dbo.TblEscalao.IDEscalao, dbo.TblEscalao.Escalao, dbo.TblJogo.GolosFora, dbo.TblJogo.Path_ImgAdversario FROM dbo.TblJogo INNER JOIN dbo.TblEscalao ON dbo.TblJogo.FK_IDEscalao = dbo.TblEscalao.IDEscalao WHERE(dbo.TblJogo.Apagado = 0) ORDER BY dbo.TblJogo.Data DESC");
                 SqlCommand Command = new SqlCommand(Query, con);
                 dr = Command.ExecuteReader();
                 while (dr.Read())
@@ -311,6 +317,7 @@ namespace FootballLife_WF
                     flowpanel_Jogos.Controls.Add(jogo);
                 }
                 dr.Close();
+                j += 2;
             }
             catch (Exception x)
             {
@@ -487,6 +494,12 @@ namespace FootballLife_WF
             this.Hide();
             PgInicio.ShowDialog();
             this.Dispose();
+        }
+
+        private void Img_AddMore2Jogos_Click(object sender, EventArgs e)
+        {
+            flowpanel_Jogos.Controls.Clear();
+            VerificacaoCheckBoxs();
         }
     }
 }

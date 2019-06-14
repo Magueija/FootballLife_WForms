@@ -256,7 +256,7 @@
             this.panel_Menu.Controls.Add(this.btn_Titulos);
             this.panel_Menu.Location = new System.Drawing.Point(0, 65);
             this.panel_Menu.Name = "panel_Menu";
-            this.panel_Menu.Size = new System.Drawing.Size(160, 3009);
+            this.panel_Menu.Size = new System.Drawing.Size(160, 3474);
             this.panel_Menu.TabIndex = 12;
             this.panel_Menu.Visible = false;
             // 
@@ -268,7 +268,7 @@
             this.lbl_Sessao.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Sessao.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl_Sessao.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Sessao.Location = new System.Drawing.Point(74, 2964);
+            this.lbl_Sessao.Location = new System.Drawing.Point(74, 3429);
             this.lbl_Sessao.Name = "lbl_Sessao";
             this.lbl_Sessao.Size = new System.Drawing.Size(44, 16);
             this.lbl_Sessao.TabIndex = 66;
@@ -302,7 +302,7 @@
             this.lbl_Terminar.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Terminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl_Terminar.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Terminar.Location = new System.Drawing.Point(74, 2948);
+            this.lbl_Terminar.Location = new System.Drawing.Point(74, 3413);
             this.lbl_Terminar.Name = "lbl_Terminar";
             this.lbl_Terminar.Size = new System.Drawing.Size(61, 16);
             this.lbl_Terminar.TabIndex = 65;
@@ -317,7 +317,7 @@
             this.img_LogOut.BackColor = System.Drawing.Color.Transparent;
             this.img_LogOut.Cursor = System.Windows.Forms.Cursors.Hand;
             this.img_LogOut.Image = global::FootballLife_WF.Properties.Resources.LogOut;
-            this.img_LogOut.Location = new System.Drawing.Point(24, 2939);
+            this.img_LogOut.Location = new System.Drawing.Point(24, 3404);
             this.img_LogOut.Name = "img_LogOut";
             this.img_LogOut.Size = new System.Drawing.Size(42, 49);
             this.img_LogOut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -354,7 +354,7 @@
             this.btn_LogOut.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
             this.btn_LogOut.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
             this.btn_LogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_LogOut.Location = new System.Drawing.Point(12, 2931);
+            this.btn_LogOut.Location = new System.Drawing.Point(12, 3396);
             this.btn_LogOut.Name = "btn_LogOut";
             this.btn_LogOut.Size = new System.Drawing.Size(130, 65);
             this.btn_LogOut.TabIndex = 67;
@@ -389,7 +389,7 @@
             this.btn_TopMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_TopMenu.Location = new System.Drawing.Point(0, 0);
             this.btn_TopMenu.Name = "btn_TopMenu";
-            this.btn_TopMenu.Size = new System.Drawing.Size(1370, 65);
+            this.btn_TopMenu.Size = new System.Drawing.Size(1387, 65);
             this.btn_TopMenu.TabIndex = 0;
             this.btn_TopMenu.UseVisualStyleBackColor = false;
             // 
@@ -908,7 +908,7 @@
             this.pictureBox8.Image = global::FootballLife_WF.Properties.Resources.Fundo_1;
             this.pictureBox8.Location = new System.Drawing.Point(0, 0);
             this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(1370, 1214);
+            this.pictureBox8.Size = new System.Drawing.Size(1387, 1214);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox8.TabIndex = 64;
             this.pictureBox8.TabStop = false;
@@ -921,7 +921,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::FootballLife_WF.Properties.Resources.Fundo_1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1387, 749);
+            this.ClientSize = new System.Drawing.Size(1404, 749);
             this.Controls.Add(this.lbl6);
             this.Controls.Add(this.lbl7);
             this.Controls.Add(this.lbl8);

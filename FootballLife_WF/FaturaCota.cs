@@ -155,7 +155,7 @@ namespace FootballLife_WF
             }
             else
             {
-                MessageBox.Show("Ficheiro NÃO guardado!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ficheiro NÃO guardado!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

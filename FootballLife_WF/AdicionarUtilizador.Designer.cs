@@ -44,26 +44,8 @@
             this.tb_Email = new System.Windows.Forms.TextBox();
             this.tb_Telemovel = new System.Windows.Forms.TextBox();
             this.tb_Morada = new System.Windows.Forms.TextBox();
-            this.lbl_Escalao = new System.Windows.Forms.Label();
-            this.rb_Seniores = new System.Windows.Forms.RadioButton();
-            this.rb_Juniores = new System.Windows.Forms.RadioButton();
-            this.rb_Juvenis = new System.Windows.Forms.RadioButton();
-            this.rb_Benjamins = new System.Windows.Forms.RadioButton();
-            this.rb_Infantis = new System.Windows.Forms.RadioButton();
-            this.rb_Traquinas = new System.Windows.Forms.RadioButton();
-            this.rb_Iniciados = new System.Windows.Forms.RadioButton();
-            this.rb_Petizes = new System.Windows.Forms.RadioButton();
-            this.tb_Utilizador = new System.Windows.Forms.TextBox();
-            this.tb_Password = new System.Windows.Forms.TextBox();
-            this.tb_ConfPassword = new System.Windows.Forms.TextBox();
-            this.btn_Gravar = new System.Windows.Forms.Button();
-            this.panel_Escalao = new System.Windows.Forms.Panel();
-            this.lbl_EscalaoATreinar = new System.Windows.Forms.Label();
-            this.lbl_ObrigatorioEscalao = new System.Windows.Forms.Label();
             this.tb_CodPostal = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.tb_Localidade = new System.Windows.Forms.TextBox();
-            this.ckb_VerPass = new System.Windows.Forms.CheckBox();
             this.lbl_LoginError = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -71,6 +53,24 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.tb_Localidade = new System.Windows.Forms.TextBox();
+            this.panel_Escalao = new System.Windows.Forms.Panel();
+            this.rb_Infantis = new System.Windows.Forms.RadioButton();
+            this.lbl_EscalaoATreinar = new System.Windows.Forms.Label();
+            this.lbl_Escalao = new System.Windows.Forms.Label();
+            this.rb_Seniores = new System.Windows.Forms.RadioButton();
+            this.rb_Juniores = new System.Windows.Forms.RadioButton();
+            this.rb_Petizes = new System.Windows.Forms.RadioButton();
+            this.rb_Juvenis = new System.Windows.Forms.RadioButton();
+            this.rb_Iniciados = new System.Windows.Forms.RadioButton();
+            this.rb_Benjamins = new System.Windows.Forms.RadioButton();
+            this.rb_Traquinas = new System.Windows.Forms.RadioButton();
+            this.lbl_ObrigatorioEscalao = new System.Windows.Forms.Label();
+            this.tb_Utilizador = new System.Windows.Forms.TextBox();
+            this.tb_Password = new System.Windows.Forms.TextBox();
+            this.tb_ConfPassword = new System.Windows.Forms.TextBox();
+            this.ckb_VerPass = new System.Windows.Forms.CheckBox();
+            this.btn_Gravar = new System.Windows.Forms.Button();
             this.panel_Escalao.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -233,199 +233,6 @@
             this.tb_Morada.Size = new System.Drawing.Size(302, 22);
             this.tb_Morada.TabIndex = 14;
             // 
-            // lbl_Escalao
-            // 
-            this.lbl_Escalao.AutoSize = true;
-            this.lbl_Escalao.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lbl_Escalao.Location = new System.Drawing.Point(3, 12);
-            this.lbl_Escalao.Name = "lbl_Escalao";
-            this.lbl_Escalao.Size = new System.Drawing.Size(53, 16);
-            this.lbl_Escalao.TabIndex = 15;
-            this.lbl_Escalao.Text = "Escalão:";
-            // 
-            // rb_Seniores
-            // 
-            this.rb_Seniores.AutoSize = true;
-            this.rb_Seniores.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rb_Seniores.Location = new System.Drawing.Point(6, 42);
-            this.rb_Seniores.Name = "rb_Seniores";
-            this.rb_Seniores.Size = new System.Drawing.Size(67, 19);
-            this.rb_Seniores.TabIndex = 17;
-            this.rb_Seniores.TabStop = true;
-            this.rb_Seniores.Tag = "";
-            this.rb_Seniores.Text = "Séniores";
-            this.rb_Seniores.UseVisualStyleBackColor = true;
-            // 
-            // rb_Juniores
-            // 
-            this.rb_Juniores.AutoSize = true;
-            this.rb_Juniores.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F);
-            this.rb_Juniores.Location = new System.Drawing.Point(77, 42);
-            this.rb_Juniores.Name = "rb_Juniores";
-            this.rb_Juniores.Size = new System.Drawing.Size(65, 19);
-            this.rb_Juniores.TabIndex = 18;
-            this.rb_Juniores.TabStop = true;
-            this.rb_Juniores.Tag = "";
-            this.rb_Juniores.Text = "Juniores";
-            this.rb_Juniores.UseVisualStyleBackColor = true;
-            // 
-            // rb_Juvenis
-            // 
-            this.rb_Juvenis.AutoSize = true;
-            this.rb_Juvenis.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F);
-            this.rb_Juvenis.Location = new System.Drawing.Point(148, 42);
-            this.rb_Juvenis.Name = "rb_Juvenis";
-            this.rb_Juvenis.Size = new System.Drawing.Size(60, 19);
-            this.rb_Juvenis.TabIndex = 19;
-            this.rb_Juvenis.TabStop = true;
-            this.rb_Juvenis.Tag = "";
-            this.rb_Juvenis.Text = "Juvenis";
-            this.rb_Juvenis.UseVisualStyleBackColor = true;
-            // 
-            // rb_Benjamins
-            // 
-            this.rb_Benjamins.AutoSize = true;
-            this.rb_Benjamins.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F);
-            this.rb_Benjamins.Location = new System.Drawing.Point(74, 67);
-            this.rb_Benjamins.Name = "rb_Benjamins";
-            this.rb_Benjamins.Size = new System.Drawing.Size(78, 19);
-            this.rb_Benjamins.TabIndex = 20;
-            this.rb_Benjamins.TabStop = true;
-            this.rb_Benjamins.Tag = "";
-            this.rb_Benjamins.Text = "Benjamins";
-            this.rb_Benjamins.UseVisualStyleBackColor = true;
-            // 
-            // rb_Infantis
-            // 
-            this.rb_Infantis.AutoSize = true;
-            this.rb_Infantis.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F);
-            this.rb_Infantis.Location = new System.Drawing.Point(6, 67);
-            this.rb_Infantis.Name = "rb_Infantis";
-            this.rb_Infantis.Size = new System.Drawing.Size(62, 19);
-            this.rb_Infantis.TabIndex = 21;
-            this.rb_Infantis.TabStop = true;
-            this.rb_Infantis.Tag = "";
-            this.rb_Infantis.Text = "Infantis";
-            this.rb_Infantis.UseVisualStyleBackColor = true;
-            // 
-            // rb_Traquinas
-            // 
-            this.rb_Traquinas.AutoSize = true;
-            this.rb_Traquinas.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F);
-            this.rb_Traquinas.Location = new System.Drawing.Point(158, 67);
-            this.rb_Traquinas.Name = "rb_Traquinas";
-            this.rb_Traquinas.Size = new System.Drawing.Size(77, 19);
-            this.rb_Traquinas.TabIndex = 22;
-            this.rb_Traquinas.TabStop = true;
-            this.rb_Traquinas.Text = "Traquinas";
-            this.rb_Traquinas.UseVisualStyleBackColor = true;
-            // 
-            // rb_Iniciados
-            // 
-            this.rb_Iniciados.AutoSize = true;
-            this.rb_Iniciados.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F);
-            this.rb_Iniciados.Location = new System.Drawing.Point(214, 42);
-            this.rb_Iniciados.Name = "rb_Iniciados";
-            this.rb_Iniciados.Size = new System.Drawing.Size(68, 19);
-            this.rb_Iniciados.TabIndex = 23;
-            this.rb_Iniciados.TabStop = true;
-            this.rb_Iniciados.Text = "Iniciados";
-            this.rb_Iniciados.UseVisualStyleBackColor = true;
-            // 
-            // rb_Petizes
-            // 
-            this.rb_Petizes.AutoSize = true;
-            this.rb_Petizes.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F);
-            this.rb_Petizes.Location = new System.Drawing.Point(239, 67);
-            this.rb_Petizes.Name = "rb_Petizes";
-            this.rb_Petizes.Size = new System.Drawing.Size(60, 19);
-            this.rb_Petizes.TabIndex = 24;
-            this.rb_Petizes.TabStop = true;
-            this.rb_Petizes.Text = "Petizes";
-            this.rb_Petizes.UseVisualStyleBackColor = true;
-            // 
-            // tb_Utilizador
-            // 
-            this.tb_Utilizador.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.tb_Utilizador.Location = new System.Drawing.Point(99, 442);
-            this.tb_Utilizador.Name = "tb_Utilizador";
-            this.tb_Utilizador.Size = new System.Drawing.Size(302, 22);
-            this.tb_Utilizador.TabIndex = 25;
-            // 
-            // tb_Password
-            // 
-            this.tb_Password.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.tb_Password.Location = new System.Drawing.Point(99, 474);
-            this.tb_Password.Name = "tb_Password";
-            this.tb_Password.Size = new System.Drawing.Size(302, 22);
-            this.tb_Password.TabIndex = 26;
-            this.tb_Password.UseSystemPasswordChar = true;
-            // 
-            // tb_ConfPassword
-            // 
-            this.tb_ConfPassword.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.tb_ConfPassword.Location = new System.Drawing.Point(100, 504);
-            this.tb_ConfPassword.Name = "tb_ConfPassword";
-            this.tb_ConfPassword.Size = new System.Drawing.Size(301, 22);
-            this.tb_ConfPassword.TabIndex = 27;
-            this.tb_ConfPassword.UseSystemPasswordChar = true;
-            // 
-            // btn_Gravar
-            // 
-            this.btn_Gravar.BackColor = System.Drawing.Color.White;
-            this.btn_Gravar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Gravar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.btn_Gravar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Gravar.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Gravar.ForeColor = System.Drawing.Color.Black;
-            this.btn_Gravar.Location = new System.Drawing.Point(349, 562);
-            this.btn_Gravar.Name = "btn_Gravar";
-            this.btn_Gravar.Size = new System.Drawing.Size(92, 34);
-            this.btn_Gravar.TabIndex = 28;
-            this.btn_Gravar.Text = "Gravar";
-            this.btn_Gravar.UseVisualStyleBackColor = false;
-            this.btn_Gravar.Click += new System.EventHandler(this.Btn_Gravar_Click);
-            // 
-            // panel_Escalao
-            // 
-            this.panel_Escalao.Controls.Add(this.rb_Infantis);
-            this.panel_Escalao.Controls.Add(this.lbl_EscalaoATreinar);
-            this.panel_Escalao.Controls.Add(this.lbl_Escalao);
-            this.panel_Escalao.Controls.Add(this.rb_Seniores);
-            this.panel_Escalao.Controls.Add(this.rb_Juniores);
-            this.panel_Escalao.Controls.Add(this.rb_Petizes);
-            this.panel_Escalao.Controls.Add(this.rb_Juvenis);
-            this.panel_Escalao.Controls.Add(this.rb_Iniciados);
-            this.panel_Escalao.Controls.Add(this.rb_Benjamins);
-            this.panel_Escalao.Controls.Add(this.rb_Traquinas);
-            this.panel_Escalao.Controls.Add(this.lbl_ObrigatorioEscalao);
-            this.panel_Escalao.Location = new System.Drawing.Point(99, 316);
-            this.panel_Escalao.Name = "panel_Escalao";
-            this.panel_Escalao.Size = new System.Drawing.Size(302, 106);
-            this.panel_Escalao.TabIndex = 29;
-            // 
-            // lbl_EscalaoATreinar
-            // 
-            this.lbl_EscalaoATreinar.AutoSize = true;
-            this.lbl_EscalaoATreinar.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lbl_EscalaoATreinar.Location = new System.Drawing.Point(3, 12);
-            this.lbl_EscalaoATreinar.Name = "lbl_EscalaoATreinar";
-            this.lbl_EscalaoATreinar.Size = new System.Drawing.Size(109, 16);
-            this.lbl_EscalaoATreinar.TabIndex = 16;
-            this.lbl_EscalaoATreinar.Text = "Escalão a Treinar:";
-            this.lbl_EscalaoATreinar.Visible = false;
-            // 
-            // lbl_ObrigatorioEscalao
-            // 
-            this.lbl_ObrigatorioEscalao.AutoSize = true;
-            this.lbl_ObrigatorioEscalao.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_ObrigatorioEscalao.ForeColor = System.Drawing.Color.Firebrick;
-            this.lbl_ObrigatorioEscalao.Location = new System.Drawing.Point(-4, 12);
-            this.lbl_ObrigatorioEscalao.Name = "lbl_ObrigatorioEscalao";
-            this.lbl_ObrigatorioEscalao.Size = new System.Drawing.Size(12, 15);
-            this.lbl_ObrigatorioEscalao.TabIndex = 37;
-            this.lbl_ObrigatorioEscalao.Text = "*";
-            // 
             // tb_CodPostal
             // 
             this.tb_CodPostal.Font = new System.Drawing.Font("Arial", 9.75F);
@@ -444,26 +251,6 @@
             this.label1.Size = new System.Drawing.Size(95, 16);
             this.label1.TabIndex = 30;
             this.label1.Text = "Código-Postal: ";
-            // 
-            // tb_Localidade
-            // 
-            this.tb_Localidade.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.tb_Localidade.Location = new System.Drawing.Point(217, 261);
-            this.tb_Localidade.Name = "tb_Localidade";
-            this.tb_Localidade.Size = new System.Drawing.Size(184, 22);
-            this.tb_Localidade.TabIndex = 32;
-            // 
-            // ckb_VerPass
-            // 
-            this.ckb_VerPass.AutoSize = true;
-            this.ckb_VerPass.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckb_VerPass.Location = new System.Drawing.Point(305, 532);
-            this.ckb_VerPass.Name = "ckb_VerPass";
-            this.ckb_VerPass.Size = new System.Drawing.Size(96, 18);
-            this.ckb_VerPass.TabIndex = 33;
-            this.ckb_VerPass.Text = "Ver Password";
-            this.ckb_VerPass.UseVisualStyleBackColor = true;
-            this.ckb_VerPass.CheckedChanged += new System.EventHandler(this.Ckb_VerPass_CheckedChanged);
             // 
             // lbl_LoginError
             // 
@@ -543,12 +330,230 @@
             this.label8.Text = "*";
             this.label8.Visible = false;
             // 
+            // tb_Localidade
+            // 
+            this.tb_Localidade.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.tb_Localidade.Location = new System.Drawing.Point(217, 261);
+            this.tb_Localidade.Name = "tb_Localidade";
+            this.tb_Localidade.Size = new System.Drawing.Size(184, 22);
+            this.tb_Localidade.TabIndex = 50;
+            // 
+            // panel_Escalao
+            // 
+            this.panel_Escalao.Controls.Add(this.rb_Infantis);
+            this.panel_Escalao.Controls.Add(this.lbl_EscalaoATreinar);
+            this.panel_Escalao.Controls.Add(this.lbl_Escalao);
+            this.panel_Escalao.Controls.Add(this.rb_Seniores);
+            this.panel_Escalao.Controls.Add(this.rb_Juniores);
+            this.panel_Escalao.Controls.Add(this.rb_Petizes);
+            this.panel_Escalao.Controls.Add(this.rb_Juvenis);
+            this.panel_Escalao.Controls.Add(this.rb_Iniciados);
+            this.panel_Escalao.Controls.Add(this.rb_Benjamins);
+            this.panel_Escalao.Controls.Add(this.rb_Traquinas);
+            this.panel_Escalao.Controls.Add(this.lbl_ObrigatorioEscalao);
+            this.panel_Escalao.Location = new System.Drawing.Point(99, 301);
+            this.panel_Escalao.Name = "panel_Escalao";
+            this.panel_Escalao.Size = new System.Drawing.Size(302, 106);
+            this.panel_Escalao.TabIndex = 51;
+            // 
+            // rb_Infantis
+            // 
+            this.rb_Infantis.AutoSize = true;
+            this.rb_Infantis.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F);
+            this.rb_Infantis.Location = new System.Drawing.Point(6, 67);
+            this.rb_Infantis.Name = "rb_Infantis";
+            this.rb_Infantis.Size = new System.Drawing.Size(62, 19);
+            this.rb_Infantis.TabIndex = 21;
+            this.rb_Infantis.TabStop = true;
+            this.rb_Infantis.Tag = "";
+            this.rb_Infantis.Text = "Infantis";
+            this.rb_Infantis.UseVisualStyleBackColor = true;
+            // 
+            // lbl_EscalaoATreinar
+            // 
+            this.lbl_EscalaoATreinar.AutoSize = true;
+            this.lbl_EscalaoATreinar.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lbl_EscalaoATreinar.Location = new System.Drawing.Point(3, 12);
+            this.lbl_EscalaoATreinar.Name = "lbl_EscalaoATreinar";
+            this.lbl_EscalaoATreinar.Size = new System.Drawing.Size(109, 16);
+            this.lbl_EscalaoATreinar.TabIndex = 16;
+            this.lbl_EscalaoATreinar.Text = "Escalão a Treinar:";
+            this.lbl_EscalaoATreinar.Visible = false;
+            // 
+            // lbl_Escalao
+            // 
+            this.lbl_Escalao.AutoSize = true;
+            this.lbl_Escalao.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lbl_Escalao.Location = new System.Drawing.Point(3, 12);
+            this.lbl_Escalao.Name = "lbl_Escalao";
+            this.lbl_Escalao.Size = new System.Drawing.Size(53, 16);
+            this.lbl_Escalao.TabIndex = 15;
+            this.lbl_Escalao.Text = "Escalão:";
+            // 
+            // rb_Seniores
+            // 
+            this.rb_Seniores.AutoSize = true;
+            this.rb_Seniores.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rb_Seniores.Location = new System.Drawing.Point(6, 42);
+            this.rb_Seniores.Name = "rb_Seniores";
+            this.rb_Seniores.Size = new System.Drawing.Size(67, 19);
+            this.rb_Seniores.TabIndex = 17;
+            this.rb_Seniores.TabStop = true;
+            this.rb_Seniores.Tag = "";
+            this.rb_Seniores.Text = "Séniores";
+            this.rb_Seniores.UseVisualStyleBackColor = true;
+            // 
+            // rb_Juniores
+            // 
+            this.rb_Juniores.AutoSize = true;
+            this.rb_Juniores.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F);
+            this.rb_Juniores.Location = new System.Drawing.Point(77, 42);
+            this.rb_Juniores.Name = "rb_Juniores";
+            this.rb_Juniores.Size = new System.Drawing.Size(65, 19);
+            this.rb_Juniores.TabIndex = 18;
+            this.rb_Juniores.TabStop = true;
+            this.rb_Juniores.Tag = "";
+            this.rb_Juniores.Text = "Juniores";
+            this.rb_Juniores.UseVisualStyleBackColor = true;
+            // 
+            // rb_Petizes
+            // 
+            this.rb_Petizes.AutoSize = true;
+            this.rb_Petizes.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F);
+            this.rb_Petizes.Location = new System.Drawing.Point(239, 67);
+            this.rb_Petizes.Name = "rb_Petizes";
+            this.rb_Petizes.Size = new System.Drawing.Size(60, 19);
+            this.rb_Petizes.TabIndex = 24;
+            this.rb_Petizes.TabStop = true;
+            this.rb_Petizes.Text = "Petizes";
+            this.rb_Petizes.UseVisualStyleBackColor = true;
+            // 
+            // rb_Juvenis
+            // 
+            this.rb_Juvenis.AutoSize = true;
+            this.rb_Juvenis.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F);
+            this.rb_Juvenis.Location = new System.Drawing.Point(148, 42);
+            this.rb_Juvenis.Name = "rb_Juvenis";
+            this.rb_Juvenis.Size = new System.Drawing.Size(60, 19);
+            this.rb_Juvenis.TabIndex = 19;
+            this.rb_Juvenis.TabStop = true;
+            this.rb_Juvenis.Tag = "";
+            this.rb_Juvenis.Text = "Juvenis";
+            this.rb_Juvenis.UseVisualStyleBackColor = true;
+            // 
+            // rb_Iniciados
+            // 
+            this.rb_Iniciados.AutoSize = true;
+            this.rb_Iniciados.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F);
+            this.rb_Iniciados.Location = new System.Drawing.Point(214, 42);
+            this.rb_Iniciados.Name = "rb_Iniciados";
+            this.rb_Iniciados.Size = new System.Drawing.Size(68, 19);
+            this.rb_Iniciados.TabIndex = 23;
+            this.rb_Iniciados.TabStop = true;
+            this.rb_Iniciados.Text = "Iniciados";
+            this.rb_Iniciados.UseVisualStyleBackColor = true;
+            // 
+            // rb_Benjamins
+            // 
+            this.rb_Benjamins.AutoSize = true;
+            this.rb_Benjamins.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F);
+            this.rb_Benjamins.Location = new System.Drawing.Point(74, 67);
+            this.rb_Benjamins.Name = "rb_Benjamins";
+            this.rb_Benjamins.Size = new System.Drawing.Size(78, 19);
+            this.rb_Benjamins.TabIndex = 20;
+            this.rb_Benjamins.TabStop = true;
+            this.rb_Benjamins.Tag = "";
+            this.rb_Benjamins.Text = "Benjamins";
+            this.rb_Benjamins.UseVisualStyleBackColor = true;
+            // 
+            // rb_Traquinas
+            // 
+            this.rb_Traquinas.AutoSize = true;
+            this.rb_Traquinas.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F);
+            this.rb_Traquinas.Location = new System.Drawing.Point(158, 67);
+            this.rb_Traquinas.Name = "rb_Traquinas";
+            this.rb_Traquinas.Size = new System.Drawing.Size(77, 19);
+            this.rb_Traquinas.TabIndex = 22;
+            this.rb_Traquinas.TabStop = true;
+            this.rb_Traquinas.Text = "Traquinas";
+            this.rb_Traquinas.UseVisualStyleBackColor = true;
+            // 
+            // lbl_ObrigatorioEscalao
+            // 
+            this.lbl_ObrigatorioEscalao.AutoSize = true;
+            this.lbl_ObrigatorioEscalao.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_ObrigatorioEscalao.ForeColor = System.Drawing.Color.Firebrick;
+            this.lbl_ObrigatorioEscalao.Location = new System.Drawing.Point(-4, 12);
+            this.lbl_ObrigatorioEscalao.Name = "lbl_ObrigatorioEscalao";
+            this.lbl_ObrigatorioEscalao.Size = new System.Drawing.Size(12, 15);
+            this.lbl_ObrigatorioEscalao.TabIndex = 37;
+            this.lbl_ObrigatorioEscalao.Text = "*";
+            // 
+            // tb_Utilizador
+            // 
+            this.tb_Utilizador.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.tb_Utilizador.Location = new System.Drawing.Point(99, 442);
+            this.tb_Utilizador.Name = "tb_Utilizador";
+            this.tb_Utilizador.Size = new System.Drawing.Size(302, 22);
+            this.tb_Utilizador.TabIndex = 52;
+            // 
+            // tb_Password
+            // 
+            this.tb_Password.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.tb_Password.Location = new System.Drawing.Point(99, 473);
+            this.tb_Password.Name = "tb_Password";
+            this.tb_Password.Size = new System.Drawing.Size(302, 22);
+            this.tb_Password.TabIndex = 53;
+            this.tb_Password.UseSystemPasswordChar = true;
+            // 
+            // tb_ConfPassword
+            // 
+            this.tb_ConfPassword.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.tb_ConfPassword.Location = new System.Drawing.Point(100, 503);
+            this.tb_ConfPassword.Name = "tb_ConfPassword";
+            this.tb_ConfPassword.Size = new System.Drawing.Size(301, 22);
+            this.tb_ConfPassword.TabIndex = 54;
+            this.tb_ConfPassword.UseSystemPasswordChar = true;
+            // 
+            // ckb_VerPass
+            // 
+            this.ckb_VerPass.AutoSize = true;
+            this.ckb_VerPass.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckb_VerPass.Location = new System.Drawing.Point(305, 531);
+            this.ckb_VerPass.Name = "ckb_VerPass";
+            this.ckb_VerPass.Size = new System.Drawing.Size(96, 18);
+            this.ckb_VerPass.TabIndex = 55;
+            this.ckb_VerPass.Text = "Ver Password";
+            this.ckb_VerPass.UseVisualStyleBackColor = true;
+            // 
+            // btn_Gravar
+            // 
+            this.btn_Gravar.BackColor = System.Drawing.Color.White;
+            this.btn_Gravar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Gravar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btn_Gravar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Gravar.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Gravar.ForeColor = System.Drawing.Color.Black;
+            this.btn_Gravar.Location = new System.Drawing.Point(349, 560);
+            this.btn_Gravar.Name = "btn_Gravar";
+            this.btn_Gravar.Size = new System.Drawing.Size(92, 34);
+            this.btn_Gravar.TabIndex = 56;
+            this.btn_Gravar.Text = "Gravar";
+            this.btn_Gravar.UseVisualStyleBackColor = false;
+            // 
             // AdicionarUtilizador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(453, 606);
+            this.Controls.Add(this.btn_Gravar);
+            this.Controls.Add(this.ckb_VerPass);
+            this.Controls.Add(this.tb_ConfPassword);
+            this.Controls.Add(this.tb_Password);
+            this.Controls.Add(this.tb_Utilizador);
+            this.Controls.Add(this.panel_Escalao);
+            this.Controls.Add(this.tb_Localidade);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -556,15 +561,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbl_LoginError);
-            this.Controls.Add(this.ckb_VerPass);
-            this.Controls.Add(this.tb_Localidade);
             this.Controls.Add(this.tb_CodPostal);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.panel_Escalao);
-            this.Controls.Add(this.btn_Gravar);
-            this.Controls.Add(this.tb_ConfPassword);
-            this.Controls.Add(this.tb_Password);
-            this.Controls.Add(this.tb_Utilizador);
             this.Controls.Add(this.tb_Morada);
             this.Controls.Add(this.tb_Telemovel);
             this.Controls.Add(this.tb_Email);
@@ -611,32 +609,32 @@
         private System.Windows.Forms.TextBox tb_Email;
         private System.Windows.Forms.TextBox tb_Telemovel;
         private System.Windows.Forms.TextBox tb_Morada;
-        private System.Windows.Forms.Label lbl_Escalao;
-        private System.Windows.Forms.RadioButton rb_Seniores;
-        private System.Windows.Forms.RadioButton rb_Juniores;
-        private System.Windows.Forms.RadioButton rb_Juvenis;
-        private System.Windows.Forms.RadioButton rb_Benjamins;
-        private System.Windows.Forms.RadioButton rb_Infantis;
-        private System.Windows.Forms.RadioButton rb_Traquinas;
-        private System.Windows.Forms.RadioButton rb_Iniciados;
-        private System.Windows.Forms.RadioButton rb_Petizes;
-        private System.Windows.Forms.TextBox tb_Utilizador;
-        private System.Windows.Forms.TextBox tb_Password;
-        private System.Windows.Forms.TextBox tb_ConfPassword;
-        private System.Windows.Forms.Button btn_Gravar;
-        private System.Windows.Forms.Panel panel_Escalao;
         private System.Windows.Forms.TextBox tb_CodPostal;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox tb_Localidade;
-        private System.Windows.Forms.CheckBox ckb_VerPass;
         private System.Windows.Forms.Label lbl_LoginError;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lbl_ObrigatorioEscalao;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox tb_Localidade;
+        private System.Windows.Forms.Panel panel_Escalao;
+        private System.Windows.Forms.RadioButton rb_Infantis;
         private System.Windows.Forms.Label lbl_EscalaoATreinar;
+        private System.Windows.Forms.Label lbl_Escalao;
+        private System.Windows.Forms.RadioButton rb_Seniores;
+        private System.Windows.Forms.RadioButton rb_Juniores;
+        private System.Windows.Forms.RadioButton rb_Petizes;
+        private System.Windows.Forms.RadioButton rb_Juvenis;
+        private System.Windows.Forms.RadioButton rb_Iniciados;
+        private System.Windows.Forms.RadioButton rb_Benjamins;
+        private System.Windows.Forms.RadioButton rb_Traquinas;
+        private System.Windows.Forms.Label lbl_ObrigatorioEscalao;
+        private System.Windows.Forms.TextBox tb_Utilizador;
+        private System.Windows.Forms.TextBox tb_Password;
+        private System.Windows.Forms.TextBox tb_ConfPassword;
+        private System.Windows.Forms.CheckBox ckb_VerPass;
+        private System.Windows.Forms.Button btn_Gravar;
     }
 }

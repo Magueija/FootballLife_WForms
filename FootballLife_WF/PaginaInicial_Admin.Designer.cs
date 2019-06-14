@@ -173,7 +173,7 @@
             this.lbl_Titulo.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Titulo.Font = new System.Drawing.Font("Bauhaus 93", 65.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Titulo.ForeColor = System.Drawing.Color.White;
-            this.lbl_Titulo.Location = new System.Drawing.Point(467, 80);
+            this.lbl_Titulo.Location = new System.Drawing.Point(438, 80);
             this.lbl_Titulo.Name = "lbl_Titulo";
             this.lbl_Titulo.Size = new System.Drawing.Size(462, 98);
             this.lbl_Titulo.TabIndex = 20;
@@ -446,7 +446,7 @@
             this.flowpanel_Discussoes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.flowpanel_Discussoes.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowpanel_Discussoes.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.flowpanel_Discussoes.Location = new System.Drawing.Point(287, 197);
+            this.flowpanel_Discussoes.Location = new System.Drawing.Point(254, 197);
             this.flowpanel_Discussoes.Name = "flowpanel_Discussoes";
             this.flowpanel_Discussoes.Size = new System.Drawing.Size(830, 514);
             this.flowpanel_Discussoes.TabIndex = 29;

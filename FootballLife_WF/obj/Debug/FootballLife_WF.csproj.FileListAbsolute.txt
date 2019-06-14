@@ -85,3 +85,4 @@ C:\Users\Tomás\Documents\Projeto_WindowsForms\FootballLife_WF\obj\Debug\Footbal
 C:\Users\PSI17F20\Documents\GitHub\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.DeletedUsers.resources
 C:\Users\PSI17F20\Documents\GitHub\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.FaturaCota.resources
 C:\Users\PSI17F20\Documents\GitHub\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.Cota.resources
+C:\Users\Tomás\Documents\Projeto_WindowsForms\FootballLife_WF\obj\Debug\FootballLife_WF.Form1.resources

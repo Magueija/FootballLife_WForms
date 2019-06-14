@@ -570,7 +570,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 33;
             this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.AddMore2Jogos);
+            this.pictureBox2.Click += new System.EventHandler(this.Img_AddMore2Jogos_Click);
             // 
             // flowpanel_Jogos
             // 

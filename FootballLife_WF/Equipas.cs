@@ -266,7 +266,7 @@ namespace FootballLife_WF
                     panel.Visible = true;
                     panel.Name = "Panel" + IDTreinador;
                     panel.Margin = new Padding(5, 5, 0, 0);
-                    flowpanel_Seniores.Controls.Add(panel);
+                    flowpanel_Juniores.Controls.Add(panel);
 
                     PictureBox Pb = new PictureBox();
                     Pb.Location = new Point(5, 5);
@@ -320,7 +320,7 @@ namespace FootballLife_WF
                     panel.Visible = true;
                     panel.Name = "Panel" + IDAtleta;
                     panel.Margin = new Padding(5, 5, 0, 0);
-                    flowpanel_Seniores.Controls.Add(panel);
+                    flowpanel_Juniores.Controls.Add(panel);
 
                     PictureBox Pb = new PictureBox();
                     Pb.Location = new Point(5, 5);
@@ -402,7 +402,7 @@ namespace FootballLife_WF
                     panel.Visible = true;
                     panel.Name = "Panel" + IDTreinador;
                     panel.Margin = new Padding(5, 5, 0, 0);
-                    flowpanel_Seniores.Controls.Add(panel);
+                    flowpanel_Juvenis.Controls.Add(panel);
 
                     PictureBox Pb = new PictureBox();
                     Pb.Location = new Point(5, 5);
@@ -455,7 +455,7 @@ namespace FootballLife_WF
                     panel.Visible = true;
                     panel.Name = "Panel" + IDAtleta;
                     panel.Margin = new Padding(5, 5, 0, 0);
-                    flowpanel_Seniores.Controls.Add(panel);
+                    flowpanel_Juvenis.Controls.Add(panel);
 
                     PictureBox Pb = new PictureBox();
                     Pb.Location = new Point(5, 5);
@@ -537,7 +537,7 @@ namespace FootballLife_WF
                     panel.Visible = true;
                     panel.Name = "Panel" + IDTreinador;
                     panel.Margin = new Padding(5, 5, 0, 0);
-                    flowpanel_Seniores.Controls.Add(panel);
+                    flowpanel_Iniciados.Controls.Add(panel);
 
                     PictureBox Pb = new PictureBox();
                     Pb.Location = new Point(5, 5);
@@ -590,7 +590,7 @@ namespace FootballLife_WF
                     panel.Visible = true;
                     panel.Name = "Panel" + IDAtleta;
                     panel.Margin = new Padding(5, 5, 0, 0);
-                    flowpanel_Seniores.Controls.Add(panel);
+                    flowpanel_Iniciados.Controls.Add(panel);
 
                     PictureBox Pb = new PictureBox();
                     Pb.Location = new Point(5, 5);
@@ -674,7 +674,7 @@ namespace FootballLife_WF
                     panel.Visible = true;
                     panel.Name = "Panel" + IDTreinador;
                     panel.Margin = new Padding(5, 5, 0, 0);
-                    flowpanel_Seniores.Controls.Add(panel);
+                    flowpanel_Infantis.Controls.Add(panel);
 
                     PictureBox Pb = new PictureBox();
                     Pb.Location = new Point(5, 5);
@@ -727,7 +727,7 @@ namespace FootballLife_WF
                     panel.Visible = true;
                     panel.Name = "Panel" + IDAtleta;
                     panel.Margin = new Padding(5, 5, 0, 0);
-                    flowpanel_Seniores.Controls.Add(panel);
+                    flowpanel_Infantis.Controls.Add(panel);
 
                     PictureBox Pb = new PictureBox();
                     Pb.Location = new Point(5, 5);
@@ -809,7 +809,7 @@ namespace FootballLife_WF
                     panel.Visible = true;
                     panel.Name = "Panel" + IDTreinador;
                     panel.Margin = new Padding(5, 5, 0, 0);
-                    flowpanel_Seniores.Controls.Add(panel);
+                    flowpanel_Benjamins.Controls.Add(panel);
 
                     PictureBox Pb = new PictureBox();
                     Pb.Location = new Point(5, 5);
@@ -862,7 +862,7 @@ namespace FootballLife_WF
                     panel.Visible = true;
                     panel.Name = "Panel" + IDAtleta;
                     panel.Margin = new Padding(5, 5, 0, 0);
-                    flowpanel_Seniores.Controls.Add(panel);
+                    flowpanel_Benjamins.Controls.Add(panel);
 
                     PictureBox Pb = new PictureBox();
                     Pb.Location = new Point(5, 5);
@@ -945,7 +945,7 @@ namespace FootballLife_WF
                     panel.Visible = true;
                     panel.Name = "Panel" + IDTreinador;
                     panel.Margin = new Padding(5, 5, 0, 0);
-                    flowpanel_Seniores.Controls.Add(panel);
+                    flowpanel_Traquinas.Controls.Add(panel);
 
                     PictureBox Pb = new PictureBox();
                     Pb.Location = new Point(5, 5);
@@ -999,7 +999,7 @@ namespace FootballLife_WF
                     panel.Visible = true;
                     panel.Name = "Panel" + IDAtleta;
                     panel.Margin = new Padding(5, 5, 0, 0);
-                    flowpanel_Seniores.Controls.Add(panel);
+                    flowpanel_Traquinas.Controls.Add(panel);
 
                     PictureBox Pb = new PictureBox();
                     Pb.Location = new Point(5, 5);
@@ -1082,7 +1082,7 @@ namespace FootballLife_WF
                     panel.Visible = true;
                     panel.Name = "Panel" + IDTreinador;
                     panel.Margin = new Padding(5, 5, 0, 0);
-                    flowpanel_Seniores.Controls.Add(panel);
+                    flowpanel_Petizes.Controls.Add(panel);
 
                     PictureBox Pb = new PictureBox();
                     Pb.Location = new Point(5, 5);
@@ -1135,7 +1135,7 @@ namespace FootballLife_WF
                     panel.Visible = true;
                     panel.Name = "Panel" + IDAtleta;
                     panel.Margin = new Padding(5, 5, 0, 0);
-                    flowpanel_Seniores.Controls.Add(panel);
+                    flowpanel_Petizes.Controls.Add(panel);
 
                     PictureBox Pb = new PictureBox();
                     Pb.Location = new Point(5, 5);
