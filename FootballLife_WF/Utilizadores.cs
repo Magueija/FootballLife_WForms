@@ -208,16 +208,19 @@ namespace FootballLife_WF
                 linha_Socios.Location = linha_Atletas.Location;
                 flowpanel_Socios.Location = flowpanel_Atletas.Location;
                 img4.Location = img3.Location;
+                lbl4.Location = lbl3.Location;
 
                 lbl_Atletas.Location = lbl_Treinadores.Location;
                 linha_Atletas.Location = linha_Treinadores.Location;
                 flowpanel_Atletas.Location = flowpanel_Treinadores.Location;
                 img3.Location = img2.Location;
+                lbl3.Location = lbl2.Location;
 
                 lbl_Treinadores.Location = lbl_Admins.Location;
                 linha_Treinadores.Location = linha_Admins.Location;
                 flowpanel_Treinadores.Location = flowpanel_Admins.Location;
                 img2.Location = img1.Location;
+                lbl2.Location = lbl1.Location;
             }
 
             if (flowpanel_Treinadores.Visible == false)
@@ -228,11 +231,13 @@ namespace FootballLife_WF
                 linha_Socios.Location = linha_Atletas.Location;
                 flowpanel_Socios.Location = flowpanel_Atletas.Location;
                 img4.Location = img3.Location;
+                lbl4.Location = lbl3.Location;
 
                 lbl_Atletas.Location = lbl_Treinadores.Location;
                 linha_Atletas.Location = linha_Treinadores.Location;
                 flowpanel_Atletas.Location = flowpanel_Treinadores.Location;
                 img3.Location = img2.Location;
+                lbl3.Location = lbl2.Location;
 
             }
 
@@ -244,6 +249,7 @@ namespace FootballLife_WF
                 linha_Socios.Location = linha_Atletas.Location;
                 flowpanel_Socios.Location = flowpanel_Atletas.Location;
                 img4.Location = img3.Location;
+                lbl4.Location = lbl3.Location;
             }
 
             if (flowpanel_Socios.Visible == false)
@@ -979,14 +985,12 @@ namespace FootballLife_WF
                 Treinadores();
                 Atletas();
                 Socios();
-                CountUsers();
             }
             else if (Program.CurrentFuncaoUser == "Treinador")
             {
                 Admins();
                 Treinadores();
                 Atletas();
-                CountUsers();
             }
         }
 
@@ -1003,14 +1007,12 @@ namespace FootballLife_WF
                 Treinadores();
                 Atletas();
                 Socios();
-                CountUsers();
             }
             else if (Program.CurrentFuncaoUser == "Treinador")
             {
                 Admins();
                 Treinadores();
                 Atletas();
-                CountUsers();
             }
 
         }

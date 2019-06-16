@@ -67,6 +67,7 @@ namespace FootballLife_WF
             lbl_Saldo.Text = Saldo.ToString() +" €";
         }
 
+        int L = 7;
         private void Lucros()
         {
             flowpanel_Lucros.Controls.Clear();
@@ -80,7 +81,7 @@ namespace FootballLife_WF
             try
             {
                 SqlDataReader dr;
-                string Query = ("[dbo].[LucrosPesquisa] '%'");
+                string Query = ("[dbo].[LucrosPesquisa] '%', " + L);
                 SqlCommand Command = new SqlCommand(Query, con);
                 dr = Command.ExecuteReader();
                 while (dr.Read())
@@ -125,6 +126,7 @@ namespace FootballLife_WF
             con.Close();
         }
 
+        int D = 7;
         private void Despesas()
         {
             flowpanel_Despesas.Controls.Clear();
@@ -138,7 +140,7 @@ namespace FootballLife_WF
             try
             {
                 SqlDataReader dr;
-                string Query = ("[dbo].[DespesasPesquisa] '%'");
+                string Query = ("[dbo].[DespesasPesquisa] '%', " + D);
                 SqlCommand Command = new SqlCommand(Query, con);
                 dr = Command.ExecuteReader();
                 while (dr.Read())
@@ -521,6 +523,18 @@ namespace FootballLife_WF
             this.Hide();
             PgInicio.ShowDialog();
             this.Dispose();
+        }
+
+        private void MoreLucros(object sender, EventArgs e)
+        {
+            L += 7;
+            Lucros();
+        }
+
+        private void MoreDespesas(object sender, EventArgs e)
+        {
+            D += 7;
+            Despesas();
         }
     }
 }

@@ -70,6 +70,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.flowpanel_Despesas = new System.Windows.Forms.FlowLayoutPanel();
             this.btn_AddDespesas = new System.Windows.Forms.Button();
+            this.LMore = new System.Windows.Forms.PictureBox();
+            this.DMore = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.img_Fundo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Menu)).BeginInit();
             this.panel_Menu.SuspendLayout();
@@ -81,6 +83,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LMore)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DMore)).BeginInit();
             this.SuspendLayout();
             // 
             // img_Fundo
@@ -706,6 +710,38 @@
             this.btn_AddDespesas.MouseLeave += new System.EventHandler(this.Btn_AddDespesas_MouseLeave);
             this.btn_AddDespesas.MouseHover += new System.EventHandler(this.Btn_AddDespesas_MouseHover);
             // 
+            // LMore
+            // 
+            this.LMore.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.LMore.BackColor = System.Drawing.Color.Transparent;
+            this.LMore.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LMore.Image = global::FootballLife_WF.Properties.Resources.Adicionar_Criar_white_;
+            this.LMore.Location = new System.Drawing.Point(263, 692);
+            this.LMore.MaximumSize = new System.Drawing.Size(20, 20);
+            this.LMore.MinimumSize = new System.Drawing.Size(20, 20);
+            this.LMore.Name = "LMore";
+            this.LMore.Size = new System.Drawing.Size(20, 20);
+            this.LMore.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.LMore.TabIndex = 40;
+            this.LMore.TabStop = false;
+            this.LMore.Click += new System.EventHandler(this.MoreLucros);
+            // 
+            // DMore
+            // 
+            this.DMore.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.DMore.BackColor = System.Drawing.Color.Transparent;
+            this.DMore.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DMore.Image = global::FootballLife_WF.Properties.Resources.Adicionar_Criar_white_;
+            this.DMore.Location = new System.Drawing.Point(707, 692);
+            this.DMore.MaximumSize = new System.Drawing.Size(20, 20);
+            this.DMore.MinimumSize = new System.Drawing.Size(20, 20);
+            this.DMore.Name = "DMore";
+            this.DMore.Size = new System.Drawing.Size(20, 20);
+            this.DMore.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.DMore.TabIndex = 41;
+            this.DMore.TabStop = false;
+            this.DMore.Click += new System.EventHandler(this.MoreDespesas);
+            // 
             // Financiamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -714,6 +750,8 @@
             this.BackgroundImage = global::FootballLife_WF.Properties.Resources.Fundo_1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1364, 749);
+            this.Controls.Add(this.DMore);
+            this.Controls.Add(this.LMore);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.img_Linha);
@@ -748,6 +786,8 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LMore)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DMore)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -795,5 +835,7 @@
         private System.Windows.Forms.FlowLayoutPanel flowpanel_Despesas;
         private System.Windows.Forms.Button btn_DeletePesquisa;
         private System.Windows.Forms.Button btn_Lupa;
+        private System.Windows.Forms.PictureBox LMore;
+        private System.Windows.Forms.PictureBox DMore;
     }
 }
