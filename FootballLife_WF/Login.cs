@@ -239,6 +239,20 @@ namespace FootballLife_WF
             }
         }
 
+        private void Tb_Click(object sender, EventArgs e)
+        {
+            if (Control.IsKeyLocked(Keys.CapsLock))
+            {
+                lbl_Caps.Visible = true;
+                img_Caps.Visible = true;
+            }
+            else
+            {
+                lbl_Caps.Visible = false;
+                img_Caps.Visible = false;
+            }
+        }
+
 
         //Label "Esqueceu a sua password" click
         private void Lbl_EsqueceuPassword_Click(object sender, EventArgs e)

@@ -83,7 +83,7 @@
             // 
             this.lbl_Data.AutoSize = true;
             this.lbl_Data.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Data.Location = new System.Drawing.Point(105, 98);
+            this.lbl_Data.Location = new System.Drawing.Point(77, 98);
             this.lbl_Data.Name = "lbl_Data";
             this.lbl_Data.Size = new System.Drawing.Size(34, 15);
             this.lbl_Data.TabIndex = 31;
@@ -94,7 +94,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Berlin Sans FB Demi", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(52, 95);
+            this.label1.Location = new System.Drawing.Point(24, 95);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(47, 18);
             this.label1.TabIndex = 32;
@@ -105,7 +105,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Berlin Sans FB Demi", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(240, 95);
+            this.label2.Location = new System.Drawing.Point(215, 95);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 18);
             this.label2.TabIndex = 34;
@@ -115,7 +115,7 @@
             // 
             this.lbl_Escalao.AutoSize = true;
             this.lbl_Escalao.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Escalao.Location = new System.Drawing.Point(309, 98);
+            this.lbl_Escalao.Location = new System.Drawing.Point(284, 98);
             this.lbl_Escalao.Name = "lbl_Escalao";
             this.lbl_Escalao.Size = new System.Drawing.Size(34, 15);
             this.lbl_Escalao.TabIndex = 33;
@@ -228,7 +228,7 @@
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Berlin Sans FB Demi", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(381, 95);
+            this.label9.Location = new System.Drawing.Point(350, 95);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(63, 18);
             this.label9.TabIndex = 46;
@@ -238,7 +238,7 @@
             // 
             this.lbl_Divisao.AutoSize = true;
             this.lbl_Divisao.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Divisao.Location = new System.Drawing.Point(450, 98);
+            this.lbl_Divisao.Location = new System.Drawing.Point(419, 98);
             this.lbl_Divisao.Name = "lbl_Divisao";
             this.lbl_Divisao.Size = new System.Drawing.Size(34, 15);
             this.lbl_Divisao.TabIndex = 45;

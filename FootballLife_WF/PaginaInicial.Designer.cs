@@ -49,7 +49,7 @@
             this.btn_Estadio = new System.Windows.Forms.Button();
             this.lbl_Titulo = new System.Windows.Forms.Label();
             this.img_Fundo = new System.Windows.Forms.PictureBox();
-            this.btn_Entrar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.panel_Jogos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_Jogos)).BeginInit();
@@ -157,7 +157,7 @@
             this.btn_Jogos.Name = "btn_Jogos";
             this.btn_Jogos.Size = new System.Drawing.Size(312, 182);
             this.btn_Jogos.TabIndex = 2;
-            this.btn_Jogos.Tag = "3";
+            this.btn_Jogos.Tag = "";
             this.btn_Jogos.UseVisualStyleBackColor = false;
             this.btn_Jogos.Click += new System.EventHandler(this.Btn_Jogos_Click);
             this.btn_Jogos.MouseLeave += new System.EventHandler(this.Btn_Jogos_MouseLeave);
@@ -223,7 +223,7 @@
             this.btn_Equipas.Name = "btn_Equipas";
             this.btn_Equipas.Size = new System.Drawing.Size(312, 182);
             this.btn_Equipas.TabIndex = 2;
-            this.btn_Equipas.Tag = "4";
+            this.btn_Equipas.Tag = "";
             this.btn_Equipas.UseVisualStyleBackColor = false;
             this.btn_Equipas.Click += new System.EventHandler(this.Btn_Equipas_Click);
             this.btn_Equipas.MouseLeave += new System.EventHandler(this.Btn_Equipas_MouseLeave);
@@ -289,7 +289,7 @@
             this.btn_Titulos.Name = "btn_Titulos";
             this.btn_Titulos.Size = new System.Drawing.Size(312, 182);
             this.btn_Titulos.TabIndex = 2;
-            this.btn_Titulos.Tag = "1";
+            this.btn_Titulos.Tag = "";
             this.btn_Titulos.UseVisualStyleBackColor = false;
             this.btn_Titulos.Click += new System.EventHandler(this.Btn_Historia_Click);
             this.btn_Titulos.MouseLeave += new System.EventHandler(this.Btn_Titulos_MouseLeave);
@@ -355,7 +355,7 @@
             this.btn_Estadio.Name = "btn_Estadio";
             this.btn_Estadio.Size = new System.Drawing.Size(312, 182);
             this.btn_Estadio.TabIndex = 2;
-            this.btn_Estadio.Tag = "4";
+            this.btn_Estadio.Tag = "";
             this.btn_Estadio.UseVisualStyleBackColor = false;
             this.btn_Estadio.Click += new System.EventHandler(this.Btn_Estadio_Click);
             this.btn_Estadio.MouseLeave += new System.EventHandler(this.Btn_Estadio_MouseLeave);
@@ -386,27 +386,20 @@
             this.img_Fundo.TabIndex = 1;
             this.img_Fundo.TabStop = false;
             // 
-            // btn_Entrar
+            // button1
             // 
-            this.btn_Entrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Entrar.BackColor = System.Drawing.Color.Transparent;
-            this.btn_Entrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Entrar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.btn_Entrar.FlatAppearance.BorderSize = 0;
-            this.btn_Entrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btn_Entrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btn_Entrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Entrar.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Entrar.ForeColor = System.Drawing.Color.Black;
-            this.btn_Entrar.Location = new System.Drawing.Point(1233, 25);
-            this.btn_Entrar.Name = "btn_Entrar";
-            this.btn_Entrar.Size = new System.Drawing.Size(97, 31);
-            this.btn_Entrar.TabIndex = 36;
-            this.btn_Entrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Entrar.UseVisualStyleBackColor = false;
-            this.btn_Entrar.Click += new System.EventHandler(this.Lbl_LogIn_Click);
-            this.btn_Entrar.MouseLeave += new System.EventHandler(this.Lbl_LogIn_MouseLeave);
-            this.btn_Entrar.MouseHover += new System.EventHandler(this.Lbl_LogIn_MouseHover);
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(1227, 21);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(104, 40);
+            this.button1.TabIndex = 4;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.Lbl_LogIn_Click);
             // 
             // PaginaInicial
             // 
@@ -423,7 +416,7 @@
             this.Controls.Add(this.panel_Equipas);
             this.Controls.Add(this.Logo);
             this.Controls.Add(this.panel_Jogos);
-            this.Controls.Add(this.btn_Entrar);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.img_Fundo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(900, 450);
@@ -470,6 +463,6 @@
         private System.Windows.Forms.Button btn_Estadio;
         private System.Windows.Forms.Label lbl_Titulo;
         private System.Windows.Forms.PictureBox img_Fundo;
-        private System.Windows.Forms.Button btn_Entrar;
+        private System.Windows.Forms.Button button1;
     }
 }

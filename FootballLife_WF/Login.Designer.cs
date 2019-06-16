@@ -36,18 +36,18 @@
             this.lbl_LoginError = new System.Windows.Forms.Label();
             this.lbl_EsqueceuPassword = new System.Windows.Forms.Label();
             this.Panel_Login = new System.Windows.Forms.Panel();
+            this.img_Caps = new System.Windows.Forms.PictureBox();
+            this.lbl_Caps = new System.Windows.Forms.Label();
             this.btn_Entrar = new System.Windows.Forms.Button();
             this.chb_Lembrar = new System.Windows.Forms.CheckBox();
             this.img_BackArrow = new System.Windows.Forms.PictureBox();
             this.img_Logo = new System.Windows.Forms.PictureBox();
             this.img_Fundo = new System.Windows.Forms.PictureBox();
-            this.lbl_Caps = new System.Windows.Forms.Label();
-            this.img_Caps = new System.Windows.Forms.PictureBox();
             this.Panel_Login.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.img_Caps)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_BackArrow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Fundo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.img_Caps)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_Utilizador
@@ -68,6 +68,7 @@
             this.tb_Utilizador.Size = new System.Drawing.Size(199, 22);
             this.tb_Utilizador.TabIndex = 2;
             this.tb_Utilizador.Tag = "";
+            this.tb_Utilizador.Click += new System.EventHandler(this.Tb_Click);
             this.tb_Utilizador.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_KeyDown);
             // 
             // lbl_Password
@@ -89,6 +90,7 @@
             this.tb_Password.TabIndex = 4;
             this.tb_Password.Tag = "";
             this.tb_Password.UseSystemPasswordChar = true;
+            this.tb_Password.Click += new System.EventHandler(this.Tb_Click);
             this.tb_Password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_KeyDown);
             // 
             // lbl_LoginError
@@ -137,6 +139,29 @@
             this.Panel_Login.Name = "Panel_Login";
             this.Panel_Login.Size = new System.Drawing.Size(370, 496);
             this.Panel_Login.TabIndex = 1;
+            // 
+            // img_Caps
+            // 
+            this.img_Caps.Image = ((System.Drawing.Image)(resources.GetObject("img_Caps.Image")));
+            this.img_Caps.Location = new System.Drawing.Point(207, 346);
+            this.img_Caps.Name = "img_Caps";
+            this.img_Caps.Size = new System.Drawing.Size(15, 15);
+            this.img_Caps.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.img_Caps.TabIndex = 12;
+            this.img_Caps.TabStop = false;
+            this.img_Caps.Visible = false;
+            // 
+            // lbl_Caps
+            // 
+            this.lbl_Caps.AutoSize = true;
+            this.lbl_Caps.Font = new System.Drawing.Font("Berlin Sans FB", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Caps.ForeColor = System.Drawing.Color.Black;
+            this.lbl_Caps.Location = new System.Drawing.Point(228, 346);
+            this.lbl_Caps.Name = "lbl_Caps";
+            this.lbl_Caps.Size = new System.Drawing.Size(99, 13);
+            this.lbl_Caps.TabIndex = 11;
+            this.lbl_Caps.Text = "Caps Lock Ligado!";
+            this.lbl_Caps.Visible = false;
             // 
             // btn_Entrar
             // 
@@ -210,29 +235,6 @@
             this.img_Fundo.TabIndex = 0;
             this.img_Fundo.TabStop = false;
             // 
-            // lbl_Caps
-            // 
-            this.lbl_Caps.AutoSize = true;
-            this.lbl_Caps.Font = new System.Drawing.Font("Berlin Sans FB", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Caps.ForeColor = System.Drawing.Color.Black;
-            this.lbl_Caps.Location = new System.Drawing.Point(228, 346);
-            this.lbl_Caps.Name = "lbl_Caps";
-            this.lbl_Caps.Size = new System.Drawing.Size(99, 13);
-            this.lbl_Caps.TabIndex = 11;
-            this.lbl_Caps.Text = "Caps Lock Ligado!";
-            this.lbl_Caps.Visible = false;
-            // 
-            // img_Caps
-            // 
-            this.img_Caps.Image = ((System.Drawing.Image)(resources.GetObject("img_Caps.Image")));
-            this.img_Caps.Location = new System.Drawing.Point(207, 346);
-            this.img_Caps.Name = "img_Caps";
-            this.img_Caps.Size = new System.Drawing.Size(15, 15);
-            this.img_Caps.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.img_Caps.TabIndex = 12;
-            this.img_Caps.TabStop = false;
-            this.img_Caps.Visible = false;
-            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -248,10 +250,10 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Panel_Login.ResumeLayout(false);
             this.Panel_Login.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.img_Caps)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_BackArrow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Logo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Fundo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.img_Caps)).EndInit();
             this.ResumeLayout(false);
 
         }

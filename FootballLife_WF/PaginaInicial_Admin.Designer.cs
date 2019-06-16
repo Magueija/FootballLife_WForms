@@ -428,7 +428,7 @@
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = global::FootballLife_WF.Properties.Resources.Adicionar_Criar_white_;
-            this.pictureBox2.Location = new System.Drawing.Point(287, 717);
+            this.pictureBox2.Location = new System.Drawing.Point(254, 717);
             this.pictureBox2.MaximumSize = new System.Drawing.Size(20, 20);
             this.pictureBox2.MinimumSize = new System.Drawing.Size(20, 20);
             this.pictureBox2.Name = "pictureBox2";

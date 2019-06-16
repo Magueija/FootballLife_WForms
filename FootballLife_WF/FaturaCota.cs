@@ -129,6 +129,7 @@ namespace FootballLife_WF
                         else if (i == 1)
                         {
                             writer.WriteLine();
+                            writer.WriteLine("(" + DateTime.Now + ")");
                             writer.WriteLine();
                         }
                         else if (i == 7)
@@ -145,7 +146,14 @@ namespace FootballLife_WF
                             writer.WriteLine();
                         }
 
-                        writer.Write(" " + this.Controls[i].Text.ToString());
+                        if (i == 0)
+                        {
+                            writer.Write("   " + this.Controls[i].Text.ToString());
+                        }
+                        else
+                        {
+                            writer.Write(" " + this.Controls[i].Text.ToString());
+                        }
                     }
                 }
 

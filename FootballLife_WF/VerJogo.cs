@@ -119,7 +119,7 @@ namespace FootballLife_WF
                     i++;
 
                     Label tbNome = new Label();
-                    tbNome.Location = new Point(75, 6);
+                    tbNome.Location = new Point(75, 8);
                     tbNome.Width = 220;
                     tbNome.Text = NomeAtleta;
                     tbNome.Font = new Font("Arial", 9, FontStyle.Regular);
@@ -137,7 +137,7 @@ namespace FootballLife_WF
                     panel.Controls.Add(lblMinutos);
 
                     Label tbMinutos = new Label();
-                    tbMinutos.Location = new Point(410, 6);
+                    tbMinutos.Location = new Point(410, 8);
                     tbMinutos.Width = 40;
                     tbMinutos.Text = MinutosJogo;
                     tbMinutos.Font = new Font("Arial", 9, FontStyle.Regular);

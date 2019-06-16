@@ -50,12 +50,13 @@
             // 
             this.flowpanel_material.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.flowpanel_material.AutoScroll = true;
-            this.flowpanel_material.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.flowpanel_material.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
             this.flowpanel_material.Location = new System.Drawing.Point(21, 81);
             this.flowpanel_material.Name = "flowpanel_material";
-            this.flowpanel_material.Padding = new System.Windows.Forms.Padding(20, 20, 0, 0);
+            this.flowpanel_material.Padding = new System.Windows.Forms.Padding(20, 0, 0, 5);
             this.flowpanel_material.Size = new System.Drawing.Size(699, 185);
             this.flowpanel_material.TabIndex = 4;
+            this.flowpanel_material.WrapContents = false;
             // 
             // btn_Gravar
             // 

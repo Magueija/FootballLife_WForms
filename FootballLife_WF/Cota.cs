@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Media;
 
 namespace FootballLife_WF
 {
@@ -568,6 +569,53 @@ namespace FootballLife_WF
             this.Hide();
             PgInicio.ShowDialog();
             this.Dispose();
+        }
+
+        private void Tb_NIF_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(tb_CVV.Text.Length == 3 && sender == tb_CVV)
+            {
+                if ((e.KeyCode != Keys.Back))
+                {
+                    e.SuppressKeyPress = true;
+                    SystemSounds.Beep.Play();
+                }
+            }
+
+
+            bool naoNumero = false;
+
+            // é um número do topo do teclado
+            if (e.KeyCode < Keys.D0 || e.KeyCode > Keys.D9)
+            {
+                // é um numero do teclado numerico
+                if (e.KeyCode < Keys.NumPad0 || e.KeyCode > Keys.NumPad9)
+                {
+                    // teclas autorizadas
+                    if (
+                        (e.KeyCode != Keys.Back) &&
+                        (e.KeyCode != Keys.Left) &&
+                        (e.KeyCode != Keys.Right) &&
+                        (e.KeyCode != Keys.Home) &&
+                        (e.KeyCode != Keys.End)
+                       )
+                    {
+                        naoNumero = true;
+                    }
+                }
+            }
+
+            if (Control.ModifierKeys != Keys.None)
+            {
+                naoNumero = true;
+            }
+
+            if (naoNumero)
+            {
+                e.SuppressKeyPress = true;
+
+                SystemSounds.Beep.Play();
+            }
         }
     }
 }

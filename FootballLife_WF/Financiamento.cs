@@ -340,6 +340,14 @@ namespace FootballLife_WF
                 PesquisaDespesas();
                 PesquisaLucros();
             }
+            else
+            {
+                Lucros();
+                Despesas();
+
+                lbl_SemResultados_Lucros.Visible = false;
+                lbl_SemResultados_Despesas.Visible = false;
+            }
         }
 
         private void tb_KeyDown(object sender, KeyEventArgs e)
@@ -350,6 +358,14 @@ namespace FootballLife_WF
                 {
                     PesquisaDespesas();
                     PesquisaLucros();
+                }
+                else
+                {
+                    Lucros();
+                    Despesas();
+
+                    lbl_SemResultados_Lucros.Visible = false;
+                    lbl_SemResultados_Despesas.Visible = false;
                 }
             }
         }

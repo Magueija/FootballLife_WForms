@@ -39,6 +39,8 @@ namespace FootballLife_WF
                 {
                     Escalao.Visible = false;
                     lbl_Escalao.Visible = false;
+                    morada.Visible = false;
+                    lbl_Morada.Visible = false;
 
                     Admin();
                 }
@@ -58,12 +60,19 @@ namespace FootballLife_WF
             {
                 if (Funcao == "Treinador")
                 {
+                    Escalao.Visible = false;
+                    lbl_Escalao.Visible = false;
+                    morada.Visible = false;
+                    lbl_Morada.Visible = false;
+
                     Treinador();
                 }
                 else if (Funcao == "Atleta")
                 {
                     Escalao.Visible = false;
                     lbl_Escalao.Visible = false;
+                    morada.Visible = false;
+                    lbl_Morada.Visible = false;
 
                     Atleta();
                 }
@@ -76,6 +85,8 @@ namespace FootballLife_WF
                     lbl_Telemovel.Visible = false;
                     Escalao.Visible = false;
                     lbl_Escalao.Visible = false;
+                    morada.Visible = false;
+                    lbl_Morada.Visible = false;
 
                     Admin();
                 }
@@ -97,11 +108,13 @@ namespace FootballLife_WF
             string Nome = "";
             string Telemovel = "";
             string Email = "";
+            string Morada = "";
+            string CodPostal = "";
 
             try
             {
                 SqlDataReader dr;
-                string QueryAdmin = ("SELECT Nome, Telemovel, Email FROM TblAdministrador WHERE IDAdministrador = " + ID);
+                string QueryAdmin = ("SELECT Nome, Telemovel, Email, Morada, CodPostal FROM TblAdministrador WHERE IDAdministrador = " + ID);
                 SqlCommand CommandAdmin = new SqlCommand(QueryAdmin, con);
                 dr = CommandAdmin.ExecuteReader();
                 while (dr.Read())
@@ -109,6 +122,8 @@ namespace FootballLife_WF
                     Nome = dr["Nome"].ToString();
                     Telemovel = dr["Telemovel"].ToString();
                     Email = dr["Email"].ToString();
+                    Morada = dr["Morada"].ToString();
+                    CodPostal = dr["CodPostal"].ToString();
                 }
                 dr.Close();
 
@@ -117,6 +132,20 @@ namespace FootballLife_WF
 
                 lbl_Nome.Text = Nome;
                 lbl_Email.Text = Email;
+
+                if (Morada != "" && CodPostal != " ")
+                {
+                    lbl_Morada.Text = Morada + "    " + CodPostal;
+                }
+                else if (Morada != "" && CodPostal == " ")
+                {
+                    lbl_Morada.Text = Morada;
+                }
+                else if (Morada == "" && CodPostal != " ")
+                {
+                    morada.Text = "Cd Postal:";
+                    lbl_Morada.Text = CodPostal;
+                }
 
                 if (Telemovel != "0")
                 {
@@ -142,12 +171,14 @@ namespace FootballLife_WF
             string Telemovel = "";
             string Email = "";
             string Escalao = "";
+            string Morada = "";
+            string CodPostal = "";
 
             try
             {
 
                 SqlDataReader dr;
-                string QueryAdmin = ("SELECT dbo.TblTreinador.Nome, dbo.TblTreinador.Telemovel, dbo.TblTreinador.Email, dbo.TblEscalao.Escalao FROM dbo.TblTreinador INNER JOIN dbo.TblEscalao ON dbo.TblTreinador.FK_IDEscalao = dbo.TblEscalao.IDEscalao WHERE dbo.TblTreinador.IDTreinador = " + ID);
+                string QueryAdmin = ("SELECT dbo.TblTreinador.Nome, dbo.TblTreinador.Telemovel, dbo.TblTreinador.Email, dbo.TblTreinador.Morada, dbo.TblTreinador.CodPostal, dbo.TblEscalao.Escalao FROM dbo.TblTreinador INNER JOIN dbo.TblEscalao ON dbo.TblTreinador.FK_IDEscalao = dbo.TblEscalao.IDEscalao WHERE dbo.TblTreinador.IDTreinador = " + ID);
                 SqlCommand CommandAdmin = new SqlCommand(QueryAdmin, con);
                 dr = CommandAdmin.ExecuteReader();
                 while (dr.Read())
@@ -156,6 +187,8 @@ namespace FootballLife_WF
                     Telemovel = dr["Telemovel"].ToString();
                     Email = dr["Email"].ToString();
                     Escalao = dr["Escalao"].ToString();
+                    Morada = dr["Morada"].ToString();
+                    CodPostal = dr["CodPostal"].ToString();
                 }
                 dr.Close();
 
@@ -165,6 +198,20 @@ namespace FootballLife_WF
                 lbl_Nome.Text = Nome;
                 lbl_Email.Text = Email;
                 lbl_Escalao.Text = Escalao;
+
+                if (Morada != "" && CodPostal != " ")
+                {
+                    lbl_Morada.Text = Morada + "    " + CodPostal;
+                }
+                else if (Morada != "" && CodPostal == " ")
+                {
+                    lbl_Morada.Text = Morada;
+                }
+                else if (Morada == "" && CodPostal != " ")
+                {
+                    morada.Text = "Cd Postal:";
+                    lbl_Morada.Text = CodPostal;
+                }
 
                 if (Telemovel != "0")
                 {
@@ -189,12 +236,15 @@ namespace FootballLife_WF
             string Nome = "";
             string Telemovel = "";
             string Email = "";
+            string Escalao = "";
+            string Morada = "";
+            string CodPostal = "";
 
             try
             {
 
                 SqlDataReader dr;
-                string QueryAdmin = ("SELECT Nome, Telemovel, Email FROM TblAtleta WHERE IDAtleta = " + ID);
+                string QueryAdmin = ("SELECT dbo.TblAtleta.Nome, dbo.TblAtleta.Telemovel, dbo.TblAtleta.Email, dbo.TblAtleta.Morada, dbo.TblAtleta.CodPostal, dbo.TblEscalao.Escalao FROM dbo.TblAtleta INNER JOIN dbo.TblEscalao ON dbo.TblAtleta.FK_IDEscalao = dbo.TblEscalao.IDEscalao WHERE dbo.TblAtleta.IDAtleta = " + ID);
                 SqlCommand CommandAdmin = new SqlCommand(QueryAdmin, con);
                 dr = CommandAdmin.ExecuteReader();
                 while (dr.Read())
@@ -202,6 +252,9 @@ namespace FootballLife_WF
                     Nome = dr["Nome"].ToString();
                     Telemovel = dr["Telemovel"].ToString();
                     Email = dr["Email"].ToString();
+                    Escalao = dr["Escalao"].ToString();
+                    Morada = dr["Morada"].ToString();
+                    CodPostal = dr["CodPostal"].ToString();
                 }
                 dr.Close();
 
@@ -210,6 +263,23 @@ namespace FootballLife_WF
 
                 lbl_Nome.Text = Nome;
                 lbl_Email.Text = Email;
+                lbl_Escalao.Text = Escalao;
+
+                
+                if (Morada != "" && CodPostal != " ")
+                {
+                    lbl_Morada.Text = Morada + "    " + CodPostal;
+                }
+                else if (Morada != "" && CodPostal == " ")
+                {
+                    lbl_Morada.Text = Morada;
+                }
+                else if (Morada == "" && CodPostal != " ")
+                {
+                    morada.Text = "Cd Postal:";
+                    lbl_Morada.Text = CodPostal;
+                }
+
 
                 if (Telemovel != "0")
                 {
@@ -235,12 +305,14 @@ namespace FootballLife_WF
             string Nome = "";
             string Telemovel = "";
             string Email = "";
+            string Morada = "";
+            string CodPostal = "";
 
             try
             {
 
                 SqlDataReader dr;
-                string QueryAdmin = ("SELECT Nome, Telemovel, Email FROM TblSocio WHERE IDSocio = " + ID);
+                string QueryAdmin = ("SELECT Nome, Telemovel, Email, Morada, CodPostal FROM TblSocio WHERE IDSocio = " + ID);
                 SqlCommand CommandAdmin = new SqlCommand(QueryAdmin, con);
                 dr = CommandAdmin.ExecuteReader();
                 while (dr.Read())
@@ -248,6 +320,8 @@ namespace FootballLife_WF
                     Nome = dr["Nome"].ToString();
                     Telemovel = dr["Telemovel"].ToString();
                     Email = dr["Email"].ToString();
+                    Morada = dr["Morada"].ToString();
+                    CodPostal = dr["CodPostal"].ToString();
                 }
                 dr.Close();
 
@@ -256,6 +330,20 @@ namespace FootballLife_WF
 
                 lbl_Nome.Text = Nome;
                 lbl_Email.Text = Email;
+
+                if (Morada != "" && CodPostal != " ")
+                {
+                    lbl_Morada.Text = Morada + "    " + CodPostal;
+                }
+                else if (Morada != "" && CodPostal == " ")
+                {
+                    lbl_Morada.Text = Morada;
+                }
+                else if (Morada == "" && CodPostal != " ")
+                {
+                    morada.Text = "Cd Postal:";
+                    lbl_Morada.Text = CodPostal;
+                }
 
                 if (Telemovel != "0")
                 {

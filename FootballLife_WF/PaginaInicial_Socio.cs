@@ -141,6 +141,7 @@ namespace FootballLife_WF
         int i = 2;
         private void Jogo(string IDEscalao)
         {
+            flowpanel_Jogos.Controls.Clear();
 
             SqlConnection con = new SqlConnection(Properties.Settings.Default.Connection);
             con.Open();
@@ -185,7 +186,6 @@ namespace FootballLife_WF
                     flowpanel_Jogos.Controls.Add(jogo);
                 }
                 dr.Close();
-                i+=2;
             }
             catch (Exception x)
             {
@@ -243,7 +243,6 @@ namespace FootballLife_WF
                     flowpanel_Jogos.Controls.Add(jogo);
                 }
                 dr.Close();
-                b+=2;
             }
             catch (Exception x)
             {
@@ -276,14 +275,6 @@ namespace FootballLife_WF
 
 
         //Side Menu Buttons Click
-        private void Btn_Jogos_Click(object sender, EventArgs e)
-        {
-            Jogos jgs = new Jogos();
-            this.Hide();
-            jgs.ShowDialog();
-            this.Dispose();
-        }
-
         private void Btn_Equipas_Click(object sender, EventArgs e)
         {
             Equipas Equipas = new Equipas();
@@ -337,7 +328,9 @@ namespace FootballLife_WF
 
         private void Img_AddMore2Jogos_Click(object sender, EventArgs e)
         {
-            flowpanel_Jogos.Controls.Clear();
+            i += 2;
+            b += 2;
+
             VerificacaoCheckBoxs();
         }
     }

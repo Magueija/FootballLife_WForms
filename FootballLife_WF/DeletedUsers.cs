@@ -20,10 +20,26 @@ namespace FootballLife_WF
 
         private void DeletedUsers_Load(object sender, EventArgs e)
         {
-            Admins();
-            Treinadores();
-            Atletas();
-            Socios();
+            if(Program.CurrentFuncaoUser == "Admin")
+            {
+                Admins();
+                Treinadores();
+                Atletas();
+                Socios();
+            }
+            else if (Program.CurrentFuncaoUser == "Treinador")
+            {
+                lbl1.Text = "Sem permissões para aceder a Administradores!";
+                lbl2.Text = "Sem permissões para aceder a Treinadores!";
+                lbl4.Text = "Sem permissões para aceder a Sócios!";
+
+                lbl1.Visible = true;
+                lbl2.Visible = true;
+                lbl4.Visible = true;
+
+                Atletas();
+            }
+
         }
 
 
@@ -368,7 +384,7 @@ namespace FootballLife_WF
             {
                 lbl1.Visible = true;
             }
-            else
+            else if (flowpanel_Admins.Controls.Count > 0)
             {
                 lbl1.Visible = false;
             }
@@ -411,7 +427,7 @@ namespace FootballLife_WF
             {
                 lbl2.Visible = true;
             }
-            else
+            else if(flowpanel_Treinadores.Controls.Count > 0)
             {
                 lbl2.Visible = false;
             }
@@ -453,7 +469,7 @@ namespace FootballLife_WF
             {
                 lbl3.Visible = true;
             }
-            else
+            else if (flowpanel_Atletas.Controls.Count > 0)
             {
                 lbl3.Visible = false;
             }
@@ -495,7 +511,7 @@ namespace FootballLife_WF
             {
                 lbl4.Visible = true;
             }
-            else
+            else if (flowpanel_Socios.Controls.Count > 0)
             {
                 lbl4.Visible = false;
             }
@@ -509,25 +525,70 @@ namespace FootballLife_WF
         {
             tb_Pesquisar.Text = "";
 
-            Admins();
-            Treinadores();
-            Atletas();
-            Socios();
+            if (Program.CurrentFuncaoUser == "Admin")
+            {
+                Admins();
+                Treinadores();
+                Atletas();
+                Socios();
 
-            lbl1.Visible = false;
-            lbl2.Visible = false;
-            lbl3.Visible = false;
-            lbl4.Visible = false;
+                lbl1.Visible = false;
+                lbl2.Visible = false;
+                lbl3.Visible = false;
+                lbl4.Visible = false;
+            }
+            else if (Program.CurrentFuncaoUser == "Treinador")
+            {
+                lbl1.Visible = true;
+                lbl2.Visible = true;
+                lbl4.Visible = true;
+
+                lbl3.Visible = false;
+
+                Atletas();
+            }
         }
 
         private void Btn_Lupa_Click(object sender, EventArgs e)
         {
             if (tb_Pesquisar.Text != "")
             {
-                PesquisaAdmins();
-                PesquisaTreinadores();
-                PesquisaAtletas();
-                PesquisaSocios();
+                if (Program.CurrentFuncaoUser == "Admin")
+                {
+                    PesquisaAdmins();
+                    PesquisaTreinadores();
+                    PesquisaAtletas();
+                    PesquisaSocios();
+                }
+                else if (Program.CurrentFuncaoUser == "Treinador")
+                {
+                    PesquisaAtletas();
+                }
+            }
+            else
+            {
+                if (Program.CurrentFuncaoUser == "Admin")
+                {
+                    Admins();
+                    Treinadores();
+                    Atletas();
+                    Socios();
+
+                    lbl1.Visible = false;
+                    lbl2.Visible = false;
+                    lbl3.Visible = false;
+                    lbl4.Visible = false;
+                }
+                else if (Program.CurrentFuncaoUser == "Treinador")
+                {
+                    lbl1.Visible = true;
+                    lbl2.Visible = true;
+                    lbl4.Visible = true;
+
+                    lbl3.Visible = false;
+
+                    Atletas();
+                }
             }
         }
 
@@ -537,10 +598,42 @@ namespace FootballLife_WF
             {
                 if (tb_Pesquisar.Text != "")
                 {
-                    PesquisaAdmins();
-                    PesquisaTreinadores();
-                    PesquisaAtletas();
-                    PesquisaSocios();
+                    if (Program.CurrentFuncaoUser == "Admin")
+                    {
+                        PesquisaAdmins();
+                        PesquisaTreinadores();
+                        PesquisaAtletas();
+                        PesquisaSocios();
+                    }
+                    else if (Program.CurrentFuncaoUser == "Treinador")
+                    {
+                        PesquisaAtletas();
+                    }
+                }
+                else
+                {
+                    if (Program.CurrentFuncaoUser == "Admin")
+                    {
+                        Admins();
+                        Treinadores();
+                        Atletas();
+                        Socios();
+
+                        lbl1.Visible = false;
+                        lbl2.Visible = false;
+                        lbl3.Visible = false;
+                        lbl4.Visible = false;
+                    }
+                    else if (Program.CurrentFuncaoUser == "Treinador")
+                    {
+                        lbl1.Visible = true;
+                        lbl2.Visible = true;
+                        lbl4.Visible = true;
+
+                        lbl3.Visible = false;
+
+                        Atletas();
+                    }
                 }
             }
         }
@@ -579,10 +672,28 @@ namespace FootballLife_WF
                 }
                 con.Close();
 
-                Admins();
-                Treinadores();
-                Atletas();
-                Socios();
+                if (Program.CurrentFuncaoUser == "Admin")
+                {
+                    Admins();
+                    Treinadores();
+                    Atletas();
+                    Socios();
+
+                    lbl1.Visible = false;
+                    lbl2.Visible = false;
+                    lbl3.Visible = false;
+                    lbl4.Visible = false;
+                }
+                else if (Program.CurrentFuncaoUser == "Treinador")
+                {
+                    lbl1.Visible = true;
+                    lbl2.Visible = true;
+                    lbl4.Visible = true;
+
+                    lbl3.Visible = false;
+
+                    Atletas();
+                }
             }
         }
 
@@ -615,10 +726,28 @@ namespace FootballLife_WF
                 }
                 con.Close();
 
-                Admins();
-                Treinadores();
-                Atletas();
-                Socios();
+                if (Program.CurrentFuncaoUser == "Admin")
+                {
+                    Admins();
+                    Treinadores();
+                    Atletas();
+                    Socios();
+
+                    lbl1.Visible = false;
+                    lbl2.Visible = false;
+                    lbl3.Visible = false;
+                    lbl4.Visible = false;
+                }
+                else if (Program.CurrentFuncaoUser == "Treinador")
+                {
+                    lbl1.Visible = true;
+                    lbl2.Visible = true;
+                    lbl4.Visible = true;
+
+                    lbl3.Visible = false;
+
+                    Atletas();
+                }
             }
         }
 

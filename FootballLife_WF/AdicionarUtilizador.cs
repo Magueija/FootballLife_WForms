@@ -19,22 +19,70 @@ namespace FootballLife_WF
         }
 
 
+        private void AdicionarUtilizador_Load(object sender, EventArgs e)
+        {
+            if (Program.CurrentFuncaoUser == "Treinador")
+            {
+                cb_Funcao.Items.Clear();
+                cb_Funcao.Items.Add("Atleta");
+                cb_Funcao.SelectedIndex = 0;
+
+                panel_Escalao.Enabled = false;
+
+
+                int IDEscalao = Program.CurrentIDEscalao;
+                if (IDEscalao == 1)
+                {
+                    rb_Seniores.Checked = true;
+                }
+                else if (IDEscalao == 2)
+                {
+                    rb_Juniores.Checked = true;
+                }
+                else if (IDEscalao == 3)
+                {
+                    rb_Juvenis.Checked = true;
+                }
+                else if (IDEscalao == 4)
+                {
+                    rb_Iniciados.Checked = true;
+                }
+                else if (IDEscalao == 5)
+                {
+                    rb_Infantis.Checked = true;
+                }
+                else if (IDEscalao == 6)
+                {
+                    rb_Benjamins.Checked = true;
+                }
+                else if (IDEscalao == 7)
+                {
+                    rb_Traquinas.Checked = true;
+                }
+                else if (IDEscalao == 8)
+                {
+                    rb_Petizes.Checked = true;
+                }
+            }
+        }
+
+
         //======================
 
 
         private void Cb_Funcao_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if((cb_Funcao.SelectedItem).ToString() == "Administrador" || (cb_Funcao.SelectedItem).ToString() == "Sócio")
+            if(cb_Funcao.SelectedItem.ToString() == "Administrador" || cb_Funcao.SelectedItem.ToString() == "Sócio")
             {
                 panel_Escalao.Visible = false;
             }
-            else if ((cb_Funcao.SelectedItem).ToString() == "Treinador")
+            else if (cb_Funcao.SelectedItem.ToString() == "Treinador")
             {
                 panel_Escalao.Visible = true;
                 lbl_EscalaoATreinar.Visible = true;
                 lbl_Escalao.Visible = false;
             }
-            else if ((cb_Funcao.SelectedItem).ToString() == "Atleta")
+            else if (cb_Funcao.SelectedItem.ToString() == "Atleta")
             {
                 panel_Escalao.Visible = true;
                 lbl_EscalaoATreinar.Visible = false;
@@ -144,7 +192,7 @@ namespace FootballLife_WF
                 MessageBox.Show(x.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            if (cb_Funcao.SelectedItem != "Administrador" && cb_Funcao.SelectedItem != "Treinador" && cb_Funcao.SelectedItem != "Atleta" && cb_Funcao.SelectedItem != "Sócio")
+            if (cb_Funcao.SelectedItem.ToString() != "Administrador" && cb_Funcao.SelectedItem.ToString() != "Treinador" && cb_Funcao.SelectedItem.ToString() != "Atleta" && cb_Funcao.SelectedItem.ToString() != "Sócio")
             {
                 MessageBox.Show("Função não atribuida!", "ATENÇÃO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -154,7 +202,7 @@ namespace FootballLife_WF
             }
             else if (tb_Password.Text != "" && tb_ConfPassword.Text != "" && tb_Password.Text == tb_ConfPassword.Text)
             {
-                if (cb_Funcao.SelectedItem == "Treinador" || cb_Funcao.SelectedItem == "Atleta")
+                if (cb_Funcao.SelectedItem.ToString() == "Treinador" || cb_Funcao.SelectedItem.ToString() == "Atleta")
                 {
                     if (rb_Seniores.Checked == false && rb_Juniores.Checked == false && rb_Juvenis.Checked == false && rb_Iniciados.Checked == false && rb_Infantis.Checked == false && rb_Benjamins.Checked == false && rb_Traquinas.Checked == false && rb_Petizes.Checked == false)
                     {
@@ -169,7 +217,7 @@ namespace FootballLife_WF
                 }
                 else
                 {
-                    if (cb_Funcao.SelectedItem == "Administrador")
+                    if (cb_Funcao.SelectedItem.ToString() == "Administrador")
                     {
                         try
                         {
@@ -193,7 +241,7 @@ namespace FootballLife_WF
                         this.Dispose();
 
                     }
-                    else if (cb_Funcao.SelectedItem == "Treinador")
+                    else if (cb_Funcao.SelectedItem.ToString() == "Treinador")
                     {
                         string IDEscalao = "";
                         if (rb_Seniores.Checked == true)
@@ -252,7 +300,7 @@ namespace FootballLife_WF
                         con.Close();
                         this.Dispose();
                     }
-                    else if (cb_Funcao.SelectedItem == "Atleta")
+                    else if (cb_Funcao.SelectedItem.ToString() == "Atleta")
                     {
                         string IDEscalao = "";
                         if (rb_Seniores.Checked == true)
@@ -310,7 +358,7 @@ namespace FootballLife_WF
                         con.Close();
                         this.Dispose();
                     }
-                    else if (cb_Funcao.SelectedItem == "Sócio")
+                    else if (cb_Funcao.SelectedItem.ToString() == "Sócio")
                     {
                         try
                         {

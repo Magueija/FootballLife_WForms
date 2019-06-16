@@ -525,6 +525,7 @@
             this.ckb_VerPass.TabIndex = 55;
             this.ckb_VerPass.Text = "Ver Password";
             this.ckb_VerPass.UseVisualStyleBackColor = true;
+            this.ckb_VerPass.CheckedChanged += new System.EventHandler(this.Ckb_VerPass_CheckedChanged);
             // 
             // btn_Gravar
             // 
@@ -540,6 +541,7 @@
             this.btn_Gravar.TabIndex = 56;
             this.btn_Gravar.Text = "Gravar";
             this.btn_Gravar.UseVisualStyleBackColor = false;
+            this.btn_Gravar.Click += new System.EventHandler(this.Btn_Gravar_Click);
             // 
             // AdicionarUtilizador
             // 
@@ -549,9 +551,6 @@
             this.ClientSize = new System.Drawing.Size(453, 606);
             this.Controls.Add(this.btn_Gravar);
             this.Controls.Add(this.ckb_VerPass);
-            this.Controls.Add(this.tb_ConfPassword);
-            this.Controls.Add(this.tb_Password);
-            this.Controls.Add(this.tb_Utilizador);
             this.Controls.Add(this.panel_Escalao);
             this.Controls.Add(this.tb_Localidade);
             this.Controls.Add(this.label8);
@@ -578,6 +577,9 @@
             this.Controls.Add(this.lbl_Titulo);
             this.Controls.Add(this.cb_Funcao);
             this.Controls.Add(this.lbl_Funcao);
+            this.Controls.Add(this.tb_Utilizador);
+            this.Controls.Add(this.tb_Password);
+            this.Controls.Add(this.tb_ConfPassword);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -585,6 +587,7 @@
             this.Name = "AdicionarUtilizador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Adicionar Utilizador";
+            this.Load += new System.EventHandler(this.AdicionarUtilizador_Load);
             this.panel_Escalao.ResumeLayout(false);
             this.panel_Escalao.PerformLayout();
             this.ResumeLayout(false);

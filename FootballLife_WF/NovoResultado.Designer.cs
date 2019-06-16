@@ -111,7 +111,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Berlin Sans FB Demi", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(406, 382);
+            this.label4.Location = new System.Drawing.Point(406, 383);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(51, 18);
             this.label4.TabIndex = 57;
@@ -133,7 +133,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Berlin Sans FB Demi", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(25, 382);
+            this.label5.Location = new System.Drawing.Point(25, 383);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(51, 18);
             this.label5.TabIndex = 53;
@@ -179,43 +179,48 @@
             // 
             // tb_Divisao
             // 
-            this.tb_Divisao.Location = new System.Drawing.Point(513, 114);
+            this.tb_Divisao.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Divisao.Location = new System.Drawing.Point(508, 113);
             this.tb_Divisao.Name = "tb_Divisao";
-            this.tb_Divisao.Size = new System.Drawing.Size(185, 20);
+            this.tb_Divisao.Size = new System.Drawing.Size(185, 21);
             this.tb_Divisao.TabIndex = 62;
             // 
             // tb_EquipaCasa
             // 
-            this.tb_EquipaCasa.Location = new System.Drawing.Point(128, 357);
+            this.tb_EquipaCasa.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_EquipaCasa.Location = new System.Drawing.Point(127, 356);
             this.tb_EquipaCasa.Name = "tb_EquipaCasa";
-            this.tb_EquipaCasa.Size = new System.Drawing.Size(190, 20);
+            this.tb_EquipaCasa.Size = new System.Drawing.Size(190, 21);
             this.tb_EquipaCasa.TabIndex = 63;
             this.tb_EquipaCasa.Text = "Palmelense F.C.";
             // 
             // tb_GolosCasa
             // 
+            this.tb_GolosCasa.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_GolosCasa.Location = new System.Drawing.Point(82, 383);
             this.tb_GolosCasa.Name = "tb_GolosCasa";
             this.tb_GolosCasa.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.tb_GolosCasa.Size = new System.Drawing.Size(80, 20);
+            this.tb_GolosCasa.Size = new System.Drawing.Size(80, 21);
             this.tb_GolosCasa.TabIndex = 64;
             this.tb_GolosCasa.TextChanged += new System.EventHandler(this.Palmelense_TextChanged);
             this.tb_GolosCasa.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Tb_GolosCasa_KeyDown);
             // 
             // tb_EquipaFora
             // 
-            this.tb_EquipaFora.Location = new System.Drawing.Point(508, 357);
+            this.tb_EquipaFora.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_EquipaFora.Location = new System.Drawing.Point(507, 356);
             this.tb_EquipaFora.Name = "tb_EquipaFora";
-            this.tb_EquipaFora.Size = new System.Drawing.Size(190, 20);
+            this.tb_EquipaFora.Size = new System.Drawing.Size(190, 21);
             this.tb_EquipaFora.TabIndex = 65;
             this.tb_EquipaFora.Text = "Palmelense F.C.";
             // 
             // tb_GolosFora
             // 
+            this.tb_GolosFora.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_GolosFora.Location = new System.Drawing.Point(463, 383);
             this.tb_GolosFora.Name = "tb_GolosFora";
             this.tb_GolosFora.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.tb_GolosFora.Size = new System.Drawing.Size(80, 20);
+            this.tb_GolosFora.Size = new System.Drawing.Size(80, 21);
             this.tb_GolosFora.TabIndex = 66;
             this.tb_GolosFora.TextChanged += new System.EventHandler(this.Palmelense_TextChanged);
             this.tb_GolosFora.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Tb_GolosCasa_KeyDown);
@@ -272,7 +277,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Firebrick;
-            this.label8.Location = new System.Drawing.Point(685, 115);
+            this.label8.Location = new System.Drawing.Point(680, 115);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(12, 15);
             this.label8.TabIndex = 71;
@@ -294,7 +299,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Firebrick;
-            this.label6.Location = new System.Drawing.Point(305, 358);
+            this.label6.Location = new System.Drawing.Point(304, 358);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(12, 15);
             this.label6.TabIndex = 73;
@@ -305,7 +310,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Firebrick;
-            this.label11.Location = new System.Drawing.Point(685, 358);
+            this.label11.Location = new System.Drawing.Point(684, 358);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(12, 15);
             this.label11.TabIndex = 74;
@@ -346,9 +351,10 @@
             // 
             // tb_Hora
             // 
-            this.tb_Hora.Location = new System.Drawing.Point(316, 113);
+            this.tb_Hora.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Hora.Location = new System.Drawing.Point(315, 113);
             this.tb_Hora.Name = "tb_Hora";
-            this.tb_Hora.Size = new System.Drawing.Size(85, 20);
+            this.tb_Hora.Size = new System.Drawing.Size(85, 21);
             this.tb_Hora.TabIndex = 80;
             this.tb_Hora.Text = "HH:MM";
             this.tb_Hora.Click += new System.EventHandler(this.Tb_Hora_Click);
@@ -359,7 +365,7 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.Firebrick;
-            this.label16.Location = new System.Drawing.Point(388, 114);
+            this.label16.Location = new System.Drawing.Point(387, 114);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(12, 15);
             this.label16.TabIndex = 81;
@@ -390,7 +396,6 @@
             this.txtpathCasa.Location = new System.Drawing.Point(96, 278);
             this.txtpathCasa.Name = "txtpathCasa";
             this.txtpathCasa.ReadOnly = true;
-            this.txtpathCasa.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtpathCasa.Size = new System.Drawing.Size(100, 20);
             this.txtpathCasa.TabIndex = 82;
             // 
@@ -399,7 +404,6 @@
             this.txtpathFora.Location = new System.Drawing.Point(453, 278);
             this.txtpathFora.Name = "txtpathFora";
             this.txtpathFora.ReadOnly = true;
-            this.txtpathFora.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtpathFora.Size = new System.Drawing.Size(100, 20);
             this.txtpathFora.TabIndex = 83;
             // 

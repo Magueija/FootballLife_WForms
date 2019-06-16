@@ -68,6 +68,26 @@ namespace FootballLife_WF
                 cb_UNomeAtleta.ValueMember = "IDAtleta";
                 cb_UNomeAtleta.DisplayMember = "Nome";
                 cb_UNomeAtleta.DataSource = dtAtleta;
+
+                if (dtSocio.Rows.Count == 0 && dtAtleta.Rows.Count == 0)
+                {
+                    panel_Utilizador.Visible = false;
+                    panel_Outros.Visible = true;
+
+                    rb_Outros.Checked = true;
+                    rb_Utilizadores.Checked = false;
+                    rb_Utilizadores.Enabled = false;
+                }
+                else if (dtSocio.Rows.Count != 0 && dtAtleta.Rows.Count == 0)
+                {
+                    cb_UFuncao.SelectedIndex = 1;
+                    cb_UFuncao.Enabled = false;
+                }
+                else if (dtSocio.Rows.Count == 0 && dtAtleta.Rows.Count != 0)
+                {
+                    cb_UFuncao.SelectedIndex = 0;
+                    cb_UFuncao.Enabled = false;
+                }
             }
             catch (Exception x)
             {
@@ -97,12 +117,12 @@ namespace FootballLife_WF
 
         private void Cb_UFuncao_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cb_UFuncao.SelectedItem == "Atleta")
+            if (cb_UFuncao.SelectedItem.ToString() == "Atleta")
             {
                 cb_UNomeAtleta.Visible = true;
                 cb_UNomeSocio.Visible = false;
             }
-            else if (cb_UFuncao.SelectedItem == "Sócio")
+            else if (cb_UFuncao.SelectedItem.ToString() == "Sócio")
             {
                 cb_UNomeAtleta.Visible = false;
                 cb_UNomeSocio.Visible = true;
@@ -194,7 +214,7 @@ namespace FootballLife_WF
 
             string IDLucro = "";
 
-            if(cb_UFuncao.SelectedItem == "")
+            if(cb_UFuncao.SelectedItem.ToString() == "")
             {
                 MessageBox.Show("Campos obrigatórios não preenchidos!", "ATENÇÃO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -207,7 +227,7 @@ namespace FootballLife_WF
                     string IDMes = "";
                     string Mes = "";
 
-                    if(cb_UFuncao.SelectedItem == "Atleta")
+                    if(cb_UFuncao.SelectedItem.ToString() == "Atleta")
                     {
                         //SELECIONA O NOME DO ATLETA PARA INSERIR NA TABELA LUCROS
                         SqlDataReader drAtleta;
@@ -280,7 +300,7 @@ namespace FootballLife_WF
                         CommandCota.ExecuteNonQuery();
                     
                     }
-                    else if (cb_UFuncao.SelectedItem == "Sócio")
+                    else if (cb_UFuncao.SelectedItem.ToString() == "Sócio")
                     {
                         //SELECIONA O NOME DO Socio PARA INSERIR NA TABELA LUCROS
                         SqlDataReader drSocio;

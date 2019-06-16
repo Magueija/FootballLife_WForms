@@ -66,17 +66,7 @@ namespace FootballLife_WF
         //Visibilidade dependendo da funcao do Current User
         private void Visibilidade()
         {
-            if (Program.CurrentFuncaoUser != "Admin")
-            {
-                btn_NovoUser.Visible = false;
-                img_NovoUser.Visible = false;
-                lbl_NovoUser.Visible = false;
-
-                btn_DeletedUsers.Visible = false;
-                img_DeletedUsers.Visible = false;
-                lbl_DeletedUsers.Visible = false;
-            }
-            else
+            if (Program.CurrentFuncaoUser == "Admin")
             {
                 btn_NovoUser.Visible = true;
                 img_NovoUser.Visible = true;
@@ -91,9 +81,17 @@ namespace FootballLife_WF
                 Atletas();
                 Socios();
             }
-
-            if (Program.CurrentFuncaoUser == "Treinador")
+            else if (Program.CurrentFuncaoUser == "Treinador")
             {
+                btn_NovoUser.Visible = true;
+                img_NovoUser.Visible = true;
+                lbl_NovoUser.Visible = true;
+
+                btn_DeletedUsers.Visible = true;
+                img_DeletedUsers.Visible = true;
+                lbl_DeletedUsers.Visible = true;
+
+
                 lbl_Socios.Visible = false;
                 linha_Socios.Visible = false;
                 flowpanel_Socios.Visible = false;
@@ -273,7 +271,15 @@ namespace FootballLife_WF
             try
             {
                 SqlDataReader dr;
-                string Query = ("SELECT TOP (" + ADM + ") IDAdministrador, Nome FROM dbo.TblAdministrador WHERE(Apagado = 0) ORDER BY Nome");
+                string Query = "";
+                if (tb_Pesquisar.Text == "")
+                {
+                    Query = ("SELECT TOP (" + ADM + ") IDAdministrador, Nome FROM dbo.TblAdministrador WHERE(Apagado = 0) ORDER BY Nome");
+                }
+                else
+                {
+                    Query = ("SELECT TOP (" + ADM + ") IDAdministrador, Nome FROM dbo.TblAdministrador WHERE(Apagado = 0) AND Nome COLLATE Latin1_General_CI_AI LIKE '%" + tb_Pesquisar.Text + "%' COLLATE Latin1_General_CI_AI  ORDER BY Nome");
+                }
                 SqlCommand Command = new SqlCommand(Query, con);
                 dr = Command.ExecuteReader();
 
@@ -336,7 +342,7 @@ namespace FootballLife_WF
                     Pb.Click += Btn_Pb_Click;
                     lblUser.Click += Btn_Lbl_Click;
 
-                    if (Program.CurrentFuncaoUser != "Admin"  || Program.CurrentFuncaoUser == "Admin" && Program.CurrentIDUser == Convert.ToInt32(IDAdmin))
+                    if (Program.CurrentFuncaoUser != "Admin" || Program.CurrentFuncaoUser == "Admin" && Program.CurrentIDUser == Convert.ToInt32(IDAdmin))
                     {
                         Pbdelete.Visible = false;
                     }
@@ -344,9 +350,19 @@ namespace FootballLife_WF
                     {
                         Pbdelete.Visible = true;
                     }
+
+                    
                 }
                 dr.Close();
-                ADM+=8;
+
+                if (flowpanel_Admins.Controls.Count == 0)
+                {
+                    lbl1.Visible = true;
+                }
+                else if (flowpanel_Admins.Controls.Count > 0)
+                {
+                    lbl1.Visible = false;
+                }
             }
             catch (Exception x)
             {
@@ -416,11 +432,25 @@ namespace FootballLife_WF
 
                 if (Program.CurrentFuncaoUser == "Atleta")
                 {
-                    Query = ("SELECT TOP (" + T + ") IDTreinador, Nome FROM dbo.TblTreinador WHERE (Apagado = 0) AND FK_IDEscalao = " + Program.CurrentIDEscalao + " ORDER BY Nome");
+                    if (tb_Pesquisar.Text == "")
+                    {
+                        Query = ("SELECT TOP (" + T + ") IDTreinador, Nome FROM dbo.TblTreinador WHERE (Apagado = 0) AND FK_IDEscalao = " + Program.CurrentIDEscalao + " ORDER BY Nome");
+                    }
+                    else
+                    {
+                        Query = ("SELECT TOP (" + T + ") IDTreinador, Nome FROM dbo.TblTreinador WHERE (Apagado = 0) AND FK_IDEscalao = " + Program.CurrentIDEscalao + " AND Nome COLLATE Latin1_General_CI_AI LIKE '%" + tb_Pesquisar.Text + "%' COLLATE Latin1_General_CI_AI  ORDER BY Nome");
+                    }
                 }
                 else
                 {
-                    Query = ("SELECT TOP (" + T + ") IDTreinador, Nome FROM dbo.TblTreinador WHERE(Apagado = 0) ORDER BY Nome");
+                    if (tb_Pesquisar.Text == "")
+                    {
+                        Query = ("SELECT TOP (" + T + ") IDTreinador, Nome FROM dbo.TblTreinador WHERE(Apagado = 0) ORDER BY Nome");
+                    }
+                    else
+                    {
+                        Query = ("SELECT TOP (" + T + ") IDTreinador, Nome FROM dbo.TblTreinador WHERE(Apagado = 0) AND Nome COLLATE Latin1_General_CI_AI LIKE '%" + tb_Pesquisar.Text + "%' COLLATE Latin1_General_CI_AI  ORDER BY Nome");
+                    }
                 }
 
                 SqlCommand Command = new SqlCommand(Query, con);
@@ -494,9 +524,19 @@ namespace FootballLife_WF
                     {
                         Pbdelete.Visible = true;
                     }
+
+                    
                 }
                 dr.Close();
-                T+=8;
+
+                if (flowpanel_Treinadores.Controls.Count == 0)
+                {
+                    lbl2.Visible = true;
+                }
+                else if (flowpanel_Treinadores.Controls.Count > 0)
+                {
+                    lbl2.Visible = false;
+                }
             }
             catch (Exception x)
             {
@@ -555,21 +595,35 @@ namespace FootballLife_WF
             SqlConnection con = new SqlConnection(Properties.Settings.Default.Connection);
             con.Open();
 
-            string Query = "";
             string IDAtleta = "";
             string NomeAtleta = "";
 
             try
             {
                 SqlDataReader dr;
-
+                string Query = "";
                 if (Program.CurrentFuncaoUser == "Atleta" || Program.CurrentFuncaoUser == "Treinador")
                 {
-                    Query = ("SELECT TOP (" + A + ") IDAtleta, Nome FROM dbo.TblAtleta WHERE(Apagado = 0) AND FK_IDEscalao = " + Program.CurrentIDEscalao + " ORDER BY Nome");
+                    
+                    if (tb_Pesquisar.Text == "")
+                    {
+                        Query = ("SELECT TOP (" + A + ") IDAtleta, Nome FROM dbo.TblAtleta WHERE(Apagado = 0) AND FK_IDEscalao = " + Program.CurrentIDEscalao + " ORDER BY Nome");
+                    }
+                    else
+                    {
+                        Query = ("SELECT TOP (" + A + ") IDAtleta, Nome FROM dbo.TblAtleta WHERE(Apagado = 0) AND FK_IDEscalao = " + Program.CurrentIDEscalao + " AND Nome COLLATE Latin1_General_CI_AI LIKE '%" + tb_Pesquisar.Text + "%' COLLATE Latin1_General_CI_AI  ORDER BY Nome");
+                    }
                 }
                 else
                 {
-                    Query = ("SELECT TOP (" + A + ") IDAtleta, Nome FROM dbo.TblAtleta WHERE(Apagado = 0) ORDER BY Nome");
+                    if (tb_Pesquisar.Text == "")
+                    {
+                        Query = ("SELECT TOP (" + A + ") IDAtleta, Nome FROM dbo.TblAtleta WHERE(Apagado = 0) ORDER BY Nome");
+                    }
+                    else
+                    {
+                        Query = ("SELECT TOP (" + A + ") IDAtleta, Nome FROM dbo.TblAtleta WHERE(Apagado = 0) AND Nome COLLATE Latin1_General_CI_AI LIKE '%" + tb_Pesquisar.Text + "%' COLLATE Latin1_General_CI_AI  ORDER BY Nome");
+                    }
                 }
 
                 SqlCommand Command = new SqlCommand(Query, con);
@@ -634,17 +688,27 @@ namespace FootballLife_WF
                     Pb.Click += Btn_Pb_Click;
                     lblUser.Click += Btn_Lbl_Click;
 
-                    if (Program.CurrentFuncaoUser != "Admin")
+                    if (Program.CurrentFuncaoUser != "Admin" && Program.CurrentFuncaoUser != "Treinador")
                     {
                         Pbdelete.Visible = false;
                     }
-                    else
+                    else if (Program.CurrentFuncaoUser == "Admin" || Program.CurrentFuncaoUser == "Treinador")
                     {
                         Pbdelete.Visible = true;
                     }
+
+                    
                 }
                 dr.Close();
-                A+=8;
+
+                if (flowpanel_Atletas.Controls.Count == 0)
+                {
+                    lbl3.Visible = true;
+                }
+                else if (flowpanel_Atletas.Controls.Count > 0)
+                {
+                    lbl3.Visible = false;
+                }
             }
             catch (Exception x)
             {
@@ -710,7 +774,17 @@ namespace FootballLife_WF
             try
             {
                 SqlDataReader dr;
-                string Query = ("SELECT TOP (" + S + ") IDSocio, Nome FROM dbo.TblSocio WHERE(Apagado = 0) ORDER BY Nome");
+
+                string Query = "";
+                if (tb_Pesquisar.Text == "")
+                {
+                    Query = ("SELECT TOP (" + S + ") IDSocio, Nome FROM dbo.TblSocio WHERE (Apagado = 0) ORDER BY Nome");
+                }
+                else
+                {
+                    Query = ("SELECT TOP (" + S + ") IDSocio, Nome FROM dbo.TblSocio WHERE (Apagado = 0) AND Nome COLLATE Latin1_General_CI_AI LIKE '%" + tb_Pesquisar.Text + "%' COLLATE Latin1_General_CI_AI  ORDER BY Nome");
+                }
+                
                 SqlCommand Command = new SqlCommand(Query, con);
                 dr = Command.ExecuteReader();
 
@@ -781,9 +855,19 @@ namespace FootballLife_WF
                     {
                         Pbdelete.Visible = true;
                     }
+
+                    
                 }
                 dr.Close();
-                S+=8;
+
+                if (flowpanel_Socios.Controls.Count == 0)
+                {
+                    lbl4.Visible = true;
+                }
+                else if (flowpanel_Socios.Controls.Count > 0)
+                {
+                    lbl4.Visible = false;
+                }
             }
             catch (Exception x)
             {
@@ -842,7 +926,7 @@ namespace FootballLife_WF
             string ID = Pb.Tag.ToString();
             string Funcao = Pb.Name.ToString();
 
-            if(Program.CurrentFuncaoUser == "Admin")
+            if(Program.CurrentFuncaoUser == "Admin" || Program.CurrentFuncaoUser == "Treinador" && Funcao == "Atleta") 
             {
                 EditarUser(ID, Funcao);
             }
@@ -859,7 +943,7 @@ namespace FootballLife_WF
             string ID = Lbl.Tag.ToString();
             string Funcao = Lbl.Name.ToString();
 
-            if (Program.CurrentFuncaoUser == "Admin")
+            if (Program.CurrentFuncaoUser == "Admin" || Program.CurrentFuncaoUser == "Treinador" && Funcao == "Atleta")
             {
                 EditarUser(ID, Funcao);
             }
@@ -889,11 +973,21 @@ namespace FootballLife_WF
             DeletedUsers Apagados = new DeletedUsers();
             Apagados.ShowDialog();
 
-            Admins();
-            Treinadores();
-            Atletas();
-            Socios();
-            CountUsers();
+            if (Program.CurrentFuncaoUser == "Admin")
+            {
+                Admins();
+                Treinadores();
+                Atletas();
+                Socios();
+                CountUsers();
+            }
+            else if (Program.CurrentFuncaoUser == "Treinador")
+            {
+                Admins();
+                Treinadores();
+                Atletas();
+                CountUsers();
+            }
         }
 
 
@@ -903,11 +997,22 @@ namespace FootballLife_WF
             AdicionarUtilizador NewUser = new AdicionarUtilizador();
             NewUser.ShowDialog();
 
-            Admins();
-            Treinadores();
-            Atletas();
-            Socios();
-            CountUsers();
+            if(Program.CurrentFuncaoUser == "Admin")
+            {
+                Admins();
+                Treinadores();
+                Atletas();
+                Socios();
+                CountUsers();
+            }
+            else if (Program.CurrentFuncaoUser == "Treinador")
+            {
+                Admins();
+                Treinadores();
+                Atletas();
+                CountUsers();
+            }
+
         }
 
 
@@ -1105,22 +1210,75 @@ namespace FootballLife_WF
 
         private void Img1_Click(object sender, EventArgs e)
         {
+            ADM += 8;
             Admins();
         }
 
         private void Img2_Click(object sender, EventArgs e)
         {
+            T += 8;
             Treinadores();
         }
 
         private void Img3_Click(object sender, EventArgs e)
         {
+            A += 8;
             Atletas();
         }
 
         private void Img4_Click(object sender, EventArgs e)
         {
+            S += 8;
             Socios();
+        }
+
+        private void Btn_Lupa_Click(object sender, EventArgs e)
+        {
+            if (tb_Pesquisar.Text != "")
+            {
+                Visibilidade();
+            }
+            else
+            {
+                Visibilidade();
+
+                lbl1.Visible = false;
+                lbl1.Visible = false;
+                lbl3.Visible = false;
+                lbl4.Visible = false;
+            }
+        }
+
+        private void Btn_DeletePesquisa_Click(object sender, EventArgs e)
+        {
+            tb_Pesquisar.Text = "";
+
+            Visibilidade();
+
+            lbl1.Visible = false;
+            lbl2.Visible = false;
+            lbl3.Visible = false;
+            lbl4.Visible = false;
+            }
+
+        private void Tb_Pesquisar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (tb_Pesquisar.Text != "")
+                {
+                    Visibilidade();
+                }
+                else
+                {
+                    Visibilidade();
+
+                    lbl1.Visible = false;
+                    lbl1.Visible = false;
+                    lbl3.Visible = false;
+                    lbl4.Visible = false;
+                }
+            }
         }
     }
 }

@@ -42,6 +42,8 @@
             this.lbl_Escalao = new System.Windows.Forms.Label();
             this.panel_Utilizador = new System.Windows.Forms.Panel();
             this.img_Fundo = new System.Windows.Forms.PictureBox();
+            this.morada = new System.Windows.Forms.Label();
+            this.lbl_Morada = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.img_Logo)).BeginInit();
             this.panel_Utilizador.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_Fundo)).BeginInit();
@@ -162,6 +164,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_Utilizador.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_Utilizador.Controls.Add(this.lbl_Morada);
+            this.panel_Utilizador.Controls.Add(this.morada);
             this.panel_Utilizador.Controls.Add(this.lbl_Escalao);
             this.panel_Utilizador.Controls.Add(this.Escalao);
             this.panel_Utilizador.Controls.Add(this.btn_Fechar);
@@ -188,6 +192,24 @@
             this.img_Fundo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.img_Fundo.TabIndex = 1;
             this.img_Fundo.TabStop = false;
+            // 
+            // morada
+            // 
+            this.morada.AutoSize = true;
+            this.morada.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.morada.Location = new System.Drawing.Point(17, 193);
+            this.morada.Name = "morada";
+            this.morada.Size = new System.Drawing.Size(65, 16);
+            this.morada.TabIndex = 18;
+            this.morada.Text = "Morada:";
+            // 
+            // lbl_Morada
+            // 
+            this.lbl_Morada.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Morada.Location = new System.Drawing.Point(102, 194);
+            this.lbl_Morada.Name = "lbl_Morada";
+            this.lbl_Morada.Size = new System.Drawing.Size(460, 15);
+            this.lbl_Morada.TabIndex = 19;
             // 
             // VisualizarUtilizador
             // 
@@ -229,5 +251,7 @@
         private System.Windows.Forms.Label lbl_Escalao;
         private System.Windows.Forms.Panel panel_Utilizador;
         private System.Windows.Forms.PictureBox img_Fundo;
+        private System.Windows.Forms.Label lbl_Morada;
+        private System.Windows.Forms.Label morada;
     }
 }

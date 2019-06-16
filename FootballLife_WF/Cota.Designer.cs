@@ -421,6 +421,7 @@
             this.tb_NIF.Size = new System.Drawing.Size(187, 20);
             this.tb_NIF.TabIndex = 34;
             this.tb_NIF.Visible = false;
+            this.tb_NIF.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Tb_NIF_KeyDown);
             // 
             // lbl_NIF
             // 
@@ -451,7 +452,7 @@
             this.panel_Paypal.Controls.Add(this.label11);
             this.panel_Paypal.Controls.Add(this.tb_PPEmail);
             this.panel_Paypal.Controls.Add(this.label13);
-            this.panel_Paypal.Location = new System.Drawing.Point(27, 153);
+            this.panel_Paypal.Location = new System.Drawing.Point(28, 153);
             this.panel_Paypal.Name = "panel_Paypal";
             this.panel_Paypal.Size = new System.Drawing.Size(501, 129);
             this.panel_Paypal.TabIndex = 32;
@@ -581,6 +582,7 @@
             this.tb_CVV.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.tb_CVV.Size = new System.Drawing.Size(73, 20);
             this.tb_CVV.TabIndex = 24;
+            this.tb_CVV.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Tb_NIF_KeyDown);
             // 
             // label5
             // 
@@ -599,6 +601,7 @@
             this.tb_NumeroCartao.Name = "tb_NumeroCartao";
             this.tb_NumeroCartao.Size = new System.Drawing.Size(187, 20);
             this.tb_NumeroCartao.TabIndex = 22;
+            this.tb_NumeroCartao.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Tb_NIF_KeyDown);
             // 
             // label4
             // 

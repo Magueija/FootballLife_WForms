@@ -56,7 +56,7 @@ namespace FootballLife_WF
             SqlDataAdapter adapter = new SqlDataAdapter();
             DataSet ds = new DataSet();
             string sql = null;
-            sql = "SELECT IDAtleta, Nome FROM dbo.TblAtleta WHERE Apagado = 0 AND FK_IDEscalao = " + Program.CurrentIDEscalao;
+            sql = "SELECT IDAtleta, Nome FROM dbo.TblAtleta WHERE Apagado = 0 AND FK_IDEscalao = " + Program.CurrentIDEscalao + " ORDER BY Nome";
             try
             {
                 SqlCommand command = new SqlCommand(sql, con);
@@ -93,7 +93,7 @@ namespace FootballLife_WF
             SqlDataAdapter adapter = new SqlDataAdapter();
             DataSet ds = new DataSet();
             string sql = null;
-            sql = "SELECT IDAtleta, Nome FROM dbo.TblAtleta WHERE Apagado = 0 AND FK_IDEscalao = " + Program.CurrentIDEscalao;
+            sql = "SELECT IDAtleta, Nome FROM dbo.TblAtleta WHERE Apagado = 0 AND FK_IDEscalao = " + Program.CurrentIDEscalao + " ORDER BY Nome";
             try
             {
                 SqlCommand command = new SqlCommand(sql, con);

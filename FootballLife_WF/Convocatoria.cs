@@ -143,7 +143,7 @@ namespace FootballLife_WF
                     Label lblUser = new Label();
                     lblUser.Location = new Point(55, 15);
                     lblUser.Text = Nome;
-                    lblUser.Font = new Font("Berlin Sans FB ", 9, FontStyle.Bold);
+                    lblUser.Font = new Font("Berlin Sans FB ", 10, FontStyle.Bold);
                     lblUser.Anchor = AnchorStyles.Top | AnchorStyles.Left;
                     lblUser.Visible = true;
                     lblUser.Width = 170;
@@ -534,7 +534,7 @@ namespace FootballLife_WF
                     Label lblUser = new Label();
                     lblUser.Location = new Point(53, 15);
                     lblUser.Text = Nome;
-                    lblUser.Font = new Font("Berlin Sans FB ", 9, FontStyle.Bold);
+                    lblUser.Font = new Font("Berlin Sans FB ", 10, FontStyle.Bold);
                     lblUser.Anchor = AnchorStyles.Top | AnchorStyles.Left;
                     lblUser.Visible = true;
                     lblUser.Width = 170;
@@ -598,7 +598,7 @@ namespace FootballLife_WF
                     Label lblUser = new Label();
                     lblUser.Location = new Point(53, 15);
                     lblUser.Text = Nome;
-                    lblUser.Font = new Font("Berlin Sans FB ", 9, FontStyle.Bold);
+                    lblUser.Font = new Font("Berlin Sans FB ", 10, FontStyle.Bold);
                     lblUser.Anchor = AnchorStyles.Top | AnchorStyles.Left;
                     lblUser.Visible = true;
                     lblUser.Width = 170;

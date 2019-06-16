@@ -91,7 +91,7 @@ namespace FootballLife_WF
 
             try{
                 SqlDataReader dr;
-                string Query = ("SELECT TOP (" + i + ") dbo.TblDiscussao.IDDiscussao, dbo.TblDiscussao.NomeDiscussao, dbo.TblDiscussao.Descricao, dbo.TblAdministrador.IDAdministrador, dbo.TblAdministrador.Nome FROM dbo.TblDiscussao INNER JOIN dbo.TblAdministrador ON dbo.TblDiscussao.FK_IDAdministrador = dbo.TblAdministrador.IDAdministrador WHERE dbo.TblDiscussao.Apagado = 0 ORDER BY dbo.TblDiscussao.IDDiscussao DESC");
+                string Query = ("SELECT TOP (" + i + ") dbo.TblDiscussao.IDDiscussao, dbo.TblDiscussao.NomeDiscussao, dbo.TblDiscussao.Descricao, dbo.TblAdministrador.IDAdministrador, dbo.TblAdministrador.Nome FROM dbo.TblDiscussao INNER JOIN dbo.TblAdministrador ON dbo.TblDiscussao.FK_IDAdministrador = dbo.TblAdministrador.IDAdministrador WHERE dbo.TblAdministrador.Apagado = 0 AND dbo.TblDiscussao.Apagado = 0 ORDER BY dbo.TblDiscussao.IDDiscussao DESC");
                 SqlCommand Command = new SqlCommand(Query, con);
                 dr = Command.ExecuteReader();
                 while (dr.Read())
@@ -176,7 +176,6 @@ namespace FootballLife_WF
                         PbDelete.Visible = true;
                     }
 
-                    i+=2;
                 }
                 dr.Close();
             }
@@ -329,6 +328,8 @@ namespace FootballLife_WF
 
         private void AddMore2Discussoes_Click(object sender, EventArgs e)
         {
+            i += 2;
+
             Discussoes();
         }
     }

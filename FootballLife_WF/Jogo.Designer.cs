@@ -143,10 +143,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(334, 90);
+            this.label3.Font = new System.Drawing.Font("Berlin Sans FB Demi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(331, 90);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(14, 16);
+            this.label3.Size = new System.Drawing.Size(15, 18);
             this.label3.TabIndex = 23;
             this.label3.Text = "-";
             // 
@@ -154,10 +154,10 @@
             // 
             this.lbl_CGolos.AutoSize = true;
             this.lbl_CGolos.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_CGolos.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lbl_CGolos.Location = new System.Drawing.Point(292, 90);
+            this.lbl_CGolos.Font = new System.Drawing.Font("Berlin Sans FB Demi", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_CGolos.Location = new System.Drawing.Point(286, 84);
             this.lbl_CGolos.Name = "lbl_CGolos";
-            this.lbl_CGolos.Size = new System.Drawing.Size(22, 16);
+            this.lbl_CGolos.Size = new System.Drawing.Size(37, 27);
             this.lbl_CGolos.TabIndex = 22;
             this.lbl_CGolos.Text = "54";
             // 
@@ -165,11 +165,11 @@
             // 
             this.lbl_FGolos.AutoSize = true;
             this.lbl_FGolos.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_FGolos.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lbl_FGolos.Location = new System.Drawing.Point(364, 90);
+            this.lbl_FGolos.Font = new System.Drawing.Font("Berlin Sans FB Demi", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_FGolos.Location = new System.Drawing.Point(359, 84);
             this.lbl_FGolos.Name = "lbl_FGolos";
             this.lbl_FGolos.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lbl_FGolos.Size = new System.Drawing.Size(23, 16);
+            this.lbl_FGolos.Size = new System.Drawing.Size(40, 27);
             this.lbl_FGolos.TabIndex = 21;
             this.lbl_FGolos.Text = "04";
             // 
@@ -197,7 +197,7 @@
             this.lbl_Escalao.AutoSize = true;
             this.lbl_Escalao.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Escalao.Font = new System.Drawing.Font("Berlin Sans FB Demi", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Escalao.Location = new System.Drawing.Point(301, 39);
+            this.lbl_Escalao.Location = new System.Drawing.Point(306, 39);
             this.lbl_Escalao.Name = "lbl_Escalao";
             this.lbl_Escalao.Size = new System.Drawing.Size(74, 23);
             this.lbl_Escalao.TabIndex = 18;

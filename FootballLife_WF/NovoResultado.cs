@@ -32,7 +32,7 @@ namespace FootballLife_WF
 
         //Upload Imagens
         string displayimg, filePath;
-        string folderpath = @"..\Projeto_WindowsForms\LogoEquipas\";
+        string folderpath = @"..\LogoEquipas\";
         OpenFileDialog open = new OpenFileDialog();
 
         private void Btn_UploadCasa_Click(object sender, EventArgs e)
@@ -43,7 +43,7 @@ namespace FootballLife_WF
                 displayimg = open.SafeFileName;
                 img_LogoCasa.Image = new Bitmap(open.FileName);
 
-                txtpathCasa.Text = open.FileName;
+                txtpathCasa.Text = Path.GetFileName(open.FileName);
                 filePath = open.FileName;
             }
         }
@@ -57,44 +57,10 @@ namespace FootballLife_WF
                 displayimg = open.SafeFileName;
                 img_LogoFora.Image = new Bitmap(open.FileName);
 
-                txtpathFora.Text = open.FileName;
+                txtpathFora.Text = Path.GetFileName(open.FileName);
                 filePath = open.FileName;
             }
         }
-
-
-        /*private void Btn_UploadFora_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog diretorio = new OpenFileDialog();
-            FileDialog file = new OpenFileDialog();
-            diretorio.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png";
-            diretorio.ShowDialog();
-
-            try
-            {
-                if (diretorio.FileName != null)
-                {
-                    LogoAdversario = diretorio.FileName;
-
-                    if (Path.GetPathRoot(LogoAdversario) != @"\Projeto_WindowsForms\Imagens\")
-                    {
-                        System.IO.File.Copy(LogoAdversario, @"\Projeto_WindowsForms\Imagens\" + Path.GetFileName(LogoAdversario));
-                    }
-                    
-                    Bitmap bmp = new Bitmap(@"\Projeto_WindowsForms\Imagens\" + Path.GetFileName(LogoAdversario));
-                    img_LogoFora.Image = bmp;
-                }
-                else
-                {
-                    MessageBox.Show("Por favor escolha o logo do adversário!", "ATENÇÃO!", MessageBoxButtons.OK);
-                }
-            }
-            catch (Exception x)
-            {
-                MessageBox.Show("Por favor escolha o logo do adversário!", "ATENÇÃO!", MessageBoxButtons.OK);
-            }
-
-        }*/
 
 
         //================================================================================================
@@ -186,7 +152,9 @@ namespace FootballLife_WF
             SqlDataAdapter adapter = new SqlDataAdapter();
             DataSet ds = new DataSet();
             string sql = null;
-            sql = "SELECT IDAtleta, Nome FROM dbo.TblAtleta WHERE Apagado = 0 AND FK_IDEscalao = " + Program.CurrentIDEscalao;
+            sql = "SELECT dbo.TblAtleta.IDAtleta, dbo.TblAtleta.Nome FROM dbo.TblAtleta LEFT OUTER JOIN dbo.TblSuplente ON dbo.TblAtleta.IDAtleta = dbo.TblSuplente.FK_IDAtleta LEFT OUTER JOIN " +
+                "dbo.TblTitular ON dbo.TblAtleta.IDAtleta = dbo.TblTitular.FK_IDAtleta WHERE(dbo.TblTitular.FK_IDAtleta IS NOT NULL) OR (dbo.TblSuplente.FK_IDAtleta IS NOT NULL) AND(dbo.TblAtleta.Apagado = 0) " +
+                "AND dbo.TblAtleta.FK_IDEscalao = " + Program.CurrentIDEscalao + "  ORDER BY dbo.TblAtleta.Nome";
             try
             {
                 command = new SqlCommand(sql, con);
@@ -349,6 +317,14 @@ namespace FootballLife_WF
                 {
                     MessageBox.Show("Campos obrigatórios não preenchidos!", "ATENÇÃO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
+                else if (txtpathCasa.Text == "" && txtpathFora.Text == "")
+                {
+                    MessageBox.Show("Logo de equipa adversária não escolhido!", "ATENÇÃO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (tb_EquipaCasa.Text == tb_EquipaFora.Text)
+                {
+                    MessageBox.Show("Equipas Iguais!", "ATENÇÃO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
                 else if (tb_EquipaCasa.Text == tb_EquipaFora.Text && img_LogoCasa.Image == Properties.Resources.Logo_Clube && img_LogoFora.Image == Properties.Resources.Logo_Clube)
                 {
                     MessageBox.Show("Equipas iguais!", "ATENÇÃO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -357,7 +333,7 @@ namespace FootballLife_WF
                 {
                     MessageBox.Show("Logos das equipas iguais!", "ATENÇÃO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                else if (img_LogoCasa.Image == Properties.Resources.Logo_Clube && tb_EquipaCasa.Text != "Palmelense F.C." || img_LogoFora.Image == Properties.Resources.Logo_Clube && tb_EquipaFora.Text != "Palmelense F.C.")
+                else if (txtpathCasa.Text != "" && tb_EquipaCasa.Text == "Palmelense F.C." || txtpathFora.Text != "" && tb_EquipaFora.Text == "Palmelense F.C." || txtpathCasa.Text != "" && tb_EquipaCasa.Text == "Palmelense F.C." || txtpathFora.Text != "" && tb_EquipaFora.Text == "Palmelense F.C.")
                 {
                     MessageBox.Show("A Equipa 'Palmelense F.C.' não corresponde ao logo por defeito!\nTente reabrir o novo resultado.", "ATENÇÃO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }

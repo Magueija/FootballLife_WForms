@@ -217,6 +217,8 @@ namespace FootballLife_WF
         int i = 2;
         private void Jogo(string IDEscalao)
         {
+            flowpanel_Jogos.Controls.Clear();
+
             SqlConnection con = new SqlConnection(Properties.Settings.Default.Connection);
             con.Open();
 
@@ -260,7 +262,6 @@ namespace FootballLife_WF
                     flowpanel_Jogos.Controls.Add(jogo);
                 }
                 dr.Close();
-                i+=2;
             }
             catch (Exception x)
             {
@@ -317,7 +318,6 @@ namespace FootballLife_WF
                     flowpanel_Jogos.Controls.Add(jogo);
                 }
                 dr.Close();
-                j += 2;
             }
             catch (Exception x)
             {
@@ -353,6 +353,7 @@ namespace FootballLife_WF
         private void NovoResultado_Click(object sender, EventArgs e)
         {
             NovoResultado jogo = new NovoResultado();
+
             jogo.ShowDialog();
 
             JogoTodos();
@@ -378,17 +379,11 @@ namespace FootballLife_WF
             }
             else if (Program.CurrentFuncaoUser == "Atleta")
             {
-                PaginaInicial_Atleta PgInicio = new PaginaInicial_Atleta();
-                this.Hide();
-                PgInicio.ShowDialog();
-                this.Dispose();
+                
             }
             else if (Program.CurrentFuncaoUser == "Socio")
             {
-                PaginaInicial_Socio PgInicio = new PaginaInicial_Socio();
-                this.Hide();
-                PgInicio.ShowDialog();
-                this.Dispose();
+                
             }
             else
             {
@@ -498,7 +493,8 @@ namespace FootballLife_WF
 
         private void Img_AddMore2Jogos_Click(object sender, EventArgs e)
         {
-            flowpanel_Jogos.Controls.Clear();
+            i += 2;
+            j += 2;
             VerificacaoCheckBoxs();
         }
     }
