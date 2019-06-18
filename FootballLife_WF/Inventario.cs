@@ -97,7 +97,7 @@ namespace FootballLife_WF
                     Quantidade = dr["Quantidade"].ToString();
 
                     Panel panel = new Panel();
-                    panel.Width = 310;
+                    panel.Width = 325;
                     panel.Height = 30;
                     panel.Anchor = AnchorStyles.Top;
                     panel.BackColor = Color.Transparent;
