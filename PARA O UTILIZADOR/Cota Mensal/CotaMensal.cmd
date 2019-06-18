@@ -1,0 +1,1 @@
+SQLCmd -S "." -U sa -P sa  -Q "Execute FootballLife_DB.[dbo].[CotaMensal]"

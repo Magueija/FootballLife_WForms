@@ -372,7 +372,7 @@
             this.lbl_Titulo.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Titulo.Font = new System.Drawing.Font("Bauhaus 93", 65.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Titulo.ForeColor = System.Drawing.Color.White;
-            this.lbl_Titulo.Location = new System.Drawing.Point(558, 92);
+            this.lbl_Titulo.Location = new System.Drawing.Point(558, 71);
             this.lbl_Titulo.Name = "lbl_Titulo";
             this.lbl_Titulo.Size = new System.Drawing.Size(253, 98);
             this.lbl_Titulo.TabIndex = 14;
@@ -392,7 +392,7 @@
             this.panel_Pesquisa.Controls.Add(this.chb_Seniores);
             this.panel_Pesquisa.Controls.Add(this.chb_Todos);
             this.panel_Pesquisa.Controls.Add(this.lbl_Pesquisar);
-            this.panel_Pesquisa.Location = new System.Drawing.Point(323, 222);
+            this.panel_Pesquisa.Location = new System.Drawing.Point(323, 199);
             this.panel_Pesquisa.Name = "panel_Pesquisa";
             this.panel_Pesquisa.Size = new System.Drawing.Size(698, 78);
             this.panel_Pesquisa.TabIndex = 17;
@@ -550,7 +550,7 @@
             this.img_Linha.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.img_Linha.BackColor = System.Drawing.Color.Transparent;
             this.img_Linha.Image = global::FootballLife_WF.Properties.Resources.Linha_Separadora;
-            this.img_Linha.Location = new System.Drawing.Point(229, 303);
+            this.img_Linha.Location = new System.Drawing.Point(224, 268);
             this.img_Linha.Name = "img_Linha";
             this.img_Linha.Size = new System.Drawing.Size(892, 53);
             this.img_Linha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -668,7 +668,6 @@
             this.Controls.Add(this.lbl_NovoResultado);
             this.Controls.Add(this.img_NovoResultado);
             this.Controls.Add(this.btn_NovoResultado);
-            this.Controls.Add(this.img_Linha);
             this.Controls.Add(this.panel_Pesquisa);
             this.Controls.Add(this.lbl_Titulo);
             this.Controls.Add(this.img_Logo);
@@ -676,9 +675,10 @@
             this.Controls.Add(this.panel_Menu);
             this.Controls.Add(this.btn_Menu);
             this.Controls.Add(this.btn_TopMenu);
+            this.Controls.Add(this.img_Linha);
             this.Controls.Add(this.img_Fundo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(900, 600);
+            this.MinimumSize = new System.Drawing.Size(1358, 726);
             this.Name = "Jogos";
             this.Text = "FOOTBALL LIFE";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

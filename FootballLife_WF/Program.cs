@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Data.SqlClient;
 namespace FootballLife_WF
 {
     static class Program
@@ -26,7 +26,26 @@ namespace FootballLife_WF
             CurrentIDUser = 0;
             CurrentIDEscalao = 0;
 
-            Application.Run(new PaginaInicial());
+            SqlConnection con = new SqlConnection(Properties.Settings.Default.Connection);
+            try
+            {
+                con.Open();
+
+                Application.Run(new PaginaInicial());
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show("Base de dados do programa com erro!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+               if (con.State == System.Data.ConnectionState.Open)
+               {
+                   con.Close();
+               }
+            }
+
+            
         }
     }
 }
